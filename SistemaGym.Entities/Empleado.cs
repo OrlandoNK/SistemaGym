@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    internal class Empleado
+    public class Empleado
     {
         public int ID { get; set; }
         public int IDUsuario { get; set; }

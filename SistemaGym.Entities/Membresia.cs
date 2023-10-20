@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    public class ListaCliente
+    public class Membresia
     {
-        public int IDTipoListaCliente { get; set; }
-
+        public int IDMembresia { get; set; }
         public string Nombre { get; set; }
 
         public string Descripcion { get; set; }
+
+        public string Duracion {  get; set; }
+
+        public decimal Valor { get; set; }
 
 
     }
