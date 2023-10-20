@@ -8,7 +8,7 @@ namespace SistemaGym.Entities
 {
     public class AreaEmpresa
     {
-        public int ID { set; get; }
+        public int IDArea { set; get; }
         public int Encargado { set; get; }
         public string Nombre { set; get; }
         public string Descripcion {  set; get; }
