@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.BLL
 {
-    internal class TipoClienteBLL
+    public class TipoClienteBLL
     {
     }
 }
