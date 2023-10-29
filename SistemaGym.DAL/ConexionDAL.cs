@@ -18,7 +18,7 @@ namespace SistemaGym.DAL
         private static ConexionDAL con = null;
 
 
-        //= "PracticandoCapas: Server=ORLANDO-ABREU\\SQLEXPRESS; Database=PracticandoCapas; User Id=sa;Password=12345678; Integrated Security = true";
+        
         protected ConexionDAL()
         {
             this.Base = "PracticandoCapas";
