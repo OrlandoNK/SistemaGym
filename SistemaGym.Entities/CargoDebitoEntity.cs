@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    public class CargoDebito
+    public class CargoDebitoEntity
     {
         public int IDCargoDebito { get; set; }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    public class BlacklistCliente
+    public class BlacklistClienteEntity
     {
         public int IDBlackListCliente { get; set; }
         public int IDListaCliente { get; set; }

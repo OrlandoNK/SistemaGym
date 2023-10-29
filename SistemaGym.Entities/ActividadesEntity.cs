@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    public class Actividades
+    public class ActividadesEntity
     {
         public int ID { get; set; }
         public int IDTipoActividades { get; set; }
         public int Area {  get; set; }
         public string EncargadoActividad {  get; set; }
-        public DateTime HorarioInicio {  get; set; }
-        public DateTime HorarioCierre { get; set; }
+
+        public string Dia  { get; set; }
+        public TimeOnly HoraInicio {  get; set; }
+        public TimeOnly HoraCierre { get; set; }
         public string Estatus {  get; set; }
     }
 }

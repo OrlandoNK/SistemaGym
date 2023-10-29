@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    public class Clientes
+    public class ClientesEntity
     {
      public int IDCliente { get; set; }    
 
@@ -14,6 +14,8 @@ namespace SistemaGym.Entities
 
         public int IDMembresia { get; set; }
         public int TipoListaCliente { get; set; }
+
+        public int TipoCliente {  get; set; }
 
         public string Nombre { get; set; }
 

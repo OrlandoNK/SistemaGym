@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    public class FacturaMembresia
+    public class FacturaMembresiaEntity
     {
         public int IDFactura { get; set; }
         public int IDMembresia { get; set; }
@@ -15,10 +15,6 @@ namespace SistemaGym.Entities
         public int IDUsuario { get; set; }
 
         public string NCF { get; set; }
-
-        public int CargoCredito { get; set; }
-
-        public int CargoDebito { get; set; }
 
         public DateTime FechaEmision { get; set; }
 

@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    public class ListaCliente
+    public class TipoClienteEntity
     {
-        public int IDTipoListaCliente { get; set; }
+        public int IDTipoCliente { get; set; }
 
         public string Nombre { get; set; }
-
         public string Descripcion { get; set; }
-
-
+    
     }
 }

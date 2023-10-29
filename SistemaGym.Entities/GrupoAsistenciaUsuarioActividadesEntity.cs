@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    public class GrupoAsistenciaUsuarioActividades
+    public class GrupoAsistenciaUsuarioActividadesEntity
     {
         public int ID { get; set; }
         public int IDActividad { get; set; }
         public int IDUsuario { get; set; }
+        public bool Asistencia { get; set; }
+        public TimeOnly hora { get; set; }
+
+        
+
     }
 }

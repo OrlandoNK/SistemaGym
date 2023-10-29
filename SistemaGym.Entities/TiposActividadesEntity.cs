@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    public class TiposActividades
+    public class TiposActividadesEntity
     {
         public int ID {  get; set; }
         public string Nombre {  get; set; }

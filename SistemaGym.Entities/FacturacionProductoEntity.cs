@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    public class FacturacionProducto
+    public class FacturacionProductoEntity
     {
         public int IDFactura { get; set; }
         public int IDCliente { get; set; }
