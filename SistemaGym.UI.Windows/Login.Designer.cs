@@ -89,6 +89,7 @@
             Controls.Add(btnIniciarSesion);
             Name = "Login";
             Text = "Login";
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

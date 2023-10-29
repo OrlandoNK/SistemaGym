@@ -28,12 +28,21 @@ namespace SistemaGym.UI.Windows
 
                 Form1 formularioprincipal = new Form1();
 
-                formularioprincipal.ShowDialog();
+                formularioprincipal.Show();
+
+                this.Hide();
             }
-            else { MessageBox.Show("Datos Incorrectos"); 
-            
-            
+            else
+            {
+                MessageBox.Show("Datos Incorrectos");
+
+
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
