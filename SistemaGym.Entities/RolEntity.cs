@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    internal class RolEntity
+    public class RolEntity
     {
         public int IDRol { get; set; }
         public string Nombre {  get; set; }

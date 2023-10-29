@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.DAL
 {
-    internal class ProductoDAL
+    public class ProductoDAL
     {
     }
 }

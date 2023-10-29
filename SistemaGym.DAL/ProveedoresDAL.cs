@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.DAL
 {
-    internal class ProveedoresDAL
+    public class ProveedoresDAL
     {
     }
 }
