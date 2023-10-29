@@ -37,12 +37,13 @@
             // 
             // btnIniciarSesion
             // 
-            btnIniciarSesion.Location = new Point(315, 249);
+            btnIniciarSesion.Location = new Point(339, 246);
             btnIniciarSesion.Name = "btnIniciarSesion";
             btnIniciarSesion.Size = new Size(122, 23);
             btnIniciarSesion.TabIndex = 0;
             btnIniciarSesion.Text = "Iniciar Sesion";
             btnIniciarSesion.UseVisualStyleBackColor = true;
+            btnIniciarSesion.Click += btnIniciarSesion_Click;
             // 
             // label1
             // 

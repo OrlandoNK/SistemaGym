@@ -6,6 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject></StartupObject>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaGym.BLL\SistemaGym.BLL.csproj" />
+    <ProjectReference Include="..\SistemaGym.Entities\SistemaGym.Entities.csproj" />
+  </ItemGroup>
 
 </Project>
