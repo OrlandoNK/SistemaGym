@@ -14,7 +14,6 @@ namespace SistemaGym.DAL
         private string usuario;
         private string clave;
         private bool seguridad;
-
         private static ConexionDAL con = null;
 
 
