@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaGym.BLL;
-
+using SistemaGym.DAL;
+using SistemaGym.Entities;
 
 namespace SistemaGym.UI.Windows
 {
     public partial class Login : Form
     {
         UsuarioBLL UsuarioBLL = new UsuarioBLL();
+      
         public Login()
         {
             InitializeComponent();
@@ -22,21 +24,26 @@ namespace SistemaGym.UI.Windows
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            if (UsuarioBLL.ConultaLogin(txtUsuario.Text, txtContrasena.Text) == 1)
+            string nombreUsuario = txtUsuario.Text;
+            string contrasena = txtContrasena.Text;
+
+            UsuarioEntity usuario = new UsuarioEntity(nombreUsuario, contrasena);
+            int resultadoAutenticacion = UsuarioBLL.ConsultaLogin(usuario);
+
+            if (resultadoAutenticacion == 1)
             {
-                MessageBox.Show("Sesion Iniciada Con Exito");
+                MessageBox.Show("Sesión Iniciada Con Éxito");
 
+                
                 Form1 formularioprincipal = new Form1();
-
                 formularioprincipal.Show();
 
+               
                 this.Hide();
             }
             else
             {
                 MessageBox.Show("Datos Incorrectos");
-
-
             }
         }
 

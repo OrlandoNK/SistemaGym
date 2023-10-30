@@ -1,4 +1,5 @@
 ﻿using SistemaGym.DAL;
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace SistemaGym.BLL
     public class UsuarioBLL
     {
          readonly UsuarioDAL usuarioDAL = new UsuarioDAL();
-        public int ConultaLogin(string usuario, string contrasena)
+        public int ConsultaLogin(UsuarioEntity usuario)
         {
-            return usuarioDAL.ConsultaLogin(usuario, contrasena);
+            return usuarioDAL.ConsultaLogin(usuario);
         }
     }
 }
