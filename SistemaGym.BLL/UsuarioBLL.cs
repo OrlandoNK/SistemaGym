@@ -13,6 +13,8 @@ namespace SistemaGym.BLL
          readonly UsuarioDAL usuarioDAL = new UsuarioDAL();
         public int ConsultaLogin(UsuarioEntity usuario)
         {
+
+
             return usuarioDAL.ConsultaLogin(usuario);
         }
     }
