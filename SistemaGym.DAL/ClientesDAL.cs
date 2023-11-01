@@ -103,7 +103,7 @@ namespace SistemaGym.DAL
 
         }
 
-        public DataTable BuscarID(ClientesEntity clientes)
+        public static DataTable BuscarID(ClientesEntity clientes)
         {
 
             ConexionDAL instancia = Instancia();
