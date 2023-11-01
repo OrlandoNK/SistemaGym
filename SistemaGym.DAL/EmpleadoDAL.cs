@@ -121,5 +121,38 @@ namespace SistemaGym.DAL
             return dataTBL;
         }
 
+
+        /* Metodo Obtener por Valor */
+        public static DataTable GetByValor(EmpleadoEntity empleado)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = new SqlConnection();
+
+            Conexion.Open();
+            DataTable dataTBL = new DataTable();
+            string GetValor = "SELECT * FROM Empleado" + 
+                              "WHERE IDUsuario LIKE '%' + @IDUsuario + '%' OR Nombre LIKE '%' + @Nombre + '%' OR Apellido LIKE '%' @Apellido + '%' OR" +
+                              "TipoDocumento LIKE '%' + @TipoDocumento + '%' OR Documento LIKE '%' + @Documento + '%' OR Direccion LIKE '%' + @Direccion + '%' OR" +
+                              "TellCell LIKE '%' + @TellCell + '%' OR TelRes LIKE '%' + @TelRes + '%' OR FechaRegistro LIKE '%' + @FechaRegistro + '%' OR Estatus LIKE '%' + @Estatus + '% ORDER BY Nombre'";
+
+            SqlCommand cmnd = new SqlCommand(GetValor, Conexion);
+            cmnd.Parameters.AddWithValue("@IDUsuario", empleado.IDUsuario);
+            cmnd.Parameters.AddWithValue("@Nombre", empleado.Nombre);
+            cmnd.Parameters.AddWithValue("@Apellido", empleado.Apellido);
+            cmnd.Parameters.AddWithValue("@TipoDocumento", empleado.TipoDocumento);
+            cmnd.Parameters.AddWithValue("@Docuemnto", empleado.Documento);
+            cmnd.Parameters.AddWithValue("@Direccion", empleado.Direccion);
+            cmnd.Parameters.AddWithValue("@TellCell", empleado.TellCell);
+            cmnd.Parameters.AddWithValue("@TelRes", empleado.TelRes);
+            cmnd.Parameters.AddWithValue("@FechaRegistro", empleado.FechaRegistro);
+            cmnd.Parameters.AddWithValue("@Estatus", empleado.Estatus);
+
+            SqlDataAdapter adapterDT = new SqlDataAdapter(cmnd);
+            adapterDT.Fill(dataTBL);
+
+            return dataTBL;
+
+        }
+
     }
 }
