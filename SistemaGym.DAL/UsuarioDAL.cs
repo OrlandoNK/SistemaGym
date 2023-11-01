@@ -22,7 +22,6 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@Usuario", usuario.NombreUsuario);
             cmd.Parameters.AddWithValue("@Contraseña", usuario.Contrasena);
             count = Convert.ToInt32(cmd.ExecuteScalar());
-            Conexion.Close();
 
             return count;
         }

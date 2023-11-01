@@ -10,11 +10,18 @@ namespace SistemaGym.DAL
 {
     public class ClientesDAL : ConexionDAL
     {
+
+          
+      
+            
+
+        
         public static void InsertarCliente(ClientesEntity clientes )
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
-
+            
+            Conexion.Open();
             string insertar = "Insert into Clientes(IDUsuario, IDMembresia, TipoListaCliente, TipoCliente," +
                 " Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus)" +
                 " values(@idcliente, @idusuario, @idmembresia, @idtipolistacliente, @tipocliente, @nombre, @apellido " +
@@ -33,8 +40,46 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@telres", clientes.TelRes);
             cmd.Parameters.AddWithValue("@fecharegistro", clientes.FechaRegistro);
             cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
+            cmd.ExecuteNonQuery();    
+        }
+
+        public static void ActualizarCliente(ClientesEntity clientes)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            
+            Conexion.Open();
+            string actualizar = "Update Clientes set IDUsuario =@idusuario, IDMembresia=@idmembresia, TipoListaCliente=@tipolistacliente " +
+                "TipoCliente =@tipocliente, Nombre=@nombre, Apellido =@apellido, TipoDocumento=@tipodocumento, documento=@documento " +
+                "Direccion =@direccion, Telcell=@telcell, TelRes=@telres, FechaRegistro =@fecharegistro, Estatus =@estatus ";
+            SqlCommand cmd = new SqlCommand(actualizar, Conexion);
+            cmd.Parameters.AddWithValue("@idusuario", clientes.IDUsuario);
+            cmd.Parameters.AddWithValue("@idmembresia", clientes.IDMembresia);
+            cmd.Parameters.AddWithValue("@tipolistacliente", clientes.TipoListaCliente);
+            cmd.Parameters.AddWithValue("@tipocliente", clientes.TipoCliente);
+            cmd.Parameters.AddWithValue("@nombre", clientes.Nombre);
+            cmd.Parameters.AddWithValue("@apellido", clientes.Apellido);
+            cmd.Parameters.AddWithValue("@tipodocumento", clientes.TipoDocumento);
+            cmd.Parameters.AddWithValue("@documento", clientes.Documento);
+            cmd.Parameters.AddWithValue("@direccion", clientes.Direccion);
+            cmd.Parameters.AddWithValue("@telcell", clientes.TelCell);
+            cmd.Parameters.AddWithValue("@telres", clientes.TelRes);
+            cmd.Parameters.AddWithValue("@fecharegistro", clientes.FechaRegistro);
+            cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
             cmd.ExecuteNonQuery();
 
+
         }
+
+
+        public static void EliminarCliente()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+        }
+
     }
 }
