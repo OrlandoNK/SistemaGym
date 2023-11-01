@@ -102,7 +102,7 @@ namespace SistemaGym.DAL
             return dt;
 
         }
-
+        //buscar por id
         public DataTable BuscarID(ClientesEntity clientes)
         {
 
@@ -118,7 +118,7 @@ namespace SistemaGym.DAL
             da.Fill(dt);
             return dt;
         }
-        //
+        //obtener valor de la base de datos en tabla cliente
         public static DataTable ObtenerPorValor(ClientesEntity clientes)
         {
 

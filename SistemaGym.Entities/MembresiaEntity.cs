@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,9 @@ namespace SistemaGym.Entities
         public string Duracion {  get; set; }
 
         public decimal Valor { get; set; }
+
+        public DateTime FechaCreacion { get; set; }
+        public string Estatus { get; set; } 
 
 
     }
