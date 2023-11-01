@@ -72,14 +72,24 @@ namespace SistemaGym.DAL
         }
 
 
-        public static void EliminarCliente()
+         public bool EliminarCliente (int id ) 
         {
+            bool seElimino;
+
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
+            string Eliminar = "Delete from Clientes where IDCliente= @idcliente";
+            SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
+            cmd.Parameters.AddWithValue("@idusuario", id);
+            seElimino = cmd.ExecuteNonQuery() > 0 ;
+            return seElimino;
 
         }
+
+
+        
 
     }
 }
