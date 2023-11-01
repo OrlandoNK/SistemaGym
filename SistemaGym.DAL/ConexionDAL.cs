@@ -55,7 +55,7 @@ namespace SistemaGym.DAL
             return cadena;
         }
 
-        public ConexionDAL Instancia()
+        public static ConexionDAL Instancia()
         {
             if (con == null)
             {
