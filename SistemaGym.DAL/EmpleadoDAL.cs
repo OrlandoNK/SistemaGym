@@ -67,7 +67,7 @@ namespace SistemaGym.DAL
 
         /* Metodo Eliminar Empleado poor ID */
 
-        public bool eliminarEmpleado(int Id)
+        public bool eliminarEmpleado(EmpleadoEntity empleado)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = new SqlConnection();
@@ -79,7 +79,7 @@ namespace SistemaGym.DAL
             string Delete = "DELETE FROM Empleado WHERE IDEmpleado = @IDEmpleado";
             SqlCommand cmnd = new SqlCommand(Delete, Conexion);
 
-            cmnd.Parameters.AddWithValue("@IDEmpleado", Id);
+            cmnd.Parameters.AddWithValue("@IDEmpleado", empleado.IDEmpleado);
             seElimino = cmnd.ExecuteNonQuery() > 0;
 
 
