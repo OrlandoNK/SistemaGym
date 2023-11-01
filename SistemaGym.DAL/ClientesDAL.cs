@@ -68,7 +68,7 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar cliente
 
-        public bool EliminarCliente (int id ) 
+        public bool EliminarCliente(int id ) 
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -79,7 +79,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string Eliminar = "Delete from Clientes where IDCliente= @idcliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idusuario", id);
+            cmd.Parameters.AddWithValue("@idcliente", id);
             seElimino = cmd.ExecuteNonQuery() > 0 ;
             return seElimino;
 
@@ -102,7 +102,21 @@ namespace SistemaGym.DAL
 
         }
 
+        public DataTable buscarID(ClientesEntity clientes)
+        {
 
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            DataTable dt = new DataTable();
+            string buscar = "Select * From Clientes where IDCliente= @idcliente";
+            SqlCommand cmd = new SqlCommand(buscar, Conexion);
+            cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
         
 
     }
