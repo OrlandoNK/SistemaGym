@@ -84,6 +84,7 @@ namespace SistemaGym.DAL
             return seElimino;
 
         }
+        
 
         //metodo mostrar cliente
         public static DataTable mostrarCliente()
@@ -117,7 +118,24 @@ namespace SistemaGym.DAL
             da.Fill(dt);
             return dt;
         }
-        
+
+        public DataTable obtenerPorValor(ClientesEntity clientes)
+        {
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            DataTable dt = new DataTable();
+            string obtenerValor = "Select * from Clientes " +
+                 "Where Nombre Like '%' + @nombre + '%' ORDER BY Nombre";
+            SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
+            cmd.Parameters.AddWithValue("@nombre", clientes.Nombre);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+
 
     }
 }
