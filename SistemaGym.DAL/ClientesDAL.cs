@@ -11,7 +11,7 @@ namespace SistemaGym.DAL
     public class ClientesDAL : ConexionDAL
     {
       //metodo insertar cliente
-        public static void insertarCliente(ClientesEntity clientes )
+        public static void InsertarCliente(ClientesEntity clientes )
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -39,7 +39,7 @@ namespace SistemaGym.DAL
         }
 
         //metodo actualizar cliente
-        public static void actualizarCliente(ClientesEntity clientes)
+        public static void ActualizarCliente(ClientesEntity clientes)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -68,7 +68,7 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar cliente
 
-        public bool EliminarCliente(int id ) 
+        public static bool EliminarCliente(ClientesEntity clientes) 
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -79,7 +79,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string Eliminar = "Delete from Clientes where IDCliente= @idcliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idcliente", id);
+            cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
             seElimino = cmd.ExecuteNonQuery() > 0 ;
             return seElimino;
 
@@ -87,7 +87,7 @@ namespace SistemaGym.DAL
         
 
         //metodo mostrar cliente
-        public static DataTable mostrarCliente()
+        public static DataTable MostrarCliente()
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -103,7 +103,7 @@ namespace SistemaGym.DAL
 
         }
 
-        public DataTable buscarID(ClientesEntity clientes)
+        public DataTable BuscarID(ClientesEntity clientes)
         {
 
             ConexionDAL instancia = Instancia();
@@ -118,8 +118,8 @@ namespace SistemaGym.DAL
             da.Fill(dt);
             return dt;
         }
-
-        public DataTable obtenerPorValor(ClientesEntity clientes)
+        //
+        public static DataTable ObtenerPorValor(ClientesEntity clientes)
         {
 
             ConexionDAL instancia = Instancia();
@@ -128,9 +128,18 @@ namespace SistemaGym.DAL
             Conexion.Open();
             DataTable dt = new DataTable();
             string obtenerValor = "Select * from Clientes " +
-                 "Where Nombre Like '%' + @nombre + '%' ORDER BY Nombre";
+                 "Where IDMembresia Like '%' + @idmembresia + '%' or Nombre Like '%' + @nombre + '%' or Apellido Like '%' + @apellido + '%' or " +
+                 "Documento Like '%' + @Documento '%' or Direccion Like '%' + @Direccion + '%' or TelCell Like '%' + @telcell + '%' " +
+                 "TelRes Like '%' + @telres + '%' or Estatus Like '%' + @estatus + '%' ORDER BY Nombre";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
+            cmd.Parameters.AddWithValue("@idmembresia", clientes.IDMembresia);           
             cmd.Parameters.AddWithValue("@nombre", clientes.Nombre);
+            cmd.Parameters.AddWithValue("@apellido", clientes.Apellido);
+            cmd.Parameters.AddWithValue("@documento", clientes.Documento);
+            cmd.Parameters.AddWithValue("@direccion", clientes.Direccion);
+            cmd.Parameters.AddWithValue("@telcell", clientes.TelCell);
+            cmd.Parameters.AddWithValue("@telres", clientes.TelRes);
+            cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
