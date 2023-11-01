@@ -10,13 +10,8 @@ namespace SistemaGym.DAL
 {
     public class ClientesDAL : ConexionDAL
     {
-
-          
-      
-            
-
-        
-        public static void InsertarCliente(ClientesEntity clientes )
+      //metodo insertar cliente
+        public static void insertarCliente(ClientesEntity clientes )
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -43,7 +38,8 @@ namespace SistemaGym.DAL
             cmd.ExecuteNonQuery();    
         }
 
-        public static void ActualizarCliente(ClientesEntity clientes)
+        //metodo actualizar cliente
+        public static void actualizarCliente(ClientesEntity clientes)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -70,14 +66,15 @@ namespace SistemaGym.DAL
 
 
         }
+        //funcion eliminar cliente
 
-
-         public bool EliminarCliente (int id ) 
+        public bool EliminarCliente (int id ) 
         {
-            bool seElimino;
-
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
+            bool seElimino;
+
+            
 
             Conexion.Open();
             string Eliminar = "Delete from Clientes where IDCliente= @idcliente";
@@ -85,6 +82,23 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@idusuario", id);
             seElimino = cmd.ExecuteNonQuery() > 0 ;
             return seElimino;
+
+        }
+
+        //metodo mostrar cliente
+        public static DataTable mostrarCliente()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            DataTable dt = new DataTable();
+            Conexion.Open();
+            string mostrar = "Select * From Clientes";
+            SqlCommand cmd = new SqlCommand(mostrar, Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+           
+            
+            return dt;
 
         }
 
