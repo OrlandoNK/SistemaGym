@@ -18,50 +18,40 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into Membresia(IDMembresia, Nombre, Descripcion, Duracion, Valor , FechaCreacion, Estatus)" +
+            string insertar = "Insert into Membresia(Nombre, Descripcion, Duracion, Valor , FechaCreacion, Estatus)" +
                 " values(@idmembresia, @nombre, @descripcion, @duracion, @valor, @fechacreacion, @estatus ";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
-            cmd.Parameters.AddWithValue("@idmembresia", membresia.IDMembresia);
             cmd.Parameters.AddWithValue("@nombre", membresia.Nombre);
-            cmd.Parameters.AddWithValue("@apellido", membresia.Descripcion);
-            cmd.Parameters.AddWithValue("@apellido", membresia.Duracion);
-            cmd.Parameters.AddWithValue("@apellido", membresia.Valor);
-            cmd.Parameters.AddWithValue("@apellido", membresia.FechaCreacion);
+            cmd.Parameters.AddWithValue("@descripcion", membresia.Descripcion);
+            cmd.Parameters.AddWithValue("@duracion", membresia.Duracion);
+            cmd.Parameters.AddWithValue("@valor", membresia.Valor);
+            cmd.Parameters.AddWithValue("@fechacreacion", membresia.FechaCreacion);
             cmd.Parameters.AddWithValue("@estatus", membresia.Estatus);
             cmd.ExecuteNonQuery();
         }
 
         //metodo actualizar membresia
-        public static void ActualizarCliente(ClientesEntity clientes)
+        public static void ActualizarMembresia(MembresiaEntity membresia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update Clientes set IDUsuario =@idusuario, IDMembresia=@idmembresia, TipoListaCliente=@tipolistacliente " +
-                "TipoCliente =@tipocliente, Nombre=@nombre, Apellido =@apellido, TipoDocumento=@tipodocumento, documento=@documento " +
-                "Direccion =@direccion, Telcell=@telcell, TelRes=@telres, FechaRegistro =@fecharegistro, Estatus =@estatus ";
+            string actualizar = "Update Membresia Set Nombre =@idnombre, Descripcion =@descripcion," + 
+                " Duracion =@duracion, Valor =@Valor, FechaCreacion =@fechacreacion, Estatus =@estatus";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idusuario", clientes.IDUsuario);
-            cmd.Parameters.AddWithValue("@idmembresia", clientes.IDMembresia);
-            cmd.Parameters.AddWithValue("@tipolistacliente", clientes.TipoListaCliente);
-            cmd.Parameters.AddWithValue("@tipocliente", clientes.TipoCliente);
-            cmd.Parameters.AddWithValue("@nombre", clientes.Nombre);
-            cmd.Parameters.AddWithValue("@apellido", clientes.Apellido);
-            cmd.Parameters.AddWithValue("@tipodocumento", clientes.TipoDocumento);
-            cmd.Parameters.AddWithValue("@documento", clientes.Documento);
-            cmd.Parameters.AddWithValue("@direccion", clientes.Direccion);
-            cmd.Parameters.AddWithValue("@telcell", clientes.TelCell);
-            cmd.Parameters.AddWithValue("@telres", clientes.TelRes);
-            cmd.Parameters.AddWithValue("@fecharegistro", clientes.FechaRegistro);
-            cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
+            cmd.Parameters.AddWithValue("@nombre", membresia.Nombre);
+            cmd.Parameters.AddWithValue("@descripcion", membresia.Descripcion);
+            cmd.Parameters.AddWithValue("@duracion", membresia.Duracion);
+            cmd.Parameters.AddWithValue("@valor", membresia.Valor);
+            cmd.Parameters.AddWithValue("@fechacreacion", membresia.FechaCreacion);
+            cmd.Parameters.AddWithValue("@estatus", membresia.Estatus);
             cmd.ExecuteNonQuery();
-
 
         }
         //funcion eliminar membresia
 
-        public static bool EliminarCliente(ClientesEntity clientes)
+        public static bool EliminarMembresia(MembresiaEntity membresia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -70,9 +60,9 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from Clientes where IDCliente= @idcliente";
-            SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
+            string eliminar = "Delete from Membresia where IDMembresia= @idmembresia";
+            SqlCommand cmd = new SqlCommand(eliminar, Conexion);
+            cmd.Parameters.AddWithValue("@idmembresia", membresia.IDMembresia);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
@@ -80,13 +70,13 @@ namespace SistemaGym.DAL
 
 
         //metodo mostrar membresias
-        public static DataTable MostrarCliente()
+        public static DataTable MostrarMembresia()
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From Clientes";
+            string mostrar = "Select * From Membresia";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -96,7 +86,7 @@ namespace SistemaGym.DAL
 
         }
         //buscar por id
-        public DataTable BuscarID(ClientesEntity clientes)
+        public static DataTable BuscarID(ClientesEntity clientes)
         {
 
             ConexionDAL instancia = Instancia();
@@ -104,7 +94,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From Clientes where IDCliente= @idcliente";
+            string buscar = "Select * From Clientes where IDMembresia= @idmembresia";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
             cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
