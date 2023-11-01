@@ -86,7 +86,7 @@ namespace SistemaGym.DAL
 
         }
         //buscar por id
-        public static DataTable BuscarID(ClientesEntity clientes)
+        public static DataTable BuscarID(MembresiaEntity membresia)
         {
 
             ConexionDAL instancia = Instancia();
@@ -96,13 +96,13 @@ namespace SistemaGym.DAL
             DataTable dt = new DataTable();
             string buscar = "Select * From Clientes where IDMembresia= @idmembresia";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
-            cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
+            cmd.Parameters.AddWithValue("@idmembresia", membresia.IDMembresia);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
         }
         //obtener valor de la base de datos en tabla membresia
-        public static DataTable ObtenerPorValor(ClientesEntity clientes)
+        public static DataTable ObtenerPorValor(MembresiaEntity membresia)
         {
 
             ConexionDAL instancia = Instancia();
@@ -110,19 +110,17 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string obtenerValor = "Select * from Clientes " +
-                 "Where IDMembresia Like '%' + @idmembresia + '%' or Nombre Like '%' + @nombre + '%' or Apellido Like '%' + @apellido + '%' or " +
-                 "Documento Like '%' + @Documento '%' or Direccion Like '%' + @Direccion + '%' or TelCell Like '%' + @telcell + '%' " +
-                 "TelRes Like '%' + @telres + '%' or Estatus Like '%' + @estatus + '%' ORDER BY Nombre";
+            string obtenerValor = "Select * from Membresia " +
+                 "Where Nombre Like '%' + @nombre + '%' or Descripcion Like '%' + @descripcion + '%' or " +
+                 "Descripcion Like '%' + @descripcion + '%' or Duracion Like '%' + @duracion + '%' or Valor Like '%' + @valor + '%' " +
+                 " or FechaCreacion Like '%' + @fechacreacion + '%' or Estatus Like '%' + @estatus + '%' ORDER BY Nombre";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idmembresia", clientes.IDMembresia);
-            cmd.Parameters.AddWithValue("@nombre", clientes.Nombre);
-            cmd.Parameters.AddWithValue("@apellido", clientes.Apellido);
-            cmd.Parameters.AddWithValue("@documento", clientes.Documento);
-            cmd.Parameters.AddWithValue("@direccion", clientes.Direccion);
-            cmd.Parameters.AddWithValue("@telcell", clientes.TelCell);
-            cmd.Parameters.AddWithValue("@telres", clientes.TelRes);
-            cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
+            cmd.Parameters.AddWithValue("@nombre", membresia.Nombre);
+            cmd.Parameters.AddWithValue("@descripcion", membresia.Descripcion);
+            cmd.Parameters.AddWithValue("@duracion", membresia.Duracion);
+            cmd.Parameters.AddWithValue("@valor", membresia.Valor);
+            cmd.Parameters.AddWithValue("@fechacreacion", membresia.FechaCreacion);
+            cmd.Parameters.AddWithValue("@estatus", membresia.Estatus);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
