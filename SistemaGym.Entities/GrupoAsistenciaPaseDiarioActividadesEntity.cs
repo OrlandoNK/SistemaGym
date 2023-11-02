@@ -9,7 +9,7 @@ namespace SistemaGym.Entities
 {
     public class GrupoAsistenciaPaseDiarioActividadesEntity
     {
-        public int ID { get; set; }
+        public int IDGrupoAsistenciaPaseDiarioActividades { get; set; }
         public int IDCliente {  get; set; }
         public int IDActividades {  get; set; } 
         public bool Asistencia { get; set; }
