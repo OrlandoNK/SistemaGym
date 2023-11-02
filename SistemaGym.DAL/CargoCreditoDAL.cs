@@ -18,7 +18,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into Clientes(IDCliente, Cargo, Monto, FechaCargo, Estatus)" +
+            string insertar = "Insert into CargoCredito(IDCliente, Cargo, Monto, FechaCargo, Estatus)" +
                 " values(@idcliente, @cargo, @monto, @fechacargo, @estatus)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@idcliente", cargoCredito.IDCliente);
@@ -36,7 +36,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update Clientes set IDCliente =@idcliente, Cargo =@cargo, FechaCargo =@fechacargo, Estatus =@estatus";
+            string actualizar = "Update CargoCredito set IDCliente =@idcliente, Cargo =@cargo, FechaCargo =@fechacargo, Estatus =@estatus";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idcliente", cargoCredito.IDCliente);
             cmd.Parameters.AddWithValue("@cargo", cargoCredito.Cargo);
