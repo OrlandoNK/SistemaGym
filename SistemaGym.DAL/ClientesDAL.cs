@@ -93,7 +93,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From Clientes";
+            string mostrar = "Select * From Clientes Order By Nombre";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
