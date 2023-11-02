@@ -18,11 +18,12 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into Actividades(IDTiposActividades, Area, EncargadoActividad, Dia, HoraInicio, HoraCierre, Estatus) " +
-                "values(@idtiposactividades, @area, @encargadoactividad, @dia, @horainicio, @horacierre, @estatus)";
+            string insertar = "Insert into Actividades(IDTiposActividades, Nombre, Area, EncargadoActividad, Dia, HoraInicio, HoraCierre, Estatus) " +
+                "values(@idtiposactividades, @nombre, @area, @encargadoactividad, @dia, @horainicio, @horacierre, @estatus)";
                 
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@idtiposactividades", actividades.IDTipoActividades);
+            cmd.Parameters.AddWithValue("@nombre", actividades.Nombre);
             cmd.Parameters.AddWithValue("@area", actividades.Area);
             cmd.Parameters.AddWithValue("@encargadoactividad", actividades.EncargadoActividad);
             cmd.Parameters.AddWithValue("@dia", actividades.Dia);
@@ -32,17 +33,18 @@ namespace SistemaGym.DAL
             cmd.ExecuteNonQuery();
         }
 
-        //metodo actualizar cliente
+        //metodo actualizar Actualizar
         public static void ActualizarActividad(ActividadesEntity actividades)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update Actividades set IDTiposActividades =@idtiposactividades, Area=@area, EncargadoActividad =@encargoactividad " +
+            string actualizar = "Update Actividades set IDTiposActividades =@idtiposactividades, Nombre =@nombre, Area=@area, EncargadoActividad =@encargoactividad " +
                 "dia =@dia, horainicio =@horainicio, horacierre =@horariocierre, Estatus =@estatus";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idtiposactividades", actividades.IDTipoActividades);
+            cmd.Parameters.AddWithValue("@nombre", actividades.Nombre);
             cmd.Parameters.AddWithValue("@area", actividades.Area);
             cmd.Parameters.AddWithValue("@encargadoactividad", actividades.EncargadoActividad);
             cmd.Parameters.AddWithValue("@dia", actividades.Dia);
@@ -53,9 +55,9 @@ namespace SistemaGym.DAL
 
 
         }
-        //funcion eliminar cliente
+        //funcion eliminar Actividades
 
-        public static bool EliminarActividad(ClientesEntity clientes)
+        public static bool EliminarActividad(ActividadesEntity actividades)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -64,23 +66,23 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from Clientes where IDCliente= @idcliente";
+            string Eliminar = "Delete from Actividades where IDActividad= @idactividad";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
+            cmd.Parameters.AddWithValue("@idactividad", actividades.IDActividad);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
         }
 
 
-        //metodo mostrar cliente
-        public static DataTable MostrarCliente()
+        //metodo mostrar Actividades
+        public static DataTable MostrarActividades()
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From Clientes";
+            string mostrar = "Select * From Actividades Order By Nombre";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);

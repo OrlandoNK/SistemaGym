@@ -10,6 +10,7 @@ namespace SistemaGym.Entities
     {
         public int IDActividad { get; set; }
         public int IDTipoActividades { get; set; }
+        public string Nombre { get; set; }
         public int Area {  get; set; }
         public string EncargadoActividad {  get; set; }
 
