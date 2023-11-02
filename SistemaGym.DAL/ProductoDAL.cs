@@ -90,7 +90,7 @@ namespace SistemaGym.DAL
         }
 
         /* Metodo par Buscar por ID */
-        public DataTable BuscarByID(ProductoEntity producto)
+        public static DataTable BuscarByID(ProductoEntity producto)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = new SqlConnection();
@@ -108,7 +108,7 @@ namespace SistemaGym.DAL
         }
 
         /* Metodo Obtener por Valor */
-        public DataTable GetByValor(ProductoEntity producto)
+        public static DataTable GetByValor(ProductoEntity producto)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = new SqlConnection();
@@ -118,10 +118,10 @@ namespace SistemaGym.DAL
             string GetValor = "SELECT * FROM Producto " +
                               "WHERE Categoria LIKE '%' + @Categoria + '%' or Nombre LIKE '%' + @Nombre + '%' ORDER BY Nombre";
 
-            SqlCommand cmnd = new SqlCommand(GetValor, Conexion);
-            cmnd.Parameters.AddWithValue("@Categoria", producto.Categoria);
-            cmnd.Parameters.AddWithValue("@Nombre", producto.Nombre);
-            SqlDataAdapter adaptTBL = new SqlDataAdapter(cmnd);
+            SqlCommand cmd = new SqlCommand(GetValor, Conexion);
+            cmd.Parameters.AddWithValue("@Categoria", producto.Categoria);
+            cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
+            SqlDataAdapter adaptTBL = new SqlDataAdapter(cmd);
             adaptTBL.Fill(dataTBL);
 
             return dataTBL;
