@@ -11,7 +11,7 @@ namespace SistemaGym.DAL
 {
     public class CargoCreditoDAL : ConexionDAL
     {
-        //metodo insertar cliente
+        //metodo insertar cargoCredito
         public static void InsertarCargoCredito(CargoCreditoEntity cargoCredito)
         {
             ConexionDAL instancia = Instancia();
@@ -29,7 +29,7 @@ namespace SistemaGym.DAL
             cmd.ExecuteNonQuery();
         }
 
-        //metodo actualizar cliente
+        //metodo actualizar cargocredito
         public static void ActualizarCargoCredito(CargoCreditoEntity cargoCredito)
         {
             ConexionDAL instancia = Instancia();
