@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.Entities
 {
-    public class ListaClienteEntity
+    public class TipoListaClienteEntity
     {
         public int IDTipoListaCliente { get; set; }
 
