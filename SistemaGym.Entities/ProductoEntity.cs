@@ -10,9 +10,11 @@ namespace SistemaGym.Entities
     {
         public int IDProductos { get; set; }
 
-        public int Categorias { get; set; }
-        public int No_Existencias { get; set; }
         public string Nombre { get; set; }
+        public int Categoria { get; set; }
         public decimal PrecioUnitario { get; set; }
+        public int No_Existencias { get; set; }
+       
+       
    }
 }

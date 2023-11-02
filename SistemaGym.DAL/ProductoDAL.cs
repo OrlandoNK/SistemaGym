@@ -18,13 +18,15 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Insertar = "INSERT INTO(Categorias, No_Existencias, Nombre, PrecioUnitario) VALUES(@Categorias, @No_Existencias, @Nombre, @PrecioUnitario)";
+            string Insertar = "INSERT INTO Productos (Categoria, Nombre, PrecioUnitario, No_Existencias) VALUES(@Categoria, @Nombre, @PrecioUnitario, @No_Existencias,)";
             SqlCommand cmd = new SqlCommand(Insertar, Conexion);
 
-            cmd.Parameters.AddWithValue("@Categorias", producto.Categorias);
-            cmd.Parameters.AddWithValue("@No_Existencias", producto.No_Existencias);
+            cmd.Parameters.AddWithValue("@Categoria", producto.Categorias);
             cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
             cmd.Parameters.AddWithValue("@PrecioUnitario", producto.PrecioUnitario);
+            cmd.Parameters.AddWithValue("@No_Existencias", producto.No_Existencias);
+            
+           
 
             cmd.ExecuteNonQuery();
 
