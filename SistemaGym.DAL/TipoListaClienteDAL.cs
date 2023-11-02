@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.DAL
 {
-    public class ListaClienteDAL
+    internal class TipoListaClienteDAL
     {
     }
 }
