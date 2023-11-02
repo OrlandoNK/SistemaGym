@@ -19,7 +19,7 @@ namespace SistemaGym.Entities
     public DateTime FechaRegistro { get; set; }
         public string NombreUsuario {  get; set; } 
         public string Contrasena { get; set; }
-
+        public string Estatus { get; set; }
         public UsuarioEntity(string nombreUsuario, string contrasena)
         {
            NombreUsuario = nombreUsuario;
