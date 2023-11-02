@@ -47,7 +47,7 @@ namespace SistemaGym.DAL
 
 
         }
-        //funcion eliminar cliente
+        //funcion eliminar cargo credito
 
         public static bool EliminarCargoCredito(CargoCreditoEntity cargoCredito)
         {
@@ -58,23 +58,23 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from Clientes where IDCliente= @idcliente";
+            string Eliminar = "Delete from CargoCredito where IDCargoCredito= @idcargocredito";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
+            cmd.Parameters.AddWithValue("@idcargocredito", cargoCredito.IDCargoCredito);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
         }
 
 
-        //metodo mostrar cliente
+        //metodo mostrar cargo credito
         public static DataTable MostrarCargoCredito()
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From Clientes Order By Nombre";
+            string mostrar = "Select * From CargoCredito";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -83,7 +83,7 @@ namespace SistemaGym.DAL
             return dt;
 
         }
-
+        //buscar por id
         public static DataTable BuscarID(CargoCreditoEntity cargoCredito)
         {
 
@@ -92,14 +92,14 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From Clientes where IDCliente= @idcliente";
+            string buscar = "Select * From CargoCredito where IDCargoCredito= @idcargocredito";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
-            cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
+            cmd.Parameters.AddWithValue("@idcargocredito", cargoCredito.IDCargoCredito);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
         }
-        //
+        //obtener valor cargo credito
         public static DataTable ObtenerPorValor(CargoCreditoEntity cargoCredito)
         {
 
@@ -113,14 +113,11 @@ namespace SistemaGym.DAL
                  "Documento Like '%' + @Documento '%' or Direccion Like '%' + @Direccion + '%' or TelCell Like '%' + @telcell + '%' " +
                  "TelRes Like '%' + @telres + '%' or Estatus Like '%' + @estatus + '%' ORDER BY Nombre";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idmembresia", clientes.IDMembresia);
-            cmd.Parameters.AddWithValue("@nombre", clientes.Nombre);
-            cmd.Parameters.AddWithValue("@apellido", clientes.Apellido);
-            cmd.Parameters.AddWithValue("@documento", clientes.Documento);
-            cmd.Parameters.AddWithValue("@direccion", clientes.Direccion);
-            cmd.Parameters.AddWithValue("@telcell", clientes.TelCell);
-            cmd.Parameters.AddWithValue("@telres", clientes.TelRes);
-            cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
+            cmd.Parameters.AddWithValue("@idcliente", cargoCredito.IDCliente);
+            cmd.Parameters.AddWithValue("@cargo", cargoCredito.Cargo);
+            cmd.Parameters.AddWithValue("@monto", cargoCredito.Monto);
+            cmd.Parameters.AddWithValue("@fechacargo", cargoCredito.FechaCargo);
+            cmd.Parameters.AddWithValue("@estatus", cargoCredito.Estatus);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
