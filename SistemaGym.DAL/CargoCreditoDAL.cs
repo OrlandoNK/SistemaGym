@@ -108,10 +108,8 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string obtenerValor = "Select * from Clientes " +
-                 "Where IDMembresia Like '%' + @idmembresia + '%' or Nombre Like '%' + @nombre + '%' or Apellido Like '%' + @apellido + '%' or " +
-                 "Documento Like '%' + @Documento '%' or Direccion Like '%' + @Direccion + '%' or TelCell Like '%' + @telcell + '%' " +
-                 "TelRes Like '%' + @telres + '%' or Estatus Like '%' + @estatus + '%' ORDER BY Nombre";
+            string obtenerValor = "Select * from CargoCredito " +
+                 "Where IDCliente '%' + @idcliente + '%' or Cargo '%' + @cargo + '%' or Monto '%' + @monto + '%' or FechaCargo '%' + @fechacargo + '%' or Estatus '%' + @estatus + '%' Order By Estatus = Activo";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
             cmd.Parameters.AddWithValue("@idcliente", cargoCredito.IDCliente);
             cmd.Parameters.AddWithValue("@cargo", cargoCredito.Cargo);
