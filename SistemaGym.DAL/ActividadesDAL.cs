@@ -33,29 +33,22 @@ namespace SistemaGym.DAL
         }
 
         //metodo actualizar cliente
-        public static void ActualizarActividad(ClientesEntity clientes)
+        public static void ActualizarActividad(ActividadesEntity actividades)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update Clientes set IDUsuario =@idusuario, IDMembresia=@idmembresia, TipoListaCliente=@tipolistacliente " +
-                "TipoCliente =@tipocliente, Nombre=@nombre, Apellido =@apellido, TipoDocumento=@tipodocumento, documento=@documento " +
-                "Direccion =@direccion, Telcell=@telcell, TelRes=@telres, FechaRegistro =@fecharegistro, Estatus =@estatus ";
+            string actualizar = "Update Actividades set IDTiposActividades =@idtiposactividades, Area=@area, EncargadoActividad =@encargoactividad " +
+                "dia =@dia, horainicio =@horainicio, horacierre =@horariocierre, Estatus =@estatus";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idusuario", clientes.IDUsuario);
-            cmd.Parameters.AddWithValue("@idmembresia", clientes.IDMembresia);
-            cmd.Parameters.AddWithValue("@tipolistacliente", clientes.TipoListaCliente);
-            cmd.Parameters.AddWithValue("@tipocliente", clientes.TipoCliente);
-            cmd.Parameters.AddWithValue("@nombre", clientes.Nombre);
-            cmd.Parameters.AddWithValue("@apellido", clientes.Apellido);
-            cmd.Parameters.AddWithValue("@tipodocumento", clientes.TipoDocumento);
-            cmd.Parameters.AddWithValue("@documento", clientes.Documento);
-            cmd.Parameters.AddWithValue("@direccion", clientes.Direccion);
-            cmd.Parameters.AddWithValue("@telcell", clientes.TelCell);
-            cmd.Parameters.AddWithValue("@telres", clientes.TelRes);
-            cmd.Parameters.AddWithValue("@fecharegistro", clientes.FechaRegistro);
-            cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
+            cmd.Parameters.AddWithValue("@idtiposactividades", actividades.IDTipoActividades);
+            cmd.Parameters.AddWithValue("@area", actividades.Area);
+            cmd.Parameters.AddWithValue("@encargadoactividad", actividades.EncargadoActividad);
+            cmd.Parameters.AddWithValue("@dia", actividades.Dia);
+            cmd.Parameters.AddWithValue("@horainicio", actividades.HoraInicio);
+            cmd.Parameters.AddWithValue("@horacierre", actividades.HoraCierre);
+            cmd.Parameters.AddWithValue("@estatus", actividades.Estatus);
             cmd.ExecuteNonQuery();
 
 
