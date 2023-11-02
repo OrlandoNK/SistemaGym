@@ -21,7 +21,7 @@ namespace SistemaGym.DAL
             string Insertar = "INSERT INTO Productos (Categoria, Nombre, PrecioUnitario, No_Existencias) VALUES(@Categoria, @Nombre, @PrecioUnitario, @No_Existencias,)";
             SqlCommand cmd = new SqlCommand(Insertar, Conexion);
 
-            cmd.Parameters.AddWithValue("@Categoria", producto.Categorias);
+            cmd.Parameters.AddWithValue("@Categoria", producto.Categoria);
             cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
             cmd.Parameters.AddWithValue("@PrecioUnitario", producto.PrecioUnitario);
             cmd.Parameters.AddWithValue("@No_Existencias", producto.No_Existencias);
@@ -43,7 +43,7 @@ namespace SistemaGym.DAL
             string UpdateProduct = "UPDATE Producto SET Categorias = @Categorias, No_Existencias = @No_Existencias, Nombre = @Nombre, PrecioUnitario = @PrecioUnitario";
             SqlCommand cmd = new SqlCommand(UpdateProduct, Conexion);
 
-            cmd.Parameters.AddWithValue("@Categorias", producto.Categorias);
+            cmd.Parameters.AddWithValue("@Categorias", producto.Categoria);
             cmd.Parameters.AddWithValue("@No_Existencias", producto.No_Existencias);
             cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
             cmd.Parameters.AddWithValue("@PrecioUnitario", producto.PrecioUnitario);
