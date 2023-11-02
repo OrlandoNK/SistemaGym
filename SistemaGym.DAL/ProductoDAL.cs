@@ -21,7 +21,7 @@ namespace SistemaGym.DAL
             string Insertar = "INSERT INTO Productos (Categoria, Nombre, PrecioUnitario, No_Existencias) VALUES(@Categoria, @Nombre, @PrecioUnitario, @No_Existencias,)";
             SqlCommand cmd = new SqlCommand(Insertar, Conexion);
 
-            cmd.Parameters.AddWithValue("@Categoria", producto.Categorias);
+            cmd.Parameters.AddWithValue("@Categoria", producto.Categoria);
             cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
             cmd.Parameters.AddWithValue("@PrecioUnitario", producto.PrecioUnitario);
             cmd.Parameters.AddWithValue("@No_Existencias", producto.No_Existencias);
@@ -40,12 +40,12 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string UpdateProduct = "UPDATE Producto SET Categorias = @Categorias, No_Existencias = @No_Existencias, Nombre = @Nombre, PrecioUnitario = @PrecioUnitario";
+            string UpdateProduct = "UPDATE Producto SET Categoria = @Categoria, Nombre = @Nombre, No_Existencias = @No_Existencias, PrecioUnitario = @PrecioUnitario";
             SqlCommand cmd = new SqlCommand(UpdateProduct, Conexion);
 
-            cmd.Parameters.AddWithValue("@Categorias", producto.Categorias);
-            cmd.Parameters.AddWithValue("@No_Existencias", producto.No_Existencias);
+            cmd.Parameters.AddWithValue("@Categoria", producto.Categoria);
             cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
+            cmd.Parameters.AddWithValue("@No_Existencias", producto.No_Existencias);
             cmd.Parameters.AddWithValue("@PrecioUnitario", producto.PrecioUnitario);
 
             cmd.ExecuteNonQuery();
@@ -53,7 +53,7 @@ namespace SistemaGym.DAL
         }
 
         /* Metodo para Eliminar un Producto por ID */
-        public bool DeleteProduct(int Id)
+        public bool DeleteProduct(ProductoEntity producto)
         {
             bool productDeleted;
 
@@ -61,10 +61,10 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Delete = "DELETE FROM Producto WHERE IDProductos = @IDProductos";
+            string Delete = "DELETE FROM Producto WHERE IDProducto = @IDProducto";
             SqlCommand cmd = new SqlCommand(Delete, Conexion);
 
-            cmd.Parameters.AddWithValue("@IDProductos", Id);
+            cmd.Parameters.AddWithValue("@IDProducto", producto.IDProducto);
             productDeleted = cmd.ExecuteNonQuery() > 0;
 
             return productDeleted;
@@ -80,7 +80,7 @@ namespace SistemaGym.DAL
             DataTable dataTBL = new DataTable();
 
             Conexion.Open();
-            string Mostrar = "SELECT * FROM Producto";
+            string Mostrar = "SELECT * FROM Producto Order by Nombre";
             SqlCommand cmnd = new SqlCommand(Mostrar, Conexion);
             SqlDataAdapter adapterDTBL = new SqlDataAdapter(cmnd);
             adapterDTBL.Fill(dataTBL);
@@ -98,9 +98,9 @@ namespace SistemaGym.DAL
             Conexion.Open();
             DataTable dataTBL = new DataTable();
 
-            string Buscar = "SELECT * FROM Producto WHERE IDProductos = @IDProductos";
+            string Buscar = "SELECT * FROM Producto WHERE IDProducto = @IDProducto";
             SqlCommand cmnd = new SqlCommand(Buscar, Conexion);
-            cmnd.Parameters.AddWithValue("@IDProducto", producto.IDProductos);
+            cmnd.Parameters.AddWithValue("@IDProducto", producto.IDProducto);
             SqlDataAdapter adapterDTBL = new SqlDataAdapter(cmnd);
             adapterDTBL.Fill(dataTBL);
 
@@ -116,9 +116,10 @@ namespace SistemaGym.DAL
             Conexion.Open();
             DataTable dataTBL = new DataTable();
             string GetValor = "SELECT * FROM Producto " +
-                              "WHERE Nombre LIKE '%' + @Nombre + '%' ORDER BY Nombre";
+                              "WHERE Categoria LIKE '%' + @Categoria + '%' or Nombre LIKE '%' + @Nombre + '%' ORDER BY Nombre";
 
             SqlCommand cmnd = new SqlCommand(GetValor, Conexion);
+            cmnd.Parameters.AddWithValue("@Categoria", producto.Categoria);
             cmnd.Parameters.AddWithValue("@Nombre", producto.Nombre);
             SqlDataAdapter adaptTBL = new SqlDataAdapter(cmnd);
             adaptTBL.Fill(dataTBL);

@@ -8,7 +8,7 @@ namespace SistemaGym.Entities
 {
     public class ProductoEntity
     {
-        public int IDProductos { get; set; }
+        public int IDProducto { get; set; }
 
         public string Nombre { get; set; }
         public int Categoria { get; set; }
