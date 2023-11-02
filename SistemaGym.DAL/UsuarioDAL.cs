@@ -51,36 +51,32 @@ namespace SistemaGym.DAL
         }
 
         //metodo actualizar usuario
-        public static void ActualizarUsuario(ClientesEntity clientes)
+        public static void ActualizarUsuario(UsuarioEntity usuario)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update Clientes set IDUsuario =@idusuario, IDMembresia=@idmembresia, TipoListaCliente=@tipolistacliente " +
-                "TipoCliente =@tipocliente, Nombre=@nombre, Apellido =@apellido, TipoDocumento=@tipodocumento, documento=@documento " +
-                "Direccion =@direccion, Telcell=@telcell, TelRes=@telres, FechaRegistro =@fecharegistro, Estatus =@estatus ";
+            string actualizar = "Update Usuarios set IDRol =@idrol, Nombre =@nombre, Apellido =@apellido, Sexo =@sexo, Correo =@correo, Direccion =@direccion, " +
+                "FechaRegistro =@fecharegistro, Nombreusuario =@nombreusuario, Contrasena =@contrasena, Estatus =@estatus";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idusuario", clientes.IDUsuario);
-            cmd.Parameters.AddWithValue("@idmembresia", clientes.IDMembresia);
-            cmd.Parameters.AddWithValue("@tipolistacliente", clientes.TipoListaCliente);
-            cmd.Parameters.AddWithValue("@tipocliente", clientes.TipoCliente);
-            cmd.Parameters.AddWithValue("@nombre", clientes.Nombre);
-            cmd.Parameters.AddWithValue("@apellido", clientes.Apellido);
-            cmd.Parameters.AddWithValue("@tipodocumento", clientes.TipoDocumento);
-            cmd.Parameters.AddWithValue("@documento", clientes.Documento);
-            cmd.Parameters.AddWithValue("@direccion", clientes.Direccion);
-            cmd.Parameters.AddWithValue("@telcell", clientes.TelCell);
-            cmd.Parameters.AddWithValue("@telres", clientes.TelRes);
-            cmd.Parameters.AddWithValue("@fecharegistro", clientes.FechaRegistro);
-            cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
+            cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
+            cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
+            cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
+            cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);
+            cmd.Parameters.AddWithValue("@correo", usuario.Correo);
+            cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
+            cmd.Parameters.AddWithValue("@FechaRegistro", usuario.FechaRegistro);
+            cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
+            cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
+            cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
             cmd.ExecuteNonQuery();
 
 
         }
         //funcion eliminar usuario
 
-        public static bool EliminarUsuario(ClientesEntity clientes)
+        public static bool EliminarUsuario(UsuarioEntity usuario)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -89,9 +85,9 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from Clientes where IDCliente= @idcliente";
+            string Eliminar = "Delete from Usuarios where IDUsuario= @idusuario";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
+            cmd.Parameters.AddWithValue("@idusuario", usuario.IDUsuario);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
@@ -105,7 +101,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From Clientes";
+            string mostrar = "Select * From Usuarios Order By Nombre";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -115,7 +111,7 @@ namespace SistemaGym.DAL
 
         }
         //buscar id
-        public static DataTable BuscarID(ClientesEntity clientes)
+        public static DataTable BuscarID(UsuarioEntity usuario)
         {
 
             ConexionDAL instancia = Instancia();
@@ -123,15 +119,15 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From Clientes where IDCliente= @idcliente";
+            string buscar = "Select * From Usuarios where IDUsuario= @idusuario";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
-            cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
+            cmd.Parameters.AddWithValue("@idusuario", usuario.IDUsuario);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
         }
         // buscar por valor
-        public static DataTable ObtenerPorValor(ClientesEntity clientes)
+        public static DataTable ObtenerPorValor(UsuarioEntity usuario)
         {
 
             ConexionDAL instancia = Instancia();
@@ -139,19 +135,20 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string obtenerValor = "Select * from Clientes " +
-                 "Where IDMembresia Like '%' + @idmembresia + '%' or Nombre Like '%' + @nombre + '%' or Apellido Like '%' + @apellido + '%' or " +
-                 "Documento Like '%' + @Documento '%' or Direccion Like '%' + @Direccion + '%' or TelCell Like '%' + @telcell + '%' " +
-                 "TelRes Like '%' + @telres + '%' or Estatus Like '%' + @estatus + '%' ORDER BY Nombre";
+            string obtenerValor = "Select * from Usuarios " +
+                 "Where IDRol Like '%' + @idrol + '%' or Nombre Like '%' + @nombre + '%' or Apellido Like '%' + @apellido + '%' or " +
+                 "Sexo Like '%' + @sexo + '%' or Correo Like '%' + @correo + '%' or Direccion Like '%' + @direccion + '%' or NombreUsuario Like '%' + @nombreusuario + '%' or " +
+                 "Contrasena Like '%' + @contrasena + '%' or Estatus Like '%' + @estatus + '%' Order By Nombre";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idmembresia", clientes.IDMembresia);
-            cmd.Parameters.AddWithValue("@nombre", clientes.Nombre);
-            cmd.Parameters.AddWithValue("@apellido", clientes.Apellido);
-            cmd.Parameters.AddWithValue("@documento", clientes.Documento);
-            cmd.Parameters.AddWithValue("@direccion", clientes.Direccion);
-            cmd.Parameters.AddWithValue("@telcell", clientes.TelCell);
-            cmd.Parameters.AddWithValue("@telres", clientes.TelRes);
-            cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
+            cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
+            cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
+            cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
+            cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);
+            cmd.Parameters.AddWithValue("@correo", usuario.Correo);
+            cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
+            cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
+            cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
+            cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
