@@ -46,7 +46,7 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar asistencia
 
-        public static bool EliminarActividad(ActividadesEntity actividades)
+        public static bool EliminarActividad(AsistenciaClientesEntity asistencia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -55,9 +55,9 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from Actividades where IDActividad= @idactividad";
+            string Eliminar = "Delete from AsistenciaClientes where IDAsistenciaCliente= @idasistenciacliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idactividad", actividades.IDActividad);
+            cmd.Parameters.AddWithValue("@idasistenciacliente", asistencia.IDAsistenciaCliente);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
@@ -71,7 +71,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From Actividades Order By Nombre";
+            string mostrar = "Select * From AsistenciaClientes Order By FechaAsistencia DESC";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -81,7 +81,7 @@ namespace SistemaGym.DAL
 
         }
 
-        public static DataTable BuscarID(ActividadesEntity actividades)
+        public static DataTable BuscarID(AsistenciaClientesEntity asistencia)
         {
 
             ConexionDAL instancia = Instancia();
@@ -89,15 +89,15 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From Clientes where IDActividad =@idactividad";
+            string buscar = "Select * From AsistenciaClientes where IDAsistenciaCliente =@idasistenciacliente";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
-            cmd.Parameters.AddWithValue("@idactividad", actividades.IDActividad);
+            cmd.Parameters.AddWithValue("@idactividad", asistencia.IDAsistenciaCliente);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
         }
         //
-        public static DataTable ObtenerPorValor(ActividadesEntity actividades)
+        public static DataTable ObtenerPorValor(AsistenciaClientesEntity asistencia)
         {
 
             ConexionDAL instancia = Instancia();
@@ -105,20 +105,13 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string obtenerValor = "Select * from Actividades " +
-                 "Where IDTipoActividades Like '%' + @idtipoactividades + '%' or Area Like '%' + @area + '%' or Nombre Like '%' + @nombre + '%' or " +
-                 "EncargadoActividad Like '%' + @encargadoactividad + '%' or Dia Like '%' + @dia + '%' or HoraInicio Like '%' + @horainicio + '%' or " +
-                 "HoraCierre Like '%' + @horacierre + '%' or Estatus Like '%' + @estatus + '%' Order By Nombre";
+            string obtenerValor = "Select * from AsistenciaClientes " +
+                 "Where IDCliente Like '%' + @idcliente + '%' or Asistencia Like '%' + @asistencia + '%' or FechaAsistecia '%' + @fechaasistencia + '%' Order By FechaAsistencia DESC";
 
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idtipoactividades", actividades.IDTipoActividades);
-            cmd.Parameters.AddWithValue("@nombre", actividades.Nombre);
-            cmd.Parameters.AddWithValue("@area", actividades.Area);
-            cmd.Parameters.AddWithValue("@encargadoactividad", actividades.EncargadoActividad);
-            cmd.Parameters.AddWithValue("@dia", actividades.Dia);
-            cmd.Parameters.AddWithValue("@horainicio", actividades.HoraInicio);
-            cmd.Parameters.AddWithValue("@horacierre", actividades.HoraCierre);
-            cmd.Parameters.AddWithValue("@estatus", actividades.Estatus);
+            cmd.Parameters.AddWithValue("@idcliente", asistencia.IDCliente);
+            cmd.Parameters.AddWithValue("@asistencia", asistencia.Asistencia);
+            cmd.Parameters.AddWithValue("@fechaasistencia", asistencia.FechaAsistencia);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
