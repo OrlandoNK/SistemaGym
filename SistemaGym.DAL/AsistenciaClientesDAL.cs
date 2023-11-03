@@ -11,51 +11,40 @@ namespace SistemaGym.DAL
 {
     public class AsistenciaClientesDAL : ConexionDAL
     {
-        //metodo insertar Actividades
-        public static void InsertarActividad(ActividadesEntity actividades)
+        //metodo insertar Asistencia
+        public static void InsertarAsistencia(AsistenciaClientesEntity asistencia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into Actividades(IDTipoActividades, Area, Nombre, EncargadoActividad, Dia, HoraInicio, HoraCierre, Estatus)" +
-                " values(@idtipoactividades, @area, @nombre, @encargadoactividad, @dia, @horainicio, @horacierre, @estatus)";
+            string insertar = "Insert into AsistenciaClientes(IDCliente, Asistencia, FechaAsistencia)" +
+                " values(@idcliente, @asistencia, @fechaasistencia)";
 
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
-            cmd.Parameters.AddWithValue("@idtipoactividades", actividades.IDTipoActividades);
-            cmd.Parameters.AddWithValue("@area", actividades.Area);
-            cmd.Parameters.AddWithValue("@nombre", actividades.Nombre);
-            cmd.Parameters.AddWithValue("@encargadoactividad", actividades.EncargadoActividad);
-            cmd.Parameters.AddWithValue("@dia", actividades.Dia);
-            cmd.Parameters.AddWithValue("@horainicio", actividades.HoraInicio);
-            cmd.Parameters.AddWithValue("@horacierre", actividades.HoraCierre);
-            cmd.Parameters.AddWithValue("@estatus", actividades.Estatus);
+            cmd.Parameters.AddWithValue("@idcliente", asistencia.IDCliente);
+            cmd.Parameters.AddWithValue("@asistencia", asistencia.Asistencia);
+            cmd.Parameters.AddWithValue("@fechaasistencia", asistencia.FechaAsistencia);
             cmd.ExecuteNonQuery();
         }
 
-        //metodo actualizar Actualizar
-        public static void ActualizarActividad(ActividadesEntity actividades)
+        //metodo actualizar Asistencia
+        public static void ActualizarAsistencia(AsistenciaClientesEntity asistencia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update Actividades set IDTipoActividades =@idtipoactividades, Area=@area, Nombre =@nombre, EncargadoActividad =@encargoactividad " +
-                "dia =@dia, horainicio =@horainicio, horacierre =@horariocierre, Estatus =@estatus";
+            string actualizar = "Update AsistenciaClientes Set IDCLiente =@idcliente, Asistencia =@asistencia, FechaAsistencia =@fechaasistencia";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idtipoactividades", actividades.IDTipoActividades);
-            cmd.Parameters.AddWithValue("@nombre", actividades.Nombre);
-            cmd.Parameters.AddWithValue("@area", actividades.Area);
-            cmd.Parameters.AddWithValue("@encargadoactividad", actividades.EncargadoActividad);
-            cmd.Parameters.AddWithValue("@dia", actividades.Dia);
-            cmd.Parameters.AddWithValue("@horainicio", actividades.HoraInicio);
-            cmd.Parameters.AddWithValue("@horacierre", actividades.HoraCierre);
-            cmd.Parameters.AddWithValue("@estatus", actividades.Estatus);
+            cmd.Parameters.AddWithValue("@idcliente", asistencia.IDCliente);
+            cmd.Parameters.AddWithValue("@asistencia", asistencia.Asistencia);
+            cmd.Parameters.AddWithValue("@fechaasistencia", asistencia.FechaAsistencia);
             cmd.ExecuteNonQuery();
 
 
         }
-        //funcion eliminar Actividades
+        //funcion eliminar asistencia
 
         public static bool EliminarActividad(ActividadesEntity actividades)
         {
@@ -75,7 +64,7 @@ namespace SistemaGym.DAL
         }
 
 
-        //metodo mostrar Actividades
+        //metodo mostrar asistencia
         public static DataTable MostrarActividades()
         {
             ConexionDAL instancia = Instancia();
