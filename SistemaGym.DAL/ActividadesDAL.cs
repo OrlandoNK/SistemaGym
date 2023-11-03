@@ -100,7 +100,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From Clientes where IDActividad =@idactividad";
+            string buscar = "Select * From Actividades where IDActividad =@idactividad";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
             cmd.Parameters.AddWithValue("@idactividad", actividades.IDActividad);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
