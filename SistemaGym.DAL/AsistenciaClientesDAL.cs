@@ -46,7 +46,7 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar asistencia
 
-        public static bool EliminarActividad(AsistenciaClientesEntity asistencia)
+        public static bool EliminarAsistencia(AsistenciaClientesEntity asistencia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -65,7 +65,7 @@ namespace SistemaGym.DAL
 
 
         //metodo mostrar asistencia
-        public static DataTable MostrarActividades()
+        public static DataTable MostrarAsistencia()
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
