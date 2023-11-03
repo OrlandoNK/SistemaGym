@@ -18,8 +18,8 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into Actividades(IDTipoActividades, Area, Nombre, EncargadoActividad, Dia, HoraInicio, HoraCierre, Estatus) " +
-                "values(@idtipoactividades, @area, @nombre, @encargadoactividad, @dia, @horainicio, @horacierre, @estatus)";
+            string insertar = "Insert into Actividades(IDTipoActividades, Area, Nombre, EncargadoActividad, Dia, HoraInicio, HoraCierre, Estatus)" +
+                " values(@idtipoactividades, @area, @nombre, @encargadoactividad, @dia, @horainicio, @horacierre, @estatus)";
                 
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@idtipoactividades", actividades.IDTipoActividades);
@@ -116,7 +116,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string obtenerValor = "Select * from Clientes " +
+            string obtenerValor = "Select * from Actividades " +
                  "Where IDTipoActividades Like '%' + @idtipoactividades + '%' or Area Like '%' + @area + '%' or Nombre Like '%' + @nombre + '%' or " +
                  "EncargadoActividad Like '%' + @encargadoactividad + '%' or Dia Like '%' + @dia + '%' or HoraInicio Like '%' + @horainicio + '%' or " +
                  "HoraCierre Like '%' + @horacierre + '%' or Estatus Like '%' + @estatus + '%' Order By Nombre";
