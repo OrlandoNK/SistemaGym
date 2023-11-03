@@ -1,6 +1,7 @@
 ﻿using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Insertar = "INSERT INTO FacturacionMembresia(IDFactura, IDMembresia, IDCliente, IDUsuario, NCF, FechaEmision, FechaVencimiento, Estatus) " +
+            string Insertar = "INSERT INTO FacturaMembresia(IDFactura, IDMembresia, IDCliente, IDUsuario, NCF, FechaEmision, FechaVencimiento, Estatus) " +
                               " VALUES(@IDFactura, @IDMembresia, @IDCliente, @IDUsuario, @NCF, @FechaEmision, @FechaVencimiento, @Estatus)";
 
             SqlCommand cmd = new SqlCommand(Insertar, Conexion);
@@ -39,6 +40,111 @@ namespace SistemaGym.DAL
 
         public static void Actualizar(FacturaMembresiaEntity facturaMembresia)
         {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = new SqlConnection();
+
+            Conexion.Open();
+            string Actualizar = "UPDATE FacturaMembresia SET IDFactura = @IDFactura, IDMembresia = @IDMembresia, IDCliente = @IDCliente, IDUsuario = @IDUsuario, NCF = @NCF, FechaEmision = @FechaEmision, FechaVencimiento = @FechaVencimiento, Estatus = @Estatus";
+
+            SqlCommand cmd = new SqlCommand(Actualizar, Conexion);
+
+            cmd.Parameters.AddWithValue("@IDFactura", facturaMembresia.IDFactura);
+            cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
+            cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
+            cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
+            cmd.Parameters.AddWithValue("@NCF", facturaMembresia.NCF);
+            cmd.Parameters.AddWithValue("@FechaEmision", facturaMembresia.FechaEmision);
+            cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
+            cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
+
+            cmd.ExecuteNonQuery();
+
+        }
+
+        /* Metodo Eliminar */
+
+        public static bool EliminarByID(FacturaMembresiaEntity facturaMembresia)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            bool seElimino;
+
+            Conexion.Open();
+            string Eliminar = "DELETE FROM FacturaMembresia WHERE IDFactura = @IDFactura";
+            SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
+
+            cmd.Parameters.AddWithValue("@IDFactura", facturaMembresia.IDFactura);
+            seElimino = cmd.ExecuteNonQuery() > 0;
+
+            return seElimino;
+
+        }
+
+        /* Metodo para Mostrar */
+
+        public static DataTable Mostrar()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            DataTable dataTBL = new DataTable();
+
+            Conexion.Open();
+
+            string Mostrar = "SELECT * FROM FacturaMembresia ORDER BY IDFactura";
+            SqlCommand cmd = new SqlCommand(Mostrar, Conexion);
+            SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+            adapterDT.Fill(dataTBL);
+
+            return dataTBL;
+        }
+
+        /* Metodo Buscar por ID */
+
+        public static DataTable BuscarByID(FacturaMembresiaEntity facturaMembresia)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string Buscar = "SELECT * FROM FacturaMembresia WHERE IDFactura = @IDFactura";
+            SqlCommand cmd = new SqlCommand(Buscar, Conexion);
+
+            cmd.Parameters.AddWithValue("@IDFactura", facturaMembresia.IDFactura);
+            SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+            adapterDT.Fill(dataTBL);
+
+            return dataTBL;
+
+        }
+
+        /* Metodo Obtener por Valor */
+
+        public static DataTable ObtenerByValor(FacturaMembresiaEntity facturaMembresia)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM FacturaMembresia WHERE IDFactura LIKE '%' + @IDFactura + '%', IDMembresia LIKE '%' + @IDMembresia + '%', IDCliente LIKE '%' + @IDCliente + '%', IDUsuario LIKE '%' + @IDUsuario + '%', NCF LIKE '%' + @NCF + '%', FechaEmision LIKE '%' + @FechaEmision + '%', FechaVencimiento LIKE '%' + @FechaVencimiento + '%', Estatus LIKE '%' + @Estatus + '%' ORDER BY IDFactura";
+            SqlCommand cmd = new SqlCommand(GetByValor, Conexion);
+
+            cmd.Parameters.AddWithValue("@IDFactura", facturaMembresia.IDFactura);
+            cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
+            cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
+            cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
+            cmd.Parameters.AddWithValue("@NCF", facturaMembresia.NCF);
+            cmd.Parameters.AddWithValue("@FechaEmision", facturaMembresia.FechaEmision);
+            cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
+            cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
+
+            SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+            adapterDT.Fill(dataTBL);
+
+            return dataTBL;
 
         }
 
