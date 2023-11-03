@@ -18,7 +18,7 @@ namespace SistemaGym.DAL
 
             int count;
             Conexion.Open();
-            string Query = "SELECT COUNT(*) FROM Usuario WHERE usuario = @nombresuario AND contrasena = @contraseña";
+            string Query = "SELECT COUNT(*) FROM Usuario WHERE Usuario =@nombreusuario AND Contraseña =@contrasena";
             SqlCommand cmd = new SqlCommand(Query, Conexion);
             cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
             cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);

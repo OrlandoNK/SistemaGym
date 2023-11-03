@@ -11,7 +11,7 @@ namespace SistemaGym.BLL
     public class UsuarioBLL
     {
          readonly UsuarioDAL usuarioDAL = new UsuarioDAL();
-        public  int ConsultaLogin(UsuarioEntity usuario)
+        public int ConsultaLogin(UsuarioEntity usuario)
         {
 
 
