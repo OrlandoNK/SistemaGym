@@ -8,5 +8,9 @@ namespace SistemaGym.Entities
 {
      public class AsistenciaClientesEntity
     {
+        public int IDAsistenciaCliente { get; set; }
+        public int IDCliente { get; set;}
+        public bool Asistencia {  get; set;}   
+        public DateTime FechaAsistencia { get; set; }
     }
 }
