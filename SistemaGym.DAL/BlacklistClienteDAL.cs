@@ -18,12 +18,12 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Insertar = "INSERT INTO BlacklistCliente(IDBlackListCliente, IDListaCliente, IDCliente, Razones, FechaInicial, FechaVencimiento, Estatus) " +
-                              " VALUES(@IDBlackListCliente, @IDListaCliente, @IDCliente, @Razones, @FechaInicial, @FechaVencimiento, @Estatus)";
+            string Insertar = "INSERT INTO BlacklistCliente(IDBlackListCliente, IDTipoListaCliente, IDCliente, Razones, FechaInicial, FechaVencimiento, Estatus) " +
+                              " VALUES(@IDBlackListCliente, @IDTipoListaCliente, @IDCliente, @Razones, @FechaInicial, @FechaVencimiento, @Estatus)";
 
             SqlCommand cmd = new SqlCommand(Insertar, Conexion);
             cmd.Parameters.AddWithValue("@IDBlackListCliente", blacklist.IDBlackListCliente);
-            cmd.Parameters.AddWithValue("@IDListaCliente", blacklist.IDListaCliente);
+            cmd.Parameters.AddWithValue("@IDTipoListaCliente", blacklist.IDTipoListaCliente);
             cmd.Parameters.AddWithValue("@IDCliente", blacklist.IDCliente);
             cmd.Parameters.AddWithValue("@Razones", blacklist.Razones);
             cmd.Parameters.AddWithValue("@FechaInicial", blacklist.FechaInicial);
@@ -43,11 +43,11 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
 
-            string Actualizar = "UPDATE BlacklistCliente SET IDBlackListCliente = @IDBlackListCliente, IDListaCliente = @IDListaCliente, IDCliente = @IDCliente, Razones = @Razones, FechaInicial = @FechaInicial, FechaVencimiento = @FechaVencimiento, Estatus = @Estatus";
+            string Actualizar = "UPDATE BlacklistCliente SET IDBlackListCliente = @IDBlackListCliente, IDTipoListaCliente = @IDTipoListaCliente, IDCliente = @IDCliente, Razones = @Razones, FechaInicial = @FechaInicial, FechaVencimiento = @FechaVencimiento, Estatus = @Estatus";
             SqlCommand cmd = new SqlCommand(Actualizar, Conexion);
 
             cmd.Parameters.AddWithValue("@IDBlackListCliente", blacklist.IDBlackListCliente);
-            cmd.Parameters.AddWithValue("@IDListaCliente", blacklist.IDListaCliente);
+            cmd.Parameters.AddWithValue("@IDTipoListaCliente", blacklist.IDTipoListaCliente);
             cmd.Parameters.AddWithValue("@IDCliente", blacklist.IDCliente);
             cmd.Parameters.AddWithValue("@Razones", blacklist.Razones);
             cmd.Parameters.AddWithValue("@FechaInicial", blacklist.FechaInicial);
@@ -124,11 +124,11 @@ namespace SistemaGym.DAL
             Conexion.Open();
 
             DataTable dataTBL = new DataTable();
-            string GetByValor = "SELECT * FROM BlacklistCliente WHERE IDBlackListCliente LIKE '%' + @IDBlacklistCliente + '%', IDListaCliente LIKE '%' + @IDListaCliente + '%', IDCliente LIKE '%' + @IDCliente + '%', Razones LIKE '%' + @Razones + '%', FechaInicial LIKE '%' + @FechaInicial + '%', FechaVencimiento LIKE '%' + @FechaVencimiento + '%', Estatus LIKE '%' + @Estatus + '%' ORDER BY IDCliente";
+            string GetByValor = "SELECT * FROM BlacklistCliente WHERE IDBlackListCliente LIKE '%' + @IDBlacklistCliente + '%', IDTipoListaCliente LIKE '%' + @IDTipoListaCliente + '%', IDCliente LIKE '%' + @IDCliente + '%', Razones LIKE '%' + @Razones + '%', FechaInicial LIKE '%' + @FechaInicial + '%', FechaVencimiento LIKE '%' + @FechaVencimiento + '%', Estatus LIKE '%' + @Estatus + '%' ORDER BY IDCliente";
             SqlCommand cmd = new SqlCommand(GetByValor, Conexion);
 
             cmd.Parameters.AddWithValue("@IDBlackListCliente", blacklist.IDBlackListCliente);
-            cmd.Parameters.AddWithValue("@IDListaCliente", blacklist.IDListaCliente);
+            cmd.Parameters.AddWithValue("@IDTipoListaCliente", blacklist.IDTipoListaCliente);
             cmd.Parameters.AddWithValue("@IDCliente", blacklist.IDCliente);
             cmd.Parameters.AddWithValue("@Razones", blacklist.Razones);
             cmd.Parameters.AddWithValue("@FechaInicial", blacklist.FechaInicial);
