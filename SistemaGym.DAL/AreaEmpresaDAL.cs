@@ -18,13 +18,14 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into AreaEmpresa(IDArea, Encargado, Nombre, Descripcion," +
-                " values(@idarea, @encargado, @nombre, @descripcion)";
+            string insertar = "Insert into AreaEmpresa(IDArea, Encargado, Nombre, Descripcion, FechaCreacion" +
+                " values(@idarea, @encargado, @nombre, @descripcion, @fechacreacion)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@idarea", AreaEmpresa.IDArea);
             cmd.Parameters.AddWithValue("@encargado", AreaEmpresa.Encargado);
             cmd.Parameters.AddWithValue("@nombre", AreaEmpresa.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", AreaEmpresa.Descripcion);
+            cmd.Parameters.AddWithValue("@fechacreacion", AreaEmpresa.FechaCreacion);
             cmd.ExecuteNonQuery();
         }
 
@@ -35,13 +36,14 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update  AreaEmpresa set IDArea =@idarea, Encargado=@encargado, Nombre=@nombre " +
-                "Descripcion =@descripcion";
+            string actualizar = "Update AreaEmpresa set IDArea =@idarea, Encargado=@encargado, Nombre=@nombre " +
+                "Descripcion =@descripcion, FechaCreacion = @fechacreacion";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idarea", AreaEmpresa.IDArea);
             cmd.Parameters.AddWithValue("@encargado", AreaEmpresa.Encargado);
             cmd.Parameters.AddWithValue("@nombre", AreaEmpresa.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", AreaEmpresa.Descripcion);
+            cmd.Parameters.AddWithValue("@fechacreacion", AreaEmpresa.FechaCreacion);
             cmd.ExecuteNonQuery();
 
 
@@ -109,12 +111,13 @@ namespace SistemaGym.DAL
             DataTable dt = new DataTable();
             string obtenerValor = "Select * from AreaEmpresa " +
                  "Where IDArea Like '%' + @idarea + '%' or Encargo Like '%' + @encargo + '%' or Nombre Like '%' + @nombre + '%' or " +
-                 "Descripcion Like '%' + @descripcion ";
+                 "Descripcion Like '%' + @descripcion + '%' or FechaCreacion Like '%' + @fechacreacion + '%'";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
             cmd.Parameters.AddWithValue("@idarea", AreaEmpresa.IDArea);
             cmd.Parameters.AddWithValue("@encargado", AreaEmpresa.Encargado);
             cmd.Parameters.AddWithValue("@nombre", AreaEmpresa.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", AreaEmpresa.Descripcion);
+            cmd.Parameters.AddWithValue("@fechacreacion", AreaEmpresa.FechaCreacion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
