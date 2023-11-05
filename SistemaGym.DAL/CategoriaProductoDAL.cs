@@ -18,8 +18,8 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into CategoriaProducto(IDCategoria, Nombre, Descripcion)" +
-                " values(@IDCategoria, @Nombre, @Descripcion,)";
+            string insertar = "Insert into Categoria(Nombre, Descripcion)" +
+                " values(@Nombre, @Descripcion,)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
    
             cmd.Parameters.AddWithValue("@nombre", CategoriaProducto.Nombre);
@@ -34,7 +34,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update CategoriaProducto set IDCategoria =@idCategoria, Nombre=@idNombre, Descripcion=@Descripcion";
+            string actualizar = "Update Categoria set IDCategoria =@idCategoria, Nombre=@idNombre, Descripcion=@Descripcion";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@Nombre", CategoriaProducto.Nombre);
             cmd.Parameters.AddWithValue("@Descripcion", CategoriaProducto.Descripcion);
@@ -53,7 +53,7 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from CategoriaProducto where IDCliente= @idcliente";
+            string Eliminar = "Delete from Categoria where IDCliente= @idcliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
             cmd.Parameters.AddWithValue("@idCategoria", CategoriaProducto.IDCategoria);
             seElimino = cmd.ExecuteNonQuery() > 0;
@@ -69,7 +69,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From CategoriaProducto";
+            string mostrar = "Select * From Categoria";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -87,7 +87,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From CategoriaProducto where IDCliente= @idCategoria";
+            string buscar = "Select * From Categoria where IDCliente= @idCategoria";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
             cmd.Parameters.AddWithValue("@idcategoria", CategoriaProducto.IDCategoria);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -103,7 +103,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string obtenerValor = "Select * from CategoriaProducto " +
+            string obtenerValor = "Select * from Categoria " +
                  "Where Nombre Like '%' + @nombre + '%' or Descripcion Like '%' + @Descripcion + '%'";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
             cmd.Parameters.AddWithValue("@idCategoria", CategoriaProducto.IDCategoria);
@@ -119,7 +119,7 @@ namespace SistemaGym.DAL
                 SqlConnection Conexion = instancia.Conexion();
 
                 Conexion.Open();
-                string insertar = "Insert into CategoriaProducto (IDCategoria, Nombre, Descripcion)" +
+                string insertar = "Insert into Categoria (IDCategoria, Nombre, Descripcion)" +
                     " values(@idCategoria, @Nombre, @Descripcion)";
                 SqlCommand cmd = new SqlCommand(insertar, Conexion);
                 cmd.Parameters.AddWithValue("@Nombre", Categoria.Nombre);
@@ -135,7 +135,7 @@ namespace SistemaGym.DAL
                 SqlConnection Conexion = instancia.Conexion();
 
                 Conexion.Open();
-                string actualizar = "Update CategoriaProducto set IDCtegoria =@idCategoria, Nombre=@Nombre, Descripcion=@Descripcion";
+                string actualizar = "Update Categoria set IDCtegoria =@idCategoria, Nombre=@Nombre, Descripcion=@Descripcion";
                 SqlCommand cmd = new SqlCommand(actualizar, Conexion);
                 cmd.Parameters.AddWithValue("@Nombre", CategoriaProducto.Nombre);
                 cmd.Parameters.AddWithValue("@Descripcion", CategoriaProducto.Descripcion);
@@ -154,7 +154,7 @@ namespace SistemaGym.DAL
 
 
                 Conexion.Open();
-                string Eliminar = "Delete from CategoriaProducto where IDCategoria= @idCategoria";
+                string Eliminar = "Delete from Categoria where IDCategoria= @idCategoria";
                 SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
                 cmd.Parameters.AddWithValue("@idCategoria", CategoriaProducto.IDCategoria);
                 seElimino = cmd.ExecuteNonQuery() > 0;
@@ -170,7 +170,7 @@ namespace SistemaGym.DAL
                 SqlConnection Conexion = instancia.Conexion();
                 DataTable dt = new DataTable();
                 Conexion.Open();
-                string mostrar = "Select * From CategoriaProducto";
+                string mostrar = "Select * From Categoria";
                 SqlCommand cmd = new SqlCommand(mostrar, Conexion);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
@@ -188,7 +188,7 @@ namespace SistemaGym.DAL
 
                 Conexion.Open();
                 DataTable dt = new DataTable();
-                string buscar = "Select * From CategoriaProducto where IDCliente= @idCategoria";
+                string buscar = "Select * From Categoria where IDCliente= @idCategoria";
                 SqlCommand cmd = new SqlCommand(buscar, Conexion);
                 cmd.Parameters.AddWithValue("@idCategoriaProducto", CategoriaProducto.IDCategoria);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -204,7 +204,7 @@ namespace SistemaGym.DAL
 
                 Conexion.Open();
                 DataTable dt = new DataTable();
-                string obtenerValor = "Select * from CategoriaProducto " +
+                string obtenerValor = "Select * from Categoria " +
                      "Where IDCategoria Like '%' + @idCategoria + '%' or Nombre Like '%' + @nombre + '%' or Descripcion Like '%' + @Descripcio";
                 SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
                 cmd.Parameters.AddWithValue("@IdCategoria", CategoriaProducto.IDCategoria);
