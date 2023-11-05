@@ -19,8 +19,8 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Insertar = "INSERT INTO FacturaMembresia(IDFactura, IDMembresia, IDCliente, IDUsuario, NCF, FechaEmision, FechaVencimiento, Estatus) " +
-                              " VALUES(@IDFactura, @IDMembresia, @IDCliente, @IDUsuario, @NCF, @FechaEmision, @FechaVencimiento, @Estatus)";
+            string Insertar = "INSERT INTO FacturaMembresia(IDFactura, IDMembresia, IDCliente, IDUsuario, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
+                              " VALUES(@IDFactura, @IDMembresia, @IDCliente, @IDUsuario, @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
 
             SqlCommand cmd = new SqlCommand(Insertar, Conexion);
             cmd.Parameters.AddWithValue("@IDFactura", facturaMembresia.IDFactura);
@@ -28,6 +28,7 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
             cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
             cmd.Parameters.AddWithValue("@NCF", facturaMembresia.NCF);
+            cmd.Parameters.AddWithValue("@ValorFactura", facturaMembresia.ValorFactura);
             cmd.Parameters.AddWithValue("@FechaEmision", facturaMembresia.FechaEmision);
             cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
             cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);

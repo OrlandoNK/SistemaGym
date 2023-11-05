@@ -16,6 +16,8 @@ namespace SistemaGym.Entities
 
         public string NCF { get; set; }
 
+        public int ValorFactura { get; set; }
+
         public DateTime FechaEmision { get; set; }
 
         public DateTime FechaVencimiento { get; set; }
