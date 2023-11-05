@@ -45,7 +45,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Actualizar = "UPDATE FacturaMembresia SET IDFactura = @IDFactura, IDMembresia = @IDMembresia, IDCliente = @IDCliente, IDUsuario = @IDUsuario, NCF = @NCF, FechaEmision = @FechaEmision, FechaVencimiento = @FechaVencimiento, Estatus = @Estatus";
+            string Actualizar = "UPDATE FacturaMembresia SET IDFactura = @IDFactura, IDMembresia = @IDMembresia, IDCliente = @IDCliente, IDUsuario = @IDUsuario, NCF = @NCF, ValorFactura = @ValorFactura, FechaEmision = @FechaEmision, FechaVencimiento = @FechaVencimiento, Estatus = @Estatus";
 
             SqlCommand cmd = new SqlCommand(Actualizar, Conexion);
 
@@ -130,7 +130,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
 
             DataTable dataTBL = new DataTable();
-            string GetByValor = "SELECT * FROM FacturaMembresia WHERE IDFactura LIKE '%' + @IDFactura + '%', IDMembresia LIKE '%' + @IDMembresia + '%', IDCliente LIKE '%' + @IDCliente + '%', IDUsuario LIKE '%' + @IDUsuario + '%', NCF LIKE '%' + @NCF + '%', FechaEmision LIKE '%' + @FechaEmision + '%', FechaVencimiento LIKE '%' + @FechaVencimiento + '%', Estatus LIKE '%' + @Estatus + '%' ORDER BY IDFactura";
+            string GetByValor = "SELECT * FROM FacturaMembresia WHERE IDFactura LIKE '%' + @IDFactura + '%', IDMembresia LIKE '%' + @IDMembresia + '%', IDCliente LIKE '%' + @IDCliente + '%', IDUsuario LIKE '%' + @IDUsuario + '%', NCF LIKE '%' + @NCF + '%', ValorFactura LIKE '%' + @ValorFactura + '%', FechaEmision LIKE '%' + @FechaEmision + '%', FechaVencimiento LIKE '%' + @FechaVencimiento + '%', Estatus LIKE '%' + @Estatus + '%' ORDER BY IDFactura";
             SqlCommand cmd = new SqlCommand(GetByValor, Conexion);
 
             cmd.Parameters.AddWithValue("@IDFactura", facturaMembresia.IDFactura);
