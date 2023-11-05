@@ -18,10 +18,10 @@ namespace SistemaGym.DAL
 
             int count;
             Conexion.Open();
-            string Query = "SELECT COUNT(*) FROM Usuario WHERE usuario = @nombresuario AND contrasena = @contraseña";
+            string Query = "SELECT COUNT(*) FROM Usuario WHERE usuario = @nombresuario AND contraseña = @contraseña";
             SqlCommand cmd = new SqlCommand(Query, Conexion);
             cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
-            cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
+            cmd.Parameters.AddWithValue("@contraseña", usuario.Contrasena);
             count = Convert.ToInt32(cmd.ExecuteScalar());
 
             return count;
@@ -34,8 +34,8 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string insertar = "Insert into Usuarios(IDRol, Nombre, Apellido, Sexo, Correo, Direccion, FechaRegistro," +
-                " NombreUSuario, Contrasena, Estatus)" +
-                " values(@idrol, @nombre, @apellido, @sexo, @correo, @direccion, @fecharegistro, @nombreusuario, @contrasena, @estatus)";
+                " NombreUSuario, Contraseña, Estatus)" +
+                " values(@idrol, @nombre, @apellido, @sexo, @correo, @direccion, @fecharegistro, @nombreusuario, @contraseña, @estatus)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
@@ -45,7 +45,7 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
             cmd.Parameters.AddWithValue("@FechaRegistro", usuario.FechaRegistro);
             cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
-            cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
+            cmd.Parameters.AddWithValue("@contraseña", usuario.Contrasena);
             cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
             cmd.ExecuteNonQuery();
         }
@@ -58,7 +58,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string actualizar = "Update Usuarios set IDRol =@idrol, Nombre =@nombre, Apellido =@apellido, Sexo =@sexo, Correo =@correo, Direccion =@direccion, " +
-                "FechaRegistro =@fecharegistro, Nombreusuario =@nombreusuario, Contrasena =@contrasena, Estatus =@estatus";
+                "FechaRegistro =@fecharegistro, Nombreusuario =@nombreusuario, Contraseña =@contraseña, Estatus =@estatus";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
