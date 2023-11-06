@@ -18,13 +18,13 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Insertar = "INSERT INTO Productos (Categoria, Nombre, PrecioUnitario, No_Existencias) VALUES(@Categoria, @Nombre, @PrecioUnitario, @No_Existencias,)";
+            string Insertar = "INSERT INTO Productos (Categoria, IDProveedor, Nombre, PrecioUnitario, Stock) VALUES(@Categoria, @IDProveedor, @Nombre, @PrecioUnitario, @Stock)";
             SqlCommand cmd = new SqlCommand(Insertar, Conexion);
 
             cmd.Parameters.AddWithValue("@Categoria", producto.Categoria);
             cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
             cmd.Parameters.AddWithValue("@PrecioUnitario", producto.PrecioUnitario);
-            cmd.Parameters.AddWithValue("@No_Existencias", producto.No_Existencias);
+            cmd.Parameters.AddWithValue("@Stock", producto.Stock);
             
            
 
@@ -45,7 +45,7 @@ namespace SistemaGym.DAL
 
             cmd.Parameters.AddWithValue("@Categoria", producto.Categoria);
             cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
-            cmd.Parameters.AddWithValue("@No_Existencias", producto.No_Existencias);
+            cmd.Parameters.AddWithValue("@Stock", producto.Stock);
             cmd.Parameters.AddWithValue("@PrecioUnitario", producto.PrecioUnitario);
 
             cmd.ExecuteNonQuery();
@@ -116,10 +116,11 @@ namespace SistemaGym.DAL
             Conexion.Open();
             DataTable dataTBL = new DataTable();
             string GetValor = "SELECT * FROM Producto " +
-                              "WHERE Categoria LIKE '%' + @Categoria + '%' or Nombre LIKE '%' + @Nombre + '%' ORDER BY Nombre";
+                              "WHERE Categoria LIKE '%' + @Categoria + '%' or IDProveedor LIKE '%' + @IDProveedor + '%' or Nombre LIKE '%' + @Nombre + '%' ORDER BY Nombre";
 
             SqlCommand cmd = new SqlCommand(GetValor, Conexion);
             cmd.Parameters.AddWithValue("@Categoria", producto.Categoria);
+            cmd.Parameters.AddWithValue("@IDProveedor", producto.Categoria);
             cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
             SqlDataAdapter adaptTBL = new SqlDataAdapter(cmd);
             adaptTBL.Fill(dataTBL);

@@ -13,7 +13,7 @@ namespace SistemaGym.Entities
         public string Nombre { get; set; }
         public int Categoria { get; set; }
         public decimal PrecioUnitario { get; set; }
-        public int No_Existencias { get; set; }
+        public int Stock { get; set; }
        
        
    }
