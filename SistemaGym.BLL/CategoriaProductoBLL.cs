@@ -8,5 +8,8 @@ namespace SistemaGym.BLL
 {
     public class CategoriaProductoBLL
     {
+
     }
+    
 }
+
