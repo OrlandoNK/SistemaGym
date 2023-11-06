@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.DAL
 {
-    public class ItemsGym : ConexionDAL
+    public class ItemsGymDAL : ConexionDAL
     {
         //metodo insertar ItemGym
         public static void InsertarItemsGym(ItemsGymEntity itemsGym)
