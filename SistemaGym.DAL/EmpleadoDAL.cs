@@ -20,7 +20,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Insertar = "INSERT INTO Empleado(IDUsuario, Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TelRes, FechaRegistro, Estatus)" +
+            string Insertar = "INSERT INTO Empleados(IDUsuario, Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TelRes, FechaRegistro, Estatus)" +
                               " VALUES(@IDUsuario, @Nombre, @Apellido, @TipoDocumento, @Documento, @Direccion, @TellCell, @TelRes, @FechaRegistro, @Estatus)";
 
             SqlCommand cmnd = new SqlCommand(Insertar, Conexion);
@@ -47,7 +47,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Actualizar = "UPDATE Empleado SET IDUsuario = @IDUsuario, Nombre = @Nombre, Apellido = @Apellido, TipoDocumento = @Tipodocumento, Documento = @Documento, Direccion = @Direccion, TellCell = @TellCell, TelRes = @TelRes, FechaRegistro = @FechaRegistro, Estatus = @Estatus";
+            string Actualizar = "UPDATE Empleados SET IDUsuario = @IDUsuario, Nombre = @Nombre, Apellido = @Apellido, TipoDocumento = @Tipodocumento, Documento = @Documento, Direccion = @Direccion, TellCell = @TellCell, TelRes = @TelRes, FechaRegistro = @FechaRegistro, Estatus = @Estatus";
 
             SqlCommand cmd = new SqlCommand(Actualizar, Conexion);
             cmd.Parameters.AddWithValue("@IDUsuario", empleado.IDUsuario);
@@ -76,7 +76,7 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Delete = "DELETE FROM Empleado WHERE IDEmpleado = @IDEmpleado";
+            string Delete = "DELETE FROM Empleados WHERE IDEmpleado = @IDEmpleado";
             SqlCommand cmnd = new SqlCommand(Delete, Conexion);
 
             cmnd.Parameters.AddWithValue("@IDEmpleado", empleado.IDEmpleado);
@@ -112,7 +112,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dataTBL = new DataTable();
-            string Buscar = "SELECT * FROM Empleado WHERE IDEmpleado = @IDEmpleado";
+            string Buscar = "SELECT * FROM Empleados WHERE IDEmpleado = @IDEmpleado";
             SqlCommand command = new SqlCommand(Buscar, Conexion);
             command.Parameters.AddWithValue("@IDEmpleado", empleado.IDEmpleado);
             SqlDataAdapter adaptDT = new SqlDataAdapter(command);
@@ -130,7 +130,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dataTBL = new DataTable();
-            string GetValor = "SELECT * FROM Empleado" + 
+            string GetValor = "SELECT * FROM Empleados " + 
                               "WHERE IDUsuario LIKE '%' + @IDUsuario + '%' OR Nombre LIKE '%' + @Nombre + '%' OR Apellido LIKE '%' @Apellido + '%' OR" +
                               "TipoDocumento LIKE '%' + @TipoDocumento + '%' OR Documento LIKE '%' + @Documento + '%' OR Direccion LIKE '%' + @Direccion + '%' OR" +
                               "TellCell LIKE '%' + @TellCell + '%' OR TelRes LIKE '%' + @TelRes + '%' OR FechaRegistro LIKE '%' + @FechaRegistro + '%' OR Estatus LIKE '%' + @Estatus + '% ORDER BY Nombre'";
