@@ -38,7 +38,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string actualizar = "Update Membresia Set Nombre =@idnombre, Descripcion =@descripcion," + 
-                " Duracion =@duracion, Valor =@Valor, FechaCreacion =@fechacreacion, Estatus =@estatus";
+                " Duracion =@duracion, Valor =@valor, FechaCreacion =@fechacreacion, Estatus =@estatus";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@nombre", membresia.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", membresia.Descripcion);
