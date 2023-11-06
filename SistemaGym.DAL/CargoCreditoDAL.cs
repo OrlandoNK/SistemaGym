@@ -74,7 +74,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From CargoCredito";
+            string mostrar = "Select * From CargoCredito Order by fechaCargo DESC";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
