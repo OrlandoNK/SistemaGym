@@ -18,11 +18,10 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into Actividades(IDTipoActividades, Area, Nombre, EncargadoActividad, Dia, HoraInicio, HoraCierre, Estatus)" +
-                " values(@idtipoactividades, @area, @nombre, @encargadoactividad, @dia, @horainicio, @horacierre, @estatus)";
+            string insertar = "Insert into Actividades(Area, Nombre, EncargadoActividad, Dia, HoraInicio, HoraCierre, Estatus) " +
+                "values(@area, @nombre, @encargadoactividad, @dia, @horainicio, @horacierre, @estatus)";
                 
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
-            cmd.Parameters.AddWithValue("@idtipoactividades", actividades.IDTipoActividades);
             cmd.Parameters.AddWithValue("@area", actividades.Area);
             cmd.Parameters.AddWithValue("@nombre", actividades.Nombre);
             cmd.Parameters.AddWithValue("@encargadoactividad", actividades.EncargadoActividad);
@@ -40,12 +39,11 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update Actividades set IDTipoActividades =@idtipoactividades, Area=@area, Nombre =@nombre, EncargadoActividad =@encargoactividad " +
+            string actualizar = "Update Actividades set Area=@area, Nombre =@nombre, EncargadoActividad =@encargoactividad " +
                 "dia =@dia, horainicio =@horainicio, horacierre =@horariocierre, Estatus =@estatus";
-            SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idtipoactividades", actividades.IDTipoActividades);
-            cmd.Parameters.AddWithValue("@nombre", actividades.Nombre);
+            SqlCommand cmd = new SqlCommand(actualizar, Conexion); 
             cmd.Parameters.AddWithValue("@area", actividades.Area);
+            cmd.Parameters.AddWithValue("@nombre", actividades.Nombre);
             cmd.Parameters.AddWithValue("@encargadoactividad", actividades.EncargadoActividad);
             cmd.Parameters.AddWithValue("@dia", actividades.Dia);
             cmd.Parameters.AddWithValue("@horainicio", actividades.HoraInicio);
@@ -100,7 +98,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From Clientes where IDActividad =@idactividad";
+            string buscar = "Select * From Actividades where IDActividad =@idactividad";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
             cmd.Parameters.AddWithValue("@idactividad", actividades.IDActividad);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -117,14 +115,13 @@ namespace SistemaGym.DAL
             Conexion.Open();
             DataTable dt = new DataTable();
             string obtenerValor = "Select * from Actividades " +
-                 "Where IDTipoActividades Like '%' + @idtipoactividades + '%' or Area Like '%' + @area + '%' or Nombre Like '%' + @nombre + '%' or " +
+                 "Where Area Like '%' + @area + '%' or Nombre Like '%' + @nombre + '%' or " +
                  "EncargadoActividad Like '%' + @encargadoactividad + '%' or Dia Like '%' + @dia + '%' or HoraInicio Like '%' + @horainicio + '%' or " +
                  "HoraCierre Like '%' + @horacierre + '%' or Estatus Like '%' + @estatus + '%' Order By Nombre";
                 
-            SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idtipoactividades", actividades.IDTipoActividades);
-            cmd.Parameters.AddWithValue("@nombre", actividades.Nombre);
+            SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);     
             cmd.Parameters.AddWithValue("@area", actividades.Area);
+            cmd.Parameters.AddWithValue("@nombre", actividades.Nombre);
             cmd.Parameters.AddWithValue("@encargadoactividad", actividades.EncargadoActividad);
             cmd.Parameters.AddWithValue("@dia", actividades.Dia);
             cmd.Parameters.AddWithValue("@horainicio", actividades.HoraInicio);
