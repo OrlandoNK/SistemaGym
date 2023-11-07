@@ -11,6 +11,7 @@ namespace SistemaGym.Entities
         public int IDGrupoMembresia { get; set; }
 
         public int IDMembresia { get; set; }
+        public string Nombre { get; set; }  
 
         public DateTime FechaRegistro { get; set; }
 
