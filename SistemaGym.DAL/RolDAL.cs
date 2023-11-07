@@ -12,40 +12,39 @@ namespace SistemaGym.DAL
     public class RolDAL : ConexionDAL
     {
         //metodo insertar Rol
-        public static void InsertarRolDal(RolEntity RolDAL)
+        public static void InsertarRolDal(RolEntity rol)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into RolDal(IDRol, Nombre, Descripcion)" +
-                " values(@idRol, Nombre, Descripcion)";
+            string insertar = "Insert into Rol(Nombre, Descripcion)" +
+                " values(@Nombre, @Descripcion)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
-            cmd.Parameters.AddWithValue("@idRol", RolDAL.IDRol);
-            cmd.Parameters.AddWithValue("@Nombre", RolDAL.Nombre);
-            cmd.Parameters.AddWithValue("@Descripcion", RolDAL.Descripcion);
+            cmd.Parameters.AddWithValue("@Nombre", rol.Nombre);
+            cmd.Parameters.AddWithValue("@Descripcion", rol.Descripcion);
             cmd.ExecuteNonQuery();
         }
 
         //metodo actualizar RolDal
-        public static void ActualizarRolDal(RolEntity RolDAL)
+        public static void ActualizarRolDal(RolEntity rol)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update RolDAL set IDRol =@idRol, Nombre=@idNombre, Descripcion=@Descripcion ";
+            string actualizar = "Update Rol set Nombre=@Nombre, Descripcion=@Descripcion ";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idRol", RolDAL.IDRol);
-            cmd.Parameters.AddWithValue("@Nombre", RolDAL.Nombre);
-            cmd.Parameters.AddWithValue("@Descripcion", RolDAL.Descripcion);
+           
+            cmd.Parameters.AddWithValue("@Nombre", rol.Nombre);
+            cmd.Parameters.AddWithValue("@Descripcion", rol.Descripcion);
             cmd.ExecuteNonQuery();
 
 
         }
         //funcion eliminar Rol
 
-        public static bool EliminarRolDal(RolEntity RolDAL)
+        public static bool EliminarRolDal(RolEntity rol)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -54,9 +53,9 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from RolDal where IDRol= @idRol";
+            string Eliminar = "Delete from Rol where IDRol= @idRol";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idRol", RolDAL.IDRol);
+            cmd.Parameters.AddWithValue("@idRol", rol.IDRol);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
@@ -64,13 +63,13 @@ namespace SistemaGym.DAL
 
 
         //metodo mostrar Rol
-        public static DataTable MostrarRolDal()
+        public static DataTable MostrarRol()
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From RolDal";
+            string mostrar = "Select * From Rol";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -80,7 +79,7 @@ namespace SistemaGym.DAL
 
         }
 
-        public static DataTable BuscarID(RolEntity RolDAL)
+        public static DataTable BuscarID(RolEntity rol)
         {
 
             ConexionDAL instancia = Instancia();
@@ -88,31 +87,13 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From RolDal where IDRolDal= @idRolDal";
+            string buscar = "Select * From Rol where IDRol= @idrol";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
-            cmd.Parameters.AddWithValue("@idRol", RolDAL.IDRol);
+            cmd.Parameters.AddWithValue("@idrol", rol.IDRol);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
         }
-        //
-        public static DataTable ObtenerPorValor(RolEntity RolDAL)
-        {
-
-            ConexionDAL instancia = Instancia();
-            SqlConnection Conexion = instancia.Conexion();
-
-            Conexion.Open();
-            DataTable dt = new DataTable();
-            string obtenerValor = "Select * from RolDal " +
-                 "Where IdRol Like '%' + @idRol + '%' or Nombre Like '%' + @nombre + '%' or Descripcion Like '%' + @Descripcion";
-            SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idRol", RolDAL.IDRol);
-            cmd.Parameters.AddWithValue("@nombre", RolDAL.Nombre);
-            cmd.Parameters.AddWithValue("@Descripcion", RolDAL.Descripcion);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            return dt;
-        }
+        
     }
 }
