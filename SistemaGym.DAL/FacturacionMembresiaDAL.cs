@@ -130,10 +130,8 @@ namespace SistemaGym.DAL
             Conexion.Open();
 
             DataTable dataTBL = new DataTable();
-            string GetByValor = "SELECT * FROM FacturaMembresia WHERE IDFactura LIKE '%' + @IDFactura + '%', IDMembresia LIKE '%' + @IDMembresia + '%', IDCliente LIKE '%' + @IDCliente + '%', IDUsuario LIKE '%' + @IDUsuario + '%', NCF LIKE '%' + @NCF + '%', ValorFactura LIKE '%' + @ValorFactura + '%', FechaEmision LIKE '%' + @FechaEmision + '%', FechaVencimiento LIKE '%' + @FechaVencimiento + '%', Estatus LIKE '%' + @Estatus + '%' ORDER BY IDFactura";
+            string GetByValor = "SELECT * FROM FacturaMembresia WHERE IDMembresia LIKE '%' + @IDMembresia + '%' or IDCliente LIKE '%' + @IDCliente + '%' or IDUsuario LIKE '%' + @IDUsuario + '%' or NCF LIKE '%' + @NCF + '%' or ValorFactura LIKE '%' + @ValorFactura + '%' or FechaEmision LIKE '%' + @FechaEmision + '%' or FechaVencimiento LIKE '%' + @FechaVencimiento + '%' or Estatus LIKE '%' + @Estatus + '%' ORDER BY IDFactura";
             SqlCommand cmd = new SqlCommand(GetByValor, Conexion);
-
-            cmd.Parameters.AddWithValue("@IDFactura", facturaMembresia.IDFactura);
             cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
             cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
             cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
@@ -141,7 +139,6 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@FechaEmision", facturaMembresia.FechaEmision);
             cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
             cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
-
             SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
             adapterDT.Fill(dataTBL);
 
