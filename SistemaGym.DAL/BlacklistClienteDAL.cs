@@ -18,20 +18,17 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Insertar = "INSERT INTO BlacklistCliente(IDBlackListCliente, IDTipoListaCliente, IDCliente, Razones, FechaInicial, FechaVencimiento, Estatus) " +
-                              " VALUES(@IDBlackListCliente, @IDTipoListaCliente, @IDCliente, @Razones, @FechaInicial, @FechaVencimiento, @Estatus)";
+            string Insertar = "INSERT INTO BlacklistClientes(IDTipoListaCliente, IDCliente, Razones, FechaInicial, FechaVencimiento, Estatus) " +
+                              " VALUES(@IDTipoListaCliente, @IDCliente, @Razones, @FechaInicial, @FechaVencimiento, @Estatus)";
 
             SqlCommand cmd = new SqlCommand(Insertar, Conexion);
-            cmd.Parameters.AddWithValue("@IDBlackListCliente", blacklist.IDBlackListCliente);
             cmd.Parameters.AddWithValue("@IDTipoListaCliente", blacklist.IDTipoListaCliente);
             cmd.Parameters.AddWithValue("@IDCliente", blacklist.IDCliente);
             cmd.Parameters.AddWithValue("@Razones", blacklist.Razones);
             cmd.Parameters.AddWithValue("@FechaInicial", blacklist.FechaInicial);
             cmd.Parameters.AddWithValue("@FechaVencimiento", blacklist.FechaVencimiento);
             cmd.Parameters.AddWithValue("@Estatus", blacklist.Estatus);
-
             cmd.ExecuteNonQuery();
-
         }
 
         /* Metodo Actualizar */
@@ -43,10 +40,8 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
 
-            string Actualizar = "UPDATE BlacklistCliente SET IDBlackListCliente = @IDBlackListCliente, IDTipoListaCliente = @IDTipoListaCliente, IDCliente = @IDCliente, Razones = @Razones, FechaInicial = @FechaInicial, FechaVencimiento = @FechaVencimiento, Estatus = @Estatus";
+            string Actualizar = "UPDATE BlacklistClientes SET IDTipoListaCliente = @IDTipoListaCliente, IDCliente = @IDCliente, Razones = @Razones, FechaInicial = @FechaInicial, FechaVencimiento = @FechaVencimiento, Estatus = @Estatus";
             SqlCommand cmd = new SqlCommand(Actualizar, Conexion);
-
-            cmd.Parameters.AddWithValue("@IDBlackListCliente", blacklist.IDBlackListCliente);
             cmd.Parameters.AddWithValue("@IDTipoListaCliente", blacklist.IDTipoListaCliente);
             cmd.Parameters.AddWithValue("@IDCliente", blacklist.IDCliente);
             cmd.Parameters.AddWithValue("@Razones", blacklist.Razones);
@@ -67,7 +62,7 @@ namespace SistemaGym.DAL
             bool seElimino;
 
             Conexion.Open();
-            string Eliminar = "DELETE FROM BlacklistCliente WHERE IDBlackListCliente = @IDBlackListCliente";
+            string Eliminar = "DELETE FROM BlacklistClientes WHERE IDBlackListCliente= @IDBlackListCliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
 
             cmd.Parameters.AddWithValue("@IDBlackListCliente", blacklist.IDBlackListCliente);
@@ -86,7 +81,7 @@ namespace SistemaGym.DAL
 
             DataTable dataTBL = new DataTable();
             Conexion.Open();
-            string Mostrar = "SELECT * FROM BlacklistCliente ORDER BY IDCliente";
+            string Mostrar = "SELECT * FROM BlacklistClientes ORDER BY IDCliente";
             SqlCommand cmd = new SqlCommand(Mostrar, Conexion);
             SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
             adapterDT.Fill(dataTBL);
@@ -103,9 +98,8 @@ namespace SistemaGym.DAL
             Conexion.Open();
 
             DataTable dataTBL = new DataTable();
-            string Buscar = "SELECT * FROM BlacklistCliente WHERE IDCliente = @IDCliente";
+            string Buscar = "SELECT * FROM BlacklistClientes WHERE IDCliente = @IDCliente";
             SqlCommand cmd = new SqlCommand(Buscar, Conexion);
-
             cmd.Parameters.AddWithValue("@IDCliente", blacklist.IDCliente);
             SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
             adapterDT.Fill(dataTBL);
@@ -124,9 +118,8 @@ namespace SistemaGym.DAL
             Conexion.Open();
 
             DataTable dataTBL = new DataTable();
-            string GetByValor = "SELECT * FROM BlacklistCliente WHERE IDBlackListCliente LIKE '%' + @IDBlacklistCliente + '%', IDTipoListaCliente LIKE '%' + @IDTipoListaCliente + '%', IDCliente LIKE '%' + @IDCliente + '%', Razones LIKE '%' + @Razones + '%', FechaInicial LIKE '%' + @FechaInicial + '%', FechaVencimiento LIKE '%' + @FechaVencimiento + '%', Estatus LIKE '%' + @Estatus + '%' ORDER BY IDCliente";
+            string GetByValor = "SELECT * FROM BlacklistClientes WHERE IDBlackListCliente LIKE '%' + @IDBlacklistCliente + '%' or IDTipoListaCliente LIKE '%' + @IDTipoListaCliente + '%' or IDCliente LIKE '%' + @IDCliente + '%' or Razones LIKE '%' + @Razones + '%' or FechaInicial LIKE '%' + @FechaInicial + '%' or FechaVencimiento LIKE '%' + @FechaVencimiento + '%' or Estatus LIKE '%' + @Estatus + '%' ORDER BY IDCliente";
             SqlCommand cmd = new SqlCommand(GetByValor, Conexion);
-
             cmd.Parameters.AddWithValue("@IDBlackListCliente", blacklist.IDBlackListCliente);
             cmd.Parameters.AddWithValue("@IDTipoListaCliente", blacklist.IDTipoListaCliente);
             cmd.Parameters.AddWithValue("@IDCliente", blacklist.IDCliente);
@@ -134,7 +127,6 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@FechaInicial", blacklist.FechaInicial);
             cmd.Parameters.AddWithValue("@FechaVencimiento", blacklist.FechaVencimiento);
             cmd.Parameters.AddWithValue("@Estatus", blacklist.Estatus);
-
             SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
             adapterDT.Fill(dataTBL);
 
