@@ -12,45 +12,43 @@ namespace SistemaGym.DAL
     public class AreaEmpresaDAL : ConexionDAL
     {
         //metodo insertar AreaEmpresa
-        public static void InsertarCliente(AreaEmpresaEntity AreaEmpresa)
+        public static void InsertarArea(AreaEmpresaEntity areaEmpresa)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into AreaEmpresa(IDArea, Encargado, Nombre, Descripcion, FechaCreacion" +
-                " values(@idarea, @encargado, @nombre, @descripcion, @fechacreacion)";
+            string insertar = "Insert into AreasEmpresa(Encargado, Nombre, Descripcion, FechaCreacion" +
+                " values(@encargado, @nombre, @descripcion, @fechacreacion)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
-            cmd.Parameters.AddWithValue("@idarea", AreaEmpresa.IDArea);
-            cmd.Parameters.AddWithValue("@encargado", AreaEmpresa.Encargado);
-            cmd.Parameters.AddWithValue("@nombre", AreaEmpresa.Nombre);
-            cmd.Parameters.AddWithValue("@descripcion", AreaEmpresa.Descripcion);
-            cmd.Parameters.AddWithValue("@fechacreacion", AreaEmpresa.FechaCreacion);
+            cmd.Parameters.AddWithValue("@encargado", areaEmpresa.Encargado);
+            cmd.Parameters.AddWithValue("@nombre", areaEmpresa.Nombre);
+            cmd.Parameters.AddWithValue("@descripcion", areaEmpresa.Descripcion);
+            cmd.Parameters.AddWithValue("@fechacreacion", areaEmpresa.FechaCreacion);
             cmd.ExecuteNonQuery();
         }
 
         //metodo actualizar AreaEmpresa
-        public static void ActualizarCliente(AreaEmpresaEntity AreaEmpresa)
+        public static void ActualizarArea(AreaEmpresaEntity areaEmpresa)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update AreaEmpresa set IDArea =@idarea, Encargado=@encargado, Nombre=@nombre " +
+            string actualizar = "Update AreasEmpresa set Encargado=@encargado, Nombre=@nombre " +
                 "Descripcion =@descripcion, FechaCreacion = @fechacreacion";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idarea", AreaEmpresa.IDArea);
-            cmd.Parameters.AddWithValue("@encargado", AreaEmpresa.Encargado);
-            cmd.Parameters.AddWithValue("@nombre", AreaEmpresa.Nombre);
-            cmd.Parameters.AddWithValue("@descripcion", AreaEmpresa.Descripcion);
-            cmd.Parameters.AddWithValue("@fechacreacion", AreaEmpresa.FechaCreacion);
+            cmd.Parameters.AddWithValue("@encargado", areaEmpresa.Encargado);
+            cmd.Parameters.AddWithValue("@nombre", areaEmpresa.Nombre);
+            cmd.Parameters.AddWithValue("@descripcion", areaEmpresa.Descripcion);
+            cmd.Parameters.AddWithValue("@fechacreacion", areaEmpresa.FechaCreacion);
             cmd.ExecuteNonQuery();
 
 
         }
         //funcion eliminar AreaEmpresa
 
-        public static bool EliminarCliente(AreaEmpresaEntity AreaEmpresa)
+        public static bool EliminarArea(AreaEmpresaEntity areaEmpresa)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -59,9 +57,9 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from AreaEmpresa where IDArea= @idarea";
+            string Eliminar = "Delete from AreasEmpresa where IDArea= @idarea";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idarea", AreaEmpresa.IDArea);
+            cmd.Parameters.AddWithValue("@idarea", areaEmpresa.IDArea);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
@@ -75,7 +73,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From AreaEmpresa Order By Nombre";
+            string mostrar = "Select * From AreasEmpresa Order By Nombre";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -85,7 +83,7 @@ namespace SistemaGym.DAL
 
         }
 
-        public static DataTable BuscarID(AreaEmpresaEntity AreaEmpresa)
+        public static DataTable BuscarID(AreaEmpresaEntity areaEmpresa)
         {
 
             ConexionDAL instancia = Instancia();
@@ -93,34 +91,15 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From AreaEmpresa where IDArea= @idarea";
+            string buscar = "Select * From AreasEmpresa where IDArea= @idarea";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
-            cmd.Parameters.AddWithValue("@idarea", AreaEmpresa.IDArea);
+            cmd.Parameters.AddWithValue("@idarea", areaEmpresa.IDArea);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
         }
-        //
-        public static DataTable ObtenerPorValor(AreaEmpresaEntity AreaEmpresa)
-        {
-
-            ConexionDAL instancia = Instancia();
-            SqlConnection Conexion = instancia.Conexion();
-
-            Conexion.Open();
-            DataTable dt = new DataTable();
-            string obtenerValor = "Select * from AreaEmpresa " +
-                 "Where IDArea Like '%' + @idarea + '%' or Encargo Like '%' + @encargo + '%' or Nombre Like '%' + @nombre + '%' or " +
-                 "Descripcion Like '%' + @descripcion + '%' or FechaCreacion Like '%' + @fechacreacion + '%'";
-            SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idarea", AreaEmpresa.IDArea);
-            cmd.Parameters.AddWithValue("@encargado", AreaEmpresa.Encargado);
-            cmd.Parameters.AddWithValue("@nombre", AreaEmpresa.Nombre);
-            cmd.Parameters.AddWithValue("@descripcion", AreaEmpresa.Descripcion);
-            cmd.Parameters.AddWithValue("@fechacreacion", AreaEmpresa.FechaCreacion);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            return dt;
+        
+       
         }
     }
-}
+
