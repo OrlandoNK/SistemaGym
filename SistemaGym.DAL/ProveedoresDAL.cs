@@ -12,48 +12,46 @@ namespace SistemaGym.DAL
     public class ProveedoresDAL : ConexionDAL
     {
         //metodo insertar cliente
-        public static void InsertarCliente(ProveedoresEntity ProveedoresDAL)
+        public static void InsertarProveedores(ProveedoresEntity proveedores)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into ProveedoresDAL(IDProveedores, Nombre, Telefono, Direccion," +
+            string insertar = "Insert into Proveedores(Nombre, Telefono, Direccion," +
                 " FechaRegistro, Estatus)" +
-                " values(@idProveedores, @Nombre, @Telefono, @Direccion, @FechaRegistro, @Estatus)";
+                " values(@Nombre, @Telefono, @Direccion, @FechaRegistro, @Estatus)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
-            cmd.Parameters.AddWithValue("@idProveedores", ProveedoresDAL.IDProveedores);
-            cmd.Parameters.AddWithValue("@Nombre", ProveedoresDAL.Nombre);
-            cmd.Parameters.AddWithValue("@Telefono", ProveedoresDAL.Telefono);
-            cmd.Parameters.AddWithValue("@Direccion", ProveedoresDAL.Direccion);
-            cmd.Parameters.AddWithValue("@FechaRegistro", ProveedoresDAL.FechaRegistro);
-            cmd.Parameters.AddWithValue("@Estatus", ProveedoresDAL.Estatus);
+            cmd.Parameters.AddWithValue("@Nombre", proveedores.Nombre);
+            cmd.Parameters.AddWithValue("@Telefono", proveedores.Telefono);
+            cmd.Parameters.AddWithValue("@Direccion", proveedores.Direccion);
+            cmd.Parameters.AddWithValue("@FechaRegistro", proveedores.FechaRegistro);
+            cmd.Parameters.AddWithValue("@Estatus", proveedores.Estatus);
             cmd.ExecuteNonQuery();
         }
 
         //metodo actualizar ProveedoresDAl
-        public static void ActualizarCliente(ProveedoresEntity ProveedoresDAL)
+        public static void ActualizarProveedores(ProveedoresEntity proveedores)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update ProveedoresDAL set IDProveedores =@idProveedores, Nombre=@Nombre, Telefono=@Telefono " +
+            string actualizar = "Update ProveedoresDAL set Nombre=@Nombre, Telefono=@Telefono " +
                 "Direccion =@Direccion, FechaRegistro=@FechaRegistro, Estatus =@Estatus";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idProveedores", ProveedoresDAL.IDProveedores);
-            cmd.Parameters.AddWithValue("@Nombre", ProveedoresDAL.Nombre);
-            cmd.Parameters.AddWithValue("@Telefono", ProveedoresDAL.Telefono);
-            cmd.Parameters.AddWithValue("@Direccion", ProveedoresDAL.Direccion);
-            cmd.Parameters.AddWithValue("@FechaRegistro", ProveedoresDAL.FechaRegistro);
-            cmd.Parameters.AddWithValue("@Estatus", ProveedoresDAL.Estatus);
+            cmd.Parameters.AddWithValue("@Nombre", proveedores.Nombre);
+            cmd.Parameters.AddWithValue("@Telefono", proveedores.Telefono);
+            cmd.Parameters.AddWithValue("@Direccion", proveedores.Direccion);
+            cmd.Parameters.AddWithValue("@FechaRegistro", proveedores.FechaRegistro);
+            cmd.Parameters.AddWithValue("@Estatus", proveedores.Estatus);
             cmd.ExecuteNonQuery();
 
 
         }
         //funcion eliminar ProveedoresDAL
 
-        public static bool EliminarCliente(ProveedoresEntity ProveedoresDAl)
+        public static bool EliminarProveedores(ProveedoresEntity proveedores)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -62,9 +60,9 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from ProveedoresDAL where IDProveedores= @idProveedores";
+            string Eliminar = "Delete from ProveedoresDAL where IDProveedores= @idProveedor";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idProveedores", ProveedoresDAl.IDProveedores);
+            cmd.Parameters.AddWithValue("@idProveedor", proveedores.IDProveedor);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
@@ -72,13 +70,13 @@ namespace SistemaGym.DAL
 
 
         //metodo mostrar cliente
-        public static DataTable MostrarProveedoresDAL()
+        public static DataTable MostrarProveedores()
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From ProveedoresDAL";
+            string mostrar = "Select * From Proveedores";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -88,7 +86,7 @@ namespace SistemaGym.DAL
 
         }
 
-        public static DataTable BuscarID(ProveedoresEntity ProveedoresDAL)
+        public static DataTable BuscarID(ProveedoresEntity proveedores)
         {
 
             ConexionDAL instancia = Instancia();
@@ -96,15 +94,15 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From ProveedoresDAL where IDProveedores= @idProveedores";
+            string buscar = "Select * From Proveedores where IDProveedor= @idproveedor";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
-            cmd.Parameters.AddWithValue("@idProveedores", ProveedoresDAL.IDProveedores);
+            cmd.Parameters.AddWithValue("@idproveedor", proveedores.IDProveedor);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
         }
         //
-        public static DataTable ObtenerPorValor(ProveedoresEntity ProveedoresDAL)
+        public static DataTable ObtenerPorValor(ProveedoresEntity proveedores)
         {
 
             ConexionDAL instancia = Instancia();
@@ -112,17 +110,16 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string obtenerValor = "Select * from ProveedoresDAL " +
-                 "Where IDProveedores Like '%' + @idProveedores + '%' or Nombre Like '%' + @nombre + '%' or Telefono Like '%' + @Telefono + '%' or " +
+            string obtenerValor = "Select * from Proveedores " +
+                 "Where Nombre Like '%' + @nombre + '%' or Telefono Like '%' + @Telefono + '%' or " +
                  "Direccion Like '%' + @Direccion '%' or FechaRegistro Like '%' + @FechaRegistro + '%' or Estatus Like '%' + @Estatus + '%' " +
                  "TelRes Like '%' + @telres + '%' or Estatus Like '%' + @estatus + '%' ORDER BY Nombre";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idProveedores", ProveedoresDAL.IDProveedores);
-            cmd.Parameters.AddWithValue("@nombre", ProveedoresDAL.Nombre);
-            cmd.Parameters.AddWithValue("@Telefono", ProveedoresDAL.Telefono);
-            cmd.Parameters.AddWithValue("@direccion", ProveedoresDAL.Direccion);
-            cmd.Parameters.AddWithValue("@FechaRegistro", ProveedoresDAL.FechaRegistro);
-            cmd.Parameters.AddWithValue("@estatus", ProveedoresDAL.Estatus);
+            cmd.Parameters.AddWithValue("@nombre", proveedores.Nombre);
+            cmd.Parameters.AddWithValue("@Telefono", proveedores.Telefono);
+            cmd.Parameters.AddWithValue("@direccion", proveedores.Direccion);
+            cmd.Parameters.AddWithValue("@FechaRegistro", proveedores.FechaRegistro);
+            cmd.Parameters.AddWithValue("@estatus", proveedores.Estatus);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
