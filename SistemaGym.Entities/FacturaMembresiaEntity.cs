@@ -13,6 +13,8 @@ namespace SistemaGym.Entities
         public int IDCliente { get; set; }
 
         public int IDUsuario { get; set; }
+        public int CargoCredito { get; set; }
+        public int CargoDebito { get; set; }
 
         public string NCF { get; set; }
 
