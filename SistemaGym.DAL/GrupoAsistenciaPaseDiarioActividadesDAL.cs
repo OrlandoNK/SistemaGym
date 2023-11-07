@@ -12,48 +12,47 @@ namespace SistemaGym.DAL
     public class GrupoAsistenciaPaseDiarioActividadesDAL : ConexionDAL
     {
         //metodo insertar GrupoAsistenciaPaseDiarioActividades
-        public static void InsertarCliente(GrupoAsistenciaPaseDiarioActividadesEntity GrupoAsistenciaPaseDiarioActividades)
+        public static void InsertarCliente(GrupoAsistenciaPaseDiarioActividadesEntity grupoAsistencia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into GrupoAsistenciaPaseDiarioActividades (IDGrupoAsistenciaPaseDiarioActividades, IDCliente, IDActividades, Asistencia," +
+            string insertar = "Insert into GrupoAsistenciaPaseDiarioActividades(IDActividad, IDCliente, Asistencia," +
                 " Hora, Monto)  " +
-                " values(@idgrupoasistenciapasadiarioactividades, @idcliente, @idactividades, @asistencia, @hora, @monto, ) ";
+                " values(@idactividades, @idcliente, @asistencia, @hora, @monto) ";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
-            cmd.Parameters.AddWithValue("@idgrupoasistenciapasadiarioactividades", GrupoAsistenciaPaseDiarioActividades.IDGrupoAsistenciaPaseDiarioActividades);
-            cmd.Parameters.AddWithValue("@idcliente", GrupoAsistenciaPaseDiarioActividades.IDCliente);
-            cmd.Parameters.AddWithValue("@idactividades", GrupoAsistenciaPaseDiarioActividades.IDActividades);
-            cmd.Parameters.AddWithValue("@asistencia", GrupoAsistenciaPaseDiarioActividades.Asistencia);
-            cmd.Parameters.AddWithValue("@hora", GrupoAsistenciaPaseDiarioActividades.Hora);
-            cmd.Parameters.AddWithValue("@monto", GrupoAsistenciaPaseDiarioActividades.Monto);
+          
+            cmd.Parameters.AddWithValue("@idactividad", grupoAsistencia.IDActividad);
+            cmd.Parameters.AddWithValue("@idcliente", grupoAsistencia.IDCliente);
+            cmd.Parameters.AddWithValue("@asistencia", grupoAsistencia.Asistencia);
+            cmd.Parameters.AddWithValue("@hora", grupoAsistencia.Hora);
+            cmd.Parameters.AddWithValue("@monto", grupoAsistencia.Monto);
             cmd.ExecuteNonQuery();
         }
 
         //metodo actualizar GrupoAsistenciaPaseDiarioActividades
-        public static void ActualizarCliente(GrupoAsistenciaPaseDiarioActividadesEntity GrupoAsistenciaPaseDiarioActividades)
+        public static void ActualizarGrupoAsistenciaPaseDiario(GrupoAsistenciaPaseDiarioActividadesEntity grupoAsistencia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update GrupoAsistenciaPaseDiarioActividades set IDGrupoAsistenciaPaseDiarioActividades =@idgrupoasistenciapasediarioactividades, IDCliente=@idcliente, IDActividades=@actividades " +
+            string actualizar = "Update GrupoAsistenciaPaseDiarioActividades set IDActividad=@actividades, IDCliente=@idcliente, " +
                 "Asistencia =@asistencia, Hora=@hora, Monto =@monto ";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idgrupoasistenciapasadiarioactividades", GrupoAsistenciaPaseDiarioActividades.IDGrupoAsistenciaPaseDiarioActividades);
-            cmd.Parameters.AddWithValue("@idcliente", GrupoAsistenciaPaseDiarioActividades.IDCliente);
-            cmd.Parameters.AddWithValue("@idactividades", GrupoAsistenciaPaseDiarioActividades.IDActividades);
-            cmd.Parameters.AddWithValue("@asistencia", GrupoAsistenciaPaseDiarioActividades.Asistencia);
-            cmd.Parameters.AddWithValue("@hora", GrupoAsistenciaPaseDiarioActividades.Hora);
-            cmd.Parameters.AddWithValue("@monto", GrupoAsistenciaPaseDiarioActividades.Monto);
+            cmd.Parameters.AddWithValue("@idactividades", grupoAsistencia.IDActividades);
+            cmd.Parameters.AddWithValue("@idcliente", grupoAsistencia.IDCliente);
+            cmd.Parameters.AddWithValue("@asistencia", grupoAsistencia.Asistencia);
+            cmd.Parameters.AddWithValue("@hora", grupoAsistencia.Hora);
+            cmd.Parameters.AddWithValue("@monto", grupoAsistencia.Monto);
             cmd.ExecuteNonQuery();
 
 
         }
         //funcion eliminar GrupoAsistenciaPaseDiarioActividades
 
-        public static bool EliminarCliente(GrupoAsistenciaPaseDiarioActividadesEntity GrupoAsistenciaPaseDiarioActividades)
+        public static bool EliminarGrupoAsistenciaPaseDiario(GrupoAsistenciaPaseDiarioActividadesEntity grupoAsistencia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -62,9 +61,9 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from GrupoAsistenciaPaseDiarioActividades where IDGrupoAsistenciaPaseDiarioActividades= @idgrupoasistenciapasedirioactividades";
+            string Eliminar = "Delete from GrupoAsistenciaPaseDiarioActividades where IDGrupoAsistenciaPaseDiario= @idgrupoasistenciapasedirio";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idgrupoasistenciapasediarioactividades", GrupoAsistenciaPaseDiarioActividades.IDGrupoAsistenciaPaseDiarioActividades);
+            cmd.Parameters.AddWithValue("@idgrupoasistenciapasediario", grupoAsistencia.IDGrupoAsistenciaPaseDiario);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
@@ -96,15 +95,15 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From GrupoAsistenciaPaseDiarioActividades where IDGrupoAsistenciaPaseDiarioActividades= @idgrupoasistenciapasediarioactividades ";
+            string buscar = "Select * From GrupoAsistenciaPaseDiarioActividades where IDGrupoAsistenciaPaseDiario= @idgrupoasistenciapasediario ";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
-            cmd.Parameters.AddWithValue("@idgrupoasistenciapasediarioactividades", GrupoAsistenciaPaseDiarioActividades.IDGrupoAsistenciaPaseDiarioActividades);
+            cmd.Parameters.AddWithValue("@idgrupoasistenciapasediario", GrupoAsistenciaPaseDiarioActividades.IDGrupoAsistenciaPaseDiario);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
         }
         //
-        public static DataTable ObtenerPorValor(GrupoAsistenciaPaseDiarioActividadesEntity GrupoAsistenciaPaseDiarioActividades)
+        public static DataTable ObtenerPorValor(GrupoAsistenciaPaseDiarioActividadesEntity grupoAsistencia)
         {
 
             ConexionDAL instancia = Instancia();
@@ -113,15 +112,15 @@ namespace SistemaGym.DAL
             Conexion.Open();
             DataTable dt = new DataTable();
             string obtenerValor = "Select * from GrupoAsistenciaPaseDiarioActividades " +
-                 "Where IDGrupoAsistenciaPaseDiarioActividades Like '%' + @idgrupoclientepasediarioactividades + '%' or IDCliente Like '%' + @idcliente + '%' or IDActividades Like '%' + @actividades + '%' or " +
+                 "Where IDCliente Like '%' + @idcliente + '%' or IDActividad Like '%' + @actividad + '%' or " +
                  "Asistencia Like '%' + @asistencia '%' or Hora Like '%' + @hora + '%' or Monto Like '%' + @monto + '%' ";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idgrupoasistenciapasadiarioactividades", GrupoAsistenciaPaseDiarioActividades.IDGrupoAsistenciaPaseDiarioActividades);
-            cmd.Parameters.AddWithValue("@idcliente", GrupoAsistenciaPaseDiarioActividades.IDCliente);
-            cmd.Parameters.AddWithValue("@idactividades", GrupoAsistenciaPaseDiarioActividades.IDActividades);
-            cmd.Parameters.AddWithValue("@asistencia", GrupoAsistenciaPaseDiarioActividades.Asistencia);
-            cmd.Parameters.AddWithValue("@hora", GrupoAsistenciaPaseDiarioActividades.Hora);
-            cmd.Parameters.AddWithValue("@monto", GrupoAsistenciaPaseDiarioActividades.Monto);
+         
+            cmd.Parameters.AddWithValue("@idactividad", grupoAsistencia.IDActividad);
+            cmd.Parameters.AddWithValue("@idcliente", grupoAsistencia.IDCliente);
+            cmd.Parameters.AddWithValue("@asistencia", grupoAsistencia.Asistencia);
+            cmd.Parameters.AddWithValue("@hora", grupoAsistencia.Hora);
+            cmd.Parameters.AddWithValue("@monto", grupoAsistencia.Monto);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
