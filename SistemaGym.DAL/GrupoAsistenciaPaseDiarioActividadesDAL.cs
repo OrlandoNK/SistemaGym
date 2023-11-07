@@ -41,7 +41,7 @@ namespace SistemaGym.DAL
             string actualizar = "Update GrupoAsistenciaPaseDiarioActividades set IDActividad=@actividades, IDCliente=@idcliente, " +
                 "Asistencia =@asistencia, Hora=@hora, Monto =@monto ";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idactividades", grupoAsistencia.IDActividades);
+            cmd.Parameters.AddWithValue("@idactividades", grupoAsistencia.IDActividad);
             cmd.Parameters.AddWithValue("@idcliente", grupoAsistencia.IDCliente);
             cmd.Parameters.AddWithValue("@asistencia", grupoAsistencia.Asistencia);
             cmd.Parameters.AddWithValue("@hora", grupoAsistencia.Hora);

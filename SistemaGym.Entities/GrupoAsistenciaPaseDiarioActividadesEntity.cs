@@ -11,7 +11,7 @@ namespace SistemaGym.Entities
     {
         public int IDGrupoAsistenciaPaseDiario { get; set; }
         public int IDCliente {  get; set; }
-        public int IDActividades {  get; set; } 
+        public int IDActividad {  get; set; } 
         public bool Asistencia { get; set; }
         public TimeOnly Hora { get; set; }
         public decimal Monto { get; set; }  
