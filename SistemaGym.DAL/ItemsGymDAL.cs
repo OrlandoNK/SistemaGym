@@ -12,48 +12,45 @@ namespace SistemaGym.DAL
     public class ItemsGym : ConexionDAL
     {
         //metodo insertar ItemGym
-        public static void InsertarCliente(ItemsGymEntity ItemsGym)
+        public static void InsertarItemsGym(ItemsGymEntity itemsGym)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into ItemsGym(IDItems, Proveedor, Nombre, Cantidad," +
-                "   Precio, Descripcion)" +
-                " values(@idItems, @proveedor, @Nombre, @Cantidad, @Precio, @Descripcion)";
+            string insertar = "Insert into ItemsGym(Nombre, Cantidad," +
+                " Precio, Descripcion)" +
+                " values(@proveedor, @Nombre, @Cantidad, @Precio, @Descripcion)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
-            cmd.Parameters.AddWithValue("@idItem", ItemsGym.IDItem);
-            cmd.Parameters.AddWithValue("@Proveedor", ItemsGym.Proveedor);
-            cmd.Parameters.AddWithValue("@Nombre", ItemsGym.Nombre);
-            cmd.Parameters.AddWithValue("@Cantidad", ItemsGym.Cantidad);
-            cmd.Parameters.AddWithValue("@Precio", ItemsGym.Precio);
-            cmd.Parameters.AddWithValue("@Descripcion", ItemsGym.Descripcion);
+            cmd.Parameters.AddWithValue("@Proveedor", itemsGym.Proveedor);
+            cmd.Parameters.AddWithValue("@Nombre", itemsGym.Nombre);
+            cmd.Parameters.AddWithValue("@Cantidad", itemsGym.Cantidad);
+            cmd.Parameters.AddWithValue("@Precio", itemsGym.Precio);
+            cmd.Parameters.AddWithValue("@Descripcion", itemsGym.Descripcion);
             cmd.ExecuteNonQuery();
         }
 
         //metodo actualizar ItemGym
-        public static void ActualizarCliente(ItemsGymEntity ItemsGym)
+        public static void ActualizarItemsGym(ItemsGymEntity itemsGym)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update Clientes set IDItems =@idItems, Proveedor=@Proveedor, Nombre=@Nombre " +
+            string actualizar = "Update ItemsGym set Proveedor=@Proveedor, Nombre=@Nombre " +
                 "Cantidad =@Cantidad, Precio=@Precio, Descripcion =@Descripcion ";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idItem", ItemsGym.IDItem);
-            cmd.Parameters.AddWithValue("@Proveedor", ItemsGym.Proveedor);
-            cmd.Parameters.AddWithValue("@Nombre", ItemsGym.Nombre);
-            cmd.Parameters.AddWithValue("@Cantidad", ItemsGym.Cantidad);
-            cmd.Parameters.AddWithValue("@Precio", ItemsGym.Precio);
-            cmd.Parameters.AddWithValue("@Descripcion", ItemsGym.Descripcion);
+            cmd.Parameters.AddWithValue("@Proveedor", itemsGym.Proveedor);
+            cmd.Parameters.AddWithValue("@Nombre", itemsGym.Nombre);
+            cmd.Parameters.AddWithValue("@Cantidad", itemsGym.Cantidad);
+            cmd.Parameters.AddWithValue("@Precio", itemsGym.Precio);
+            cmd.Parameters.AddWithValue("@Descripcion", itemsGym.Descripcion);
             cmd.ExecuteNonQuery();
-
 
         }
         //funcion eliminar ItemGym
 
-        public static bool EliminarCliente(ItemsGymEntity ItemsGym)
+        public static bool EliminarItemsGym(ItemsGymEntity itemsGym)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -64,7 +61,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string Eliminar = "Delete from IdItem where IDItem= @idItem";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idItem", ItemsGym.IDItem);
+            cmd.Parameters.AddWithValue("@idItem", itemsGym.IDItem);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
@@ -113,10 +110,9 @@ namespace SistemaGym.DAL
             Conexion.Open();
             DataTable dt = new DataTable();
             string obtenerValor = "Select * from ItemsGym " +
-                 "Where IdItem Like '%' + @idItem + '%' or Proveedor Like '%' + @Proveedor + '%' or Nombre Like '%' + @Nombre + '%' or " +
-                 "Cantidad Like '%' + @Cantidad '%' or Precio Like '%' + @Precio  '%' or Descripcion Like '%' + @Descripcion ";
+                 "Where Proveedor Like '%' + @Proveedor + '%' or Nombre Like '%' + @Nombre + '%' or " +
+                 "Cantidad Like '%' + @Cantidad + '%' or Precio Like '%' + @Precio +'%' or Descripcion Like '%' + @Descripcion + '%' ";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idItem", itemsGym.IDItem);
             cmd.Parameters.AddWithValue("@Proveedor", itemsGym.Proveedor);
             cmd.Parameters.AddWithValue("@Nombre", itemsGym.Nombre);
             cmd.Parameters.AddWithValue("@Cantidad", itemsGym.Cantidad);
