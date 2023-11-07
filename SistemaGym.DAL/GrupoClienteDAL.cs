@@ -12,45 +12,43 @@ namespace SistemaGym.DAL
     public class GrupoClienteDAL : ConexionDAL
     {
         //metodo insertar cliente
-        public static void InsertarCliente(GrupoClienteEntity GrupoClienteDAL)
+        public static void InsertarGrupoCliente(GrupoClienteEntity grupoCliente)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into GruposCliente(IDGrupoCliente, IDGrupoMembresia, IdCliente, FechaRegistro, Estatus)" +
-                " values(@idgrupocliente, @idgrupomembresia, @idcliente, @fecharegistro, @estatus)";
+            string insertar = "Insert into GrupoClientes(IDGrupoMembresia, IDCliente, FechaRegistro, Estatus)" +
+                " values(@idgrupomembresia, @idcliente, @fecharegistro, @estatus)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
-            cmd.Parameters.AddWithValue("@idgrupocliente", GrupoClienteDAL.IDGrupoCliente);
-            cmd.Parameters.AddWithValue("@idgrupomembresia", GrupoClienteDAL.IDGrupoMembresia);
-            cmd.Parameters.AddWithValue("@idcliente", GrupoClienteDAL.IDCliente);
-            cmd.Parameters.AddWithValue("@fecharegistro", GrupoClienteDAL.FechaRegistro);
-            cmd.Parameters.AddWithValue("@estatus", GrupoClienteDAL.Estatus);
+            cmd.Parameters.AddWithValue("@idgrupomembresia", grupoCliente.IDGrupoMembresia);
+            cmd.Parameters.AddWithValue("@idcliente", grupoCliente.IDCliente);
+            cmd.Parameters.AddWithValue("@fecharegistro", grupoCliente.FechaRegistro);
+            cmd.Parameters.AddWithValue("@estatus", grupoCliente.Estatus);
             cmd.ExecuteNonQuery();
         }
 
-        //metodo actualizar GrupoClienteDAL
-        public static void ActualizarCliente(GrupoClienteEntity GrupoClienteDAL)
+        //metodo actualizar GrupoCliente
+        public static void ActualizarGrupoCliente(GrupoClienteEntity grupoCliente)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update  GrupoClienteDAL set IDGrupoCliente =@idgrupocliente, IDGrupoMembresia=@idgrupomembresia, IDCliente=@idcliente " +
-                " FechaRegistro =@fecharegistro, Estatus =@estatus ";
+            string actualizar = "Update GrupoClientes set IDGrupoMembresia=@idgrupomembresia, IDCliente=@idcliente " +
+                "FechaRegistro =@fecharegistro, Estatus =@estatus ";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-            cmd.Parameters.AddWithValue("@idGrupoCliente", GrupoClienteDAL.IDGrupoCliente);
-            cmd.Parameters.AddWithValue("@idgrupomembresia", GrupoClienteDAL.IDGrupoMembresia);
-            cmd.Parameters.AddWithValue("@idcliente", GrupoClienteDAL.IDCliente);
-            cmd.Parameters.AddWithValue("@fecharegistro", GrupoClienteDAL.FechaRegistro);
-            cmd.Parameters.AddWithValue("@estatus", GrupoClienteDAL.Estatus);
+            cmd.Parameters.AddWithValue("@idgrupomembresia", grupoCliente.IDGrupoMembresia);
+            cmd.Parameters.AddWithValue("@idcliente", grupoCliente.IDCliente);
+            cmd.Parameters.AddWithValue("@fecharegistro", grupoCliente.FechaRegistro);
+            cmd.Parameters.AddWithValue("@estatus", grupoCliente.Estatus);
             cmd.ExecuteNonQuery();
 
 
         }
-        //funcion eliminar GrupoClienteDAL
+        //funcion eliminar GrupoClienteDal
 
-        public static bool EliminarCliente(GrupoClienteEntity GrupoClienteDAL)
+        public static bool EliminarCliente(GrupoClienteEntity grupoCliente)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -59,9 +57,9 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from GrupoClienteDAL where IDGrupoCliente= @idGrupoCliente ";
+            string Eliminar = "Delete from GrupoClientes where IDGrupoCliente= @idGrupoCliente ";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idGrupoCliente", GrupoClienteDAL.IDGrupoCliente);
+            cmd.Parameters.AddWithValue("@idGrupoCliente", grupoCliente.IDGrupoCliente);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
@@ -69,13 +67,13 @@ namespace SistemaGym.DAL
 
 
         //metodo mostrar GrupoCliente
-        public static DataTable MostrarCliente()
+        public static DataTable MostrarGrupoCliente()
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From Clientes Order By Nombre ";
+            string mostrar = "Select * From GrupoClientes ";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -85,7 +83,7 @@ namespace SistemaGym.DAL
 
         }
 
-        public static DataTable BuscarID(GrupoClienteEntity GrupoClienteDAL)
+        public static DataTable BuscarID(GrupoClienteEntity grupoCliente)
         {
 
             ConexionDAL instancia = Instancia();
@@ -93,15 +91,15 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From GrupoCliente where IDGrupoCliente= @idGrupoCliente ";
+            string buscar = "Select * From GrupoClientes where IDGrupoCliente= @idGrupoCliente ";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
-            cmd.Parameters.AddWithValue("@GrupoCliente", GrupoClienteDAL.IDGrupoCliente);
+            cmd.Parameters.AddWithValue("@idGrupoCliente", grupoCliente.IDGrupoCliente);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
         }
         //
-        public static DataTable ObtenerPorValor(GrupoClienteEntity GrupoClienteDAL)
+        public static DataTable ObtenerPorValor(GrupoClienteEntity grupoCliente)
         {
 
             ConexionDAL instancia = Instancia();
@@ -109,14 +107,14 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string obtenerValor = "Select * from  " +
-                 "Where IDGrupoMembresia Like '%' + @idgrupomembresia + '%' or IDcliente Like '%' + @idcliente + '%'" +
-                 "FechaRegistro Like '%' + @FechaRegistro + '%' or Estatus Like '%' + @estatus + '%' ";
+            string obtenerValor = "Select * from GrupoClientes " +
+                 "Where IDGrupoMembresia Like '%' + @idgrupomembresia + '%' or IDcliente Like '%' + @idcliente + '%' or " +
+                 "FechaRegistro Like '%' + @FechaRegistro + '%' or Estatus Like '%' + @estatus + '%' Order By IDGrupoMembresia";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idgrupomembresia", GrupoClienteDAL.IDGrupoMembresia);
-            cmd.Parameters.AddWithValue("@idcliente", GrupoClienteDAL.IDCliente);
-            cmd.Parameters.AddWithValue("@fecharegistro", GrupoClienteDAL.FechaRegistro);
-            cmd.Parameters.AddWithValue("@estatus", GrupoClienteDAL.Estatus);
+            cmd.Parameters.AddWithValue("@idgrupomembresia", grupoCliente.IDGrupoMembresia);
+            cmd.Parameters.AddWithValue("@idcliente", grupoCliente.IDCliente);
+            cmd.Parameters.AddWithValue("@fecharegistro", grupoCliente.FechaRegistro);
+            cmd.Parameters.AddWithValue("@estatus", grupoCliente.Estatus);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
