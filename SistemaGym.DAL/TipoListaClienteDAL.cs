@@ -12,13 +12,13 @@ namespace SistemaGym.DAL
     public class TipoListaClienteDAL : ConexionDAL
     {
         //metodo insertar tipo lista cliente
-        public static void InsertarTipoCliente(TipoListaClienteEntity tipoListaCliente)
+        public static void InsertarTipoListaCliente(TipoListaClienteEntity tipoListaCliente)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into TipoCliente(Nombre, Descripcion)" +
+            string insertar = "Insert into TipoListaCliente(Nombre, Descripcion)" +
                 " values(@nombre, @descripcion)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@nombre", tipoListaCliente.Nombre);
@@ -28,7 +28,7 @@ namespace SistemaGym.DAL
         }
 
         //metodo actualizar tipolistacliente
-        public static void ActualizarTipoCliente(TipoListaClienteEntity tipoListaCliente)
+        public static void ActualizarTipoListaCliente(TipoListaClienteEntity tipoListaCliente)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -53,7 +53,7 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from TipoCliente where IDTipoListaCliente= @idtipolistacliente";
+            string Eliminar = "Delete from TipoListaCliente where IDTipoListaCliente= @idtipolistacliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
             cmd.Parameters.AddWithValue("@idtipolistacliente", tipoListaCliente.IDTipoListaCliente);
             seElimino = cmd.ExecuteNonQuery() > 0;
