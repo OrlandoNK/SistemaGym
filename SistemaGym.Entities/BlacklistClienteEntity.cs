@@ -10,7 +10,7 @@ namespace SistemaGym.Entities
     public class BlacklistClienteEntity
     {
         public int IDBlackListCliente { get; set; }
-        public int IDListaCliente { get; set; }
+        public int IDTipoListaCliente { get; set; }
         public int IDCliente { get; set; }
 
         public string Razones { get; set; }
