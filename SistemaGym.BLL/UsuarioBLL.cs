@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaGym.Entities;
+using System.Security.Cryptography.X509Certificates;
+using System.Data;
 
 namespace SistemaGym.BLL
 {
@@ -13,9 +16,45 @@ namespace SistemaGym.BLL
          readonly UsuarioDAL usuarioDAL = new UsuarioDAL();
         public int ConsultaLogin(UsuarioEntity usuario)
         {
-
-
             return usuarioDAL.ConsultaLogin(usuario);
         }
+
+        public static void Guardar(UsuarioEntity usuario)
+        {
+            if (usuario.IDUsuario == 0)
+            {
+                //agregar
+                UsuarioDAL.InsertarUsuario(usuario);
+            }
+            else
+            {
+                //Actualizacion de clientes
+                UsuarioDAL.ActualizarUsuario(usuario);
+            }      
+       }
+
+        public static bool Eliminar(UsuarioEntity usuario)
+        {
+            return UsuarioDAL.EliminarUsuario(usuario);
+        }
+
+        public static DataTable MostrarCliente(UsuarioEntity usuario)
+        {
+            return UsuarioDAL.MostrarUsuario();
+
+        }
+
+        public static DataTable BuscarID(UsuarioEntity usuario)
+        {
+            return UsuarioDAL.BuscarID(usuario);
+        }
+
+        public static DataTable ObtenerPorValor(UsuarioEntity usuario)
+        {
+            return UsuarioDAL.ObtenerPorValor(usuario);
+        }
+
+
+
     }
 }
