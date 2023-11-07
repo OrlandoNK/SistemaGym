@@ -20,7 +20,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
-                              " VALUES(@IDMembresia, @IDCliente, @IDUsuario, @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
+                              " VALUES(@IDMembresia, @IDCliente, @IDUsuario, @CargoCredito, @CargoDebito @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
 
             SqlCommand cmd = new SqlCommand(Insertar, Conexion);
             cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
