@@ -11,33 +11,36 @@ namespace SistemaGym.BLL
 {
     public class MembresiaBLL
     {
-        public void Insertar(MembresiaEntity membresia)
+        public static void Insertar(MembresiaEntity membresia)
         {
-            MembresiaDAL .InsertarMembresia(membresia);
+            if (membresia.IDMembresia == 0){             
+                MembresiaDAL.InsertarMembresia(membresia);
+            }
+            else
+            {          
+                    MembresiaDAL.ActualizarMembresia(membresia);
+            }         
         }
 
-    public void Actualizar(MembresiaEntity membresia)
-    {
-        MembresiaDAL.ActualizarMembresia(membresia);
-    }
+   
 
-    public bool Eliminar(MembresiaEntity membresia)
+    public static bool Eliminar(MembresiaEntity membresia)
     {
         return MembresiaDAL.EliminarMembresia(membresia);
     }
 
-    public DataTable Mostrar()
+    public static DataTable Mostrar()
     {
         DataTable dataTable = MembresiaDAL.MostrarMembresia();
         return dataTable;
     }
 
-    public DataTable BuscarByID(MembresiaEntity membresia)
+    public static DataTable BuscarByID(MembresiaEntity membresia)
     {
         DataTable dataTable = MembresiaDAL.BuscarID(membresia);
         return dataTable;
     }
-    public DataTable BuscarByValor(MembresiaEntity membresia)
+    public static DataTable BuscarByValor(MembresiaEntity membresia)
         {
             DataTable dataTable = MembresiaDAL.ObtenerPorValor(membresia);
             return dataTable;
