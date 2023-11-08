@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "SistemaGym.Entities": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    },
+    "Perfil 1": {
+      "commandName": "Executable"
+    }
+  }
+}
