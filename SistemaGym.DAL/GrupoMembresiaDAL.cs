@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SistemaGym.DAL
 {
-    public class GrupoMembresia : ConexionDAL
+    public class GrupoMembresiaDAL: ConexionDAL
     {
         //metodo insertar GrupoMembresia
         public static void InsertarGrupoMembresia(GrupoMembresiaEntity grupoMembresia)
