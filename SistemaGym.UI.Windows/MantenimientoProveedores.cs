@@ -19,11 +19,6 @@ namespace SistemaGym.UI.Windows
             InitializeComponent();
         }
 
-        private void guna2PictureBox1_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
