@@ -104,6 +104,7 @@
             TxbNombre.FillColor = Color.FromArgb(0, 100, 182);
             TxbNombre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbNombre.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbNombre.ForeColor = Color.Azure;
             TxbNombre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbNombre.IconLeft = Properties.Resources.proveedor__2_;
             TxbNombre.Location = new Point(30, 156);
@@ -131,6 +132,7 @@
             TxbTelefono.FillColor = Color.FromArgb(0, 100, 182);
             TxbTelefono.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbTelefono.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbTelefono.ForeColor = Color.Azure;
             TxbTelefono.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbTelefono.IconLeft = Properties.Resources.tel;
             TxbTelefono.Location = new Point(30, 226);
@@ -158,6 +160,7 @@
             TxbDireccion.FillColor = Color.FromArgb(0, 100, 182);
             TxbDireccion.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbDireccion.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbDireccion.ForeColor = Color.Azure;
             TxbDireccion.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbDireccion.IconLeft = Properties.Resources.direccion1;
             TxbDireccion.Location = new Point(30, 296);
@@ -185,6 +188,7 @@
             TxbEstatus.FillColor = Color.FromArgb(0, 100, 182);
             TxbEstatus.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbEstatus.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbEstatus.ForeColor = Color.Azure;
             TxbEstatus.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbEstatus.IconLeft = Properties.Resources.estatus_2;
             TxbEstatus.Location = new Point(183, 366);
@@ -229,6 +233,7 @@
             TxbID.FillColor = Color.FromArgb(0, 100, 182);
             TxbID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbID.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbID.ForeColor = Color.Azure;
             TxbID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbID.IconLeft = Properties.Resources.ID;
             TxbID.Location = new Point(30, 85);
@@ -263,6 +268,7 @@
             btnNuevo.BorderColor = Color.FromArgb(39, 57, 80);
             btnNuevo.BorderRadius = 5;
             btnNuevo.BorderThickness = 1;
+            btnNuevo.Cursor = Cursors.Hand;
             btnNuevo.CustomizableEdges = customizableEdges15;
             btnNuevo.DisabledState.BorderColor = Color.DarkGray;
             btnNuevo.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -288,6 +294,7 @@
             btnEliminar.BorderColor = Color.FromArgb(39, 57, 80);
             btnEliminar.BorderRadius = 5;
             btnEliminar.BorderThickness = 1;
+            btnEliminar.Cursor = Cursors.Hand;
             btnEliminar.CustomizableEdges = customizableEdges17;
             btnEliminar.DisabledState.BorderColor = Color.DarkGray;
             btnEliminar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -312,6 +319,7 @@
             btnCancelar.BorderColor = Color.FromArgb(39, 57, 80);
             btnCancelar.BorderRadius = 5;
             btnCancelar.BorderThickness = 1;
+            btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.CustomizableEdges = customizableEdges19;
             btnCancelar.DisabledState.BorderColor = Color.DarkGray;
             btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -337,6 +345,7 @@
             btnGuardar.BorderColor = Color.FromArgb(39, 57, 80);
             btnGuardar.BorderRadius = 5;
             btnGuardar.BorderThickness = 1;
+            btnGuardar.Cursor = Cursors.Hand;
             btnGuardar.CustomizableEdges = customizableEdges21;
             btnGuardar.DisabledState.BorderColor = Color.DarkGray;
             btnGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -360,10 +369,10 @@
             // 
             dgvProveedores.AllowUserToAddRows = false;
             dgvProveedores.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 100, 182);
+            dataGridViewCellStyle1.BackColor = Color.LightBlue;
             dataGridViewCellStyle1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.CadetBlue;
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(39, 57, 80);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 100, 182);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dgvProveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvProveedores.Anchor = AnchorStyles.None;
@@ -371,20 +380,20 @@
             dgvProveedores.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvProveedores.BackgroundColor = Color.LightBlue;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 100, 182);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(39, 57, 80);
             dataGridViewCellStyle2.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.CadetBlue;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 100, 182);
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProveedores.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Telefono, Direccion, FechaRegistro, Estatus });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.PaleTurquoise;
+            dataGridViewCellStyle3.BackColor = Color.LightBlue;
             dataGridViewCellStyle3.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.CadetBlue;
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(39, 57, 80);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 100, 182);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvProveedores.DefaultCellStyle = dataGridViewCellStyle3;
@@ -400,10 +409,11 @@
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             dgvProveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvProveedores.RowHeadersVisible = false;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(39, 57, 80);
+            dataGridViewCellStyle5.BackColor = Color.LightBlue;
             dataGridViewCellStyle5.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(39, 57, 80);
             dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(0, 100, 182);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
             dgvProveedores.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvProveedores.RowTemplate.Height = 25;
             dgvProveedores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
