@@ -82,29 +82,5 @@ namespace SistemaGym.UI.Windows
             TxbEstatus.Clear();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            ProveedoresBLL proveedoresBLL = new ProveedoresBLL();
-
-            if (dgvProveedores.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectRow = dgvProveedores.SelectedRows[0];
-
-                int idDelete = Convert.ToInt32(selectRow.Cells["IDProveedor"].Value);
-                bool resultado = proveedoresBLL.Eliminar(idDelete);
-
-                if (resultado)
-                {
-                    MessageBox.Show("¡Proveedor Eliminado Satisfactoriamente!", "PROVEEDOR ELIMINADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvProveedores.DataSource = ProveedoresBLL.MostrarProveedores();
-                }
-
-                else
-                {
-                    MessageBox.Show("Se Ha Producido un Error al Intentar Eliminar el Proveedor", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-        }
     }
 }

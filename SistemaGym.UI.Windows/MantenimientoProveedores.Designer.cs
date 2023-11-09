@@ -305,7 +305,6 @@
             btnEliminar.Size = new Size(131, 40);
             btnEliminar.TabIndex = 4;
             btnEliminar.Text = "&Eliminar";
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnCancelar
             // 
