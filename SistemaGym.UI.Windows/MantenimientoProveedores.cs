@@ -84,6 +84,8 @@ namespace SistemaGym.UI.Windows
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            ProveedoresBLL proveedoresBLL = new ProveedoresBLL();
+
             if (dgvProveedores.SelectedRows.Count > 0)
             {
                 DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Proveedor?", "¿Eliminar Proveedor?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -92,6 +94,7 @@ namespace SistemaGym.UI.Windows
                     int idProveedor = Convert.ToInt32(dgvProveedores.SelectedRows[0].Cells["IDProveedor"].Value);
 
                     bool seElimino = ProveedoresBLL.Eliminar(idProveedor);
+                    
 
                     if (seElimino)
                     {

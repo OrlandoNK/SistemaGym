@@ -68,7 +68,6 @@ namespace SistemaGym.DAL
 
         }
 
-
         //metodo mostrar cliente
         public static DataTable MostrarProveedores()
         {
