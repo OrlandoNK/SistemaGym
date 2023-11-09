@@ -14,14 +14,13 @@ namespace SistemaGym.DAL
         private string usuario;
         private string clave;
         private bool seguridad;
-
         private static ConexionDAL con = null;
 
 
-        //= "PracticandoCapas: Server=ORLANDO-ABREU\\SQLEXPRESS; Database=PracticandoCapas; User Id=sa;Password=12345678; Integrated Security = true";
+
         protected ConexionDAL()
         {
-            this.Base = "PracticandoCapas";
+            this.Base = "SistemaGym";
             this.servidor = "ORLANDO-ABREU\\SQLEXPRESS";
             this.usuario = "sa";
             this.clave = "12345678";
@@ -39,7 +38,12 @@ namespace SistemaGym.DAL
                 {
                     cadena.ConnectionString = cadena.ConnectionString + " Integrated Security = SSPI";
                 }
-                else if (this.seguridad) { cadena.ConnectionString = "Server= (local)" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
+                else if (this.seguridad) 
+                { cadena.ConnectionString = "Server= LAPTOP-JHI5587U\\SQLEMANUEL" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
+                else if (this.seguridad)
+                { cadena.ConnectionString = "Server= DESKTOP-FT9L2OG\\SQLEXPRESS" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
+                else if (this.seguridad)
+                { cadena.ConnectionString = "Server= LAPTOP-JHI5587U\\SQLEMANUEL" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
                 else { cadena.ConnectionString = cadena.ConnectionString + "User Id=" + this.usuario + ";Password=" + this.clave; }
 
 
@@ -56,7 +60,7 @@ namespace SistemaGym.DAL
             return cadena;
         }
 
-        public ConexionDAL Instancia()
+        public static ConexionDAL Instancia()
         {
             if (con == null)
             {
