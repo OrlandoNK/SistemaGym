@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox14 = new TextBox();
-            textBox13 = new TextBox();
-            textBox12 = new TextBox();
-            textBox11 = new TextBox();
-            textBox10 = new TextBox();
-            textBox9 = new TextBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtEstatus = new TextBox();
+            txtFechaRegistro = new TextBox();
+            txtTelRes = new TextBox();
+            txtTelCell = new TextBox();
+            txtDireccion = new TextBox();
+            txtDocumento = new TextBox();
+            txtTipoDocumento = new TextBox();
+            txtApellido = new TextBox();
+            txtNombre = new TextBox();
+            txtTipoCliente = new TextBox();
+            txtTipoListaCliente = new TextBox();
+            txtmembresia = new TextBox();
+            txtusuario = new TextBox();
+            txtidcliente = new TextBox();
             dataGridView1 = new DataGridView();
             IDCliente = new DataGridViewTextBoxColumn();
             Usuario = new DataGridViewTextBoxColumn();
@@ -72,117 +72,117 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // textBox14
+            // txtEstatus
             // 
-            textBox14.Location = new Point(105, 428);
-            textBox14.Multiline = true;
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(100, 20);
-            textBox14.TabIndex = 86;
+            txtEstatus.Location = new Point(105, 428);
+            txtEstatus.Multiline = true;
+            txtEstatus.Name = "txtEstatus";
+            txtEstatus.Size = new Size(100, 20);
+            txtEstatus.TabIndex = 86;
             // 
-            // textBox13
+            // txtFechaRegistro
             // 
-            textBox13.Location = new Point(105, 402);
-            textBox13.Multiline = true;
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(100, 20);
-            textBox13.TabIndex = 85;
+            txtFechaRegistro.Location = new Point(105, 402);
+            txtFechaRegistro.Multiline = true;
+            txtFechaRegistro.Name = "txtFechaRegistro";
+            txtFechaRegistro.Size = new Size(100, 20);
+            txtFechaRegistro.TabIndex = 85;
             // 
-            // textBox12
+            // txtTelRes
             // 
-            textBox12.Location = new Point(105, 376);
-            textBox12.Multiline = true;
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(100, 20);
-            textBox12.TabIndex = 84;
+            txtTelRes.Location = new Point(105, 376);
+            txtTelRes.Multiline = true;
+            txtTelRes.Name = "txtTelRes";
+            txtTelRes.Size = new Size(100, 20);
+            txtTelRes.TabIndex = 84;
             // 
-            // textBox11
+            // txtTelCell
             // 
-            textBox11.Location = new Point(105, 350);
-            textBox11.Multiline = true;
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(100, 20);
-            textBox11.TabIndex = 83;
+            txtTelCell.Location = new Point(105, 350);
+            txtTelCell.Multiline = true;
+            txtTelCell.Name = "txtTelCell";
+            txtTelCell.Size = new Size(100, 20);
+            txtTelCell.TabIndex = 83;
             // 
-            // textBox10
+            // txtDireccion
             // 
-            textBox10.Location = new Point(105, 322);
-            textBox10.Multiline = true;
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(100, 20);
-            textBox10.TabIndex = 82;
+            txtDireccion.Location = new Point(105, 322);
+            txtDireccion.Multiline = true;
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(100, 20);
+            txtDireccion.TabIndex = 82;
             // 
-            // textBox9
+            // txtDocumento
             // 
-            textBox9.Location = new Point(105, 292);
-            textBox9.Multiline = true;
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(100, 20);
-            textBox9.TabIndex = 81;
+            txtDocumento.Location = new Point(105, 292);
+            txtDocumento.Multiline = true;
+            txtDocumento.Name = "txtDocumento";
+            txtDocumento.Size = new Size(100, 20);
+            txtDocumento.TabIndex = 81;
             // 
-            // textBox8
+            // txtTipoDocumento
             // 
-            textBox8.Location = new Point(105, 263);
-            textBox8.Multiline = true;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(100, 20);
-            textBox8.TabIndex = 80;
+            txtTipoDocumento.Location = new Point(105, 263);
+            txtTipoDocumento.Multiline = true;
+            txtTipoDocumento.Name = "txtTipoDocumento";
+            txtTipoDocumento.Size = new Size(100, 20);
+            txtTipoDocumento.TabIndex = 80;
             // 
-            // textBox7
+            // txtApellido
             // 
-            textBox7.Location = new Point(105, 230);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 20);
-            textBox7.TabIndex = 79;
+            txtApellido.Location = new Point(105, 230);
+            txtApellido.Multiline = true;
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(100, 20);
+            txtApellido.TabIndex = 79;
             // 
-            // textBox6
+            // txtNombre
             // 
-            textBox6.Location = new Point(105, 191);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 20);
-            textBox6.TabIndex = 78;
+            txtNombre.Location = new Point(105, 191);
+            txtNombre.Multiline = true;
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(100, 20);
+            txtNombre.TabIndex = 78;
             // 
-            // textBox5
+            // txtTipoCliente
             // 
-            textBox5.Location = new Point(105, 159);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 20);
-            textBox5.TabIndex = 77;
+            txtTipoCliente.Location = new Point(105, 159);
+            txtTipoCliente.Multiline = true;
+            txtTipoCliente.Name = "txtTipoCliente";
+            txtTipoCliente.Size = new Size(100, 20);
+            txtTipoCliente.TabIndex = 77;
             // 
-            // textBox4
+            // txtTipoListaCliente
             // 
-            textBox4.Location = new Point(105, 129);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 20);
-            textBox4.TabIndex = 76;
+            txtTipoListaCliente.Location = new Point(105, 129);
+            txtTipoListaCliente.Multiline = true;
+            txtTipoListaCliente.Name = "txtTipoListaCliente";
+            txtTipoListaCliente.Size = new Size(100, 20);
+            txtTipoListaCliente.TabIndex = 76;
             // 
-            // textBox3
+            // txtmembresia
             // 
-            textBox3.Location = new Point(105, 100);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 20);
-            textBox3.TabIndex = 75;
+            txtmembresia.Location = new Point(105, 100);
+            txtmembresia.Multiline = true;
+            txtmembresia.Name = "txtmembresia";
+            txtmembresia.Size = new Size(100, 20);
+            txtmembresia.TabIndex = 75;
             // 
-            // textBox2
+            // txtusuario
             // 
-            textBox2.Location = new Point(105, 72);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 20);
-            textBox2.TabIndex = 74;
+            txtusuario.Location = new Point(105, 72);
+            txtusuario.Multiline = true;
+            txtusuario.Name = "txtusuario";
+            txtusuario.Size = new Size(100, 20);
+            txtusuario.TabIndex = 74;
             // 
-            // textBox1
+            // txtidcliente
             // 
-            textBox1.Location = new Point(105, 38);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(29, 25);
-            textBox1.TabIndex = 73;
+            txtidcliente.Location = new Point(105, 38);
+            txtidcliente.Multiline = true;
+            txtidcliente.Name = "txtidcliente";
+            txtidcliente.Size = new Size(29, 25);
+            txtidcliente.TabIndex = 73;
             // 
             // dataGridView1
             // 
@@ -190,11 +190,11 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDCliente, Usuario, Membresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, FechaRegistro });
-            dataGridView1.Location = new Point(325, 38);
+            dataGridView1.Location = new Point(285, 48);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(684, 410);
+            dataGridView1.Size = new Size(724, 410);
             dataGridView1.TabIndex = 72;
             // 
             // IDCliente
@@ -400,20 +400,20 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1021, 628);
-            Controls.Add(textBox14);
-            Controls.Add(textBox13);
-            Controls.Add(textBox12);
-            Controls.Add(textBox11);
-            Controls.Add(textBox10);
-            Controls.Add(textBox9);
-            Controls.Add(textBox8);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtEstatus);
+            Controls.Add(txtFechaRegistro);
+            Controls.Add(txtTelRes);
+            Controls.Add(txtTelCell);
+            Controls.Add(txtDireccion);
+            Controls.Add(txtDocumento);
+            Controls.Add(txtTipoDocumento);
+            Controls.Add(txtApellido);
+            Controls.Add(txtNombre);
+            Controls.Add(txtTipoCliente);
+            Controls.Add(txtTipoListaCliente);
+            Controls.Add(txtmembresia);
+            Controls.Add(txtusuario);
+            Controls.Add(txtidcliente);
             Controls.Add(dataGridView1);
             Controls.Add(label14);
             Controls.Add(label13);
@@ -439,20 +439,20 @@
 
         #endregion
 
-        private TextBox textBox14;
-        private TextBox textBox13;
-        private TextBox textBox12;
-        private TextBox textBox11;
-        private TextBox textBox10;
-        private TextBox textBox9;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtEstatus;
+        private TextBox txtFechaRegistro;
+        private TextBox txtTelRes;
+        private TextBox txtTelCell;
+        private TextBox txtDireccion;
+        private TextBox txtDocumento;
+        private TextBox txtTipoDocumento;
+        private TextBox txtApellido;
+        private TextBox txtNombre;
+        private TextBox txtTipoCliente;
+        private TextBox txtTipoListaCliente;
+        private TextBox txtmembresia;
+        private TextBox txtusuario;
+        private TextBox txtidcliente;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn IDCliente;
         private DataGridViewTextBoxColumn Usuario;
