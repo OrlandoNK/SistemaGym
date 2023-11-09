@@ -37,15 +37,15 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            textIDActividad = new TextBox();
-            textIDTipoActividades = new TextBox();
-            textNombre = new TextBox();
-            textArea = new TextBox();
-            textEncargadoActividad = new TextBox();
-            textDia = new TextBox();
-            textHoraInicio = new TextBox();
-            textHoraCierre = new TextBox();
-            textEstatus = new TextBox();
+            txtActividad = new TextBox();
+            txtTipoActividades = new TextBox();
+            txtNombre = new TextBox();
+            txtArea = new TextBox();
+            txtEncargadoActividad = new TextBox();
+            txtDia = new TextBox();
+            txtHoraInicio = new TextBox();
+            txtHoraCierre = new TextBox();
+            txtEstatus = new TextBox();
             dataGridView1 = new DataGridView();
             IDActividad = new DataGridViewTextBoxColumn();
             IDTipoActividades = new DataGridViewTextBoxColumn();
@@ -56,6 +56,9 @@
             HoraInicio = new DataGridViewTextBoxColumn();
             HoraCierre = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
+            bntGuardar = new Button();
+            bntNuevo = new Button();
+            bntEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -141,68 +144,68 @@
             label9.TabIndex = 8;
             label9.Text = "Estatus";
             // 
-            // textIDActividad
+            // txtActividad
             // 
-            textIDActividad.Location = new Point(182, 71);
-            textIDActividad.Name = "textIDActividad";
-            textIDActividad.Size = new Size(100, 23);
-            textIDActividad.TabIndex = 9;
+            txtActividad.Location = new Point(182, 71);
+            txtActividad.Name = "txtActividad";
+            txtActividad.Size = new Size(100, 23);
+            txtActividad.TabIndex = 9;
             // 
-            // textIDTipoActividades
+            // txtTipoActividades
             // 
-            textIDTipoActividades.Location = new Point(182, 108);
-            textIDTipoActividades.Name = "textIDTipoActividades";
-            textIDTipoActividades.Size = new Size(100, 23);
-            textIDTipoActividades.TabIndex = 10;
+            txtTipoActividades.Location = new Point(182, 108);
+            txtTipoActividades.Name = "txtTipoActividades";
+            txtTipoActividades.Size = new Size(100, 23);
+            txtTipoActividades.TabIndex = 10;
             // 
-            // textNombre
+            // txtNombre
             // 
-            textNombre.Location = new Point(182, 147);
-            textNombre.Name = "textNombre";
-            textNombre.Size = new Size(100, 23);
-            textNombre.TabIndex = 11;
+            txtNombre.Location = new Point(182, 147);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(100, 23);
+            txtNombre.TabIndex = 11;
             // 
-            // textArea
+            // txtArea
             // 
-            textArea.Location = new Point(182, 188);
-            textArea.Name = "textArea";
-            textArea.Size = new Size(100, 23);
-            textArea.TabIndex = 12;
+            txtArea.Location = new Point(182, 188);
+            txtArea.Name = "txtArea";
+            txtArea.Size = new Size(100, 23);
+            txtArea.TabIndex = 12;
             // 
-            // textEncargadoActividad
+            // txtEncargadoActividad
             // 
-            textEncargadoActividad.Location = new Point(182, 229);
-            textEncargadoActividad.Name = "textEncargadoActividad";
-            textEncargadoActividad.Size = new Size(100, 23);
-            textEncargadoActividad.TabIndex = 13;
+            txtEncargadoActividad.Location = new Point(182, 229);
+            txtEncargadoActividad.Name = "txtEncargadoActividad";
+            txtEncargadoActividad.Size = new Size(100, 23);
+            txtEncargadoActividad.TabIndex = 13;
             // 
-            // textDia
+            // txtDia
             // 
-            textDia.Location = new Point(182, 268);
-            textDia.Name = "textDia";
-            textDia.Size = new Size(100, 23);
-            textDia.TabIndex = 14;
+            txtDia.Location = new Point(182, 268);
+            txtDia.Name = "txtDia";
+            txtDia.Size = new Size(100, 23);
+            txtDia.TabIndex = 14;
             // 
-            // textHoraInicio
+            // txtHoraInicio
             // 
-            textHoraInicio.Location = new Point(182, 306);
-            textHoraInicio.Name = "textHoraInicio";
-            textHoraInicio.Size = new Size(100, 23);
-            textHoraInicio.TabIndex = 15;
+            txtHoraInicio.Location = new Point(182, 306);
+            txtHoraInicio.Name = "txtHoraInicio";
+            txtHoraInicio.Size = new Size(100, 23);
+            txtHoraInicio.TabIndex = 15;
             // 
-            // textHoraCierre
+            // txtHoraCierre
             // 
-            textHoraCierre.Location = new Point(182, 340);
-            textHoraCierre.Name = "textHoraCierre";
-            textHoraCierre.Size = new Size(100, 23);
-            textHoraCierre.TabIndex = 16;
+            txtHoraCierre.Location = new Point(182, 340);
+            txtHoraCierre.Name = "txtHoraCierre";
+            txtHoraCierre.Size = new Size(100, 23);
+            txtHoraCierre.TabIndex = 16;
             // 
-            // textEstatus
+            // txtEstatus
             // 
-            textEstatus.Location = new Point(182, 378);
-            textEstatus.Name = "textEstatus";
-            textEstatus.Size = new Size(100, 23);
-            textEstatus.TabIndex = 17;
+            txtEstatus.Location = new Point(182, 378);
+            txtEstatus.Name = "txtEstatus";
+            txtEstatus.Size = new Size(100, 23);
+            txtEstatus.TabIndex = 17;
             // 
             // dataGridView1
             // 
@@ -271,21 +274,54 @@
             Estatus.Name = "Estatus";
             Estatus.ReadOnly = true;
             // 
+            // bntGuardar
+            // 
+            bntGuardar.Location = new Point(301, 306);
+            bntGuardar.Name = "bntGuardar";
+            bntGuardar.Size = new Size(75, 23);
+            bntGuardar.TabIndex = 19;
+            bntGuardar.Text = "Guardar";
+            bntGuardar.UseVisualStyleBackColor = true;
+            bntGuardar.Click += bntGuardar_Click;
+            // 
+            // bntNuevo
+            // 
+            bntNuevo.Location = new Point(407, 306);
+            bntNuevo.Name = "bntNuevo";
+            bntNuevo.Size = new Size(75, 23);
+            bntNuevo.TabIndex = 20;
+            bntNuevo.Text = "Nuevo";
+            bntNuevo.UseVisualStyleBackColor = true;
+            bntNuevo.Click += bntNuevo_Click;
+            // 
+            // bntEliminar
+            // 
+            bntEliminar.Location = new Point(522, 306);
+            bntEliminar.Name = "bntEliminar";
+            bntEliminar.Size = new Size(75, 23);
+            bntEliminar.TabIndex = 21;
+            bntEliminar.Text = "Eliminar";
+            bntEliminar.UseVisualStyleBackColor = true;
+            bntEliminar.Click += bntEliminar_Click;
+            // 
             // frmActividades
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(bntEliminar);
+            Controls.Add(bntNuevo);
+            Controls.Add(bntGuardar);
             Controls.Add(dataGridView1);
-            Controls.Add(textEstatus);
-            Controls.Add(textHoraCierre);
-            Controls.Add(textHoraInicio);
-            Controls.Add(textDia);
-            Controls.Add(textEncargadoActividad);
-            Controls.Add(textArea);
-            Controls.Add(textNombre);
-            Controls.Add(textIDTipoActividades);
-            Controls.Add(textIDActividad);
+            Controls.Add(txtEstatus);
+            Controls.Add(txtHoraCierre);
+            Controls.Add(txtHoraInicio);
+            Controls.Add(txtDia);
+            Controls.Add(txtEncargadoActividad);
+            Controls.Add(txtArea);
+            Controls.Add(txtNombre);
+            Controls.Add(txtTipoActividades);
+            Controls.Add(txtActividad);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -313,15 +349,15 @@
         private Label label7;
         private Label label8;
         private Label label9;
-        private TextBox textIDActividad;
-        private TextBox textIDTipoActividades;
-        private TextBox textNombre;
-        private TextBox textArea;
-        private TextBox textEncargadoActividad;
-        private TextBox textDia;
-        private TextBox textHoraInicio;
-        private TextBox textHoraCierre;
-        private TextBox textEstatus;
+        private TextBox txtActividad;
+        private TextBox txtTipoActividades;
+        private TextBox txtNombre;
+        private TextBox txtArea;
+        private TextBox txtEncargadoActividad;
+        private TextBox txtDia;
+        private TextBox txtHoraInicio;
+        private TextBox txtHoraCierre;
+        private TextBox txtEstatus;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn IDActividad;
         private DataGridViewTextBoxColumn IDTipoActividades;
@@ -332,5 +368,8 @@
         private DataGridViewTextBoxColumn HoraInicio;
         private DataGridViewTextBoxColumn HoraCierre;
         private DataGridViewTextBoxColumn Estatus;
+        private Button bntGuardar;
+        private Button bntNuevo;
+        private Button bntEliminar;
     }
 }
