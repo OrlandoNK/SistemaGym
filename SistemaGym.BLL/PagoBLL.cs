@@ -17,30 +17,30 @@ namespace SistemaGym.BLL
             if (pago.IDPago == 0)
             {
                 //agregar
-                PagoDAL.Insertarpago(pago);
+                PagoDAL.InsertarPago(pago);
             }
             else
             {
                 //Actualizar
-                PagoDAL.Actualizarpago(pago);
+                PagoDAL.Update(pago);
             }
 
         }
         public static bool Eliminar(PagoEntity pago)
         {
-            return PagoDAL.Eliminarpago(pago);
+            return PagoDAL.DeletePago(pago);
         }
         public static DataTable Mostrarpago(PagoEntity pago)
         {
-            return PagoDAL.Mostrarpago();
+            return PagoDAL.mostrarPago();
         }
         public static DataTable BucarID(PagoEntity pago)
         {
-            return PagoDAL.BuscarID(pago);
+            return PagoDAL.BuscarByID(pago);
         }
         public static DataTable ObtenerPorValor(PagoEntity pago)
         {
-            return PagoDAL.ObtenerPorValor(pago);
+            return PagoDAL.GetByValor(pago);
         }
     }
 }

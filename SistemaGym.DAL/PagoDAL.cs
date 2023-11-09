@@ -34,7 +34,7 @@ namespace SistemaGym.DAL
 
             /* Metodo para Actualizar Pago */
 
-            public static void UpdateProduct(PagoEntity pago)
+            public static void Update(PagoEntity pago)
             {
                 ConexionDAL instancia = Instancia();
                 SqlConnection Conexion = new SqlConnection();
@@ -55,7 +55,7 @@ namespace SistemaGym.DAL
             }
 
             /* Metodo para Eliminar un Pago por ID */
-            public bool DeletePago(PagoEntity pago)
+            public static bool DeletePago(PagoEntity pago)
             {
                 bool productDeleted;
 
