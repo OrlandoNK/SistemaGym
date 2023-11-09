@@ -81,19 +81,19 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = Color.FromArgb(0, 100, 182);
+            guna2Panel1.BackColor = Color.FromArgb(39, 57, 80);
             guna2Panel1.CustomizableEdges = customizableEdges1;
             guna2Panel1.Dock = DockStyle.Top;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel1.Size = new Size(975, 56);
+            guna2Panel1.Size = new Size(975, 50);
             guna2Panel1.TabIndex = 0;
             // 
             // TxbNombre
             // 
             TxbNombre.Anchor = AnchorStyles.None;
-            TxbNombre.BorderColor = Color.FromArgb(0, 100, 182);
+            TxbNombre.BorderColor = Color.FromArgb(39, 57, 80);
             TxbNombre.BorderThickness = 2;
             TxbNombre.CustomizableEdges = customizableEdges3;
             TxbNombre.DefaultText = "";
@@ -101,12 +101,12 @@
             TxbNombre.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             TxbNombre.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             TxbNombre.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            TxbNombre.FillColor = Color.FromArgb(39, 57, 80);
+            TxbNombre.FillColor = Color.FromArgb(0, 100, 182);
             TxbNombre.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbNombre.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbNombre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxbNombre.IconLeft = Properties.Resources.proveedor__1_;
-            TxbNombre.Location = new Point(30, 153);
+            TxbNombre.IconLeft = Properties.Resources.proveedor__2_;
+            TxbNombre.Location = new Point(30, 156);
             TxbNombre.Name = "TxbNombre";
             TxbNombre.PasswordChar = '\0';
             TxbNombre.PlaceholderForeColor = Color.Azure;
@@ -120,7 +120,7 @@
             // TxbTelefono
             // 
             TxbTelefono.Anchor = AnchorStyles.None;
-            TxbTelefono.BorderColor = Color.FromArgb(0, 100, 182);
+            TxbTelefono.BorderColor = Color.FromArgb(39, 57, 80);
             TxbTelefono.BorderThickness = 2;
             TxbTelefono.CustomizableEdges = customizableEdges5;
             TxbTelefono.DefaultText = "";
@@ -128,12 +128,12 @@
             TxbTelefono.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             TxbTelefono.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             TxbTelefono.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            TxbTelefono.FillColor = Color.FromArgb(39, 57, 80);
+            TxbTelefono.FillColor = Color.FromArgb(0, 100, 182);
             TxbTelefono.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbTelefono.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbTelefono.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbTelefono.IconLeft = Properties.Resources.tel;
-            TxbTelefono.Location = new Point(30, 223);
+            TxbTelefono.Location = new Point(30, 226);
             TxbTelefono.Name = "TxbTelefono";
             TxbTelefono.PasswordChar = '\0';
             TxbTelefono.PlaceholderForeColor = Color.Azure;
@@ -147,7 +147,7 @@
             // TxbDireccion
             // 
             TxbDireccion.Anchor = AnchorStyles.None;
-            TxbDireccion.BorderColor = Color.FromArgb(0, 100, 182);
+            TxbDireccion.BorderColor = Color.FromArgb(39, 57, 80);
             TxbDireccion.BorderThickness = 2;
             TxbDireccion.CustomizableEdges = customizableEdges7;
             TxbDireccion.DefaultText = "";
@@ -155,12 +155,12 @@
             TxbDireccion.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             TxbDireccion.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             TxbDireccion.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            TxbDireccion.FillColor = Color.FromArgb(39, 57, 80);
+            TxbDireccion.FillColor = Color.FromArgb(0, 100, 182);
             TxbDireccion.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbDireccion.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbDireccion.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbDireccion.IconLeft = Properties.Resources.direccion1;
-            TxbDireccion.Location = new Point(30, 293);
+            TxbDireccion.Location = new Point(30, 296);
             TxbDireccion.Name = "TxbDireccion";
             TxbDireccion.PasswordChar = '\0';
             TxbDireccion.PlaceholderForeColor = Color.Azure;
@@ -174,7 +174,7 @@
             // TxbEstatus
             // 
             TxbEstatus.Anchor = AnchorStyles.None;
-            TxbEstatus.BorderColor = Color.FromArgb(0, 100, 182);
+            TxbEstatus.BorderColor = Color.FromArgb(39, 57, 80);
             TxbEstatus.BorderThickness = 2;
             TxbEstatus.CustomizableEdges = customizableEdges9;
             TxbEstatus.DefaultText = "";
@@ -182,12 +182,12 @@
             TxbEstatus.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             TxbEstatus.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             TxbEstatus.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            TxbEstatus.FillColor = Color.FromArgb(39, 57, 80);
+            TxbEstatus.FillColor = Color.FromArgb(0, 100, 182);
             TxbEstatus.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbEstatus.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbEstatus.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbEstatus.IconLeft = Properties.Resources.estatus_2;
-            TxbEstatus.Location = new Point(183, 363);
+            TxbEstatus.Location = new Point(183, 366);
             TxbEstatus.Name = "TxbEstatus";
             TxbEstatus.PasswordChar = '\0';
             TxbEstatus.PlaceholderForeColor = Color.Azure;
@@ -200,7 +200,7 @@
             // 
             // guna2Panel2
             // 
-            guna2Panel2.BackColor = Color.FromArgb(39, 57, 80);
+            guna2Panel2.BackColor = Color.FromArgb(0, 100, 182);
             guna2Panel2.Controls.Add(TxbID);
             guna2Panel2.Controls.Add(TxbNombre);
             guna2Panel2.Controls.Add(TxbEstatus);
@@ -208,16 +208,16 @@
             guna2Panel2.Controls.Add(TxbDireccion);
             guna2Panel2.CustomizableEdges = customizableEdges13;
             guna2Panel2.Dock = DockStyle.Left;
-            guna2Panel2.Location = new Point(0, 56);
+            guna2Panel2.Location = new Point(0, 50);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2Panel2.Size = new Size(320, 502);
+            guna2Panel2.Size = new Size(320, 508);
             guna2Panel2.TabIndex = 5;
             // 
             // TxbID
             // 
             TxbID.Anchor = AnchorStyles.None;
-            TxbID.BorderColor = Color.FromArgb(0, 100, 182);
+            TxbID.BorderColor = Color.FromArgb(39, 57, 80);
             TxbID.BorderThickness = 2;
             TxbID.CustomizableEdges = customizableEdges11;
             TxbID.DefaultText = "";
@@ -226,12 +226,12 @@
             TxbID.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             TxbID.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TxbID.Enabled = false;
-            TxbID.FillColor = Color.FromArgb(39, 57, 80);
+            TxbID.FillColor = Color.FromArgb(0, 100, 182);
             TxbID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbID.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbID.IconLeft = Properties.Resources.ID;
-            TxbID.Location = new Point(30, 82);
+            TxbID.Location = new Point(30, 85);
             TxbID.Name = "TxbID";
             TxbID.PasswordChar = '\0';
             TxbID.PlaceholderForeColor = Color.Azure;
@@ -252,9 +252,9 @@
             panel1.Controls.Add(btnGuardar);
             panel1.Controls.Add(dgvProveedores);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(320, 56);
+            panel1.Location = new Point(320, 50);
             panel1.Name = "panel1";
-            panel1.Size = new Size(655, 502);
+            panel1.Size = new Size(655, 508);
             panel1.TabIndex = 6;
             // 
             // btnNuevo
@@ -274,7 +274,7 @@
             btnNuevo.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnNuevo.HoverState.ForeColor = Color.Azure;
             btnNuevo.Image = Properties.Resources.Nuevo;
-            btnNuevo.Location = new Point(9, 364);
+            btnNuevo.Location = new Point(9, 367);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnNuevo.Size = new Size(131, 40);
@@ -299,7 +299,7 @@
             btnEliminar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnEliminar.HoverState.ForeColor = Color.Azure;
             btnEliminar.Image = Properties.Resources.delete_proveedor;
-            btnEliminar.Location = new Point(283, 364);
+            btnEliminar.Location = new Point(283, 367);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnEliminar.Size = new Size(131, 40);
@@ -323,7 +323,7 @@
             btnCancelar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnCancelar.HoverState.ForeColor = Color.Azure;
             btnCancelar.Image = Properties.Resources.Cancelar;
-            btnCancelar.Location = new Point(515, 364);
+            btnCancelar.Location = new Point(515, 367);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnCancelar.Size = new Size(131, 40);
@@ -348,7 +348,7 @@
             btnGuardar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnGuardar.HoverState.ForeColor = Color.Azure;
             btnGuardar.Image = Properties.Resources.Guardar;
-            btnGuardar.Location = new Point(146, 364);
+            btnGuardar.Location = new Point(146, 367);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges22;
             btnGuardar.Size = new Size(131, 40);
@@ -388,7 +388,7 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvProveedores.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvProveedores.Location = new Point(9, 46);
+            dgvProveedores.Location = new Point(9, 49);
             dgvProveedores.Name = "dgvProveedores";
             dgvProveedores.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
