@@ -1,6 +1,6 @@
 ﻿namespace SistemaGym.UI.Windows
 {
-    partial class Form1
+    partial class MenuPrincipalUI
     {
         /// <summary>
         ///  Required designer variable.
