@@ -53,7 +53,7 @@
             btnProductos.ImageAlign = ContentAlignment.MiddleLeft;
             btnProductos.Location = new Point(-6, 310);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(235, 85);
+            btnProductos.Size = new Size(235, 92);
             btnProductos.TabIndex = 11;
             btnProductos.Text = "Productos";
             btnProductos.TextAlign = ContentAlignment.MiddleRight;
@@ -91,9 +91,9 @@
             // panelDesktop
             // 
             panelDesktop.Controls.Add(lblWelcome);
-            panelDesktop.Location = new Point(223, 123);
+            panelDesktop.Location = new Point(226, 123);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(633, 391);
+            panelDesktop.Size = new Size(630, 391);
             panelDesktop.TabIndex = 8;
             // 
             // lblWelcome
@@ -110,9 +110,9 @@
             panelInicio.BackColor = Color.FromArgb(192, 255, 255);
             panelInicio.Controls.Add(btnClose);
             panelInicio.Controls.Add(lblInicio);
-            panelInicio.Location = new Point(217, 5);
+            panelInicio.Location = new Point(226, 5);
             panelInicio.Name = "panelInicio";
-            panelInicio.Size = new Size(639, 118);
+            panelInicio.Size = new Size(630, 118);
             panelInicio.TabIndex = 7;
             // 
             // btnClose
@@ -130,7 +130,7 @@
             // lblInicio
             // 
             lblInicio.AutoSize = true;
-            lblInicio.Location = new Point(205, 54);
+            lblInicio.Location = new Point(284, 54);
             lblInicio.Name = "lblInicio";
             lblInicio.Size = new Size(42, 15);
             lblInicio.TabIndex = 0;
@@ -142,14 +142,14 @@
             panelComford.Controls.Add(label1);
             panelComford.Location = new Point(2, 6);
             panelComford.Name = "panelComford";
-            panelComford.Size = new Size(215, 117);
+            panelComford.Size = new Size(227, 117);
             panelComford.TabIndex = 6;
             panelComford.Paint += panelComford_Paint;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(106, 61);
+            label1.Location = new Point(77, 53);
             label1.Name = "label1";
             label1.Size = new Size(83, 15);
             label1.TabIndex = 0;
