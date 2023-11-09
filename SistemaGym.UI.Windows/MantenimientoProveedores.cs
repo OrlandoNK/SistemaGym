@@ -82,5 +82,35 @@ namespace SistemaGym.UI.Windows
             TxbEstatus.Clear();
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvProveedores.SelectedRows.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Proveedor?", "¿Eliminar Proveedor?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int idProveedor = Convert.ToInt32(dgvProveedores.SelectedRows[0].Cells["IDProveedor"].Value);
+
+                    bool seElimino = ProveedoresBLL.Eliminar(idProveedor);
+
+                    if (seElimino)
+                    {
+                        dgvProveedores.Rows.RemoveAt(dgvProveedores.SelectedRows[0].Index);
+                        MessageBox.Show("¡Proveedor Eliminado Satisfactoriamente!", "Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvProveedores.DataSource = ProveedoresBLL.MostrarProveedores();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se Produjo un Error al Intentar Eliminar el Proveedor", "Error al Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                if (dialogResult == DialogResult.No)
+                {
+
+                }
+
+            }
+        }
     }
 }

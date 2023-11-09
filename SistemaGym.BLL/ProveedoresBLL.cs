@@ -27,9 +27,9 @@ namespace SistemaGym.BLL
             }
         }
 
-        public static bool Eliminar(ProveedoresEntity proveedores)
+        public static bool Eliminar(int Id)
         {
-            return ProveedoresDAL.EliminarProveedores(proveedores);
+            return ProveedoresDAL.EliminarProveedores(Id);
         }
 
         public static DataTable MostrarProveedores()

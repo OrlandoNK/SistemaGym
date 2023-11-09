@@ -68,7 +68,7 @@
             btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             dgvProveedores = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
+            IDProveedor = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Telefono = new DataGridViewTextBoxColumn();
             Direccion = new DataGridViewTextBoxColumn();
@@ -312,6 +312,7 @@
             btnEliminar.Size = new Size(131, 40);
             btnEliminar.TabIndex = 4;
             btnEliminar.Text = "&Eliminar";
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnCancelar
             // 
@@ -388,7 +389,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProveedores.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Telefono, Direccion, FechaRegistro, Estatus });
+            dgvProveedores.Columns.AddRange(new DataGridViewColumn[] { IDProveedor, Nombre, Telefono, Direccion, FechaRegistro, Estatus });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.LightBlue;
             dataGridViewCellStyle3.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -420,12 +421,12 @@
             dgvProveedores.Size = new Size(637, 312);
             dgvProveedores.TabIndex = 0;
             // 
-            // ID
+            // IDProveedor
             // 
-            ID.DataPropertyName = "IDProveedor";
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
+            IDProveedor.DataPropertyName = "IDProveedor";
+            IDProveedor.HeaderText = "IDProveedor";
+            IDProveedor.Name = "IDProveedor";
+            IDProveedor.ReadOnly = true;
             // 
             // Nombre
             // 
@@ -496,13 +497,13 @@
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private Guna.UI2.WinForms.Guna2Button btnEliminar;
-        private DataGridViewTextBoxColumn ID;
+        private Guna.UI2.WinForms.Guna2TextBox TxbID;
+        private Guna.UI2.WinForms.Guna2Button btnNuevo;
+        private DataGridViewTextBoxColumn IDProveedor;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn Direccion;
         private DataGridViewTextBoxColumn FechaRegistro;
         private DataGridViewTextBoxColumn Estatus;
-        private Guna.UI2.WinForms.Guna2TextBox TxbID;
-        private Guna.UI2.WinForms.Guna2Button btnNuevo;
     }
 }
