@@ -274,7 +274,7 @@
             btnNuevo.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnNuevo.HoverState.ForeColor = Color.Azure;
             btnNuevo.Image = Properties.Resources.Nuevo;
-            btnNuevo.Location = new Point(9, 367);
+            btnNuevo.Location = new Point(9, 393);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnNuevo.Size = new Size(131, 40);
@@ -299,12 +299,13 @@
             btnEliminar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnEliminar.HoverState.ForeColor = Color.Azure;
             btnEliminar.Image = Properties.Resources.delete_proveedor;
-            btnEliminar.Location = new Point(283, 367);
+            btnEliminar.Location = new Point(283, 393);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnEliminar.Size = new Size(131, 40);
             btnEliminar.TabIndex = 4;
             btnEliminar.Text = "&Eliminar";
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnCancelar
             // 
@@ -323,7 +324,7 @@
             btnCancelar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnCancelar.HoverState.ForeColor = Color.Azure;
             btnCancelar.Image = Properties.Resources.Cancelar;
-            btnCancelar.Location = new Point(515, 367);
+            btnCancelar.Location = new Point(515, 393);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnCancelar.Size = new Size(131, 40);
@@ -348,7 +349,7 @@
             btnGuardar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnGuardar.HoverState.ForeColor = Color.Azure;
             btnGuardar.Image = Properties.Resources.Guardar;
-            btnGuardar.Location = new Point(146, 367);
+            btnGuardar.Location = new Point(146, 393);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges22;
             btnGuardar.Size = new Size(131, 40);
@@ -388,7 +389,7 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvProveedores.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvProveedores.Location = new Point(9, 49);
+            dgvProveedores.Location = new Point(9, 75);
             dgvProveedores.Name = "dgvProveedores";
             dgvProveedores.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;

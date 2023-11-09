@@ -20,10 +20,8 @@ namespace SistemaGym.DAL
         
         protected ConexionDAL()
         {
-            this.Base = "PracticandoCapas";
-            this.servidor = "ORLANDO-ABREU\\SQLEXPRESS";
-            this.usuario = "sa";
-            this.clave = "12345678";
+            this.Base = "SistemaGym";
+            this.servidor = "(local)";
             this.seguridad = true;
         }
 
