@@ -44,17 +44,17 @@
             txtidcliente = new TextBox();
             dgvCliente = new DataGridView();
             IDCliente = new DataGridViewTextBoxColumn();
-            Usuario = new DataGridViewTextBoxColumn();
-            Membresia = new DataGridViewTextBoxColumn();
-            TipoListaCliente = new DataGridViewTextBoxColumn();
-            TipoCliente = new DataGridViewTextBoxColumn();
+            IDUsuario = new DataGridViewTextBoxColumn();
+            IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
             TipoDocumento = new DataGridViewTextBoxColumn();
             Documento = new DataGridViewTextBoxColumn();
             Direccion = new DataGridViewTextBoxColumn();
             TelCell = new DataGridViewTextBoxColumn();
+            TelRes = new DataGridViewTextBoxColumn();
             FechaRegistro = new DataGridViewTextBoxColumn();
+            Estatus = new DataGridViewTextBoxColumn();
             label14 = new Label();
             label13 = new Label();
             label12 = new Label();
@@ -188,8 +188,8 @@
             // 
             dgvCliente.AllowUserToAddRows = false;
             dgvCliente.AllowUserToDeleteRows = false;
-            dgvCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCliente.Columns.AddRange(new DataGridViewColumn[] { IDCliente, Usuario, Membresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, FechaRegistro });
+            dgvCliente.ColumnHeadersHeight = 22;
+            dgvCliente.Columns.AddRange(new DataGridViewColumn[] { IDCliente, IDUsuario, IDMembresia, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus });
             dgvCliente.Location = new Point(285, 48);
             dgvCliente.Name = "dgvCliente";
             dgvCliente.ReadOnly = true;
@@ -199,75 +199,87 @@
             // 
             // IDCliente
             // 
+            IDCliente.DataPropertyName = "IDCliente";
             IDCliente.HeaderText = "IDCliente";
             IDCliente.Name = "IDCliente";
             IDCliente.ReadOnly = true;
             // 
-            // Usuario
+            // IDUsuario
             // 
-            Usuario.HeaderText = "Usuario";
-            Usuario.Name = "Usuario";
-            Usuario.ReadOnly = true;
+            IDUsuario.DataPropertyName = "IDUsuario";
+            IDUsuario.HeaderText = "Usuario";
+            IDUsuario.Name = "IDUsuario";
+            IDUsuario.ReadOnly = true;
             // 
-            // Membresia
+            // IDMembresia
             // 
-            Membresia.HeaderText = "Membresia";
-            Membresia.Name = "Membresia";
-            Membresia.ReadOnly = true;
-            // 
-            // TipoListaCliente
-            // 
-            TipoListaCliente.HeaderText = "TipoListaCliente";
-            TipoListaCliente.Name = "TipoListaCliente";
-            TipoListaCliente.ReadOnly = true;
-            // 
-            // TipoCliente
-            // 
-            TipoCliente.HeaderText = "TipoCliente";
-            TipoCliente.Name = "TipoCliente";
-            TipoCliente.ReadOnly = true;
+            IDMembresia.DataPropertyName = "IDMembresia";
+            IDMembresia.HeaderText = "Membresia";
+            IDMembresia.Name = "IDMembresia";
+            IDMembresia.ReadOnly = true;
             // 
             // Nombre
             // 
+            Nombre.DataPropertyName = "Nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
             Nombre.ReadOnly = true;
             // 
             // Apellido
             // 
+            Apellido.DataPropertyName = "Apellido";
             Apellido.HeaderText = "Apellido";
             Apellido.Name = "Apellido";
             Apellido.ReadOnly = true;
             // 
             // TipoDocumento
             // 
+            TipoDocumento.DataPropertyName = "TipoDocumento";
             TipoDocumento.HeaderText = "TipoDocumento";
             TipoDocumento.Name = "TipoDocumento";
             TipoDocumento.ReadOnly = true;
             // 
             // Documento
             // 
+            Documento.DataPropertyName = "Documento";
             Documento.HeaderText = "Documento";
             Documento.Name = "Documento";
             Documento.ReadOnly = true;
             // 
             // Direccion
             // 
+            Direccion.DataPropertyName = "Direccion";
             Direccion.HeaderText = "Direccion";
             Direccion.Name = "Direccion";
             Direccion.ReadOnly = true;
             // 
             // TelCell
             // 
-            TelCell.HeaderText = "TelRes";
+            TelCell.DataPropertyName = "TelCell";
+            TelCell.HeaderText = "TelCell";
             TelCell.Name = "TelCell";
             TelCell.ReadOnly = true;
             // 
+            // TelRes
+            // 
+            TelRes.DataPropertyName = "TelRes";
+            TelRes.HeaderText = "TelRes";
+            TelRes.Name = "TelRes";
+            TelRes.ReadOnly = true;
+            // 
             // FechaRegistro
             // 
+            FechaRegistro.DataPropertyName = "FechaRegistro";
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.ReadOnly = true;
+            // 
+            // Estatus
+            // 
+            Estatus.DataPropertyName = "Estatus";
+            Estatus.HeaderText = "Estatus";
+            Estatus.Name = "Estatus";
+            Estatus.ReadOnly = true;
             // 
             // label14
             // 
@@ -454,18 +466,6 @@
         private TextBox txtusuario;
         private TextBox txtidcliente;
         private DataGridView dgvCliente;
-        private DataGridViewTextBoxColumn IDCliente;
-        private DataGridViewTextBoxColumn Usuario;
-        private DataGridViewTextBoxColumn Membresia;
-        private DataGridViewTextBoxColumn TipoListaCliente;
-        private DataGridViewTextBoxColumn TipoCliente;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Apellido;
-        private DataGridViewTextBoxColumn TipoDocumento;
-        private DataGridViewTextBoxColumn Documento;
-        private DataGridViewTextBoxColumn Direccion;
-        private DataGridViewTextBoxColumn TelCell;
-        private DataGridViewTextBoxColumn FechaRegistro;
         private Label label14;
         private Label label13;
         private Label label12;
@@ -480,5 +480,17 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private DataGridViewTextBoxColumn IDCliente;
+        private DataGridViewTextBoxColumn IDUsuario;
+        private DataGridViewTextBoxColumn IDMembresia;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
+        private DataGridViewTextBoxColumn TipoDocumento;
+        private DataGridViewTextBoxColumn Documento;
+        private DataGridViewTextBoxColumn Direccion;
+        private DataGridViewTextBoxColumn TelCell;
+        private DataGridViewTextBoxColumn TelRes;
+        private DataGridViewTextBoxColumn FechaRegistro;
+        private DataGridViewTextBoxColumn Estatus;
     }
 }

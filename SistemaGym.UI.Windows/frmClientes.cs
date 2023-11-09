@@ -13,7 +13,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmClientes : Form
     {
-        ClientesBLL clientesBLL= new ClientesBLL(); 
+        ClientesBLL clientesBLL = new ClientesBLL();
         public frmClientes()
         {
             InitializeComponent();
