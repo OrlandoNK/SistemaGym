@@ -42,7 +42,7 @@
             txtmembresia = new TextBox();
             txtusuario = new TextBox();
             txtidcliente = new TextBox();
-            dataGridView1 = new DataGridView();
+            dgvCliente = new DataGridView();
             IDCliente = new DataGridViewTextBoxColumn();
             Usuario = new DataGridViewTextBoxColumn();
             Membresia = new DataGridViewTextBoxColumn();
@@ -69,7 +69,7 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
             SuspendLayout();
             // 
             // txtEstatus
@@ -184,18 +184,18 @@
             txtidcliente.Size = new Size(29, 25);
             txtidcliente.TabIndex = 73;
             // 
-            // dataGridView1
+            // dgvCliente
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDCliente, Usuario, Membresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, FechaRegistro });
-            dataGridView1.Location = new Point(285, 48);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(724, 410);
-            dataGridView1.TabIndex = 72;
+            dgvCliente.AllowUserToAddRows = false;
+            dgvCliente.AllowUserToDeleteRows = false;
+            dgvCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCliente.Columns.AddRange(new DataGridViewColumn[] { IDCliente, Usuario, Membresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, FechaRegistro });
+            dgvCliente.Location = new Point(285, 48);
+            dgvCliente.Name = "dgvCliente";
+            dgvCliente.ReadOnly = true;
+            dgvCliente.RowTemplate.Height = 25;
+            dgvCliente.Size = new Size(724, 410);
+            dgvCliente.TabIndex = 72;
             // 
             // IDCliente
             // 
@@ -414,7 +414,7 @@
             Controls.Add(txtmembresia);
             Controls.Add(txtusuario);
             Controls.Add(txtidcliente);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvCliente);
             Controls.Add(label14);
             Controls.Add(label13);
             Controls.Add(label12);
@@ -432,7 +432,7 @@
             Name = "frmClientes";
             Text = "Clientes";
             Load += frmClientes_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -453,7 +453,7 @@
         private TextBox txtmembresia;
         private TextBox txtusuario;
         private TextBox txtidcliente;
-        private DataGridView dataGridView1;
+        private DataGridView dgvCliente;
         private DataGridViewTextBoxColumn IDCliente;
         private DataGridViewTextBoxColumn Usuario;
         private DataGridViewTextBoxColumn Membresia;

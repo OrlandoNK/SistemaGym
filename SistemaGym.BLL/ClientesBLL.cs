@@ -27,7 +27,7 @@ namespace SistemaGym.BLL
         {
             return ClientesDAL.EliminarCliente(clientes);
         }
-        public static DataTable MostrarCliente(ClientesEntity clientes)
+        public static DataTable MostrarCliente()
         {
             return ClientesDAL.MostrarCliente();
         }

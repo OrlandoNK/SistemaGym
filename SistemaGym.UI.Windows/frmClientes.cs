@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGym.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmClientes : Form
     {
+        ClientesBLL clientesBLL= new ClientesBLL(); 
         public frmClientes()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace SistemaGym.UI.Windows
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-
+            dgvCliente.DataSource = ClientesBLL.MostrarCliente();
         }
     }
 }
