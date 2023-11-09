@@ -31,19 +31,18 @@ namespace SistemaGym.BLL
 
     public static DataTable Mostrar()
     {
-        DataTable dataTable = MembresiaDAL.MostrarMembresia();
-        return dataTable;
-    }
+        return MembresiaDAL.MostrarMembresia();
+        }
 
     public static DataTable BuscarByID(MembresiaEntity membresia)
     {
-        DataTable dataTable = MembresiaDAL.BuscarID(membresia);
-        return dataTable;
+            return MembresiaDAL.BuscarID(membresia);
+        
     }
     public static DataTable BuscarByValor(MembresiaEntity membresia)
         {
-            DataTable dataTable = MembresiaDAL.ObtenerPorValor(membresia);
-            return dataTable;
+            return MembresiaDAL.ObtenerPorValor(membresia);
+           
         }
     }
         
