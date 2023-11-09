@@ -20,10 +20,8 @@ namespace SistemaGym.DAL
                 SqlConnection Conexion = new SqlConnection();
 
                 Conexion.Open();
-                string Insertar = "INSERT INTO Pago (IDPago, IDFacturaProductos, IDFacturaMembresia, MetodoPago, Monto,FechaPago,Estatus, ) VALUES(@idpago, @idfacturaproducto, @idfacturamembresia, @metodopago,@monto, @fechapago, @estatus )";
+                string Insertar = "INSERT INTO Pago (IDFacturaProductos, IDFacturaMembresia, MetodoPago, Monto,FechaPago,Estatus, ) VALUES(@idpago, @idfacturaproducto, @idfacturamembresia, @metodopago,@monto, @fechapago, @estatus )";
                 SqlCommand cmd = new SqlCommand(Insertar, Conexion);
-
-                cmd.Parameters.AddWithValue("@idpago", pago.IDPago);
                 cmd.Parameters.AddWithValue("@idfacturaproductos", pago.IDFacturaProductos);
                 cmd.Parameters.AddWithValue("@idfacturamembresia", pago.IDFacturaMembresia);
                 cmd.Parameters.AddWithValue("@metodopago", pago.MetodoPago);
@@ -42,10 +40,8 @@ namespace SistemaGym.DAL
                 SqlConnection Conexion = new SqlConnection();
 
                 Conexion.Open();
-                string UpdateProduct = "UPDATE Pago SET IDPago = @idpago, IDFacturaProductos = @idfacturaproductos, IDFacturaMembresia = @idfacturamembresia, MetodoPago = @metodopago, Monto = @monto, FechaPago = @fechapago, Estatus = @estatus";
+                string UpdateProduct = "UPDATE Pago SET IDFacturaProductos = @idfacturaproductos, IDFacturaMembresia = @idfacturamembresia, MetodoPago = @metodopago, Monto = @monto, FechaPago = @fechapago, Estatus = @estatus";
                 SqlCommand cmd = new SqlCommand(UpdateProduct, Conexion);
-
-                cmd.Parameters.AddWithValue("@idpago", pago.IDPago);
                 cmd.Parameters.AddWithValue("@idfacturaproductos", pago.IDFacturaProductos);
                 cmd.Parameters.AddWithValue("@idfacturamembresia", pago.IDFacturaMembresia);
                 cmd.Parameters.AddWithValue("@metodopago", pago.MetodoPago);
@@ -69,7 +65,6 @@ namespace SistemaGym.DAL
                 Conexion.Open();
                 string Delete = "DELETE FROM Pago WHERE IDProducto = @IDPago";
                 SqlCommand cmd = new SqlCommand(Delete, Conexion);
-
                 cmd.Parameters.AddWithValue("@IDPago", pago.IDPago);
                 productDeleted = cmd.ExecuteNonQuery() > 0;
 
@@ -86,13 +81,12 @@ namespace SistemaGym.DAL
                 DataTable dataTBL = new DataTable();
 
                 Conexion.Open();
-                string Mostrar = "SELECT * FROM Pago Order by Nombre";
+                string Mostrar = "SELECT * FROM Pago Order by FechaPago DESC";
                 SqlCommand cmnd = new SqlCommand(Mostrar, Conexion);
                 SqlDataAdapter adapterDTBL = new SqlDataAdapter(cmnd);
                 adapterDTBL.Fill(dataTBL);
 
                 return dataTBL;
-
             }
 
             /* Metodo par Buscar por ID */
@@ -122,7 +116,7 @@ namespace SistemaGym.DAL
                 Conexion.Open();
                 DataTable dataTBL = new DataTable();
                 string GetValor = "SELECT * FROM Pago " +
-                                  "WHERE IDFacturaProductos LIKE '%' + @idfacturapago + '%' or IDFacturaMembresia LIKE '%' + @idfacturamembresia + '%' or MetodoPago LIKE '%' + @metodopago + '%' or Monto LIKE '%' + @monto + '%' or FechaPago LIKE '%' + @fechapago + '%' or Estatus LIKE '%' + @estatus + '%' ORDER BY Nombre";
+                                  "WHERE IDFacturaProductos LIKE '%' + @idfacturaproductos + '%' or IDFacturaMembresia LIKE '%' + @idfacturamembresia + '%' or MetodoPago LIKE '%' + @metodopago + '%' or Monto LIKE '%' + @monto + '%' or FechaPago LIKE '%' + @fechapago + '%' or Estatus LIKE '%' + @estatus + '%' ORDER BY FechaPago DESC";
 
                 SqlCommand cmd = new SqlCommand(GetValor, Conexion);
                 cmd.Parameters.AddWithValue("@idfacturaproductos", pago.IDFacturaProductos);
