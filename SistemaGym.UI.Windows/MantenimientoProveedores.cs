@@ -31,20 +31,29 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            ProveedoresEntity nuevoProveedor = new ProveedoresEntity();
-
-            nuevoProveedor.Nombre = TxbNombre.Text;
-            nuevoProveedor.Telefono = TxbTelefono.Text;
-            nuevoProveedor.Direccion = TxbDireccion.Text;
-            nuevoProveedor.FechaRegistro = DateTime.Now;
-            nuevoProveedor.Estatus = TxbEstatus.Text;
-
-
-            if (TxbID.Text == "0")
+            DialogResult result = MessageBox.Show("¿Desea Guardar este Registro de Proveedor?", "¿Guardar Proveedor?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                ProveedoresBLL.Guardar(nuevoProveedor);
-                MessageBox.Show("¡Proveedor Registrado de Manera Satisfactoria!", "MANTENIMIENTO PROVEEDOR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarCampos();
+                ProveedoresEntity nuevoProveedor = new ProveedoresEntity();
+
+                nuevoProveedor.Nombre = TxbNombre.Text;
+                nuevoProveedor.Telefono = TxbTelefono.Text;
+                nuevoProveedor.Direccion = TxbDireccion.Text;
+                nuevoProveedor.FechaRegistro = DateTime.Now;
+                nuevoProveedor.Estatus = TxbEstatus.Text;
+
+
+                if (TxbID.Text == "0")
+                {
+                    ProveedoresBLL.Guardar(nuevoProveedor);
+                    MessageBox.Show("¡Proveedor Registrado de Manera Satisfactoria!", "MANTENIMIENTO PROVEEDOR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCampos();
+                }
+            }
+
+            if (result == DialogResult.No)
+            {
+
             }
 
         }
