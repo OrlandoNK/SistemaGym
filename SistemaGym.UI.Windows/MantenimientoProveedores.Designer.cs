@@ -42,12 +42,17 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             TxbNombre = new Guna.UI2.WinForms.Guna2TextBox();
@@ -56,10 +61,10 @@
             TxbEstatus = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             panel1 = new Panel();
+            btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             dgvProveedores = new DataGridView();
-            btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -76,7 +81,7 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel1.Size = new Size(1036, 56);
+            guna2Panel1.Size = new Size(880, 56);
             guna2Panel1.TabIndex = 0;
             // 
             // guna2PictureBox1
@@ -86,7 +91,7 @@
             guna2PictureBox1.FillColor = Color.Transparent;
             guna2PictureBox1.Image = Properties.Resources.cerrar;
             guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(992, 12);
+            guna2PictureBox1.Location = new Point(836, 12);
             guna2PictureBox1.Name = "guna2PictureBox1";
             guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2PictureBox1.Size = new Size(32, 32);
@@ -228,8 +233,32 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(320, 56);
             panel1.Name = "panel1";
-            panel1.Size = new Size(716, 502);
+            panel1.Size = new Size(560, 502);
             panel1.TabIndex = 6;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Anchor = AnchorStyles.None;
+            btnEliminar.BorderColor = Color.FromArgb(39, 57, 80);
+            btnEliminar.BorderRadius = 5;
+            btnEliminar.BorderThickness = 1;
+            btnEliminar.CustomizableEdges = customizableEdges15;
+            btnEliminar.DisabledState.BorderColor = Color.DarkGray;
+            btnEliminar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEliminar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEliminar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEliminar.FillColor = Color.Transparent;
+            btnEliminar.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEliminar.ForeColor = Color.FromArgb(39, 57, 80);
+            btnEliminar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
+            btnEliminar.HoverState.ForeColor = Color.Azure;
+            btnEliminar.Image = Properties.Resources.delete_proveedor;
+            btnEliminar.Location = new Point(147, 361);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnEliminar.Size = new Size(131, 40);
+            btnEliminar.TabIndex = 4;
+            btnEliminar.Text = "&Eliminar";
             // 
             // btnCancelar
             // 
@@ -248,7 +277,7 @@
             btnCancelar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnCancelar.HoverState.ForeColor = Color.Azure;
             btnCancelar.Image = Properties.Resources.Cancelar;
-            btnCancelar.Location = new Point(576, 361);
+            btnCancelar.Location = new Point(420, 361);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnCancelar.Size = new Size(131, 40);
@@ -273,7 +302,7 @@
             btnGuardar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnGuardar.HoverState.ForeColor = Color.Azure;
             btnGuardar.Image = Properties.Resources.Guardar;
-            btnGuardar.Location = new Point(9, 361);
+            btnGuardar.Location = new Point(10, 361);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnGuardar.Size = new Size(131, 40);
@@ -282,44 +311,59 @@
             // 
             // dgvProveedores
             // 
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 100, 182);
+            dataGridViewCellStyle1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.CadetBlue;
+            dgvProveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvProveedores.Anchor = AnchorStyles.None;
+            dgvProveedores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dgvProveedores.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvProveedores.BackgroundColor = Color.LightBlue;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 100, 182);
+            dataGridViewCellStyle2.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.CadetBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProveedores.Location = new Point(9, 43);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.PaleTurquoise;
+            dataGridViewCellStyle3.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.CadetBlue;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvProveedores.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvProveedores.Location = new Point(10, 43);
             dgvProveedores.Name = "dgvProveedores";
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(39, 57, 80);
+            dataGridViewCellStyle4.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(0, 100, 182);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvProveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgvProveedores.RowHeadersVisible = false;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(39, 57, 80);
+            dataGridViewCellStyle5.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(0, 100, 182);
+            dgvProveedores.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvProveedores.RowTemplate.Height = 25;
-            dgvProveedores.Size = new Size(698, 312);
+            dgvProveedores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProveedores.Size = new Size(541, 312);
             dgvProveedores.TabIndex = 0;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Anchor = AnchorStyles.None;
-            btnEliminar.BorderColor = Color.FromArgb(39, 57, 80);
-            btnEliminar.BorderRadius = 5;
-            btnEliminar.BorderThickness = 1;
-            btnEliminar.CustomizableEdges = customizableEdges15;
-            btnEliminar.DisabledState.BorderColor = Color.DarkGray;
-            btnEliminar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnEliminar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnEliminar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnEliminar.FillColor = Color.Transparent;
-            btnEliminar.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminar.ForeColor = Color.FromArgb(39, 57, 80);
-            btnEliminar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
-            btnEliminar.HoverState.ForeColor = Color.Azure;
-            btnEliminar.Image = Properties.Resources.delete_proveedor;
-            btnEliminar.Location = new Point(146, 361);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btnEliminar.Size = new Size(131, 40);
-            btnEliminar.TabIndex = 4;
-            btnEliminar.Text = "&Eliminar";
             // 
             // MantenimientoProveedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(39, 57, 80);
-            ClientSize = new Size(1036, 558);
+            ClientSize = new Size(880, 558);
             ControlBox = false;
             Controls.Add(panel1);
             Controls.Add(guna2Panel2);
@@ -328,6 +372,7 @@
             Name = "MantenimientoProveedores";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MantenimientoProveedores";
+            Load += MantenimientoProveedores_Load;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();

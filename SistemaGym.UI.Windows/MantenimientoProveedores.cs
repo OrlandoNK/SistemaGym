@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGym.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,11 +18,6 @@ namespace SistemaGym.UI.Windows
             InitializeComponent();
         }
 
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void guna2PictureBox1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
@@ -30,6 +26,12 @@ namespace SistemaGym.UI.Windows
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void MantenimientoProveedores_Load(object sender, EventArgs e)
+        {
+            dgvProveedores.AutoGenerateColumns = true;
+            dgvProveedores.DataSource = ProveedoresBLL.MostrarProveedores();
         }
     }
 }
