@@ -7,18 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemaGym.BLL;
-using SistemaGym.DAL;
-using SistemaGym.Entities;
 
 namespace SistemaGym.UI.Windows
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
+        private void btnCerrarLogin_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
