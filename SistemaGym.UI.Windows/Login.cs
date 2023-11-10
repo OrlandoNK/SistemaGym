@@ -35,7 +35,7 @@ namespace SistemaGym.UI.Windows
                 MessageBox.Show("Sesión Iniciada Con Éxito");
 
                 
-                Form1 formularioprincipal = new Form1();
+                principalForm formularioprincipal = new principalForm();
                 formularioprincipal.Show();
 
                

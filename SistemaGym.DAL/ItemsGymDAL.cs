@@ -85,7 +85,7 @@ namespace SistemaGym.DAL
 
         }
 
-        public DataTable BuscarID(ItemsGymEntity ItemsGym)
+        public static DataTable BuscarID(ItemsGymEntity ItemsGym)
         {
 
             ConexionDAL instancia = Instancia();
