@@ -34,5 +34,20 @@ namespace SistemaGym.UI.Windows
         {
             Application.Exit();
         }
+
+        private void btnFacturacion_Click(object sender, EventArgs e)
+        {
+            subFacturacion.Visible = true;
+        }
+
+        private void subbtnFacturacionProducto_Click(object sender, EventArgs e)
+        {
+            subFacturacion.Visible = false;
+        }
+
+        private void subbtnFacturacionMembresia_Click(object sender, EventArgs e)
+        {
+            subFacturacion.Visible = false;
+        }
     }
 }
