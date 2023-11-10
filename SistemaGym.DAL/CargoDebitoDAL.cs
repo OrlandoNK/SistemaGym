@@ -68,7 +68,7 @@ namespace SistemaGym.DAL
 
 
         //metodo mostrar cargo Debito
-        public static DataTable MostrarCargoCredito()
+        public static DataTable MostrarCargoDebito()
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
