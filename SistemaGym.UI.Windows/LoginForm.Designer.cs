@@ -125,7 +125,7 @@
             TxbContraseña.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbContraseña.Location = new Point(44, 199);
             TxbContraseña.Name = "TxbContraseña";
-            TxbContraseña.PasswordChar = '\0';
+            TxbContraseña.PasswordChar = '●';
             TxbContraseña.PlaceholderForeColor = Color.DarkSeaGreen;
             TxbContraseña.PlaceholderText = "Contraseña";
             TxbContraseña.SelectedText = "";
@@ -133,6 +133,7 @@
             TxbContraseña.Size = new Size(331, 41);
             TxbContraseña.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             TxbContraseña.TabIndex = 1;
+            TxbContraseña.UseSystemPasswordChar = true;
             // 
             // TxbUsuario
             // 
