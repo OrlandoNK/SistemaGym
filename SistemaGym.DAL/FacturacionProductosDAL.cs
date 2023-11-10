@@ -15,14 +15,15 @@ namespace SistemaGym.DAL
         public static DataTable InsertarFactura(FacturaProductoEntity factura)
         {
             
-            {
+            
                  ConexionDAL instancia = Instancia();
                 SqlConnection Conexion = instancia.Conexion();
                 
                 Conexion.Open();
-                string insertar = "Insert Into FacturaProductos(IDCliente, IDUsuario, NCF, Subtotal, TotalDescuento, TotalItbis, Total, FechaEmision, FechaVencimiento, Estatus)" +
+                SqlTransaction transaccion = Conexion.BeginTransaction();
+                string insertarfactura = "Insert Into FacturaProductos(IDCliente, IDUsuario, NCF, Subtotal, TotalDescuento, TotalItbis, Total, FechaEmision, FechaVencimiento, Estatus)" +
                 " Values(@idcliente, @idusuario, @ncf, @subtotal, @totaldescuento, @totalitbis, @total, @fechaemision, @fechavencimiento, @estatus)";
-                SqlCommand cmd = new SqlCommand(insertar, Conexion);
+                SqlCommand cmd = new SqlCommand(insertarfactura, Conexion);
                 cmd.Parameters.AddWithValue("@idcliente", factura.IDCliente);
                 cmd.Parameters.AddWithValue("@idusuario", factura.IDUsuario);
                 cmd.Parameters.AddWithValue("@ncf", factura.NCF);
@@ -33,72 +34,28 @@ namespace SistemaGym.DAL
                 cmd.Parameters.AddWithValue("@fechaemision", factura.FechaEmision);
                 cmd.Parameters.AddWithValue("@fechavencimiento", factura.FechaVencimiento);
                 cmd.Parameters.AddWithValue("@estatus", factura.Estatus);
-               
-                string selectOrder = "select OrderID from orders order by orderID desc limit 1;";
-                MySqlCommand slCommand = new MySqlCommand(selectOrder);
-               
-                DataTable dt = clsConexion.ejecutarConsulta(slCommand);
-                int orderID = 0;
-                foreach (DataRow ultimaOrden in dt.Rows)
+                factura.IDFactura = Convert.ToInt32(cmd.ExecuteScalar());
+
+                string insertardetalle = "Insert Into DetalleFacturaProductos(IDFacturaProducto, IDProducto, Precio, Cantidad, Subtotal, Descuento, Itbis, Total)" +
+                " Values(@idfacturaproducto, @idproducto, @precio, @cantidad, @subtotal, @descuento, @itbis, @total)";
+                 SqlCommand cmddetalle = new SqlCommand(insertardetalle, Conexion);
+                foreach (var detalle in factura.Detalles)
                 {
-                    orderID = Convert.ToInt32(ultimaOrden[0].ToString());
-                }
-                if (orderID == 0)
-                {
-                    orderID = 1;
-                }
+                cmddetalle.Parameters.Clear();
+                cmddetalle.Parameters.AddWithValue("@idfacturaproducto", factura.IDFactura);
+                cmddetalle.Parameters.AddWithValue("@idusuario", detalle.IDProducto);
+                cmddetalle.Parameters.AddWithValue("@ncf", detalle.Precio);
+                cmddetalle.Parameters.AddWithValue("@subtotal", detalle.Cantidad);
+                cmddetalle.Parameters.AddWithValue("@totaldescuento", detalle.SubTotal);
+                cmddetalle.Parameters.AddWithValue("@totalitbis", detalle.Descuento);
+                cmddetalle.Parameters.AddWithValue("@total", detalle.Itbis);
+                cmddetalle.Parameters.AddWithValue("@fechaemision", detalle.Total);
                 
-                foreach (DataGridViewRow x in dg.Rows)
-                {
-                    if (x.Cells["Codigo"].Value != null)
-                    {
+                factura.IDFactura = Convert.ToInt32(cmd.ExecuteScalar());
 
-                        clsDetallesOrden od = new clsDetallesOrden();
-                        clsProductos p = new clsProductos();
-
-                    
-                        string selectID = "select idproducts from products where codigo = @Codigo";
-                        MySqlCommand select_id_producto = new MySqlCommand(selectID);
-                        select_id_producto.Parameters.AddWithValue("Codigo", x.Cells["Codigo"].Value.ToString());
-                        DataTable tabla_id_producto = clsConexion.ejecutarConsulta(select_id_producto);
-                        int id_producto = -1;
-                        foreach (DataRow id_obtenido in tabla_id_producto.Rows)
-                        {
-                            id_producto = Convert.ToInt32(id_obtenido[0].ToString());
-                        }
-                       
-                        od.ProductID = id_producto;
-                        od.Cantidad = Convert.ToDouble(x.Cells["Cantidad"].Value.ToString());
-                        od.PrecioUnitario = Convert.ToDouble(x.Cells["PrecioUnitario"].Value.ToString());
-                    
-                        p.Codigo = x.Cells["Codigo"].Value.ToString();
-                        p.Cantidad = Convert.ToDouble(x.Cells["Cantidad"].Value.ToString());
-                       
-                        daoT.insertar_detalle_orden(od);
-
-                        
-                        bool up = daoT.update_producto_inevntario(p);
-                    }
-
-
-                }
-
-
-                // si todo esta bien se hace la transaccion
-                trans.Commit();
-                return true;
             }
-            catch (Exception ex)
-            {
-
-                trans.Rollback();
-                return false;
-            }
-            finally
-            {
-
             }
         }
 
     }
-}
+
