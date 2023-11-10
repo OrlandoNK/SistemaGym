@@ -9,7 +9,7 @@ namespace SistemaGym.Entities
 {
     public class DetalleFacturaProductoEntity
     {
-        public int IDDetallesFacturaProducto {  get; set; }
+        public int IDDetalleFacturaProducto {  get; set; }
         public int IDFacturaProducto {  get; set; }
         public int IDProducto {  get; set; }
         public decimal Precio { get; set; }

@@ -12,7 +12,7 @@ namespace SistemaGym.DAL
 {
     public class FacturacionProductosDAL : ConexionDAL
     {
-        public static DataTable InsertarFactura(FacturaProductoEntity factura)
+        public static void InsertarFactura(FacturaProductoEntity factura)
         {
             
             
@@ -21,6 +21,8 @@ namespace SistemaGym.DAL
                 
                 Conexion.Open();
                 SqlTransaction transaccion = Conexion.BeginTransaction();
+            try
+            {
                 string insertarfactura = "Insert Into FacturaProductos(IDCliente, IDUsuario, NCF, Subtotal, TotalDescuento, TotalItbis, Total, FechaEmision, FechaVencimiento, Estatus)" +
                 " Values(@idcliente, @idusuario, @ncf, @subtotal, @totaldescuento, @totalitbis, @total, @fechaemision, @fechavencimiento, @estatus)";
                 SqlCommand cmd = new SqlCommand(insertarfactura, Conexion);
@@ -38,23 +40,29 @@ namespace SistemaGym.DAL
 
                 string insertardetalle = "Insert Into DetalleFacturaProductos(IDFacturaProducto, IDProducto, Precio, Cantidad, Subtotal, Descuento, Itbis, Total)" +
                 " Values(@idfacturaproducto, @idproducto, @precio, @cantidad, @subtotal, @descuento, @itbis, @total)";
-                 SqlCommand cmddetalle = new SqlCommand(insertardetalle, Conexion);
+                SqlCommand cmddetalle = new SqlCommand(insertardetalle, Conexion);
                 foreach (var detalle in factura.Detalles)
                 {
-                cmddetalle.Parameters.Clear();
-                cmddetalle.Parameters.AddWithValue("@idfacturaproducto", factura.IDFactura);
-                cmddetalle.Parameters.AddWithValue("@idusuario", detalle.IDProducto);
-                cmddetalle.Parameters.AddWithValue("@ncf", detalle.Precio);
-                cmddetalle.Parameters.AddWithValue("@subtotal", detalle.Cantidad);
-                cmddetalle.Parameters.AddWithValue("@totaldescuento", detalle.SubTotal);
-                cmddetalle.Parameters.AddWithValue("@totalitbis", detalle.Descuento);
-                cmddetalle.Parameters.AddWithValue("@total", detalle.Itbis);
-                cmddetalle.Parameters.AddWithValue("@fechaemision", detalle.Total);
-                
-                factura.IDFactura = Convert.ToInt32(cmd.ExecuteScalar());
+                    cmddetalle.Parameters.Clear();
+                    cmddetalle.Parameters.AddWithValue("@idfacturaproducto", factura.IDFactura);
+                    cmddetalle.Parameters.AddWithValue("@idusuario", detalle.IDProducto);
+                    cmddetalle.Parameters.AddWithValue("@ncf", detalle.Precio);
+                    cmddetalle.Parameters.AddWithValue("@subtotal", detalle.Cantidad);
+                    cmddetalle.Parameters.AddWithValue("@totaldescuento", detalle.SubTotal);
+                    cmddetalle.Parameters.AddWithValue("@totalitbis", detalle.Descuento);
+                    cmddetalle.Parameters.AddWithValue("@total", detalle.Itbis);
+                    cmddetalle.Parameters.AddWithValue("@fechaemision", detalle.Total);
+                    detalle.IDDetalleFacturaProducto = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                transaccion.Commit();
 
-            }
-            }
+            } catch(Exception ex)
+            {
+                transaccion.Rollback();
+                throw;
+            } 
+
+        }
         }
 
     }
