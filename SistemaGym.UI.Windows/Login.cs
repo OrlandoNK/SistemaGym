@@ -15,41 +15,10 @@ namespace SistemaGym.UI.Windows
 {
     public partial class Login : Form
     {
-        UsuarioBLL UsuarioBLL = new UsuarioBLL();
-      
         public Login()
         {
             InitializeComponent();
         }
 
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
-        {
-            string nombreUsuario = txtUsuario.Text;
-            string contrasena = txtContrasena.Text;
-
-            UsuarioEntity usuario = new UsuarioEntity(nombreUsuario, contrasena);
-            int resultadoAutenticacion = UsuarioBLL.ConsultaLogin(usuario);
-
-            if (resultadoAutenticacion > 0)
-            {
-                MessageBox.Show("Sesión Iniciada Con Éxito");
-
-                
-                Form1 formularioprincipal = new Form1();
-                formularioprincipal.Show();
-
-               
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Datos Incorrectos");
-            }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
