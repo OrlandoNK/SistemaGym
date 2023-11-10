@@ -123,9 +123,29 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap factura_producto {
+            get {
+                object obj = ResourceManager.GetObject("factura producto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap facturacion {
             get {
                 object obj = ResourceManager.GetObject("facturacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap facturamembresia {
+            get {
+                object obj = ResourceManager.GetObject("facturamembresia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

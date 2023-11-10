@@ -139,7 +139,7 @@
             subbtnFacturacionProducto.ForeColor = Color.White;
             subbtnFacturacionProducto.HoverState.FillColor = Color.YellowGreen;
             subbtnFacturacionProducto.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
-            subbtnFacturacionProducto.Image = Properties.Resources.facturacion;
+            subbtnFacturacionProducto.Image = Properties.Resources.factura_producto;
             subbtnFacturacionProducto.ImageAlign = HorizontalAlignment.Left;
             subbtnFacturacionProducto.ImageSize = new Size(25, 25);
             subbtnFacturacionProducto.Location = new Point(25, 7);
@@ -165,7 +165,7 @@
             subbtnFacturacionMembresia.ForeColor = Color.White;
             subbtnFacturacionMembresia.HoverState.FillColor = Color.YellowGreen;
             subbtnFacturacionMembresia.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
-            subbtnFacturacionMembresia.Image = Properties.Resources.facturacion;
+            subbtnFacturacionMembresia.Image = Properties.Resources.facturamembresia;
             subbtnFacturacionMembresia.ImageAlign = HorizontalAlignment.Left;
             subbtnFacturacionMembresia.ImageSize = new Size(25, 25);
             subbtnFacturacionMembresia.Location = new Point(25, 58);
