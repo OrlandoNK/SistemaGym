@@ -139,7 +139,7 @@
             subbtnFacturacionProducto.ForeColor = Color.White;
             subbtnFacturacionProducto.HoverState.FillColor = Color.YellowGreen;
             subbtnFacturacionProducto.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
-            subbtnFacturacionProducto.Image = Properties.Resources.factura_producto;
+            subbtnFacturacionProducto.Image = Properties.Resources.facturaproducto;
             subbtnFacturacionProducto.ImageAlign = HorizontalAlignment.Left;
             subbtnFacturacionProducto.ImageSize = new Size(25, 25);
             subbtnFacturacionProducto.Location = new Point(25, 7);
