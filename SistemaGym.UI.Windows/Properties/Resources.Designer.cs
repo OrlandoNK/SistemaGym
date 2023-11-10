@@ -69,6 +69,9 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap Cancelar {
             get {
                 object obj = ResourceManager.GetObject("Cancelar", resourceCulture);
+        internal static System.Drawing.Bitmap cerrar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("cerrar (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -82,6 +85,9 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap cerrar {
             get {
                 object obj = ResourceManager.GetObject("cerrar", resourceCulture);
+        internal static System.Drawing.Bitmap cerrar_ventana {
+            get {
+                object obj = ResourceManager.GetObject("cerrar ventana", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,6 +101,9 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap delete_proveedor {
             get {
                 object obj = ResourceManager.GetObject("delete proveedor", resourceCulture);
+        internal static System.Drawing.Bitmap cerrar_ventana_2 {
+            get {
+                object obj = ResourceManager.GetObject("cerrar ventana 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -238,6 +247,9 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap telefono {
             get {
                 object obj = ResourceManager.GetObject("telefono", resourceCulture);
+        internal static System.Drawing.Bitmap Comfort_GYM___Login {
+            get {
+                object obj = ResourceManager.GetObject("Comfort GYM - Login", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
