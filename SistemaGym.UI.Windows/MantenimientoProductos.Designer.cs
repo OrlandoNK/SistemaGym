@@ -39,15 +39,15 @@
             txtPrecioUnitario = new TextBox();
             txtNoExistencia = new TextBox();
             dgvProductos = new DataGridView();
-            btnAgregar = new Button();
-            btnModificar = new Button();
-            btnEliminar = new Button();
-            btnLimpiar = new Button();
             ID = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Categoria = new DataGridViewTextBoxColumn();
             PrecioUnitario = new DataGridViewTextBoxColumn();
             NoExistencia = new DataGridViewTextBoxColumn();
+            btnAgregar = new Button();
+            btnGuardar = new Button();
+            btnEliminar = new Button();
+            btnLimpiar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             SuspendLayout();
             // 
@@ -144,42 +144,6 @@
             dgvProductos.Size = new Size(546, 192);
             dgvProductos.TabIndex = 10;
             // 
-            // btnAgregar
-            // 
-            btnAgregar.Location = new Point(321, 342);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(93, 39);
-            btnAgregar.TabIndex = 11;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // btnModificar
-            // 
-            btnModificar.Location = new Point(483, 342);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(90, 39);
-            btnModificar.TabIndex = 12;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(786, 342);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(81, 39);
-            btnEliminar.TabIndex = 13;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpiar
-            // 
-            btnLimpiar.Location = new Point(626, 342);
-            btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(95, 39);
-            btnLimpiar.TabIndex = 14;
-            btnLimpiar.Text = "Limpiar";
-            btnLimpiar.UseVisualStyleBackColor = true;
-            // 
             // ID
             // 
             ID.HeaderText = "ID";
@@ -210,6 +174,46 @@
             NoExistencia.Name = "NoExistencia";
             NoExistencia.ReadOnly = true;
             // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(321, 342);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(93, 39);
+            btnAgregar.TabIndex = 11;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(455, 342);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(90, 39);
+            btnGuardar.TabIndex = 12;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(749, 342);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(81, 39);
+            btnEliminar.TabIndex = 13;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(595, 342);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(97, 39);
+            btnLimpiar.TabIndex = 14;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
             // MantenimientoProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -217,7 +221,7 @@
             ClientSize = new Size(869, 531);
             Controls.Add(btnLimpiar);
             Controls.Add(btnEliminar);
-            Controls.Add(btnModificar);
+            Controls.Add(btnGuardar);
             Controls.Add(btnAgregar);
             Controls.Add(dgvProductos);
             Controls.Add(txtNoExistencia);
@@ -232,6 +236,7 @@
             Controls.Add(lblIDProducto);
             Name = "MantenimientoProductos";
             Text = "MantenimientoProductos";
+            Load += MantenimientoProductos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -251,13 +256,13 @@
         private TextBox txtNoExistencia;
         private DataGridView dgvProductos;
         private Button btnAgregar;
-        private Button btnModificar;
+        private Button btnGuardar;
         private Button btnEliminar;
-        private Button btnLimpiar;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Categoria;
         private DataGridViewTextBoxColumn PrecioUnitario;
         private DataGridViewTextBoxColumn NoExistencia;
+        private Button btnLimpiar;
     }
 }
