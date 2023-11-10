@@ -68,10 +68,23 @@ namespace SistemaGym.DAL
            
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
-           
+            Conexion.Open();
             DataTable dt = new DataTable();
-            string mostrar = "Select * From FacturaProducto Order By Fecha DESC ";
+            string mostrar = "Select * From FacturaProductos Order By Fecha DESC ";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+        public static DataTable GetByID(FacturaProductoEntity factura)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            Conexion.Open();
+            DataTable dt = new DataTable();
+            string buscar = "Select * From FacturaProductos Where IDFactura = @idfactura ";
+            SqlCommand cmd = new SqlCommand(buscar, Conexion);
+            cmd.Parameters.AddWithValue("@idfactura", factura.IDFactura);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
