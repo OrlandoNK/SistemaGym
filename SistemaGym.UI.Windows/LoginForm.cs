@@ -42,7 +42,7 @@ namespace SistemaGym.UI.Windows
                 
                 principalForm formularioprincipal = new principalForm();
 
-                Form1 formularioprincipal = new Form1();
+              
                 formularioprincipal.Show();
 
 
