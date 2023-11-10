@@ -51,7 +51,7 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar ProveedoresDAL
 
-        public static bool EliminarProveedores(ProveedoresEntity proveedores)
+        public static bool EliminarProveedores(int Id)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -60,14 +60,13 @@ namespace SistemaGym.DAL
 
 
             Conexion.Open();
-            string Eliminar = "Delete from ProveedoresDAL where IDProveedores= @idProveedor";
+            string Eliminar = "Delete from Proveedores where IDProveedor= @idProveedor";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idProveedor", proveedores.IDProveedor);
+            cmd.Parameters.AddWithValue("@idProveedor", Id);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
         }
-
 
         //metodo mostrar cliente
         public static DataTable MostrarProveedores()
