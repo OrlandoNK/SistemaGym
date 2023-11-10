@@ -30,6 +30,8 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -52,9 +54,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            panel8 = new Panel();
+            btnAssistClient = new Guna.UI2.WinForms.Guna2Button();
             panel5 = new Panel();
             btnProveedores = new Guna.UI2.WinForms.Guna2Button();
             subFacturacion = new Panel();
@@ -78,8 +80,6 @@
             guna2vSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             panelDesplegable = new Panel();
             btncerrarSesion = new Guna.UI2.WinForms.Guna2Button();
-            panel8 = new Panel();
-            btnAssistClient = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             subFacturacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
@@ -110,8 +110,42 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Panel1.Size = new Size(237, 585);
+            guna2Panel1.Size = new Size(237, 598);
             guna2Panel1.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.YellowGreen;
+            panel8.Location = new Point(0, 535);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(19, 45);
+            panel8.TabIndex = 13;
+            // 
+            // btnAssistClient
+            // 
+            btnAssistClient.Cursor = Cursors.Hand;
+            btnAssistClient.CustomizableEdges = customizableEdges1;
+            btnAssistClient.DisabledState.BorderColor = Color.DarkGray;
+            btnAssistClient.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAssistClient.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAssistClient.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAssistClient.FillColor = Color.Transparent;
+            btnAssistClient.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAssistClient.ForeColor = Color.White;
+            btnAssistClient.HoverState.FillColor = Color.YellowGreen;
+            btnAssistClient.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
+            btnAssistClient.Image = Properties.Resources.usuario;
+            btnAssistClient.ImageAlign = HorizontalAlignment.Left;
+            btnAssistClient.ImageSize = new Size(25, 25);
+            btnAssistClient.Location = new Point(21, 535);
+            btnAssistClient.Name = "btnAssistClient";
+            btnAssistClient.PressedColor = Color.SeaGreen;
+            btnAssistClient.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnAssistClient.Size = new Size(213, 45);
+            btnAssistClient.TabIndex = 12;
+            btnAssistClient.Text = "Asistencia Clientes";
+            btnAssistClient.TextAlign = HorizontalAlignment.Right;
+            btnAssistClient.Click += btnAssistClient_Click;
             // 
             // panel5
             // 
@@ -387,7 +421,7 @@
             guna2Panel2.Location = new Point(237, 0);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2Panel2.Size = new Size(748, 56);
+            guna2Panel2.Size = new Size(775, 56);
             guna2Panel2.TabIndex = 1;
             // 
             // guna2CirclePictureBox1
@@ -397,7 +431,7 @@
             guna2CirclePictureBox1.FillColor = Color.Transparent;
             guna2CirclePictureBox1.Image = Properties.Resources.usuario;
             guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(660, 10);
+            guna2CirclePictureBox1.Location = new Point(687, 10);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges21;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -414,7 +448,7 @@
             chbxdesplegable.Image = Properties.Resources.desplegable_true_2;
             chbxdesplegable.ImageOffset = new Point(0, 0);
             chbxdesplegable.ImageRotate = 0F;
-            chbxdesplegable.Location = new Point(706, 10);
+            chbxdesplegable.Location = new Point(733, 10);
             chbxdesplegable.Name = "chbxdesplegable";
             chbxdesplegable.ShadowDecoration.CustomizableEdges = customizableEdges22;
             chbxdesplegable.Size = new Size(30, 37);
@@ -427,7 +461,7 @@
             lblusuario.AutoSize = false;
             lblusuario.BackColor = Color.Transparent;
             lblusuario.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblusuario.Location = new Point(479, 10);
+            lblusuario.Location = new Point(506, 10);
             lblusuario.Name = "lblusuario";
             lblusuario.Size = new Size(175, 37);
             lblusuario.TabIndex = 1;
@@ -438,7 +472,7 @@
             // 
             guna2vSeparator1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2vSeparator1.FillThickness = 2;
-            guna2vSeparator1.Location = new Point(449, 2);
+            guna2vSeparator1.Location = new Point(476, 2);
             guna2vSeparator1.Name = "guna2vSeparator1";
             guna2vSeparator1.Size = new Size(24, 53);
             guna2vSeparator1.TabIndex = 0;
@@ -448,7 +482,7 @@
             panelDesplegable.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelDesplegable.BackColor = Color.White;
             panelDesplegable.Controls.Add(btncerrarSesion);
-            panelDesplegable.Location = new Point(695, 56);
+            panelDesplegable.Location = new Point(722, 56);
             panelDesplegable.Name = "panelDesplegable";
             panelDesplegable.Size = new Size(288, 48);
             panelDesplegable.TabIndex = 3;
@@ -479,45 +513,11 @@
             btncerrarSesion.Text = "Cerrar Sesion";
             btncerrarSesion.Click += btncerrarSesion_Click;
             // 
-            // panel8
-            // 
-            panel8.BackColor = Color.YellowGreen;
-            panel8.Location = new Point(0, 535);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(19, 45);
-            panel8.TabIndex = 13;
-            // 
-            // btnAssistClient
-            // 
-            btnAssistClient.Cursor = Cursors.Hand;
-            btnAssistClient.CustomizableEdges = customizableEdges1;
-            btnAssistClient.DisabledState.BorderColor = Color.DarkGray;
-            btnAssistClient.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAssistClient.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAssistClient.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAssistClient.FillColor = Color.Transparent;
-            btnAssistClient.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAssistClient.ForeColor = Color.White;
-            btnAssistClient.HoverState.FillColor = Color.YellowGreen;
-            btnAssistClient.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
-            btnAssistClient.Image = Properties.Resources.usuario;
-            btnAssistClient.ImageAlign = HorizontalAlignment.Left;
-            btnAssistClient.ImageSize = new Size(25, 25);
-            btnAssistClient.Location = new Point(21, 535);
-            btnAssistClient.Name = "btnAssistClient";
-            btnAssistClient.PressedColor = Color.SeaGreen;
-            btnAssistClient.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnAssistClient.Size = new Size(213, 45);
-            btnAssistClient.TabIndex = 12;
-            btnAssistClient.Text = "Asistencia Clientes";
-            btnAssistClient.TextAlign = HorizontalAlignment.Right;
-            btnAssistClient.Click += btnAssistClient_Click;
-            // 
             // principalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(985, 585);
+            ClientSize = new Size(1012, 598);
             Controls.Add(panelDesplegable);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
