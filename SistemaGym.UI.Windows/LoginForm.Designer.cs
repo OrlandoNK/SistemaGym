@@ -63,6 +63,7 @@
             // 
             // btnCerrarLogin
             // 
+            btnCerrarLogin.Cursor = Cursors.Hand;
             btnCerrarLogin.Image = Properties.Resources.cerrar__1_;
             btnCerrarLogin.Location = new Point(593, 13);
             btnCerrarLogin.Name = "btnCerrarLogin";
@@ -89,6 +90,7 @@
             btnEntrar.BorderColor = Color.SeaGreen;
             btnEntrar.BorderRadius = 5;
             btnEntrar.BorderThickness = 1;
+            btnEntrar.Cursor = Cursors.Hand;
             btnEntrar.CustomizableEdges = customizableEdges1;
             btnEntrar.DisabledState.BorderColor = Color.DarkGray;
             btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -99,7 +101,7 @@
             btnEntrar.ForeColor = Color.FromArgb(39, 57, 80);
             btnEntrar.HoverState.FillColor = Color.YellowGreen;
             btnEntrar.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
-            btnEntrar.Location = new Point(44, 343);
+            btnEntrar.Location = new Point(44, 344);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.PressedColor = Color.DarkSeaGreen;
             btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -119,15 +121,16 @@
             TxbContraseña.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TxbContraseña.FillColor = Color.MintCream;
             TxbContraseña.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxbContraseña.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbContraseña.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbContraseña.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbContraseña.Location = new Point(44, 199);
             TxbContraseña.Name = "TxbContraseña";
             TxbContraseña.PasswordChar = '\0';
+            TxbContraseña.PlaceholderForeColor = Color.DarkSeaGreen;
             TxbContraseña.PlaceholderText = "Contraseña";
             TxbContraseña.SelectedText = "";
             TxbContraseña.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            TxbContraseña.Size = new Size(331, 36);
+            TxbContraseña.Size = new Size(331, 41);
             TxbContraseña.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             TxbContraseña.TabIndex = 1;
             // 
@@ -142,15 +145,16 @@
             TxbUsuario.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TxbUsuario.FillColor = Color.MintCream;
             TxbUsuario.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxbUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbUsuario.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbUsuario.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxbUsuario.Location = new Point(44, 121);
+            TxbUsuario.Location = new Point(44, 120);
             TxbUsuario.Name = "TxbUsuario";
             TxbUsuario.PasswordChar = '\0';
+            TxbUsuario.PlaceholderForeColor = Color.DarkSeaGreen;
             TxbUsuario.PlaceholderText = "Usuario";
             TxbUsuario.SelectedText = "";
             TxbUsuario.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            TxbUsuario.Size = new Size(331, 36);
+            TxbUsuario.Size = new Size(331, 41);
             TxbUsuario.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             TxbUsuario.TabIndex = 0;
             // 
