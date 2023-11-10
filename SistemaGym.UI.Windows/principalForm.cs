@@ -32,7 +32,9 @@ namespace SistemaGym.UI.Windows
 
         private void btncerrarSesion_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Hide();
         }
 
         private void btnFacturacion_Click(object sender, EventArgs e)
@@ -48,6 +50,20 @@ namespace SistemaGym.UI.Windows
         private void subbtnFacturacionMembresia_Click(object sender, EventArgs e)
         {
             subFacturacion.Visible = false;
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            MantenimientoProveedores mantenimientoProveedores = new MantenimientoProveedores();
+            mantenimientoProveedores.MdiParent = this;
+            mantenimientoProveedores.Show();
+        }
+
+        private void btnAssistClient_Click(object sender, EventArgs e)
+        {
+            frmAsistenciaClientes asistenciaClientes = new frmAsistenciaClientes();
+            asistenciaClientes.MdiParent = this;
+            asistenciaClientes.Show();
         }
     }
 }
