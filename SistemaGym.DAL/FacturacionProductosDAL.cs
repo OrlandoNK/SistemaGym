@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SistemaGym.Entities;
 using System.Reflection.Metadata;
+using System.Data.Entity.Core.Common.EntitySql;
 
 namespace SistemaGym.DAL
 {
@@ -61,8 +62,21 @@ namespace SistemaGym.DAL
                 transaccion.Rollback();
                 throw;
             } 
-
+           }
+         public static DataTable GetAll()
+        {
+           
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+           
+            DataTable dt = new DataTable();
+            string mostrar = "Select * From FacturaProducto Order By Fecha DESC ";
+            SqlCommand cmd = new SqlCommand(mostrar, Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
         }
+
         }
 
     }
