@@ -44,11 +44,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             subFacturacion = new Panel();
             panel6 = new Panel();
@@ -70,11 +71,13 @@
             guna2vSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             panelDesplegable = new Panel();
             btncerrarSesion = new Guna.UI2.WinForms.Guna2Button();
+            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2Panel1.SuspendLayout();
             subFacturacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2Panel2.SuspendLayout();
             panelDesplegable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             SuspendLayout();
             // 
             // guna2Panel1
@@ -329,14 +332,15 @@
             // guna2Panel2
             // 
             guna2Panel2.BackColor = Color.White;
+            guna2Panel2.Controls.Add(guna2CirclePictureBox1);
             guna2Panel2.Controls.Add(chbxdesplegable);
             guna2Panel2.Controls.Add(lblusuario);
             guna2Panel2.Controls.Add(guna2vSeparator1);
-            guna2Panel2.CustomizableEdges = customizableEdges18;
+            guna2Panel2.CustomizableEdges = customizableEdges19;
             guna2Panel2.Dock = DockStyle.Top;
             guna2Panel2.Location = new Point(237, 0);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2Panel2.Size = new Size(748, 56);
             guna2Panel2.TabIndex = 1;
             // 
@@ -348,10 +352,10 @@
             chbxdesplegable.Image = Properties.Resources.desplegable_true_2;
             chbxdesplegable.ImageOffset = new Point(0, 0);
             chbxdesplegable.ImageRotate = 0F;
-            chbxdesplegable.Location = new Point(706, 15);
+            chbxdesplegable.Location = new Point(706, 10);
             chbxdesplegable.Name = "chbxdesplegable";
-            chbxdesplegable.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            chbxdesplegable.Size = new Size(33, 27);
+            chbxdesplegable.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            chbxdesplegable.Size = new Size(30, 37);
             chbxdesplegable.TabIndex = 2;
             chbxdesplegable.CheckedChanged += chbxdesplegable_CheckedChanged;
             // 
@@ -361,9 +365,9 @@
             lblusuario.AutoSize = false;
             lblusuario.BackColor = Color.Transparent;
             lblusuario.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            lblusuario.Location = new Point(508, 15);
+            lblusuario.Location = new Point(479, 10);
             lblusuario.Name = "lblusuario";
-            lblusuario.Size = new Size(192, 27);
+            lblusuario.Size = new Size(175, 37);
             lblusuario.TabIndex = 1;
             lblusuario.Text = "usuario";
             lblusuario.TextAlignment = ContentAlignment.MiddleCenter;
@@ -372,7 +376,7 @@
             // 
             guna2vSeparator1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2vSeparator1.FillThickness = 2;
-            guna2vSeparator1.Location = new Point(482, 2);
+            guna2vSeparator1.Location = new Point(449, 2);
             guna2vSeparator1.Name = "guna2vSeparator1";
             guna2vSeparator1.Size = new Size(24, 53);
             guna2vSeparator1.TabIndex = 0;
@@ -382,9 +386,9 @@
             panelDesplegable.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelDesplegable.BackColor = Color.White;
             panelDesplegable.Controls.Add(btncerrarSesion);
-            panelDesplegable.Location = new Point(730, 56);
+            panelDesplegable.Location = new Point(695, 56);
             panelDesplegable.Name = "panelDesplegable";
-            panelDesplegable.Size = new Size(253, 48);
+            panelDesplegable.Size = new Size(288, 48);
             panelDesplegable.TabIndex = 3;
             panelDesplegable.Visible = false;
             // 
@@ -392,7 +396,7 @@
             // 
             btncerrarSesion.Anchor = AnchorStyles.None;
             btncerrarSesion.Cursor = Cursors.Hand;
-            btncerrarSesion.CustomizableEdges = customizableEdges20;
+            btncerrarSesion.CustomizableEdges = customizableEdges21;
             btncerrarSesion.DisabledState.BorderColor = Color.DarkGray;
             btncerrarSesion.DisabledState.CustomBorderColor = Color.DarkGray;
             btncerrarSesion.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -405,15 +409,30 @@
             btncerrarSesion.Image = Properties.Resources.cerrar_sesion;
             btncerrarSesion.ImageAlign = HorizontalAlignment.Left;
             btncerrarSesion.ImageSize = new Size(25, 25);
-            btncerrarSesion.Location = new Point(0, 0);
+            btncerrarSesion.Location = new Point(3, 0);
             btncerrarSesion.Name = "btncerrarSesion";
             btncerrarSesion.PressedColor = Color.SeaGreen;
-            btncerrarSesion.ShadowDecoration.CustomizableEdges = customizableEdges21;
-            btncerrarSesion.Size = new Size(253, 48);
+            btncerrarSesion.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btncerrarSesion.Size = new Size(287, 48);
             btncerrarSesion.TabIndex = 4;
             btncerrarSesion.Text = "Cerrar Sesion";
             btncerrarSesion.TextAlign = HorizontalAlignment.Right;
             btncerrarSesion.Click += btncerrarSesion_Click;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            guna2CirclePictureBox1.BackColor = Color.Transparent;
+            guna2CirclePictureBox1.FillColor = Color.Transparent;
+            guna2CirclePictureBox1.Image = Properties.Resources.usuario;
+            guna2CirclePictureBox1.ImageRotate = 0F;
+            guna2CirclePictureBox1.Location = new Point(660, 10);
+            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CirclePictureBox1.Size = new Size(40, 37);
+            guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            guna2CirclePictureBox1.TabIndex = 5;
+            guna2CirclePictureBox1.TabStop = false;
             // 
             // principalForm
             // 
@@ -434,6 +453,7 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             guna2Panel2.ResumeLayout(false);
             panelDesplegable.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -460,5 +480,6 @@
         private Panel panel7;
         private Guna.UI2.WinForms.Guna2Button subbtnFacturacionProducto;
         private Guna.UI2.WinForms.Guna2Button subbtnFacturacionMembresia;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
     }
 }
