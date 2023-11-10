@@ -160,6 +160,7 @@
   <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   <data name="Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  </data>
     <value>..\Resources\Cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete proveedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -201,6 +202,7 @@
   <data name="ID" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ID.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   <data name="cerrar ventana 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  </data>
     <value>..\Resources\cerrar ventana 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Comfort GYM - Login" type="System.Resources.ResXFileRef, System.Windows.Forms">

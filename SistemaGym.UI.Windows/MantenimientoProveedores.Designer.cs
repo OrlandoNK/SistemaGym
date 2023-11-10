@@ -331,7 +331,6 @@
             btnCancelar.ForeColor = Color.FromArgb(39, 57, 80);
             btnCancelar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnCancelar.HoverState.ForeColor = Color.Azure;
-            btnCancelar.Image = Properties.Resources.Cancelar;
             btnCancelar.Location = new Point(515, 393);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges20;

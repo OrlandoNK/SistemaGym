@@ -63,12 +63,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cerrar_sesion {
+        internal static System.Drawing.Bitmap cerrar {
             get {
-                object obj = ResourceManager.GetObject("cerrar-sesion", resourceCulture);
-        internal static System.Drawing.Bitmap Cancelar {
-            get {
-                object obj = ResourceManager.GetObject("Cancelar", resourceCulture);
+                object obj = ResourceManager.GetObject("cerrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar__1_ {
             get {
                 object obj = ResourceManager.GetObject("cerrar (1)", resourceCulture);
@@ -79,12 +83,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap COMFORT_GYM {
+        internal static System.Drawing.Bitmap cerrar_sesion {
             get {
-                object obj = ResourceManager.GetObject("COMFORT GYM", resourceCulture);
-        internal static System.Drawing.Bitmap cerrar {
-            get {
-                object obj = ResourceManager.GetObject("cerrar", resourceCulture);
+                object obj = ResourceManager.GetObject("cerrar-sesion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar_ventana {
             get {
                 object obj = ResourceManager.GetObject("cerrar ventana", resourceCulture);
@@ -95,15 +103,39 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap desplegable_false {
+        internal static System.Drawing.Bitmap COMFORT_GYM {
             get {
-                object obj = ResourceManager.GetObject("desplegable false", resourceCulture);
+                object obj = ResourceManager.GetObject("COMFORT GYM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Comfort_GYM___Login {
+            get {
+                object obj = ResourceManager.GetObject("Comfort GYM - Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_proveedor {
             get {
                 object obj = ResourceManager.GetObject("delete proveedor", resourceCulture);
-        internal static System.Drawing.Bitmap cerrar_ventana_2 {
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap desplegable_false {
             get {
-                object obj = ResourceManager.GetObject("cerrar ventana 2", resourceCulture);
+                object obj = ResourceManager.GetObject("desplegable false", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -114,9 +146,6 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap desplegable_true {
             get {
                 object obj = ResourceManager.GetObject("desplegable true", resourceCulture);
-        internal static System.Drawing.Bitmap direccion {
-            get {
-                object obj = ResourceManager.GetObject("direccion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -127,6 +156,23 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap desplegable_true_2 {
             get {
                 object obj = ResourceManager.GetObject("desplegable true 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap direccion {
+            get {
+                object obj = ResourceManager.GetObject("direccion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap direccion1 {
             get {
                 object obj = ResourceManager.GetObject("direccion1", resourceCulture);
@@ -140,6 +186,13 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap empleado {
             get {
                 object obj = ResourceManager.GetObject("empleado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estatus_2 {
             get {
                 object obj = ResourceManager.GetObject("estatus 2", resourceCulture);
@@ -153,9 +206,6 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap factura_producto {
             get {
                 object obj = ResourceManager.GetObject("factura producto", resourceCulture);
-        internal static System.Drawing.Bitmap Guardar {
-            get {
-                object obj = ResourceManager.GetObject("Guardar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,9 +216,6 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap facturacion {
             get {
                 object obj = ResourceManager.GetObject("facturacion", resourceCulture);
-        internal static System.Drawing.Bitmap ID {
-            get {
-                object obj = ResourceManager.GetObject("ID", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -179,9 +226,6 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap facturamembresia {
             get {
                 object obj = ResourceManager.GetObject("facturamembresia", resourceCulture);
-        internal static System.Drawing.Bitmap Nuevo {
-            get {
-                object obj = ResourceManager.GetObject("Nuevo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -192,9 +236,26 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap facturaproducto {
             get {
                 object obj = ResourceManager.GetObject("facturaproducto", resourceCulture);
-        internal static System.Drawing.Bitmap proveedor {
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Guardar {
             get {
-                object obj = ResourceManager.GetObject("proveedor", resourceCulture);
+                object obj = ResourceManager.GetObject("Guardar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ID {
+            get {
+                object obj = ResourceManager.GetObject("ID", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -205,9 +266,6 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap listaMiembros {
             get {
                 object obj = ResourceManager.GetObject("listaMiembros", resourceCulture);
-        internal static System.Drawing.Bitmap proveedor__1_ {
-            get {
-                object obj = ResourceManager.GetObject("proveedor (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -218,6 +276,43 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap listaMiembros1 {
             get {
                 object obj = ResourceManager.GetObject("listaMiembros1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nuevo {
+            get {
+                object obj = ResourceManager.GetObject("Nuevo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap proveedor {
+            get {
+                object obj = ResourceManager.GetObject("proveedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap proveedor__1_ {
+            get {
+                object obj = ResourceManager.GetObject("proveedor (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap proveedor__2_ {
             get {
                 object obj = ResourceManager.GetObject("proveedor (2)", resourceCulture);
@@ -228,9 +323,6 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tiposmembresia {
-            get {
-                object obj = ResourceManager.GetObject("tiposmembresia", resourceCulture);
         internal static System.Drawing.Bitmap tel {
             get {
                 object obj = ResourceManager.GetObject("tel", resourceCulture);
@@ -241,15 +333,29 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap usuario {
-            get {
-                object obj = ResourceManager.GetObject("usuario", resourceCulture);
         internal static System.Drawing.Bitmap telefono {
             get {
                 object obj = ResourceManager.GetObject("telefono", resourceCulture);
-        internal static System.Drawing.Bitmap Comfort_GYM___Login {
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tiposmembresia {
             get {
-                object obj = ResourceManager.GetObject("Comfort GYM - Login", resourceCulture);
+                object obj = ResourceManager.GetObject("tiposmembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuario {
+            get {
+                object obj = ResourceManager.GetObject("usuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
