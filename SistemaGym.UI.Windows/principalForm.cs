@@ -29,5 +29,10 @@ namespace SistemaGym.UI.Windows
                 panelDesplegable.Visible = false;
             }
         }
+
+        private void btncerrarSesion_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
