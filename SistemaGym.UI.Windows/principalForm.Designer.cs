@@ -90,7 +90,7 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = Color.FromArgb(39, 57, 80);
+            guna2Panel1.BackColor = Color.Black;
             guna2Panel1.Controls.Add(panel8);
             guna2Panel1.Controls.Add(btnAssistClient);
             guna2Panel1.Controls.Add(panel5);
@@ -115,10 +115,10 @@
             // 
             // panel8
             // 
-            panel8.BackColor = Color.YellowGreen;
+            panel8.BackColor = Color.Gold;
             panel8.Location = new Point(0, 535);
             panel8.Name = "panel8";
-            panel8.Size = new Size(19, 45);
+            panel8.Size = new Size(10, 45);
             panel8.TabIndex = 13;
             // 
             // btnAssistClient
@@ -132,16 +132,16 @@
             btnAssistClient.FillColor = Color.Transparent;
             btnAssistClient.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAssistClient.ForeColor = Color.White;
-            btnAssistClient.HoverState.FillColor = Color.YellowGreen;
-            btnAssistClient.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
-            btnAssistClient.Image = Properties.Resources.usuario;
+            btnAssistClient.HoverState.FillColor = Color.Khaki;
+            btnAssistClient.HoverState.ForeColor = Color.Black;
+            btnAssistClient.Image = Properties.Resources.Asistencia_Usuario;
             btnAssistClient.ImageAlign = HorizontalAlignment.Left;
             btnAssistClient.ImageSize = new Size(25, 25);
-            btnAssistClient.Location = new Point(21, 535);
+            btnAssistClient.Location = new Point(16, 535);
             btnAssistClient.Name = "btnAssistClient";
-            btnAssistClient.PressedColor = Color.SeaGreen;
+            btnAssistClient.PressedColor = Color.LightYellow;
             btnAssistClient.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnAssistClient.Size = new Size(213, 45);
+            btnAssistClient.Size = new Size(218, 45);
             btnAssistClient.TabIndex = 12;
             btnAssistClient.Text = "Asistencia Clientes";
             btnAssistClient.TextAlign = HorizontalAlignment.Right;
@@ -149,10 +149,10 @@
             // 
             // panel5
             // 
-            panel5.BackColor = Color.YellowGreen;
+            panel5.BackColor = Color.Gold;
             panel5.Location = new Point(0, 484);
             panel5.Name = "panel5";
-            panel5.Size = new Size(19, 45);
+            panel5.Size = new Size(10, 45);
             panel5.TabIndex = 11;
             // 
             // btnProveedores
@@ -166,16 +166,16 @@
             btnProveedores.FillColor = Color.Transparent;
             btnProveedores.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnProveedores.ForeColor = Color.White;
-            btnProveedores.HoverState.FillColor = Color.YellowGreen;
-            btnProveedores.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
+            btnProveedores.HoverState.FillColor = Color.Khaki;
+            btnProveedores.HoverState.ForeColor = Color.Black;
             btnProveedores.Image = Properties.Resources.proveedor__1_;
             btnProveedores.ImageAlign = HorizontalAlignment.Left;
             btnProveedores.ImageSize = new Size(25, 25);
-            btnProveedores.Location = new Point(24, 484);
+            btnProveedores.Location = new Point(16, 484);
             btnProveedores.Name = "btnProveedores";
-            btnProveedores.PressedColor = Color.SeaGreen;
+            btnProveedores.PressedColor = Color.LightYellow;
             btnProveedores.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnProveedores.Size = new Size(213, 45);
+            btnProveedores.Size = new Size(221, 45);
             btnProveedores.TabIndex = 10;
             btnProveedores.Text = "Mantenimiento Provedores";
             btnProveedores.TextAlign = HorizontalAlignment.Right;
@@ -195,18 +195,18 @@
             // 
             // panel6
             // 
-            panel6.BackColor = Color.YellowGreen;
+            panel6.BackColor = Color.Gold;
             panel6.Location = new Point(3, 7);
             panel6.Name = "panel6";
-            panel6.Size = new Size(19, 45);
+            panel6.Size = new Size(10, 45);
             panel6.TabIndex = 10;
             // 
             // panel7
             // 
-            panel7.BackColor = Color.YellowGreen;
+            panel7.BackColor = Color.Gold;
             panel7.Location = new Point(3, 58);
             panel7.Name = "panel7";
-            panel7.Size = new Size(19, 45);
+            panel7.Size = new Size(10, 45);
             panel7.TabIndex = 12;
             // 
             // subbtnFacturacionProducto
@@ -220,16 +220,16 @@
             subbtnFacturacionProducto.FillColor = Color.Transparent;
             subbtnFacturacionProducto.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             subbtnFacturacionProducto.ForeColor = Color.White;
-            subbtnFacturacionProducto.HoverState.FillColor = Color.YellowGreen;
-            subbtnFacturacionProducto.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
+            subbtnFacturacionProducto.HoverState.FillColor = Color.Khaki;
+            subbtnFacturacionProducto.HoverState.ForeColor = Color.Black;
             subbtnFacturacionProducto.Image = Properties.Resources.facturaproducto;
             subbtnFacturacionProducto.ImageAlign = HorizontalAlignment.Left;
             subbtnFacturacionProducto.ImageSize = new Size(25, 25);
-            subbtnFacturacionProducto.Location = new Point(25, 7);
+            subbtnFacturacionProducto.Location = new Point(19, 7);
             subbtnFacturacionProducto.Name = "subbtnFacturacionProducto";
-            subbtnFacturacionProducto.PressedColor = Color.SeaGreen;
+            subbtnFacturacionProducto.PressedColor = Color.LightYellow;
             subbtnFacturacionProducto.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            subbtnFacturacionProducto.Size = new Size(187, 45);
+            subbtnFacturacionProducto.Size = new Size(193, 45);
             subbtnFacturacionProducto.TabIndex = 9;
             subbtnFacturacionProducto.Text = "Productos";
             subbtnFacturacionProducto.TextAlign = HorizontalAlignment.Right;
@@ -246,16 +246,16 @@
             subbtnFacturacionMembresia.FillColor = Color.Transparent;
             subbtnFacturacionMembresia.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             subbtnFacturacionMembresia.ForeColor = Color.White;
-            subbtnFacturacionMembresia.HoverState.FillColor = Color.YellowGreen;
-            subbtnFacturacionMembresia.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
+            subbtnFacturacionMembresia.HoverState.FillColor = Color.Khaki;
+            subbtnFacturacionMembresia.HoverState.ForeColor = Color.Black;
             subbtnFacturacionMembresia.Image = Properties.Resources.facturamembresia;
             subbtnFacturacionMembresia.ImageAlign = HorizontalAlignment.Left;
             subbtnFacturacionMembresia.ImageSize = new Size(25, 25);
-            subbtnFacturacionMembresia.Location = new Point(25, 58);
+            subbtnFacturacionMembresia.Location = new Point(19, 58);
             subbtnFacturacionMembresia.Name = "subbtnFacturacionMembresia";
-            subbtnFacturacionMembresia.PressedColor = Color.SeaGreen;
+            subbtnFacturacionMembresia.PressedColor = Color.LightYellow;
             subbtnFacturacionMembresia.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            subbtnFacturacionMembresia.Size = new Size(187, 45);
+            subbtnFacturacionMembresia.Size = new Size(193, 45);
             subbtnFacturacionMembresia.TabIndex = 11;
             subbtnFacturacionMembresia.Text = "Membresia";
             subbtnFacturacionMembresia.TextAlign = HorizontalAlignment.Right;
@@ -263,10 +263,10 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.YellowGreen;
+            panel4.BackColor = Color.Gold;
             panel4.Location = new Point(-1, 316);
             panel4.Name = "panel4";
-            panel4.Size = new Size(19, 45);
+            panel4.Size = new Size(10, 45);
             panel4.TabIndex = 8;
             // 
             // btnFacturacion
@@ -280,16 +280,16 @@
             btnFacturacion.FillColor = Color.Transparent;
             btnFacturacion.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnFacturacion.ForeColor = Color.White;
-            btnFacturacion.HoverState.FillColor = Color.YellowGreen;
-            btnFacturacion.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
+            btnFacturacion.HoverState.FillColor = Color.Khaki;
+            btnFacturacion.HoverState.ForeColor = Color.Black;
             btnFacturacion.Image = Properties.Resources.facturacion;
             btnFacturacion.ImageAlign = HorizontalAlignment.Left;
             btnFacturacion.ImageSize = new Size(25, 25);
-            btnFacturacion.Location = new Point(24, 316);
+            btnFacturacion.Location = new Point(16, 316);
             btnFacturacion.Name = "btnFacturacion";
-            btnFacturacion.PressedColor = Color.SeaGreen;
+            btnFacturacion.PressedColor = Color.LightYellow;
             btnFacturacion.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnFacturacion.Size = new Size(210, 45);
+            btnFacturacion.Size = new Size(218, 45);
             btnFacturacion.TabIndex = 7;
             btnFacturacion.Text = "Facturacion";
             btnFacturacion.TextAlign = HorizontalAlignment.Right;
@@ -297,26 +297,26 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.YellowGreen;
+            panel3.BackColor = Color.Gold;
             panel3.Location = new Point(0, 265);
             panel3.Name = "panel3";
-            panel3.Size = new Size(19, 45);
+            panel3.Size = new Size(10, 45);
             panel3.TabIndex = 6;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.YellowGreen;
+            panel2.BackColor = Color.Gold;
             panel2.Location = new Point(0, 214);
             panel2.Name = "panel2";
-            panel2.Size = new Size(19, 45);
+            panel2.Size = new Size(10, 45);
             panel2.TabIndex = 5;
             // 
             // panel1
             // 
-            panel1.BackColor = Color.YellowGreen;
+            panel1.BackColor = Color.Gold;
             panel1.Location = new Point(0, 163);
             panel1.Name = "panel1";
-            panel1.Size = new Size(19, 45);
+            panel1.Size = new Size(10, 45);
             panel1.TabIndex = 4;
             // 
             // btnTipoMembresia
@@ -330,16 +330,16 @@
             btnTipoMembresia.FillColor = Color.Transparent;
             btnTipoMembresia.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnTipoMembresia.ForeColor = Color.White;
-            btnTipoMembresia.HoverState.FillColor = Color.YellowGreen;
-            btnTipoMembresia.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
+            btnTipoMembresia.HoverState.FillColor = Color.Khaki;
+            btnTipoMembresia.HoverState.ForeColor = Color.Black;
             btnTipoMembresia.Image = Properties.Resources.tiposmembresia;
             btnTipoMembresia.ImageAlign = HorizontalAlignment.Left;
             btnTipoMembresia.ImageSize = new Size(25, 25);
-            btnTipoMembresia.Location = new Point(25, 265);
+            btnTipoMembresia.Location = new Point(16, 265);
             btnTipoMembresia.Name = "btnTipoMembresia";
-            btnTipoMembresia.PressedColor = Color.SeaGreen;
+            btnTipoMembresia.PressedColor = Color.LightYellow;
             btnTipoMembresia.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnTipoMembresia.Size = new Size(210, 45);
+            btnTipoMembresia.Size = new Size(219, 45);
             btnTipoMembresia.TabIndex = 3;
             btnTipoMembresia.Text = "Planes Membresia";
             btnTipoMembresia.TextAlign = HorizontalAlignment.Right;
@@ -355,16 +355,16 @@
             btnMemberList.FillColor = Color.Transparent;
             btnMemberList.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnMemberList.ForeColor = Color.White;
-            btnMemberList.HoverState.FillColor = Color.YellowGreen;
-            btnMemberList.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
+            btnMemberList.HoverState.FillColor = Color.Khaki;
+            btnMemberList.HoverState.ForeColor = Color.Black;
             btnMemberList.Image = Properties.Resources.listaMiembros1;
             btnMemberList.ImageAlign = HorizontalAlignment.Left;
             btnMemberList.ImageSize = new Size(25, 25);
-            btnMemberList.Location = new Point(25, 214);
+            btnMemberList.Location = new Point(16, 214);
             btnMemberList.Name = "btnMemberList";
-            btnMemberList.PressedColor = Color.SeaGreen;
+            btnMemberList.PressedColor = Color.LightYellow;
             btnMemberList.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            btnMemberList.Size = new Size(210, 45);
+            btnMemberList.Size = new Size(219, 45);
             btnMemberList.TabIndex = 2;
             btnMemberList.Text = "Lista de Miembros";
             btnMemberList.TextAlign = HorizontalAlignment.Right;
@@ -380,16 +380,16 @@
             btnEmpleados.FillColor = Color.Transparent;
             btnEmpleados.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnEmpleados.ForeColor = Color.White;
-            btnEmpleados.HoverState.FillColor = Color.YellowGreen;
-            btnEmpleados.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
+            btnEmpleados.HoverState.FillColor = Color.Khaki;
+            btnEmpleados.HoverState.ForeColor = Color.Black;
             btnEmpleados.Image = Properties.Resources.empleado;
             btnEmpleados.ImageAlign = HorizontalAlignment.Left;
             btnEmpleados.ImageSize = new Size(25, 25);
-            btnEmpleados.Location = new Point(25, 163);
+            btnEmpleados.Location = new Point(16, 163);
             btnEmpleados.Name = "btnEmpleados";
-            btnEmpleados.PressedColor = Color.SeaGreen;
+            btnEmpleados.PressedColor = Color.LightYellow;
             btnEmpleados.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btnEmpleados.Size = new Size(212, 45);
+            btnEmpleados.Size = new Size(221, 45);
             btnEmpleados.TabIndex = 1;
             btnEmpleados.Text = "Empleados";
             btnEmpleados.TextAlign = HorizontalAlignment.Right;
@@ -399,19 +399,19 @@
             guna2PictureBox1.CustomizableEdges = customizableEdges17;
             guna2PictureBox1.Dock = DockStyle.Top;
             guna2PictureBox1.FillColor = Color.Transparent;
-            guna2PictureBox1.Image = Properties.Resources.COMFORT_GYM;
+            guna2PictureBox1.Image = Properties.Resources.GYM_COMFORT;
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(0, 0);
             guna2PictureBox1.Name = "guna2PictureBox1";
             guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2PictureBox1.Size = new Size(237, 124);
-            guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            guna2PictureBox1.Size = new Size(237, 157);
+            guna2PictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             guna2PictureBox1.TabIndex = 0;
             guna2PictureBox1.TabStop = false;
             // 
             // guna2Panel2
             // 
-            guna2Panel2.BackColor = Color.White;
+            guna2Panel2.BackColor = Color.Khaki;
             guna2Panel2.Controls.Add(guna2CirclePictureBox1);
             guna2Panel2.Controls.Add(chbxdesplegable);
             guna2Panel2.Controls.Add(lblusuario);
@@ -461,6 +461,7 @@
             lblusuario.AutoSize = false;
             lblusuario.BackColor = Color.Transparent;
             lblusuario.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblusuario.ForeColor = Color.Black;
             lblusuario.Location = new Point(506, 10);
             lblusuario.Name = "lblusuario";
             lblusuario.Size = new Size(175, 37);
@@ -471,26 +472,30 @@
             // guna2vSeparator1
             // 
             guna2vSeparator1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2vSeparator1.FillThickness = 2;
-            guna2vSeparator1.Location = new Point(476, 2);
+            guna2vSeparator1.BackColor = Color.Transparent;
+            guna2vSeparator1.FillColor = Color.Black;
+            guna2vSeparator1.FillThickness = 3;
+            guna2vSeparator1.Location = new Point(476, 0);
             guna2vSeparator1.Name = "guna2vSeparator1";
-            guna2vSeparator1.Size = new Size(24, 53);
+            guna2vSeparator1.Size = new Size(24, 55);
             guna2vSeparator1.TabIndex = 0;
             // 
             // panelDesplegable
             // 
             panelDesplegable.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panelDesplegable.BackColor = Color.White;
+            panelDesplegable.BackColor = Color.Khaki;
             panelDesplegable.Controls.Add(btncerrarSesion);
-            panelDesplegable.Location = new Point(722, 56);
+            panelDesplegable.Location = new Point(725, 56);
             panelDesplegable.Name = "panelDesplegable";
-            panelDesplegable.Size = new Size(288, 48);
+            panelDesplegable.Size = new Size(285, 40);
             panelDesplegable.TabIndex = 3;
             panelDesplegable.Visible = false;
             // 
             // btncerrarSesion
             // 
             btncerrarSesion.Anchor = AnchorStyles.None;
+            btncerrarSesion.BorderColor = Color.Gold;
+            btncerrarSesion.BorderThickness = 1;
             btncerrarSesion.Cursor = Cursors.Hand;
             btncerrarSesion.CustomizableEdges = customizableEdges25;
             btncerrarSesion.DisabledState.BorderColor = Color.DarkGray;
@@ -499,16 +504,18 @@
             btncerrarSesion.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btncerrarSesion.FillColor = Color.Transparent;
             btncerrarSesion.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            btncerrarSesion.ForeColor = Color.FromArgb(39, 57, 80);
-            btncerrarSesion.HoverState.FillColor = Color.YellowGreen;
-            btncerrarSesion.HoverState.ForeColor = Color.FromArgb(39, 57, 80);
+            btncerrarSesion.ForeColor = Color.Black;
+            btncerrarSesion.HoverState.BorderColor = Color.Khaki;
+            btncerrarSesion.HoverState.FillColor = Color.Gold;
+            btncerrarSesion.HoverState.ForeColor = Color.Black;
             btncerrarSesion.Image = Properties.Resources.cerrar_sesion;
+            btncerrarSesion.ImageAlign = HorizontalAlignment.Left;
             btncerrarSesion.ImageSize = new Size(25, 25);
-            btncerrarSesion.Location = new Point(3, 0);
+            btncerrarSesion.Location = new Point(6, 4);
             btncerrarSesion.Name = "btncerrarSesion";
-            btncerrarSesion.PressedColor = Color.SeaGreen;
+            btncerrarSesion.PressedColor = Color.LightYellow;
             btncerrarSesion.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            btncerrarSesion.Size = new Size(287, 48);
+            btncerrarSesion.Size = new Size(273, 32);
             btncerrarSesion.TabIndex = 4;
             btncerrarSesion.Text = "Cerrar Sesion";
             btncerrarSesion.Click += btncerrarSesion_Click;
