@@ -37,7 +37,7 @@ namespace SistemaGym.UI.Windows
 
             if (resultadoAutenticacion > 0)
             {
-                MessageBox.Show("Sesión Iniciada Con Éxito");
+                MessageBox.Show("Sesión Iniciada Con Éxito", "INICIO DE SESION", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                 principalForm formularioprincipal = new principalForm();
@@ -50,7 +50,7 @@ namespace SistemaGym.UI.Windows
             }
             else
             {
-                MessageBox.Show("Datos Incorrectos");
+                MessageBox.Show("Datos de Usuario Incorrectos, Intente Nuevamente", "ERROR DE INICIO DE SESION", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
