@@ -36,7 +36,7 @@ namespace SistemaGym.DAL
 
                 if (this.seguridad) 
                 { cadena.ConnectionString = "Server= LAPTOP-JHI5587U\\SQLEMANUEL" + "; Database =" + this.Base + ";" + "  Trusted_Connection = true"; }
-                else if(this.seguridad) { cadena.ConnectionString = cadena.ConnectionString + "User Id=" + this.usuario + ";Password=" + this.clave; }
+                else { cadena.ConnectionString = cadena.ConnectionString + "User Id= LAPTOP-JHI5587U\\SQLEMANUEL" + ";Password= ema1234"; }
                 if (this.seguridad)
                 { cadena.ConnectionString = "Server= DESKTOP-FT9L2OG\\SQLEXPRESS" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
                 else { cadena.ConnectionString = cadena.ConnectionString + "User Id=" + this.usuario + ";Password=" + this.clave; }
