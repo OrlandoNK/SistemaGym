@@ -32,21 +32,19 @@ namespace SistemaGym.DAL
             SqlConnection cadena = new SqlConnection();
 
             try
-            {
-                cadena.ConnectionString = "Server= " + this.servidor + "; Database =" + this.Base + ";";
-                if (this.seguridad)
-                {
-                    cadena.ConnectionString = cadena.ConnectionString + " Integrated Security = SSPI";
-                }
-                else if (this.seguridad) 
-                { cadena.ConnectionString = "Server= LAPTOP-JHI5587U\\SQLEMANUEL" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
-                else if (this.seguridad)
-                { cadena.ConnectionString = "Server= DESKTOP-FT9L2OG\\SQLEXPRESS" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
-                else if (this.seguridad)
+            { 
+
+                if (this.seguridad) 
                 { cadena.ConnectionString = "Server= LAPTOP-JHI5587U\\SQLEMANUEL" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
                 else { cadena.ConnectionString = cadena.ConnectionString + "User Id=" + this.usuario + ";Password=" + this.clave; }
+                if (this.seguridad)
+                { cadena.ConnectionString = "Server= DESKTOP-FT9L2OG\\SQLEXPRESS" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
+                else { cadena.ConnectionString = cadena.ConnectionString + "User Id=" + this.usuario + ";Password=" + this.clave; }
+                if (this.seguridad)
+                { cadena.ConnectionString = "Server= "+ this.servidor + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
+                else { cadena.ConnectionString = cadena.ConnectionString + "User Id=" + this.usuario + ";Password=" + this.clave; }
 
-
+                
 
 
 
