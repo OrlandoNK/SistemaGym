@@ -16,5 +16,10 @@ namespace SistemaGym.UI.Windows
         {
             InitializeComponent();
         }
+
+        private void frmMembresia_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
