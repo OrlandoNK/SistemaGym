@@ -181,7 +181,7 @@
             txtidcliente.Location = new Point(105, 38);
             txtidcliente.Multiline = true;
             txtidcliente.Name = "txtidcliente";
-            txtidcliente.Size = new Size(29, 25);
+            txtidcliente.Size = new Size(100, 25);
             txtidcliente.TabIndex = 73;
             // 
             // dgvCliente
