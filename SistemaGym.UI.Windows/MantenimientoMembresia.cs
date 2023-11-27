@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaGym.UI.Windows
 {
-    public partial class MantenimientoMembresia : Form
+    public partial class frmMembresia : Form
     {
-        public MantenimientoMembresia()
+        public frmMembresia()
         {
             InitializeComponent();
         }

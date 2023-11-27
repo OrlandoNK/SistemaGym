@@ -1,6 +1,6 @@
 ﻿namespace SistemaGym.UI.Windows
 {
-    partial class MantenimientoMembresia
+    partial class frmMembresia
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             SuspendLayout();
             // 
-            // MantenimientoClientes
+            // frmMembresia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(893, 530);
-            Name = "MantenimientoClientes";
-            Text = "MantenimientoClientes";
+            Name = "frmMembresia";
+            Text = "Membresias";
             ResumeLayout(false);
         }
 
