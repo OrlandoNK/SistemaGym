@@ -35,14 +35,13 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            richTextBox1 = new RichTextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            dataGridView1 = new DataGridView();
+            txtID = new TextBox();
+            txtNombre = new TextBox();
+            txtDescripcion = new RichTextBox();
+            txtDuracion = new TextBox();
+            txtValor = new TextBox();
+            txtFechaCreacion = new TextBox();
+            dgvMembresia = new DataGridView();
             IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
@@ -50,7 +49,8 @@
             Valor = new DataGridViewTextBoxColumn();
             FechaCreacion = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            cbEstatus = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -116,74 +116,66 @@
             label7.TabIndex = 6;
             label7.Text = "Estatus";
             // 
-            // textBox1
+            // txtID
             // 
-            textBox1.Location = new Point(154, 54);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(28, 23);
-            textBox1.TabIndex = 7;
+            txtID.Location = new Point(154, 54);
+            txtID.Multiline = true;
+            txtID.Name = "txtID";
+            txtID.Size = new Size(28, 23);
+            txtID.TabIndex = 7;
             // 
-            // textBox2
+            // txtNombre
             // 
-            textBox2.Location = new Point(154, 84);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 21);
-            textBox2.TabIndex = 8;
+            txtNombre.Location = new Point(154, 84);
+            txtNombre.Multiline = true;
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(100, 21);
+            txtNombre.TabIndex = 8;
             // 
-            // richTextBox1
+            // txtDescripcion
             // 
-            richTextBox1.Location = new Point(154, 111);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(156, 47);
-            richTextBox1.TabIndex = 9;
-            richTextBox1.Text = "";
+            txtDescripcion.Location = new Point(154, 111);
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(156, 47);
+            txtDescripcion.TabIndex = 9;
+            txtDescripcion.Text = "";
             // 
-            // textBox3
+            // txtDuracion
             // 
-            textBox3.Location = new Point(154, 173);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 21);
-            textBox3.TabIndex = 10;
+            txtDuracion.Location = new Point(154, 173);
+            txtDuracion.Multiline = true;
+            txtDuracion.Name = "txtDuracion";
+            txtDuracion.Size = new Size(100, 21);
+            txtDuracion.TabIndex = 10;
             // 
-            // textBox4
+            // txtValor
             // 
-            textBox4.Location = new Point(154, 212);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 21);
-            textBox4.TabIndex = 11;
+            txtValor.Location = new Point(154, 212);
+            txtValor.Multiline = true;
+            txtValor.Name = "txtValor";
+            txtValor.Size = new Size(100, 21);
+            txtValor.TabIndex = 11;
             // 
-            // textBox5
+            // txtFechaCreacion
             // 
-            textBox5.Location = new Point(154, 246);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 21);
-            textBox5.TabIndex = 12;
+            txtFechaCreacion.Location = new Point(154, 246);
+            txtFechaCreacion.Multiline = true;
+            txtFechaCreacion.Name = "txtFechaCreacion";
+            txtFechaCreacion.Size = new Size(100, 21);
+            txtFechaCreacion.TabIndex = 12;
             // 
-            // textBox6
+            // dgvMembresia
             // 
-            textBox6.Location = new Point(154, 277);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 21);
-            textBox6.TabIndex = 13;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Descripcion, Duracion, Valor, FechaCreacion, Estatus });
-            dataGridView1.Location = new Point(316, 54);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(630, 356);
-            dataGridView1.TabIndex = 14;
+            dgvMembresia.AllowUserToAddRows = false;
+            dgvMembresia.AllowUserToDeleteRows = false;
+            dgvMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Descripcion, Duracion, Valor, FechaCreacion, Estatus });
+            dgvMembresia.Location = new Point(316, 54);
+            dgvMembresia.Name = "dgvMembresia";
+            dgvMembresia.ReadOnly = true;
+            dgvMembresia.RowTemplate.Height = 25;
+            dgvMembresia.Size = new Size(630, 356);
+            dgvMembresia.TabIndex = 14;
             // 
             // IDMembresia
             // 
@@ -234,19 +226,28 @@
             Estatus.Name = "Estatus";
             Estatus.ReadOnly = true;
             // 
+            // cbEstatus
+            // 
+            cbEstatus.FormattingEnabled = true;
+            cbEstatus.Items.AddRange(new object[] { "Activo", "Inactivo" });
+            cbEstatus.Location = new Point(154, 277);
+            cbEstatus.Name = "cbEstatus";
+            cbEstatus.Size = new Size(100, 23);
+            cbEstatus.TabIndex = 16;
+            // 
             // frmMembresia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(958, 530);
-            Controls.Add(dataGridView1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(richTextBox1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(cbEstatus);
+            Controls.Add(dgvMembresia);
+            Controls.Add(txtFechaCreacion);
+            Controls.Add(txtValor);
+            Controls.Add(txtDuracion);
+            Controls.Add(txtDescripcion);
+            Controls.Add(txtNombre);
+            Controls.Add(txtID);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -257,7 +258,7 @@
             Name = "frmMembresia";
             Text = "Membresias";
             Load += frmMembresia_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMembresia).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -271,14 +272,13 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private RichTextBox richTextBox1;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private DataGridView dataGridView1;
+        private TextBox txtID;
+        private TextBox txtNombre;
+        private RichTextBox txtDescripcion;
+        private TextBox txtDuracion;
+        private TextBox txtValor;
+        private TextBox txtFechaCreacion;
+        private DataGridView dgvMembresia;
         private DataGridViewTextBoxColumn IDMembresia;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Descripcion;
@@ -286,5 +286,6 @@
         private DataGridViewTextBoxColumn Valor;
         private DataGridViewTextBoxColumn FechaCreacion;
         private DataGridViewTextBoxColumn Estatus;
+        private ComboBox cbEstatus;
     }
 }
