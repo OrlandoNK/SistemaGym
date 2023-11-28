@@ -21,7 +21,28 @@ namespace SistemaGym.UI.Windows
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            dgvCliente.DataSource = ClientesBLL.MostrarCliente();
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void InicializarControles()
+        {
+            txtidcliente.Text = "0";
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtDocumento.Clear();
+            txtDireccion.Clear();
+            txtTelCell.Clear();
+            txtTelRes.Clear();
+
+        }
+        private void CargarUsuarios()
+        {
+            cbUsuario.ValueMember = "IDCliente";
+            cbUsuario.DisplayMember = "NombreUsuario";
         }
     }
 }

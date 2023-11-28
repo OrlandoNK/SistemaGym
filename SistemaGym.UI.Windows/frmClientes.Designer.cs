@@ -28,19 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtEstatus = new TextBox();
-            txtFechaRegistro = new TextBox();
             txtTelRes = new TextBox();
             txtTelCell = new TextBox();
             txtDireccion = new TextBox();
             txtDocumento = new TextBox();
-            txtTipoDocumento = new TextBox();
             txtApellido = new TextBox();
             txtNombre = new TextBox();
-            txtTipoCliente = new TextBox();
-            txtTipoListaCliente = new TextBox();
-            txtmembresia = new TextBox();
-            txtusuario = new TextBox();
             txtidcliente = new TextBox();
             dgvCliente = new DataGridView();
             IDCliente = new DataGridViewTextBoxColumn();
@@ -69,24 +62,18 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            cbMembresia = new ComboBox();
+            cbTipoCliente = new ComboBox();
+            cbTipoDocumento = new ComboBox();
+            cbUsuario = new ComboBox();
+            cbTipoListaCliente = new ComboBox();
+            cbEstatus = new ComboBox();
+            btnNuevo = new Button();
+            btnGuardar = new Button();
+            btnEliminar = new Button();
+            dtpFechaRegistro = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
             SuspendLayout();
-            // 
-            // txtEstatus
-            // 
-            txtEstatus.Location = new Point(105, 428);
-            txtEstatus.Multiline = true;
-            txtEstatus.Name = "txtEstatus";
-            txtEstatus.Size = new Size(100, 20);
-            txtEstatus.TabIndex = 86;
-            // 
-            // txtFechaRegistro
-            // 
-            txtFechaRegistro.Location = new Point(105, 402);
-            txtFechaRegistro.Multiline = true;
-            txtFechaRegistro.Name = "txtFechaRegistro";
-            txtFechaRegistro.Size = new Size(100, 20);
-            txtFechaRegistro.TabIndex = 85;
             // 
             // txtTelRes
             // 
@@ -120,14 +107,6 @@
             txtDocumento.Size = new Size(100, 20);
             txtDocumento.TabIndex = 81;
             // 
-            // txtTipoDocumento
-            // 
-            txtTipoDocumento.Location = new Point(105, 263);
-            txtTipoDocumento.Multiline = true;
-            txtTipoDocumento.Name = "txtTipoDocumento";
-            txtTipoDocumento.Size = new Size(100, 20);
-            txtTipoDocumento.TabIndex = 80;
-            // 
             // txtApellido
             // 
             txtApellido.Location = new Point(105, 230);
@@ -144,44 +123,12 @@
             txtNombre.Size = new Size(100, 20);
             txtNombre.TabIndex = 78;
             // 
-            // txtTipoCliente
-            // 
-            txtTipoCliente.Location = new Point(105, 159);
-            txtTipoCliente.Multiline = true;
-            txtTipoCliente.Name = "txtTipoCliente";
-            txtTipoCliente.Size = new Size(100, 20);
-            txtTipoCliente.TabIndex = 77;
-            // 
-            // txtTipoListaCliente
-            // 
-            txtTipoListaCliente.Location = new Point(105, 129);
-            txtTipoListaCliente.Multiline = true;
-            txtTipoListaCliente.Name = "txtTipoListaCliente";
-            txtTipoListaCliente.Size = new Size(100, 20);
-            txtTipoListaCliente.TabIndex = 76;
-            // 
-            // txtmembresia
-            // 
-            txtmembresia.Location = new Point(105, 100);
-            txtmembresia.Multiline = true;
-            txtmembresia.Name = "txtmembresia";
-            txtmembresia.Size = new Size(100, 20);
-            txtmembresia.TabIndex = 75;
-            // 
-            // txtusuario
-            // 
-            txtusuario.Location = new Point(105, 72);
-            txtusuario.Multiline = true;
-            txtusuario.Name = "txtusuario";
-            txtusuario.Size = new Size(100, 20);
-            txtusuario.TabIndex = 74;
-            // 
             // txtidcliente
             // 
             txtidcliente.Location = new Point(105, 38);
             txtidcliente.Multiline = true;
             txtidcliente.Name = "txtidcliente";
-            txtidcliente.Size = new Size(100, 25);
+            txtidcliente.Size = new Size(32, 25);
             txtidcliente.TabIndex = 73;
             // 
             // dgvCliente
@@ -407,24 +354,111 @@
             label1.TabIndex = 58;
             label1.Text = "ID CLiente";
             // 
+            // cbMembresia
+            // 
+            cbMembresia.FormattingEnabled = true;
+            cbMembresia.Location = new Point(105, 98);
+            cbMembresia.Name = "cbMembresia";
+            cbMembresia.Size = new Size(100, 23);
+            cbMembresia.TabIndex = 87;
+            // 
+            // cbTipoCliente
+            // 
+            cbTipoCliente.FormattingEnabled = true;
+            cbTipoCliente.Location = new Point(105, 156);
+            cbTipoCliente.Name = "cbTipoCliente";
+            cbTipoCliente.Size = new Size(100, 23);
+            cbTipoCliente.TabIndex = 88;
+            // 
+            // cbTipoDocumento
+            // 
+            cbTipoDocumento.FormattingEnabled = true;
+            cbTipoDocumento.Location = new Point(105, 260);
+            cbTipoDocumento.Name = "cbTipoDocumento";
+            cbTipoDocumento.Size = new Size(100, 23);
+            cbTipoDocumento.TabIndex = 89;
+            // 
+            // cbUsuario
+            // 
+            cbUsuario.FormattingEnabled = true;
+            cbUsuario.Location = new Point(105, 69);
+            cbUsuario.Name = "cbUsuario";
+            cbUsuario.Size = new Size(100, 23);
+            cbUsuario.TabIndex = 90;
+            // 
+            // cbTipoListaCliente
+            // 
+            cbTipoListaCliente.FormattingEnabled = true;
+            cbTipoListaCliente.Location = new Point(105, 127);
+            cbTipoListaCliente.Name = "cbTipoListaCliente";
+            cbTipoListaCliente.Size = new Size(100, 23);
+            cbTipoListaCliente.TabIndex = 91;
+            // 
+            // cbEstatus
+            // 
+            cbEstatus.FormattingEnabled = true;
+            cbEstatus.Location = new Point(105, 433);
+            cbEstatus.Name = "cbEstatus";
+            cbEstatus.Size = new Size(100, 23);
+            cbEstatus.TabIndex = 92;
+            // 
+            // btnNuevo
+            // 
+            btnNuevo.Location = new Point(16, 487);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(75, 23);
+            btnNuevo.TabIndex = 93;
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(105, 487);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.TabIndex = 94;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(195, 487);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.RightToLeft = RightToLeft.No;
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 95;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // dtpFechaRegistro
+            // 
+            dtpFechaRegistro.Location = new Point(105, 404);
+            dtpFechaRegistro.Name = "dtpFechaRegistro";
+            dtpFechaRegistro.Size = new Size(100, 23);
+            dtpFechaRegistro.TabIndex = 96;
+            // 
             // frmClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1021, 628);
-            Controls.Add(txtEstatus);
-            Controls.Add(txtFechaRegistro);
+            Controls.Add(dtpFechaRegistro);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnNuevo);
+            Controls.Add(cbEstatus);
+            Controls.Add(cbTipoListaCliente);
+            Controls.Add(cbUsuario);
+            Controls.Add(cbTipoDocumento);
+            Controls.Add(cbTipoCliente);
+            Controls.Add(cbMembresia);
             Controls.Add(txtTelRes);
             Controls.Add(txtTelCell);
             Controls.Add(txtDireccion);
             Controls.Add(txtDocumento);
-            Controls.Add(txtTipoDocumento);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
-            Controls.Add(txtTipoCliente);
-            Controls.Add(txtTipoListaCliente);
-            Controls.Add(txtmembresia);
-            Controls.Add(txtusuario);
             Controls.Add(txtidcliente);
             Controls.Add(dgvCliente);
             Controls.Add(label14);
@@ -450,20 +484,12 @@
         }
 
         #endregion
-
-        private TextBox txtEstatus;
-        private TextBox txtFechaRegistro;
         private TextBox txtTelRes;
         private TextBox txtTelCell;
         private TextBox txtDireccion;
         private TextBox txtDocumento;
-        private TextBox txtTipoDocumento;
         private TextBox txtApellido;
         private TextBox txtNombre;
-        private TextBox txtTipoCliente;
-        private TextBox txtTipoListaCliente;
-        private TextBox txtmembresia;
-        private TextBox txtusuario;
         private TextBox txtidcliente;
         private DataGridView dgvCliente;
         private Label label14;
@@ -492,5 +518,15 @@
         private DataGridViewTextBoxColumn TelRes;
         private DataGridViewTextBoxColumn FechaRegistro;
         private DataGridViewTextBoxColumn Estatus;
+        private ComboBox cbMembresia;
+        private ComboBox cbTipoCliente;
+        private ComboBox cbTipoDocumento;
+        private ComboBox cbUsuario;
+        private ComboBox cbTipoListaCliente;
+        private ComboBox cbEstatus;
+        private Button btnNuevo;
+        private Button btnGuardar;
+        private Button btnEliminar;
+        private DateTimePicker dtpFechaRegistro;
     }
 }
