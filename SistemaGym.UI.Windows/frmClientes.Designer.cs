@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             txtTelRes = new TextBox();
             txtTelCell = new TextBox();
             txtDireccion = new TextBox();
@@ -72,7 +73,9 @@
             btnGuardar = new Button();
             btnEliminar = new Button();
             dtpFechaRegistro = new DateTimePicker();
+            errorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // txtTelRes
@@ -143,6 +146,7 @@
             dgvCliente.RowTemplate.Height = 25;
             dgvCliente.Size = new Size(724, 410);
             dgvCliente.TabIndex = 72;
+            dgvCliente.CellClick += dgvCliente_CellClick;
             // 
             // IDCliente
             // 
@@ -373,6 +377,7 @@
             // cbTipoDocumento
             // 
             cbTipoDocumento.FormattingEnabled = true;
+            cbTipoDocumento.Items.AddRange(new object[] { "Cedula", "Pasaporte" });
             cbTipoDocumento.Location = new Point(105, 260);
             cbTipoDocumento.Name = "cbTipoDocumento";
             cbTipoDocumento.Size = new Size(100, 23);
@@ -397,6 +402,7 @@
             // cbEstatus
             // 
             cbEstatus.FormattingEnabled = true;
+            cbEstatus.Items.AddRange(new object[] { "Activo", "Inactivo" });
             cbEstatus.Location = new Point(105, 433);
             cbEstatus.Name = "cbEstatus";
             cbEstatus.Size = new Size(100, 23);
@@ -439,6 +445,10 @@
             dtpFechaRegistro.Size = new Size(100, 23);
             dtpFechaRegistro.TabIndex = 96;
             // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
+            // 
             // frmClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -480,6 +490,7 @@
             Text = "Clientes";
             Load += frmClientes_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -529,5 +540,6 @@
         private Button btnGuardar;
         private Button btnEliminar;
         private DateTimePicker dtpFechaRegistro;
+        private ErrorProvider errorProvider;
     }
 }
