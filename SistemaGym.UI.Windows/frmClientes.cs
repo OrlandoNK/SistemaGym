@@ -26,7 +26,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            InicializarControles();
         }
         private void InicializarControles()
         {
@@ -37,12 +37,41 @@ namespace SistemaGym.UI.Windows
             txtDireccion.Clear();
             txtTelCell.Clear();
             txtTelRes.Clear();
+            CargarUsuarios();
+            CargarMembresia();
+            CargarTipoListaCliente();
+            CargarTipoCliente();
 
         }
         private void CargarUsuarios()
         {
-            cbUsuario.ValueMember = "IDCliente";
+            cbUsuario.ValueMember = "IDUsuario";
             cbUsuario.DisplayMember = "NombreUsuario";
+            cbUsuario.DataSource = UsuarioBLL.Mostrar();
+        }
+        private void CargarMembresia()
+        {
+            cbMembresia.ValueMember = "IDMembresia";
+            cbMembresia.DisplayMember = "Nombre";
+            cbMembresia.DataSource = MembresiaBLL.Mostrar();
+        }
+        private void CargarTipoListaCliente()
+        {
+            cbTipoListaCliente.ValueMember = "IDTipoListaCliente";
+            cbTipoListaCliente.DisplayMember = "Nombre";
+            cbTipoListaCliente.DataSource = TipoListaClienteBLL.MostrarTipoListaCliente();
+        }
+        private void CargarTipoCliente()
+        {
+            cbTipoCliente.ValueMember = "IDTipoListaCliente";
+            cbTipoCliente.DisplayMember = "Nombre";
+            cbTipoCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
         }
     }
+
 }
