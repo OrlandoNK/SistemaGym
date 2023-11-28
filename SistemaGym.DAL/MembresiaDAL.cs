@@ -37,7 +37,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update Membresia Set Nombre =@idnombre, Descripcion =@descripcion," + 
+            string actualizar = "Update Membresia Set Nombre =@nombre, Descripcion =@descripcion," + 
                 " Duracion =@duracion, Valor =@valor, FechaCreacion =@fechacreacion, Estatus =@estatus";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@nombre", membresia.Nombre);

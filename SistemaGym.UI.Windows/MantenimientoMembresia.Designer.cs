@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -40,7 +41,6 @@
             txtDescripcion = new RichTextBox();
             txtDuracion = new TextBox();
             txtValor = new TextBox();
-            txtFechaCreacion = new TextBox();
             dgvMembresia = new DataGridView();
             IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -50,7 +50,13 @@
             FechaCreacion = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
             cbEstatus = new ComboBox();
+            btnNuevo = new Button();
+            btnGuardar = new Button();
+            btnCancelar = new Button();
+            errorProvider = new ErrorProvider(components);
+            dtpFechaCreacion = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -121,6 +127,7 @@
             txtID.Location = new Point(154, 54);
             txtID.Multiline = true;
             txtID.Name = "txtID";
+            txtID.ReadOnly = true;
             txtID.Size = new Size(28, 23);
             txtID.TabIndex = 7;
             // 
@@ -156,14 +163,6 @@
             txtValor.Size = new Size(100, 21);
             txtValor.TabIndex = 11;
             // 
-            // txtFechaCreacion
-            // 
-            txtFechaCreacion.Location = new Point(154, 246);
-            txtFechaCreacion.Multiline = true;
-            txtFechaCreacion.Name = "txtFechaCreacion";
-            txtFechaCreacion.Size = new Size(100, 21);
-            txtFechaCreacion.TabIndex = 12;
-            // 
             // dgvMembresia
             // 
             dgvMembresia.AllowUserToAddRows = false;
@@ -174,8 +173,9 @@
             dgvMembresia.Name = "dgvMembresia";
             dgvMembresia.ReadOnly = true;
             dgvMembresia.RowTemplate.Height = 25;
-            dgvMembresia.Size = new Size(630, 356);
+            dgvMembresia.Size = new Size(741, 356);
             dgvMembresia.TabIndex = 14;
+            dgvMembresia.CellClick += dgvMembresia_CellClick;
             // 
             // IDMembresia
             // 
@@ -235,14 +235,57 @@
             cbEstatus.Size = new Size(100, 23);
             cbEstatus.TabIndex = 16;
             // 
+            // btnNuevo
+            // 
+            btnNuevo.Location = new Point(48, 332);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(75, 23);
+            btnNuevo.TabIndex = 17;
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(129, 332);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.TabIndex = 18;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(210, 332);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 19;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
+            // 
+            // dtpFechaCreacion
+            // 
+            dtpFechaCreacion.Location = new Point(152, 248);
+            dtpFechaCreacion.Name = "dtpFechaCreacion";
+            dtpFechaCreacion.Size = new Size(158, 23);
+            dtpFechaCreacion.TabIndex = 20;
+            // 
             // frmMembresia
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(958, 530);
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(1065, 530);
+            Controls.Add(dtpFechaCreacion);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnNuevo);
             Controls.Add(cbEstatus);
             Controls.Add(dgvMembresia);
-            Controls.Add(txtFechaCreacion);
             Controls.Add(txtValor);
             Controls.Add(txtDuracion);
             Controls.Add(txtDescripcion);
@@ -255,10 +298,12 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            MaximizeBox = false;
             Name = "frmMembresia";
             Text = "Membresias";
             Load += frmMembresia_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -277,7 +322,6 @@
         private RichTextBox txtDescripcion;
         private TextBox txtDuracion;
         private TextBox txtValor;
-        private TextBox txtFechaCreacion;
         private DataGridView dgvMembresia;
         private DataGridViewTextBoxColumn IDMembresia;
         private DataGridViewTextBoxColumn Nombre;
@@ -287,5 +331,10 @@
         private DataGridViewTextBoxColumn FechaCreacion;
         private DataGridViewTextBoxColumn Estatus;
         private ComboBox cbEstatus;
+        private Button btnNuevo;
+        private Button btnGuardar;
+        private Button btnCancelar;
+        private ErrorProvider errorProvider;
+        private DateTimePicker dtpFechaCreacion;
     }
 }
