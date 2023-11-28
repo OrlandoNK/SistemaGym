@@ -88,6 +88,13 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(txtValor, "El valor es obligatorio");
                 resultado = false;
             }
+            decimal valor;
+            if (!decimal.TryParse(txtValor.Text, out valor))
+            {
+                errorProvider.SetError(txtValor, "Ingrese un valor decimal válido");
+                resultado = false;
+            }
+
             if (string.IsNullOrEmpty(dtpFechaCreacion.Text))
             {
                 errorProvider.SetError(dtpFechaCreacion, "La fecha es obligatorio");
