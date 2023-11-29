@@ -38,7 +38,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string actualizar = "Update Membresia Set Nombre =@nombre, Descripcion =@descripcion," + 
-                " Duracion =@duracion, Valor =@valor, FechaCreacion =@fechacreacion, Estatus =@estatus";
+                " Duracion =@duracion, Valor =@valor, FechaCreacion =@fechacreacion, Estatus =@estatus where IDMembresia= @idmembresia";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@nombre", membresia.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", membresia.Descripcion);
@@ -46,6 +46,7 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@valor", membresia.Valor);
             cmd.Parameters.AddWithValue("@fechacreacion", membresia.FechaCreacion);
             cmd.Parameters.AddWithValue("@estatus", membresia.Estatus);
+            cmd.Parameters.AddWithValue("@idmembresia", membresia.IDMembresia);
             cmd.ExecuteNonQuery();
 
         }

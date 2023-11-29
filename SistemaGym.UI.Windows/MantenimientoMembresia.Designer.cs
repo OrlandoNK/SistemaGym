@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -42,6 +44,12 @@
             txtDuracion = new TextBox();
             txtValor = new TextBox();
             dgvMembresia = new DataGridView();
+            cbEstatus = new ComboBox();
+            btnNuevo = new Button();
+            btnGuardar = new Button();
+            btnCancelar = new Button();
+            errorProvider = new ErrorProvider(components);
+            dtpFechaCreacion = new DateTimePicker();
             IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
@@ -49,12 +57,6 @@
             Valor = new DataGridViewTextBoxColumn();
             FechaCreacion = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
-            cbEstatus = new ComboBox();
-            btnNuevo = new Button();
-            btnGuardar = new Button();
-            btnCancelar = new Button();
-            errorProvider = new ErrorProvider(components);
-            dtpFechaCreacion = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
@@ -177,55 +179,6 @@
             dgvMembresia.TabIndex = 14;
             dgvMembresia.CellClick += dgvMembresia_CellClick;
             // 
-            // IDMembresia
-            // 
-            IDMembresia.DataPropertyName = "IDMembresia";
-            IDMembresia.HeaderText = "ID Membresia";
-            IDMembresia.Name = "IDMembresia";
-            IDMembresia.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            Descripcion.DataPropertyName = "Descripcion";
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.Name = "Descripcion";
-            Descripcion.ReadOnly = true;
-            // 
-            // Duracion
-            // 
-            Duracion.DataPropertyName = "Duracion";
-            Duracion.HeaderText = "Duracion";
-            Duracion.Name = "Duracion";
-            Duracion.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            Valor.DataPropertyName = "Valor";
-            Valor.HeaderText = "Valor";
-            Valor.Name = "Valor";
-            Valor.ReadOnly = true;
-            // 
-            // FechaCreacion
-            // 
-            FechaCreacion.DataPropertyName = "FechaCreacion";
-            FechaCreacion.HeaderText = "Fecha Creacion";
-            FechaCreacion.Name = "FechaCreacion";
-            FechaCreacion.ReadOnly = true;
-            // 
-            // Estatus
-            // 
-            Estatus.DataPropertyName = "Estatus";
-            Estatus.HeaderText = "Estatus";
-            Estatus.Name = "Estatus";
-            Estatus.ReadOnly = true;
-            // 
             // cbEstatus
             // 
             cbEstatus.FormattingEnabled = true;
@@ -276,6 +229,61 @@
             dtpFechaCreacion.Size = new Size(158, 23);
             dtpFechaCreacion.TabIndex = 20;
             // 
+            // IDMembresia
+            // 
+            IDMembresia.DataPropertyName = "IDMembresia";
+            IDMembresia.HeaderText = "ID Membresia";
+            IDMembresia.Name = "IDMembresia";
+            IDMembresia.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            Descripcion.DataPropertyName = "Descripcion";
+            Descripcion.HeaderText = "Descripcion";
+            Descripcion.Name = "Descripcion";
+            Descripcion.ReadOnly = true;
+            // 
+            // Duracion
+            // 
+            Duracion.DataPropertyName = "Duracion";
+            Duracion.HeaderText = "Duracion";
+            Duracion.Name = "Duracion";
+            Duracion.ReadOnly = true;
+            // 
+            // Valor
+            // 
+            Valor.DataPropertyName = "Valor";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            Valor.DefaultCellStyle = dataGridViewCellStyle1;
+            Valor.HeaderText = "Valor";
+            Valor.Name = "Valor";
+            Valor.ReadOnly = true;
+            // 
+            // FechaCreacion
+            // 
+            FechaCreacion.DataPropertyName = "FechaCreacion";
+            dataGridViewCellStyle2.Format = "g";
+            dataGridViewCellStyle2.NullValue = null;
+            FechaCreacion.DefaultCellStyle = dataGridViewCellStyle2;
+            FechaCreacion.HeaderText = "Fecha Creacion";
+            FechaCreacion.Name = "FechaCreacion";
+            FechaCreacion.ReadOnly = true;
+            // 
+            // Estatus
+            // 
+            Estatus.DataPropertyName = "Estatus";
+            Estatus.HeaderText = "Estatus";
+            Estatus.Name = "Estatus";
+            Estatus.ReadOnly = true;
+            // 
             // frmMembresia
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -323,6 +331,12 @@
         private TextBox txtDuracion;
         private TextBox txtValor;
         private DataGridView dgvMembresia;
+        private ComboBox cbEstatus;
+        private Button btnNuevo;
+        private Button btnGuardar;
+        private Button btnCancelar;
+        private ErrorProvider errorProvider;
+        private DateTimePicker dtpFechaCreacion;
         private DataGridViewTextBoxColumn IDMembresia;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Descripcion;
@@ -330,11 +344,5 @@
         private DataGridViewTextBoxColumn Valor;
         private DataGridViewTextBoxColumn FechaCreacion;
         private DataGridViewTextBoxColumn Estatus;
-        private ComboBox cbEstatus;
-        private Button btnNuevo;
-        private Button btnGuardar;
-        private Button btnCancelar;
-        private ErrorProvider errorProvider;
-        private DateTimePicker dtpFechaCreacion;
     }
 }
