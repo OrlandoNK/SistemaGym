@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtEstatus = new TextBox();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtDireccion = new TextBox();
             txtContrasena = new TextBox();
-            txtFechaRegistro = new TextBox();
             txtApellido = new TextBox();
             txtNombre = new TextBox();
             txtSexo = new TextBox();
             txtNombreUsuario = new TextBox();
             txtCorreo = new TextBox();
-            txtRol = new TextBox();
             txtIDUsuario = new TextBox();
             label11 = new Label();
             label10 = new Label();
@@ -50,9 +48,9 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvUsuario = new DataGridView();
             IDUsuario = new DataGridViewTextBoxColumn();
-            Rol = new DataGridViewTextBoxColumn();
+            Rol = new DataGridViewComboBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
             Sexo = new DataGridViewTextBoxColumn();
@@ -65,16 +63,11 @@
             btnNuevo = new Button();
             btnGuardar = new Button();
             btnEliminar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            cbRol = new ComboBox();
+            cbEstatus = new ComboBox();
+            dtpFechaRegistro = new DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuario).BeginInit();
             SuspendLayout();
-            // 
-            // txtEstatus
-            // 
-            txtEstatus.Location = new Point(122, 374);
-            txtEstatus.Multiline = true;
-            txtEstatus.Name = "txtEstatus";
-            txtEstatus.Size = new Size(100, 20);
-            txtEstatus.TabIndex = 111;
             // 
             // txtDireccion
             // 
@@ -86,19 +79,11 @@
             // 
             // txtContrasena
             // 
-            txtContrasena.Location = new Point(122, 346);
+            txtContrasena.Location = new Point(122, 342);
             txtContrasena.Multiline = true;
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Size = new Size(100, 20);
             txtContrasena.TabIndex = 109;
-            // 
-            // txtFechaRegistro
-            // 
-            txtFechaRegistro.Location = new Point(122, 287);
-            txtFechaRegistro.Multiline = true;
-            txtFechaRegistro.Name = "txtFechaRegistro";
-            txtFechaRegistro.Size = new Size(100, 20);
-            txtFechaRegistro.TabIndex = 108;
             // 
             // txtApellido
             // 
@@ -140,19 +125,12 @@
             txtCorreo.Size = new Size(100, 20);
             txtCorreo.TabIndex = 103;
             // 
-            // txtRol
-            // 
-            txtRol.Location = new Point(122, 96);
-            txtRol.Multiline = true;
-            txtRol.Name = "txtRol";
-            txtRol.Size = new Size(100, 20);
-            txtRol.TabIndex = 102;
-            // 
             // txtIDUsuario
             // 
             txtIDUsuario.Location = new Point(122, 62);
             txtIDUsuario.Multiline = true;
             txtIDUsuario.Name = "txtIDUsuario";
+            txtIDUsuario.ReadOnly = true;
             txtIDUsuario.Size = new Size(29, 25);
             txtIDUsuario.TabIndex = 101;
             // 
@@ -255,18 +233,18 @@
             label1.TabIndex = 87;
             label1.Text = "ID Usuario";
             // 
-            // dataGridView1
+            // dgvUsuario
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDUsuario, Rol, Nombre, Apellido, Sexo, Correo, Direccion, FechaRegistro, NombreUsuario, Contrasena, Estatus });
-            dataGridView1.Location = new Point(308, 33);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(656, 410);
-            dataGridView1.TabIndex = 112;
+            dgvUsuario.AllowUserToAddRows = false;
+            dgvUsuario.AllowUserToDeleteRows = false;
+            dgvUsuario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuario.Columns.AddRange(new DataGridViewColumn[] { IDUsuario, Rol, Nombre, Apellido, Sexo, Correo, Direccion, FechaRegistro, NombreUsuario, Contrasena, Estatus });
+            dgvUsuario.Location = new Point(308, 54);
+            dgvUsuario.Name = "dgvUsuario";
+            dgvUsuario.ReadOnly = true;
+            dgvUsuario.RowTemplate.Height = 25;
+            dgvUsuario.Size = new Size(720, 410);
+            dgvUsuario.TabIndex = 112;
             // 
             // IDUsuario
             // 
@@ -280,6 +258,8 @@
             Rol.HeaderText = "Rol";
             Rol.Name = "Rol";
             Rol.ReadOnly = true;
+            Rol.Resizable = DataGridViewTriState.True;
+            Rol.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // Nombre
             // 
@@ -319,6 +299,9 @@
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
+            dataGridViewCellStyle2.Format = "g";
+            dataGridViewCellStyle2.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle2;
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.ReadOnly = true;
@@ -346,16 +329,17 @@
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(104, 490);
+            btnNuevo.Location = new Point(16, 441);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(75, 23);
             btnNuevo.TabIndex = 113;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(215, 490);
+            btnGuardar.Location = new Point(110, 441);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 114;
@@ -364,32 +348,56 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(330, 490);
+            btnEliminar.Location = new Point(211, 441);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 115;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // cbRol
+            // 
+            cbRol.FormattingEnabled = true;
+            cbRol.Location = new Point(122, 97);
+            cbRol.Name = "cbRol";
+            cbRol.Size = new Size(100, 23);
+            cbRol.TabIndex = 116;
+            // 
+            // cbEstatus
+            // 
+            cbEstatus.FormattingEnabled = true;
+            cbEstatus.Items.AddRange(new object[] { "Activo", "Inactivo" });
+            cbEstatus.Location = new Point(122, 369);
+            cbEstatus.Name = "cbEstatus";
+            cbEstatus.Size = new Size(100, 23);
+            cbEstatus.TabIndex = 117;
+            // 
+            // dtpFechaRegistro
+            // 
+            dtpFechaRegistro.Location = new Point(122, 285);
+            dtpFechaRegistro.Name = "dtpFechaRegistro";
+            dtpFechaRegistro.Size = new Size(100, 23);
+            dtpFechaRegistro.TabIndex = 118;
+            // 
             // frmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(976, 598);
+            ClientSize = new Size(1040, 598);
+            Controls.Add(dtpFechaRegistro);
+            Controls.Add(cbEstatus);
+            Controls.Add(cbRol);
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
             Controls.Add(btnNuevo);
-            Controls.Add(dataGridView1);
-            Controls.Add(txtEstatus);
+            Controls.Add(dgvUsuario);
             Controls.Add(txtDireccion);
             Controls.Add(txtContrasena);
-            Controls.Add(txtFechaRegistro);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
             Controls.Add(txtSexo);
             Controls.Add(txtNombreUsuario);
             Controls.Add(txtCorreo);
-            Controls.Add(txtRol);
             Controls.Add(txtIDUsuario);
             Controls.Add(label11);
             Controls.Add(label10);
@@ -404,7 +412,8 @@
             Controls.Add(label1);
             Name = "frmUsuario";
             Text = "frmUsuario";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += frmUsuario_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvUsuario).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -413,13 +422,11 @@
         private TextBox txtEstatus;
         private TextBox txtDireccion;
         private TextBox txtContrasena;
-        private TextBox txtFechaRegistro;
         private TextBox txtApellido;
         private TextBox txtNombre;
         private TextBox txtSexo;
         private TextBox txtNombreUsuario;
         private TextBox txtCorreo;
-        private TextBox txtRol;
         private TextBox txtIDUsuario;
         private Label label11;
         private Label label10;
@@ -432,9 +439,14 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvUsuario;
+        private Button btnNuevo;
+        private Button btnGuardar;
+        private Button btnEliminar;
+        private ComboBox cbRol;
+        private ComboBox cbEstatus;
         private DataGridViewTextBoxColumn IDUsuario;
-        private DataGridViewTextBoxColumn Rol;
+        private DataGridViewComboBoxColumn Rol;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Apellido;
         private DataGridViewTextBoxColumn Sexo;
@@ -444,8 +456,6 @@
         private DataGridViewTextBoxColumn NombreUsuario;
         private DataGridViewTextBoxColumn Contrasena;
         private DataGridViewTextBoxColumn Estatus;
-        private Button btnNuevo;
-        private Button btnGuardar;
-        private Button btnEliminar;
+        private DateTimePicker dtpFechaRegistro;
     }
 }
