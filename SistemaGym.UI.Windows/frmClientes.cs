@@ -23,7 +23,7 @@ namespace SistemaGym.UI.Windows
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            InicializarControles();
+             InicializarControles();
            
         }
 
@@ -68,6 +68,13 @@ namespace SistemaGym.UI.Windows
             cbMembresia.ValueMember = "IDMembresia";
             cbMembresia.DisplayMember = "Nombre";
             cbMembresia.DataSource = MembresiaBLL.Mostrar();
+
+            var colMembresia = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDMembresia"];
+
+            colMembresia.ValueMember = "IDMembresia";
+            colMembresia.DisplayMember = "Nombre";
+            colMembresia.DataPropertyName = "IDMembresia";
+            colMembresia.DataSource = MembresiaBLL.Mostrar();
         }
         private void CargarTipoListaCliente()
         {
@@ -75,13 +82,28 @@ namespace SistemaGym.UI.Windows
             cbTipoListaCliente.ValueMember = "IDTipoListaCliente";
             cbTipoListaCliente.DisplayMember = "Nombre";
             cbTipoListaCliente.DataSource = TipoListaClienteBLL.MostrarTipoListaCliente();
+            
+            var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDTipoListaCliente"];
+
+            colTipoListaCliente.ValueMember = "IDTipoListaCliente";
+            colTipoListaCliente.DisplayMember = "Nombre";
+            colTipoListaCliente.DataPropertyName = "TipoListaCliente";
+            colTipoListaCliente.DataSource = TipoListaClienteBLL.MostrarTipoListaCliente();
         }
         private void CargarTipoCliente()
         {
             cbTipoCliente.ValueMember = "IDTipoCliente";
             cbTipoCliente.DisplayMember = "Nombre";
             cbTipoCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
+           
+            var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDTipoCliente"];
+
+            colTipoListaCliente.ValueMember = "IDTipoCliente";
+            colTipoListaCliente.DisplayMember = "Nombre";
+            colTipoListaCliente.DataPropertyName = "TipoCliente";
+            colTipoListaCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
         }
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -183,10 +205,10 @@ namespace SistemaGym.UI.Windows
 
             DataGridViewRow row = dgvCliente.CurrentRow;
             txtidcliente.Text = row.Cells["IDCliente"].Value?.ToString();
-            cbUsuario.Text = row.Cells["IDUsuario"].Value?.ToString();
-            cbMembresia.Text = row.Cells["IDMembresia"].Value?.ToString();
-            cbTipoListaCliente.Text = row.Cells["IDTipoListaCliente"].Value?.ToString();
-            cbTipoCliente.Text = row.Cells["IDTipoCliente"].Value?.ToString();
+            cbUsuario.Text = row.Cells["IDUsuario"].EditedFormattedValue.ToString();
+            cbMembresia.Text = row.Cells["IDMembresia"].EditedFormattedValue.ToString();
+            cbTipoListaCliente.Text = row.Cells["IDTipoListaCliente"].EditedFormattedValue.ToString();
+            cbTipoCliente.Text = row.Cells["IDTipoCliente"].EditedFormattedValue.ToString();
             txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
             txtApellido.Text = row.Cells["Apellido"].Value?.ToString();
             cbTipoDocumento.Text = row.Cells["TipoDocumento"].Value?.ToString();
