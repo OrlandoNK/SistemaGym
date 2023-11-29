@@ -40,9 +40,9 @@
             IdListaCliente = new DataGridViewTextBoxColumn();
             Nombres = new DataGridViewTextBoxColumn();
             Descripciones = new DataGridViewTextBoxColumn();
-            Nuevo = new Label();
-            btnGuardar = new Label();
-            btnCancelar = new Label();
+            btnNuevo = new Button();
+            btnGuardar = new Button();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvListaCliente).BeginInit();
             SuspendLayout();
@@ -131,34 +131,34 @@
             Descripciones.Name = "Descripciones";
             Descripciones.ReadOnly = true;
             // 
-            // Nuevo
+            // btnNuevo
             // 
-            Nuevo.AutoSize = true;
-            Nuevo.Location = new Point(239, 239);
-            Nuevo.Name = "Nuevo";
-            Nuevo.Size = new Size(42, 15);
-            Nuevo.TabIndex = 7;
-            Nuevo.Text = "Nuevo";
-            Nuevo.Click += Nuevo_Click;
+            btnNuevo.Location = new Point(244, 231);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(75, 23);
+            btnNuevo.TabIndex = 7;
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnGuardar
             // 
-            btnGuardar.AutoSize = true;
-            btnGuardar.Location = new Point(373, 239);
+            btnGuardar.Location = new Point(379, 230);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(49, 15);
+            btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 8;
             btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.AutoSize = true;
-            btnCancelar.Location = new Point(505, 239);
+            btnCancelar.Location = new Point(482, 231);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(53, 15);
+            btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // frmListaCliente
@@ -168,7 +168,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnCancelar);
             Controls.Add(btnGuardar);
-            Controls.Add(Nuevo);
+            Controls.Add(btnNuevo);
             Controls.Add(dgvListaCliente);
             Controls.Add(txtDescripcion);
             Controls.Add(txtNombre);
@@ -197,8 +197,8 @@
         private DataGridViewTextBoxColumn IdListaCliente;
         private DataGridViewTextBoxColumn Nombres;
         private DataGridViewTextBoxColumn Descripciones;
-        private Label btnCancelar;
-        private Label btnGuardar;
-        private Label Nuevo;
+        private Button btnCancelar;
+        private Button btnGuardar;
+        private Button btnNuevo;
     }
 }

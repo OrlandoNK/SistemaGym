@@ -20,7 +20,26 @@ namespace SistemaGym.UI.Windows
             InitializeComponent();
         }
 
-        private void Nuevo_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvListaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+
+            }
+
+            DataGridViewRow row = dgvListaCliente.CurrentRow;
+            txtID.Text = row.Cells["IDListaCliente"].Value?.ToString();
+            txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
+            txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
             InicializarControles();
         }
@@ -36,7 +55,6 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
             //validacion de datos
             if (!ValidarDatos())
             {
@@ -82,25 +100,6 @@ namespace SistemaGym.UI.Windows
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvListaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1)
-            {
-                return;
-
-            }
-
-            DataGridViewRow row = dgvListaCliente.CurrentRow;
-            txtID.Text = row.Cells["IDListaCliente"].Value?.ToString();
-            txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
-            txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
         }
     }
 }
