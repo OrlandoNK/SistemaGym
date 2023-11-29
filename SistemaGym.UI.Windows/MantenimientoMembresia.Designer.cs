@@ -270,7 +270,7 @@
             // FechaCreacion
             // 
             FechaCreacion.DataPropertyName = "FechaCreacion";
-            dataGridViewCellStyle2.Format = "f";
+            dataGridViewCellStyle2.Format = "g";
             dataGridViewCellStyle2.NullValue = null;
             FechaCreacion.DefaultCellStyle = dataGridViewCellStyle2;
             FechaCreacion.HeaderText = "Fecha Creacion";
