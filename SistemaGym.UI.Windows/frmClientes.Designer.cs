@@ -38,6 +38,20 @@
             txtNombre = new TextBox();
             txtidcliente = new TextBox();
             dgvCliente = new DataGridView();
+            IDCliente = new DataGridViewTextBoxColumn();
+            IDUsuario = new DataGridViewComboBoxColumn();
+            IDMembresia = new DataGridViewComboBoxColumn();
+            IDTipoListaCliente = new DataGridViewComboBoxColumn();
+            IDTipoCliente = new DataGridViewComboBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            TipoDocumento = new DataGridViewTextBoxColumn();
+            Documento = new DataGridViewTextBoxColumn();
+            Direccion = new DataGridViewTextBoxColumn();
+            TelCell = new DataGridViewTextBoxColumn();
+            TelRes = new DataGridViewTextBoxColumn();
+            FechaRegistro = new DataGridViewTextBoxColumn();
+            Estatus = new DataGridViewTextBoxColumn();
             label14 = new Label();
             label13 = new Label();
             label12 = new Label();
@@ -63,20 +77,6 @@
             btnEliminar = new Button();
             dtpFechaRegistro = new DateTimePicker();
             errorProvider = new ErrorProvider(components);
-            IDCliente = new DataGridViewTextBoxColumn();
-            IDUsuario = new DataGridViewComboBoxColumn();
-            IDMembresia = new DataGridViewComboBoxColumn();
-            IDTipoListaCliente = new DataGridViewComboBoxColumn();
-            IDTipoCliente = new DataGridViewComboBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Apellido = new DataGridViewTextBoxColumn();
-            TipoDocumento = new DataGridViewTextBoxColumn();
-            Documento = new DataGridViewTextBoxColumn();
-            Direccion = new DataGridViewTextBoxColumn();
-            TelCell = new DataGridViewTextBoxColumn();
-            TelRes = new DataGridViewTextBoxColumn();
-            FechaRegistro = new DataGridViewTextBoxColumn();
-            Estatus = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
@@ -150,6 +150,111 @@
             dgvCliente.Size = new Size(724, 410);
             dgvCliente.TabIndex = 72;
             dgvCliente.CellClick += dgvCliente_CellClick;
+            // 
+            // IDCliente
+            // 
+            IDCliente.DataPropertyName = "IDCliente";
+            IDCliente.HeaderText = "IDCliente";
+            IDCliente.Name = "IDCliente";
+            IDCliente.ReadOnly = true;
+            // 
+            // IDUsuario
+            // 
+            IDUsuario.HeaderText = "Usuario";
+            IDUsuario.Name = "IDUsuario";
+            IDUsuario.ReadOnly = true;
+            IDUsuario.Resizable = DataGridViewTriState.True;
+            IDUsuario.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // IDMembresia
+            // 
+            IDMembresia.HeaderText = "Membresia";
+            IDMembresia.Name = "IDMembresia";
+            IDMembresia.ReadOnly = true;
+            IDMembresia.Resizable = DataGridViewTriState.True;
+            IDMembresia.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // IDTipoListaCliente
+            // 
+            IDTipoListaCliente.HeaderText = "Tipo Lista Cliente";
+            IDTipoListaCliente.Name = "IDTipoListaCliente";
+            IDTipoListaCliente.ReadOnly = true;
+            IDTipoListaCliente.Resizable = DataGridViewTriState.True;
+            IDTipoListaCliente.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // IDTipoCliente
+            // 
+            IDTipoCliente.HeaderText = "Tipo Cliente";
+            IDTipoCliente.Name = "IDTipoCliente";
+            IDTipoCliente.ReadOnly = true;
+            IDTipoCliente.Resizable = DataGridViewTriState.True;
+            IDTipoCliente.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            Apellido.DataPropertyName = "Apellido";
+            Apellido.HeaderText = "Apellido";
+            Apellido.Name = "Apellido";
+            Apellido.ReadOnly = true;
+            // 
+            // TipoDocumento
+            // 
+            TipoDocumento.DataPropertyName = "TipoDocumento";
+            TipoDocumento.HeaderText = "TipoDocumento";
+            TipoDocumento.Name = "TipoDocumento";
+            TipoDocumento.ReadOnly = true;
+            // 
+            // Documento
+            // 
+            Documento.DataPropertyName = "Documento";
+            Documento.HeaderText = "Documento";
+            Documento.Name = "Documento";
+            Documento.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            Direccion.DataPropertyName = "Direccion";
+            Direccion.HeaderText = "Direccion";
+            Direccion.Name = "Direccion";
+            Direccion.ReadOnly = true;
+            // 
+            // TelCell
+            // 
+            TelCell.DataPropertyName = "TelCell";
+            TelCell.HeaderText = "TelCell";
+            TelCell.Name = "TelCell";
+            TelCell.ReadOnly = true;
+            // 
+            // TelRes
+            // 
+            TelRes.DataPropertyName = "TelRes";
+            TelRes.HeaderText = "TelRes";
+            TelRes.Name = "TelRes";
+            TelRes.ReadOnly = true;
+            // 
+            // FechaRegistro
+            // 
+            FechaRegistro.DataPropertyName = "FechaRegistro";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
+            FechaRegistro.HeaderText = "FechaRegistro";
+            FechaRegistro.Name = "FechaRegistro";
+            FechaRegistro.ReadOnly = true;
+            // 
+            // Estatus
+            // 
+            Estatus.DataPropertyName = "Estatus";
+            Estatus.HeaderText = "Estatus";
+            Estatus.Name = "Estatus";
+            Estatus.ReadOnly = true;
             // 
             // label14
             // 
@@ -367,111 +472,6 @@
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
-            // 
-            // IDCliente
-            // 
-            IDCliente.DataPropertyName = "IDCliente";
-            IDCliente.HeaderText = "IDCliente";
-            IDCliente.Name = "IDCliente";
-            IDCliente.ReadOnly = true;
-            // 
-            // IDUsuario
-            // 
-            IDUsuario.HeaderText = "Usuario";
-            IDUsuario.Name = "IDUsuario";
-            IDUsuario.ReadOnly = true;
-            IDUsuario.Resizable = DataGridViewTriState.True;
-            IDUsuario.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // IDMembresia
-            // 
-            IDMembresia.HeaderText = "Membresia";
-            IDMembresia.Name = "IDMembresia";
-            IDMembresia.ReadOnly = true;
-            IDMembresia.Resizable = DataGridViewTriState.True;
-            IDMembresia.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // IDTipoListaCliente
-            // 
-            IDTipoListaCliente.HeaderText = "Tipo Lista Cliente";
-            IDTipoListaCliente.Name = "IDTipoListaCliente";
-            IDTipoListaCliente.ReadOnly = true;
-            IDTipoListaCliente.Resizable = DataGridViewTriState.True;
-            IDTipoListaCliente.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // IDTipoCliente
-            // 
-            IDTipoCliente.HeaderText = "Tipo Cliente";
-            IDTipoCliente.Name = "IDTipoCliente";
-            IDTipoCliente.ReadOnly = true;
-            IDTipoCliente.Resizable = DataGridViewTriState.True;
-            IDTipoCliente.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            Apellido.DataPropertyName = "Apellido";
-            Apellido.HeaderText = "Apellido";
-            Apellido.Name = "Apellido";
-            Apellido.ReadOnly = true;
-            // 
-            // TipoDocumento
-            // 
-            TipoDocumento.DataPropertyName = "TipoDocumento";
-            TipoDocumento.HeaderText = "TipoDocumento";
-            TipoDocumento.Name = "TipoDocumento";
-            TipoDocumento.ReadOnly = true;
-            // 
-            // Documento
-            // 
-            Documento.DataPropertyName = "Documento";
-            Documento.HeaderText = "Documento";
-            Documento.Name = "Documento";
-            Documento.ReadOnly = true;
-            // 
-            // Direccion
-            // 
-            Direccion.DataPropertyName = "Direccion";
-            Direccion.HeaderText = "Direccion";
-            Direccion.Name = "Direccion";
-            Direccion.ReadOnly = true;
-            // 
-            // TelCell
-            // 
-            TelCell.DataPropertyName = "TelCell";
-            TelCell.HeaderText = "TelCell";
-            TelCell.Name = "TelCell";
-            TelCell.ReadOnly = true;
-            // 
-            // TelRes
-            // 
-            TelRes.DataPropertyName = "TelRes";
-            TelRes.HeaderText = "TelRes";
-            TelRes.Name = "TelRes";
-            TelRes.ReadOnly = true;
-            // 
-            // FechaRegistro
-            // 
-            FechaRegistro.DataPropertyName = "FechaRegistro";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
-            FechaRegistro.HeaderText = "FechaRegistro";
-            FechaRegistro.Name = "FechaRegistro";
-            FechaRegistro.ReadOnly = true;
-            // 
-            // Estatus
-            // 
-            Estatus.DataPropertyName = "Estatus";
-            Estatus.HeaderText = "Estatus";
-            Estatus.Name = "Estatus";
-            Estatus.ReadOnly = true;
             // 
             // frmClientes
             // 

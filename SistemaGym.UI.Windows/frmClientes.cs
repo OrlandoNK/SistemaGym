@@ -50,9 +50,10 @@ namespace SistemaGym.UI.Windows
         }
         private void CargarUsuarios()
         {
+            cbUsuario.DataSource = UsuarioBLL.Mostrar();
             cbUsuario.ValueMember = "IDUsuario";
             cbUsuario.DisplayMember = "NombreUsuario";
-            cbUsuario.DataSource = UsuarioBLL.Mostrar();
+            
         }
         private void CargarMembresia()
         {
@@ -93,10 +94,11 @@ namespace SistemaGym.UI.Windows
             oCliente.Apellido = txtApellido.Text;
             oCliente.TipoDocumento = cbTipoDocumento.Text;
             oCliente.Documento = txtDocumento.Text;
+            oCliente.Direccion = txtDireccion.Text;
             oCliente.TelCell = txtTelCell.Text;
             oCliente.TelRes = txtTelRes.Text;
             oCliente.FechaRegistro = DateTime.Parse(dtpFechaRegistro.Text);
-
+            oCliente.Estatus = cbEstatus.Text;
             // guardar base datos
             try
             {
@@ -187,6 +189,7 @@ namespace SistemaGym.UI.Windows
             dtpFechaRegistro.Text = row.Cells["FechaRegistro"].Value?.ToString();
             cbEstatus.Text = row.Cells["Estatus"].Value?.ToString();
 
+            
         }
     }
 
