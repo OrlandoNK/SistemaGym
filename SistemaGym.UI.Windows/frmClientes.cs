@@ -24,6 +24,7 @@ namespace SistemaGym.UI.Windows
         private void frmClientes_Load(object sender, EventArgs e)
         {
             InicializarControles();
+           
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -53,7 +54,14 @@ namespace SistemaGym.UI.Windows
             cbUsuario.DataSource = UsuarioBLL.Mostrar();
             cbUsuario.ValueMember = "IDUsuario";
             cbUsuario.DisplayMember = "NombreUsuario";
-            
+           
+            var colUsuario = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDUsuario"];
+
+            colUsuario.ValueMember = "IDUsuario";
+            colUsuario.DisplayMember = "NombreUsuario";
+            colUsuario.DataPropertyName = "IDUsuario";
+            colUsuario.DataSource = UsuarioBLL.Mostrar();
+
         }
         private void CargarMembresia()
         {
