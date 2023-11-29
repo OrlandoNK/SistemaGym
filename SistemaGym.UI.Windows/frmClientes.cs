@@ -44,7 +44,7 @@ namespace SistemaGym.UI.Windows
             CargarTipoListaCliente();
             CargarTipoCliente();
             dgvCliente.AutoGenerateColumns = false;
-            dgvCliente.DataSource = MembresiaBLL.Mostrar();
+            dgvCliente.DataSource = ClientesBLL.MostrarCliente();
 
 
         }
@@ -126,7 +126,7 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(cbMembresia, "La Membresia es obligatori");
                 resultado = false;
             }
-          
+
 
             if (string.IsNullOrEmpty(cbTipoListaCliente.Text))
             {
@@ -170,7 +170,7 @@ namespace SistemaGym.UI.Windows
                 return;
 
             }
-           
+
             DataGridViewRow row = dgvCliente.CurrentRow;
             txtidcliente.Text = row.Cells["IDCliente"].Value?.ToString();
             cbUsuario.Text = row.Cells["IDUsuario"].Value?.ToString();

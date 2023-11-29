@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtTelRes = new TextBox();
             txtTelCell = new TextBox();
             txtDireccion = new TextBox();
@@ -376,7 +377,6 @@
             // 
             // IDUsuario
             // 
-            IDUsuario.DataPropertyName = "IDUsuario";
             IDUsuario.HeaderText = "Usuario";
             IDUsuario.Name = "IDUsuario";
             IDUsuario.ReadOnly = true;
@@ -385,7 +385,6 @@
             // 
             // IDMembresia
             // 
-            IDMembresia.DataPropertyName = "IDMembresia";
             IDMembresia.HeaderText = "Membresia";
             IDMembresia.Name = "IDMembresia";
             IDMembresia.ReadOnly = true;
@@ -394,7 +393,6 @@
             // 
             // IDTipoListaCliente
             // 
-            IDTipoListaCliente.DataPropertyName = "IDTipoListaCliente";
             IDTipoListaCliente.HeaderText = "Tipo Lista Cliente";
             IDTipoListaCliente.Name = "IDTipoListaCliente";
             IDTipoListaCliente.ReadOnly = true;
@@ -403,7 +401,6 @@
             // 
             // IDTipoCliente
             // 
-            IDTipoCliente.DataPropertyName = "IDTipoCliente";
             IDTipoCliente.HeaderText = "Tipo Cliente";
             IDTipoCliente.Name = "IDTipoCliente";
             IDTipoCliente.ReadOnly = true;
@@ -462,6 +459,9 @@
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.ReadOnly = true;
