@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtDireccion = new TextBox();
             txtContrasena = new TextBox();
             txtApellido = new TextBox();
@@ -245,6 +245,7 @@
             dgvUsuario.RowTemplate.Height = 25;
             dgvUsuario.Size = new Size(720, 410);
             dgvUsuario.TabIndex = 112;
+            dgvUsuario.CellClick += dgvUsuario_CellClick;
             // 
             // IDUsuario
             // 
@@ -299,9 +300,9 @@
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
-            dataGridViewCellStyle2.Format = "g";
-            dataGridViewCellStyle2.NullValue = null;
-            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "g";
+            dataGridViewCellStyle1.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.ReadOnly = true;

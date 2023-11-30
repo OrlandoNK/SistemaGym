@@ -20,13 +20,20 @@ namespace SistemaGym.UI.Windows
 
         private void frmUsuario_Load(object sender, EventArgs e)
         {
-
+            InicializarControles();
         }
         private void CargarRol()
         {
             cbRol.ValueMember = "IDRol";
             cbRol.DisplayMember = "Nombre";
             cbRol.DataSource = RolBLL.MostrarRol();
+
+            var colRol = (DataGridViewComboBoxColumn)dgvUsuario.Columns["Rol"];
+            colRol.ValueMember = "IDRol";
+            colRol.DisplayMember = "Nombre";
+            colRol.DataPropertyName = "IDRol";
+            colRol.DataSource = RolBLL.MostrarRol();
+
         }
         private void InicializarControles()
         {
@@ -41,13 +48,19 @@ namespace SistemaGym.UI.Windows
             txtNombreUsuario.Clear();
             txtContrasena.Clear();
             cbEstatus.Text = "";
-            
+            dgvUsuario.AutoGenerateColumns = false;
+            dgvUsuario.DataSource = UsuarioBLL.Mostrar();
             CargarRol();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             InicializarControles();
+        }
+
+        private void dgvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 }

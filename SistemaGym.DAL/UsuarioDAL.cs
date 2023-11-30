@@ -58,7 +58,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string actualizar = "Update Usuarios set IDRol =@idrol, Nombre =@nombre, Apellido =@apellido, Sexo =@sexo, Correo =@correo, Direccion =@direccion, " +
-                "FechaRegistro =@fecharegistro, Nombreusuario =@nombreusuario, Contrasena =@contrasena, Estatus =@estatus";
+                "FechaRegistro =@fecharegistro, Nombreusuario =@nombreusuario, Contrasena =@contrasena, Estatus =@estatus where IDUsuario = @idusuario";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
@@ -70,6 +70,7 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
             cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
             cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
+            cmd.Parameters.AddWithValue("@idrol", usuario.IDUsuario);
             cmd.ExecuteNonQuery();
 
 
