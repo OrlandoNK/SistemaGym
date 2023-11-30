@@ -60,7 +60,25 @@ namespace SistemaGym.UI.Windows
 
         private void dgvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            if (e.RowIndex == -1)
+            {
+                return;
+
+            }
+
+            DataGridViewRow row = dgvUsuario.CurrentRow;
+            txtIDUsuario.Text = row.Cells["IDUsuario"].Value?.ToString();
+            cbRol.Text = row.Cells["Rol"].EditedFormattedValue.ToString();
+            txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
+            txtApellido.Text = row.Cells["Apellido"].Value?.ToString();
+            txtSexo.Text = row.Cells["Sexo"].Value?.ToString();
+            txtCorreo.Text = row.Cells["Correo"].Value?.ToString();
+            txtDireccion.Text = row.Cells["Direccion"].Value?.ToString();
+            dtpFechaRegistro.Text = row.Cells["FechaRegistro"].Value?.ToString();
+            txtNombreUsuario.Text = row.Cells["NombreUsuario"].Value?.ToString();
+            txtContrasena.Text = row.Cells["Contrasena"].Value?.ToString();
+            cbEstatus.Text = row.Cells["Estatus"].Value?.ToString();
+
         }
     }
 }
