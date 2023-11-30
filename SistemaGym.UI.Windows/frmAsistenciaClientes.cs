@@ -45,8 +45,8 @@ namespace SistemaGym.UI.Windows
             AsistenciaClientesEntity asistencia = new AsistenciaClientesEntity();
             asistencia.IDAsistenciaCliente = int.Parse(txtIDAsistenciaCliente.Text);
             asistencia.IDCliente = int.Parse(txtCliente.Text);
-            asistencia.Asistencia = txtAsistencia.Text;
-            asistencia.FechaAsistencia = txtFechaAsistencia.Text;
+            asistencia.Asistencia = chbAsistencia.Checked;
+            asistencia.FechaAsistencia = DateTime.Now;
 
             try
             {
@@ -64,7 +64,9 @@ namespace SistemaGym.UI.Windows
             //verificar los datos en los campos obligatorios 
             if (string.IsNullOrEmpty(txtAsistencia.Text))
             {
-                errorProvider1.SetError(txtAsistencia, txtFechaAsistencia, "Campo obligatorio");
+                errorProvider1.SetError(txtAsistencia,  "Campo obligatorio");
+                resultado = false;
+                errorProvider1.SetError(txtFechaAsistencia, "Campo obligatorio");
                 resultado = false;
             }
             return resultado;

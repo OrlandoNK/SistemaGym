@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnCancelar = new Button();
             btnGuardar = new Button();
             btnNuevo = new Button();
@@ -44,7 +45,9 @@
             txtFechaAsistencia = new TextBox();
             label4 = new Label();
             chbAsistencia = new CheckBox();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvAsistenciaClientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // btnCancelar
@@ -189,6 +192,10 @@
             chbAsistencia.Text = "Asistencia";
             chbAsistencia.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // frmAsistenciaClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -209,6 +216,7 @@
             Name = "frmAsistenciaClientes";
             Text = "Asistencia Clientes";
             ((System.ComponentModel.ISupportInitialize)dgvAsistenciaClientes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,5 +240,6 @@
         private DataGridViewTextBoxColumn IDCliente;
         private DataGridViewTextBoxColumn Asistencia;
         private DataGridViewTextBoxColumn FechaAsistencia;
+        private ErrorProvider errorProvider1;
     }
 }
