@@ -162,37 +162,37 @@ namespace SistemaGym.UI.Windows
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-         
-            if (dgvUsuario.SelectedRows.Count > 0)
-            {
-                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Proveedor?", "¿Eliminar Proveedor?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
+            try {
+                if (dgvUsuario.SelectedRows.Count > 0)
                 {
-                   int idUsuario = Convert.ToInt32(dgvUsuario.SelectedRows[0].Cells["IDUsuario"].Value);
-                    
-                    
-
-                    bool seElimino = UsuarioBLL.Eliminar(idUsuario);
-
-
-                    if (seElimino)
+                    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Proveedor?", "¿Eliminar Proveedor?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        dgvUsuario.Rows.RemoveAt(dgvUsuario.SelectedRows[0].Index);
-                        MessageBox.Show("¡Proveedor Eliminado Satisfactoriamente!", "Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dgvUsuario.DataSource = UsuarioBLL.Mostrar();
+                        int idUsuario = Convert.ToInt32(dgvUsuario.SelectedRows[0].Cells["IDUsuario"].Value);
+
+
+
+                        bool seElimino = UsuarioBLL.Eliminar(idUsuario);
+
+
+                        if (seElimino)
+                        {
+                            dgvUsuario.Rows.RemoveAt(dgvUsuario.SelectedRows[0].Index);
+                            MessageBox.Show("¡Proveedor Eliminado Satisfactoriamente!", "Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dgvUsuario.DataSource = UsuarioBLL.Mostrar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se Produjo un Error al Intentar Eliminar el Proveedor", "Error al Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
+
+                    if (dialogResult == DialogResult.No)
                     {
-                        MessageBox.Show("Se Produjo un Error al Intentar Eliminar el Proveedor", "Error al Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                 }
-
-                if (dialogResult == DialogResult.No)
-                {
-                    return;
-                }
-
-            }
+            } catch (Exception ex) { MessageBox.Show("Tienes que borrar el cliente que hace uso de este usuario", sistema, MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
         }
     }
