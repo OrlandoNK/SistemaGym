@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnEliminar = new Button();
+            btnCancelar = new Button();
             btnGuardar = new Button();
             btnNuevo = new Button();
             txtCliente = new TextBox();
@@ -36,25 +36,26 @@
             lbl2 = new Label();
             label2 = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            txtFechaAsistencia = new TextBox();
-            label4 = new Label();
-            chbAsistencia = new CheckBox();
+            dgvAsistenciaClientes = new DataGridView();
             IDAsistenciaCliente = new DataGridViewTextBoxColumn();
             IDCliente = new DataGridViewTextBoxColumn();
             Asistencia = new DataGridViewTextBoxColumn();
             FechaAsistencia = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            txtFechaAsistencia = new TextBox();
+            label4 = new Label();
+            chbAsistencia = new CheckBox();
+            ((System.ComponentModel.ISupportInitialize)dgvAsistenciaClientes).BeginInit();
             SuspendLayout();
             // 
-            // btnEliminar
+            // btnCancelar
             // 
-            btnEliminar.Location = new Point(212, 189);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(75, 23);
-            btnEliminar.TabIndex = 150;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnCancelar.Location = new Point(212, 189);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 150;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnGuardar
             // 
@@ -64,6 +65,7 @@
             btnGuardar.TabIndex = 149;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnNuevo
             // 
@@ -73,6 +75,7 @@
             btnNuevo.TabIndex = 148;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // txtCliente
             // 
@@ -117,45 +120,19 @@
             label1.TabIndex = 142;
             label1.Text = "ID Asistencia";
             // 
-            // dataGridView1
+            // dgvAsistenciaClientes
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDAsistenciaCliente, IDCliente, Asistencia, FechaAsistencia });
-            dataGridView1.Location = new Point(293, 24);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(500, 364);
-            dataGridView1.TabIndex = 151;
-            // 
-            // txtFechaAsistencia
-            // 
-            txtFechaAsistencia.Location = new Point(136, 152);
-            txtFechaAsistencia.Multiline = true;
-            txtFechaAsistencia.Name = "txtFechaAsistencia";
-            txtFechaAsistencia.Size = new Size(100, 20);
-            txtFechaAsistencia.TabIndex = 153;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(38, 157);
-            label4.Name = "label4";
-            label4.Size = new Size(94, 15);
-            label4.TabIndex = 152;
-            label4.Text = "Fecha Asistencia";
-            // 
-            // chbAsistencia
-            // 
-            chbAsistencia.AutoSize = true;
-            chbAsistencia.Location = new Point(136, 127);
-            chbAsistencia.Name = "chbAsistencia";
-            chbAsistencia.Size = new Size(79, 19);
-            chbAsistencia.TabIndex = 154;
-            chbAsistencia.Text = "Asistencia";
-            chbAsistencia.UseVisualStyleBackColor = true;
+            dgvAsistenciaClientes.AllowUserToAddRows = false;
+            dgvAsistenciaClientes.AllowUserToDeleteRows = false;
+            dgvAsistenciaClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAsistenciaClientes.Columns.AddRange(new DataGridViewColumn[] { IDAsistenciaCliente, IDCliente, Asistencia, FechaAsistencia });
+            dgvAsistenciaClientes.Location = new Point(293, 24);
+            dgvAsistenciaClientes.Name = "dgvAsistenciaClientes";
+            dgvAsistenciaClientes.ReadOnly = true;
+            dgvAsistenciaClientes.RowTemplate.Height = 25;
+            dgvAsistenciaClientes.Size = new Size(500, 364);
+            dgvAsistenciaClientes.TabIndex = 151;
+            dgvAsistenciaClientes.CellContentClick += dgvAsistenciaClientes_CellContentClick;
             // 
             // IDAsistenciaCliente
             // 
@@ -185,6 +162,33 @@
             FechaAsistencia.Name = "FechaAsistencia";
             FechaAsistencia.ReadOnly = true;
             // 
+            // txtFechaAsistencia
+            // 
+            txtFechaAsistencia.Location = new Point(136, 152);
+            txtFechaAsistencia.Multiline = true;
+            txtFechaAsistencia.Name = "txtFechaAsistencia";
+            txtFechaAsistencia.Size = new Size(100, 20);
+            txtFechaAsistencia.TabIndex = 153;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(38, 157);
+            label4.Name = "label4";
+            label4.Size = new Size(94, 15);
+            label4.TabIndex = 152;
+            label4.Text = "Fecha Asistencia";
+            // 
+            // chbAsistencia
+            // 
+            chbAsistencia.AutoSize = true;
+            chbAsistencia.Location = new Point(136, 127);
+            chbAsistencia.Name = "chbAsistencia";
+            chbAsistencia.Size = new Size(79, 19);
+            chbAsistencia.TabIndex = 154;
+            chbAsistencia.Text = "Asistencia";
+            chbAsistencia.UseVisualStyleBackColor = true;
+            // 
             // frmAsistenciaClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -193,8 +197,8 @@
             Controls.Add(chbAsistencia);
             Controls.Add(txtFechaAsistencia);
             Controls.Add(label4);
-            Controls.Add(dataGridView1);
-            Controls.Add(btnEliminar);
+            Controls.Add(dgvAsistenciaClientes);
+            Controls.Add(btnCancelar);
             Controls.Add(btnGuardar);
             Controls.Add(btnNuevo);
             Controls.Add(txtCliente);
@@ -204,14 +208,14 @@
             Controls.Add(label1);
             Name = "frmAsistenciaClientes";
             Text = "Asistencia Clientes";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAsistenciaClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button btnEliminar;
+        private Button btnCancelar;
         private Button btnGuardar;
         private Button btnNuevo;
         private TextBox txtCliente;
@@ -220,7 +224,7 @@
         private Label lbl2;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvAsistenciaClientes;
         private TextBox txtFechaAsistencia;
         private Label label4;
         private CheckBox chbAsistencia;
