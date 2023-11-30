@@ -165,7 +165,7 @@ namespace SistemaGym.UI.Windows
             try {
                 if (dgvUsuario.SelectedRows.Count > 0)
                 {
-                    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Proveedor?", "¿Eliminar Proveedor?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Usuario?", "¿Eliminar Usuario?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
                     {
                         int idUsuario = Convert.ToInt32(dgvUsuario.SelectedRows[0].Cells["IDUsuario"].Value);
@@ -178,12 +178,12 @@ namespace SistemaGym.UI.Windows
                         if (seElimino)
                         {
                             dgvUsuario.Rows.RemoveAt(dgvUsuario.SelectedRows[0].Index);
-                            MessageBox.Show("¡Proveedor Eliminado Satisfactoriamente!", "Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("¡Usuario Eliminado Satisfactoriamente!", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             dgvUsuario.DataSource = UsuarioBLL.Mostrar();
                         }
                         else
                         {
-                            MessageBox.Show("Se Produjo un Error al Intentar Eliminar el Proveedor", "Error al Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Se Produjo un Error al Intentar Eliminar el Usuario", "Error al Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
 
