@@ -70,7 +70,7 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
             cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
             cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
-            cmd.Parameters.AddWithValue("@idrol", usuario.IDUsuario);
+            cmd.Parameters.AddWithValue("@idusuario", usuario.IDUsuario);
             cmd.ExecuteNonQuery();
 
 

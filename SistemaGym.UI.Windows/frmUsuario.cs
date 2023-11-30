@@ -1,4 +1,5 @@
 ﻿using SistemaGym.BLL;
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmUsuario : Form
     {
+        const string sistema = "Sistema Gym";
         public frmUsuario()
         {
             InitializeComponent();
@@ -83,13 +85,82 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
+
+            //validar los datos
+            if (!ValidarDatos())
+            {
+                return;
+
+            }
+            //datos de control al objeto
+            UsuarioEntity oUsuario = new UsuarioEntity("","");
+            oUsuario.IDUsuario = int.Parse(txtIDUsuario.Text);
+            oUsuario.IDRol = (int)cbRol.SelectedValue;
+            oUsuario.Nombre = txtNombre.Text;
+            oUsuario.Apellido = txtApellido.Text;
+            oUsuario.Sexo = txtSexo.Text;
+            oUsuario.Correo = txtCorreo.Text;
+            oUsuario.Direccion = txtDireccion.Text;
+            oUsuario.FechaRegistro = DateTime.Parse(dtpFechaRegistro.Text);
+            oUsuario.NombreUsuario = txtNombreUsuario.Text;
+            oUsuario.Contrasena = txtContrasena.Text;
+            oUsuario.Estatus = cbEstatus.Text;
+            // guardar base datos
+            try
+            {
+                UsuarioBLL.Guardar(oUsuario);
+                MessageBox.Show("Usuario Guardado", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InicializarControles();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
-        private void ValidarDatos()
+        private bool ValidarDatos()
         {
+            bool resultado = true;
+            //inicializando los mensajes de validaciones
             errorProvider.Clear();
+            //verificar que en los campos obligatorios hayan datos
+            if (string.IsNullOrEmpty(cbRol.Text))
+            {
+                errorProvider.SetError(cbRol, "El Rol es obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                errorProvider.SetError(txtNombre, "El Nombre es obligatorio");
+                resultado = false;
+            }
 
+
+            if (string.IsNullOrEmpty(txtApellido.Text))
+            {
+                errorProvider.SetError(txtApellido, "El Apellido es Obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(txtDireccion.Text))
+            {
+                errorProvider.SetError(txtDireccion, "La Direccion es obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(dtpFechaRegistro.Text))
+            {
+                errorProvider.SetError(txtNombre, "La Fecha es obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(cbEstatus.Text))
+            {
+                errorProvider.SetError(cbEstatus, "El Estatus es obligatorio");
+                resultado = false;
+            }
+
+            return resultado;
         }
+
     }
-}
+   
+    }
+
