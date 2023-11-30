@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtDireccion = new TextBox();
             txtContrasena = new TextBox();
@@ -66,7 +67,9 @@
             cbRol = new ComboBox();
             cbEstatus = new ComboBox();
             dtpFechaRegistro = new DateTimePicker();
+            errorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvUsuario).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // txtDireccion
@@ -346,6 +349,7 @@
             btnGuardar.TabIndex = 114;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnEliminar
             // 
@@ -379,6 +383,10 @@
             dtpFechaRegistro.Name = "dtpFechaRegistro";
             dtpFechaRegistro.Size = new Size(100, 23);
             dtpFechaRegistro.TabIndex = 118;
+            // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
             // 
             // frmUsuario
             // 
@@ -415,6 +423,7 @@
             Text = "frmUsuario";
             Load += frmUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)dgvUsuario).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -458,5 +467,6 @@
         private DataGridViewTextBoxColumn Contrasena;
         private DataGridViewTextBoxColumn Estatus;
         private DateTimePicker dtpFechaRegistro;
+        private ErrorProvider errorProvider;
     }
 }

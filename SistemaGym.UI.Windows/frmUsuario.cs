@@ -80,5 +80,14 @@ namespace SistemaGym.UI.Windows
             cbEstatus.Text = row.Cells["Estatus"].Value?.ToString();
 
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void ValidarDatos()
+        {
+           
+        }
     }
 }
