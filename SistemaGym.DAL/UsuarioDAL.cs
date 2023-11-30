@@ -77,7 +77,7 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar usuario
 
-        public static bool EliminarUsuario(UsuarioEntity usuario)
+        public static bool EliminarUsuario(int idUsuario)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -88,7 +88,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string Eliminar = "Delete from Usuarios where IDUsuario= @idusuario";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idusuario", usuario.IDUsuario);
+            cmd.Parameters.AddWithValue("@idusuario", idUsuario);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 

@@ -162,11 +162,38 @@ namespace SistemaGym.UI.Windows
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(dgvUsuario.SelectedRows.Count > 0)
-            {
-                DialogResult dialogResult = MessageBox.Show("Estas seguro de eliminar este usuario?");
-            }
          
+            if (dgvUsuario.SelectedRows.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Proveedor?", "¿Eliminar Proveedor?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                   int idUsuario = Convert.ToInt32(dgvUsuario.SelectedRows[0].Cells["IDUsuario"].Value);
+                    
+                    
+
+                    bool seElimino = UsuarioBLL.Eliminar(idUsuario);
+
+
+                    if (seElimino)
+                    {
+                        dgvUsuario.Rows.RemoveAt(dgvUsuario.SelectedRows[0].Index);
+                        MessageBox.Show("¡Proveedor Eliminado Satisfactoriamente!", "Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvUsuario.DataSource = UsuarioBLL.Mostrar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se Produjo un Error al Intentar Eliminar el Proveedor", "Error al Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
+            }
+
         }
     }
 
