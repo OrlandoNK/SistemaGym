@@ -359,6 +359,7 @@
             btnEliminar.TabIndex = 115;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // cbRol
             // 

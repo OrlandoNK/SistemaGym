@@ -93,7 +93,7 @@ namespace SistemaGym.UI.Windows
 
             }
             //datos de control al objeto
-            UsuarioEntity oUsuario = new UsuarioEntity("","");
+            UsuarioEntity oUsuario = new UsuarioEntity("", "");
             oUsuario.IDUsuario = int.Parse(txtIDUsuario.Text);
             oUsuario.IDRol = (int)cbRol.SelectedValue;
             oUsuario.Nombre = txtNombre.Text;
@@ -160,7 +160,15 @@ namespace SistemaGym.UI.Windows
             return resultado;
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(dgvUsuario.SelectedRows.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Estas seguro de eliminar este usuario?");
+            }
+         
+        }
     }
-   
-    }
+
+}
 
