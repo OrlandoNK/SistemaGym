@@ -83,11 +83,13 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
 
         }
         private void ValidarDatos()
         {
-           
+            errorProvider.Clear();
+
         }
     }
 }
