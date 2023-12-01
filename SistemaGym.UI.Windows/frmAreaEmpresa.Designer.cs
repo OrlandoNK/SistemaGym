@@ -28,23 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             textIDArea = new TextBox();
-            textEncargado = new TextBox();
+            txtEncargado = new TextBox();
             textNombre = new TextBox();
-            textDescripcion = new TextBox();
-            textFechaCreacion = new TextBox();
-            dataGridView1 = new DataGridView();
+            txtDescripcion = new TextBox();
+            dgvAreaEmpresa = new DataGridView();
             IDArea = new DataGridViewTextBoxColumn();
             Encargado = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
             FechaCreacion = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnNuevo = new Button();
+            btnGuardar = new Button();
+            btnCancelar = new Button();
+            errorProvider1 = new ErrorProvider(components);
+            dtpFechaCreacion = new DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)dgvAreaEmpresa).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -100,12 +106,12 @@
             textIDArea.Size = new Size(100, 23);
             textIDArea.TabIndex = 5;
             // 
-            // textEncargado
+            // txtEncargado
             // 
-            textEncargado.Location = new Point(125, 116);
-            textEncargado.Name = "textEncargado";
-            textEncargado.Size = new Size(100, 23);
-            textEncargado.TabIndex = 6;
+            txtEncargado.Location = new Point(125, 116);
+            txtEncargado.Name = "txtEncargado";
+            txtEncargado.Size = new Size(100, 23);
+            txtEncargado.TabIndex = 6;
             // 
             // textNombre
             // 
@@ -114,32 +120,26 @@
             textNombre.Size = new Size(100, 23);
             textNombre.TabIndex = 7;
             // 
-            // textDescripcion
+            // txtDescripcion
             // 
-            textDescripcion.Location = new Point(125, 175);
-            textDescripcion.Name = "textDescripcion";
-            textDescripcion.Size = new Size(100, 23);
-            textDescripcion.TabIndex = 8;
+            txtDescripcion.Location = new Point(125, 175);
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(100, 23);
+            txtDescripcion.TabIndex = 8;
             // 
-            // textFechaCreacion
+            // dgvAreaEmpresa
             // 
-            textFechaCreacion.Location = new Point(125, 204);
-            textFechaCreacion.Name = "textFechaCreacion";
-            textFechaCreacion.Size = new Size(100, 23);
-            textFechaCreacion.TabIndex = 9;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDArea, Encargado, Nombre, Descripcion, FechaCreacion });
-            dataGridView1.Location = new Point(251, 77);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(240, 150);
-            dataGridView1.TabIndex = 10;
+            dgvAreaEmpresa.AllowUserToAddRows = false;
+            dgvAreaEmpresa.AllowUserToDeleteRows = false;
+            dgvAreaEmpresa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAreaEmpresa.Columns.AddRange(new DataGridViewColumn[] { IDArea, Encargado, Nombre, Descripcion, FechaCreacion });
+            dgvAreaEmpresa.Location = new Point(251, 77);
+            dgvAreaEmpresa.Name = "dgvAreaEmpresa";
+            dgvAreaEmpresa.ReadOnly = true;
+            dgvAreaEmpresa.RowTemplate.Height = 25;
+            dgvAreaEmpresa.Size = new Size(240, 150);
+            dgvAreaEmpresa.TabIndex = 10;
+            dgvAreaEmpresa.CellContentClick += dgvAreaEmpresa_CellContentClick;
             // 
             // IDArea
             // 
@@ -171,16 +171,60 @@
             FechaCreacion.Name = "FechaCreacion";
             FechaCreacion.ReadOnly = true;
             // 
+            // btnNuevo
+            // 
+            btnNuevo.Location = new Point(56, 278);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(75, 23);
+            btnNuevo.TabIndex = 11;
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(212, 278);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.TabIndex = 12;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(357, 278);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 13;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // dtpFechaCreacion
+            // 
+            dtpFechaCreacion.Location = new Point(125, 204);
+            dtpFechaCreacion.Name = "dtpFechaCreacion";
+            dtpFechaCreacion.Size = new Size(113, 23);
+            dtpFechaCreacion.TabIndex = 14;
+            // 
             // frmAreaEmpresa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(574, 450);
-            Controls.Add(dataGridView1);
-            Controls.Add(textFechaCreacion);
-            Controls.Add(textDescripcion);
+            Controls.Add(dtpFechaCreacion);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnNuevo);
+            Controls.Add(dgvAreaEmpresa);
+            Controls.Add(txtDescripcion);
             Controls.Add(textNombre);
-            Controls.Add(textEncargado);
+            Controls.Add(txtEncargado);
             Controls.Add(textIDArea);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -189,7 +233,8 @@
             Controls.Add(label1);
             Name = "frmAreaEmpresa";
             Text = "frmAreaEmpresa";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAreaEmpresa).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -202,15 +247,19 @@
         private Label label4;
         private Label label5;
         private TextBox textIDArea;
-        private TextBox textEncargado;
+        private TextBox txtEncargado;
         private TextBox textNombre;
-        private TextBox textDescripcion;
-        private TextBox textFechaCreacion;
-        private DataGridView dataGridView1;
+        private TextBox txtDescripcion;
+        private DataGridView dgvAreaEmpresa;
         private DataGridViewTextBoxColumn IDArea;
         private DataGridViewTextBoxColumn Encargado;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewTextBoxColumn FechaCreacion;
+        private Button btnNuevo;
+        private Button btnGuardar;
+        private Button btnCancelar;
+        private ErrorProvider errorProvider1;
+        private DateTimePicker dtpFechaCreacion;
     }
 }
