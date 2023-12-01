@@ -32,13 +32,13 @@ namespace SistemaGym.UI.Windows
         }
         private void InicializarControles()
         {
-            textIDArea.Text = "0";
+            txtIDArea.Text = "0";
             txtEncargado.Clear();
-            textNombre.Clear();
+            txtNombre.Clear();
             txtDescripcion.Clear();
-            dtpFechaCreacion = ;
+            dtpFechaCreacion.Text = "";
             dgvAreaEmpresa.AutoGenerateColumns = false;
-            dgvAreaEmpresa.DataSource = AreaEmpresaDAL.MostrarAreaEmpresa();
+            dgvAreaEmpresa.DataSource = AreaEmpresaBLL.Mostrar();
             txtEncargado.Focus();
 
         }
@@ -52,9 +52,9 @@ namespace SistemaGym.UI.Windows
             }
             //Pasar datos al objeto desde los controles
             AreaEmpresaEntity areaEmpresa = new AreaEmpresaEntity();
-            areaEmpresa.IDArea = int.Parse(textIDArea.Text);
+            areaEmpresa.IDArea = int.Parse(txtIDArea.Text);
             areaEmpresa.Encargado = int.Parse(txtEncargado.Text);
-            areaEmpresa.Nombre = textNombre.Text;
+            areaEmpresa.Nombre = txtNombre.Text;
             areaEmpresa.Descripcion = txtDescripcion.Text;
 
             try
@@ -75,11 +75,18 @@ namespace SistemaGym.UI.Windows
             {
                 errorProvider1.SetError(txtEncargado, "Campo obligatorio");
                 resultado = false;
-                errorProvider1.SetError(textNombre, "Campo obligatorio");
-                resultado = false;
-                errorProvider1.SetError(txtDescripcion, "Campo no obligatorio");
+            }
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                errorProvider1.SetError(txtNombre, "Campo obligatorio");
                 resultado = false;
             }
+            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                errorProvider1.SetError(txtDescripcion, "Campo obligatorio");
+                resultado = false;
+            }
+
             return resultado;
         }
 
@@ -95,9 +102,9 @@ namespace SistemaGym.UI.Windows
                 return;
             }
             DataGridViewRow row = dgvAreaEmpresa.CurrentRow;
-            textIDArea.Text = row.Cells["IDArea"].Value?.ToString();
+            txtIDArea.Text = row.Cells["IDArea"].Value?.ToString();
             txtEncargado.Text = row.Cells["Encargado"].Value?.ToString();
-            textNombre.Text = row.Cells["Nombre"].Value?.ToString();
+            txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
             txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
             dtpFechaCreacion.Text = row.Cells["FechaCreacion"].Value?.ToString();
         }

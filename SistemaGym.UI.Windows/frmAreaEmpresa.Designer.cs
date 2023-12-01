@@ -34,9 +34,9 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            textIDArea = new TextBox();
+            txtIDArea = new TextBox();
             txtEncargado = new TextBox();
-            textNombre = new TextBox();
+            txtNombre = new TextBox();
             txtDescripcion = new TextBox();
             dgvAreaEmpresa = new DataGridView();
             IDArea = new DataGridViewTextBoxColumn();
@@ -99,12 +99,12 @@
             label5.TabIndex = 4;
             label5.Text = "FechaCreacion";
             // 
-            // textIDArea
+            // txtIDArea
             // 
-            textIDArea.Location = new Point(125, 87);
-            textIDArea.Name = "textIDArea";
-            textIDArea.Size = new Size(100, 23);
-            textIDArea.TabIndex = 5;
+            txtIDArea.Location = new Point(125, 87);
+            txtIDArea.Name = "txtIDArea";
+            txtIDArea.Size = new Size(100, 23);
+            txtIDArea.TabIndex = 5;
             // 
             // txtEncargado
             // 
@@ -113,12 +113,12 @@
             txtEncargado.Size = new Size(100, 23);
             txtEncargado.TabIndex = 6;
             // 
-            // textNombre
+            // txtNombre
             // 
-            textNombre.Location = new Point(125, 145);
-            textNombre.Name = "textNombre";
-            textNombre.Size = new Size(100, 23);
-            textNombre.TabIndex = 7;
+            txtNombre.Location = new Point(125, 145);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(100, 23);
+            txtNombre.TabIndex = 7;
             // 
             // txtDescripcion
             // 
@@ -223,9 +223,9 @@
             Controls.Add(btnNuevo);
             Controls.Add(dgvAreaEmpresa);
             Controls.Add(txtDescripcion);
-            Controls.Add(textNombre);
+            Controls.Add(txtNombre);
             Controls.Add(txtEncargado);
-            Controls.Add(textIDArea);
+            Controls.Add(txtIDArea);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -246,9 +246,9 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textIDArea;
+        private TextBox txtIDArea;
         private TextBox txtEncargado;
-        private TextBox textNombre;
+        private TextBox txtNombre;
         private TextBox txtDescripcion;
         private DataGridView dgvAreaEmpresa;
         private DataGridViewTextBoxColumn IDArea;
