@@ -22,13 +22,13 @@ namespace SistemaGym.BLL
             else
             {
                 //Actualizar
-                PagoDAL.ActualizarPago(pago);
+                PagoDAL.Update(pago);
             }
 
         }
         public static bool Eliminar(PagoEntity pago)
         {
-            return PagoDAL.EliminarPago(pago);
+            return PagoDAL.DeletePago(pago);
         }
         public static DataTable Mostrarpago(PagoEntity pago)
         {

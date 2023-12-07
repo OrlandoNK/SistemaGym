@@ -15,25 +15,18 @@ namespace SistemaGym.UI.Windows
     public partial class frmRol : Form
     {
         const string sistema = "Sistema Gym";
-
         public frmRol()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             InicializarControles();
         }
         private void InicializarControles()
         {
             txtID.Text = "0";
-            txtIDRol.Clear();
             txtNombre.Clear();
             txtDescripcion.Clear();
             dgvRol.AutoGenerateColumns = false;
@@ -43,6 +36,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
             //validacion de datos
             if (!ValidarDatos())
             {
@@ -75,6 +69,8 @@ namespace SistemaGym.UI.Windows
             {
                 errorProvider1.SetError(txtNombre, "El nombre es obligatorio");
                 resultado = false;
+                errorProvider1.SetError(txtDescripcion, "La Descripcion no es obligatorio");
+                resultado = false;
             }
             return resultado;
         }
@@ -83,21 +79,24 @@ namespace SistemaGym.UI.Windows
         {
             Close();
         }
+
         private void dgvRol_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
             {
-                return;
+                if (e.RowIndex == -1)
+                {
+                    return;
+
+                }
+
+                DataGridViewRow row = dgvRol.CurrentRow;
+                txtID.Text = row.Cells["IDRol"].Value?.ToString();
+                txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
+                txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
+               
 
             }
 
-            DataGridViewRow row = dgvRol.CurrentRow;
-            txtID.Text = row.Cells["IDRol"].Value?.ToString();
-            txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
-            txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
-
         }
     }
-
 }
-

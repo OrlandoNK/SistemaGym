@@ -34,7 +34,7 @@ namespace SistemaGym.DAL
 
             /* Metodo para Actualizar Pago */
 
-            public static void ActualizarPago(PagoEntity pago)
+            public static void Update(PagoEntity pago)
             {
                 ConexionDAL instancia = Instancia();
                 SqlConnection Conexion = new SqlConnection();
@@ -55,7 +55,7 @@ namespace SistemaGym.DAL
             }
 
             /* Metodo para Eliminar un Pago por ID */
-            public static bool EliminarPago(PagoEntity pago)
+            public static bool DeletePago(PagoEntity pago)
             {
                 bool productDeleted;
 
@@ -63,7 +63,7 @@ namespace SistemaGym.DAL
                 SqlConnection Conexion = new SqlConnection();
 
                 Conexion.Open();
-                string Delete = "DELETE FROM Pago WHERE IDPago = @IDPago";
+                string Delete = "DELETE FROM Pago WHERE IDProducto = @IDPago";
                 SqlCommand cmd = new SqlCommand(Delete, Conexion);
                 cmd.Parameters.AddWithValue("@IDPago", pago.IDPago);
                 productDeleted = cmd.ExecuteNonQuery() > 0;
