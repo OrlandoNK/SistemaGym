@@ -54,7 +54,9 @@ namespace SistemaGym.DAL
                     cmddetalle.Parameters.AddWithValue("@total", detalle.Itbis);
                     cmddetalle.Parameters.AddWithValue("@fechaemision", detalle.Total);
                     detalle.IDDetalleFacturaProducto = Convert.ToInt32(cmd.ExecuteScalar());
+                     
                 }
+               
                 transaccion.Commit();
 
             } catch(Exception ex)
@@ -63,8 +65,9 @@ namespace SistemaGym.DAL
                 throw;
             } 
            }
-         public static DataTable GetAll()
+         public static List<FacturaProductoEntity> GetAll()
         {
+            List<FacturaProductoEntity> list = new List<FacturaProductoEntity>();
            
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -72,11 +75,30 @@ namespace SistemaGym.DAL
             DataTable dt = new DataTable();
             string mostrar = "Select * From FacturaProductos Order By Fecha DESC ";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            return dt;
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            SqlDataReader dr = cmd.ExecuteReader();
+            
+            while (dr.Read())
+            {
+                FacturaProductoEntity oFactura= new FacturaProductoEntity();
+                oFactura.IDFactura = Convert.ToInt32(dr["IDFactura"]);
+                oFactura.IDCliente = Convert.ToInt32(dr["IDCliente"]);
+                oFactura.IDUsuario= Convert.ToInt32(dr["IDUsuario"]);
+                oFactura.NCF = Convert.ToString(dr["NCF"]);
+               // oFactura.SubTotal = Convert.ToDecimal(dr["SubTotal"]);
+                //oFactura.TotalDescuento = Convert.ToDecimal(dr["TotalDescuento"]);
+               // oFactura.TotalItbis = Convert.ToDecimal(dr["TotalItbis"]);
+                //oFactura.Total = Convert.ToDecimal(dr["Total"]);
+                oFactura.FechaEmision = Convert.ToDateTime(dr["FechaEmision"]);
+                oFactura.FechaVencimiento = Convert.ToDateTime(dr["FechaVencimiento"]);
+                oFactura.Estatus = Convert.ToString(dr["Estatus"]);
+                list.Add(oFactura);
+            }
+
+          
+            return list;
         }
-        public static DataTable GetByID(FacturaProductoEntity factura)
+        public static DataTable GetByID(FacturaMembresiaEntity factura)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -88,6 +110,7 @@ namespace SistemaGym.DAL
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
+
         }
 
         }
