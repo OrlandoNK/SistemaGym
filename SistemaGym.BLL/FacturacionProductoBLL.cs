@@ -23,6 +23,10 @@ namespace SistemaGym.BLL
             }
             
         }
+        public static List<FacturaProductoEntity> Mostrar()
+        {
+            return FacturacionProductosDAL.GetAll();
+        }
 
     }
 }
