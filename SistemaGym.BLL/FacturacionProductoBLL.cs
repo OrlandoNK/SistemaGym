@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaGym.DAL;
+using SistemaGym.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,23 @@ namespace SistemaGym.BLL
 {
     public class FacturacionProductoBLL
     {
+        public static void Guardar(FacturaProductoEntity factura)
+        {
+            if (FacturacionProductosDAL.Exist(factura.IDFactura))
+            {
+                FacturacionProductosDAL.Actualizar(factura);
+
+
+            }else
+            {
+                FacturacionProductosDAL.InsertarFactura(factura);
+            }
+            
+        }
+        public static List<FacturaProductoEntity> Mostrar()
+        {
+            return FacturacionProductosDAL.GetAll();
+        }
+
     }
 }
