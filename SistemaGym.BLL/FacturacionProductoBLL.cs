@@ -14,8 +14,12 @@ namespace SistemaGym.BLL
         {
             if (FacturacionProductosDAL.Exist(factura.IDFactura))
             {
-                FacturacionProductosDAL.update
+                FacturacionProductosDAL.Actualizar(factura);
 
+
+            }else
+            {
+                FacturacionProductosDAL.InsertarFactura(factura);
             }
             
         }
