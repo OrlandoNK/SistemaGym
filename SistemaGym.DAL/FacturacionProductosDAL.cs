@@ -65,6 +65,29 @@ namespace SistemaGym.DAL
                 throw;
             } 
            }
+        public static void Actualizar(FacturaProductoEntity factura)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            string actualizar = "Update FacturaProducto set IDCliente= @idcliente, IDUsuario= @idusuario, NCF= @ncf, SubTotal= @subtotal, TotalDescuento= @TotalDescuento, TotalItbis= @totalitbis, Total= @total" +
+                " FechaEmision= @fechaemision, FechaVencimiento= @fechavencimiento, Estatus= @estatus where IDFactura = @idfactura";
+            SqlCommand cmd = new SqlCommand(actualizar, Conexion);
+            cmd.Parameters.AddWithValue("@idcliente", factura.IDCliente);
+            cmd.Parameters.AddWithValue("@idusuario", factura.IDUsuario);
+            cmd.Parameters.AddWithValue("@idfactura", factura.IDFactura);
+            cmd.Parameters.AddWithValue("@ncf", factura.NCF);
+            cmd.Parameters.AddWithValue("@subtotal", factura.SubTotal);
+            cmd.Parameters.AddWithValue("@totaldescuento", factura.TotalDescuento);
+            cmd.Parameters.AddWithValue("@totalitbis", factura.TotalItbis);
+            cmd.Parameters.AddWithValue("@total", factura.Total);
+            cmd.Parameters.AddWithValue("@fechaemision", factura.FechaEmision);
+            cmd.Parameters.AddWithValue("@fechavencimiento", factura.FechaVencimiento);
+            cmd.Parameters.AddWithValue("@estatus", factura.Estatus);
+            cmd.ExecuteNonQuery();
+
+        }
          public static List<FacturaProductoEntity> GetAll()
         {
             List<FacturaProductoEntity> list = new List<FacturaProductoEntity>();
@@ -112,8 +135,23 @@ namespace SistemaGym.DAL
             return dt;
 
         }
+        public static bool Exist(int id)
+        {
+            ConexionDAL instancia = ConexionDAL.Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            Conexion.Open();
+            string consulta = "SELECT COUNT(*) FROM FacturaProductos WHERE IDFactura = @IDFactura";
+            SqlCommand cmd = new SqlCommand(consulta, Conexion);
 
+            cmd.Parameters.AddWithValue("@IDFactura", id);
+            int count = (int)cmd.ExecuteScalar();
+            return count > 0;
         }
 
     }
+
+}
+
+
+
 
