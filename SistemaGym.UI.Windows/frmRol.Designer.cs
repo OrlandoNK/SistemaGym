@@ -90,18 +90,21 @@
             // 
             // IDRol
             // 
+            IDRol.DataPropertyName = "IDRol";
             IDRol.HeaderText = "IDRol";
             IDRol.Name = "IDRol";
             IDRol.ReadOnly = true;
             // 
             // Nombre
             // 
+            Nombre.DataPropertyName = "Nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
             Nombre.ReadOnly = true;
             // 
             // Descripcion
             // 
+            Descripcion.DataPropertyName = "Descripcion";
             Descripcion.HeaderText = "Descripcion";
             Descripcion.Name = "Descripcion";
             Descripcion.ReadOnly = true;
@@ -144,7 +147,8 @@
             // 
             txtID.Location = new Point(133, 55);
             txtID.Name = "txtID";
-            txtID.Size = new Size(100, 23);
+            txtID.ReadOnly = true;
+            txtID.Size = new Size(29, 23);
             txtID.TabIndex = 7;
             // 
             // txtNombre
@@ -178,6 +182,7 @@
             Controls.Add(label1);
             Name = "frmRol";
             Text = "frmRol";
+            Load += frmRol_Load;
             ((System.ComponentModel.ISupportInitialize)dgvRol).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);

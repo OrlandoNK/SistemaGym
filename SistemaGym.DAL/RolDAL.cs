@@ -33,11 +33,12 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update Rol set Nombre=@Nombre, Descripcion=@Descripcion ";
+            string actualizar = "Update Rol set Nombre=@Nombre, Descripcion=@Descripcion where IDRol= @idRol ";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
            
             cmd.Parameters.AddWithValue("@Nombre", rol.Nombre);
             cmd.Parameters.AddWithValue("@Descripcion", rol.Descripcion);
+            cmd.Parameters.AddWithValue("@idRol", rol.IDRol);
             cmd.ExecuteNonQuery();
 
 

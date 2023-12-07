@@ -93,10 +93,15 @@ namespace SistemaGym.UI.Windows
                 txtID.Text = row.Cells["IDRol"].Value?.ToString();
                 txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
                 txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
-               
+
 
             }
 
+        }
+
+        private void frmRol_Load(object sender, EventArgs e)
+        {
+            InicializarControles();
         }
     }
 }
