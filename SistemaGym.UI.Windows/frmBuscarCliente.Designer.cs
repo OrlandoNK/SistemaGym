@@ -64,12 +64,13 @@
             dgvBuscarClientes.AllowUserToDeleteRows = false;
             dgvBuscarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBuscarClientes.Columns.AddRange(new DataGridViewColumn[] { IDCliente, IDUsuario, IDMembresia, IDTipoListaCliente, IDTipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus });
-            dgvBuscarClientes.Location = new Point(12, 73);
+            dgvBuscarClientes.Location = new Point(12, 58);
             dgvBuscarClientes.Name = "dgvBuscarClientes";
             dgvBuscarClientes.ReadOnly = true;
             dgvBuscarClientes.RowTemplate.Height = 25;
-            dgvBuscarClientes.Size = new Size(896, 462);
+            dgvBuscarClientes.Size = new Size(896, 456);
             dgvBuscarClientes.TabIndex = 1;
+            dgvBuscarClientes.CellDoubleClick += dgvBuscarClientes_CellDoubleClick;
             // 
             // IDCliente
             // 
@@ -187,6 +188,7 @@
             txtBuscarCliente.Name = "txtBuscarCliente";
             txtBuscarCliente.Size = new Size(354, 20);
             txtBuscarCliente.TabIndex = 2;
+            txtBuscarCliente.TextChanged += txtBuscarCliente_TextChanged;
             // 
             // frmBuscarCliente
             // 

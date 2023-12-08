@@ -1,4 +1,5 @@
 ﻿using SistemaGym.BLL;
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,20 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmBuscarCliente : Form
     {
+        ClientesEntity oCliente = new ClientesEntity();
+        private int idCliente;
         public frmBuscarCliente()
         {
             InitializeComponent();
         }
+        public int Id
+        {
+
+            get { idCliente = oCliente.IDCliente; return idCliente; }
+            set { }
+
+        }
+
 
         private void frmBuscarCliente_Load(object sender, EventArgs e)
         {
@@ -30,7 +41,7 @@ namespace SistemaGym.UI.Windows
         }
         private void CargarUsuarios()
         {
-           
+
 
             var colUsuario = (DataGridViewComboBoxColumn)dgvBuscarClientes.Columns["IDUsuario"];
 
@@ -42,7 +53,7 @@ namespace SistemaGym.UI.Windows
         }
         private void CargarMembresia()
         {
-           
+
 
             var colMembresia = (DataGridViewComboBoxColumn)dgvBuscarClientes.Columns["IDMembresia"];
 
@@ -54,7 +65,7 @@ namespace SistemaGym.UI.Windows
         private void CargarTipoListaCliente()
         {
 
-          
+
 
             var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvBuscarClientes.Columns["IDTipoListaCliente"];
 
@@ -65,7 +76,7 @@ namespace SistemaGym.UI.Windows
         }
         private void CargarTipoCliente()
         {
-          
+
 
             var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvBuscarClientes.Columns["IDTipoCliente"];
 
@@ -75,5 +86,39 @@ namespace SistemaGym.UI.Windows
             colTipoListaCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
         }
 
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+          
+            
+            string textoBusqueda = txtBuscarCliente.Text; 
+
+          
+            ClientesEntity clienteBusqueda = new ClientesEntity();
+            clienteBusqueda.Nombre = textoBusqueda; 
+            clienteBusqueda.Apellido = textoBusqueda; 
+            clienteBusqueda.Documento = textoBusqueda; 
+            int idMembresia;
+            if (int.TryParse(textoBusqueda, out idMembresia))
+            {
+                clienteBusqueda.IDMembresia = idMembresia;
+            }
+            clienteBusqueda.Direccion = textoBusqueda;
+            clienteBusqueda.TelCell = textoBusqueda;
+            clienteBusqueda.TelRes = textoBusqueda;
+            clienteBusqueda.Estatus = textoBusqueda;
+          
+            dgvBuscarClientes.DataSource = ClientesBLL.ObtenerPorValor(clienteBusqueda);
+
+        }
+
+        private void dgvBuscarClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            // oCliente.IDCliente = int.Parse(dgvBuscarClientes.CurrentRow.Cells["IDCliente"].Value);
+
+        }
     }
 }

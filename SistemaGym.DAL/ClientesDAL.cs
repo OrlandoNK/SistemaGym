@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -129,19 +130,25 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string obtenerValor = "Select * from Clientes " +
-                 "Where IDMembresia Like '%' + @idmembresia + '%' or Nombre Like '%' + @nombre + '%' or Apellido Like '%' + @apellido + '%' or " +
-                 "Documento Like '%' + @Documento '%' or Direccion Like '%' + @Direccion + '%' or TelCell Like '%' + @telcell + '%' " +
-                 "TelRes Like '%' + @telres + '%' or Estatus Like '%' + @estatus + '%' ORDER BY Nombre";
+            string obtenerValor = "SELECT * FROM Clientes " +
+                "WHERE IDMembresia LIKE '%' + @idmembresia + '%' OR " +
+                "Nombre LIKE '%' + @nombre + '%' OR " +
+                "Apellido LIKE '%' + @apellido + '%' OR " +
+                "Documento LIKE '%' + @documento + '%' OR " +
+                "Direccion LIKE '%' + @direccion + '%' OR " +
+                "TelCell LIKE '%' + @telcell + '%' OR " +
+                "TelRes LIKE '%' + @telres + '%' OR " +
+                "Estatus LIKE '%' + @estatus + '%' ORDER BY Nombre";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idmembresia", clientes.IDMembresia);           
-            cmd.Parameters.AddWithValue("@nombre", clientes.Nombre);
-            cmd.Parameters.AddWithValue("@apellido", clientes.Apellido);
-            cmd.Parameters.AddWithValue("@documento", clientes.Documento);
-            cmd.Parameters.AddWithValue("@direccion", clientes.Direccion);
-            cmd.Parameters.AddWithValue("@telcell", clientes.TelCell);
-            cmd.Parameters.AddWithValue("@telres", clientes.TelRes);
-            cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
+            cmd.Parameters.AddWithValue("@idmembresia", "%" + clientes.IDMembresia + "%");
+            cmd.Parameters.AddWithValue("@nombre", "%" + clientes.Nombre + "%");
+            cmd.Parameters.AddWithValue("@apellido", "%" + clientes.Apellido + "%");
+            cmd.Parameters.AddWithValue("@documento", "%" + clientes.Documento + "%");
+            cmd.Parameters.AddWithValue("@direccion", "%" + clientes.Direccion + "%");
+            cmd.Parameters.AddWithValue("@telcell", "%" + clientes.TelCell + "%");
+            cmd.Parameters.AddWithValue("@telres", "%" + clientes.TelRes + "%");
+            cmd.Parameters.AddWithValue("@estatus", "%" + clientes.Estatus + "%");
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
