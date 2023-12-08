@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGym.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,56 @@ namespace SistemaGym.UI.Windows
 
         private void frmBuscarCliente_Load(object sender, EventArgs e)
         {
+            CargarUsuarios();
+            CargarMembresia();
+            CargarTipoCliente();
+            CargarTipoListaCliente();
+        }
+        private void CargarUsuarios()
+        {
+           
 
+            var colUsuario = (DataGridViewComboBoxColumn)dgvBuscarClientes.Columns["IDUsuario"];
+
+            colUsuario.ValueMember = "IDUsuario";
+            colUsuario.DisplayMember = "NombreUsuario";
+            colUsuario.DataPropertyName = "IDUsuario";
+            colUsuario.DataSource = UsuarioBLL.Mostrar();
+
+        }
+        private void CargarMembresia()
+        {
+           
+
+            var colMembresia = (DataGridViewComboBoxColumn)dgvBuscarClientes.Columns["IDMembresia"];
+
+            colMembresia.ValueMember = "IDMembresia";
+            colMembresia.DisplayMember = "Nombre";
+            colMembresia.DataPropertyName = "IDMembresia";
+            colMembresia.DataSource = MembresiaBLL.Mostrar();
+        }
+        private void CargarTipoListaCliente()
+        {
+
+          
+
+            var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvBuscarClientes.Columns["IDTipoListaCliente"];
+
+            colTipoListaCliente.ValueMember = "IDTipoListaCliente";
+            colTipoListaCliente.DisplayMember = "Nombre";
+            colTipoListaCliente.DataPropertyName = "TipoListaCliente";
+            colTipoListaCliente.DataSource = TipoListaClienteBLL.MostrarTipoListaCliente();
+        }
+        private void CargarTipoCliente()
+        {
+          
+
+            var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvBuscarClientes.Columns["IDTipoCliente"];
+
+            colTipoListaCliente.ValueMember = "IDTipoCliente";
+            colTipoListaCliente.DisplayMember = "Nombre";
+            colTipoListaCliente.DataPropertyName = "TipoCliente";
+            colTipoListaCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
         }
 
     }

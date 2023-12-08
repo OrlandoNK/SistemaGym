@@ -16,5 +16,11 @@ namespace SistemaGym.UI.Windows
         {
             InitializeComponent();
         }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            frmBuscarCliente frmBuscarCliente= new frmBuscarCliente();  
+            frmBuscarCliente.ShowDialog();
+        }
     }
 }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             label1 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -172,6 +172,7 @@
             btnBuscarCliente.TabIndex = 12;
             btnBuscarCliente.Text = "Buscar";
             btnBuscarCliente.UseVisualStyleBackColor = true;
+            btnBuscarCliente.Click += btnBuscarCliente_Click;
             // 
             // txtDocumento
             // 
@@ -361,9 +362,9 @@
             // Precio
             // 
             Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle1;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
@@ -378,9 +379,9 @@
             // Subtotal
             // 
             Subtotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle7.Format = "C2";
-            dataGridViewCellStyle7.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
             Subtotal.ReadOnly = true;
@@ -388,9 +389,9 @@
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
@@ -398,9 +399,9 @@
             // Impuesto
             // 
             Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle4;
             Impuesto.HeaderText = "Impuesto";
             Impuesto.Name = "Impuesto";
             Impuesto.ReadOnly = true;
@@ -408,9 +409,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle5;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
