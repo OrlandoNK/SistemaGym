@@ -35,8 +35,8 @@ namespace SistemaGym.UI.Windows
 
             DataGridViewRow row = dgvListaCliente.CurrentRow;
             txtID.Text = row.Cells["IDListaCliente"].Value?.ToString();
-            txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
-            txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
+            txtNombre.Text = row.Cells["Nombres"].Value?.ToString();
+            txtDescripcion.Text = row.Cells["Descripciones"].Value?.ToString();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -62,14 +62,14 @@ namespace SistemaGym.UI.Windows
             }
             //pasar datos de controles a un objeto
             TipoListaClienteEntity ListaCliente = new TipoListaClienteEntity();
-            ListaCliente.IDTipoListaCliente = int.Parse(txtID.Text);
+            ListaCliente.IDTipoListaCliente = int.Parse(label.Text);
             ListaCliente.Nombre = txtNombre.Text;
             ListaCliente.Descripcion = txtDescripcion.Text;
 
             //Mandar a guardar el objeto creado a la base de datos
             try
             {
-                TipoListaClienteBLL.Guardar();
+                TipoListaClienteBLL.Guardar(ListaCliente);
                 MessageBox.Show("TipoListaCliente guarda.", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 InicializarControles();
             }
@@ -88,11 +88,7 @@ namespace SistemaGym.UI.Windows
                 errorProvider1.SetError(txtNombre, "El nombre es obligatorio");
                 resultado = false;
             }
-            if (string.IsNullOrEmpty(txtDescripcion.Text))
-            {
-                errorProvider1.SetError(txtDescripcion, "El valor no es obligatorio");
-                resultado = false;
-            }
+
 
             return resultado;
         }
@@ -100,6 +96,11 @@ namespace SistemaGym.UI.Windows
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void frmListaCliente_Load(object sender, EventArgs e)
+        {
+            InicializarControles();
         }
     }
 }

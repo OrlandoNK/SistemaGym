@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            txtID = new Label();
+            label = new Label();
             Nombre = new Label();
             Descripcion = new Label();
-            txtIDTipoCliente = new TextBox();
+            txtID = new TextBox();
             txtNombre = new TextBox();
             txtDescripcion = new TextBox();
             errorProvider1 = new ErrorProvider(components);
             dgvListaCliente = new DataGridView();
-            IdListaCliente = new DataGridViewTextBoxColumn();
-            Nombres = new DataGridViewTextBoxColumn();
-            Descripciones = new DataGridViewTextBoxColumn();
             btnNuevo = new Button();
             btnGuardar = new Button();
             btnCancelar = new Button();
+            IdListaCliente = new DataGridViewTextBoxColumn();
+            Nombres = new DataGridViewTextBoxColumn();
+            Descripciones = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvListaCliente).BeginInit();
             SuspendLayout();
             // 
-            // txtID
+            // label
             // 
-            txtID.AutoSize = true;
-            txtID.Location = new Point(64, 52);
-            txtID.Name = "txtID";
-            txtID.Size = new Size(79, 15);
-            txtID.TabIndex = 0;
-            txtID.Text = "IDListaCliente";
+            label.AutoSize = true;
+            label.Location = new Point(48, 52);
+            label.Name = "label";
+            label.Size = new Size(79, 15);
+            label.TabIndex = 0;
+            label.Text = "IDListaCliente";
             // 
             // Nombre
             // 
@@ -74,12 +74,12 @@
             Descripcion.TabIndex = 2;
             Descripcion.Text = "Descripcion";
             // 
-            // txtIDTipoCliente
+            // txtID
             // 
-            txtIDTipoCliente.Location = new Point(164, 52);
-            txtIDTipoCliente.Name = "txtIDTipoCliente";
-            txtIDTipoCliente.Size = new Size(100, 23);
-            txtIDTipoCliente.TabIndex = 3;
+            txtID.Location = new Point(164, 52);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(100, 23);
+            txtID.TabIndex = 3;
             // 
             // txtNombre
             // 
@@ -109,27 +109,9 @@
             dgvListaCliente.Name = "dgvListaCliente";
             dgvListaCliente.ReadOnly = true;
             dgvListaCliente.RowTemplate.Height = 25;
-            dgvListaCliente.Size = new Size(341, 150);
+            dgvListaCliente.Size = new Size(347, 150);
             dgvListaCliente.TabIndex = 6;
             dgvListaCliente.CellContentClick += dgvListaCliente_CellContentClick;
-            // 
-            // IdListaCliente
-            // 
-            IdListaCliente.HeaderText = "IdListaCliente";
-            IdListaCliente.Name = "IdListaCliente";
-            IdListaCliente.ReadOnly = true;
-            // 
-            // Nombres
-            // 
-            Nombres.HeaderText = "Nombres";
-            Nombres.Name = "Nombres";
-            Nombres.ReadOnly = true;
-            // 
-            // Descripciones
-            // 
-            Descripciones.HeaderText = "Descripciones";
-            Descripciones.Name = "Descripciones";
-            Descripciones.ReadOnly = true;
             // 
             // btnNuevo
             // 
@@ -161,6 +143,27 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // IdListaCliente
+            // 
+            IdListaCliente.DataPropertyName = "IDTipoListaCliente";
+            IdListaCliente.HeaderText = "IdListaCliente";
+            IdListaCliente.Name = "IdListaCliente";
+            IdListaCliente.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            Nombres.DataPropertyName = "Nombre";
+            Nombres.HeaderText = "Nombre";
+            Nombres.Name = "Nombres";
+            Nombres.ReadOnly = true;
+            // 
+            // Descripciones
+            // 
+            Descripciones.DataPropertyName = "Descripcion";
+            Descripciones.HeaderText = "Descripcion";
+            Descripciones.Name = "Descripciones";
+            Descripciones.ReadOnly = true;
+            // 
             // frmListaCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -172,12 +175,13 @@
             Controls.Add(dgvListaCliente);
             Controls.Add(txtDescripcion);
             Controls.Add(txtNombre);
-            Controls.Add(txtIDTipoCliente);
+            Controls.Add(txtID);
             Controls.Add(Descripcion);
             Controls.Add(Nombre);
-            Controls.Add(txtID);
+            Controls.Add(label);
             Name = "frmListaCliente";
             Text = "frmListaCliente";
+            Load += frmListaCliente_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvListaCliente).EndInit();
             ResumeLayout(false);
@@ -186,19 +190,19 @@
 
         #endregion
 
-        private Label txtID;
+        private Label label;
         private Label Nombre;
         private Label Descripcion;
-        private TextBox txtIDTipoCliente;
+        private TextBox txtID;
         private TextBox txtNombre;
         private TextBox txtDescripcion;
         private ErrorProvider errorProvider1;
         private DataGridView dgvListaCliente;
-        private DataGridViewTextBoxColumn IdListaCliente;
-        private DataGridViewTextBoxColumn Nombres;
-        private DataGridViewTextBoxColumn Descripciones;
         private Button btnCancelar;
         private Button btnGuardar;
         private Button btnNuevo;
+        private DataGridViewTextBoxColumn IdListaCliente;
+        private DataGridViewTextBoxColumn Nombres;
+        private DataGridViewTextBoxColumn Descripciones;
     }
 }

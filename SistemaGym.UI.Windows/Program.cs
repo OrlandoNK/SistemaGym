@@ -1,3 +1,5 @@
+using SistemaGym.BLL;
+
 namespace SistemaGym.UI.Windows
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace SistemaGym.UI.Windows
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LoginForm());
+            Application.Run(new frmListaCliente());
         }
     }
 }
