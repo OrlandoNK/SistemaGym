@@ -31,9 +31,9 @@ namespace SistemaGym.BLL
         {
             return ClientesDAL.MostrarCliente();
         }
-        public static DataTable BuscarID(ClientesEntity clientes)
+        public static ClientesEntity BuscarPorID(int id)
         {
-            return ClientesDAL.BuscarID(clientes);
+            return ClientesDAL.BuscarPorID(id);
         }
         public static DataTable ObtenerPorValor(ClientesEntity clientes)
         {

@@ -14,16 +14,16 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmBuscarCliente : Form
     {
-        ClientesEntity oCliente = new ClientesEntity();
+       
         private int idCliente;
         public frmBuscarCliente()
         {
             InitializeComponent();
         }
-        public int Id
+        public int id
         {
 
-            get { idCliente = oCliente.IDCliente; return idCliente; }
+            get { return idCliente; }
             set { }
 
         }

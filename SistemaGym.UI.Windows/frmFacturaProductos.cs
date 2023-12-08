@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaGym.BLL;
+using SistemaGym.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +21,19 @@ namespace SistemaGym.UI.Windows
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            frmBuscarCliente frmBuscarCliente= new frmBuscarCliente();  
-            frmBuscarCliente.ShowDialog();
+            frmBuscarCliente frmBuscarCliente = new frmBuscarCliente();
+            if (frmBuscarCliente.ShowDialog() == DialogResult.OK)
+            {
+
+                ClientesEntity cliente = ClientesBLL.BuscarPorID(frmBuscarCliente.id);
+                txtIDCliente.Text = cliente.IDCliente.ToString();
+                txtCliente.Text = cliente.Nombre;
+                txtTipoCliente.Text = cliente.TipoCliente.ToString();
+                txtDocumento.Text = cliente.Documento;   
+
+
+               
+        }
         }
     }
 }

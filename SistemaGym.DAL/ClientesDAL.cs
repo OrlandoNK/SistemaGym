@@ -106,20 +106,44 @@ namespace SistemaGym.DAL
 
         }
 
-        public static DataTable BuscarID(ClientesEntity clientes)
-        {
+        /* public static DataTable BuscarID(int id)
+         {
 
+             ConexionDAL instancia = Instancia();
+             SqlConnection Conexion = instancia.Conexion();
+
+             Conexion.Open();
+             DataTable dt = new DataTable();
+             string buscar = "Select * From Clientes where IDCliente= @idcliente";
+             SqlCommand cmd = new SqlCommand(buscar, Conexion);
+             cmd.Parameters.AddWithValue("@idcliente", id);
+             SqlDataAdapter da = new SqlDataAdapter(cmd);
+             da.Fill(dt);
+             return dt;
+         }*/
+        public static ClientesEntity BuscarPorID(int id)
+        {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            DataTable dt = new DataTable();
-            string buscar = "Select * From Clientes where IDCliente= @idcliente";
+            string buscar = "SELECT * FROM Clientes WHERE IDCliente = @idcliente";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
-            cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            return dt;
+            cmd.Parameters.AddWithValue("@idcliente", id);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            ClientesEntity clienteEncontrado = null;
+
+            if (reader.Read())
+            {
+                clienteEncontrado = new ClientesEntity();
+                clienteEncontrado.IDCliente = Convert.ToInt32(reader["IDCliente"]);
+                clienteEncontrado.Nombre = reader["Nombre"].ToString();
+              
+            }
+
+            Conexion.Close();
+            return clienteEncontrado;
         }
         //
         public static DataTable ObtenerPorValor(ClientesEntity clientes)
