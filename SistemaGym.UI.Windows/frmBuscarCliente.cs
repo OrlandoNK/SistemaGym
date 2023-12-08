@@ -16,5 +16,6 @@ namespace SistemaGym.UI.Windows
         {
             InitializeComponent();
         }
+
     }
 }
