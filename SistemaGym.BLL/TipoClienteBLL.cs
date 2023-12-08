@@ -32,7 +32,7 @@ namespace SistemaGym.BLL
             return TipoClienteDAL.EliminarTipoCliente(tipoCliente);
         }
 
-        public static DataTable MostrarTipoCliente(TipoClienteEntity tipoCliente)
+        public static DataTable MostrarTipoCliente()
         {
             return TipoClienteDAL.MostrarTipoCliente();
         }

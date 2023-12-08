@@ -22,7 +22,7 @@ namespace SistemaGym.UI.Windows
 
         private void frmTipoCliente_Load(object sender, EventArgs e)
         {
-
+            InicializarControles();
         }
 
         private void label3_Click(object sender, EventArgs e)
