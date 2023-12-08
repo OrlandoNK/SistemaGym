@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             label1 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -40,6 +40,7 @@
             dtpFechaEmision = new DateTimePicker();
             dtpFechaVencimiento = new DateTimePicker();
             groupBox1 = new GroupBox();
+            button1 = new Button();
             txtDocumento = new TextBox();
             txtTipoCliente = new TextBox();
             txtCliente = new TextBox();
@@ -49,9 +50,22 @@
             label2 = new Label();
             label3 = new Label();
             groupBox2 = new GroupBox();
+            cbEstatus = new ComboBox();
+            txtNCF = new TextBox();
+            label19 = new Label();
+            label18 = new Label();
+            button2 = new Button();
             txtIDFactura = new TextBox();
             txtUsuario = new TextBox();
             dataGridView1 = new DataGridView();
+            IDDetalle = new DataGridViewTextBoxColumn();
+            IDProducto = new DataGridViewComboBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
+            Cantidad = new DataGridViewTextBoxColumn();
+            Subtotal = new DataGridViewTextBoxColumn();
+            Descuento = new DataGridViewTextBoxColumn();
+            Impuesto = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
             groupBox3 = new GroupBox();
             btnAgregar = new Button();
             btnBuscar = new Button();
@@ -76,20 +90,6 @@
             txtImpuesto = new TextBox();
             txtTotalDescuento = new TextBox();
             txtTotal = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            IDDetalle = new DataGridViewTextBoxColumn();
-            IDProducto = new DataGridViewComboBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            Subtotal = new DataGridViewTextBoxColumn();
-            Descuento = new DataGridViewTextBoxColumn();
-            Impuesto = new DataGridViewTextBoxColumn();
-            Total = new DataGridViewTextBoxColumn();
-            label18 = new Label();
-            label19 = new Label();
-            txtNCF = new TextBox();
-            cbEstatus = new ComboBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -164,11 +164,21 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Cliente";
             // 
+            // button1
+            // 
+            button1.Location = new Point(366, 22);
+            button1.Name = "button1";
+            button1.Size = new Size(59, 36);
+            button1.TabIndex = 12;
+            button1.Text = "Buscar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // txtDocumento
             // 
             txtDocumento.Location = new Point(244, 48);
             txtDocumento.Multiline = true;
             txtDocumento.Name = "txtDocumento";
+            txtDocumento.ReadOnly = true;
             txtDocumento.Size = new Size(100, 20);
             txtDocumento.TabIndex = 13;
             // 
@@ -177,6 +187,7 @@
             txtTipoCliente.Location = new Point(244, 10);
             txtTipoCliente.Multiline = true;
             txtTipoCliente.Name = "txtTipoCliente";
+            txtTipoCliente.ReadOnly = true;
             txtTipoCliente.Size = new Size(100, 21);
             txtTipoCliente.TabIndex = 13;
             // 
@@ -185,6 +196,7 @@
             txtCliente.Location = new Point(49, 48);
             txtCliente.Multiline = true;
             txtCliente.Name = "txtCliente";
+            txtCliente.ReadOnly = true;
             txtCliente.Size = new Size(100, 21);
             txtCliente.TabIndex = 14;
             // 
@@ -193,6 +205,7 @@
             txtIDCliente.Location = new Point(70, 16);
             txtIDCliente.Multiline = true;
             txtIDCliente.Name = "txtIDCliente";
+            txtIDCliente.ReadOnly = true;
             txtIDCliente.Size = new Size(79, 20);
             txtIDCliente.TabIndex = 13;
             // 
@@ -254,11 +267,56 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Factura";
             // 
+            // cbEstatus
+            // 
+            cbEstatus.FormattingEnabled = true;
+            cbEstatus.Items.AddRange(new object[] { "Activo", "Inactivo", "En Proceso" });
+            cbEstatus.Location = new Point(282, 92);
+            cbEstatus.Name = "cbEstatus";
+            cbEstatus.Size = new Size(121, 23);
+            cbEstatus.TabIndex = 19;
+            // 
+            // txtNCF
+            // 
+            txtNCF.Location = new Point(51, 95);
+            txtNCF.Multiline = true;
+            txtNCF.Name = "txtNCF";
+            txtNCF.Size = new Size(146, 19);
+            txtNCF.TabIndex = 18;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(232, 98);
+            label19.Name = "label19";
+            label19.Size = new Size(44, 15);
+            label19.TabIndex = 17;
+            label19.Text = "Estatus";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(15, 95);
+            label18.Name = "label18";
+            label18.Size = new Size(30, 15);
+            label18.TabIndex = 16;
+            label18.Text = "NCF";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(170, 46);
+            button2.Name = "button2";
+            button2.Size = new Size(51, 23);
+            button2.TabIndex = 15;
+            button2.Text = "Buscar";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // txtIDFactura
             // 
             txtIDFactura.Location = new Point(64, 16);
             txtIDFactura.Multiline = true;
             txtIDFactura.Name = "txtIDFactura";
+            txtIDFactura.ReadOnly = true;
             txtIDFactura.Size = new Size(100, 20);
             txtIDFactura.TabIndex = 12;
             // 
@@ -267,6 +325,7 @@
             txtUsuario.Location = new Point(64, 46);
             txtUsuario.Multiline = true;
             txtUsuario.Name = "txtUsuario";
+            txtUsuario.ReadOnly = true;
             txtUsuario.Size = new Size(100, 23);
             txtUsuario.TabIndex = 11;
             // 
@@ -282,6 +341,79 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(929, 267);
             dataGridView1.TabIndex = 12;
+            // 
+            // IDDetalle
+            // 
+            IDDetalle.DataPropertyName = "IDDetalleFacturaProducto";
+            IDDetalle.HeaderText = "ID";
+            IDDetalle.Name = "IDDetalle";
+            IDDetalle.ReadOnly = true;
+            // 
+            // IDProducto
+            // 
+            IDProducto.DataPropertyName = "IDProducto";
+            IDProducto.HeaderText = "Producto";
+            IDProducto.Name = "IDProducto";
+            IDProducto.ReadOnly = true;
+            IDProducto.Resizable = DataGridViewTriState.True;
+            IDProducto.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // Precio
+            // 
+            Precio.DataPropertyName = "Precio";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle1;
+            Precio.HeaderText = "Precio";
+            Precio.Name = "Precio";
+            Precio.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            Cantidad.DataPropertyName = "Cantidad";
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.Name = "Cantidad";
+            Cantidad.ReadOnly = true;
+            // 
+            // Subtotal
+            // 
+            Subtotal.DataPropertyName = "SubTotal";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
+            Subtotal.HeaderText = "Subtotal";
+            Subtotal.Name = "Subtotal";
+            Subtotal.ReadOnly = true;
+            // 
+            // Descuento
+            // 
+            Descuento.DataPropertyName = "Descuento";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
+            Descuento.HeaderText = "Descuento";
+            Descuento.Name = "Descuento";
+            Descuento.ReadOnly = true;
+            // 
+            // Impuesto
+            // 
+            Impuesto.DataPropertyName = "Itbis";
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle4;
+            Impuesto.HeaderText = "Impuesto";
+            Impuesto.Name = "Impuesto";
+            Impuesto.ReadOnly = true;
+            // 
+            // Total
+            // 
+            Total.DataPropertyName = "Total";
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle5;
+            Total.HeaderText = "Total";
+            Total.Name = "Total";
+            Total.ReadOnly = true;
             // 
             // groupBox3
             // 
@@ -517,131 +649,6 @@
             txtTotal.ReadOnly = true;
             txtTotal.Size = new Size(89, 33);
             txtTotal.TabIndex = 24;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(366, 22);
-            button1.Name = "button1";
-            button1.Size = new Size(59, 36);
-            button1.TabIndex = 12;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(170, 46);
-            button2.Name = "button2";
-            button2.Size = new Size(51, 23);
-            button2.TabIndex = 15;
-            button2.Text = "Buscar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // IDDetalle
-            // 
-            IDDetalle.DataPropertyName = "IDDetalleFacturaProducto";
-            IDDetalle.HeaderText = "ID";
-            IDDetalle.Name = "IDDetalle";
-            IDDetalle.ReadOnly = true;
-            // 
-            // IDProducto
-            // 
-            IDProducto.DataPropertyName = "IDProducto";
-            IDProducto.HeaderText = "Producto";
-            IDProducto.Name = "IDProducto";
-            IDProducto.ReadOnly = true;
-            IDProducto.Resizable = DataGridViewTriState.True;
-            IDProducto.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Precio
-            // 
-            Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle6;
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
-            Precio.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            Cantidad.DataPropertyName = "Cantidad";
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.Name = "Cantidad";
-            Cantidad.ReadOnly = true;
-            // 
-            // Subtotal
-            // 
-            Subtotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle7.Format = "C2";
-            dataGridViewCellStyle7.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle7;
-            Subtotal.HeaderText = "Subtotal";
-            Subtotal.Name = "Subtotal";
-            Subtotal.ReadOnly = true;
-            // 
-            // Descuento
-            // 
-            Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle8;
-            Descuento.HeaderText = "Descuento";
-            Descuento.Name = "Descuento";
-            Descuento.ReadOnly = true;
-            // 
-            // Impuesto
-            // 
-            Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle9;
-            Impuesto.HeaderText = "Impuesto";
-            Impuesto.Name = "Impuesto";
-            Impuesto.ReadOnly = true;
-            // 
-            // Total
-            // 
-            Total.DataPropertyName = "Total";
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle10;
-            Total.HeaderText = "Total";
-            Total.Name = "Total";
-            Total.ReadOnly = true;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(15, 95);
-            label18.Name = "label18";
-            label18.Size = new Size(30, 15);
-            label18.TabIndex = 16;
-            label18.Text = "NCF";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(232, 98);
-            label19.Name = "label19";
-            label19.Size = new Size(44, 15);
-            label19.TabIndex = 17;
-            label19.Text = "Estatus";
-            // 
-            // txtNCF
-            // 
-            txtNCF.Location = new Point(51, 95);
-            txtNCF.Multiline = true;
-            txtNCF.Name = "txtNCF";
-            txtNCF.Size = new Size(146, 19);
-            txtNCF.TabIndex = 18;
-            // 
-            // cbEstatus
-            // 
-            cbEstatus.FormattingEnabled = true;
-            cbEstatus.Location = new Point(282, 92);
-            cbEstatus.Name = "cbEstatus";
-            cbEstatus.Size = new Size(121, 23);
-            cbEstatus.TabIndex = 19;
             // 
             // frmFacturaProductos
             // 
