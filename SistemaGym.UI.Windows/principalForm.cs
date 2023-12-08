@@ -179,7 +179,7 @@ namespace SistemaGym.UI.Windows
             panelSubAdministrar.Visible = false;
             frmUsuario usuarios = new frmUsuario();
             usuarios.Show();
-            
+
         }
     }
 }
