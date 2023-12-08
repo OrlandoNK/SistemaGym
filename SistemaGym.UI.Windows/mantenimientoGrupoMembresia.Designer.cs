@@ -45,7 +45,7 @@
             TxbNombre = new TextBox();
             panel4 = new Panel();
             button4 = new Button();
-            button3 = new Button();
+            btnGuardar = new Button();
             dgvGrupoMembresia = new DataGridView();
             IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -143,6 +143,7 @@
             // button5
             // 
             button5.Anchor = AnchorStyles.None;
+            button5.Cursor = Cursors.Hand;
             button5.Location = new Point(138, 324);
             button5.Name = "button5";
             button5.Size = new Size(106, 29);
@@ -153,6 +154,7 @@
             // btnAgregar
             // 
             btnAgregar.Anchor = AnchorStyles.None;
+            btnAgregar.Cursor = Cursors.Hand;
             btnAgregar.Location = new Point(25, 324);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(106, 29);
@@ -174,6 +176,7 @@
             // cmbxEstatus
             // 
             cmbxEstatus.Anchor = AnchorStyles.None;
+            cmbxEstatus.Cursor = Cursors.Hand;
             cmbxEstatus.FormattingEnabled = true;
             cmbxEstatus.Items.AddRange(new object[] { "Activo", "Inactivo", "Suspendido", "Cancelado", "Vencido", "En Espera de Aprobacion", "Prueba Gratuita" });
             cmbxEstatus.Location = new Point(25, 250);
@@ -216,7 +219,7 @@
             // 
             panel4.BackColor = Color.Ivory;
             panel4.Controls.Add(button4);
-            panel4.Controls.Add(button3);
+            panel4.Controls.Add(btnGuardar);
             panel4.Controls.Add(dgvGrupoMembresia);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(268, 106);
@@ -226,6 +229,7 @@
             // 
             // button4
             // 
+            button4.Cursor = Cursors.Hand;
             button4.Location = new Point(535, 388);
             button4.Name = "button4";
             button4.Size = new Size(127, 38);
@@ -233,14 +237,16 @@
             button4.Text = "&Eliminar";
             button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnGuardar
             // 
-            button3.Location = new Point(402, 388);
-            button3.Name = "button3";
-            button3.Size = new Size(127, 38);
-            button3.TabIndex = 7;
-            button3.Text = "&Guardar";
-            button3.UseVisualStyleBackColor = true;
+            btnGuardar.Cursor = Cursors.Hand;
+            btnGuardar.Location = new Point(402, 388);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(127, 38);
+            btnGuardar.TabIndex = 7;
+            btnGuardar.Text = "&Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // dgvGrupoMembresia
             // 
@@ -329,7 +335,7 @@
         private DataGridView dgvGrupoMembresia;
         private Button btnAgregar;
         private Button button4;
-        private Button button3;
+        private Button btnGuardar;
         private Button button5;
         private ErrorProvider errorProvider;
         private TextBox TxbIDMembresia;

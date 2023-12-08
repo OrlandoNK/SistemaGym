@@ -84,5 +84,26 @@ namespace SistemaGym.UI.Windows
         {
             dtpFechaRegistro.Value = DateTime.Now;
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow filaGrupoMembresia in dgvGrupoMembresia.Rows)
+            {
+                if (!filaGrupoMembresia.IsNewRow)
+                {
+                    GrupoMembresiaEntity nuevoGrupoMembresia = new GrupoMembresiaEntity();
+                    nuevoGrupoMembresia.IDMembresia = int.Parse(filaGrupoMembresia.Cells["IDMembresia"].Value.ToString());
+                    nuevoGrupoMembresia.Nombre = filaGrupoMembresia.Cells["Nombre"].Value.ToString();
+                    nuevoGrupoMembresia.FechaRegistro = DateTime.Parse(filaGrupoMembresia.Cells["FechaRegistro"].Value.ToString());
+                    nuevoGrupoMembresia.Estatus = filaGrupoMembresia.Cells["Estatus"].Value.ToString();
+
+                    GrupoMembresiaBLL.guardar(nuevoGrupoMembresia);
+                }
+                else
+                {
+                    MessageBox.Show("Error al Guardar el Grupo de Membresia", "Error de Guardado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
