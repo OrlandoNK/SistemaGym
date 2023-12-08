@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             label1 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -40,7 +40,7 @@
             dtpFechaEmision = new DateTimePicker();
             dtpFechaVencimiento = new DateTimePicker();
             groupBox1 = new GroupBox();
-            button1 = new Button();
+            btnBuscarCliente = new Button();
             txtDocumento = new TextBox();
             txtTipoCliente = new TextBox();
             txtCliente = new TextBox();
@@ -68,7 +68,7 @@
             Total = new DataGridViewTextBoxColumn();
             groupBox3 = new GroupBox();
             btnAgregar = new Button();
-            btnBuscar = new Button();
+            btnBuscarProducto = new Button();
             label13 = new Label();
             txtDescuento = new TextBox();
             txtCantidad = new TextBox();
@@ -148,7 +148,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btnBuscarCliente);
             groupBox1.Controls.Add(txtDocumento);
             groupBox1.Controls.Add(txtTipoCliente);
             groupBox1.Controls.Add(txtCliente);
@@ -164,14 +164,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Cliente";
             // 
-            // button1
+            // btnBuscarCliente
             // 
-            button1.Location = new Point(366, 22);
-            button1.Name = "button1";
-            button1.Size = new Size(59, 36);
-            button1.TabIndex = 12;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            btnBuscarCliente.Location = new Point(366, 22);
+            btnBuscarCliente.Name = "btnBuscarCliente";
+            btnBuscarCliente.Size = new Size(59, 36);
+            btnBuscarCliente.TabIndex = 12;
+            btnBuscarCliente.Text = "Buscar";
+            btnBuscarCliente.UseVisualStyleBackColor = true;
             // 
             // txtDocumento
             // 
@@ -361,9 +361,9 @@
             // Precio
             // 
             Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle6;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
@@ -378,9 +378,9 @@
             // Subtotal
             // 
             Subtotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle7;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
             Subtotal.ReadOnly = true;
@@ -388,9 +388,9 @@
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle8;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
@@ -398,9 +398,9 @@
             // Impuesto
             // 
             Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle9;
             Impuesto.HeaderText = "Impuesto";
             Impuesto.Name = "Impuesto";
             Impuesto.ReadOnly = true;
@@ -408,9 +408,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle10;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
@@ -418,7 +418,7 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(btnAgregar);
-            groupBox3.Controls.Add(btnBuscar);
+            groupBox3.Controls.Add(btnBuscarProducto);
             groupBox3.Controls.Add(label13);
             groupBox3.Controls.Add(txtDescuento);
             groupBox3.Controls.Add(txtCantidad);
@@ -445,14 +445,14 @@
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // btnBuscar
+            // btnBuscarProducto
             // 
-            btnBuscar.Location = new Point(683, 19);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(59, 36);
-            btnBuscar.TabIndex = 10;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscarProducto.Location = new Point(683, 19);
+            btnBuscarProducto.Name = "btnBuscarProducto";
+            btnBuscarProducto.Size = new Size(59, 36);
+            btnBuscarProducto.TabIndex = 10;
+            btnBuscarProducto.Text = "Buscar";
+            btnBuscarProducto.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -716,7 +716,7 @@
         private TextBox txtCantidad;
         private TextBox txtPrecio;
         private Button btnAgregar;
-        private Button btnBuscar;
+        private Button btnBuscarProducto;
         private Button btnNuevo;
         private Button btnGuardar;
         private Button btnCancelar;
@@ -728,7 +728,7 @@
         private TextBox txtImpuesto;
         private TextBox txtTotalDescuento;
         private TextBox txtTotal;
-        private Button button1;
+        private Button btnBuscarCliente;
         private Button button2;
         private DataGridViewTextBoxColumn IDDetalle;
         private DataGridViewComboBoxColumn IDProducto;
