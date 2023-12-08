@@ -15,13 +15,13 @@ namespace SistemaGym.DAL
     {
         public static void InsertarFactura(FacturaProductoEntity factura)
         {
-            
-            
-                 ConexionDAL instancia = Instancia();
-                SqlConnection Conexion = instancia.Conexion();
-                
-                Conexion.Open();
-                SqlTransaction transaccion = Conexion.BeginTransaction();
+
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            SqlTransaction transaccion = Conexion.BeginTransaction();
             try
             {
                 string insertarfactura = "Insert Into FacturaProductos(IDCliente, IDUsuario, NCF, Subtotal, TotalDescuento, TotalItbis, Total, FechaEmision, FechaVencimiento, Estatus)" +
@@ -54,17 +54,17 @@ namespace SistemaGym.DAL
                     cmddetalle.Parameters.AddWithValue("@total", detalle.Itbis);
                     cmddetalle.Parameters.AddWithValue("@fechaemision", detalle.Total);
                     detalle.IDDetalleFacturaProducto = Convert.ToInt32(cmd.ExecuteScalar());
-                     
+
                 }
-               
+
                 transaccion.Commit();
 
-            } catch(Exception ex)
+            } catch (Exception ex)
             {
                 transaccion.Rollback();
                 throw;
-            } 
-           }
+            }
+        }
         public static void Actualizar(FacturaProductoEntity factura)
         {
             ConexionDAL instancia = Instancia();
@@ -88,10 +88,10 @@ namespace SistemaGym.DAL
             cmd.ExecuteNonQuery();
 
         }
-         public static List<FacturaProductoEntity> GetAll()
+        public static List<FacturaProductoEntity> GetAll()
         {
             List<FacturaProductoEntity> list = new List<FacturaProductoEntity>();
-           
+
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             Conexion.Open();
@@ -100,17 +100,17 @@ namespace SistemaGym.DAL
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             //SqlDataAdapter da = new SqlDataAdapter(cmd);
             SqlDataReader dr = cmd.ExecuteReader();
-            
+
             while (dr.Read())
             {
-                FacturaProductoEntity oFactura= new FacturaProductoEntity();
+                FacturaProductoEntity oFactura = new FacturaProductoEntity();
                 oFactura.IDFactura = Convert.ToInt32(dr["IDFactura"]);
                 oFactura.IDCliente = Convert.ToInt32(dr["IDCliente"]);
-                oFactura.IDUsuario= Convert.ToInt32(dr["IDUsuario"]);
+                oFactura.IDUsuario = Convert.ToInt32(dr["IDUsuario"]);
                 oFactura.NCF = Convert.ToString(dr["NCF"]);
-               // oFactura.SubTotal = Convert.ToDecimal(dr["SubTotal"]);
+                // oFactura.SubTotal = Convert.ToDecimal(dr["SubTotal"]);
                 //oFactura.TotalDescuento = Convert.ToDecimal(dr["TotalDescuento"]);
-               // oFactura.TotalItbis = Convert.ToDecimal(dr["TotalItbis"]);
+                // oFactura.TotalItbis = Convert.ToDecimal(dr["TotalItbis"]);
                 //oFactura.Total = Convert.ToDecimal(dr["Total"]);
                 oFactura.FechaEmision = Convert.ToDateTime(dr["FechaEmision"]);
                 oFactura.FechaVencimiento = Convert.ToDateTime(dr["FechaVencimiento"]);
@@ -118,7 +118,7 @@ namespace SistemaGym.DAL
                 list.Add(oFactura);
             }
 
-          
+
             return list;
         }
         public static DataTable GetByID(FacturaMembresiaEntity factura)
@@ -146,6 +146,10 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@IDFactura", id);
             int count = (int)cmd.ExecuteScalar();
             return count > 0;
+        }
+        public static void ConvertToObject(IDataReader reader)
+        {
+
         }
 
     }

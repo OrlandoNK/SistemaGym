@@ -47,6 +47,7 @@
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
+            groupBox3 = new GroupBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -229,11 +230,21 @@
             dataGridView1.Size = new Size(856, 253);
             dataGridView1.TabIndex = 12;
             // 
+            // groupBox3
+            // 
+            groupBox3.Location = new Point(81, 104);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(374, 100);
+            groupBox3.TabIndex = 13;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "groupBox3";
+            // 
             // frmFacturaProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1146, 626);
+            Controls.Add(groupBox3);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -268,5 +279,6 @@
         private Label label8;
         private Label label7;
         private DataGridView dataGridView1;
+        private GroupBox groupBox3;
     }
 }
