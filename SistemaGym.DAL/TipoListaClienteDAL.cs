@@ -34,10 +34,11 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update TipoListaCliente set Nombre =@nombre, Descripcion =@descripcion";
+            string actualizar = "Update TipoListaCliente set Nombre =@nombre, Descripcion =@descripcion where IDTipoListaCliente = @idtipolista";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@nombre", tipoListaCliente.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", tipoListaCliente.Descripcion);
+            cmd.Parameters.AddWithValue("@idtipolista", tipoListaCliente.IDTipoListaCliente);
             cmd.ExecuteNonQuery();
 
 

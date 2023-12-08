@@ -62,7 +62,7 @@ namespace SistemaGym.UI.Windows
             }
             //pasar datos de controles a un objeto
             TipoListaClienteEntity ListaCliente = new TipoListaClienteEntity();
-            ListaCliente.IDTipoListaCliente = int.Parse(label.Text);
+            ListaCliente.IDTipoListaCliente = int.Parse(txtID.Text);
             ListaCliente.Nombre = txtNombre.Text;
             ListaCliente.Descripcion = txtDescripcion.Text;
 
