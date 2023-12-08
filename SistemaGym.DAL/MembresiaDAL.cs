@@ -126,5 +126,43 @@ namespace SistemaGym.DAL
             return dt;
         }
 
+        public static MembresiaEntity ObtenerMembresiaByID(int id)
+        {
+            MembresiaEntity membresia = null;
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            string query = "SELECT IDMembresia, Nombre FROM Membresia WHERE IDMembresia = @IdMembresia";
+            using (SqlCommand cmd = new SqlCommand(query, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@IdMembresia", id);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        membresia = ConvertToObject(reader);
+                    }
+                }   
+            }
+            return membresia;
+        }
+        
+
+        private static MembresiaEntity ConvertToObject(SqlDataReader reader)
+        {
+            MembresiaEntity membresia = new MembresiaEntity
+            {
+                IDMembresia = Convert.ToInt32(reader["IDMembresia"]),
+                Nombre = Convert.ToString(reader["Nombre"])
+            };
+
+            return membresia;
+        }
+
+
     }
 }
