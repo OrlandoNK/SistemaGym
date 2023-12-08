@@ -181,5 +181,25 @@ namespace SistemaGym.UI.Windows
             usuarios.Show();
 
         }
+
+        private void btnBuscarClientes_Click(object sender, EventArgs e)
+        {
+            if (subbtnFacturacionMembresia.Visible = true)
+            {
+                subbtnFacturacionMembresia.Visible = false;
+            }
+            if (subMantenimientos.Visible = true)
+            {
+                subMantenimientos.Visible = false;
+            }
+            if (subMantenimientos.Visible = true)
+            {
+                subMantenimientos.Visible = false;
+            }
+
+            frmBuscarCliente buscarCliente = new frmBuscarCliente();
+            buscarCliente.Show();
+
+        }
     }
 }
