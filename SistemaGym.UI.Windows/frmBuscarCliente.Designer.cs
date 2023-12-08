@@ -31,7 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             dgvBuscarClientes = new DataGridView();
-            txtBuscarCliente = new TextBox();
             IDCliente = new DataGridViewTextBoxColumn();
             IDUsuario = new DataGridViewComboBoxColumn();
             IDMembresia = new DataGridViewComboBoxColumn();
@@ -46,6 +45,7 @@
             TelRes = new DataGridViewTextBoxColumn();
             FechaRegistro = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
+            txtBuscarCliente = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvBuscarClientes).BeginInit();
             SuspendLayout();
             // 
@@ -70,14 +70,6 @@
             dgvBuscarClientes.RowTemplate.Height = 25;
             dgvBuscarClientes.Size = new Size(896, 462);
             dgvBuscarClientes.TabIndex = 1;
-            // 
-            // txtBuscarCliente
-            // 
-            txtBuscarCliente.Location = new Point(257, 32);
-            txtBuscarCliente.Multiline = true;
-            txtBuscarCliente.Name = "txtBuscarCliente";
-            txtBuscarCliente.Size = new Size(354, 20);
-            txtBuscarCliente.TabIndex = 2;
             // 
             // IDCliente
             // 
@@ -188,6 +180,14 @@
             Estatus.Name = "Estatus";
             Estatus.ReadOnly = true;
             // 
+            // txtBuscarCliente
+            // 
+            txtBuscarCliente.Location = new Point(257, 32);
+            txtBuscarCliente.Multiline = true;
+            txtBuscarCliente.Name = "txtBuscarCliente";
+            txtBuscarCliente.Size = new Size(354, 20);
+            txtBuscarCliente.TabIndex = 2;
+            // 
             // frmBuscarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -198,6 +198,7 @@
             Controls.Add(label1);
             Name = "frmBuscarCliente";
             Text = "frmBuscarCliente";
+            Load += frmBuscarCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dgvBuscarClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();

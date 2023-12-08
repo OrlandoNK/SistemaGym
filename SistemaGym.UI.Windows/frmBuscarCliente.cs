@@ -17,5 +17,10 @@ namespace SistemaGym.UI.Windows
             InitializeComponent();
         }
 
+        private void frmBuscarCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
