@@ -45,6 +45,9 @@ namespace SistemaGym.UI.Windows
         private void subbtnFacturacionProducto_Click(object sender, EventArgs e)
         {
             subFacturacion.Visible = false;
+            frmFacturaProductos frmFacturaProductos = new frmFacturaProductos();
+            frmFacturaProductos.MdiParent = this;
+            frmFacturaProductos.Show();
         }
 
         private void subbtnFacturacionMembresia_Click(object sender, EventArgs e)
@@ -61,7 +64,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnAssistClient_Click(object sender, EventArgs e)
         {
-
+           
         }
     }
 }
