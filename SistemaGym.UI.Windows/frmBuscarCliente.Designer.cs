@@ -28,10 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvBuscarClientes = new DataGridView();
             txtBuscarCliente = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            IDCliente = new DataGridViewTextBoxColumn();
+            IDUsuario = new DataGridViewComboBoxColumn();
+            IDMembresia = new DataGridViewComboBoxColumn();
+            IDTipoListaCliente = new DataGridViewComboBoxColumn();
+            IDTipoCliente = new DataGridViewComboBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            TipoDocumento = new DataGridViewTextBoxColumn();
+            Documento = new DataGridViewTextBoxColumn();
+            Direccion = new DataGridViewTextBoxColumn();
+            TelCell = new DataGridViewTextBoxColumn();
+            TelRes = new DataGridViewTextBoxColumn();
+            FechaRegistro = new DataGridViewTextBoxColumn();
+            Estatus = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dgvBuscarClientes).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -43,17 +58,18 @@
             label1.TabIndex = 0;
             label1.Text = "Introduzca los datos a buscar";
             // 
-            // dataGridView1
+            // dgvBuscarClientes
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 73);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(896, 462);
-            dataGridView1.TabIndex = 1;
+            dgvBuscarClientes.AllowUserToAddRows = false;
+            dgvBuscarClientes.AllowUserToDeleteRows = false;
+            dgvBuscarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBuscarClientes.Columns.AddRange(new DataGridViewColumn[] { IDCliente, IDUsuario, IDMembresia, IDTipoListaCliente, IDTipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus });
+            dgvBuscarClientes.Location = new Point(12, 73);
+            dgvBuscarClientes.Name = "dgvBuscarClientes";
+            dgvBuscarClientes.ReadOnly = true;
+            dgvBuscarClientes.RowTemplate.Height = 25;
+            dgvBuscarClientes.Size = new Size(896, 462);
+            dgvBuscarClientes.TabIndex = 1;
             // 
             // txtBuscarCliente
             // 
@@ -63,17 +79,126 @@
             txtBuscarCliente.Size = new Size(354, 20);
             txtBuscarCliente.TabIndex = 2;
             // 
+            // IDCliente
+            // 
+            IDCliente.DataPropertyName = "IDCliente";
+            IDCliente.HeaderText = "IDCliente";
+            IDCliente.Name = "IDCliente";
+            IDCliente.ReadOnly = true;
+            // 
+            // IDUsuario
+            // 
+            IDUsuario.DataPropertyName = "IDUsuario";
+            IDUsuario.HeaderText = "Usuario";
+            IDUsuario.Name = "IDUsuario";
+            IDUsuario.ReadOnly = true;
+            IDUsuario.Resizable = DataGridViewTriState.True;
+            IDUsuario.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // IDMembresia
+            // 
+            IDMembresia.DataPropertyName = "IDMembresia";
+            IDMembresia.HeaderText = "Membresia";
+            IDMembresia.Name = "IDMembresia";
+            IDMembresia.ReadOnly = true;
+            IDMembresia.Resizable = DataGridViewTriState.True;
+            IDMembresia.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // IDTipoListaCliente
+            // 
+            IDTipoListaCliente.DataPropertyName = "IDTipoListaCliente";
+            IDTipoListaCliente.HeaderText = "Tipo Lista";
+            IDTipoListaCliente.Name = "IDTipoListaCliente";
+            IDTipoListaCliente.ReadOnly = true;
+            IDTipoListaCliente.Resizable = DataGridViewTriState.True;
+            IDTipoListaCliente.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // IDTipoCliente
+            // 
+            IDTipoCliente.DataPropertyName = "IDTipoCliente";
+            IDTipoCliente.HeaderText = "TipoCliente";
+            IDTipoCliente.Name = "IDTipoCliente";
+            IDTipoCliente.ReadOnly = true;
+            IDTipoCliente.Resizable = DataGridViewTriState.True;
+            IDTipoCliente.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            Apellido.DataPropertyName = "Apellido";
+            Apellido.HeaderText = "Apellido";
+            Apellido.Name = "Apellido";
+            Apellido.ReadOnly = true;
+            // 
+            // TipoDocumento
+            // 
+            TipoDocumento.DataPropertyName = "TipoDocumento";
+            TipoDocumento.HeaderText = "Tipo Documento";
+            TipoDocumento.Name = "TipoDocumento";
+            TipoDocumento.ReadOnly = true;
+            // 
+            // Documento
+            // 
+            Documento.DataPropertyName = "Documento";
+            Documento.HeaderText = "Documento";
+            Documento.Name = "Documento";
+            Documento.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            Direccion.DataPropertyName = "Direccion";
+            Direccion.HeaderText = "Direccion";
+            Direccion.Name = "Direccion";
+            Direccion.ReadOnly = true;
+            // 
+            // TelCell
+            // 
+            TelCell.DataPropertyName = "TelCell";
+            TelCell.HeaderText = "TelCell";
+            TelCell.Name = "TelCell";
+            TelCell.ReadOnly = true;
+            // 
+            // TelRes
+            // 
+            TelRes.DataPropertyName = "TelRes";
+            TelRes.HeaderText = "TelRes";
+            TelRes.Name = "TelRes";
+            TelRes.ReadOnly = true;
+            // 
+            // FechaRegistro
+            // 
+            FechaRegistro.DataPropertyName = "FechaRegistro";
+            dataGridViewCellStyle1.Format = "g";
+            dataGridViewCellStyle1.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
+            FechaRegistro.HeaderText = "FechaRegistro";
+            FechaRegistro.Name = "FechaRegistro";
+            FechaRegistro.ReadOnly = true;
+            // 
+            // Estatus
+            // 
+            Estatus.DataPropertyName = "Estatus";
+            Estatus.HeaderText = "Estatus";
+            Estatus.Name = "Estatus";
+            Estatus.ReadOnly = true;
+            // 
             // frmBuscarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(913, 547);
             Controls.Add(txtBuscarCliente);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvBuscarClientes);
             Controls.Add(label1);
             Name = "frmBuscarCliente";
             Text = "frmBuscarCliente";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBuscarClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -81,7 +206,21 @@
         #endregion
 
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvBuscarClientes;
         private TextBox txtBuscarCliente;
+        private DataGridViewTextBoxColumn IDCliente;
+        private DataGridViewComboBoxColumn IDUsuario;
+        private DataGridViewComboBoxColumn IDMembresia;
+        private DataGridViewComboBoxColumn IDTipoListaCliente;
+        private DataGridViewComboBoxColumn IDTipoCliente;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
+        private DataGridViewTextBoxColumn TipoDocumento;
+        private DataGridViewTextBoxColumn Documento;
+        private DataGridViewTextBoxColumn Direccion;
+        private DataGridViewTextBoxColumn TelCell;
+        private DataGridViewTextBoxColumn TelRes;
+        private DataGridViewTextBoxColumn FechaRegistro;
+        private DataGridViewTextBoxColumn Estatus;
     }
 }
