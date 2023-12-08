@@ -117,7 +117,9 @@ namespace SistemaGym.UI.Windows
             {
                 return;
             }
-            // oCliente.IDCliente = int.Parse(dgvBuscarClientes.CurrentRow.Cells["IDCliente"].Value);
+            idCliente= (int)dgvBuscarClientes.CurrentRow.Cells["IDCliente"].Value;
+           DialogResult = DialogResult.OK;
+            Close();
 
         }
     }
