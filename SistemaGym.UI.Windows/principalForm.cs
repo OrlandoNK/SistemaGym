@@ -61,9 +61,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnAssistClient_Click(object sender, EventArgs e)
         {
-            frmAsistenciaClientes asistenciaClientes = new frmAsistenciaClientes();
-            asistenciaClientes.MdiParent = this;
-            asistenciaClientes.Show();
+
         }
     }
 }

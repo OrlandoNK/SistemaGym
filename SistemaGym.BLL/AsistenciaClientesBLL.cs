@@ -32,7 +32,7 @@ namespace SistemaGym.BLL
             return AsistenciaClientesDAL.EliminarAsistencia(asistencia);
         }
 
-        public static DataTable MostrarAsistencia(AsistenciaClientesEntity asistencia)
+        public static DataTable MostrarAsistencia()
         {
             return AsistenciaClientesDAL.MostrarAsistencia();
 
