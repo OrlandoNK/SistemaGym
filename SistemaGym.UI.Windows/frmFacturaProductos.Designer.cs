@@ -86,6 +86,10 @@
             Descuento = new DataGridViewTextBoxColumn();
             Impuesto = new DataGridViewTextBoxColumn();
             Total = new DataGridViewTextBoxColumn();
+            label18 = new Label();
+            label19 = new Label();
+            txtNCF = new TextBox();
+            cbEstatus = new ComboBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -230,6 +234,10 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(cbEstatus);
+            groupBox2.Controls.Add(txtNCF);
+            groupBox2.Controls.Add(label19);
+            groupBox2.Controls.Add(label18);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(txtIDFactura);
             groupBox2.Controls.Add(txtUsuario);
@@ -241,7 +249,7 @@
             groupBox2.Controls.Add(dtpFechaEmision);
             groupBox2.Location = new Point(534, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(483, 86);
+            groupBox2.Size = new Size(585, 148);
             groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Factura";
@@ -268,7 +276,7 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDDetalle, IDProducto, Precio, Cantidad, Subtotal, Descuento, Impuesto, Total });
-            dataGridView1.Location = new Point(45, 213);
+            dataGridView1.Location = new Point(51, 275);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
@@ -289,7 +297,7 @@
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(label9);
-            groupBox3.Location = new Point(45, 104);
+            groupBox3.Location = new Point(51, 166);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(929, 103);
             groupBox3.TabIndex = 13;
@@ -409,7 +417,7 @@
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(49, 515);
+            btnNuevo.Location = new Point(55, 577);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(119, 49);
             btnNuevo.TabIndex = 14;
@@ -418,7 +426,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(188, 515);
+            btnGuardar.Location = new Point(194, 577);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(119, 49);
             btnGuardar.TabIndex = 15;
@@ -427,7 +435,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(328, 515);
+            btnCancelar.Location = new Point(334, 577);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(119, 49);
             btnCancelar.TabIndex = 16;
@@ -438,7 +446,7 @@
             // 
             label14.AutoSize = true;
             label14.BackColor = Color.Transparent;
-            label14.Location = new Point(543, 497);
+            label14.Location = new Point(549, 559);
             label14.Name = "label14";
             label14.Size = new Size(51, 15);
             label14.TabIndex = 17;
@@ -448,7 +456,7 @@
             // 
             label15.AutoSize = true;
             label15.BackColor = Color.Transparent;
-            label15.Location = new Point(760, 497);
+            label15.Location = new Point(766, 559);
             label15.Name = "label15";
             label15.Size = new Size(63, 15);
             label15.TabIndex = 18;
@@ -458,7 +466,7 @@
             // 
             label16.AutoSize = true;
             label16.BackColor = Color.Transparent;
-            label16.Location = new Point(654, 497);
+            label16.Location = new Point(660, 559);
             label16.Name = "label16";
             label16.Size = new Size(57, 15);
             label16.TabIndex = 19;
@@ -468,7 +476,7 @@
             // 
             label17.AutoSize = true;
             label17.BackColor = Color.Transparent;
-            label17.Location = new Point(889, 497);
+            label17.Location = new Point(895, 559);
             label17.Name = "label17";
             label17.Size = new Size(32, 15);
             label17.TabIndex = 20;
@@ -476,7 +484,7 @@
             // 
             // txtSubTotal
             // 
-            txtSubTotal.Location = new Point(524, 515);
+            txtSubTotal.Location = new Point(530, 577);
             txtSubTotal.Multiline = true;
             txtSubTotal.Name = "txtSubTotal";
             txtSubTotal.ReadOnly = true;
@@ -485,7 +493,7 @@
             // 
             // txtImpuesto
             // 
-            txtImpuesto.Location = new Point(636, 515);
+            txtImpuesto.Location = new Point(642, 577);
             txtImpuesto.Multiline = true;
             txtImpuesto.Name = "txtImpuesto";
             txtImpuesto.ReadOnly = true;
@@ -494,7 +502,7 @@
             // 
             // txtTotalDescuento
             // 
-            txtTotalDescuento.Location = new Point(745, 515);
+            txtTotalDescuento.Location = new Point(751, 577);
             txtTotalDescuento.Multiline = true;
             txtTotalDescuento.Name = "txtTotalDescuento";
             txtTotalDescuento.ReadOnly = true;
@@ -503,7 +511,7 @@
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(858, 515);
+            txtTotal.Location = new Point(864, 577);
             txtTotal.Multiline = true;
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
@@ -601,11 +609,45 @@
             Total.Name = "Total";
             Total.ReadOnly = true;
             // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(15, 95);
+            label18.Name = "label18";
+            label18.Size = new Size(30, 15);
+            label18.TabIndex = 16;
+            label18.Text = "NCF";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(232, 98);
+            label19.Name = "label19";
+            label19.Size = new Size(44, 15);
+            label19.TabIndex = 17;
+            label19.Text = "Estatus";
+            // 
+            // txtNCF
+            // 
+            txtNCF.Location = new Point(51, 95);
+            txtNCF.Multiline = true;
+            txtNCF.Name = "txtNCF";
+            txtNCF.Size = new Size(146, 19);
+            txtNCF.TabIndex = 18;
+            // 
+            // cbEstatus
+            // 
+            cbEstatus.FormattingEnabled = true;
+            cbEstatus.Location = new Point(282, 92);
+            cbEstatus.Name = "cbEstatus";
+            cbEstatus.Size = new Size(121, 23);
+            cbEstatus.TabIndex = 19;
+            // 
             // frmFacturaProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1048, 626);
+            ClientSize = new Size(1131, 626);
             Controls.Add(txtTotal);
             Controls.Add(txtTotalDescuento);
             Controls.Add(txtImpuesto);
@@ -689,5 +731,9 @@
         private DataGridViewTextBoxColumn Descuento;
         private DataGridViewTextBoxColumn Impuesto;
         private DataGridViewTextBoxColumn Total;
+        private ComboBox cbEstatus;
+        private TextBox txtNCF;
+        private Label label19;
+        private Label label18;
     }
 }
