@@ -41,7 +41,6 @@
             dtpFechaVencimiento = new DateTimePicker();
             groupBox1 = new GroupBox();
             btnBuscarCliente = new Button();
-            txtDocumento = new TextBox();
             txtTipoCliente = new TextBox();
             txtCliente = new TextBox();
             txtIDCliente = new TextBox();
@@ -90,6 +89,7 @@
             txtImpuesto = new TextBox();
             txtTotalDescuento = new TextBox();
             txtTotal = new TextBox();
+            txtDocumento = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -148,8 +148,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(btnBuscarCliente);
             groupBox1.Controls.Add(txtDocumento);
+            groupBox1.Controls.Add(btnBuscarCliente);
             groupBox1.Controls.Add(txtTipoCliente);
             groupBox1.Controls.Add(txtCliente);
             groupBox1.Controls.Add(txtIDCliente);
@@ -173,15 +173,6 @@
             btnBuscarCliente.Text = "Buscar";
             btnBuscarCliente.UseVisualStyleBackColor = true;
             btnBuscarCliente.Click += btnBuscarCliente_Click;
-            // 
-            // txtDocumento
-            // 
-            txtDocumento.Location = new Point(244, 48);
-            txtDocumento.Multiline = true;
-            txtDocumento.Name = "txtDocumento";
-            txtDocumento.ReadOnly = true;
-            txtDocumento.Size = new Size(100, 20);
-            txtDocumento.TabIndex = 13;
             // 
             // txtTipoCliente
             // 
@@ -651,6 +642,15 @@
             txtTotal.Size = new Size(89, 33);
             txtTotal.TabIndex = 24;
             // 
+            // txtDocumento
+            // 
+            txtDocumento.Location = new Point(244, 48);
+            txtDocumento.Multiline = true;
+            txtDocumento.Name = "txtDocumento";
+            txtDocumento.ReadOnly = true;
+            txtDocumento.Size = new Size(100, 21);
+            txtDocumento.TabIndex = 15;
+            // 
             // frmFacturaProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -698,7 +698,6 @@
         private Label label2;
         private TextBox txtIDFactura;
         private TextBox txtUsuario;
-        private TextBox txtDocumento;
         private TextBox txtTipoCliente;
         private TextBox txtCliente;
         private TextBox txtIDCliente;
@@ -743,5 +742,6 @@
         private TextBox txtNCF;
         private Label label19;
         private Label label18;
+        private TextBox txtDocumento;
     }
 }
