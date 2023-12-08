@@ -94,7 +94,7 @@ namespace SistemaGym.UI.Windows
                     int idProveedor = Convert.ToInt32(dgvProveedores.SelectedRows[0].Cells["IDProveedor"].Value);
 
                     bool seElimino = ProveedoresBLL.Eliminar(idProveedor);
-                    
+
 
                     if (seElimino)
                     {
@@ -114,6 +114,11 @@ namespace SistemaGym.UI.Windows
                 }
 
             }
+        }
+
+        private void dgvProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
