@@ -20,10 +20,13 @@ namespace SistemaGym.UI.Windows
 
         private void frmBuscarCliente_Load(object sender, EventArgs e)
         {
+            dgvBuscarClientes.AutoGenerateColumns = false;
+            dgvBuscarClientes.DataSource = ClientesBLL.MostrarCliente();
             CargarUsuarios();
             CargarMembresia();
             CargarTipoCliente();
             CargarTipoListaCliente();
+
         }
         private void CargarUsuarios()
         {
