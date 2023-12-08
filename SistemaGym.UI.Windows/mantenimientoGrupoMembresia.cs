@@ -29,7 +29,7 @@ namespace SistemaGym.UI.Windows
         {
             if (!int.TryParse(TxbIDMembresia.Text, out int idMembresia))
             {
-                errorProvider.SetError(TxbIDMembresia, "Ingrese un Valor Entero Valido");
+                errorProvider.SetError(TxbIDMembresia, "Ingrese un Valor Entero Valido, este Campo no puede estar Vacio");
                 return;
             }
 
@@ -98,6 +98,8 @@ namespace SistemaGym.UI.Windows
                     nuevoGrupoMembresia.Estatus = filaGrupoMembresia.Cells["Estatus"].Value.ToString();
 
                     GrupoMembresiaBLL.guardar(nuevoGrupoMembresia);
+                    MessageBox.Show("¡Grupo de Membresia Registrado con Exito!", "REGISTRO GRUPO MEMBRESIA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvGrupoMembresia.Rows.Clear();
                 }
                 else
                 {

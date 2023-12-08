@@ -95,7 +95,6 @@
             // panel3
             // 
             panel3.BackColor = Color.LightYellow;
-            panel3.Controls.Add(dtpFechaRegistro);
             panel3.Controls.Add(btnBuscar);
             panel3.Controls.Add(TxbIDMembresia);
             panel3.Controls.Add(button5);
@@ -113,11 +112,14 @@
             // 
             // dtpFechaRegistro
             // 
+            dtpFechaRegistro.Cursor = Cursors.No;
             dtpFechaRegistro.Enabled = false;
-            dtpFechaRegistro.Location = new Point(5, 410);
+            dtpFechaRegistro.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpFechaRegistro.Location = new Point(11, 449);
             dtpFechaRegistro.Name = "dtpFechaRegistro";
-            dtpFechaRegistro.Size = new Size(259, 23);
+            dtpFechaRegistro.Size = new Size(651, 24);
             dtpFechaRegistro.TabIndex = 11;
+            dtpFechaRegistro.Value = new DateTime(2023, 12, 8, 19, 26, 49, 0);
             // 
             // btnBuscar
             // 
@@ -218,6 +220,7 @@
             // panel4
             // 
             panel4.BackColor = Color.Ivory;
+            panel4.Controls.Add(dtpFechaRegistro);
             panel4.Controls.Add(button4);
             panel4.Controls.Add(btnGuardar);
             panel4.Controls.Add(dgvGrupoMembresia);
