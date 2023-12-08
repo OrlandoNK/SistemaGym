@@ -37,12 +37,12 @@
             txtDescripcion = new TextBox();
             errorProvider1 = new ErrorProvider(components);
             dgvListaCliente = new DataGridView();
-            btnNuevo = new Button();
-            btnGuardar = new Button();
-            btnCancelar = new Button();
             IdListaCliente = new DataGridViewTextBoxColumn();
             Nombres = new DataGridViewTextBoxColumn();
             Descripciones = new DataGridViewTextBoxColumn();
+            btnNuevo = new Button();
+            btnGuardar = new Button();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvListaCliente).BeginInit();
             SuspendLayout();
@@ -103,45 +103,18 @@
             // 
             dgvListaCliente.AllowUserToAddRows = false;
             dgvListaCliente.AllowUserToDeleteRows = false;
+            dgvListaCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListaCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvListaCliente.Columns.AddRange(new DataGridViewColumn[] { IdListaCliente, Nombres, Descripciones });
-            dgvListaCliente.Location = new Point(346, 49);
+            dgvListaCliente.Location = new Point(301, 52);
             dgvListaCliente.Name = "dgvListaCliente";
             dgvListaCliente.ReadOnly = true;
+            dgvListaCliente.RowHeadersVisible = false;
             dgvListaCliente.RowTemplate.Height = 25;
-            dgvListaCliente.Size = new Size(347, 150);
+            dgvListaCliente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvListaCliente.Size = new Size(450, 188);
             dgvListaCliente.TabIndex = 6;
             dgvListaCliente.CellContentClick += dgvListaCliente_CellContentClick;
-            // 
-            // btnNuevo
-            // 
-            btnNuevo.Location = new Point(244, 231);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(75, 23);
-            btnNuevo.TabIndex = 7;
-            btnNuevo.Text = "Nuevo";
-            btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click;
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.Location = new Point(379, 230);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(75, 23);
-            btnGuardar.TabIndex = 8;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(482, 231);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 9;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
             // 
             // IdListaCliente
             // 
@@ -163,6 +136,36 @@
             Descripciones.HeaderText = "Descripcion";
             Descripciones.Name = "Descripciones";
             Descripciones.ReadOnly = true;
+            // 
+            // btnNuevo
+            // 
+            btnNuevo.Location = new Point(454, 246);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(95, 30);
+            btnNuevo.TabIndex = 7;
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(555, 246);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(95, 30);
+            btnGuardar.TabIndex = 8;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(656, 246);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(95, 30);
+            btnCancelar.TabIndex = 9;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // frmListaCliente
             // 
