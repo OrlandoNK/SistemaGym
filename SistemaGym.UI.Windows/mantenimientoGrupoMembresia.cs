@@ -140,7 +140,7 @@ namespace SistemaGym.UI.Windows
                 {
                     DataGridViewRow selectRow = dgvGrupoMembresia.SelectedRows[0];
 
-                    int idDelete = Convert.ToInt32(selectRow.Cells["IDMembresia"].Value);
+                    int idDelete = Convert.ToInt32(selectRow.Cells["IDGrupoMembresia"].Value);
                     bool resultado = GrupoMembresiaBLL.Eliminar(idDelete);
 
                     if (resultado)
@@ -160,6 +160,12 @@ namespace SistemaGym.UI.Windows
 
             }
 
+        }
+
+        private void btnagregarMembresia_Click(object sender, EventArgs e)
+        {
+            registrarMembresias membresiasReg = new registrarMembresias();
+            membresiasReg.Show();
         }
     }
 }

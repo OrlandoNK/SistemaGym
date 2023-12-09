@@ -353,6 +353,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap inicializar_2 {
+            get {
+                object obj = ResourceManager.GetObject("inicializar 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap listaMiembros {
             get {
                 object obj = ResourceManager.GetObject("listaMiembros", resourceCulture);
@@ -366,6 +376,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap listaMiembros1 {
             get {
                 object obj = ResourceManager.GetObject("listaMiembros1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nuevaMembresia {
+            get {
+                object obj = ResourceManager.GetObject("nuevaMembresia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -416,6 +436,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap proveedor__2_ {
             get {
                 object obj = ResourceManager.GetObject("proveedor (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SAVE_2 {
+            get {
+                object obj = ResourceManager.GetObject("SAVE 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
+            btnagregarMembresia = new Button();
             btnBuscar = new Button();
             TxbIDMembresia = new TextBox();
             btnQuitar = new Button();
@@ -51,10 +52,9 @@
             dgvGrupoMembresia = new DataGridView();
             IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
-            Estatus = new DataGridViewTextBoxColumn();
             FechaRegistro = new DataGridViewTextBoxColumn();
+            Estatus = new DataGridViewTextBoxColumn();
             errorProvider = new ErrorProvider(components);
-            btnagregarMembresia = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
@@ -114,12 +114,29 @@
             panel3.Size = new Size(268, 478);
             panel3.TabIndex = 2;
             // 
+            // btnagregarMembresia
+            // 
+            btnagregarMembresia.BackColor = Color.Black;
+            btnagregarMembresia.Cursor = Cursors.Hand;
+            btnagregarMembresia.FlatAppearance.BorderColor = Color.Gold;
+            btnagregarMembresia.FlatAppearance.BorderSize = 2;
+            btnagregarMembresia.FlatAppearance.MouseOverBackColor = Color.PaleGoldenrod;
+            btnagregarMembresia.FlatStyle = FlatStyle.Flat;
+            btnagregarMembresia.Image = Properties.Resources.nuevaMembresia;
+            btnagregarMembresia.Location = new Point(137, 73);
+            btnagregarMembresia.Name = "btnagregarMembresia";
+            btnagregarMembresia.Size = new Size(46, 38);
+            btnagregarMembresia.TabIndex = 11;
+            btnagregarMembresia.UseVisualStyleBackColor = false;
+            btnagregarMembresia.Click += btnagregarMembresia_Click;
+            // 
             // btnBuscar
             // 
             btnBuscar.BackColor = Color.Black;
             btnBuscar.Cursor = Cursors.Hand;
             btnBuscar.FlatAppearance.BorderColor = Color.Gold;
             btnBuscar.FlatAppearance.BorderSize = 2;
+            btnBuscar.FlatAppearance.MouseOverBackColor = Color.PaleGoldenrod;
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Image = Properties.Resources.buscar__1_;
             btnBuscar.Location = new Point(189, 61);
@@ -314,16 +331,16 @@
             dgvGrupoMembresia.BackgroundColor = Color.White;
             dgvGrupoMembresia.BorderStyle = BorderStyle.None;
             dgvGrupoMembresia.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.Black;
-            dataGridViewCellStyle7.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.Gold;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvGrupoMembresia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Black;
+            dataGridViewCellStyle2.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Gold;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvGrupoMembresia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvGrupoMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvGrupoMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Estatus, FechaRegistro });
+            dgvGrupoMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, FechaRegistro, Estatus });
             dgvGrupoMembresia.Location = new Point(0, 73);
             dgvGrupoMembresia.Name = "dgvGrupoMembresia";
             dgvGrupoMembresia.ReadOnly = true;
@@ -347,13 +364,6 @@
             Nombre.Name = "Nombre";
             Nombre.ReadOnly = true;
             // 
-            // Estatus
-            // 
-            Estatus.DataPropertyName = "Estatus";
-            Estatus.HeaderText = "Estatus";
-            Estatus.Name = "Estatus";
-            Estatus.ReadOnly = true;
-            // 
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
@@ -361,22 +371,16 @@
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.ReadOnly = true;
             // 
+            // Estatus
+            // 
+            Estatus.DataPropertyName = "Estatus";
+            Estatus.HeaderText = "Estatus";
+            Estatus.Name = "Estatus";
+            Estatus.ReadOnly = true;
+            // 
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
-            // 
-            // btnagregarMembresia
-            // 
-            btnagregarMembresia.Cursor = Cursors.Hand;
-            btnagregarMembresia.FlatAppearance.BorderColor = Color.Gold;
-            btnagregarMembresia.FlatAppearance.BorderSize = 0;
-            btnagregarMembresia.FlatStyle = FlatStyle.Flat;
-            btnagregarMembresia.Image = Properties.Resources.agregar__x24_;
-            btnagregarMembresia.Location = new Point(137, 79);
-            btnagregarMembresia.Name = "btnagregarMembresia";
-            btnagregarMembresia.Size = new Size(38, 32);
-            btnagregarMembresia.TabIndex = 11;
-            btnagregarMembresia.UseVisualStyleBackColor = true;
             // 
             // mantenimientoGrupoMembresia
             // 
@@ -423,10 +427,10 @@
         private Button btnBuscar;
         private DateTimePicker dtpFechaRegistro;
         private Button btnTraerGrupoMembresia;
+        private Button btnagregarMembresia;
         private DataGridViewTextBoxColumn IDMembresia;
         private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Estatus;
         private DataGridViewTextBoxColumn FechaRegistro;
-        private Button btnagregarMembresia;
+        private DataGridViewTextBoxColumn Estatus;
     }
 }
