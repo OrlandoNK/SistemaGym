@@ -253,6 +253,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eliminar_grupoMembresia {
+            get {
+                object obj = ResourceManager.GetObject("eliminar grupoMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap empleado {
             get {
                 object obj = ResourceManager.GetObject("empleado", resourceCulture);
@@ -326,6 +336,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap Guardar_ {
             get {
                 object obj = ResourceManager.GetObject("Guardar-", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap guardar_grupoMembresia {
+            get {
+                object obj = ResourceManager.GetObject("guardar grupoMembresia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -486,6 +506,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap traer_datos {
             get {
                 object obj = ResourceManager.GetObject("traer-datos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap traerMemberGrupo {
+            get {
+                object obj = ResourceManager.GetObject("traerMemberGrupo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
