@@ -29,29 +29,32 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
-            dtpFechaRegistro = new DateTimePicker();
             btnBuscar = new Button();
             TxbIDMembresia = new TextBox();
-            button5 = new Button();
+            btnQuitar = new Button();
             btnAgregar = new Button();
             label3 = new Label();
             cmbxEstatus = new ComboBox();
             label2 = new Label();
             label1 = new Label();
             TxbNombre = new TextBox();
+            dtpFechaRegistro = new DateTimePicker();
             panel4 = new Panel();
-            button4 = new Button();
+            btnTraerGrupoMembresia = new Button();
+            btnEliminar = new Button();
             btnGuardar = new Button();
             dgvGrupoMembresia = new DataGridView();
             IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
-            FechaRegistro = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
+            FechaRegistro = new DataGridViewTextBoxColumn();
             errorProvider = new ErrorProvider(components);
+            btnagregarMembresia = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
@@ -85,7 +88,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.DarkGoldenrod;
+            panel2.BackColor = Color.Gold;
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 75);
             panel2.Name = "panel2";
@@ -94,10 +97,11 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.LightYellow;
+            panel3.BackColor = Color.Beige;
+            panel3.Controls.Add(btnagregarMembresia);
             panel3.Controls.Add(btnBuscar);
             panel3.Controls.Add(TxbIDMembresia);
-            panel3.Controls.Add(button5);
+            panel3.Controls.Add(btnQuitar);
             panel3.Controls.Add(btnAgregar);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(cmbxEstatus);
@@ -110,26 +114,19 @@
             panel3.Size = new Size(268, 478);
             panel3.TabIndex = 2;
             // 
-            // dtpFechaRegistro
-            // 
-            dtpFechaRegistro.Cursor = Cursors.No;
-            dtpFechaRegistro.Enabled = false;
-            dtpFechaRegistro.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            dtpFechaRegistro.Location = new Point(11, 449);
-            dtpFechaRegistro.Name = "dtpFechaRegistro";
-            dtpFechaRegistro.Size = new Size(651, 24);
-            dtpFechaRegistro.TabIndex = 11;
-            dtpFechaRegistro.Value = new DateTime(2023, 12, 8, 19, 26, 49, 0);
-            // 
             // btnBuscar
             // 
+            btnBuscar.BackColor = Color.Black;
             btnBuscar.Cursor = Cursors.Hand;
-            btnBuscar.Image = Properties.Resources.buscar;
-            btnBuscar.Location = new Point(179, 61);
+            btnBuscar.FlatAppearance.BorderColor = Color.Gold;
+            btnBuscar.FlatAppearance.BorderSize = 2;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Image = Properties.Resources.buscar__1_;
+            btnBuscar.Location = new Point(189, 61);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(65, 50);
+            btnBuscar.Size = new Size(55, 50);
             btnBuscar.TabIndex = 9;
-            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
             // 
             // TxbIDMembresia
@@ -142,16 +139,17 @@
             TxbIDMembresia.Size = new Size(106, 24);
             TxbIDMembresia.TabIndex = 10;
             // 
-            // button5
+            // btnQuitar
             // 
-            button5.Anchor = AnchorStyles.None;
-            button5.Cursor = Cursors.Hand;
-            button5.Location = new Point(138, 324);
-            button5.Name = "button5";
-            button5.Size = new Size(106, 29);
-            button5.TabIndex = 7;
-            button5.Text = "&Quitar";
-            button5.UseVisualStyleBackColor = true;
+            btnQuitar.Anchor = AnchorStyles.None;
+            btnQuitar.Cursor = Cursors.Hand;
+            btnQuitar.Location = new Point(138, 324);
+            btnQuitar.Name = "btnQuitar";
+            btnQuitar.Size = new Size(106, 29);
+            btnQuitar.TabIndex = 7;
+            btnQuitar.Text = "&Quitar";
+            btnQuitar.UseVisualStyleBackColor = true;
+            btnQuitar.Click += btnQuitar_Click;
             // 
             // btnAgregar
             // 
@@ -217,11 +215,23 @@
             TxbNombre.Size = new Size(219, 24);
             TxbNombre.TabIndex = 1;
             // 
+            // dtpFechaRegistro
+            // 
+            dtpFechaRegistro.Cursor = Cursors.No;
+            dtpFechaRegistro.Enabled = false;
+            dtpFechaRegistro.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpFechaRegistro.Location = new Point(11, 449);
+            dtpFechaRegistro.Name = "dtpFechaRegistro";
+            dtpFechaRegistro.Size = new Size(651, 24);
+            dtpFechaRegistro.TabIndex = 11;
+            dtpFechaRegistro.Value = new DateTime(2023, 12, 8, 19, 26, 49, 0);
+            // 
             // panel4
             // 
-            panel4.BackColor = Color.Ivory;
+            panel4.BackColor = Color.White;
+            panel4.Controls.Add(btnTraerGrupoMembresia);
             panel4.Controls.Add(dtpFechaRegistro);
-            panel4.Controls.Add(button4);
+            panel4.Controls.Add(btnEliminar);
             panel4.Controls.Add(btnGuardar);
             panel4.Controls.Add(dgvGrupoMembresia);
             panel4.Dock = DockStyle.Fill;
@@ -230,25 +240,69 @@
             panel4.Size = new Size(672, 478);
             panel4.TabIndex = 3;
             // 
-            // button4
+            // btnTraerGrupoMembresia
             // 
-            button4.Cursor = Cursors.Hand;
-            button4.Location = new Point(535, 388);
-            button4.Name = "button4";
-            button4.Size = new Size(127, 38);
-            button4.TabIndex = 8;
-            button4.Text = "&Eliminar";
-            button4.UseVisualStyleBackColor = true;
+            btnTraerGrupoMembresia.BackColor = Color.Black;
+            btnTraerGrupoMembresia.Cursor = Cursors.Hand;
+            btnTraerGrupoMembresia.FlatAppearance.BorderColor = Color.Gold;
+            btnTraerGrupoMembresia.FlatAppearance.BorderSize = 2;
+            btnTraerGrupoMembresia.FlatAppearance.MouseOverBackColor = Color.PaleGoldenrod;
+            btnTraerGrupoMembresia.FlatStyle = FlatStyle.Flat;
+            btnTraerGrupoMembresia.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTraerGrupoMembresia.ForeColor = Color.Gold;
+            btnTraerGrupoMembresia.Image = Properties.Resources.traer_datos;
+            btnTraerGrupoMembresia.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTraerGrupoMembresia.Location = new Point(437, 21);
+            btnTraerGrupoMembresia.Name = "btnTraerGrupoMembresia";
+            btnTraerGrupoMembresia.Size = new Size(225, 46);
+            btnTraerGrupoMembresia.TabIndex = 12;
+            btnTraerGrupoMembresia.Text = "&Traer Grupos de Membresia";
+            btnTraerGrupoMembresia.TextAlign = ContentAlignment.MiddleRight;
+            btnTraerGrupoMembresia.UseVisualStyleBackColor = false;
+            btnTraerGrupoMembresia.Click += btnTraerGrupoMembresia_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.Black;
+            btnEliminar.Cursor = Cursors.Hand;
+            btnEliminar.FlatAppearance.BorderColor = Color.Gold;
+            btnEliminar.FlatAppearance.BorderSize = 2;
+            btnEliminar.FlatAppearance.MouseOverBackColor = Color.PaleGoldenrod;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminar.ForeColor = Color.Gold;
+            btnEliminar.Image = Properties.Resources.Eliminar;
+            btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminar.Location = new Point(533, 388);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Padding = new Padding(5, 0, 0, 0);
+            btnEliminar.Size = new Size(127, 55);
+            btnEliminar.TabIndex = 8;
+            btnEliminar.Text = "&Eliminar";
+            btnEliminar.TextAlign = ContentAlignment.MiddleRight;
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
+            btnGuardar.BackColor = Color.Black;
             btnGuardar.Cursor = Cursors.Hand;
-            btnGuardar.Location = new Point(402, 388);
+            btnGuardar.FlatAppearance.BorderColor = Color.Gold;
+            btnGuardar.FlatAppearance.BorderSize = 2;
+            btnGuardar.FlatAppearance.MouseOverBackColor = Color.PaleGoldenrod;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardar.ForeColor = Color.Gold;
+            btnGuardar.Image = Properties.Resources.Guardar_;
+            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardar.Location = new Point(400, 388);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(127, 38);
+            btnGuardar.Padding = new Padding(5, 0, 0, 0);
+            btnGuardar.Size = new Size(127, 55);
             btnGuardar.TabIndex = 7;
             btnGuardar.Text = "&Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
+            btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // dgvGrupoMembresia
@@ -257,15 +311,26 @@
             dgvGrupoMembresia.AllowUserToDeleteRows = false;
             dgvGrupoMembresia.AllowUserToOrderColumns = true;
             dgvGrupoMembresia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvGrupoMembresia.BackgroundColor = Color.White;
+            dgvGrupoMembresia.BorderStyle = BorderStyle.None;
+            dgvGrupoMembresia.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.Black;
+            dataGridViewCellStyle7.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.Gold;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvGrupoMembresia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvGrupoMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvGrupoMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, FechaRegistro, Estatus });
-            dgvGrupoMembresia.Location = new Point(11, 73);
+            dgvGrupoMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Estatus, FechaRegistro });
+            dgvGrupoMembresia.Location = new Point(0, 73);
             dgvGrupoMembresia.Name = "dgvGrupoMembresia";
             dgvGrupoMembresia.ReadOnly = true;
             dgvGrupoMembresia.RowHeadersVisible = false;
             dgvGrupoMembresia.RowTemplate.Height = 25;
             dgvGrupoMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvGrupoMembresia.Size = new Size(651, 309);
+            dgvGrupoMembresia.Size = new Size(672, 309);
             dgvGrupoMembresia.TabIndex = 0;
             // 
             // IDMembresia
@@ -282,13 +347,6 @@
             Nombre.Name = "Nombre";
             Nombre.ReadOnly = true;
             // 
-            // FechaRegistro
-            // 
-            FechaRegistro.DataPropertyName = "FechaRegistro";
-            FechaRegistro.HeaderText = "FechaRegistro";
-            FechaRegistro.Name = "FechaRegistro";
-            FechaRegistro.ReadOnly = true;
-            // 
             // Estatus
             // 
             Estatus.DataPropertyName = "Estatus";
@@ -296,9 +354,29 @@
             Estatus.Name = "Estatus";
             Estatus.ReadOnly = true;
             // 
+            // FechaRegistro
+            // 
+            FechaRegistro.DataPropertyName = "FechaRegistro";
+            FechaRegistro.HeaderText = "FechaRegistro";
+            FechaRegistro.Name = "FechaRegistro";
+            FechaRegistro.ReadOnly = true;
+            // 
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
+            // 
+            // btnagregarMembresia
+            // 
+            btnagregarMembresia.Cursor = Cursors.Hand;
+            btnagregarMembresia.FlatAppearance.BorderColor = Color.Gold;
+            btnagregarMembresia.FlatAppearance.BorderSize = 0;
+            btnagregarMembresia.FlatStyle = FlatStyle.Flat;
+            btnagregarMembresia.Image = Properties.Resources.agregar__x24_;
+            btnagregarMembresia.Location = new Point(137, 79);
+            btnagregarMembresia.Name = "btnagregarMembresia";
+            btnagregarMembresia.Size = new Size(38, 32);
+            btnagregarMembresia.TabIndex = 11;
+            btnagregarMembresia.UseVisualStyleBackColor = true;
             // 
             // mantenimientoGrupoMembresia
             // 
@@ -337,16 +415,18 @@
         private ComboBox cmbxEstatus;
         private DataGridView dgvGrupoMembresia;
         private Button btnAgregar;
-        private Button button4;
+        private Button btnEliminar;
         private Button btnGuardar;
-        private Button button5;
+        private Button btnQuitar;
         private ErrorProvider errorProvider;
         private TextBox TxbIDMembresia;
-        private DataGridViewTextBoxColumn IDMembresia;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn FechaRegistro;
-        private DataGridViewTextBoxColumn Estatus;
         private Button btnBuscar;
         private DateTimePicker dtpFechaRegistro;
+        private Button btnTraerGrupoMembresia;
+        private DataGridViewTextBoxColumn IDMembresia;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Estatus;
+        private DataGridViewTextBoxColumn FechaRegistro;
+        private Button btnagregarMembresia;
     }
 }

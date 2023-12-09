@@ -39,7 +39,7 @@ namespace SistemaGym.UI.Windows
 
             if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(estatus))
             {
-                errorProvider.SetError(btnAgregar, "Complete los Campoes Correspondientes");
+                errorProvider.SetError(btnAgregar, "Complete los Campos Correspondientes");
                 return;
             }
 
@@ -83,6 +83,7 @@ namespace SistemaGym.UI.Windows
         private void mantenimientoGrupoMembresia_Load(object sender, EventArgs e)
         {
             dtpFechaRegistro.Value = DateTime.Now;
+            dgvGrupoMembresia.AutoGenerateColumns = true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -106,6 +107,59 @@ namespace SistemaGym.UI.Windows
                     MessageBox.Show("Error al Guardar el Grupo de Membresia", "Error de Guardado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            if (dgvGrupoMembresia.SelectedRows.Count > 0)
+            {
+                DataGridViewRow removerFila = dgvGrupoMembresia.SelectedRows[0];
+                dgvGrupoMembresia.Rows.Remove(removerFila);
+            }
+            else
+            {
+                MessageBox.Show("Primero debe seleccionar un Grupo de Membresia de la lista antes de eliminarlo. Por favor, seleccione el Grupo de Membresia que desea eliminar", "Error al intentar eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnTraerGrupoMembresia_Click(object sender, EventArgs e)
+        {
+            dgvGrupoMembresia.DataSource = GrupoMembresiaBLL.MostrarGrupoMembresia();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            GrupoMembresiaBLL grupoMembresiaBLL = new GrupoMembresiaBLL();
+
+            DialogResult resultDialog = MessageBox.Show("¿Seguro que desea eliminar a este Grupo de Membresia?", "¿Eliminar Grupo de Membresia?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultDialog == DialogResult.Yes)
+            {
+                if (dgvGrupoMembresia.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow selectRow = dgvGrupoMembresia.SelectedRows[0];
+
+                    int idDelete = Convert.ToInt32(selectRow.Cells["IDMembresia"].Value);
+                    bool resultado = GrupoMembresiaBLL.Eliminar(idDelete);
+
+                    if (resultado)
+                    {
+                        MessageBox.Show("¡Grupo de Membresia Eliminado con Éxito!", "GRUPO DE MEMBRESIA ELIMINADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvGrupoMembresia.DataSource = GrupoMembresiaBLL.MostrarGrupoMembresia();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al tratar de eliminar el Grupo de Membresia", "Error de Eliminación de Grupo de Membresia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            if (resultDialog == DialogResult.No)
+            {
+
+            }
+
         }
     }
 }

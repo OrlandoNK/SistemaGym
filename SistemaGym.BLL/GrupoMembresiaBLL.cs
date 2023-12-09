@@ -26,11 +26,11 @@ namespace SistemaGym.BLL
                 GrupoMembresiaDAL.ActualizarGrupoMembresia(grupoMembresia);
             }
         }
-        public static bool Eliminar(GrupoMembresiaEntity grupoMembresia)
+        public static bool Eliminar(int Id)
         {
-            return GrupoMembresiaDAL.EliminarGrupoMembresia(grupoMembresia);
+            return GrupoMembresiaDAL.EliminarGrupoMembresia(Id);
         }
-        public static DataTable MostrarGrupoMembresia(GrupoMembresiaEntity grupoMembresia)
+        public static DataTable MostrarGrupoMembresia()
         {
             return GrupoMembresiaDAL.MostrarGrupoMembresia();
         }
