@@ -38,9 +38,9 @@ namespace SistemaGym.BLL
             return ProductoDAL.mostrarProductos();
         }
 
-        public static DataTable searchById(ProductoEntity producto)
+        public static ProductoEntity searchById(int id)
         {
-            return ProductoDAL.BuscarByID(producto);
+            return ProductoDAL.BuscarByID(id);
         }
 
         public static DataTable GetByValor(ProductoEntity producto)
