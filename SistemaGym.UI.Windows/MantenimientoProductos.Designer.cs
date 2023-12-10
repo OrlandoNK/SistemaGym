@@ -218,6 +218,7 @@
             // 
             // IDCategoria
             // 
+            IDCategoria.DataPropertyName = "IDCategoria";
             IDCategoria.HeaderText = "Categoria";
             IDCategoria.Name = "IDCategoria";
             IDCategoria.ReadOnly = true;

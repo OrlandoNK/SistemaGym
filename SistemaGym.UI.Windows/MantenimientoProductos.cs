@@ -46,11 +46,11 @@ namespace SistemaGym.UI.Windows
             cbCategoria.DisplayMember = "Nombre";
 
             var colCategoria = (DataGridViewComboBoxColumn)dgvProductos.Columns["IDCategoria"];
-
+            colCategoria.DataSource = CategoriaProductoBLL.Mostrar();
             colCategoria.ValueMember = "IDCategoria";
             colCategoria.DisplayMember = "Nombre";
             colCategoria.DataPropertyName = "IDCategoria";
-            colCategoria.DataSource = CategoriaProductoBLL.Mostrar();
+
 
         }
         private void CargarProveedor()
@@ -125,10 +125,7 @@ namespace SistemaGym.UI.Windows
             return resultado;
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
