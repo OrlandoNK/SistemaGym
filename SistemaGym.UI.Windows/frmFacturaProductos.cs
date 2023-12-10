@@ -69,14 +69,18 @@ namespace SistemaGym.UI.Windows
             txtIDCliente.Text = "0";
             txtIDFactura.Text = "0";
             txtIDProducto.Text = "0";
-            txtDescuento.Clear();
+            txtDescuento.Text = 0.ToString("C");
             txtDocumento.Clear();
-            txtImpuesto.Text = "0";
-            txtSubTotal.Text = "0";
-            txtTotal.Text = "0";
+            txtImpuesto.Text = 0.ToString("C");
+            txtSubTotal.Text = 0.ToString("C");
+            txtTotal.Text = 0.ToString("C");
             txtProducto.Clear();
-            txtTotalDescuento.Text = "0";
+            txtCantidad.Text = 0.ToString("C");
+            txtTotalDescuento.Text = 0.ToString("C");
             txtNCF.Clear();
+            dgvProductos.AutoGenerateColumns = false;
+            dgvProductos.DataSource = null;
+            
 
         }
 
@@ -117,7 +121,7 @@ namespace SistemaGym.UI.Windows
             dgvProductos.DataSource = null;
             dgvProductos.DataSource = oFactura.Detalles;
             txtSubTotal.Text = oFactura.SubTotal.ToString();
-            txtTotalDescuento.Text= oFactura.TotalDescuento.ToString();
+            txtTotalDescuento.Text = oFactura.TotalDescuento.ToString();
             txtImpuesto.Text = oFactura.TotalItbis.ToString();
             txtTotal.Text = oFactura.Total.ToString();
             InicializarDetalles();
@@ -126,11 +130,16 @@ namespace SistemaGym.UI.Windows
         {
             txtIDProducto.Text = "0";
             txtProducto.Clear();
-            txtCantidad.Text= "0";
-            txtPrecio.Text= "0";
+            txtCantidad.Text = "0";
+            txtPrecio.Text = "0";
             txtDescuento.Text = "0";
 
 
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            InicializarControles();
         }
     }
 }
