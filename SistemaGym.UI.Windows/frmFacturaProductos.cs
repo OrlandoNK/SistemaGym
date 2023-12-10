@@ -62,6 +62,16 @@ namespace SistemaGym.UI.Windows
                 MessageBox.Show("Por Favor Agregue el Producto", SISTEMA);
                 resultado = false;
             }
+            if (txtCantidad.Text == "0")
+            {
+                MessageBox.Show("Por Favor Agregue La Cantidad", SISTEMA);
+                resultado = false;
+            }
+            else if (string.IsNullOrEmpty(txtCantidad.Text))
+            {
+                errorProvider.SetError(txtCantidad, "La Cantidad Es Obligatoria");
+                resultado = false;
+            }
 
             return resultado;
         }
@@ -79,10 +89,10 @@ namespace SistemaGym.UI.Windows
             txtProducto.Clear();
             txtCantidad.Text = "0";
             txtTotalDescuento.Text = 0.ToString("N2");
-            txtNCF.Clear();
+            txtNCF.Text = "B0100000005";
             dgvProductos.AutoGenerateColumns = false;
             dgvProductos.DataSource = null;
-           
+
 
         }
 
