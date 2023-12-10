@@ -120,7 +120,17 @@ namespace SistemaGym.UI.Windows
             txtTotalDescuento.Text= oFactura.TotalDescuento.ToString();
             txtImpuesto.Text = oFactura.TotalItbis.ToString();
             txtTotal.Text = oFactura.Total.ToString();
-            InicializarControles();
+            InicializarDetalles();
+        }
+        private void InicializarDetalles()
+        {
+            txtIDProducto.Text = "0";
+            txtProducto.Clear();
+            txtCantidad.Text= "0";
+            txtPrecio.Text= "0";
+            txtDescuento.Text = "0";
+
+
         }
     }
 }
