@@ -30,7 +30,6 @@
         {
             txtBuscarUsuario = new TextBox();
             dgvBuscarUsuarios = new DataGridView();
-            label1 = new Label();
             IDUsuario = new DataGridViewTextBoxColumn();
             IDRol = new DataGridViewComboBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -42,6 +41,7 @@
             NombreUsuario = new DataGridViewTextBoxColumn();
             Contrasena = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvBuscarUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -66,17 +66,9 @@
             dgvBuscarUsuarios.Size = new Size(935, 456);
             dgvBuscarUsuarios.TabIndex = 4;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(117, 48);
-            label1.Name = "label1";
-            label1.Size = new Size(160, 15);
-            label1.TabIndex = 3;
-            label1.Text = "Introduzca los datos a buscar";
-            // 
             // IDUsuario
             // 
+            IDUsuario.DataPropertyName = "IDUsuario";
             IDUsuario.HeaderText = "ID";
             IDUsuario.Name = "IDUsuario";
             IDUsuario.ReadOnly = true;
@@ -91,57 +83,75 @@
             // 
             // Nombre
             // 
+            Nombre.DataPropertyName = "Nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
             Nombre.ReadOnly = true;
             // 
             // Apellido
             // 
+            Apellido.DataPropertyName = "Apellido";
             Apellido.HeaderText = "Apellido";
             Apellido.Name = "Apellido";
             Apellido.ReadOnly = true;
             // 
             // Sexo
             // 
+            Sexo.DataPropertyName = "Sexo";
             Sexo.HeaderText = "Sexo";
             Sexo.Name = "Sexo";
             Sexo.ReadOnly = true;
             // 
             // Correo
             // 
+            Correo.DataPropertyName = "Correo";
             Correo.HeaderText = "Correo";
             Correo.Name = "Correo";
             Correo.ReadOnly = true;
             // 
             // Direccion
             // 
+            Direccion.DataPropertyName = "Direccion";
             Direccion.HeaderText = "Direccion";
             Direccion.Name = "Direccion";
             Direccion.ReadOnly = true;
             // 
             // FechaRegistro
             // 
+            FechaRegistro.DataPropertyName = "FechaRegistro";
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.ReadOnly = true;
             // 
             // NombreUsuario
             // 
+            NombreUsuario.DataPropertyName = "NombreUsuario";
             NombreUsuario.HeaderText = "NombreUsuario";
             NombreUsuario.Name = "NombreUsuario";
             NombreUsuario.ReadOnly = true;
             // 
             // Contrasena
             // 
+            Contrasena.DataPropertyName = "Contrasena";
             Contrasena.HeaderText = "Contraseña";
             Contrasena.Name = "Contrasena";
             Contrasena.ReadOnly = true;
             // 
             // Estatus
             // 
+            Estatus.DataPropertyName = "Estatus";
             Estatus.HeaderText = "Estatus";
             Estatus.Name = "Estatus";
             Estatus.ReadOnly = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(117, 48);
+            label1.Name = "label1";
+            label1.Size = new Size(160, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Introduzca los datos a buscar";
             // 
             // frmBuscarUsuario
             // 
@@ -153,6 +163,7 @@
             Controls.Add(label1);
             Name = "frmBuscarUsuario";
             Text = "frmBuscarUsuario";
+            Load += frmBuscarUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)dgvBuscarUsuarios).EndInit();
             ResumeLayout(false);
             PerformLayout();

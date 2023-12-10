@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGym.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,20 @@ namespace SistemaGym.UI.Windows
             set { }
 
         }
+        public void CargarRol()
+        {
+            var colRol = (DataGridViewComboBoxColumn)dgvBuscarUsuarios.Columns["IDRol"];
+            colRol.DataPropertyName = "IDRol";
+            colRol.DataSource = RolBLL.MostrarRol();
+            colRol.ValueMember = "IDRol";
+            colRol.DisplayMember = "Nombre";
+        }
 
-
+        private void frmBuscarUsuario_Load(object sender, EventArgs e)
+        {
+            dgvBuscarUsuarios.AutoGenerateColumns = false;
+            dgvBuscarUsuarios.DataSource = UsuarioBLL.Mostrar();
+            CargarRol();
+        }
     }
 }
