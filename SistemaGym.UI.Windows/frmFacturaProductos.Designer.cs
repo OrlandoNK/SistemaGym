@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             label1 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -40,6 +40,7 @@
             dtpFechaEmision = new DateTimePicker();
             dtpFechaVencimiento = new DateTimePicker();
             groupBox1 = new GroupBox();
+            txtDocumento = new TextBox();
             btnBuscarCliente = new Button();
             txtTipoCliente = new TextBox();
             txtCliente = new TextBox();
@@ -53,7 +54,7 @@
             txtNCF = new TextBox();
             label19 = new Label();
             label18 = new Label();
-            button2 = new Button();
+            btnBuscarUsuario = new Button();
             txtIDFactura = new TextBox();
             txtUsuario = new TextBox();
             dataGridView1 = new DataGridView();
@@ -89,7 +90,6 @@
             txtImpuesto = new TextBox();
             txtTotalDescuento = new TextBox();
             txtTotal = new TextBox();
-            txtDocumento = new TextBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -163,6 +163,15 @@
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Cliente";
+            // 
+            // txtDocumento
+            // 
+            txtDocumento.Location = new Point(244, 48);
+            txtDocumento.Multiline = true;
+            txtDocumento.Name = "txtDocumento";
+            txtDocumento.ReadOnly = true;
+            txtDocumento.Size = new Size(100, 21);
+            txtDocumento.TabIndex = 15;
             // 
             // btnBuscarCliente
             // 
@@ -243,7 +252,7 @@
             groupBox2.Controls.Add(txtNCF);
             groupBox2.Controls.Add(label19);
             groupBox2.Controls.Add(label18);
-            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(btnBuscarUsuario);
             groupBox2.Controls.Add(txtIDFactura);
             groupBox2.Controls.Add(txtUsuario);
             groupBox2.Controls.Add(label3);
@@ -294,14 +303,14 @@
             label18.TabIndex = 16;
             label18.Text = "NCF";
             // 
-            // button2
+            // btnBuscarUsuario
             // 
-            button2.Location = new Point(170, 46);
-            button2.Name = "button2";
-            button2.Size = new Size(51, 23);
-            button2.TabIndex = 15;
-            button2.Text = "Buscar";
-            button2.UseVisualStyleBackColor = true;
+            btnBuscarUsuario.Location = new Point(170, 46);
+            btnBuscarUsuario.Name = "btnBuscarUsuario";
+            btnBuscarUsuario.Size = new Size(51, 23);
+            btnBuscarUsuario.TabIndex = 15;
+            btnBuscarUsuario.Text = "Buscar";
+            btnBuscarUsuario.UseVisualStyleBackColor = true;
             // 
             // txtIDFactura
             // 
@@ -353,9 +362,9 @@
             // Precio
             // 
             Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle6;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
@@ -370,9 +379,9 @@
             // Subtotal
             // 
             Subtotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle7;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
             Subtotal.ReadOnly = true;
@@ -380,9 +389,9 @@
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle8;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
@@ -390,9 +399,9 @@
             // Impuesto
             // 
             Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle9;
             Impuesto.HeaderText = "Impuesto";
             Impuesto.Name = "Impuesto";
             Impuesto.ReadOnly = true;
@@ -400,9 +409,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle10;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
@@ -642,15 +651,6 @@
             txtTotal.Size = new Size(89, 33);
             txtTotal.TabIndex = 24;
             // 
-            // txtDocumento
-            // 
-            txtDocumento.Location = new Point(244, 48);
-            txtDocumento.Multiline = true;
-            txtDocumento.Name = "txtDocumento";
-            txtDocumento.ReadOnly = true;
-            txtDocumento.Size = new Size(100, 21);
-            txtDocumento.TabIndex = 15;
-            // 
             // frmFacturaProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -729,7 +729,7 @@
         private TextBox txtTotalDescuento;
         private TextBox txtTotal;
         private Button btnBuscarCliente;
-        private Button button2;
+        private Button btnBuscarUsuario;
         private DataGridViewTextBoxColumn IDDetalle;
         private DataGridViewComboBoxColumn IDProducto;
         private DataGridViewTextBoxColumn Precio;

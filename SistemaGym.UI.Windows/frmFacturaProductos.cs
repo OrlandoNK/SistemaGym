@@ -30,11 +30,9 @@ namespace SistemaGym.UI.Windows
                 txtCliente.Text = cliente.Nombre;
                 txtDocumento.Text = cliente.Documento;
                 txtTipoCliente.Text = cliente.TipoCliente.ToString();
-               
-
-
 
             }
+            
         }
     }
 }

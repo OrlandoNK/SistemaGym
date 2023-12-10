@@ -66,6 +66,7 @@
             dgvBuscarUsuarios.RowTemplate.Height = 25;
             dgvBuscarUsuarios.Size = new Size(935, 456);
             dgvBuscarUsuarios.TabIndex = 4;
+            dgvBuscarUsuarios.CellDoubleClick += dgvBuscarUsuarios_CellDoubleClick;
             // 
             // IDUsuario
             // 
