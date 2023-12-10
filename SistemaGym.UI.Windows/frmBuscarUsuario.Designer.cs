@@ -52,6 +52,7 @@
             txtBuscarUsuario.Name = "txtBuscarUsuario";
             txtBuscarUsuario.Size = new Size(354, 20);
             txtBuscarUsuario.TabIndex = 5;
+            txtBuscarUsuario.TextChanged += txtBuscarUsuario_TextChanged;
             // 
             // dgvBuscarUsuarios
             // 

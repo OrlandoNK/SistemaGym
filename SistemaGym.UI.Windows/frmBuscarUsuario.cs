@@ -1,4 +1,5 @@
 ﻿using SistemaGym.BLL;
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,30 @@ namespace SistemaGym.UI.Windows
             dgvBuscarUsuarios.AutoGenerateColumns = false;
             dgvBuscarUsuarios.DataSource = UsuarioBLL.Mostrar();
             CargarRol();
+        }
+
+        private void txtBuscarUsuario_TextChanged(object sender, EventArgs e)
+        {
+            var textoBusqueda = txtBuscarUsuario.Text;
+
+
+           UsuarioEntity usuarioBusqueda = new UsuarioEntity("","");
+            usuarioBusqueda.Nombre = textoBusqueda;
+            usuarioBusqueda.Apellido = textoBusqueda;
+            usuarioBusqueda.Apellido = textoBusqueda;
+            usuarioBusqueda.Sexo = textoBusqueda;
+            int idRol;
+            if (int.TryParse(textoBusqueda, out idRol))
+            {
+                usuarioBusqueda.IDRol = idRol;
+            }
+            usuarioBusqueda.Direccion = textoBusqueda;
+            usuarioBusqueda.NombreUsuario = textoBusqueda;
+            usuarioBusqueda.Estatus = textoBusqueda;
+          
+
+            dgvBuscarUsuarios.DataSource = UsuarioBLL.ObtenerPorValor(usuarioBusqueda);
+
         }
     }
 }
