@@ -103,6 +103,7 @@ namespace SistemaGym.DAL
 
             string Buscar = "SELECT * FROM Productos WHERE IDProducto = @IDProducto";
             SqlCommand cmd = new SqlCommand(Buscar, Conexion);
+            cmd.Parameters.AddWithValue("@IDProducto", id);
             SqlDataReader reader = cmd.ExecuteReader();
            ProductoEntity productoEncontrado = null;
 
@@ -111,6 +112,7 @@ namespace SistemaGym.DAL
                 productoEncontrado = new ProductoEntity();
                 productoEncontrado.IDProducto = Convert.ToInt32(reader["IDProducto"]);
                 productoEncontrado.Nombre = reader["Nombre"].ToString();
+                productoEncontrado.PrecioUnitario = Convert.ToInt32(reader["PrecioUnitario"]);
 
 
 

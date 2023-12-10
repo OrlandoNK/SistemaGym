@@ -75,7 +75,7 @@
             txtCantidad = new TextBox();
             txtPrecio = new TextBox();
             txtProducto = new TextBox();
-            txtIDDetalle = new TextBox();
+            txtIDProducto = new TextBox();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
@@ -429,7 +429,7 @@
             groupBox3.Controls.Add(txtCantidad);
             groupBox3.Controls.Add(txtPrecio);
             groupBox3.Controls.Add(txtProducto);
-            groupBox3.Controls.Add(txtIDDetalle);
+            groupBox3.Controls.Add(txtIDProducto);
             groupBox3.Controls.Add(label12);
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(label10);
@@ -439,7 +439,7 @@
             groupBox3.Size = new Size(929, 103);
             groupBox3.TabIndex = 13;
             groupBox3.TabStop = false;
-            groupBox3.Text = "Detalles Factura";
+            groupBox3.Text = "Detalles Producto";
             // 
             // btnAgregar
             // 
@@ -458,6 +458,7 @@
             btnBuscarProducto.TabIndex = 10;
             btnBuscarProducto.Text = "Buscar";
             btnBuscarProducto.UseVisualStyleBackColor = true;
+            btnBuscarProducto.Click += btnBuscarProducto_Click;
             // 
             // label13
             // 
@@ -496,21 +497,21 @@
             // 
             // txtProducto
             // 
-            txtProducto.Location = new Point(115, 62);
+            txtProducto.Location = new Point(117, 57);
             txtProducto.Multiline = true;
             txtProducto.Name = "txtProducto";
             txtProducto.ReadOnly = true;
-            txtProducto.Size = new Size(180, 17);
+            txtProducto.Size = new Size(180, 27);
             txtProducto.TabIndex = 5;
             // 
-            // txtIDDetalle
+            // txtIDProducto
             // 
-            txtIDDetalle.Location = new Point(6, 62);
-            txtIDDetalle.Multiline = true;
-            txtIDDetalle.Name = "txtIDDetalle";
-            txtIDDetalle.ReadOnly = true;
-            txtIDDetalle.Size = new Size(90, 17);
-            txtIDDetalle.TabIndex = 4;
+            txtIDProducto.Location = new Point(6, 62);
+            txtIDProducto.Multiline = true;
+            txtIDProducto.Name = "txtIDProducto";
+            txtIDProducto.ReadOnly = true;
+            txtIDProducto.Size = new Size(90, 17);
+            txtIDProducto.TabIndex = 4;
             // 
             // label12
             // 
@@ -546,11 +547,11 @@
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
-            label9.Location = new Point(20, 39);
+            label9.Location = new Point(40, 39);
             label9.Name = "label9";
-            label9.Size = new Size(57, 15);
+            label9.Size = new Size(18, 15);
             label9.TabIndex = 0;
-            label9.Text = "ID Detalle";
+            label9.Text = "ID";
             // 
             // btnNuevo
             // 
@@ -681,6 +682,7 @@
             Controls.Add(groupBox1);
             Name = "frmFacturaProductos";
             Text = "Factura Productos";
+            Load += frmFacturaProductos_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -719,7 +721,7 @@
         private Label label10;
         private Label label9;
         private TextBox txtProducto;
-        private TextBox txtIDDetalle;
+        private TextBox txtIDProducto;
         private Label label13;
         private TextBox txtDescuento;
         private TextBox txtCantidad;

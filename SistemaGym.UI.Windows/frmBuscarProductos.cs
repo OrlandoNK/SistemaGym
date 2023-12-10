@@ -44,7 +44,7 @@ namespace SistemaGym.UI.Windows
             dgvBuscarProductos.DataSource = ProductoBLL.GetByValor(productoBusqueda);
 
         }
-        private int id
+        public int id
         {
             get { return idProducto; }
             set { }

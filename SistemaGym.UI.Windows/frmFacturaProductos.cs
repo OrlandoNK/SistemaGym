@@ -54,12 +54,12 @@ namespace SistemaGym.UI.Windows
             //inicializando los mensajes de validaciones
             errorProvider.Clear();
             //verificar que en los campos obligatorios hayan datos
-            if (txtIDDetalle.Text == "0")
+            if (txtIDProducto.Text == "0")
             {
-                errorProvider.SetError(txtIDDetalle, "El Nombre Es Obligatorio");
+                errorProvider.SetError(txtIDProducto, "El Nombre Es Obligatorio");
                 resultado = false;
             }
-          
+
             return resultado;
         }
         private void InicializarControles()
@@ -67,7 +67,7 @@ namespace SistemaGym.UI.Windows
             txtCliente.Clear();
             txtIDCliente.Text = "0";
             txtIDFactura.Text = "0";
-            txtIDDetalle.Text = "0";
+            txtIDProducto.Text = "0";
             txtDescuento.Clear();
             txtDocumento.Clear();
             txtImpuesto.Text = "0";
@@ -76,6 +76,27 @@ namespace SistemaGym.UI.Windows
             txtProducto.Clear();
             txtTotalDescuento.Text = "0";
             txtNCF.Clear();
+
+        }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            frmBuscarProductos frmBuscarProductos = new frmBuscarProductos();
+            if (frmBuscarProductos.ShowDialog() == DialogResult.OK)
+            {
+
+                ProductoEntity producto = ProductoBLL.searchById(frmBuscarProductos.id);
+                txtIDProducto.Text = producto.IDProducto.ToString();
+                txtProducto.Text = producto.Nombre;
+                txtPrecio.Text = Convert.ToDecimal(producto.PrecioUnitario).ToString();
+
+
+            }
+        }
+
+        private void frmFacturaProductos_Load(object sender, EventArgs e)
+        {
+            InicializarControles();
         }
     }
 }

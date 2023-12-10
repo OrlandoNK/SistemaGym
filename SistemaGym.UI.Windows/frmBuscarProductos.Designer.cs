@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtBuscarProducto = new TextBox();
             dgvBuscarProductos = new DataGridView();
             IDProducto = new DataGridViewTextBoxColumn();
@@ -97,9 +97,9 @@
             // PrecioUnitario
             // 
             PrecioUnitario.DataPropertyName = "PrecioUnitario";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle2;
             PrecioUnitario.HeaderText = "PrecioUnitario";
             PrecioUnitario.Name = "PrecioUnitario";
             PrecioUnitario.ReadOnly = true;
