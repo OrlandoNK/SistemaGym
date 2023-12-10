@@ -33,9 +33,9 @@ namespace SistemaGym.BLL
             }      
        }
 
-        public static bool Eliminar(UsuarioEntity usuario)
+        public static bool Eliminar(int idUsuario)
         {
-            return UsuarioDAL.EliminarUsuario(usuario);
+            return UsuarioDAL.EliminarUsuario(idUsuario);
         }
 
         public static DataTable Mostrar()

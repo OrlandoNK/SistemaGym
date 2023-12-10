@@ -58,7 +58,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string actualizar = "Update Usuarios set IDRol =@idrol, Nombre =@nombre, Apellido =@apellido, Sexo =@sexo, Correo =@correo, Direccion =@direccion, " +
-                "FechaRegistro =@fecharegistro, Nombreusuario =@nombreusuario, Contrasena =@contrasena, Estatus =@estatus";
+                "FechaRegistro =@fecharegistro, Nombreusuario =@nombreusuario, Contrasena =@contrasena, Estatus =@estatus where IDUsuario = @idusuario";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
@@ -70,13 +70,14 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
             cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
             cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
+            cmd.Parameters.AddWithValue("@idusuario", usuario.IDUsuario);
             cmd.ExecuteNonQuery();
 
 
         }
         //funcion eliminar usuario
 
-        public static bool EliminarUsuario(UsuarioEntity usuario)
+        public static bool EliminarUsuario(int idUsuario)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -87,7 +88,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string Eliminar = "Delete from Usuarios where IDUsuario= @idusuario";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idusuario", usuario.IDUsuario);
+            cmd.Parameters.AddWithValue("@idusuario", idUsuario);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
