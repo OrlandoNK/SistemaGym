@@ -70,14 +70,14 @@ namespace SistemaGym.UI.Windows
             txtIDCliente.Text = "0";
             txtIDFactura.Text = "0";
             txtIDProducto.Text = "0";
-            txtDescuento.Text = 0.ToString("C");
+            txtDescuento.Text = 0.ToString("N2");
             txtDocumento.Clear();
-            txtImpuesto.Text = 0.ToString("C");
-            txtSubTotal.Text = 0.ToString("C");
-            txtTotal.Text = 0.ToString("C");
+            txtImpuesto.Text = 0.ToString("N2");
+            txtSubTotal.Text = 0.ToString("N2");
+            txtTotal.Text = 0.ToString("N2");
             txtProducto.Clear();
             txtCantidad.Text = "0";
-            txtTotalDescuento.Text = 0.ToString("C");
+            txtTotalDescuento.Text = 0.ToString("N2");
             txtNCF.Clear();
             dgvProductos.AutoGenerateColumns = false;
             dgvProductos.DataSource = null;
@@ -134,7 +134,17 @@ namespace SistemaGym.UI.Windows
             txtCantidad.Text = "0";
             txtPrecio.Text = "0";
             txtDescuento.Text = "0";
+           
 
+
+        }
+        public void CargarProducto()
+        {
+            var colProducto = (DataGridViewComboBoxColumn)dgvProductos.Columns["IDProducto"];
+            colProducto.DataSource = ProductoBLL.GetAll();
+            colProducto.ValueMember = "IDProducto";
+            colProducto.DisplayMember = "Nombre";
+            colProducto.DataPropertyName = "IDProducto";
 
         }
 

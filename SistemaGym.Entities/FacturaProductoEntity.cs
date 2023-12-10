@@ -24,5 +24,10 @@ namespace SistemaGym.Entities
         public DateTime FechaEmision { get; set; }
         public DateTime FechaVencimiento { get; set; }
         public string Estatus { get; set; }
+
+        public FacturaProductoEntity()
+        {
+            Detalles = new List<DetalleFacturaProductoEntity>(); 
+        }
     }
 }

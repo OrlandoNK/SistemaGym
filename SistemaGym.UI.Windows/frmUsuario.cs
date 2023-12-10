@@ -93,7 +93,7 @@ namespace SistemaGym.UI.Windows
 
             }
             //datos de control al objeto
-            UsuarioEntity oUsuario = new UsuarioEntity("", "");
+            UsuarioEntity oUsuario = new UsuarioEntity("","");
             oUsuario.IDUsuario = int.Parse(txtIDUsuario.Text);
             oUsuario.IDRol = (int)cbRol.SelectedValue;
             oUsuario.Nombre = txtNombre.Text;

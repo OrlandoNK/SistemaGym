@@ -16,7 +16,7 @@ namespace SistemaGym.Entities
         public int Cantidad { get; set; }
         public decimal SubTotal{ get{ return Cantidad * Precio; } set { } }
         public decimal Descuento { get; set; }
-        public decimal Itbis { get { return SubTotal * (18 / 100); } set { } }
+        public decimal Itbis { get { return SubTotal * 0.18M; } set { } }
         public decimal Total { get {  return SubTotal - Descuento + Itbis; } set { } }
     }
 }

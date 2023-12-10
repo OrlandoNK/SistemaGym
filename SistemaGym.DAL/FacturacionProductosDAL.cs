@@ -13,7 +13,7 @@ namespace SistemaGym.DAL
 {
     public class FacturacionProductosDAL : ConexionDAL
     {
-        public static void InsertarFactura(FacturaProductoEntity factura)
+        /*public static void InsertarFactura(FacturaProductoEntity factura)
         {
 
 
@@ -63,6 +63,55 @@ namespace SistemaGym.DAL
             {
                 transaccion.Rollback();
                 throw;
+            }
+        }*/
+        public static void InsertarFactura(FacturaProductoEntity factura)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            SqlTransaction transaccion = Conexion.BeginTransaction();
+
+            try
+            {
+                string insertarFacturaQuery = "INSERT INTO FacturaProductos(IDCliente, IDUsuario, NCF, Subtotal, TotalDescuento, TotalItbis, Total, FechaEmision, FechaVencimiento, Estatus) " +
+                    "VALUES(@idcliente, @idusuario, @ncf, @subtotal, @totaldescuento, @totalitbis, @total, @fechaemision, @fechavencimiento, @estatus); " +
+                    "SELECT SCOPE_IDENTITY();"; // Obtener el ID generado para la factura
+
+                SqlCommand cmd = new SqlCommand(insertarFacturaQuery, Conexion, transaccion);
+                cmd.Parameters.AddWithValue("@idcliente", factura.IDCliente);
+                // ... (resto de los parámetros)
+
+                factura.IDFactura = Convert.ToInt32(cmd.ExecuteScalar());
+
+                string insertarDetalleQuery = "INSERT INTO DetalleFacturaProductos(IDFacturaProducto, IDProducto, Precio, Cantidad, Subtotal, Descuento, Itbis, Total) " +
+                    "VALUES(@idfacturaproducto, @idproducto, @precio, @cantidad, @subtotal, @descuento, @itbis, @total); " +
+                    "SELECT SCOPE_IDENTITY();"; // Obtener el ID generado para cada detalle
+
+                SqlCommand cmdDetalle = new SqlCommand(insertarDetalleQuery, Conexion, transaccion);
+
+                foreach (var detalle in factura.Detalles)
+                {
+                    cmdDetalle.Parameters.Clear();
+                    cmdDetalle.Parameters.AddWithValue("@idfacturaproducto", factura.IDFactura);
+                    // Asignar valores para cada detalle
+                    cmdDetalle.Parameters.AddWithValue("@idproducto", detalle.IDProducto);
+                    // ... (resto de los parámetros)
+
+                    detalle.IDDetalleFacturaProducto = Convert.ToInt32(cmdDetalle.ExecuteScalar());
+                }
+
+                transaccion.Commit();
+            }
+            catch (Exception ex)
+            {
+                transaccion.Rollback();
+                throw;
+            }
+            finally
+            {
+                Conexion.Close();
             }
         }
         public static void Actualizar(FacturaProductoEntity factura)
