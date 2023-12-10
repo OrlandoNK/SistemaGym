@@ -203,6 +203,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eliminar_grupoMembresia {
+            get {
+                object obj = ResourceManager.GetObject("eliminar grupoMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap empleado {
             get {
                 object obj = ResourceManager.GetObject("empleado", resourceCulture);
@@ -273,6 +283,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap guardar_grupoMembresia {
+            get {
+                object obj = ResourceManager.GetObject("guardar grupoMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GYM_COMFORT {
             get {
                 object obj = ResourceManager.GetObject("GYM COMFORT", resourceCulture);
@@ -306,6 +326,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap listaMiembros1 {
             get {
                 object obj = ResourceManager.GetObject("listaMiembros1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loupe_216463 {
+            get {
+                object obj = ResourceManager.GetObject("loupe_216463", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
