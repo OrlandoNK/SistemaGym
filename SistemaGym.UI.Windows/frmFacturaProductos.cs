@@ -80,7 +80,7 @@ namespace SistemaGym.UI.Windows
             txtNCF.Clear();
             dgvProductos.AutoGenerateColumns = false;
             dgvProductos.DataSource = null;
-            
+
 
         }
 
@@ -140,6 +140,20 @@ namespace SistemaGym.UI.Windows
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             InicializarControles();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (!ValidarPedido())
+            {
+                return;
+            }
+        }
+        private bool ValidarPedido()
+        {
+            bool resultado = true;
+            errorProvider.Clear();
+            return resultado;
         }
     }
 }
