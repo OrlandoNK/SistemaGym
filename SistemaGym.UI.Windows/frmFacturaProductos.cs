@@ -92,6 +92,7 @@ namespace SistemaGym.UI.Windows
             txtNCF.Text = "B0100000005";
             dgvProductos.AutoGenerateColumns = false;
             dgvProductos.DataSource = null;
+            
 
 
         }
@@ -128,11 +129,14 @@ namespace SistemaGym.UI.Windows
             detalleFactura.IDProducto = int.Parse(txtIDProducto.Text);
             detalleFactura.Cantidad = int.Parse(txtCantidad.Text);
             detalleFactura.Precio = decimal.Parse(txtPrecio.Text);
-
+            detalleFactura.Descuento = decimal.Parse(txtDescuento.Text);
             oFactura.Detalles.Add(detalleFactura);
             dgvProductos.DataSource = null;
             dgvProductos.DataSource = oFactura.Detalles;
             txtSubTotal.Text = oFactura.SubTotal.ToString();
+            if (txtTotalDescuento.Text == "0") {
+                txtTotalDescuento.Text= 0.ToString("N2");
+            }
             txtTotalDescuento.Text = oFactura.TotalDescuento.ToString();
             txtImpuesto.Text = oFactura.TotalItbis.ToString();
             txtTotal.Text = oFactura.Total.ToString();
@@ -145,7 +149,7 @@ namespace SistemaGym.UI.Windows
             txtProducto.Clear();
             txtCantidad.Text = "0";
             txtPrecio.Text = 0.ToString("N2");
-            txtTotalDescuento.Text = 0.ToString("N2");
+            
 
 
 
@@ -199,9 +203,10 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(cbEstatus, "El Estatus es obligatorio");
                 resultado = false;
             }
-            if (string.IsNullOrEmpty(txtIDCliente.Text))
+            if (string.IsNullOrEmpty(txtCliente.Text))
             {
                 errorProvider.SetError(txtCliente, "El Cliente Es Obligatorio");
+                btnBuscarCliente.Focus();
                 resultado = false;
             }
 
@@ -210,6 +215,7 @@ namespace SistemaGym.UI.Windows
             {
                 MessageBox.Show("Por Favor Agregue el Usuario Que Realiza La Factura", SISTEMA);
                 resultado = false;
+                btnBuscarUsuario.Focus();
             }
             if (dgvProductos.Rows.Count == 0)
             {
