@@ -111,7 +111,7 @@ namespace SistemaGym.DAL
 
         }
         //buscar id
-        public static DataTable BuscarID(UsuarioEntity usuario)
+        public static DataTable BuscarID(int id)
         {
 
             ConexionDAL instancia = Instancia();
@@ -121,7 +121,7 @@ namespace SistemaGym.DAL
             DataTable dt = new DataTable();
             string buscar = "Select * From Usuarios where IDUsuario= @idusuario";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
-            cmd.Parameters.AddWithValue("@idusuario", usuario.IDUsuario);
+            cmd.Parameters.AddWithValue("@idusuario", id);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
@@ -135,20 +135,20 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string obtenerValor = "Select * from Usuarios " +
-                 "Where IDRol Like '%' + @idrol + '%' or Nombre Like '%' + @nombre + '%' or Apellido Like '%' + @apellido + '%' or " +
-                 "Sexo Like '%' + @sexo + '%' or Correo Like '%' + @correo + '%' or Direccion Like '%' + @direccion + '%' or NombreUsuario Like '%' + @nombreusuario + '%' or " +
-                 "Contrasena Like '%' + @contrasena + '%' or Estatus Like '%' + @estatus + '%' Order By Nombre";
+            string obtenerValor = "SELECT * FROM Usuarios " +
+    "WHERE IDRol LIKE '%' + @idrol + '%' OR Nombre LIKE '%' + @nombre + '%' OR Apellido LIKE '%' + @apellido + '%' OR " +
+    "Sexo LIKE '%' + @sexo + '%' OR Correo LIKE '%' + @correo + '%' OR Direccion LIKE '%' + @direccion + '%' OR NombreUsuario LIKE '%' + @nombreusuario + '%' OR " +
+    "Contrasena LIKE '%' + @contrasena + '%' OR Estatus LIKE '%' + @estatus + '%' ORDER BY Nombre";
             SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
-            cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
-            cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
-            cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
-            cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);
-            cmd.Parameters.AddWithValue("@correo", usuario.Correo);
-            cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
-            cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
-            cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
-            cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
+            cmd.Parameters.AddWithValue("@idrol", "%" + usuario.IDRol + "%");
+            cmd.Parameters.AddWithValue("@nombre", "%" + usuario.Nombre + "%");
+            cmd.Parameters.AddWithValue("@apellido", "%" + usuario.Apellido + "%");
+            cmd.Parameters.AddWithValue("@sexo", "%" + usuario.Sexo + "%");
+            cmd.Parameters.AddWithValue("@correo", "%" + usuario.Correo + "%");
+            cmd.Parameters.AddWithValue("@direccion", "%" + usuario.Direccion + "%");
+            cmd.Parameters.AddWithValue("@nombreusuario", "%" + usuario.NombreUsuario + "%");
+            cmd.Parameters.AddWithValue("@contrasena", "%" + usuario.Contrasena + "%");
+            cmd.Parameters.AddWithValue("@estatus", "%" + usuario.Estatus + "%");
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;

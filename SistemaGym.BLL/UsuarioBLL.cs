@@ -44,9 +44,9 @@ namespace SistemaGym.BLL
 
         }
 
-        public static DataTable BuscarID(UsuarioEntity usuario)
+        public static DataTable BuscarID(int id)
         {
-            return UsuarioDAL.BuscarID(usuario);
+            return UsuarioDAL.BuscarID(id);
         }
 
         public static DataTable ObtenerPorValor(UsuarioEntity usuario)
