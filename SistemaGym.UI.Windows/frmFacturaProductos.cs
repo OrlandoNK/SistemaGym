@@ -14,6 +14,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmFacturaProductos : Form
     {
+        const string SISTEMA = "Sistema Gym";
         public frmFacturaProductos()
         {
             InitializeComponent();
@@ -46,6 +47,35 @@ namespace SistemaGym.UI.Windows
 
 
             }
+        }
+        private bool ValidarDetalle()
+        {
+            bool resultado = true;
+            //inicializando los mensajes de validaciones
+            errorProvider.Clear();
+            //verificar que en los campos obligatorios hayan datos
+            if (txtIDDetalle.Text == "0")
+            {
+                errorProvider.SetError(txtIDDetalle, "El Nombre Es Obligatorio");
+                resultado = false;
+            }
+          
+            return resultado;
+        }
+        private void InicializarControles()
+        {
+            txtCliente.Clear();
+            txtIDCliente.Text = "0";
+            txtIDFactura.Text = "0";
+            txtIDDetalle.Text = "0";
+            txtDescuento.Clear();
+            txtDocumento.Clear();
+            txtImpuesto.Text = "0";
+            txtSubTotal.Text = "0";
+            txtTotal.Text = "0";
+            txtProducto.Clear();
+            txtTotalDescuento.Text = "0";
+            txtNCF.Clear();
         }
     }
 }
