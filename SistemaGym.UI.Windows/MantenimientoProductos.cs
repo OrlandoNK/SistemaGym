@@ -70,28 +70,27 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Seguro que quiere guardar los datos?", "Guardar Producto", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+
+            if (!ValidarDatos())
             {
-                ProductoEntity nuevoproducto = new ProductoEntity();
-                nuevoproducto.Nombre = txtNombre.Text;
-                nuevoproducto.IDCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
-                nuevoproducto.PrecioUnitario = decimal.Parse(txtPrecioUnitario.Text);
-                nuevoproducto.Stock = int.Parse(txtStock.Text);
-
-                if (txtIDProducto.Text == "0")
-                {
-                    ProductoBLL.Guardar(nuevoproducto);
-                    MessageBox.Show("Producto Guardado", "mantenimineto producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    dgvProductos.DataSource = ProductoBLL.GetAll();
-                }
+                return;
 
             }
-            if (result == DialogResult.No)
-            {
+            ProductoEntity nuevoproducto = new ProductoEntity();
+            nuevoproducto.Nombre = txtNombre.Text;
+            nuevoproducto.IDCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
+            nuevoproducto.IDProveedor = Convert.ToInt32(cbProveedor.SelectedValue);
+            nuevoproducto.PrecioUnitario = Convert.ToDecimal(txtPrecioUnitario.Text);
+            nuevoproducto.Stock = int.Parse(txtStock.Text);
 
-            }
+
+
+            ProductoBLL.Guardar(nuevoproducto);
+            MessageBox.Show("Producto Guardado", "mantenimineto producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            dgvProductos.DataSource = ProductoBLL.GetAll();
+
+
         }
         private bool ValidarDatos()
         {

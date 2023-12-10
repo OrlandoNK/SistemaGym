@@ -40,12 +40,6 @@
             txtPrecioUnitario = new TextBox();
             txtStock = new TextBox();
             dgvProductos = new DataGridView();
-            IDProducto = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            IDCategoria = new DataGridViewComboBoxColumn();
-            IDProveedor = new DataGridViewComboBoxColumn();
-            PrecioUnitario = new DataGridViewTextBoxColumn();
-            Stock = new DataGridViewTextBoxColumn();
             btnAgregar = new Button();
             btnGuardar = new Button();
             btnEliminar = new Button();
@@ -53,6 +47,12 @@
             cbProveedor = new ComboBox();
             label1 = new Label();
             errorProvider = new ErrorProvider(components);
+            IDProducto = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            IDCategoria = new DataGridViewComboBoxColumn();
+            IDProveedor = new DataGridViewComboBoxColumn();
+            PrecioUnitario = new DataGridViewTextBoxColumn();
+            Stock = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
@@ -143,55 +143,6 @@
             dgvProductos.Size = new Size(641, 233);
             dgvProductos.TabIndex = 10;
             // 
-            // IDProducto
-            // 
-            IDProducto.DataPropertyName = "IDProducto";
-            IDProducto.HeaderText = "ID";
-            IDProducto.Name = "IDProducto";
-            IDProducto.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            // 
-            // IDCategoria
-            // 
-            IDCategoria.DataPropertyName = "IDCategoria";
-            IDCategoria.HeaderText = "Categoria";
-            IDCategoria.Name = "IDCategoria";
-            IDCategoria.ReadOnly = true;
-            IDCategoria.Resizable = DataGridViewTriState.True;
-            IDCategoria.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // IDProveedor
-            // 
-            IDProveedor.DataPropertyName = "IDProveedor";
-            IDProveedor.HeaderText = "Proveedor";
-            IDProveedor.Name = "IDProveedor";
-            IDProveedor.ReadOnly = true;
-            IDProveedor.Resizable = DataGridViewTriState.True;
-            IDProveedor.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // PrecioUnitario
-            // 
-            PrecioUnitario.DataPropertyName = "PrecioUnitario";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
-            PrecioUnitario.HeaderText = "PrecioUnitario";
-            PrecioUnitario.Name = "PrecioUnitario";
-            PrecioUnitario.ReadOnly = true;
-            // 
-            // Stock
-            // 
-            Stock.DataPropertyName = "Stock";
-            Stock.HeaderText = "Stock";
-            Stock.Name = "Stock";
-            Stock.ReadOnly = true;
-            // 
             // btnAgregar
             // 
             btnAgregar.Location = new Point(97, 296);
@@ -250,6 +201,54 @@
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
+            // 
+            // IDProducto
+            // 
+            IDProducto.DataPropertyName = "IDProducto";
+            IDProducto.HeaderText = "ID";
+            IDProducto.Name = "IDProducto";
+            IDProducto.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            // 
+            // IDCategoria
+            // 
+            IDCategoria.HeaderText = "Categoria";
+            IDCategoria.Name = "IDCategoria";
+            IDCategoria.ReadOnly = true;
+            IDCategoria.Resizable = DataGridViewTriState.True;
+            IDCategoria.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // IDProveedor
+            // 
+            IDProveedor.DataPropertyName = "IDProveedor";
+            IDProveedor.HeaderText = "Proveedor";
+            IDProveedor.Name = "IDProveedor";
+            IDProveedor.ReadOnly = true;
+            IDProveedor.Resizable = DataGridViewTriState.True;
+            IDProveedor.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // PrecioUnitario
+            // 
+            PrecioUnitario.DataPropertyName = "PrecioUnitario";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "$";
+            PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
+            PrecioUnitario.HeaderText = "PrecioUnitario";
+            PrecioUnitario.Name = "PrecioUnitario";
+            PrecioUnitario.ReadOnly = true;
+            // 
+            // Stock
+            // 
+            Stock.DataPropertyName = "Stock";
+            Stock.HeaderText = "Stock";
+            Stock.Name = "Stock";
+            Stock.ReadOnly = true;
             // 
             // MantenimientoProductos
             // 
