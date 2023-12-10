@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace SistemaGym.UI.Windows
 {
@@ -81,7 +82,7 @@ namespace SistemaGym.UI.Windows
             txtNCF.Clear();
             dgvProductos.AutoGenerateColumns = false;
             dgvProductos.DataSource = null;
-
+           
 
         }
 
@@ -126,15 +127,16 @@ namespace SistemaGym.UI.Windows
             txtImpuesto.Text = oFactura.TotalItbis.ToString();
             txtTotal.Text = oFactura.Total.ToString();
             InicializarDetalles();
+            CargarProducto();
         }
         private void InicializarDetalles()
         {
             txtIDProducto.Text = "0";
             txtProducto.Clear();
             txtCantidad.Text = "0";
-            txtPrecio.Text = "0";
-            txtDescuento.Text = "0";
-           
+            txtPrecio.Text = 0.ToString("N2");
+            txtTotalDescuento.Text = 0.ToString("N2");
+
 
 
         }
@@ -155,17 +157,60 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!ValidarPedido())
+            if (!ValidarFactura())
             {
                 return;
             }
             oFactura.IDCliente = int.Parse(txtIDCliente.Text);
             oFactura.IDUsuario = int.Parse(txtIDUsuario.Text);
+            oFactura.Estatus = cbEstatus.Text;
+            oFactura.FechaEmision = DateTime.Parse(dtpFechaEmision.Text);
+            oFactura.FechaVencimiento = DateTime.Parse(dtpFechaVencimiento.Text);
+            oFactura.NCF = txtNCF.Text;
+            try
+            {
+                FacturacionProductoBLL.Guardar(oFactura);
+                MessageBox.Show("FacturaGuardada", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InicializarControles();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
-        private bool ValidarPedido()
+        private bool ValidarFactura()
         {
+
             bool resultado = true;
             errorProvider.Clear();
+            if (string.IsNullOrEmpty(cbEstatus.Text))
+            {
+                errorProvider.SetError(cbEstatus, "El Estatus es obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(txtIDCliente.Text))
+            {
+                errorProvider.SetError(txtCliente, "El Cliente Es Obligatorio");
+                resultado = false;
+            }
+
+
+            if (string.IsNullOrEmpty(txtUsuario.Text))
+            {
+                MessageBox.Show("Por Favor Agregue el Usuario Que Realiza La Factura", SISTEMA);
+                resultado = false;
+            }
+            if (dgvProductos.Rows.Count == 0)
+            {
+                MessageBox.Show("Por Favor Agregue el Producto", SISTEMA);
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(txtNCF.Text))
+            {
+                errorProvider.SetError(txtNCF, "El NCF Es Obligatorio");
+                resultado = false;
+            }
             return resultado;
         }
     }

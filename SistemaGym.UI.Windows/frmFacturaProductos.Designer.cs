@@ -51,6 +51,8 @@
             label2 = new Label();
             label3 = new Label();
             groupBox2 = new GroupBox();
+            txtIDUsuario = new TextBox();
+            label20 = new Label();
             cbEstatus = new ComboBox();
             txtNCF = new TextBox();
             label19 = new Label();
@@ -59,14 +61,6 @@
             txtIDFactura = new TextBox();
             txtUsuario = new TextBox();
             dgvProductos = new DataGridView();
-            IDDetalle = new DataGridViewTextBoxColumn();
-            IDProducto = new DataGridViewComboBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            Subtotal = new DataGridViewTextBoxColumn();
-            Descuento = new DataGridViewTextBoxColumn();
-            Impuesto = new DataGridViewTextBoxColumn();
-            Total = new DataGridViewTextBoxColumn();
             groupBox3 = new GroupBox();
             btnAgregar = new Button();
             btnBuscarProducto = new Button();
@@ -92,8 +86,14 @@
             txtTotalDescuento = new TextBox();
             txtTotal = new TextBox();
             errorProvider = new ErrorProvider(components);
-            txtIDUsuario = new TextBox();
-            label20 = new Label();
+            IDDetalle = new DataGridViewTextBoxColumn();
+            IDProducto = new DataGridViewComboBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
+            Cantidad = new DataGridViewTextBoxColumn();
+            Subtotal = new DataGridViewTextBoxColumn();
+            Descuento = new DataGridViewTextBoxColumn();
+            Impuesto = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
@@ -275,6 +275,24 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Factura";
             // 
+            // txtIDUsuario
+            // 
+            txtIDUsuario.Location = new Point(64, 42);
+            txtIDUsuario.Multiline = true;
+            txtIDUsuario.Name = "txtIDUsuario";
+            txtIDUsuario.ReadOnly = true;
+            txtIDUsuario.Size = new Size(100, 23);
+            txtIDUsuario.TabIndex = 21;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(6, 45);
+            label20.Name = "label20";
+            label20.Size = new Size(58, 15);
+            label20.TabIndex = 20;
+            label20.Text = "IDUsuario";
+            // 
             // cbEstatus
             // 
             cbEstatus.FormattingEnabled = true;
@@ -350,79 +368,6 @@
             dgvProductos.RowTemplate.Height = 25;
             dgvProductos.Size = new Size(929, 267);
             dgvProductos.TabIndex = 12;
-            // 
-            // IDDetalle
-            // 
-            IDDetalle.DataPropertyName = "IDDetalleFacturaProducto";
-            IDDetalle.HeaderText = "ID";
-            IDDetalle.Name = "IDDetalle";
-            IDDetalle.ReadOnly = true;
-            // 
-            // IDProducto
-            // 
-            IDProducto.DataPropertyName = "IDProducto";
-            IDProducto.HeaderText = "Producto";
-            IDProducto.Name = "IDProducto";
-            IDProducto.ReadOnly = true;
-            IDProducto.Resizable = DataGridViewTriState.True;
-            IDProducto.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Precio
-            // 
-            Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle1;
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
-            Precio.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            Cantidad.DataPropertyName = "Cantidad";
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.Name = "Cantidad";
-            Cantidad.ReadOnly = true;
-            // 
-            // Subtotal
-            // 
-            Subtotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
-            Subtotal.HeaderText = "Subtotal";
-            Subtotal.Name = "Subtotal";
-            Subtotal.ReadOnly = true;
-            // 
-            // Descuento
-            // 
-            Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
-            Descuento.HeaderText = "Descuento";
-            Descuento.Name = "Descuento";
-            Descuento.ReadOnly = true;
-            // 
-            // Impuesto
-            // 
-            Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle4;
-            Impuesto.HeaderText = "Impuesto";
-            Impuesto.Name = "Impuesto";
-            Impuesto.ReadOnly = true;
-            // 
-            // Total
-            // 
-            Total.DataPropertyName = "Total";
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle5;
-            Total.HeaderText = "Total";
-            Total.Name = "Total";
-            Total.ReadOnly = true;
             // 
             // groupBox3
             // 
@@ -667,23 +612,78 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // txtIDUsuario
+            // IDDetalle
             // 
-            txtIDUsuario.Location = new Point(64, 42);
-            txtIDUsuario.Multiline = true;
-            txtIDUsuario.Name = "txtIDUsuario";
-            txtIDUsuario.ReadOnly = true;
-            txtIDUsuario.Size = new Size(100, 23);
-            txtIDUsuario.TabIndex = 21;
+            IDDetalle.DataPropertyName = "IDProducto";
+            IDDetalle.HeaderText = "ID";
+            IDDetalle.Name = "IDDetalle";
+            IDDetalle.ReadOnly = true;
             // 
-            // label20
+            // IDProducto
             // 
-            label20.AutoSize = true;
-            label20.Location = new Point(6, 45);
-            label20.Name = "label20";
-            label20.Size = new Size(58, 15);
-            label20.TabIndex = 20;
-            label20.Text = "IDUsuario";
+            IDProducto.DataPropertyName = "IDProducto";
+            IDProducto.HeaderText = "Producto";
+            IDProducto.Name = "IDProducto";
+            IDProducto.ReadOnly = true;
+            IDProducto.Resizable = DataGridViewTriState.True;
+            IDProducto.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // Precio
+            // 
+            Precio.DataPropertyName = "Precio";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle1;
+            Precio.HeaderText = "Precio";
+            Precio.Name = "Precio";
+            Precio.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            Cantidad.DataPropertyName = "Cantidad";
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.Name = "Cantidad";
+            Cantidad.ReadOnly = true;
+            // 
+            // Subtotal
+            // 
+            Subtotal.DataPropertyName = "SubTotal";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
+            Subtotal.HeaderText = "Subtotal";
+            Subtotal.Name = "Subtotal";
+            Subtotal.ReadOnly = true;
+            // 
+            // Descuento
+            // 
+            Descuento.DataPropertyName = "Descuento";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
+            Descuento.HeaderText = "Descuento";
+            Descuento.Name = "Descuento";
+            Descuento.ReadOnly = true;
+            // 
+            // Impuesto
+            // 
+            Impuesto.DataPropertyName = "Itbis";
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle4;
+            Impuesto.HeaderText = "Impuesto";
+            Impuesto.Name = "Impuesto";
+            Impuesto.ReadOnly = true;
+            // 
+            // Total
+            // 
+            Total.DataPropertyName = "Total";
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle5;
+            Total.HeaderText = "Total";
+            Total.Name = "Total";
+            Total.ReadOnly = true;
             // 
             // frmFacturaProductos
             // 
@@ -766,14 +766,6 @@
         private TextBox txtTotal;
         private Button btnBuscarCliente;
         private Button btnBuscarUsuario;
-        private DataGridViewTextBoxColumn IDDetalle;
-        private DataGridViewComboBoxColumn IDProducto;
-        private DataGridViewTextBoxColumn Precio;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn Subtotal;
-        private DataGridViewTextBoxColumn Descuento;
-        private DataGridViewTextBoxColumn Impuesto;
-        private DataGridViewTextBoxColumn Total;
         private ComboBox cbEstatus;
         private TextBox txtNCF;
         private Label label19;
@@ -782,5 +774,13 @@
         private ErrorProvider errorProvider;
         private TextBox txtIDUsuario;
         private Label label20;
+        private DataGridViewTextBoxColumn IDDetalle;
+        private DataGridViewComboBoxColumn IDProducto;
+        private DataGridViewTextBoxColumn Precio;
+        private DataGridViewTextBoxColumn Cantidad;
+        private DataGridViewTextBoxColumn Subtotal;
+        private DataGridViewTextBoxColumn Descuento;
+        private DataGridViewTextBoxColumn Impuesto;
+        private DataGridViewTextBoxColumn Total;
     }
 }

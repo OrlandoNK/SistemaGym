@@ -13,7 +13,7 @@ namespace SistemaGym.DAL
 {
     public class FacturacionProductosDAL : ConexionDAL
     {
-        /*public static void InsertarFactura(FacturaProductoEntity factura)
+       /* public static void InsertarFactura(FacturaProductoEntity factura)
         {
 
 
@@ -55,7 +55,7 @@ namespace SistemaGym.DAL
                     cmddetalle.Parameters.AddWithValue("@fechaemision", detalle.Total);
                     detalle.IDDetalleFacturaProducto = Convert.ToInt32(cmd.ExecuteScalar());
 
-                }
+               }
 
                 transaccion.Commit();
 
@@ -81,29 +81,43 @@ namespace SistemaGym.DAL
 
                 SqlCommand cmd = new SqlCommand(insertarFacturaQuery, Conexion, transaccion);
                 cmd.Parameters.AddWithValue("@idcliente", factura.IDCliente);
-                // ... (resto de los parámetros)
+                cmd.Parameters.AddWithValue("@idusuario", factura.IDUsuario);
+                cmd.Parameters.AddWithValue("@ncf", factura.NCF);
+                cmd.Parameters.AddWithValue("@subtotal", factura.SubTotal);
+                cmd.Parameters.AddWithValue("@totaldescuento", factura.TotalDescuento);
+                cmd.Parameters.AddWithValue("@totalitbis", factura.TotalItbis);
+                cmd.Parameters.AddWithValue("@total", factura.Total);
+                cmd.Parameters.AddWithValue("@fechaemision", factura.FechaEmision);
+                cmd.Parameters.AddWithValue("@fechavencimiento", factura.FechaVencimiento);
+                cmd.Parameters.AddWithValue("@estatus", factura.Estatus);
 
                 factura.IDFactura = Convert.ToInt32(cmd.ExecuteScalar());
 
                 string insertarDetalleQuery = "INSERT INTO DetalleFacturaProductos(IDFacturaProducto, IDProducto, Precio, Cantidad, Subtotal, Descuento, Itbis, Total) " +
                     "VALUES(@idfacturaproducto, @idproducto, @precio, @cantidad, @subtotal, @descuento, @itbis, @total); " +
-                    "SELECT SCOPE_IDENTITY();"; // Obtener el ID generado para cada detalle
+                    "SELECT SCOPE_IDENTITY();";
 
-                SqlCommand cmdDetalle = new SqlCommand(insertarDetalleQuery, Conexion, transaccion);
+                SqlCommand cmddetalle = new SqlCommand(insertarDetalleQuery, Conexion, transaccion);
 
                 foreach (var detalle in factura.Detalles)
                 {
-                    cmdDetalle.Parameters.Clear();
-                    cmdDetalle.Parameters.AddWithValue("@idfacturaproducto", factura.IDFactura);
-                    // Asignar valores para cada detalle
-                    cmdDetalle.Parameters.AddWithValue("@idproducto", detalle.IDProducto);
-                    // ... (resto de los parámetros)
+                    cmddetalle.Parameters.Clear();
+                    cmddetalle.Parameters.AddWithValue("@idfacturaproducto", factura.IDFactura);
+                    cmddetalle.Parameters.AddWithValue("@idproducto", detalle.IDProducto);
+                    cmddetalle.Parameters.AddWithValue("@precio", detalle.Precio);
+                    cmddetalle.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
+                    cmddetalle.Parameters.AddWithValue("@subtotal", detalle.SubTotal);
+                    cmddetalle.Parameters.AddWithValue("@descuento", detalle.Descuento);
+                    cmddetalle.Parameters.AddWithValue("@itbis", detalle.Itbis);
+                    cmddetalle.Parameters.AddWithValue("@total", detalle.Total);
+                    detalle.IDDetalleFacturaProducto = Convert.ToInt32(cmddetalle.ExecuteScalar());
 
-                    detalle.IDDetalleFacturaProducto = Convert.ToInt32(cmdDetalle.ExecuteScalar());
+
+                
                 }
 
                 transaccion.Commit();
-            }
+            } 
             catch (Exception ex)
             {
                 transaccion.Rollback();
