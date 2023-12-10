@@ -12,17 +12,11 @@ using System.Windows.Forms;
 
 namespace SistemaGym.UI.Windows
 {
-    public partial class frmBuscarProducto : Form
+    public partial class frmBuscarProductos : Form
     {
-        private int idPRoducto;
-        public frmBuscarProducto()
+        public frmBuscarProductos()
         {
             InitializeComponent();
-        }
-        private int id
-        {
-            get { return idPRoducto; }
-            set { }
         }
 
         private void txtBuscarProducto_TextChanged(object sender, EventArgs e)
@@ -32,17 +26,27 @@ namespace SistemaGym.UI.Windows
 
             ProductoEntity productoBusqueda = new ProductoEntity();
             productoBusqueda.Nombre = textoBusqueda;
-            productoBusqueda.IDProveedor = int.Parse(textoBusqueda);
-            productoBusqueda.IDCategoria = int.Parse(textoBusqueda);
+            int idProveedor;
+            if (int.TryParse(textoBusqueda, out idProveedor))
+            {
+                productoBusqueda.IDProveedor = idProveedor;
+            }
+         
+            int idCategoria;
+                if (int.TryParse(textoBusqueda, out idCategoria))
+            {
+                productoBusqueda.IDCategoria = idCategoria;
+            }
+           
 
 
             dgvBuscarProductos.DataSource = ProductoBLL.GetByValor(productoBusqueda);
 
         }
 
-        private void frmBuscarProducto_Load(object sender, EventArgs e)
+        private void frmBuscarProductos_Load(object sender, EventArgs e)
         {
-            dgvBuscarProductos.AutoGenerateColumns = false;
+             dgvBuscarProductos.AutoGenerateColumns = false;
             dgvBuscarProductos.DataSource = ProductoBLL.GetAll();
             CargarCategoria();
             CargarProveedor();
