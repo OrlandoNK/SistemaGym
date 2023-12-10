@@ -2,6 +2,7 @@
 using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -11,14 +12,16 @@ namespace SistemaGym.BLL
 {
     public class CategoriaProductoBLL
     {
-        public void Insertar (CategoriaProductoEntity categoria)
-        {
+        public static void Guardar(CategoriaProductoEntity categoria){
+         if (categoria.IDCategoria == 0) {
             CategoriaProductoDAL.InsertarCategoriaProducto(categoria);
-        }
+                
+            }
+            else
+            {
+                CategoriaProductoDAL.ActualizarCategoriaProducto(categoria);
+            }
 
-        public void Actualizar (CategoriaProductoEntity categoria)
-        {
-            CategoriaProductoDAL.ActualizarCategoriaProducto(categoria);
         }
 
         public bool Eliminar(CategoriaProductoEntity categoria)

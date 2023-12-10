@@ -30,22 +30,27 @@ namespace SistemaGym.UI.Windows
         public void InicializarCampos()
         {
             txtIDProducto.Text = "0";
-            txtNombre.Text = "";
-
-            txtPrecioUnitario.Text = "";
-
-            txtStock.Text = "";
+            txtNombre.Clear();
+            txtPrecioUnitario.Clear();
+            txtStock.Clear();
             dgvProductos.AutoGenerateColumns = false;
             dgvProductos.DataSource = ProductoBLL.GetAll();
         }
-        public void LimpiarCampos()
+        private void CargarUsuarios()
         {
-            txtIDProducto.Clear();
-            txtNombre.Clear();
+            cbCategoria.DataSource = ();
+            cbUsuario.ValueMember = "IDUsuario";
+            cbUsuario.DisplayMember = "NombreUsuario";
 
-            txtPrecioUnitario.Clear();
-            txtStock.Clear();
+            var colUsuario = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDUsuario"];
+
+            colUsuario.ValueMember = "IDUsuario";
+            colUsuario.DisplayMember = "NombreUsuario";
+            colUsuario.DataPropertyName = "IDUsuario";
+            colUsuario.DataSource = UsuarioBLL.Mostrar();
+
         }
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -62,7 +67,7 @@ namespace SistemaGym.UI.Windows
                 {
                     ProductoBLL.Guardar(nuevoproducto);
                     MessageBox.Show("Producto Guardado", "mantenimineto producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
+                 
                     dgvProductos.DataSource = ProductoBLL.GetAll();
                 }
 
