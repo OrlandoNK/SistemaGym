@@ -42,7 +42,7 @@
             dgvProductos = new DataGridView();
             IDProducto = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
-            Categoria = new DataGridViewComboBoxColumn();
+            IDCategoria = new DataGridViewComboBoxColumn();
             IDProveedor = new DataGridViewComboBoxColumn();
             PrecioUnitario = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
@@ -106,7 +106,7 @@
             // 
             txtIDProducto.Location = new Point(136, 22);
             txtIDProducto.Name = "txtIDProducto";
-            txtIDProducto.Size = new Size(147, 23);
+            txtIDProducto.Size = new Size(54, 23);
             txtIDProducto.TabIndex = 5;
             // 
             // txtNombre
@@ -135,7 +135,7 @@
             dgvProductos.AllowUserToAddRows = false;
             dgvProductos.AllowUserToDeleteRows = false;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { IDProducto, Nombre, Categoria, IDProveedor, PrecioUnitario, Stock });
+            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { IDProducto, Nombre, IDCategoria, IDProveedor, PrecioUnitario, Stock });
             dgvProductos.Location = new Point(311, 14);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
@@ -157,14 +157,14 @@
             Nombre.Name = "Nombre";
             Nombre.ReadOnly = true;
             // 
-            // Categoria
+            // IDCategoria
             // 
-            Categoria.DataPropertyName = "IDCategoria";
-            Categoria.HeaderText = "Categoria";
-            Categoria.Name = "Categoria";
-            Categoria.ReadOnly = true;
-            Categoria.Resizable = DataGridViewTriState.True;
-            Categoria.SortMode = DataGridViewColumnSortMode.Automatic;
+            IDCategoria.DataPropertyName = "IDCategoria";
+            IDCategoria.HeaderText = "Categoria";
+            IDCategoria.Name = "IDCategoria";
+            IDCategoria.ReadOnly = true;
+            IDCategoria.Resizable = DataGridViewTriState.True;
+            IDCategoria.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // IDProveedor
             // 
@@ -299,12 +299,12 @@
         private ComboBox cbCategoria;
         private ComboBox cbProveedor;
         private Label label1;
+        private ErrorProvider errorProvider;
         private DataGridViewTextBoxColumn IDProducto;
         private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewComboBoxColumn Categoria;
+        private DataGridViewComboBoxColumn IDCategoria;
         private DataGridViewComboBoxColumn IDProveedor;
         private DataGridViewTextBoxColumn PrecioUnitario;
         private DataGridViewTextBoxColumn Stock;
-        private ErrorProvider errorProvider;
     }
 }

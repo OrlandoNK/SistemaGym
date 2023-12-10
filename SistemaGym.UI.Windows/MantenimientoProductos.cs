@@ -1,4 +1,5 @@
 ﻿using SistemaGym.BLL;
+using SistemaGym.DAL;
 using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
@@ -35,22 +36,37 @@ namespace SistemaGym.UI.Windows
             txtStock.Clear();
             dgvProductos.AutoGenerateColumns = false;
             dgvProductos.DataSource = ProductoBLL.GetAll();
+            CargarCategoria();
+            CargarProveedor();
         }
-        private void CargarUsuarios()
+        private void CargarCategoria()
         {
-            cbCategoria.DataSource = ();
-            cbUsuario.ValueMember = "IDUsuario";
-            cbUsuario.DisplayMember = "NombreUsuario";
+            cbCategoria.DataSource = CategoriaProductoBLL.Mostrar();
+            cbCategoria.ValueMember = "IDCategoria";
+            cbCategoria.DisplayMember = "Nombre";
 
-            var colUsuario = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDUsuario"];
+            var colCategoria = (DataGridViewComboBoxColumn)dgvProductos.Columns["IDCategoria"];
 
-            colUsuario.ValueMember = "IDUsuario";
-            colUsuario.DisplayMember = "NombreUsuario";
-            colUsuario.DataPropertyName = "IDUsuario";
-            colUsuario.DataSource = UsuarioBLL.Mostrar();
+            colCategoria.ValueMember = "IDCategoria";
+            colCategoria.DisplayMember = "Nombre";
+            colCategoria.DataPropertyName = "IDCategoria";
+            colCategoria.DataSource = CategoriaProductoBLL.Mostrar();
 
         }
+        private void CargarProveedor()
+        {
+            cbProveedor.DataSource = ProveedoresBLL.MostrarProveedores();
+            cbProveedor.ValueMember = "IDProveedor";
+            cbProveedor.DisplayMember = "Nombre";
 
+            var colProveedor = (DataGridViewComboBoxColumn)dgvProductos.Columns["IDProveedor"];
+
+            colProveedor.ValueMember = "IDProveedor";
+            colProveedor.DisplayMember = "Nombre";
+            colProveedor.DataPropertyName = "IDProveedor";
+            colProveedor.DataSource = ProveedoresBLL.MostrarProveedores();
+
+        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -67,7 +83,7 @@ namespace SistemaGym.UI.Windows
                 {
                     ProductoBLL.Guardar(nuevoproducto);
                     MessageBox.Show("Producto Guardado", "mantenimineto producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 
+
                     dgvProductos.DataSource = ProductoBLL.GetAll();
                 }
 
@@ -105,7 +121,7 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(txtPrecioUnitario, "El Precio es Obligatorio");
                 resultado = false;
             }
-           
+
 
             return resultado;
         }

@@ -24,24 +24,24 @@ namespace SistemaGym.BLL
 
         }
 
-        public bool Eliminar(CategoriaProductoEntity categoria)
+        public static bool Eliminar(CategoriaProductoEntity categoria)
         {
             return CategoriaProductoDAL.EliminarCategoriaProducto(categoria);
         }
 
-        public DataTable Mostrar()
+        public static DataTable Mostrar()
         {
             DataTable dataTable = CategoriaProductoDAL.MostrarCategoria();
             return dataTable;
         }
 
-        public DataTable BuscarIDcategoria (CategoriaProductoEntity categoria)
+        public  static DataTable BuscarIDcategoria (CategoriaProductoEntity categoria)
         {
             DataTable dataTable = CategoriaProductoDAL.BuscarIDCategoria(categoria);
             return dataTable;
         }
 
-        public DataTable ObtenerByID (CategoriaProductoEntity categoria)
+        public static DataTable ObtenerByID (CategoriaProductoEntity categoria)
         {
             DataTable dataTable = CategoriaProductoDAL.ObtenerCategoriaProducto(categoria);
             return dataTable;
