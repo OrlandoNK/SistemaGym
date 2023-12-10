@@ -21,9 +21,14 @@ namespace SistemaGym.BLL
             GrupoClienteDAL.ActualizarGrupoCliente(grupoCliente);
         }
 
-        public static bool Eliminar (GrupoClienteEntity grupoCliente)
+        public static bool Eliminar (int Id)
         {
-            return GrupoClienteDAL.EliminarCliente(grupoCliente);
+            return GrupoClienteDAL.EliminarCliente(Id);
+        }
+
+        public static bool ResetIdentity()
+        {
+            return GrupoClienteDAL.ResetIdentityGrupoCliente();
         }
 
         public static DataTable Mostrar()

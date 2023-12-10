@@ -146,6 +146,42 @@ namespace SistemaGym.DAL
             return dt;
         }
 
+        public static ClientesEntity ObtenerByID(int id)
+        {
+            ClientesEntity clientes = null;
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            string query = "SELECT IDCliente FROM Clientes WHERE IDCliente = @IDCliente";
+            using (SqlCommand cmd = new SqlCommand(query, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@IDCliente", id);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        clientes = ConvertToObject(reader);
+                    }
+                }
+            }
+            return clientes;
+        }
+
+
+        private static ClientesEntity ConvertToObject(SqlDataReader reader)
+        {
+            ClientesEntity cliente = new ClientesEntity
+            {
+                IDCliente = Convert.ToInt32(reader["IDCliente"])
+            };
+
+            return cliente;
+        }
+
 
     }
 }

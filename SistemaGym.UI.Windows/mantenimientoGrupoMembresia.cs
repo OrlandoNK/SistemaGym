@@ -130,7 +130,6 @@ namespace SistemaGym.UI.Windows
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            GrupoMembresiaBLL grupoMembresiaBLL = new GrupoMembresiaBLL();
 
             DialogResult resultDialog = MessageBox.Show("¿Seguro que desea eliminar a este Grupo de Membresia?", "¿Eliminar Grupo de Membresia?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 

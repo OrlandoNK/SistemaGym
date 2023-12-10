@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnClose = new PictureBox();
             panel2 = new Panel();
@@ -273,7 +273,7 @@
             btnTraerGrupoMembresia.Name = "btnTraerGrupoMembresia";
             btnTraerGrupoMembresia.Size = new Size(232, 46);
             btnTraerGrupoMembresia.TabIndex = 12;
-            btnTraerGrupoMembresia.Text = "&Traer Grupos de Membresia";
+            btnTraerGrupoMembresia.Text = "&Traer Datos de Grupos de Membresia";
             btnTraerGrupoMembresia.TextAlign = ContentAlignment.MiddleRight;
             btnTraerGrupoMembresia.UseVisualStyleBackColor = false;
             btnTraerGrupoMembresia.Click += btnTraerGrupoMembresia_Click;
@@ -331,14 +331,14 @@
             dgvGrupoMembresia.BackgroundColor = Color.White;
             dgvGrupoMembresia.BorderStyle = BorderStyle.None;
             dgvGrupoMembresia.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.Black;
-            dataGridViewCellStyle7.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.Gold;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvGrupoMembresia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Black;
+            dataGridViewCellStyle1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Gold;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvGrupoMembresia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvGrupoMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGrupoMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, FechaRegistro, Estatus });
             dgvGrupoMembresia.Location = new Point(0, 73);

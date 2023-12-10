@@ -48,20 +48,39 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar GrupoClienteDal
 
-        public static bool EliminarCliente(GrupoClienteEntity grupoCliente)
+        public static bool EliminarCliente(int Id)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             bool seElimino;
 
-
-
             Conexion.Open();
-            string Eliminar = "Delete from GrupoClientes where IDGrupoCliente= @idGrupoCliente ";
+            string Eliminar = "DELETE FROM GrupoClientes WHERE IDGrupoCliente= @idGrupoCliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idGrupoCliente", grupoCliente.IDGrupoCliente);
+            cmd.Parameters.AddWithValue("@idGrupoCliente", Id);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
+
+        }
+
+        public static bool ResetIdentityGrupoCliente()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            bool seElimino;
+
+            Conexion.Open();
+            try
+            {
+                using (SqlCommand command = new SqlCommand("DBCC CHECKIDENT (GrupoClientes, RESEED, 0)", Conexion))
+                {
+                    return command.ExecuteNonQuery() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
 
         }
 
@@ -73,7 +92,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From GrupoClientes ";
+            string mostrar = "Select * From GrupoClientes";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
