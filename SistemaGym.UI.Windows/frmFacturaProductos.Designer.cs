@@ -92,6 +92,8 @@
             txtTotalDescuento = new TextBox();
             txtTotal = new TextBox();
             errorProvider = new ErrorProvider(components);
+            txtIDUsuario = new TextBox();
+            label20 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
@@ -243,7 +245,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 54);
+            label3.Location = new Point(6, 66);
             label3.Name = "label3";
             label3.Size = new Size(47, 15);
             label3.TabIndex = 10;
@@ -251,6 +253,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(txtIDUsuario);
+            groupBox2.Controls.Add(label20);
             groupBox2.Controls.Add(cbEstatus);
             groupBox2.Controls.Add(txtNCF);
             groupBox2.Controls.Add(label19);
@@ -308,7 +312,7 @@
             // 
             // btnBuscarUsuario
             // 
-            btnBuscarUsuario.Location = new Point(170, 46);
+            btnBuscarUsuario.Location = new Point(170, 63);
             btnBuscarUsuario.Name = "btnBuscarUsuario";
             btnBuscarUsuario.Size = new Size(51, 23);
             btnBuscarUsuario.TabIndex = 15;
@@ -327,7 +331,7 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(64, 46);
+            txtUsuario.Location = new Point(64, 63);
             txtUsuario.Multiline = true;
             txtUsuario.Name = "txtUsuario";
             txtUsuario.ReadOnly = true;
@@ -663,6 +667,24 @@
             // 
             errorProvider.ContainerControl = this;
             // 
+            // txtIDUsuario
+            // 
+            txtIDUsuario.Location = new Point(64, 42);
+            txtIDUsuario.Multiline = true;
+            txtIDUsuario.Name = "txtIDUsuario";
+            txtIDUsuario.ReadOnly = true;
+            txtIDUsuario.Size = new Size(100, 23);
+            txtIDUsuario.TabIndex = 21;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(6, 45);
+            label20.Name = "label20";
+            label20.Size = new Size(58, 15);
+            label20.TabIndex = 20;
+            label20.Text = "IDUsuario";
+            // 
             // frmFacturaProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -758,5 +780,7 @@
         private Label label18;
         private TextBox txtDocumento;
         private ErrorProvider errorProvider;
+        private TextBox txtIDUsuario;
+        private Label label20;
     }
 }

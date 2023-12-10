@@ -45,6 +45,7 @@ namespace SistemaGym.UI.Windows
 
                 UsuarioEntity usuario = UsuarioBLL.BuscarID(frmBuscarUsuario.id);
                 txtUsuario.Text = usuario.Nombre;
+                txtIDUsuario.Text = usuario.IDUsuario.ToString();
 
 
             }
@@ -75,7 +76,7 @@ namespace SistemaGym.UI.Windows
             txtSubTotal.Text = 0.ToString("C");
             txtTotal.Text = 0.ToString("C");
             txtProducto.Clear();
-            txtCantidad.Text = 0.ToString("C");
+            txtCantidad.Text = "0";
             txtTotalDescuento.Text = 0.ToString("C");
             txtNCF.Clear();
             dgvProductos.AutoGenerateColumns = false;
@@ -148,6 +149,8 @@ namespace SistemaGym.UI.Windows
             {
                 return;
             }
+            oFactura.IDCliente = int.Parse(txtIDCliente.Text);
+            oFactura.IDUsuario = int.Parse(txtIDUsuario.Text);
         }
         private bool ValidarPedido()
         {
