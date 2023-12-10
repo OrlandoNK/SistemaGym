@@ -20,7 +20,7 @@ namespace SistemaGym.UI.Windows
         }
         private void MantenimientoProductos_Load(object sender, EventArgs e)
         {
-            dgvProductos.DataSource = ProductoBLL.MostrarProducto();
+           InicializarCampos();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -31,17 +31,20 @@ namespace SistemaGym.UI.Windows
         {
             txtIDProducto.Text = "0";
             txtNombre.Text = "";
-            txtCategoria.Text = "";
+       
             txtPrecioUnitario.Text = "";
-            txtNoExistencia.Text = "";
+           
+            txtStock.Text = "";
+            dgvProductos.AutoGenerateColumns = false;
+            dgvProductos.DataSource = ProductoBLL.GetAll();
         }
         public void LimpiarCampos()
         {
             txtIDProducto.Clear();
             txtNombre.Clear();
-            txtCategoria.Clear();
+           
             txtPrecioUnitario.Clear();
-            txtNoExistencia.Clear();
+            txtStock.Clear();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -51,16 +54,16 @@ namespace SistemaGym.UI.Windows
             {
                 ProductoEntity nuevoproducto = new ProductoEntity();
                 nuevoproducto.Nombre = txtNombre.Text;
-                nuevoproducto.Categoria = txtCategoria.Text;
-                nuevoproducto.PrecioUnitario = txtPrecioUnitario.Text;
-                nuevoproducto.Stock = txtNoExistencia.Text;
+                nuevoproducto.IDCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
+                nuevoproducto.PrecioUnitario = decimal.Parse(txtPrecioUnitario.Text);
+                nuevoproducto.Stock = int.Parse(txtStock.Text);
 
                 if (txtIDProducto.Text == "0")
                 {
                     ProductoBLL.Guardar(nuevoproducto);
                     MessageBox.Show("Producto Guardado", "mantenimineto producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarCampos();
-                    dgvProductos.DataSource = ProductoBLL.MostrarProductos();
+                    dgvProductos.DataSource = ProductoBLL.GetAll();
                 }
 
             }
@@ -80,21 +83,21 @@ namespace SistemaGym.UI.Windows
             ProductoBLL productoBLL = new ProductoBLL();
             if (dgvProductos.SelectedRows.Count > 0)
             {
-                DialogResult dialogResult = MessageBox.Show("¿Seguro que quiere eliminar este producto?", "¿Eliminar Producto?" MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("¿Seguro que quiere eliminar este producto?", "¿Eliminar Producto?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
                     int idproducto = Convert.ToInt32(dgvProductos.SelectedRows[0].Cells["IDProducto"].Value);
-                    bool seElimino = ProductoBLL.Eliminar(idproducto);
+                    bool seElimino = true;
 
                     if (seElimino)
                     {
                         dgvProductos.Rows.RemoveAt(dgvProductos.SelectedRows[0].Index);
                         MessageBox.Show("Producto Eliminado", "Eliminar Producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dgvProductos.DataSource = ProductoBLL.MostrarProducto();
+                      
                     }
                     else
                     {
-                        MessageBox.Show("No Se Elimino El Producto", "Error Al Eliminar Producto", MessageBoxButtons.OK, MessageBoxIcons.Error);
+                        MessageBox.Show("No Se Elimino El Producto", "Error Al Eliminar Producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }

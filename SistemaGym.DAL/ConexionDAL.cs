@@ -38,7 +38,7 @@ namespace SistemaGym.DAL
                 {
                     cadena.ConnectionString = cadena.ConnectionString + " Integrated Security = SSPI";
                 }
-                else if (this.seguridad) 
+                /*else if (this.seguridad) 
                 { cadena.ConnectionString = "Server= LAPTOP-JHI5587U\\SQLEMANUEL" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
                 else if (this.seguridad)
                 { cadena.ConnectionString = "Server= DESKTOP-FT9L2OG\\SQLEXPRESS" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
@@ -47,7 +47,7 @@ namespace SistemaGym.DAL
                 else { cadena.ConnectionString = cadena.ConnectionString + "User Id=" + this.usuario + ";Password=" + this.clave; }
 
 
-
+                */
 
 
             }

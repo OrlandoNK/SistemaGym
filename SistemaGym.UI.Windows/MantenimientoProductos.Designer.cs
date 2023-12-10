@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             lblIDProducto = new Label();
             lblNombre = new Label();
             lblCategoria = new Label();
             lblPrecioUnitario = new Label();
-            lblNoExixtencia = new Label();
+            label = new Label();
             txtIDProducto = new TextBox();
             txtNombre = new TextBox();
             txtPrecioUnitario = new TextBox();
-            txtNoExistencia = new TextBox();
+            txtStock = new TextBox();
             dgvProductos = new DataGridView();
             btnAgregar = new Button();
             btnGuardar = new Button();
             btnEliminar = new Button();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            cbCategoria = new ComboBox();
+            cbProveedor = new ComboBox();
             label1 = new Label();
             IDProducto = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -90,14 +90,14 @@
             lblPrecioUnitario.TabIndex = 3;
             lblPrecioUnitario.Text = "Precio Unitario";
             // 
-            // lblNoExixtencia
+            // label
             // 
-            lblNoExixtencia.AutoSize = true;
-            lblNoExixtencia.Location = new Point(30, 227);
-            lblNoExixtencia.Name = "lblNoExixtencia";
-            lblNoExixtencia.Size = new Size(81, 15);
-            lblNoExixtencia.TabIndex = 4;
-            lblNoExixtencia.Text = "No. Existencia";
+            label.AutoSize = true;
+            label.Location = new Point(30, 227);
+            label.Name = "label";
+            label.Size = new Size(36, 15);
+            label.TabIndex = 4;
+            label.Text = "Stock";
             // 
             // txtIDProducto
             // 
@@ -120,12 +120,12 @@
             txtPrecioUnitario.Size = new Size(147, 23);
             txtPrecioUnitario.TabIndex = 8;
             // 
-            // txtNoExistencia
+            // txtStock
             // 
-            txtNoExistencia.Location = new Point(136, 224);
-            txtNoExistencia.Name = "txtNoExistencia";
-            txtNoExistencia.Size = new Size(147, 23);
-            txtNoExistencia.TabIndex = 9;
+            txtStock.Location = new Point(136, 224);
+            txtStock.Name = "txtStock";
+            txtStock.Size = new Size(147, 23);
+            txtStock.TabIndex = 9;
             // 
             // dgvProductos
             // 
@@ -142,7 +142,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(21, 284);
+            btnAgregar.Location = new Point(97, 296);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(93, 39);
             btnAgregar.TabIndex = 11;
@@ -152,7 +152,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(155, 284);
+            btnGuardar.Location = new Point(231, 296);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(90, 39);
             btnGuardar.TabIndex = 12;
@@ -162,7 +162,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(290, 284);
+            btnEliminar.Location = new Point(366, 296);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(81, 39);
             btnEliminar.TabIndex = 13;
@@ -170,21 +170,21 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // comboBox1
+            // cbCategoria
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(136, 101);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(147, 23);
-            comboBox1.TabIndex = 14;
+            cbCategoria.FormattingEnabled = true;
+            cbCategoria.Location = new Point(136, 101);
+            cbCategoria.Name = "cbCategoria";
+            cbCategoria.Size = new Size(147, 23);
+            cbCategoria.TabIndex = 14;
             // 
-            // comboBox2
+            // cbProveedor
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(136, 141);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(147, 23);
-            comboBox2.TabIndex = 16;
+            cbProveedor.FormattingEnabled = true;
+            cbProveedor.Location = new Point(136, 141);
+            cbProveedor.Name = "cbProveedor";
+            cbProveedor.Size = new Size(147, 23);
+            cbProveedor.TabIndex = 16;
             // 
             // label1
             // 
@@ -230,9 +230,9 @@
             // PrecioUnitario
             // 
             PrecioUnitario.DataPropertyName = "PrecioUnitario";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle3;
             PrecioUnitario.HeaderText = "PrecioUnitario";
             PrecioUnitario.Name = "PrecioUnitario";
             PrecioUnitario.ReadOnly = true;
@@ -249,18 +249,18 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(952, 531);
-            Controls.Add(comboBox2);
+            Controls.Add(cbProveedor);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(cbCategoria);
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
             Controls.Add(btnAgregar);
             Controls.Add(dgvProductos);
-            Controls.Add(txtNoExistencia);
+            Controls.Add(txtStock);
             Controls.Add(txtPrecioUnitario);
             Controls.Add(txtNombre);
             Controls.Add(txtIDProducto);
-            Controls.Add(lblNoExixtencia);
+            Controls.Add(label);
             Controls.Add(lblPrecioUnitario);
             Controls.Add(lblCategoria);
             Controls.Add(lblNombre);
@@ -279,17 +279,17 @@
         private Label lblNombre;
         private Label lblCategoria;
         private Label lblPrecioUnitario;
-        private Label lblNoExixtencia;
+        private Label label;
         private TextBox txtIDProducto;
         private TextBox txtNombre;
         private TextBox txtPrecioUnitario;
-        private TextBox txtNoExistencia;
+        private TextBox txtStock;
         private DataGridView dgvProductos;
         private Button btnAgregar;
         private Button btnGuardar;
         private Button btnEliminar;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox cbCategoria;
+        private ComboBox cbProveedor;
         private Label label1;
         private DataGridViewTextBoxColumn IDProducto;
         private DataGridViewTextBoxColumn Nombre;

@@ -13,15 +13,20 @@ namespace SistemaGym.BLL
     {
         ProductoDAL productoDAL = new ProductoDAL();
 
-        public static void InsertarProducto(ProductoEntity producto)
+        public static void Guardar(ProductoEntity producto)
         {
-            ProductoDAL.InsertarProductos(producto);
+           
+            if (producto.IDProducto == 0)
+            {
+               ProductoDAL.InsertarProductos(producto);
+            } else
+            {
+                ProductoDAL.UpdateProduct(producto);
+            }
+           
         }
 
-        public static void UpdateProduct(ProductoEntity producto)
-        {
-            ProductoDAL.UpdateProduct(producto);
-        }
+     
 
         public bool DeleteProduct(ProductoEntity producto)
         {
