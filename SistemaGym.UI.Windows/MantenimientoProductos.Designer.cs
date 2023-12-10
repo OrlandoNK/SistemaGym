@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             lblIDProducto = new Label();
             lblNombre = new Label();
             lblCategoria = new Label();
@@ -35,19 +36,21 @@
             lblNoExixtencia = new Label();
             txtIDProducto = new TextBox();
             txtNombre = new TextBox();
-            txtCategoria = new TextBox();
             txtPrecioUnitario = new TextBox();
             txtNoExistencia = new TextBox();
             dgvProductos = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Categoria = new DataGridViewTextBoxColumn();
-            PrecioUnitario = new DataGridViewTextBoxColumn();
-            NoExistencia = new DataGridViewTextBoxColumn();
             btnAgregar = new Button();
             btnGuardar = new Button();
             btnEliminar = new Button();
-            btnLimpiar = new Button();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            label1 = new Label();
+            IDProducto = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Categoria = new DataGridViewComboBoxColumn();
+            IDProveedor = new DataGridViewComboBoxColumn();
+            PrecioUnitario = new DataGridViewTextBoxColumn();
+            Stock = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             SuspendLayout();
             // 
@@ -81,7 +84,7 @@
             // lblPrecioUnitario
             // 
             lblPrecioUnitario.AutoSize = true;
-            lblPrecioUnitario.Location = new Point(30, 153);
+            lblPrecioUnitario.Location = new Point(30, 186);
             lblPrecioUnitario.Name = "lblPrecioUnitario";
             lblPrecioUnitario.Size = new Size(85, 15);
             lblPrecioUnitario.TabIndex = 3;
@@ -90,7 +93,7 @@
             // lblNoExixtencia
             // 
             lblNoExixtencia.AutoSize = true;
-            lblNoExixtencia.Location = new Point(30, 194);
+            lblNoExixtencia.Location = new Point(30, 227);
             lblNoExixtencia.Name = "lblNoExixtencia";
             lblNoExixtencia.Size = new Size(81, 15);
             lblNoExixtencia.TabIndex = 4;
@@ -110,23 +113,16 @@
             txtNombre.Size = new Size(147, 23);
             txtNombre.TabIndex = 6;
             // 
-            // txtCategoria
-            // 
-            txtCategoria.Location = new Point(136, 101);
-            txtCategoria.Name = "txtCategoria";
-            txtCategoria.Size = new Size(147, 23);
-            txtCategoria.TabIndex = 7;
-            // 
             // txtPrecioUnitario
             // 
-            txtPrecioUnitario.Location = new Point(136, 150);
+            txtPrecioUnitario.Location = new Point(136, 183);
             txtPrecioUnitario.Name = "txtPrecioUnitario";
             txtPrecioUnitario.Size = new Size(147, 23);
             txtPrecioUnitario.TabIndex = 8;
             // 
             // txtNoExistencia
             // 
-            txtNoExistencia.Location = new Point(136, 191);
+            txtNoExistencia.Location = new Point(136, 224);
             txtNoExistencia.Name = "txtNoExistencia";
             txtNoExistencia.Size = new Size(147, 23);
             txtNoExistencia.TabIndex = 9;
@@ -136,57 +132,27 @@
             dgvProductos.AllowUserToAddRows = false;
             dgvProductos.AllowUserToDeleteRows = false;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { ID, Nombre, Categoria, PrecioUnitario, NoExistencia });
-            dgvProductos.Location = new Point(311, 22);
+            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { IDProducto, Nombre, Categoria, IDProveedor, PrecioUnitario, Stock });
+            dgvProductos.Location = new Point(311, 14);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowTemplate.Height = 25;
-            dgvProductos.Size = new Size(546, 192);
+            dgvProductos.Size = new Size(641, 233);
             dgvProductos.TabIndex = 10;
-            // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            // 
-            // Categoria
-            // 
-            Categoria.HeaderText = "Categoria";
-            Categoria.Name = "Categoria";
-            Categoria.ReadOnly = true;
-            // 
-            // PrecioUnitario
-            // 
-            PrecioUnitario.HeaderText = "PrecioUnitario";
-            PrecioUnitario.Name = "PrecioUnitario";
-            PrecioUnitario.ReadOnly = true;
-            // 
-            // NoExistencia
-            // 
-            NoExistencia.HeaderText = "NoExistencia";
-            NoExistencia.Name = "NoExistencia";
-            NoExistencia.ReadOnly = true;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(321, 342);
+            btnAgregar.Location = new Point(21, 284);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(93, 39);
             btnAgregar.TabIndex = 11;
-            btnAgregar.Text = "Agregar";
+            btnAgregar.Text = "Nuevo";
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(455, 342);
+            btnGuardar.Location = new Point(155, 284);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(90, 39);
             btnGuardar.TabIndex = 12;
@@ -196,7 +162,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(749, 342);
+            btnEliminar.Location = new Point(290, 284);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(81, 39);
             btnEliminar.TabIndex = 13;
@@ -204,29 +170,94 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // btnLimpiar
+            // comboBox1
             // 
-            btnLimpiar.Location = new Point(595, 342);
-            btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(97, 39);
-            btnLimpiar.TabIndex = 14;
-            btnLimpiar.Text = "Limpiar";
-            btnLimpiar.UseVisualStyleBackColor = true;
-            btnLimpiar.Click += btnLimpiar_Click;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(136, 101);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(147, 23);
+            comboBox1.TabIndex = 14;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(136, 141);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(147, 23);
+            comboBox2.TabIndex = 16;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(30, 149);
+            label1.Name = "label1";
+            label1.Size = new Size(61, 15);
+            label1.TabIndex = 15;
+            label1.Text = "Proveedor";
+            // 
+            // IDProducto
+            // 
+            IDProducto.DataPropertyName = "IDProducto";
+            IDProducto.HeaderText = "ID";
+            IDProducto.Name = "IDProducto";
+            IDProducto.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            // 
+            // Categoria
+            // 
+            Categoria.DataPropertyName = "IDCategoria";
+            Categoria.HeaderText = "Categoria";
+            Categoria.Name = "Categoria";
+            Categoria.ReadOnly = true;
+            Categoria.Resizable = DataGridViewTriState.True;
+            Categoria.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // IDProveedor
+            // 
+            IDProveedor.DataPropertyName = "IDProveedor";
+            IDProveedor.HeaderText = "Proveedor";
+            IDProveedor.Name = "IDProveedor";
+            IDProveedor.ReadOnly = true;
+            IDProveedor.Resizable = DataGridViewTriState.True;
+            IDProveedor.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // PrecioUnitario
+            // 
+            PrecioUnitario.DataPropertyName = "PrecioUnitario";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle2;
+            PrecioUnitario.HeaderText = "PrecioUnitario";
+            PrecioUnitario.Name = "PrecioUnitario";
+            PrecioUnitario.ReadOnly = true;
+            // 
+            // Stock
+            // 
+            Stock.DataPropertyName = "Stock";
+            Stock.HeaderText = "Stock";
+            Stock.Name = "Stock";
+            Stock.ReadOnly = true;
             // 
             // MantenimientoProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(869, 531);
-            Controls.Add(btnLimpiar);
+            ClientSize = new Size(952, 531);
+            Controls.Add(comboBox2);
+            Controls.Add(label1);
+            Controls.Add(comboBox1);
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
             Controls.Add(btnAgregar);
             Controls.Add(dgvProductos);
             Controls.Add(txtNoExistencia);
             Controls.Add(txtPrecioUnitario);
-            Controls.Add(txtCategoria);
             Controls.Add(txtNombre);
             Controls.Add(txtIDProducto);
             Controls.Add(lblNoExixtencia);
@@ -251,18 +282,20 @@
         private Label lblNoExixtencia;
         private TextBox txtIDProducto;
         private TextBox txtNombre;
-        private TextBox txtCategoria;
         private TextBox txtPrecioUnitario;
         private TextBox txtNoExistencia;
         private DataGridView dgvProductos;
         private Button btnAgregar;
         private Button btnGuardar;
         private Button btnEliminar;
-        private DataGridViewTextBoxColumn ID;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private Label label1;
+        private DataGridViewTextBoxColumn IDProducto;
         private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Categoria;
+        private DataGridViewComboBoxColumn Categoria;
+        private DataGridViewComboBoxColumn IDProveedor;
         private DataGridViewTextBoxColumn PrecioUnitario;
-        private DataGridViewTextBoxColumn NoExistencia;
-        private Button btnLimpiar;
+        private DataGridViewTextBoxColumn Stock;
     }
 }

@@ -46,7 +46,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Seguro que quiere guardar los datos?","Guardar Producto", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("¿Seguro que quiere guardar los datos?", "Guardar Producto", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 ProductoEntity nuevoproducto = new ProductoEntity();
@@ -78,7 +78,7 @@ namespace SistemaGym.UI.Windows
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             ProductoBLL productoBLL = new ProductoBLL();
-            if (dgvProductos.SelectedRows.Count > 0 )
+            if (dgvProductos.SelectedRows.Count > 0)
             {
                 DialogResult dialogResult = MessageBox.Show("¿Seguro que quiere eliminar este producto?", "¿Eliminar Producto?" MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
@@ -86,7 +86,7 @@ namespace SistemaGym.UI.Windows
                     int idproducto = Convert.ToInt32(dgvProductos.SelectedRows[0].Cells["IDProducto"].Value);
                     bool seElimino = ProductoBLL.Eliminar(idproducto);
 
-                    if(seElimino)
+                    if (seElimino)
                     {
                         dgvProductos.Rows.RemoveAt(dgvProductos.SelectedRows[0].Index);
                         MessageBox.Show("Producto Eliminado", "Eliminar Producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -100,7 +100,7 @@ namespace SistemaGym.UI.Windows
                 }
                 if (dialogResult == DialogResult.No)
                 {
-                    
+
                 }
 
             }
