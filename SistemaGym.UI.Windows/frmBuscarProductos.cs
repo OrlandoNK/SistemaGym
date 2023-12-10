@@ -14,6 +14,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmBuscarProductos : Form
     {
+        int idProducto;
         public frmBuscarProductos()
         {
             InitializeComponent();
@@ -31,22 +32,29 @@ namespace SistemaGym.UI.Windows
             {
                 productoBusqueda.IDProveedor = idProveedor;
             }
-         
+
             int idCategoria;
-                if (int.TryParse(textoBusqueda, out idCategoria))
+            if (int.TryParse(textoBusqueda, out idCategoria))
             {
                 productoBusqueda.IDCategoria = idCategoria;
             }
-           
+
 
 
             dgvBuscarProductos.DataSource = ProductoBLL.GetByValor(productoBusqueda);
 
         }
+        private int id
+        {
+            get { return idProducto; }
+            set { }
+        }
+
+
 
         private void frmBuscarProductos_Load(object sender, EventArgs e)
         {
-             dgvBuscarProductos.AutoGenerateColumns = false;
+            dgvBuscarProductos.AutoGenerateColumns = false;
             dgvBuscarProductos.DataSource = ProductoBLL.GetAll();
             CargarCategoria();
             CargarProveedor();
@@ -74,6 +82,18 @@ namespace SistemaGym.UI.Windows
             colProveedor.DisplayMember = "Nombre";
             colProveedor.DataPropertyName = "IDProveedor";
             colProveedor.DataSource = ProveedoresBLL.MostrarProveedores();
+
+        }
+
+        private void dgvBuscarProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            idProducto = (int)dgvBuscarProductos.CurrentRow.Cells["IDProducto"].Value;
+            DialogResult = DialogResult.OK;
+            Close();
 
         }
     }

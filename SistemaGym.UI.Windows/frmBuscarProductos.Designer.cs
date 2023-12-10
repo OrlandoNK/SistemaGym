@@ -62,6 +62,7 @@
             dgvBuscarProductos.RowTemplate.Height = 25;
             dgvBuscarProductos.Size = new Size(656, 362);
             dgvBuscarProductos.TabIndex = 7;
+            dgvBuscarProductos.CellDoubleClick += dgvBuscarProductos_CellDoubleClick;
             // 
             // IDProducto
             // 
