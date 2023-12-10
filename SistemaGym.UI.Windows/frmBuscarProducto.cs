@@ -1,4 +1,5 @@
 ﻿using SistemaGym.BLL;
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,16 @@ namespace SistemaGym.UI.Windows
 
         private void txtBuscarProducto_TextChanged(object sender, EventArgs e)
         {
+            string textoBusqueda = txtBuscarProducto.Text;
+
+
+            ProductoEntity productoBusqueda = new ProductoEntity();
+            productoBusqueda.Nombre = textoBusqueda;
+            productoBusqueda.IDProveedor = int.Parse(textoBusqueda);
+            productoBusqueda.IDCategoria = int.Parse(textoBusqueda);
+
+
+            dgvBuscarProductos.DataSource = ProductoBLL.GetByValor(productoBusqueda);
 
         }
 
@@ -35,7 +46,7 @@ namespace SistemaGym.UI.Windows
             dgvBuscarProductos.DataSource = ProductoBLL.GetAll();
             CargarCategoria();
             CargarProveedor();
-          
+
         }
         private void CargarCategoria()
         {
@@ -46,7 +57,7 @@ namespace SistemaGym.UI.Windows
             colCategoria.ValueMember = "IDCategoria";
             colCategoria.DisplayMember = "Nombre";
             colCategoria.DataPropertyName = "IDCategoria";
-            colCategoria.DataSource =CategoriaProductoBLL.Mostrar();
+            colCategoria.DataSource = CategoriaProductoBLL.Mostrar();
 
         }
         private void CargarProveedor()
@@ -62,5 +73,5 @@ namespace SistemaGym.UI.Windows
 
         }
     }
-    }
+}
 

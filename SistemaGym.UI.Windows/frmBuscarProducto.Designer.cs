@@ -30,12 +30,6 @@
         {
             txtBuscarProducto = new TextBox();
             dgvBuscarProductos = new DataGridView();
-            IDProducto = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            IDCategoria = new DataGridViewComboBoxColumn();
-            IDProveedor = new DataGridViewComboBoxColumn();
-            PrecioUnitario = new DataGridViewTextBoxColumn();
-            Stock = new DataGridViewTextBoxColumn();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvBuscarProductos).BeginInit();
             SuspendLayout();
@@ -54,57 +48,12 @@
             dgvBuscarProductos.AllowUserToAddRows = false;
             dgvBuscarProductos.AllowUserToDeleteRows = false;
             dgvBuscarProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBuscarProductos.Columns.AddRange(new DataGridViewColumn[] { IDProducto, Nombre, IDCategoria, IDProveedor, PrecioUnitario, Stock });
             dgvBuscarProductos.Location = new Point(115, 81);
             dgvBuscarProductos.Name = "dgvBuscarProductos";
             dgvBuscarProductos.ReadOnly = true;
             dgvBuscarProductos.RowTemplate.Height = 25;
             dgvBuscarProductos.Size = new Size(656, 362);
             dgvBuscarProductos.TabIndex = 4;
-            // 
-            // IDProducto
-            // 
-            IDProducto.DataPropertyName = "IDProducto";
-            IDProducto.HeaderText = "ID";
-            IDProducto.Name = "IDProducto";
-            IDProducto.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            // 
-            // IDCategoria
-            // 
-            IDCategoria.HeaderText = "Categoria";
-            IDCategoria.Name = "IDCategoria";
-            IDCategoria.ReadOnly = true;
-            IDCategoria.Resizable = DataGridViewTriState.True;
-            IDCategoria.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // IDProveedor
-            // 
-            IDProveedor.HeaderText = "Proveedor";
-            IDProveedor.Name = "IDProveedor";
-            IDProveedor.ReadOnly = true;
-            IDProveedor.Resizable = DataGridViewTriState.True;
-            IDProveedor.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // PrecioUnitario
-            // 
-            PrecioUnitario.DataPropertyName = "PrecioUnitario";
-            PrecioUnitario.HeaderText = "Precio";
-            PrecioUnitario.Name = "PrecioUnitario";
-            PrecioUnitario.ReadOnly = true;
-            // 
-            // Stock
-            // 
-            Stock.DataPropertyName = "Stock";
-            Stock.HeaderText = "Stock";
-            Stock.Name = "Stock";
-            Stock.ReadOnly = true;
             // 
             // label1
             // 
@@ -136,11 +85,5 @@
         private TextBox txtBuscarProducto;
         private DataGridView dgvBuscarProductos;
         private Label label1;
-        private DataGridViewTextBoxColumn IDProducto;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewComboBoxColumn IDCategoria;
-        private DataGridViewComboBoxColumn IDProveedor;
-        private DataGridViewTextBoxColumn PrecioUnitario;
-        private DataGridViewTextBoxColumn Stock;
     }
 }
