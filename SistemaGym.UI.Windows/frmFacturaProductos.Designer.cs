@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             label1 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -58,7 +58,7 @@
             btnBuscarUsuario = new Button();
             txtIDFactura = new TextBox();
             txtUsuario = new TextBox();
-            dataGridView1 = new DataGridView();
+            dgvProductos = new DataGridView();
             IDDetalle = new DataGridViewTextBoxColumn();
             IDProducto = new DataGridViewComboBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
@@ -94,7 +94,7 @@
             errorProvider = new ErrorProvider(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
@@ -334,18 +334,18 @@
             txtUsuario.Size = new Size(100, 23);
             txtUsuario.TabIndex = 11;
             // 
-            // dataGridView1
+            // dgvProductos
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDDetalle, IDProducto, Precio, Cantidad, Subtotal, Descuento, Impuesto, Total });
-            dataGridView1.Location = new Point(51, 275);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(929, 267);
-            dataGridView1.TabIndex = 12;
+            dgvProductos.AllowUserToAddRows = false;
+            dgvProductos.AllowUserToDeleteRows = false;
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { IDDetalle, IDProducto, Precio, Cantidad, Subtotal, Descuento, Impuesto, Total });
+            dgvProductos.Location = new Point(51, 275);
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.ReadOnly = true;
+            dgvProductos.RowTemplate.Height = 25;
+            dgvProductos.Size = new Size(929, 267);
+            dgvProductos.TabIndex = 12;
             // 
             // IDDetalle
             // 
@@ -366,9 +366,9 @@
             // Precio
             // 
             Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle6;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
@@ -383,9 +383,9 @@
             // Subtotal
             // 
             Subtotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle7;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
             Subtotal.ReadOnly = true;
@@ -393,9 +393,9 @@
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle8;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
@@ -403,9 +403,9 @@
             // Impuesto
             // 
             Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle9;
             Impuesto.HeaderText = "Impuesto";
             Impuesto.Name = "Impuesto";
             Impuesto.ReadOnly = true;
@@ -413,9 +413,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle10;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
@@ -449,6 +449,7 @@
             btnAgregar.TabIndex = 11;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnBuscarProducto
             // 
@@ -677,7 +678,7 @@
             Controls.Add(btnGuardar);
             Controls.Add(btnNuevo);
             Controls.Add(groupBox3);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvProductos);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "frmFacturaProductos";
@@ -687,7 +688,7 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
@@ -714,7 +715,7 @@
         private TextBox txtIDCliente;
         private Label label8;
         private Label label7;
-        private DataGridView dataGridView1;
+        private DataGridView dgvProductos;
         private GroupBox groupBox3;
         private Label label12;
         private Label label11;

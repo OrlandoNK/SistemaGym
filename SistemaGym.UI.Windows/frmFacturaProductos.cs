@@ -14,6 +14,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmFacturaProductos : Form
     {
+        FacturaProductoEntity oFactura = new FacturaProductoEntity();
         const string SISTEMA = "Sistema Gym";
         public frmFacturaProductos()
         {
@@ -56,7 +57,7 @@ namespace SistemaGym.UI.Windows
             //verificar que en los campos obligatorios hayan datos
             if (txtIDProducto.Text == "0")
             {
-                errorProvider.SetError(txtIDProducto, "El Nombre Es Obligatorio");
+                MessageBox.Show("Por Favor Agregue el Producto", SISTEMA);
                 resultado = false;
             }
 
@@ -96,6 +97,29 @@ namespace SistemaGym.UI.Windows
 
         private void frmFacturaProductos_Load(object sender, EventArgs e)
         {
+            InicializarControles();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (!ValidarDetalle())
+            {
+                return;
+            }
+            DetalleFacturaProductoEntity detalleFactura = new DetalleFacturaProductoEntity();
+
+            detalleFactura.IDDetalleFacturaProducto = int.Parse(txtIDProducto.Text);
+            detalleFactura.IDProducto = int.Parse(txtIDProducto.Text);
+            detalleFactura.Cantidad = int.Parse(txtCantidad.Text);
+            detalleFactura.Precio = decimal.Parse(txtPrecio.Text);
+
+            oFactura.Detalles.Add(detalleFactura);
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = oFactura.Detalles;
+            txtSubTotal.Text = oFactura.SubTotal.ToString();
+            txtTotalDescuento.Text= oFactura.TotalDescuento.ToString();
+            txtImpuesto.Text = oFactura.TotalItbis.ToString();
+            txtTotal.Text = oFactura.Total.ToString();
             InicializarControles();
         }
     }
