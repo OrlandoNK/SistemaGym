@@ -112,7 +112,7 @@ namespace SistemaGym.DAL
 
         }
         //buscar id
-        public static DataTable BuscarID(int id)
+        public static UsuarioEntity BuscarID(int id)
         {
 
             ConexionDAL instancia = Instancia();
@@ -123,9 +123,22 @@ namespace SistemaGym.DAL
             string buscar = "Select * From Usuarios where IDUsuario= @idusuario";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
             cmd.Parameters.AddWithValue("@idusuario", id);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            return dt;
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            UsuarioEntity usuarioEncontrado = null;
+
+            if (reader.Read())
+            {
+                usuarioEncontrado = new UsuarioEntity("","");
+                usuarioEncontrado.IDUsuario = Convert.ToInt32(reader["IDUsuario"]);
+                usuarioEncontrado.Nombre = reader["Nombre"].ToString();
+                
+              
+
+            }
+
+            Conexion.Close();
+            return usuarioEncontrado;
         }
         // buscar por valor
         public static DataTable ObtenerPorValor(UsuarioEntity usuario)

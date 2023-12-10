@@ -136,10 +136,13 @@ namespace SistemaGym.DAL
 
             if (reader.Read())
             {
+                TipoClienteEntity tipoCliente = new TipoClienteEntity();
                 clienteEncontrado = new ClientesEntity();
                 clienteEncontrado.IDCliente = Convert.ToInt32(reader["IDCliente"]);
                 clienteEncontrado.Nombre = reader["Nombre"].ToString();
-              
+                clienteEncontrado.Documento = reader["Documento"].ToString();
+                clienteEncontrado.TipoCliente = Convert.ToInt32(reader["TipoCliente"]);
+
             }
 
             Conexion.Close();

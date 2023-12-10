@@ -32,7 +32,20 @@ namespace SistemaGym.UI.Windows
                 txtTipoCliente.Text = cliente.TipoCliente.ToString();
 
             }
-            
+
+        }
+
+        private void btnBuscarUsuario_Click(object sender, EventArgs e)
+        {
+            frmBuscarUsuario frmBuscarUsuario = new frmBuscarUsuario();
+            if (frmBuscarUsuario.ShowDialog() == DialogResult.OK)
+            {
+
+                UsuarioEntity usuario = UsuarioBLL.BuscarID(frmBuscarUsuario.id);
+                txtUsuario.Text = usuario.Nombre;
+
+
+            }
         }
     }
 }
