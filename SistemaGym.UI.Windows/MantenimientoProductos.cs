@@ -20,7 +20,7 @@ namespace SistemaGym.UI.Windows
         }
         private void MantenimientoProductos_Load(object sender, EventArgs e)
         {
-           InicializarCampos();
+            InicializarCampos();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -31,9 +31,9 @@ namespace SistemaGym.UI.Windows
         {
             txtIDProducto.Text = "0";
             txtNombre.Text = "";
-       
+
             txtPrecioUnitario.Text = "";
-           
+
             txtStock.Text = "";
             dgvProductos.AutoGenerateColumns = false;
             dgvProductos.DataSource = ProductoBLL.GetAll();
@@ -42,7 +42,7 @@ namespace SistemaGym.UI.Windows
         {
             txtIDProducto.Clear();
             txtNombre.Clear();
-           
+
             txtPrecioUnitario.Clear();
             txtStock.Clear();
         }
@@ -72,6 +72,38 @@ namespace SistemaGym.UI.Windows
 
             }
         }
+        private bool ValidarDatos()
+        {
+            bool resultado = true;
+            //inicializando los mensajes de validaciones
+            errorProvider.Clear();
+            //verificar que en los campos obligatorios hayan datos
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                errorProvider.SetError(txtNombre, "El Nombre Es Obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(cbCategoria.Text))
+            {
+                errorProvider.SetError(cbCategoria, "La Categoria Es Obligatoria");
+                resultado = false;
+            }
+
+
+            if (string.IsNullOrEmpty(cbProveedor.Text))
+            {
+                errorProvider.SetError(cbProveedor, "Obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(txtPrecioUnitario.Text))
+            {
+                errorProvider.SetError(txtPrecioUnitario, "El Precio es Obligatorio");
+                resultado = false;
+            }
+           
+
+            return resultado;
+        }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -93,7 +125,7 @@ namespace SistemaGym.UI.Windows
                     {
                         dgvProductos.Rows.RemoveAt(dgvProductos.SelectedRows[0].Index);
                         MessageBox.Show("Producto Eliminado", "Eliminar Producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                      
+
                     }
                     else
                     {
