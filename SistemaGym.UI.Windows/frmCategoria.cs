@@ -16,5 +16,9 @@ namespace SistemaGym.UI.Windows
         {
             InitializeComponent();
         }
+        private void InicializarControles()
+        {
+           
+        }
     }
 }
