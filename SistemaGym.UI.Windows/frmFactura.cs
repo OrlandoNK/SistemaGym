@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGym.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,38 @@ namespace SistemaGym.UI.Windows
         {
             InitializeComponent();
         }
+
+        private void frmFactura_Load(object sender, EventArgs e)
+        {
+            dgvBuscarFactura.AutoGenerateColumns = false;
+            dgvBuscarFactura.DataSource = FacturacionProductoBLL.Mostrar();
+            CargarUsuarios();
+            CargarClientes();
+        }
+        private void CargarUsuarios()
+        {
+
+
+            var colUsuario = (DataGridViewComboBoxColumn)dgvBuscarFactura.Columns["IDUsuario"];
+
+            colUsuario.ValueMember = "IDUsuario";
+            colUsuario.DisplayMember = "NombreUsuario";
+            colUsuario.DataPropertyName = "IDUsuario";
+            colUsuario.DataSource = UsuarioBLL.Mostrar();
+
+        }
+        private void CargarClientes()
+        {
+
+
+            var colCliente = (DataGridViewComboBoxColumn)dgvBuscarFactura.Columns["IDCliente"];
+
+            colCliente.ValueMember = "IDCliente";
+            colCliente.DisplayMember = "Nombre";
+            colCliente.DataPropertyName = "IDCliente";
+            colCliente.DataSource = ClientesBLL.MostrarCliente();
+
+        }
     }
 }
+

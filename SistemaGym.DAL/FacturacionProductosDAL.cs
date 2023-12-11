@@ -151,38 +151,23 @@ namespace SistemaGym.DAL
             cmd.ExecuteNonQuery();
 
         }
-        public static List<FacturaProductoEntity> GetAll()
-        {
-            List<FacturaProductoEntity> list = new List<FacturaProductoEntity>();
+        
 
+        public static DataTable Mostrar()
+        {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             Conexion.Open();
-            DataTable dt = new DataTable();
-            string mostrar = "Select * From FacturaProductos Order By Fecha DESC ";
+
+            string mostrar = "SELECT * FROM FacturaProductos ORDER BY FechaEmision DESC";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            SqlDataReader dr = cmd.ExecuteReader();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
-            while (dr.Read())
-            {
-                FacturaProductoEntity oFactura = new FacturaProductoEntity();
-                oFactura.IDFactura = Convert.ToInt32(dr["IDFactura"]);
-                oFactura.IDCliente = Convert.ToInt32(dr["IDCliente"]);
-                oFactura.IDUsuario = Convert.ToInt32(dr["IDUsuario"]);
-                oFactura.NCF = Convert.ToString(dr["NCF"]);
-                // oFactura.SubTotal = Convert.ToDecimal(dr["SubTotal"]);
-                //oFactura.TotalDescuento = Convert.ToDecimal(dr["TotalDescuento"]);
-                // oFactura.TotalItbis = Convert.ToDecimal(dr["TotalItbis"]);
-                //oFactura.Total = Convert.ToDecimal(dr["Total"]);
-                oFactura.FechaEmision = Convert.ToDateTime(dr["FechaEmision"]);
-                oFactura.FechaVencimiento = Convert.ToDateTime(dr["FechaVencimiento"]);
-                oFactura.Estatus = Convert.ToString(dr["Estatus"]);
-                list.Add(oFactura);
-            }
+            Conexion.Close();
 
-
-            return list;
+            return dt;
         }
         public static DataTable GetByID(FacturaMembresiaEntity factura)
         {
