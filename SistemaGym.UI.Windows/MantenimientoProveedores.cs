@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace SistemaGym.UI.Windows
 {
@@ -26,36 +27,87 @@ namespace SistemaGym.UI.Windows
 
         private void MantenimientoProveedores_Load(object sender, EventArgs e)
         {
-            dgvProveedores.DataSource = ProveedoresBLL.MostrarProveedores();
+            InicializarControles();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Desea Guardar este Registro de Proveedor?", "¿Guardar Proveedor?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (!ValidarDatos())
             {
-                ProveedoresEntity nuevoProveedor = new ProveedoresEntity();
-
-                nuevoProveedor.Nombre = TxbNombre.Text;
-                nuevoProveedor.Telefono = TxbTelefono.Text;
-                nuevoProveedor.Direccion = TxbDireccion.Text;
-                nuevoProveedor.FechaRegistro = DateTime.Now;
-                nuevoProveedor.Estatus = TxbEstatus.Text;
-
-
-                if (TxbID.Text == "0")
-                {
-                    ProveedoresBLL.Guardar(nuevoProveedor);
-                    MessageBox.Show("¡Proveedor Registrado de Manera Satisfactoria!", "MANTENIMIENTO PROVEEDOR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
-                    dgvProveedores.DataSource = ProveedoresBLL.MostrarProveedores();
-                }
-            }
-
-            if (result == DialogResult.No)
-            {
+                return;
 
             }
+            //datos de control al objeto
+            ProveedoresEntity oProveedor = new ProveedoresEntity();
+            oProveedor.Nombre = TxbNombre.Text;
+            oProveedor.Telefono = TxbTelefono.Text;
+            oProveedor.Estatus = TxbEstatus.Text;
+            oProveedor.FechaRegistro = DateTime.Parse(dtpFechaRegistro.Text);
+            oProveedor.Direccion = TxbDireccion.Text;
+
+            // guardar base datos
+            try
+            {
+                ProveedoresBLL.Guardar(oProveedor);
+                MessageBox.Show("Usuario Guardado", "Sistema Gym", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InicializarControles();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Sistema Gym", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private bool ValidarDatos()
+        {
+            bool resultado = true;
+            //inicializando los mensajes de validaciones
+            errorProvider.Clear();
+            //verificar que en los campos obligatorios hayan datos
+            if (string.IsNullOrEmpty(TxbDireccion.Text))
+            {
+                errorProvider.SetError(TxbDireccion, "obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(TxbNombre.Text))
+            {
+                errorProvider.SetError(TxbNombre, "El Nombre es obligatorio");
+                resultado = false;
+            }
+
+
+            if (string.IsNullOrEmpty(TxbTelefono.Text))
+            {
+                errorProvider.SetError(TxbTelefono, "Obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(TxbDireccion.Text))
+            {
+                errorProvider.SetError(TxbDireccion, "La Direccion es obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(dtpFechaRegistro.Text))
+            {
+                errorProvider.SetError(dtpFechaRegistro, "La Fecha es obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(TxbEstatus.Text))
+            {
+                errorProvider.SetError(TxbEstatus, "El Estatus es obligatorio");
+                resultado = false;
+            }
+
+            return resultado;
+        }
+        private void InicializarControles()
+        {
+            TxtID.Text = "0";
+            TxbTelefono.Clear();
+            TxbNombre.Clear();
+            TxbEstatus.Clear();
+            TxbDireccion.Clear();
+
+            dgvProveedores.AutoGenerateColumns = false;
+            dgvProveedores.DataSource = ProveedoresBLL.MostrarProveedores();
 
         }
 
@@ -66,7 +118,7 @@ namespace SistemaGym.UI.Windows
 
         public void InicializarCampos()
         {
-            TxbID.Text = "0";
+            TxtID.Text = "0";
             TxbNombre.Text = "";
             TxbTelefono.Text = "";
             TxbDireccion.Text = "";
@@ -75,7 +127,7 @@ namespace SistemaGym.UI.Windows
 
         public void LimpiarCampos()
         {
-            TxbID.Clear();
+            TxtID.Clear();
             TxbNombre.Clear();
             TxbTelefono.Clear();
             TxbDireccion.Clear();

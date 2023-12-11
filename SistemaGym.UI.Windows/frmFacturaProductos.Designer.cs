@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -40,6 +41,7 @@
             dtpFechaEmision = new DateTimePicker();
             dtpFechaVencimiento = new DateTimePicker();
             groupBox1 = new GroupBox();
+            txtDocumento = new TextBox();
             btnBuscarCliente = new Button();
             txtTipoCliente = new TextBox();
             txtCliente = new TextBox();
@@ -49,14 +51,16 @@
             label2 = new Label();
             label3 = new Label();
             groupBox2 = new GroupBox();
+            txtIDUsuario = new TextBox();
+            label20 = new Label();
             cbEstatus = new ComboBox();
             txtNCF = new TextBox();
             label19 = new Label();
             label18 = new Label();
-            button2 = new Button();
+            btnBuscarUsuario = new Button();
             txtIDFactura = new TextBox();
             txtUsuario = new TextBox();
-            dataGridView1 = new DataGridView();
+            dgvProductos = new DataGridView();
             IDDetalle = new DataGridViewTextBoxColumn();
             IDProducto = new DataGridViewComboBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
@@ -73,7 +77,7 @@
             txtCantidad = new TextBox();
             txtPrecio = new TextBox();
             txtProducto = new TextBox();
-            txtIDDetalle = new TextBox();
+            txtIDProducto = new TextBox();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
@@ -89,11 +93,12 @@
             txtImpuesto = new TextBox();
             txtTotalDescuento = new TextBox();
             txtTotal = new TextBox();
-            txtDocumento = new TextBox();
+            errorProvider = new ErrorProvider(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -164,6 +169,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Cliente";
             // 
+            // txtDocumento
+            // 
+            txtDocumento.Location = new Point(244, 48);
+            txtDocumento.Multiline = true;
+            txtDocumento.Name = "txtDocumento";
+            txtDocumento.ReadOnly = true;
+            txtDocumento.Size = new Size(100, 21);
+            txtDocumento.TabIndex = 15;
+            // 
             // btnBuscarCliente
             // 
             btnBuscarCliente.Location = new Point(366, 22);
@@ -231,7 +245,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 54);
+            label3.Location = new Point(6, 66);
             label3.Name = "label3";
             label3.Size = new Size(47, 15);
             label3.TabIndex = 10;
@@ -239,11 +253,13 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(txtIDUsuario);
+            groupBox2.Controls.Add(label20);
             groupBox2.Controls.Add(cbEstatus);
             groupBox2.Controls.Add(txtNCF);
             groupBox2.Controls.Add(label19);
             groupBox2.Controls.Add(label18);
-            groupBox2.Controls.Add(button2);
+            groupBox2.Controls.Add(btnBuscarUsuario);
             groupBox2.Controls.Add(txtIDFactura);
             groupBox2.Controls.Add(txtUsuario);
             groupBox2.Controls.Add(label3);
@@ -259,6 +275,24 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Factura";
             // 
+            // txtIDUsuario
+            // 
+            txtIDUsuario.Location = new Point(64, 42);
+            txtIDUsuario.Multiline = true;
+            txtIDUsuario.Name = "txtIDUsuario";
+            txtIDUsuario.ReadOnly = true;
+            txtIDUsuario.Size = new Size(100, 23);
+            txtIDUsuario.TabIndex = 21;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(6, 45);
+            label20.Name = "label20";
+            label20.Size = new Size(58, 15);
+            label20.TabIndex = 20;
+            label20.Text = "IDUsuario";
+            // 
             // cbEstatus
             // 
             cbEstatus.FormattingEnabled = true;
@@ -273,6 +307,7 @@
             txtNCF.Location = new Point(51, 95);
             txtNCF.Multiline = true;
             txtNCF.Name = "txtNCF";
+            txtNCF.ReadOnly = true;
             txtNCF.Size = new Size(146, 19);
             txtNCF.TabIndex = 18;
             // 
@@ -294,14 +329,15 @@
             label18.TabIndex = 16;
             label18.Text = "NCF";
             // 
-            // button2
+            // btnBuscarUsuario
             // 
-            button2.Location = new Point(170, 46);
-            button2.Name = "button2";
-            button2.Size = new Size(51, 23);
-            button2.TabIndex = 15;
-            button2.Text = "Buscar";
-            button2.UseVisualStyleBackColor = true;
+            btnBuscarUsuario.Location = new Point(170, 63);
+            btnBuscarUsuario.Name = "btnBuscarUsuario";
+            btnBuscarUsuario.Size = new Size(51, 23);
+            btnBuscarUsuario.TabIndex = 15;
+            btnBuscarUsuario.Text = "Buscar";
+            btnBuscarUsuario.UseVisualStyleBackColor = true;
+            btnBuscarUsuario.Click += btnBuscarUsuario_Click;
             // 
             // txtIDFactura
             // 
@@ -314,29 +350,29 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(64, 46);
+            txtUsuario.Location = new Point(64, 63);
             txtUsuario.Multiline = true;
             txtUsuario.Name = "txtUsuario";
             txtUsuario.ReadOnly = true;
             txtUsuario.Size = new Size(100, 23);
             txtUsuario.TabIndex = 11;
             // 
-            // dataGridView1
+            // dgvProductos
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDDetalle, IDProducto, Precio, Cantidad, Subtotal, Descuento, Impuesto, Total });
-            dataGridView1.Location = new Point(51, 275);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(929, 267);
-            dataGridView1.TabIndex = 12;
+            dgvProductos.AllowUserToAddRows = false;
+            dgvProductos.AllowUserToDeleteRows = false;
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { IDDetalle, IDProducto, Precio, Cantidad, Subtotal, Descuento, Impuesto, Total });
+            dgvProductos.Location = new Point(51, 275);
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.ReadOnly = true;
+            dgvProductos.RowTemplate.Height = 25;
+            dgvProductos.Size = new Size(929, 267);
+            dgvProductos.TabIndex = 12;
             // 
             // IDDetalle
             // 
-            IDDetalle.DataPropertyName = "IDDetalleFacturaProducto";
+            IDDetalle.DataPropertyName = "IDProducto";
             IDDetalle.HeaderText = "ID";
             IDDetalle.Name = "IDDetalle";
             IDDetalle.ReadOnly = true;
@@ -416,7 +452,7 @@
             groupBox3.Controls.Add(txtCantidad);
             groupBox3.Controls.Add(txtPrecio);
             groupBox3.Controls.Add(txtProducto);
-            groupBox3.Controls.Add(txtIDDetalle);
+            groupBox3.Controls.Add(txtIDProducto);
             groupBox3.Controls.Add(label12);
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(label10);
@@ -426,7 +462,7 @@
             groupBox3.Size = new Size(929, 103);
             groupBox3.TabIndex = 13;
             groupBox3.TabStop = false;
-            groupBox3.Text = "Detalles Factura";
+            groupBox3.Text = "Detalles Producto";
             // 
             // btnAgregar
             // 
@@ -436,6 +472,7 @@
             btnAgregar.TabIndex = 11;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnBuscarProducto
             // 
@@ -445,6 +482,7 @@
             btnBuscarProducto.TabIndex = 10;
             btnBuscarProducto.Text = "Buscar";
             btnBuscarProducto.UseVisualStyleBackColor = true;
+            btnBuscarProducto.Click += btnBuscarProducto_Click;
             // 
             // label13
             // 
@@ -483,21 +521,21 @@
             // 
             // txtProducto
             // 
-            txtProducto.Location = new Point(115, 62);
+            txtProducto.Location = new Point(117, 57);
             txtProducto.Multiline = true;
             txtProducto.Name = "txtProducto";
             txtProducto.ReadOnly = true;
-            txtProducto.Size = new Size(180, 17);
+            txtProducto.Size = new Size(180, 27);
             txtProducto.TabIndex = 5;
             // 
-            // txtIDDetalle
+            // txtIDProducto
             // 
-            txtIDDetalle.Location = new Point(6, 62);
-            txtIDDetalle.Multiline = true;
-            txtIDDetalle.Name = "txtIDDetalle";
-            txtIDDetalle.ReadOnly = true;
-            txtIDDetalle.Size = new Size(90, 17);
-            txtIDDetalle.TabIndex = 4;
+            txtIDProducto.Location = new Point(6, 62);
+            txtIDProducto.Multiline = true;
+            txtIDProducto.Name = "txtIDProducto";
+            txtIDProducto.ReadOnly = true;
+            txtIDProducto.Size = new Size(90, 17);
+            txtIDProducto.TabIndex = 4;
             // 
             // label12
             // 
@@ -533,11 +571,11 @@
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
-            label9.Location = new Point(20, 39);
+            label9.Location = new Point(40, 39);
             label9.Name = "label9";
-            label9.Size = new Size(57, 15);
+            label9.Size = new Size(18, 15);
             label9.TabIndex = 0;
-            label9.Text = "ID Detalle";
+            label9.Text = "ID";
             // 
             // btnNuevo
             // 
@@ -547,6 +585,7 @@
             btnNuevo.TabIndex = 14;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnGuardar
             // 
@@ -556,6 +595,7 @@
             btnGuardar.TabIndex = 15;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnCancelar
             // 
@@ -642,14 +682,9 @@
             txtTotal.Size = new Size(89, 33);
             txtTotal.TabIndex = 24;
             // 
-            // txtDocumento
+            // errorProvider
             // 
-            txtDocumento.Location = new Point(244, 48);
-            txtDocumento.Multiline = true;
-            txtDocumento.Name = "txtDocumento";
-            txtDocumento.ReadOnly = true;
-            txtDocumento.Size = new Size(100, 21);
-            txtDocumento.TabIndex = 15;
+            errorProvider.ContainerControl = this;
             // 
             // frmFacturaProductos
             // 
@@ -668,18 +703,20 @@
             Controls.Add(btnGuardar);
             Controls.Add(btnNuevo);
             Controls.Add(groupBox3);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvProductos);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "frmFacturaProductos";
             Text = "Factura Productos";
+            Load += frmFacturaProductos_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -703,14 +740,14 @@
         private TextBox txtIDCliente;
         private Label label8;
         private Label label7;
-        private DataGridView dataGridView1;
+        private DataGridView dgvProductos;
         private GroupBox groupBox3;
         private Label label12;
         private Label label11;
         private Label label10;
         private Label label9;
         private TextBox txtProducto;
-        private TextBox txtIDDetalle;
+        private TextBox txtIDProducto;
         private Label label13;
         private TextBox txtDescuento;
         private TextBox txtCantidad;
@@ -729,7 +766,15 @@
         private TextBox txtTotalDescuento;
         private TextBox txtTotal;
         private Button btnBuscarCliente;
-        private Button button2;
+        private Button btnBuscarUsuario;
+        private ComboBox cbEstatus;
+        private TextBox txtNCF;
+        private Label label19;
+        private Label label18;
+        private TextBox txtDocumento;
+        private ErrorProvider errorProvider;
+        private TextBox txtIDUsuario;
+        private Label label20;
         private DataGridViewTextBoxColumn IDDetalle;
         private DataGridViewComboBoxColumn IDProducto;
         private DataGridViewTextBoxColumn Precio;
@@ -738,10 +783,5 @@
         private DataGridViewTextBoxColumn Descuento;
         private DataGridViewTextBoxColumn Impuesto;
         private DataGridViewTextBoxColumn Total;
-        private ComboBox cbEstatus;
-        private TextBox txtNCF;
-        private Label label19;
-        private Label label18;
-        private TextBox txtDocumento;
     }
 }
