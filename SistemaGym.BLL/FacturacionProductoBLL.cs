@@ -28,6 +28,10 @@ namespace SistemaGym.BLL
         {
             return FacturacionProductosDAL.Mostrar();
         }
+        public static DataTable MostrarDetalle()
+        {
+            return FacturacionProductosDAL.MostrarDetalle();
+        }
 
     }
 }

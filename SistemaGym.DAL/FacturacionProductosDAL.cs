@@ -118,6 +118,22 @@ namespace SistemaGym.DAL
 
             return dt;
         }
+        public static DataTable MostrarDetalle()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            Conexion.Open();
+
+            string mostrar = "SELECT * FROM DetalleFacturaProductos";
+            SqlCommand cmd = new SqlCommand(mostrar, Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            Conexion.Close();
+
+            return dt;
+        }
         public static DataTable GetByID(FacturaMembresiaEntity factura)
         {
             ConexionDAL instancia = Instancia();
