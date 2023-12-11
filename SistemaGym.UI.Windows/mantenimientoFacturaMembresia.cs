@@ -1,4 +1,5 @@
-﻿using SistemaGym.DAL;
+﻿using SistemaGym.BLL;
+using SistemaGym.DAL;
 using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
@@ -81,22 +82,7 @@ namespace SistemaGym.UI.Windows
 
         private void button2_Click(object sender, EventArgs e)
         {
-            listaUsuarios usuarios = new listaUsuarios();
-
-            if (usuarios.ShowDialog() == DialogResult.OK)
-            {
-                ClientesEntity oUsuario = ClientesDAL.GetById(usuarios.IdUsuario);
-
-                if (oUsuario != null)
-                {
-                    this.TxbUsuarioID.Text = oUsuario.IDUsuario.ToString();
-                    this.TxbUsuario.Text = oUsuario.Nombre + " " + oUsuario.Apellido;
-                }
-                else
-                {
-                    MessageBox.Show("Usuario No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            
         }
     }
 }

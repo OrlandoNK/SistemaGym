@@ -38,7 +38,7 @@ namespace SistemaGym.BLL
             return UsuarioDAL.EliminarUsuario(usuario);
         }
 
-        public static DataTable MostrarCliente(UsuarioEntity usuario)
+        public static DataTable MostrarCliente()
         {
             return UsuarioDAL.MostrarUsuario();
 
