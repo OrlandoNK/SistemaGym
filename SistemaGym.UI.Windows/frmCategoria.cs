@@ -66,12 +66,12 @@ namespace SistemaGym.UI.Windows
             //verificar que en los campos obligatorios hayan datos
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
-                errorProvider.SetError(txtNombre, "El Rol es obligatorio");
+                errorProvider.SetError(txtNombre, "El Nombre es obligatorio");
                 resultado = false;
             }
             if (string.IsNullOrEmpty(txtDescripcion.Text))
             {
-                errorProvider.SetError(txtDescripcion, "El Nombre es obligatorio");
+                errorProvider.SetError(txtDescripcion, "La Descripcion es obligatorio");
                 resultado = false;
             }
 
