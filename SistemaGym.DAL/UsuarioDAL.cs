@@ -126,6 +126,7 @@ namespace SistemaGym.DAL
             da.Fill(dt);
             return dt;
         }
+
         // buscar por valor
         public static DataTable ObtenerPorValor(UsuarioEntity usuario)
         {
@@ -153,6 +154,7 @@ namespace SistemaGym.DAL
             da.Fill(dt);
             return dt;
         }
+
     }
 }
 

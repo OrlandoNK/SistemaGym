@@ -1,4 +1,5 @@
 using SistemaGym.BLL;
+using SistemaGym.DAL;
 using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;

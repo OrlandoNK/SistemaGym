@@ -63,6 +63,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_9794721__1_ {
+            get {
+                object obj = ResourceManager.GetObject("add_9794721 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Asistencia_Usuario {
             get {
                 object obj = ResourceManager.GetObject("Asistencia Usuario", resourceCulture);
