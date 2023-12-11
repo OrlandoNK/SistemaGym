@@ -91,9 +91,10 @@ namespace SistemaGym.UI.Windows
             }
             //datos de control al objeto
             CategoriaProductoEntity oCategoria = new CategoriaProductoEntity();
+            oCategoria.IDCategoria = int.Parse(txtIDCategoria.Text);
             oCategoria.Nombre= txtNombre.Text;
-            oCategoria.Descripcion= txtDescripcion.Text;    
-          
+            oCategoria.Descripcion= txtDescripcion.Text;
+            InicializarControles();
             // guardar base datos
             try
             {

@@ -17,7 +17,7 @@ namespace SistemaGym.DAL
                 SqlConnection Conexion = instancia.Conexion();
 
                 Conexion.Open();
-                string insertar = "Insert into CategoriaProducto(Nombre, Descripcion)" +
+                string insertar = "Insert into CategoriaProductos(Nombre, Descripcion)" +
                     " values(@Nombre, @Descripcion)";
                 SqlCommand cmd = new SqlCommand(insertar, Conexion);
                 cmd.Parameters.AddWithValue("@Nombre", Categoria.Nombre);
@@ -33,10 +33,11 @@ namespace SistemaGym.DAL
                 SqlConnection Conexion = instancia.Conexion();
 
                 Conexion.Open();
-                string actualizar = "Update CategoriaProducto set Nombre=@Nombre, Descripcion=@Descripcion";
+                string actualizar = "Update CategoriaProductos set Nombre=@Nombre, Descripcion=@Descripcion where IDCategoria = @IDCategoria";
                 SqlCommand cmd = new SqlCommand(actualizar, Conexion);
                 cmd.Parameters.AddWithValue("@Nombre", CategoriaProducto.Nombre);
-                cmd.Parameters.AddWithValue("@Descripcion", CategoriaProducto.Descripcion);
+            cmd.Parameters.AddWithValue("@IDCategoria", CategoriaProducto.IDCategoria);
+            cmd.Parameters.AddWithValue("@Descripcion", CategoriaProducto.Descripcion);
                 cmd.ExecuteNonQuery();
 
 
