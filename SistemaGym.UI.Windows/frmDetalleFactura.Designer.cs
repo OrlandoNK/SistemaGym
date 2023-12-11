@@ -28,103 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            dataGridView1 = new DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            dgvDetalle = new DataGridView();
             IDDetalleFacturaProductos = new DataGridViewTextBoxColumn();
-            IDFacturaProductos = new DataGridViewComboBoxColumn();
-            Producto = new DataGridViewComboBoxColumn();
+            IDFacturaProducto = new DataGridViewComboBoxColumn();
+            IDProducto = new DataGridViewComboBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
             SubTotal = new DataGridViewTextBoxColumn();
             Descuento = new DataGridViewTextBoxColumn();
             Itbis = new DataGridViewTextBoxColumn();
             Total = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDetalle).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDetalle
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDDetalleFacturaProductos, IDFacturaProductos, Producto, Precio, Cantidad, SubTotal, Descuento, Itbis, Total });
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(968, 593);
-            dataGridView1.TabIndex = 0;
+            dgvDetalle.AllowUserToAddRows = false;
+            dgvDetalle.AllowUserToDeleteRows = false;
+            dgvDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDetalle.Columns.AddRange(new DataGridViewColumn[] { IDDetalleFacturaProductos, IDFacturaProducto, IDProducto, Precio, Cantidad, SubTotal, Descuento, Itbis, Total });
+            dgvDetalle.Location = new Point(-3, 28);
+            dgvDetalle.Name = "dgvDetalle";
+            dgvDetalle.ReadOnly = true;
+            dgvDetalle.RowTemplate.Height = 25;
+            dgvDetalle.Size = new Size(959, 581);
+            dgvDetalle.TabIndex = 0;
             // 
             // IDDetalleFacturaProductos
             // 
+            IDDetalleFacturaProductos.DataPropertyName = "IDDetalleFacturaProductos";
             IDDetalleFacturaProductos.HeaderText = "ID";
             IDDetalleFacturaProductos.Name = "IDDetalleFacturaProductos";
+            IDDetalleFacturaProductos.ReadOnly = true;
             // 
-            // IDFacturaProductos
+            // IDFacturaProducto
             // 
-            IDFacturaProductos.HeaderText = "Factura";
-            IDFacturaProductos.Name = "IDFacturaProductos";
-            IDFacturaProductos.Resizable = DataGridViewTriState.True;
-            IDFacturaProductos.SortMode = DataGridViewColumnSortMode.Automatic;
+            IDFacturaProducto.HeaderText = "Factura";
+            IDFacturaProducto.Name = "IDFacturaProducto";
+            IDFacturaProducto.ReadOnly = true;
+            IDFacturaProducto.Resizable = DataGridViewTriState.True;
+            IDFacturaProducto.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
-            // Producto
+            // IDProducto
             // 
-            Producto.HeaderText = "Producto";
-            Producto.Name = "Producto";
-            Producto.Resizable = DataGridViewTriState.True;
-            Producto.SortMode = DataGridViewColumnSortMode.Automatic;
+            IDProducto.HeaderText = "Producto";
+            IDProducto.Name = "IDProducto";
+            IDProducto.ReadOnly = true;
+            IDProducto.Resizable = DataGridViewTriState.True;
+            IDProducto.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // Precio
             // 
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle6;
+            Precio.DataPropertyName = "Precio";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle1;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
             // 
             // Cantidad
             // 
+            Cantidad.DataPropertyName = "Cantidad";
             Cantidad.HeaderText = "Cantidad";
             Cantidad.Name = "Cantidad";
+            Cantidad.ReadOnly = true;
             // 
             // SubTotal
             // 
-            dataGridViewCellStyle7.Format = "C2";
-            dataGridViewCellStyle7.NullValue = null;
-            SubTotal.DefaultCellStyle = dataGridViewCellStyle7;
+            SubTotal.DataPropertyName = "SubTotal";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            SubTotal.DefaultCellStyle = dataGridViewCellStyle2;
             SubTotal.HeaderText = "SubTotal";
             SubTotal.Name = "SubTotal";
             SubTotal.ReadOnly = true;
             // 
             // Descuento
             // 
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle8;
+            Descuento.DataPropertyName = "Descuento";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
             // 
             // Itbis
             // 
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            Itbis.DefaultCellStyle = dataGridViewCellStyle9;
+            Itbis.DataPropertyName = "Itbis";
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            Itbis.DefaultCellStyle = dataGridViewCellStyle4;
             Itbis.HeaderText = "Itbis";
             Itbis.Name = "Itbis";
             Itbis.ReadOnly = true;
             // 
             // Total
             // 
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle10;
+            Total.DataPropertyName = "Total";
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle5;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
@@ -134,19 +144,20 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 593);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvDetalle);
             Name = "frmDetalleFactura";
             Text = "frmDetalleFactura";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += frmDetalleFactura_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvDetalle).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvDetalle;
         private DataGridViewTextBoxColumn IDDetalleFacturaProductos;
-        private DataGridViewComboBoxColumn IDFacturaProductos;
-        private DataGridViewComboBoxColumn Producto;
+        private DataGridViewComboBoxColumn IDFacturaProducto;
+        private DataGridViewComboBoxColumn IDProducto;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Cantidad;
         private DataGridViewTextBoxColumn SubTotal;
