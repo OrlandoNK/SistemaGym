@@ -33,7 +33,7 @@ namespace SistemaGym.UI.Windows
         {
             txtDescripcion.Clear();
             txtIDCategoria.Text = "0";
-            txtNombre.Text = "0";
+            txtNombre.Clear();
             txtNombre.Focus();
             dgvCategoria.AutoGenerateColumns = false;
             dgvCategoria.DataSource = CategoriaProductoBLL.Mostrar();
@@ -56,7 +56,7 @@ namespace SistemaGym.UI.Windows
             DataGridViewRow row = dgvCategoria.CurrentRow;
             txtIDCategoria.Text = row.Cells["IDCategoria"].Value?.ToString();
             txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
-            txtNombre.Text = row.Cells["Descripcion"].Value?.ToString();
+            txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
 
         }
         private bool ValidarDatos()
