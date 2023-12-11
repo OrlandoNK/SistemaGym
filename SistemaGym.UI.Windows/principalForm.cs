@@ -52,6 +52,8 @@ namespace SistemaGym.UI.Windows
         private void subbtnFacturacionMembresia_Click(object sender, EventArgs e)
         {
             subFacturacion.Visible = false;
+            frmMembresia frmMembresia = new frmMembresia();
+            frmMembresia.Show();
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
@@ -97,6 +99,7 @@ namespace SistemaGym.UI.Windows
             }
 
             panelSubAdministrar.Visible = true;
+            subUsuarios.Visible = true;
         }
 
         private void btnTipoCliente_Click(object sender, EventArgs e)
@@ -200,6 +203,23 @@ namespace SistemaGym.UI.Windows
             frmBuscarCliente buscarCliente = new frmBuscarCliente();
             buscarCliente.Show();
 
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            SubProductos.Visible = true;
+        }
+
+        private void btnManteProductos_Click(object sender, EventArgs e)
+        {
+            MantenimientoProductos mantenimiento = new MantenimientoProductos();
+            mantenimiento.Show();
+        }
+
+        private void btnManteCategoria_Click(object sender, EventArgs e)
+        {
+            frmCategoria frmCategoria = new frmCategoria();
+            frmCategoria.Show();
         }
     }
 }
