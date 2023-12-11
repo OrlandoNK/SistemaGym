@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             dgvCategoria = new DataGridView();
+            IDCategoria = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Descripcion = new DataGridViewTextBoxColumn();
             btnNuevo = new Button();
             btnGuardar = new Button();
             btnCancelar = new Button();
@@ -38,17 +42,44 @@
             txtIDCategoria = new TextBox();
             txtNombre = new TextBox();
             txtDescripcion = new TextBox();
+            errorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvCategoria).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // dgvCategoria
             // 
+            dgvCategoria.AllowUserToAddRows = false;
+            dgvCategoria.AllowUserToDeleteRows = false;
             dgvCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCategoria.Columns.AddRange(new DataGridViewColumn[] { IDCategoria, Nombre, Descripcion });
             dgvCategoria.Location = new Point(378, 33);
             dgvCategoria.Name = "dgvCategoria";
+            dgvCategoria.ReadOnly = true;
             dgvCategoria.RowTemplate.Height = 25;
-            dgvCategoria.Size = new Size(457, 255);
+            dgvCategoria.Size = new Size(341, 299);
             dgvCategoria.TabIndex = 0;
+            // 
+            // IDCategoria
+            // 
+            IDCategoria.DataPropertyName = "IDCategoria";
+            IDCategoria.HeaderText = "ID";
+            IDCategoria.Name = "IDCategoria";
+            IDCategoria.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            Descripcion.DataPropertyName = "Descripcion";
+            Descripcion.HeaderText = "Descripcion";
+            Descripcion.Name = "Descripcion";
+            Descripcion.ReadOnly = true;
             // 
             // btnNuevo
             // 
@@ -56,7 +87,7 @@
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(75, 23);
             btnNuevo.TabIndex = 1;
-            btnNuevo.Text = "button1";
+            btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
@@ -65,7 +96,7 @@
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 2;
-            btnGuardar.Text = "button2";
+            btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
@@ -74,14 +105,14 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 3;
-            btnCancelar.Text = "button3";
+            btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(37, 61);
+            label1.Location = new Point(51, 98);
             label1.Name = "label1";
             label1.Size = new Size(18, 15);
             label1.TabIndex = 4;
@@ -90,7 +121,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(37, 104);
+            label2.Location = new Point(51, 141);
             label2.Name = "label2";
             label2.Size = new Size(51, 15);
             label2.TabIndex = 5;
@@ -99,7 +130,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(37, 140);
+            label3.Location = new Point(51, 177);
             label3.Name = "label3";
             label3.Size = new Size(69, 15);
             label3.TabIndex = 6;
@@ -107,24 +138,28 @@
             // 
             // txtIDCategoria
             // 
-            txtIDCategoria.Location = new Point(112, 58);
+            txtIDCategoria.Location = new Point(126, 95);
             txtIDCategoria.Name = "txtIDCategoria";
             txtIDCategoria.Size = new Size(72, 23);
             txtIDCategoria.TabIndex = 7;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(112, 104);
+            txtNombre.Location = new Point(126, 141);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(100, 23);
             txtNombre.TabIndex = 8;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(112, 137);
+            txtDescripcion.Location = new Point(126, 174);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(100, 23);
             txtDescripcion.TabIndex = 9;
+            // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
             // 
             // frmCategoria
             // 
@@ -143,7 +178,9 @@
             Controls.Add(dgvCategoria);
             Name = "frmCategoria";
             Text = "frmCategoria";
+            Load += frmCategoria_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCategoria).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,5 +197,9 @@
         private TextBox txtIDCategoria;
         private TextBox txtNombre;
         private TextBox txtDescripcion;
+        private DataGridViewTextBoxColumn IDCategoria;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Descripcion;
+        private ErrorProvider errorProvider;
     }
 }

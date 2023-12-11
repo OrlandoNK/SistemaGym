@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGym.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,20 @@ namespace SistemaGym.UI.Windows
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void frmCategoria_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void InicializarControles()
+        {
+            txtDescripcion.Clear();
+            txtIDCategoria.Text = "0";
+            txtNombre.Text = "0";
+            dgvCategoria.AutoGenerateColumns = false;
+            dgvCategoria.DataSource = CategoriaProductoBLL.Mostrar();
+
         }
     }
 }
