@@ -1,4 +1,5 @@
 ﻿using SistemaGym.BLL;
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,6 +79,32 @@ namespace SistemaGym.UI.Windows
 
 
             return resultado;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //validar los datos
+            if (!ValidarDatos())
+            {
+                return;
+
+            }
+            //datos de control al objeto
+            CategoriaProductoEntity oCategoria = new CategoriaProductoEntity();
+            oCategoria.Nombre= txtNombre.Text;
+            oCategoria.Descripcion= txtDescripcion.Text;    
+          
+            // guardar base datos
+            try
+            {
+                CategoriaProductoBLL.Guardar(oCategoria);
+                MessageBox.Show("Usuario Guardado", "SistemaGym", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InicializarControles();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "SistemaGym", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
