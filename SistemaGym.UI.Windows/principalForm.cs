@@ -40,6 +40,7 @@ namespace SistemaGym.UI.Windows
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
             subFacturacion.Visible = true;
+            subFacturaDetalle.Visible = true;
         }
 
         private void subbtnFacturacionProducto_Click(object sender, EventArgs e)
@@ -220,6 +221,18 @@ namespace SistemaGym.UI.Windows
         {
             frmCategoria frmCategoria = new frmCategoria();
             frmCategoria.Show();
+        }
+
+        private void btnVerFactura_Click(object sender, EventArgs e)
+        {
+            frmFactura frmFactura = new frmFactura();
+            frmFactura.Show();
+        }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            frmDetalleFactura frmDetalleFactura = new frmDetalleFactura();  
+            frmDetalleFactura.Show();   
         }
     }
 }
