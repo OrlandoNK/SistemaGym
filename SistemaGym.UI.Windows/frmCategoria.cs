@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace SistemaGym.UI.Windows
 {
@@ -25,16 +26,58 @@ namespace SistemaGym.UI.Windows
 
         private void frmCategoria_Load(object sender, EventArgs e)
         {
-
+            InicializarControles();
         }
         private void InicializarControles()
         {
             txtDescripcion.Clear();
             txtIDCategoria.Text = "0";
             txtNombre.Text = "0";
+            txtNombre.Focus();
             dgvCategoria.AutoGenerateColumns = false;
             dgvCategoria.DataSource = CategoriaProductoBLL.Mostrar();
 
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            InicializarControles();
+        }
+
+        private void dgvCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+
+            }
+
+            DataGridViewRow row = dgvCategoria.CurrentRow;
+            txtIDCategoria.Text = row.Cells["IDCategoria"].Value?.ToString();
+            txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
+            txtNombre.Text = row.Cells["Descripcion"].Value?.ToString();
+
+        }
+        private bool ValidarDatos()
+        {
+            bool resultado = true;
+            //inicializando los mensajes de validaciones
+            errorProvider.Clear();
+            //verificar que en los campos obligatorios hayan datos
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                errorProvider.SetError(txtNombre, "El Rol es obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                errorProvider.SetError(txtDescripcion, "El Nombre es obligatorio");
+                resultado = false;
+            }
+
+
+
+            return resultado;
         }
     }
 }

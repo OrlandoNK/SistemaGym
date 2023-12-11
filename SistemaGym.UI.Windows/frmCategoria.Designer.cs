@@ -59,6 +59,7 @@
             dgvCategoria.RowTemplate.Height = 25;
             dgvCategoria.Size = new Size(341, 299);
             dgvCategoria.TabIndex = 0;
+            dgvCategoria.CellClick += dgvCategoria_CellClick;
             // 
             // IDCategoria
             // 
@@ -89,6 +90,7 @@
             btnNuevo.TabIndex = 1;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnGuardar
             // 
