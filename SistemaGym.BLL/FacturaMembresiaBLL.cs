@@ -33,6 +33,12 @@ namespace SistemaGym.BLL
             return dataTable;
         }
 
+        public DataTable MostrarFacturaMembresia()
+        {
+            DataTable dataTbl = FacturacionMembresiaDAL.MostrarFacturaMembresia();
+            return dataTbl;
+        }
+
         public DataTable BuscarByID(FacturaMembresiaEntity facturaMembresia)
         {
             DataTable dataTable = FacturacionMembresiaDAL.BuscarByID(facturaMembresia);

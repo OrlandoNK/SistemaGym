@@ -63,6 +63,116 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _ActualizarFacturaMembresia {
+            get {
+                object obj = ResourceManager.GetObject("#ActualizarFacturaMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _BusquedaBar__ {
+            get {
+                object obj = ResourceManager.GetObject("#BusquedaBar--", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _CloseWindowX {
+            get {
+                object obj = ResourceManager.GetObject("#CloseWindowX", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _EditarFacturaMembresia {
+            get {
+                object obj = ResourceManager.GetObject("#EditarFacturaMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _EliminarFacturaMembresia {
+            get {
+                object obj = ResourceManager.GetObject("#EliminarFacturaMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _ForCloseWindowX___ {
+            get {
+                object obj = ResourceManager.GetObject("#ForCloseWindowX---", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _ForSearchBar {
+            get {
+                object obj = ResourceManager.GetObject("#ForSearchBar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _NuevaFacturaMembresia {
+            get {
+                object obj = ResourceManager.GetObject("#NuevaFacturaMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _PaymentMembresiaFactura {
+            get {
+                object obj = ResourceManager.GetObject("#PaymentMembresiaFactura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _RefrescarFacturaMembresia___ {
+            get {
+                object obj = ResourceManager.GetObject("#RefrescarFacturaMembresia--.", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _Refresh_FacturacionMembresia {
+            get {
+                object obj = ResourceManager.GetObject("&Refresh_FacturacionMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Asistencia_Usuario {
             get {
                 object obj = ResourceManager.GetObject("Asistencia Usuario", resourceCulture);

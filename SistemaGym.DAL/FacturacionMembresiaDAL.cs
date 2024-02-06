@@ -100,6 +100,25 @@ namespace SistemaGym.DAL
             return dataTBL;
         }
 
+        /* Metodo para Mostrar Datos en Mantenimiento Factura Membresia */
+
+        public static DataTable MostrarFacturaMembresia()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            DataTable dataTBL = new DataTable();
+
+            Conexion.Open();
+
+            string Mostrar = "SELECT IDMembresia, IDCliente, IDUsuario, CargoCredito, CargoDebito, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus FROM FacturaMembresia";
+            SqlCommand cmd = new SqlCommand(Mostrar, Conexion);
+            SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+            adapterDT.Fill(dataTBL);
+
+            return dataTBL;
+        }
+
         /* Metodo Buscar por ID */
 
         public static DataTable BuscarByID(FacturaMembresiaEntity facturaMembresia)
