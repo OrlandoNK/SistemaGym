@@ -209,25 +209,24 @@
             // panelDesplegable
             // 
             panelDesplegable.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panelDesplegable.BackColor = Color.Khaki;
+            panelDesplegable.BackColor = Color.Goldenrod;
             panelDesplegable.Controls.Add(btncerrarSesion);
             panelDesplegable.Location = new Point(725, 56);
             panelDesplegable.Name = "panelDesplegable";
-            panelDesplegable.Size = new Size(285, 40);
+            panelDesplegable.Size = new Size(287, 53);
             panelDesplegable.TabIndex = 3;
             panelDesplegable.Visible = false;
             // 
             // btncerrarSesion
             // 
-            btncerrarSesion.Anchor = AnchorStyles.None;
             btncerrarSesion.BorderColor = Color.Gold;
-            btncerrarSesion.BorderThickness = 1;
             btncerrarSesion.Cursor = Cursors.Hand;
             btncerrarSesion.CustomizableEdges = customizableEdges11;
             btncerrarSesion.DisabledState.BorderColor = Color.DarkGray;
             btncerrarSesion.DisabledState.CustomBorderColor = Color.DarkGray;
             btncerrarSesion.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btncerrarSesion.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btncerrarSesion.Dock = DockStyle.Fill;
             btncerrarSesion.FillColor = Color.Transparent;
             btncerrarSesion.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btncerrarSesion.ForeColor = Color.Black;
@@ -237,11 +236,11 @@
             btncerrarSesion.Image = Properties.Resources.cerrar_sesion;
             btncerrarSesion.ImageAlign = HorizontalAlignment.Left;
             btncerrarSesion.ImageSize = new Size(25, 25);
-            btncerrarSesion.Location = new Point(6, 4);
+            btncerrarSesion.Location = new Point(0, 0);
             btncerrarSesion.Name = "btncerrarSesion";
             btncerrarSesion.PressedColor = Color.LightYellow;
             btncerrarSesion.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btncerrarSesion.Size = new Size(273, 32);
+            btncerrarSesion.Size = new Size(287, 53);
             btncerrarSesion.TabIndex = 4;
             btncerrarSesion.Text = "Cerrar Sesion";
             btncerrarSesion.Click += btncerrarSesion_Click;
