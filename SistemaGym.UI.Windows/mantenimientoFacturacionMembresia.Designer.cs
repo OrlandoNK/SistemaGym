@@ -94,7 +94,7 @@
             lblTitleMantenimientoFacturaMembresia.ForeColor = Color.Gold;
             lblTitleMantenimientoFacturaMembresia.Location = new Point(71, 4);
             lblTitleMantenimientoFacturaMembresia.Name = "lblTitleMantenimientoFacturaMembresia";
-            lblTitleMantenimientoFacturaMembresia.Size = new Size(281, 53);
+            lblTitleMantenimientoFacturaMembresia.Size = new Size(199, 53);
             lblTitleMantenimientoFacturaMembresia.TabIndex = 2;
             lblTitleMantenimientoFacturaMembresia.Text = "Facturación Membresia";
             lblTitleMantenimientoFacturaMembresia.TextAlign = ContentAlignment.MiddleLeft;
@@ -278,6 +278,7 @@
             btnNew.TabIndex = 0;
             btnNew.Text = "Nuevo";
             btnNew.TextAlign = HorizontalAlignment.Right;
+            btnNew.Click += btnNew_Click;
             // 
             // panel4
             // 

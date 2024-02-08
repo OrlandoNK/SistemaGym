@@ -73,6 +73,36 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _BotonDeBuscar {
+            get {
+                object obj = ResourceManager.GetObject("&BotonDeBuscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _Buscar_FacturaMembresia_ {
+            get {
+                object obj = ResourceManager.GetObject("#Buscar(FacturaMembresia)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _BuscarEnFacturacionMembresiaDatos {
+            get {
+                object obj = ResourceManager.GetObject("&BuscarEnFacturacionMembresiaDatos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _BusquedaBar__ {
             get {
                 object obj = ResourceManager.GetObject("#BusquedaBar--", resourceCulture);
@@ -86,6 +116,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap _CloseWindowX {
             get {
                 object obj = ResourceManager.GetObject("#CloseWindowX", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _CloseWindowX1 {
+            get {
+                object obj = ResourceManager.GetObject("#CloseWindowX1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,6 +173,46 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _GuardarFacturaMembresia {
+            get {
+                object obj = ResourceManager.GetObject("&GuardarFacturaMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _ListaClientes_x64_ {
+            get {
+                object obj = ResourceManager.GetObject("#ListaClientes(x64)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _MEMBRESIA_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("#MEMBRESIA(x32)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _MEMBRESIA_x64_ {
+            get {
+                object obj = ResourceManager.GetObject("#MEMBRESIA(x64)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _NuevaFacturaMembresia {
             get {
                 object obj = ResourceManager.GetObject("#NuevaFacturaMembresia", resourceCulture);
@@ -166,6 +246,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap _Refresh_FacturacionMembresia {
             get {
                 object obj = ResourceManager.GetObject("&Refresh_FacturacionMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _SearchInMembershipFacturation {
+            get {
+                object obj = ResourceManager.GetObject("&SearchInMembershipFacturation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

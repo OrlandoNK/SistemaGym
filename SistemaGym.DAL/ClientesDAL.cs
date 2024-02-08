@@ -181,6 +181,51 @@ namespace SistemaGym.DAL
             return dt;
         }
 
+        public static ClientesEntity GetByID(int Id)
+        {
+            ClientesEntity cliente = null;
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            string GetID = "SELECT * FROM Clientes WHERE IDCliente = @IDCliente";
+            SqlCommand cmd = new SqlCommand(GetID, Conexion);
+            cmd.Parameters.AddWithValue("@IDCliente", Id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                cliente = ConvertToObject(reader);
+            }
+
+            return cliente;
+        }
+
+        private static ClientesEntity ConvertToObject(IDataReader reader)
+        {
+            ClientesEntity cliente = new ClientesEntity();
+
+            cliente.IDCliente = Convert.ToInt32(reader["IDCliente"]);
+            cliente.IDUsuario = Convert.ToInt32(reader["IDUsuario"]);
+            cliente.IDMembresia = Convert.ToInt32(reader["IDMembresia"]);
+            cliente.TipoListaCliente = Convert.ToInt32(reader["TipoListaCliente"]);
+            cliente.TipoCliente = Convert.ToInt32(reader["TipoCliente"]);
+            cliente.Nombre = Convert.ToString(reader["Nombre"]);
+            cliente.Apellido = Convert.ToString(reader["Apellido"]);
+            cliente.TipoDocumento = Convert.ToString(reader["TipoDocumento"]);
+            cliente.Documento = Convert.ToString(reader["Documento"]);
+            cliente.Direccion = Convert.ToString(reader["Direccion"]);
+            cliente.TelCell = Convert.ToString(reader["TelCell"]);
+            cliente.TelRes = Convert.ToString(reader["TelRes"]);
+            cliente.FechaRegistro = Convert.ToDateTime(reader["FechaRegistro"]);
+            cliente.Estatus = Convert.ToString(reader["Estatus"]);
+
+
+            return cliente;
+        }
+
 
     }
 }

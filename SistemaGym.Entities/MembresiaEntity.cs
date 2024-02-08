@@ -9,17 +9,17 @@ namespace SistemaGym.Entities
 {
     public class MembresiaEntity
     {
-        public int IDMembresia { get; set; }
-        public string Nombre { get; set; }
+        public int? IDMembresia { get; set; }
+        public string? Nombre { get; set; }
 
-        public string Descripcion { get; set; }
+        public string? Descripcion { get; set; }
 
-        public string Duracion {  get; set; }
+        public string? Duracion {  get; set; }
 
-        public decimal Valor { get; set; }
+        public decimal? Valor { get; set; }
 
-        public DateTime FechaCreacion { get; set; }
-        public string Estatus { get; set; } 
+        public DateTime? FechaCreacion { get; set; }
+        public string? Estatus { get; set; } 
 
 
     }

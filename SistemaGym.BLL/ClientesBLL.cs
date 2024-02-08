@@ -39,6 +39,9 @@ namespace SistemaGym.BLL
         {
             return ClientesDAL.ObtenerPorValor(clientes);
         }
-
+        public static ClientesEntity GetById(int Id)
+        {
+            return ClientesDAL.GetByID(Id);
+        }
     }
 }

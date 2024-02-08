@@ -31,5 +31,11 @@ namespace SistemaGym.UI.Windows
             dgvFacturacionMembresia.DataSource = FacturacionMembresiaDAL.MostrarFacturaMembresia();
             dgvFacturacionMembresia.AutoGenerateColumns = false;
         }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            nuevaFacturaMembresia nuevaFacturaMembresia = new nuevaFacturaMembresia();
+            nuevaFacturaMembresia.Show();
+        }
     }
 }
