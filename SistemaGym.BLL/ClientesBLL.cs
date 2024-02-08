@@ -43,5 +43,9 @@ namespace SistemaGym.BLL
         {
             return ClientesDAL.GetByID(Id);
         }
+        public static DataTable GetClients()
+        {
+            return ClientesDAL.GetClients();
+        }
     }
 }

@@ -34,12 +34,22 @@
             pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel3 = new Panel();
-            dataGridView1 = new DataGridView();
+            dgvListaClientes = new DataGridView();
+            IDCliente = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            TipoDocumento = new DataGridViewTextBoxColumn();
+            Documento = new DataGridViewTextBoxColumn();
+            Direccion = new DataGridViewTextBoxColumn();
+            TellCell = new DataGridViewTextBoxColumn();
+            TelRes = new DataGridViewTextBoxColumn();
+            FechaRegistro = new DataGridViewTextBoxColumn();
+            Estatus = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvListaClientes).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -101,21 +111,109 @@
             // panel3
             // 
             panel3.BackColor = Color.WhiteSmoke;
-            panel3.Controls.Add(dataGridView1);
+            panel3.Controls.Add(dgvListaClientes);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 100);
             panel3.Name = "panel3";
             panel3.Size = new Size(771, 422);
             panel3.TabIndex = 4;
             // 
-            // dataGridView1
+            // dgvListaClientes
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(771, 422);
-            dataGridView1.TabIndex = 0;
+            dgvListaClientes.AllowUserToAddRows = false;
+            dgvListaClientes.AllowUserToDeleteRows = false;
+            dgvListaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dgvListaClientes.BackgroundColor = Color.WhiteSmoke;
+            dgvListaClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvListaClientes.Columns.AddRange(new DataGridViewColumn[] { IDCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TelRes, FechaRegistro, Estatus });
+            dgvListaClientes.Location = new Point(0, 0);
+            dgvListaClientes.Name = "dgvListaClientes";
+            dgvListaClientes.ReadOnly = true;
+            dgvListaClientes.RowHeadersVisible = false;
+            dgvListaClientes.RowTemplate.Height = 25;
+            dgvListaClientes.Size = new Size(771, 422);
+            dgvListaClientes.TabIndex = 0;
+            dgvListaClientes.CellDoubleClick += dgvListaClientes_CellDoubleClick;
+            // 
+            // IDCliente
+            // 
+            IDCliente.DataPropertyName = "IDCliente";
+            IDCliente.HeaderText = "IDCliente";
+            IDCliente.Name = "IDCliente";
+            IDCliente.ReadOnly = true;
+            IDCliente.Width = 80;
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            Nombre.Width = 76;
+            // 
+            // Apellido
+            // 
+            Apellido.DataPropertyName = "Apellido";
+            Apellido.HeaderText = "Apellido";
+            Apellido.Name = "Apellido";
+            Apellido.ReadOnly = true;
+            Apellido.Width = 76;
+            // 
+            // TipoDocumento
+            // 
+            TipoDocumento.DataPropertyName = "TipoDocumento";
+            TipoDocumento.HeaderText = "TipoDocumento";
+            TipoDocumento.Name = "TipoDocumento";
+            TipoDocumento.ReadOnly = true;
+            TipoDocumento.Width = 118;
+            // 
+            // Documento
+            // 
+            Documento.DataPropertyName = "Documento";
+            Documento.HeaderText = "Documento";
+            Documento.Name = "Documento";
+            Documento.ReadOnly = true;
+            Documento.Width = 95;
+            // 
+            // Direccion
+            // 
+            Direccion.DataPropertyName = "Direccion";
+            Direccion.HeaderText = "Direccion";
+            Direccion.Name = "Direccion";
+            Direccion.ReadOnly = true;
+            Direccion.Width = 82;
+            // 
+            // TellCell
+            // 
+            TellCell.DataPropertyName = "TellCell";
+            TellCell.HeaderText = "TellCell";
+            TellCell.Name = "TellCell";
+            TellCell.ReadOnly = true;
+            TellCell.Width = 69;
+            // 
+            // TelRes
+            // 
+            TelRes.DataPropertyName = "TelRes";
+            TelRes.HeaderText = "TelRes";
+            TelRes.Name = "TelRes";
+            TelRes.ReadOnly = true;
+            TelRes.Width = 64;
+            // 
+            // FechaRegistro
+            // 
+            FechaRegistro.DataPropertyName = "FechaRegistro";
+            FechaRegistro.HeaderText = "FechaRegistro";
+            FechaRegistro.Name = "FechaRegistro";
+            FechaRegistro.ReadOnly = true;
+            FechaRegistro.Width = 106;
+            // 
+            // Estatus
+            // 
+            Estatus.DataPropertyName = "Estatus";
+            Estatus.HeaderText = "Estatus";
+            Estatus.Name = "Estatus";
+            Estatus.ReadOnly = true;
+            Estatus.Width = 69;
             // 
             // listaClientes
             // 
@@ -128,11 +226,12 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "listaClientes";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += listaClientes_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvListaClientes).EndInit();
             ResumeLayout(false);
         }
 
@@ -144,6 +243,16 @@
         private PictureBox pictureBox1;
         private PictureBox btnClose;
         private Panel panel3;
-        private DataGridView dataGridView1;
+        private DataGridView dgvListaClientes;
+        private DataGridViewTextBoxColumn IDCliente;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
+        private DataGridViewTextBoxColumn TipoDocumento;
+        private DataGridViewTextBoxColumn Documento;
+        private DataGridViewTextBoxColumn Direccion;
+        private DataGridViewTextBoxColumn TellCell;
+        private DataGridViewTextBoxColumn TelRes;
+        private DataGridViewTextBoxColumn FechaRegistro;
+        private DataGridViewTextBoxColumn Estatus;
     }
 }

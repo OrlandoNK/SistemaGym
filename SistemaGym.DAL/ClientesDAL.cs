@@ -106,6 +106,22 @@ namespace SistemaGym.DAL
 
         }
 
+        public static DataTable GetClients()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            DataTable dt = new DataTable();
+            Conexion.Open();
+            string mostrar = "Select IDCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus From Clientes Order By Nombre";
+            SqlCommand cmd = new SqlCommand(mostrar, Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+
+            return dt;
+
+        }
+
         /* public static DataTable BuscarID(int id)
          {
 
@@ -181,7 +197,7 @@ namespace SistemaGym.DAL
             return dt;
         }
 
-        public static ClientesEntity GetByID(int Id)
+        public static ClientesEntity GetByID(int? Id)
         {
             ClientesEntity cliente = null;
 
@@ -208,10 +224,6 @@ namespace SistemaGym.DAL
             ClientesEntity cliente = new ClientesEntity();
 
             cliente.IDCliente = Convert.ToInt32(reader["IDCliente"]);
-            cliente.IDUsuario = Convert.ToInt32(reader["IDUsuario"]);
-            cliente.IDMembresia = Convert.ToInt32(reader["IDMembresia"]);
-            cliente.TipoListaCliente = Convert.ToInt32(reader["TipoListaCliente"]);
-            cliente.TipoCliente = Convert.ToInt32(reader["TipoCliente"]);
             cliente.Nombre = Convert.ToString(reader["Nombre"]);
             cliente.Apellido = Convert.ToString(reader["Apellido"]);
             cliente.TipoDocumento = Convert.ToString(reader["TipoDocumento"]);

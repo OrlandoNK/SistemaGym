@@ -388,6 +388,7 @@
             btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnBuscarIDCliente.Size = new Size(60, 55);
             btnBuscarIDCliente.TabIndex = 18;
+            btnBuscarIDCliente.Click += btnBuscarIDCliente_Click;
             // 
             // label4
             // 
