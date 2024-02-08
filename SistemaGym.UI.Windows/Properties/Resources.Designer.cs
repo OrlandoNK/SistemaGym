@@ -193,9 +193,29 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _mantenimientosMainScreen {
+            get {
+                object obj = ResourceManager.GetObject("#mantenimientosMainScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _MEMBRESIA_x32_ {
             get {
                 object obj = ResourceManager.GetObject("#MEMBRESIA(x32)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _MEMBRESIA_x32_1 {
+            get {
+                object obj = ResourceManager.GetObject("#MEMBRESIA(x32)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,6 +483,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap facturaProducto_mainscreen_ {
+            get {
+                object obj = ResourceManager.GetObject("facturaProducto(mainscreen)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Guardar {
             get {
                 object obj = ResourceManager.GetObject("Guardar", resourceCulture);
@@ -556,6 +586,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap proveedor__2_ {
             get {
                 object obj = ResourceManager.GetObject("proveedor (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap proveedoresMainScreen {
+            get {
+                object obj = ResourceManager.GetObject("proveedoresMainScreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
