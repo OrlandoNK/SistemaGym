@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGym.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -231,8 +232,19 @@ namespace SistemaGym.UI.Windows
 
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
-            frmDetalleFactura frmDetalleFactura = new frmDetalleFactura();  
-            frmDetalleFactura.Show();   
+            frmDetalleFactura frmDetalleFactura = new frmDetalleFactura();
+            frmDetalleFactura.Show();
+        }
+
+        private void principalForm_Load(object sender, EventArgs e)
+        {
+            lblusuario.Text = gestioUsuarioEntities.usernameLogged;
+        }
+
+        private void btnmantenimientoFacturaMembresia_Click(object sender, EventArgs e)
+        {
+            mantenimientoFacturacionMembresia facturacionMembresia = new mantenimientoFacturacionMembresia();
+            facturacionMembresia.Show();
         }
     }
 }

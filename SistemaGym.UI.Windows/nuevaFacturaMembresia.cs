@@ -68,5 +68,11 @@ namespace SistemaGym.UI.Windows
                 }
             }
         }
+
+        private void nuevaFacturaMembresia_Load(object sender, EventArgs e)
+        {
+            TxbIDUsuario.Text = gestioUsuarioEntities.IDUserLogged;
+            TxbNombreApellidoUsuario.Text = gestioUsuarioEntities.usernameLogged;
+        }
     }
 }

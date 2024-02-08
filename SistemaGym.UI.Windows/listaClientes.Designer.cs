@@ -131,6 +131,7 @@
             dgvListaClientes.ReadOnly = true;
             dgvListaClientes.RowHeadersVisible = false;
             dgvListaClientes.RowTemplate.Height = 25;
+            dgvListaClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvListaClientes.Size = new Size(771, 422);
             dgvListaClientes.TabIndex = 0;
             dgvListaClientes.CellDoubleClick += dgvListaClientes_CellDoubleClick;

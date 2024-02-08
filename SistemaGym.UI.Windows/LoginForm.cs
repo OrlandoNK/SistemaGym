@@ -35,6 +35,10 @@ namespace SistemaGym.UI.Windows
             UsuarioEntity usuario = new UsuarioEntity(nombreUsuario, contrasena);
             int resultadoAutenticacion = UsuarioBLL.ConsultaLogin(usuario);
 
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            gestioUsuarioEntities.IDUserLogged = usuarioBLL.GetIDFromUser(nombreUsuario, contrasena);
+            gestioUsuarioEntities.usernameLogged = usuarioBLL.GetNameFromUser(nombreUsuario, contrasena);
+
             if (resultadoAutenticacion > 0)
             {
                 MessageBox.Show("Sesión Iniciada Con Éxito", "INICIO DE SESION", MessageBoxButtons.OK, MessageBoxIcon.Information);
