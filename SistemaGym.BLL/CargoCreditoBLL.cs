@@ -47,5 +47,9 @@ namespace SistemaGym.BLL
         {
             return CargoCreditoDAL.ObtenerPorValor(cargoCredito);
         }
+        public static CargoCreditoEntity GetById(int Id)
+        {
+            return CargoCreditoDAL.GetByID(Id);
+        }
     }
 }

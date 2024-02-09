@@ -93,9 +93,39 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _BuscarCargoCredito_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("#BuscarCargoCredito(x32)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _BuscarClienteCCyCD_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("#BuscarClienteCCyCD(x32)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _BuscarEnFacturacionMembresiaDatos {
             get {
                 object obj = ResourceManager.GetObject("&BuscarEnFacturacionMembresiaDatos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _BuscarMembresia_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("#BuscarMembresia(x32)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +176,26 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap _EliminarFacturaMembresia {
             get {
                 object obj = ResourceManager.GetObject("#EliminarFacturaMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _FacturarMembresia_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("#FacturarMembresia(x32)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _FacturarMembresia_x32_v_2 {
+            get {
+                object obj = ResourceManager.GetObject("&FacturarMembresia(x32)v.2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +326,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap _SearchInMembershipFacturation {
             get {
                 object obj = ResourceManager.GetObject("&SearchInMembershipFacturation", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _SiguenteEnRegFacturaMembresia_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("#SiguenteEnRegFacturaMembresia(x32)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -120,5 +120,41 @@ namespace SistemaGym.DAL
             da.Fill(dt);
             return dt;
         }
+
+        public static CargoDebitoEntity GetByID(int Id)
+        {
+            CargoDebitoEntity cargoDebito = null;
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            string GetID = "SELECT * FROM CargoDebito WHERE IDCargoDebito = @IDCargoDebito";
+            SqlCommand cmd = new SqlCommand(GetID, Conexion);
+            cmd.Parameters.AddWithValue("@IDCargoDebito", Id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                cargoDebito = ConvertToObject(reader);
+            }
+
+            return cargoDebito;
+        }
+
+        private static CargoDebitoEntity ConvertToObject(IDataReader reader)
+        {
+            CargoDebitoEntity _cargoCredito = new CargoDebitoEntity();
+
+            _cargoCredito.IDCargoDebito = Convert.ToInt32(reader["IDCargoDebito"]);
+            _cargoCredito.IDCliente = Convert.ToInt32(reader["IDCliente"]);
+            _cargoCredito.Cargo = Convert.ToString(reader["Cargo"]);
+            _cargoCredito.Monto = Convert.ToDecimal(reader["Monto"]);
+            _cargoCredito.FechaCargo = Convert.ToDateTime(reader["FechaCargo"]);
+            _cargoCredito.Estatus = Convert.ToString(reader["Estatus"]);
+
+            return _cargoCredito;
+        }
     }
 }
