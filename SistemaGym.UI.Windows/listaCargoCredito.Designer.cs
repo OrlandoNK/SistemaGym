@@ -160,6 +160,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "listaCargoCredito";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += listaCargoCredito_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);

@@ -160,6 +160,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "listaCargoDebito";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += listaCargoDebito_Load;
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvListaCargoDebito).EndInit();
             panel1.ResumeLayout(false);

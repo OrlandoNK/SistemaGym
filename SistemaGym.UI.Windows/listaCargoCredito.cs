@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGym.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,6 +42,14 @@ namespace SistemaGym.UI.Windows
             _IdCargoCredito = (int?)dgvListaCargoCredito.CurrentRow.Cells["IDCargoCredito"].Value;
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void listaCargoCredito_Load(object sender, EventArgs e)
+        {
+
+            dgvListaCargoCredito.DataSource = CargoCreditoBLL.MostrarCargoCredito();
+            dgvListaCargoCredito.AutoGenerateColumns = false;
+
         }
     }
 }

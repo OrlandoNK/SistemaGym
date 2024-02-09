@@ -32,7 +32,7 @@ namespace SistemaGym.BLL
             return CargoCreditoDAL.EliminarCargoCredito(cargoCredito);
         }
 
-        public static DataTable MostrarCargoCredito(CargoCreditoDAL cargoCredito)
+        public static DataTable MostrarCargoCredito()
         {
             return CargoCreditoDAL.MostrarCargoCredito();
 
