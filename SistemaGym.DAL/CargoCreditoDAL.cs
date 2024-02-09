@@ -147,7 +147,7 @@ namespace SistemaGym.DAL
         {
             CargoCreditoEntity _cargoCredito = new CargoCreditoEntity();
 
-            _cargoCredito.IDCargoCredito = Convert.ToInt32(reader["IDCargoDebito"]);
+            _cargoCredito.IDCargoCredito = Convert.ToInt32(reader["IDCargoCredito"]);
             _cargoCredito.IDCliente = Convert.ToInt32(reader["IDCliente"]);
             _cargoCredito.Cargo = Convert.ToString(reader["Cargo"]);
             _cargoCredito.Monto = Convert.ToDecimal(reader["Monto"]);

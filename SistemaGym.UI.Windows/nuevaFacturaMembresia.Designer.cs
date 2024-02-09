@@ -1173,6 +1173,7 @@
             btnFacturaConCargoCredito.TabIndex = 36;
             btnFacturaConCargoCredito.Text = "Facturar";
             btnFacturaConCargoCredito.TextAlign = HorizontalAlignment.Right;
+            btnFacturaConCargoCredito.Click += btnFacturaConCargoCredito_Click;
             // 
             // label38
             // 
