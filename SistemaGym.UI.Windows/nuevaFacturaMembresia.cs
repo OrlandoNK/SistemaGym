@@ -244,25 +244,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnFacturaConCargoCredito_Click(object sender, EventArgs e)
         {
-            decimal ValorFactura, CargoCredito, CargoDebito, ValorMembresia;
-
-            ValorMembresia = decimal.Parse(this.TxbValorMembresia.Text);
-            ValorFactura = decimal.Parse(this.TxbFacturaValor.Text);
-            CargoCredito = decimal.Parse(this.TxbFacturaCargoCredito.Text);
-            CargoDebito = decimal.Parse(this.TxbFacturaCargoDebito.Text);
-
-            if (chkbxConCargoCredito.Checked)
-            {
-                ValorFactura = ValorMembresia + CargoCredito;
-                this.TxbFacturaValor.Text = decimal.Parse(ValorFactura);
-            }
-            if (chkbxConCargoDebito.Checked)
-            {
-                ValorFactura = ValorMembresia + CargoCredito;
-                this.TxbFacturaValor.Text = decimal.Parse(ValorFactura);
-            }
-
-
+            
         }
     }
 }

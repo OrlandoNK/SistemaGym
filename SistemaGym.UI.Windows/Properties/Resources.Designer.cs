@@ -73,6 +73,26 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _Administracion_MainScreen_ {
+            get {
+                object obj = ResourceManager.GetObject("#Administracion(MainScreen)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _Administrativa_MainForm_ {
+            get {
+                object obj = ResourceManager.GetObject("&Administrativa(MainForm)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _BotonDeBuscar {
             get {
                 object obj = ResourceManager.GetObject("&BotonDeBuscar", resourceCulture);
@@ -136,6 +156,26 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap _BusquedaBar__ {
             get {
                 object obj = ResourceManager.GetObject("#BusquedaBar--", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _CerrarSesion_mainscreen_ {
+            get {
+                object obj = ResourceManager.GetObject("#CerrarSesion(mainscreen)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _Clientes_mainScreen_ {
+            get {
+                object obj = ResourceManager.GetObject("#Clientes(mainScreen)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -316,6 +356,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap _Refresh_FacturacionMembresia {
             get {
                 object obj = ResourceManager.GetObject("&Refresh_FacturacionMembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _Roles_mainScreen_ {
+            get {
+                object obj = ResourceManager.GetObject("#Roles(mainScreen)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -706,6 +756,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap usuario1 {
             get {
                 object obj = ResourceManager.GetObject("usuario1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuarios__mainScreen {
+            get {
+                object obj = ResourceManager.GetObject("usuarios()mainScreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

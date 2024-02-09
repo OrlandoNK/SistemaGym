@@ -46,6 +46,11 @@ namespace SistemaGym.UI.Windows
         private void btnMantenimientos_Click(object sender, EventArgs e)
         {
             SubMantenimientos.Visible = true;
+
+            if (subAdministracion.Visible = true)
+            {
+                subAdministracion.Visible = false;
+            }
         }
 
         private void btnFacturaMembresia_Click(object sender, EventArgs e)
@@ -74,6 +79,17 @@ namespace SistemaGym.UI.Windows
             frmMembresia frmMembresia = new frmMembresia();
             frmMembresia.Show();
             SubMantenimientos.Visible = false;
+        }
+
+        private void btnAdministracion_Click(object sender, EventArgs e)
+        {
+
+            subAdministracion.Visible = true;
+
+            if (SubMantenimientos.Visible = true)
+            {
+                SubMantenimientos.Visible = false;
+            }
         }
     }
 }
