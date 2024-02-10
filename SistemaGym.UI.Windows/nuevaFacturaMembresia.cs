@@ -244,7 +244,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnFacturaConCargoCredito_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

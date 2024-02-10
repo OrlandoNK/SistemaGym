@@ -1187,7 +1187,7 @@
             // TxbFacturaEstatus
             // 
             TxbFacturaEstatus.FormattingEnabled = true;
-            TxbFacturaEstatus.Items.AddRange(new object[] { "Pagado", "Cotizado", "Por Vencer", "Vencida", "Confirmando Pago" });
+            TxbFacturaEstatus.Items.AddRange(new object[] { "Pagado", "Cotizado", "Por Vencer", "Vencida", "Confirmando Pago", "Cancelada" });
             TxbFacturaEstatus.Location = new Point(591, 189);
             TxbFacturaEstatus.Name = "TxbFacturaEstatus";
             TxbFacturaEstatus.Size = new Size(137, 27);
