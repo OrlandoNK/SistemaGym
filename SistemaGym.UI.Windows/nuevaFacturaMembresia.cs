@@ -209,7 +209,7 @@ namespace SistemaGym.UI.Windows
                 if (oCargoCredito != null)
                 {
                     this.TxbFacturaIDCargoCredito.Text = oCargoCredito.IDCargoCredito.ToString();
-                    this.TxbFacturaCargoCredito.Text = oCargoCredito.Cargo.ToString();
+                    this.TxbFacturacionCargoCredito.Text = oCargoCredito.Cargo.ToString();
                     this.TxbFacturaMontoCargoCredito.Text = oCargoCredito.Monto.ToString();
                     this.dtpFechaFacturaCargoCredito.Text = oCargoCredito.FechaCargo.ToString();
                 }
@@ -240,11 +240,6 @@ namespace SistemaGym.UI.Windows
                     MessageBox.Show("Cargo Debito No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void btnFacturaConCargoCredito_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

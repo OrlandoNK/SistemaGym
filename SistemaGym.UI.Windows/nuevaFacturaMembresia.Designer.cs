@@ -76,11 +76,11 @@
             label7 = new Label();
             TxbApellidoCliente = new TextBox();
             groupBox1 = new GroupBox();
+            TxbValorMembresia = new TextBox();
             btnBuscarIDMembresia = new Guna.UI2.WinForms.Guna2Button();
             lblidmembresia = new Label();
             label3 = new Label();
             label1 = new Label();
-            TxbValorMembresia = new TextBox();
             label2 = new Label();
             TxbDescrMembresia = new TextBox();
             TxbIDMembresia = new TextBox();
@@ -129,9 +129,10 @@
             TxbNombreClienteCargoDebito = new TextBox();
             tabFacturacionMembresia = new TabPage();
             groupBox10 = new GroupBox();
-            chkbxConCargoDebito = new CheckBox();
-            chkbxConCargoCredito = new CheckBox();
-            btnFacturaConCargoCredito = new Guna.UI2.WinForms.Guna2Button();
+            TxbFacturaValor = new TextBox();
+            chkConCargoDebito = new CheckBox();
+            chkConCargoCredito = new CheckBox();
+            btnFacturarMembresia = new Guna.UI2.WinForms.Guna2Button();
             label38 = new Label();
             TxbFacturaEstatus = new ComboBox();
             label37 = new Label();
@@ -139,10 +140,11 @@
             label36 = new Label();
             label35 = new Label();
             dtpFacturaFechaEmision = new DateTimePicker();
-            TxbFacturaValor = new TextBox();
             label34 = new Label();
             TxbFacturaNCF = new TextBox();
             groupBox9 = new GroupBox();
+            TxbFacturaMontoCargoDebito = new TextBox();
+            TxbFacturaCargoDebito = new TextBox();
             label33 = new Label();
             dtpFechaFacturaCargoDebito = new DateTimePicker();
             label29 = new Label();
@@ -150,9 +152,9 @@
             btnBuscarFacturaCargoDebito = new Guna.UI2.WinForms.Guna2Button();
             label31 = new Label();
             TxbFacturaIDCargoDebito = new TextBox();
-            TxbFacturaMontoCargoDebito = new TextBox();
-            TxbFacturaCargoDebito = new TextBox();
             groupBox8 = new GroupBox();
+            TxbFacturaMontoCargoCredito = new TextBox();
+            TxbFacturacionCargoCredito = new TextBox();
             label32 = new Label();
             dtpFechaFacturaCargoCredito = new DateTimePicker();
             label27 = new Label();
@@ -160,8 +162,6 @@
             btnBuscarFacturaCargoCredito = new Guna.UI2.WinForms.Guna2Button();
             label11 = new Label();
             TxbFacturaIDCargoCredito = new TextBox();
-            TxbFacturaMontoCargoCredito = new TextBox();
-            TxbFacturaCargoCredito = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
@@ -257,12 +257,14 @@
             panel6.BackColor = Color.Goldenrod;
             panel6.Location = new Point(0, 23);
             panel6.Name = "panel6";
-            panel6.Size = new Size(15, 75);
+            panel6.Size = new Size(10, 56);
             panel6.TabIndex = 3;
             // 
             // btnSave
             // 
             btnSave.BackColor = Color.Transparent;
+            btnSave.BorderColor = Color.Goldenrod;
+            btnSave.BorderThickness = 2;
             btnSave.Cursor = Cursors.Hand;
             btnSave.CustomizableEdges = customizableEdges1;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
@@ -277,12 +279,12 @@
             btnSave.Image = Properties.Resources._GuardarFacturaMembresia;
             btnSave.ImageAlign = HorizontalAlignment.Left;
             btnSave.ImageSize = new Size(32, 32);
-            btnSave.Location = new Point(12, 23);
+            btnSave.Location = new Point(10, 23);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnSave.Size = new Size(201, 75);
+            btnSave.Size = new Size(203, 56);
             btnSave.TabIndex = 2;
-            btnSave.Text = "Guardar Facturación";
+            btnSave.Text = "Guardar Factura";
             btnSave.TextAlign = HorizontalAlignment.Right;
             // 
             // panel4
@@ -490,11 +492,11 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(TxbValorMembresia);
             groupBox1.Controls.Add(btnBuscarIDMembresia);
             groupBox1.Controls.Add(lblidmembresia);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(TxbValorMembresia);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(TxbDescrMembresia);
             groupBox1.Controls.Add(TxbIDMembresia);
@@ -505,6 +507,15 @@
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de la Membresia";
+            // 
+            // TxbValorMembresia
+            // 
+            TxbValorMembresia.Enabled = false;
+            TxbValorMembresia.Location = new Point(551, 68);
+            TxbValorMembresia.Name = "TxbValorMembresia";
+            TxbValorMembresia.ReadOnly = true;
+            TxbValorMembresia.Size = new Size(117, 24);
+            TxbValorMembresia.TabIndex = 23;
             // 
             // btnBuscarIDMembresia
             // 
@@ -557,15 +568,6 @@
             label1.TabIndex = 4;
             label1.Text = "Nombre";
             label1.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // TxbValorMembresia
-            // 
-            TxbValorMembresia.Enabled = false;
-            TxbValorMembresia.Location = new Point(551, 68);
-            TxbValorMembresia.Name = "TxbValorMembresia";
-            TxbValorMembresia.ReadOnly = true;
-            TxbValorMembresia.Size = new Size(117, 24);
-            TxbValorMembresia.TabIndex = 7;
             // 
             // label2
             // 
@@ -1107,9 +1109,10 @@
             // 
             // groupBox10
             // 
-            groupBox10.Controls.Add(chkbxConCargoDebito);
-            groupBox10.Controls.Add(chkbxConCargoCredito);
-            groupBox10.Controls.Add(btnFacturaConCargoCredito);
+            groupBox10.Controls.Add(TxbFacturaValor);
+            groupBox10.Controls.Add(chkConCargoDebito);
+            groupBox10.Controls.Add(chkConCargoCredito);
+            groupBox10.Controls.Add(btnFacturarMembresia);
             groupBox10.Controls.Add(label38);
             groupBox10.Controls.Add(TxbFacturaEstatus);
             groupBox10.Controls.Add(label37);
@@ -1117,7 +1120,6 @@
             groupBox10.Controls.Add(label36);
             groupBox10.Controls.Add(label35);
             groupBox10.Controls.Add(dtpFacturaFechaEmision);
-            groupBox10.Controls.Add(TxbFacturaValor);
             groupBox10.Controls.Add(label34);
             groupBox10.Controls.Add(TxbFacturaNCF);
             groupBox10.Location = new Point(7, 218);
@@ -1127,60 +1129,70 @@
             groupBox10.TabStop = false;
             groupBox10.Text = "Factura Membresia";
             // 
-            // chkbxConCargoDebito
+            // TxbFacturaValor
             // 
-            chkbxConCargoDebito.Cursor = Cursors.Hand;
-            chkbxConCargoDebito.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            chkbxConCargoDebito.Location = new Point(587, 53);
-            chkbxConCargoDebito.Name = "chkbxConCargoDebito";
-            chkbxConCargoDebito.Size = new Size(140, 24);
-            chkbxConCargoDebito.TabIndex = 37;
-            chkbxConCargoDebito.Text = "Con Cargo Debito";
-            chkbxConCargoDebito.TextAlign = ContentAlignment.MiddleRight;
-            chkbxConCargoDebito.UseVisualStyleBackColor = true;
+            TxbFacturaValor.Enabled = false;
+            TxbFacturaValor.Location = new Point(563, 73);
+            TxbFacturaValor.Name = "TxbFacturaValor";
+            TxbFacturaValor.ReadOnly = true;
+            TxbFacturaValor.Size = new Size(165, 24);
+            TxbFacturaValor.TabIndex = 46;
             // 
-            // chkbxConCargoCredito
+            // chkConCargoDebito
             // 
-            chkbxConCargoCredito.Cursor = Cursors.Hand;
-            chkbxConCargoCredito.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            chkbxConCargoCredito.Location = new Point(587, 23);
-            chkbxConCargoCredito.Name = "chkbxConCargoCredito";
-            chkbxConCargoCredito.Size = new Size(140, 24);
-            chkbxConCargoCredito.TabIndex = 30;
-            chkbxConCargoCredito.Text = "Con Cargo Credito";
-            chkbxConCargoCredito.TextAlign = ContentAlignment.MiddleRight;
-            chkbxConCargoCredito.UseVisualStyleBackColor = true;
+            chkConCargoDebito.AutoSize = true;
+            chkConCargoDebito.Cursor = Cursors.Hand;
+            chkConCargoDebito.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            chkConCargoDebito.Location = new Point(422, 153);
+            chkConCargoDebito.Name = "chkConCargoDebito";
+            chkConCargoDebito.Size = new Size(131, 21);
+            chkConCargoDebito.TabIndex = 38;
+            chkConCargoDebito.Text = "con Cargo Débito";
+            chkConCargoDebito.TextAlign = ContentAlignment.MiddleRight;
+            chkConCargoDebito.UseVisualStyleBackColor = true;
             // 
-            // btnFacturaConCargoCredito
+            // chkConCargoCredito
             // 
-            btnFacturaConCargoCredito.BorderRadius = 8;
-            btnFacturaConCargoCredito.BorderThickness = 2;
-            btnFacturaConCargoCredito.CustomizableEdges = customizableEdges15;
-            btnFacturaConCargoCredito.DisabledState.BorderColor = Color.DarkGray;
-            btnFacturaConCargoCredito.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnFacturaConCargoCredito.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnFacturaConCargoCredito.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnFacturaConCargoCredito.FillColor = Color.Transparent;
-            btnFacturaConCargoCredito.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnFacturaConCargoCredito.ForeColor = Color.Black;
-            btnFacturaConCargoCredito.Image = Properties.Resources._FacturarMembresia_x32_v_2;
-            btnFacturaConCargoCredito.ImageAlign = HorizontalAlignment.Left;
-            btnFacturaConCargoCredito.ImageSize = new Size(32, 32);
-            btnFacturaConCargoCredito.Location = new Point(441, 23);
-            btnFacturaConCargoCredito.Name = "btnFacturaConCargoCredito";
-            btnFacturaConCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btnFacturaConCargoCredito.Size = new Size(140, 54);
-            btnFacturaConCargoCredito.TabIndex = 36;
-            btnFacturaConCargoCredito.Text = "Facturar";
-            btnFacturaConCargoCredito.TextAlign = HorizontalAlignment.Right;
-            btnFacturaConCargoCredito.Click += btnFacturaConCargoCredito_Click;
+            chkConCargoCredito.AutoSize = true;
+            chkConCargoCredito.Cursor = Cursors.Hand;
+            chkConCargoCredito.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            chkConCargoCredito.Location = new Point(422, 124);
+            chkConCargoCredito.Name = "chkConCargoCredito";
+            chkConCargoCredito.Size = new Size(135, 21);
+            chkConCargoCredito.TabIndex = 37;
+            chkConCargoCredito.Text = "con Cargo Crédito";
+            chkConCargoCredito.TextAlign = ContentAlignment.MiddleRight;
+            chkConCargoCredito.UseVisualStyleBackColor = true;
+            // 
+            // btnFacturarMembresia
+            // 
+            btnFacturarMembresia.BorderRadius = 8;
+            btnFacturarMembresia.BorderThickness = 2;
+            btnFacturarMembresia.CustomizableEdges = customizableEdges15;
+            btnFacturarMembresia.DisabledState.BorderColor = Color.DarkGray;
+            btnFacturarMembresia.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnFacturarMembresia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnFacturarMembresia.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnFacturarMembresia.FillColor = Color.Transparent;
+            btnFacturarMembresia.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFacturarMembresia.ForeColor = Color.Black;
+            btnFacturarMembresia.Image = Properties.Resources._FacturarMembresia_x32_v_2;
+            btnFacturarMembresia.ImageAlign = HorizontalAlignment.Left;
+            btnFacturarMembresia.ImageSize = new Size(32, 32);
+            btnFacturarMembresia.Location = new Point(563, 124);
+            btnFacturarMembresia.Name = "btnFacturarMembresia";
+            btnFacturarMembresia.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnFacturarMembresia.Size = new Size(165, 50);
+            btnFacturarMembresia.TabIndex = 36;
+            btnFacturarMembresia.Text = "Facturar";
+            btnFacturarMembresia.TextAlign = HorizontalAlignment.Right;
             // 
             // label38
             // 
             label38.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label38.Location = new Point(591, 166);
+            label38.Location = new Point(6, 124);
             label38.Name = "label38";
-            label38.Size = new Size(137, 20);
+            label38.Size = new Size(165, 20);
             label38.TabIndex = 35;
             label38.Text = "Estatus";
             // 
@@ -1188,43 +1200,43 @@
             // 
             TxbFacturaEstatus.FormattingEnabled = true;
             TxbFacturaEstatus.Items.AddRange(new object[] { "Pagado", "Cotizado", "Por Vencer", "Vencida", "Confirmando Pago", "Cancelada" });
-            TxbFacturaEstatus.Location = new Point(591, 189);
+            TxbFacturaEstatus.Location = new Point(6, 147);
             TxbFacturaEstatus.Name = "TxbFacturaEstatus";
-            TxbFacturaEstatus.Size = new Size(137, 27);
+            TxbFacturaEstatus.Size = new Size(165, 27);
             TxbFacturaEstatus.TabIndex = 34;
             // 
             // label37
             // 
             label37.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label37.Location = new Point(397, 169);
+            label37.Location = new Point(348, 48);
             label37.Name = "label37";
-            label37.Size = new Size(188, 20);
+            label37.Size = new Size(165, 20);
             label37.TabIndex = 33;
             label37.Text = "Fecha de Vencimiento";
             // 
             // dtpFacturaFechaVencimiento
             // 
             dtpFacturaFechaVencimiento.Format = DateTimePickerFormat.Short;
-            dtpFacturaFechaVencimiento.Location = new Point(397, 192);
+            dtpFacturaFechaVencimiento.Location = new Point(348, 71);
             dtpFacturaFechaVencimiento.Name = "dtpFacturaFechaVencimiento";
-            dtpFacturaFechaVencimiento.Size = new Size(188, 24);
+            dtpFacturaFechaVencimiento.Size = new Size(165, 24);
             dtpFacturaFechaVencimiento.TabIndex = 32;
             // 
             // label36
             // 
             label36.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label36.Location = new Point(203, 169);
+            label36.Location = new Point(177, 48);
             label36.Name = "label36";
-            label36.Size = new Size(188, 20);
+            label36.Size = new Size(165, 20);
             label36.TabIndex = 31;
-            label36.Text = "Fecha de Emision de Factura";
+            label36.Text = "Fecha de Emision";
             // 
             // label35
             // 
             label35.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label35.Location = new Point(6, 169);
+            label35.Location = new Point(563, 48);
             label35.Name = "label35";
-            label35.Size = new Size(178, 20);
+            label35.Size = new Size(165, 20);
             label35.TabIndex = 31;
             label35.Text = "Valor Factura";
             // 
@@ -1232,38 +1244,31 @@
             // 
             dtpFacturaFechaEmision.Enabled = false;
             dtpFacturaFechaEmision.Format = DateTimePickerFormat.Short;
-            dtpFacturaFechaEmision.Location = new Point(203, 192);
+            dtpFacturaFechaEmision.Location = new Point(177, 71);
             dtpFacturaFechaEmision.Name = "dtpFacturaFechaEmision";
-            dtpFacturaFechaEmision.Size = new Size(188, 24);
+            dtpFacturaFechaEmision.Size = new Size(165, 24);
             dtpFacturaFechaEmision.TabIndex = 30;
-            // 
-            // TxbFacturaValor
-            // 
-            TxbFacturaValor.Enabled = false;
-            TxbFacturaValor.Location = new Point(6, 192);
-            TxbFacturaValor.Name = "TxbFacturaValor";
-            TxbFacturaValor.ReadOnly = true;
-            TxbFacturaValor.Size = new Size(178, 24);
-            TxbFacturaValor.TabIndex = 30;
             // 
             // label34
             // 
             label34.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label34.Location = new Point(6, 105);
+            label34.Location = new Point(6, 48);
             label34.Name = "label34";
-            label34.Size = new Size(178, 20);
+            label34.Size = new Size(165, 20);
             label34.TabIndex = 29;
             label34.Text = "NCF";
             // 
             // TxbFacturaNCF
             // 
-            TxbFacturaNCF.Location = new Point(6, 128);
+            TxbFacturaNCF.Location = new Point(6, 71);
             TxbFacturaNCF.Name = "TxbFacturaNCF";
-            TxbFacturaNCF.Size = new Size(178, 24);
+            TxbFacturaNCF.Size = new Size(165, 24);
             TxbFacturaNCF.TabIndex = 0;
             // 
             // groupBox9
             // 
+            groupBox9.Controls.Add(TxbFacturaMontoCargoDebito);
+            groupBox9.Controls.Add(TxbFacturaCargoDebito);
             groupBox9.Controls.Add(label33);
             groupBox9.Controls.Add(dtpFechaFacturaCargoDebito);
             groupBox9.Controls.Add(label29);
@@ -1271,14 +1276,30 @@
             groupBox9.Controls.Add(btnBuscarFacturaCargoDebito);
             groupBox9.Controls.Add(label31);
             groupBox9.Controls.Add(TxbFacturaIDCargoDebito);
-            groupBox9.Controls.Add(TxbFacturaMontoCargoDebito);
-            groupBox9.Controls.Add(TxbFacturaCargoDebito);
             groupBox9.Location = new Point(7, 112);
             groupBox9.Name = "groupBox9";
             groupBox9.Size = new Size(735, 100);
             groupBox9.TabIndex = 28;
             groupBox9.TabStop = false;
             groupBox9.Text = "Cargo Debito";
+            // 
+            // TxbFacturaMontoCargoDebito
+            // 
+            TxbFacturaMontoCargoDebito.Enabled = false;
+            TxbFacturaMontoCargoDebito.Location = new Point(403, 63);
+            TxbFacturaMontoCargoDebito.Name = "TxbFacturaMontoCargoDebito";
+            TxbFacturaMontoCargoDebito.ReadOnly = true;
+            TxbFacturaMontoCargoDebito.Size = new Size(117, 24);
+            TxbFacturaMontoCargoDebito.TabIndex = 45;
+            // 
+            // TxbFacturaCargoDebito
+            // 
+            TxbFacturaCargoDebito.Enabled = false;
+            TxbFacturaCargoDebito.Location = new Point(280, 63);
+            TxbFacturaCargoDebito.Name = "TxbFacturaCargoDebito";
+            TxbFacturaCargoDebito.ReadOnly = true;
+            TxbFacturaCargoDebito.Size = new Size(117, 24);
+            TxbFacturaCargoDebito.TabIndex = 44;
             // 
             // label33
             // 
@@ -1356,26 +1377,10 @@
             TxbFacturaIDCargoDebito.Size = new Size(117, 24);
             TxbFacturaIDCargoDebito.TabIndex = 0;
             // 
-            // TxbFacturaMontoCargoDebito
-            // 
-            TxbFacturaMontoCargoDebito.Enabled = false;
-            TxbFacturaMontoCargoDebito.Location = new Point(403, 63);
-            TxbFacturaMontoCargoDebito.Name = "TxbFacturaMontoCargoDebito";
-            TxbFacturaMontoCargoDebito.ReadOnly = true;
-            TxbFacturaMontoCargoDebito.Size = new Size(117, 24);
-            TxbFacturaMontoCargoDebito.TabIndex = 24;
-            // 
-            // TxbFacturaCargoDebito
-            // 
-            TxbFacturaCargoDebito.Enabled = false;
-            TxbFacturaCargoDebito.Location = new Point(280, 63);
-            TxbFacturaCargoDebito.Name = "TxbFacturaCargoDebito";
-            TxbFacturaCargoDebito.ReadOnly = true;
-            TxbFacturaCargoDebito.Size = new Size(117, 24);
-            TxbFacturaCargoDebito.TabIndex = 23;
-            // 
             // groupBox8
             // 
+            groupBox8.Controls.Add(TxbFacturaMontoCargoCredito);
+            groupBox8.Controls.Add(TxbFacturacionCargoCredito);
             groupBox8.Controls.Add(label32);
             groupBox8.Controls.Add(dtpFechaFacturaCargoCredito);
             groupBox8.Controls.Add(label27);
@@ -1383,14 +1388,30 @@
             groupBox8.Controls.Add(btnBuscarFacturaCargoCredito);
             groupBox8.Controls.Add(label11);
             groupBox8.Controls.Add(TxbFacturaIDCargoCredito);
-            groupBox8.Controls.Add(TxbFacturaMontoCargoCredito);
-            groupBox8.Controls.Add(TxbFacturaCargoCredito);
             groupBox8.Location = new Point(7, 6);
             groupBox8.Name = "groupBox8";
             groupBox8.Size = new Size(735, 100);
             groupBox8.TabIndex = 27;
             groupBox8.TabStop = false;
             groupBox8.Text = "Cargo Credito";
+            // 
+            // TxbFacturaMontoCargoCredito
+            // 
+            TxbFacturaMontoCargoCredito.Enabled = false;
+            TxbFacturaMontoCargoCredito.Location = new Point(403, 63);
+            TxbFacturaMontoCargoCredito.Name = "TxbFacturaMontoCargoCredito";
+            TxbFacturaMontoCargoCredito.ReadOnly = true;
+            TxbFacturaMontoCargoCredito.Size = new Size(117, 24);
+            TxbFacturaMontoCargoCredito.TabIndex = 43;
+            // 
+            // TxbFacturacionCargoCredito
+            // 
+            TxbFacturacionCargoCredito.Enabled = false;
+            TxbFacturacionCargoCredito.Location = new Point(280, 63);
+            TxbFacturacionCargoCredito.Name = "TxbFacturacionCargoCredito";
+            TxbFacturacionCargoCredito.ReadOnly = true;
+            TxbFacturacionCargoCredito.Size = new Size(117, 24);
+            TxbFacturacionCargoCredito.TabIndex = 42;
             // 
             // label32
             // 
@@ -1467,24 +1488,6 @@
             TxbFacturaIDCargoCredito.ReadOnly = true;
             TxbFacturaIDCargoCredito.Size = new Size(117, 24);
             TxbFacturaIDCargoCredito.TabIndex = 0;
-            // 
-            // TxbFacturaMontoCargoCredito
-            // 
-            TxbFacturaMontoCargoCredito.Enabled = false;
-            TxbFacturaMontoCargoCredito.Location = new Point(403, 63);
-            TxbFacturaMontoCargoCredito.Name = "TxbFacturaMontoCargoCredito";
-            TxbFacturaMontoCargoCredito.ReadOnly = true;
-            TxbFacturaMontoCargoCredito.Size = new Size(117, 24);
-            TxbFacturaMontoCargoCredito.TabIndex = 24;
-            // 
-            // TxbFacturaCargoCredito
-            // 
-            TxbFacturaCargoCredito.Enabled = false;
-            TxbFacturaCargoCredito.Location = new Point(280, 63);
-            TxbFacturaCargoCredito.Name = "TxbFacturaCargoCredito";
-            TxbFacturaCargoCredito.ReadOnly = true;
-            TxbFacturaCargoCredito.Size = new Size(117, 24);
-            TxbFacturaCargoCredito.TabIndex = 23;
             // 
             // nuevaFacturaMembresia
             // 
@@ -1567,7 +1570,6 @@
         private Label lblidmembresia;
         private Label label3;
         private Label label1;
-        private TextBox TxbValorMembresia;
         private Label label2;
         private TextBox TxbDescrMembresia;
         private TextBox TxbIDMembresia;
@@ -1617,7 +1619,6 @@
         private TabPage tabFacturacionMembresia;
         private Label label28;
         private Label label11;
-        private TextBox TxbFacturaMontoCargoCredito;
         private TextBox TxbFacturaCargoCredito;
         private TextBox TxbFacturaIDCargoCredito;
         private Guna.UI2.WinForms.Guna2Button btnBuscarFacturaCargoCredito;
@@ -1629,8 +1630,6 @@
         private Guna.UI2.WinForms.Guna2Button btnBuscarFacturaCargoDebito;
         private Label label31;
         private TextBox TxbFacturaIDCargoDebito;
-        private TextBox TxbFacturaMontoCargoDebito;
-        private TextBox TxbFacturaCargoDebito;
         private DateTimePicker dtpFechaFacturaCargoDebito;
         private Label label32;
         private DateTimePicker dtpFechaFacturaCargoCredito;
@@ -1641,13 +1640,20 @@
         private Label label36;
         private Label label35;
         private DateTimePicker dtpFacturaFechaEmision;
-        private TextBox TxbFacturaValor;
         private Label label34;
         private TextBox TxbFacturaNCF;
         private Label label38;
         private ComboBox TxbFacturaEstatus;
-        private Guna.UI2.WinForms.Guna2Button btnFacturaConCargoCredito;
-        private CheckBox chkbxConCargoDebito;
-        private CheckBox chkbxConCargoCredito;
+        private Guna.UI2.WinForms.Guna2Button btnFacturarMembresia;
+        private CheckBox chkConCargoDebito;
+        private CheckBox chkConCargoCredito;
+        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDown2;
+        private TextBox TxbValorMembresia;
+        private TextBox TxbFacturaValor;
+        private TextBox TxbFacturaMontoCargoDebito;
+        private TextBox TxbFacturaCargoDebito;
+        private TextBox TxbFacturaMontoCargoCredito;
+        private TextBox TxbFacturacionCargoCredito;
     }
 }
