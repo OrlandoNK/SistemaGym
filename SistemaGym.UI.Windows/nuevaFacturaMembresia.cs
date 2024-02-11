@@ -39,7 +39,7 @@ namespace SistemaGym.UI.Windows
                     this.TxbIDMembresia.Text = oMembresia.IDMembresia.ToString();
                     this.TxbNombreMembresia.Text = oMembresia.Nombre.ToString();
                     this.TxbDescrMembresia.Text = oMembresia.Descripcion.ToString();
-                    this.TxbValorMembresia.Text = oMembresia.Valor.ToString();
+                    this.TxbValorMembresia.Text = Convert.ToInt32(oMembresia.Valor).ToString();
                 }
                 else
                 {
@@ -209,8 +209,8 @@ namespace SistemaGym.UI.Windows
                 if (oCargoCredito != null)
                 {
                     this.TxbFacturaIDCargoCredito.Text = oCargoCredito.IDCargoCredito.ToString();
-                    this.TxbFacturacionCargoCredito.Text = oCargoCredito.Cargo.ToString();
-                    this.TxbFacturaMontoCargoCredito.Text = oCargoCredito.Monto.ToString();
+                    this.TxbFacturacionCargoCredito.Text = Convert.ToInt32(oCargoCredito.Cargo).ToString();
+                    this.TxbFacturaMontoCargoCredito.Text = Convert.ToInt32(oCargoCredito.Monto).ToString();
                     this.dtpFechaFacturaCargoCredito.Text = oCargoCredito.FechaCargo.ToString();
                 }
                 else
@@ -231,8 +231,8 @@ namespace SistemaGym.UI.Windows
                 if (oCargoDebito != null)
                 {
                     this.TxbFacturaIDCargoDebito.Text = oCargoDebito.IDCargoDebito.ToString();
-                    this.TxbFacturaCargoDebito.Text = oCargoDebito.Cargo.ToString();
-                    this.TxbFacturaMontoCargoDebito.Text = oCargoDebito.Monto.ToString();
+                    this.TxbFacturaCargoDebito.Text = Convert.ToInt32(oCargoDebito.Cargo).ToString();
+                    this.TxbFacturaMontoCargoDebito.Text = Convert.ToInt32(oCargoDebito.Monto).ToString();
                     this.dtpFechaFacturaCargoDebito.Text = oCargoDebito.FechaCargo.ToString();
                 }
                 else
@@ -240,6 +240,25 @@ namespace SistemaGym.UI.Windows
                     MessageBox.Show("Cargo Debito No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnFacturarMembresia_Click(object sender, EventArgs e)
+        {
+
+            int ValorMembresia = int.Parse(TxbValorMembresia.Text);
+            int FacturaCC = int.Parse(TxbFacturacionCargoCredito.Text);
+            int FacturaCD = int.Parse(TxbFacturaCargoDebito.Text);
+
+            if (chkConCargoCredito.Checked == true)
+            {
+                TxbFacturaValor.Text = Convert.ToString(ValorMembresia + FacturaCC);
+            }
+
+            if (chkConCargoDebito.Checked == true)
+            {
+                TxbFacturaValor.Text = Convert.ToString(ValorMembresia + FacturaCD);
+            }
+
         }
     }
 }
