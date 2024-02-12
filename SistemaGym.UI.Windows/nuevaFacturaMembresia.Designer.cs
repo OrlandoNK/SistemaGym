@@ -130,8 +130,6 @@
             tabFacturacionMembresia = new TabPage();
             groupBox10 = new GroupBox();
             TxbFacturaValor = new TextBox();
-            chkConCargoDebito = new CheckBox();
-            chkConCargoCredito = new CheckBox();
             btnFacturarMembresia = new Guna.UI2.WinForms.Guna2Button();
             label38 = new Label();
             TxbFacturaEstatus = new ComboBox();
@@ -1111,8 +1109,6 @@
             // groupBox10
             // 
             groupBox10.Controls.Add(TxbFacturaValor);
-            groupBox10.Controls.Add(chkConCargoDebito);
-            groupBox10.Controls.Add(chkConCargoCredito);
             groupBox10.Controls.Add(btnFacturarMembresia);
             groupBox10.Controls.Add(label38);
             groupBox10.Controls.Add(TxbFacturaEstatus);
@@ -1138,32 +1134,6 @@
             TxbFacturaValor.ReadOnly = true;
             TxbFacturaValor.Size = new Size(165, 24);
             TxbFacturaValor.TabIndex = 46;
-            // 
-            // chkConCargoDebito
-            // 
-            chkConCargoDebito.AutoSize = true;
-            chkConCargoDebito.Cursor = Cursors.Hand;
-            chkConCargoDebito.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            chkConCargoDebito.Location = new Point(422, 153);
-            chkConCargoDebito.Name = "chkConCargoDebito";
-            chkConCargoDebito.Size = new Size(131, 21);
-            chkConCargoDebito.TabIndex = 38;
-            chkConCargoDebito.Text = "con Cargo Débito";
-            chkConCargoDebito.TextAlign = ContentAlignment.MiddleRight;
-            chkConCargoDebito.UseVisualStyleBackColor = true;
-            // 
-            // chkConCargoCredito
-            // 
-            chkConCargoCredito.AutoSize = true;
-            chkConCargoCredito.Cursor = Cursors.Hand;
-            chkConCargoCredito.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            chkConCargoCredito.Location = new Point(422, 124);
-            chkConCargoCredito.Name = "chkConCargoCredito";
-            chkConCargoCredito.Size = new Size(135, 21);
-            chkConCargoCredito.TabIndex = 37;
-            chkConCargoCredito.Text = "con Cargo Crédito";
-            chkConCargoCredito.TextAlign = ContentAlignment.MiddleRight;
-            chkConCargoCredito.UseVisualStyleBackColor = true;
             // 
             // btnFacturarMembresia
             // 
@@ -1647,8 +1617,6 @@
         private Label label38;
         private ComboBox TxbFacturaEstatus;
         private Guna.UI2.WinForms.Guna2Button btnFacturarMembresia;
-        private CheckBox chkConCargoDebito;
-        private CheckBox chkConCargoCredito;
         private NumericUpDown numericUpDown1;
         private NumericUpDown numericUpDown2;
         private TextBox TxbValorMembresia;

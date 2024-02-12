@@ -16,7 +16,7 @@ namespace SistemaGym.DAL
         public static void Insertar(FacturaMembresiaEntity facturaMembresia)
         {
             ConexionDAL instancia = Instancia();
-            SqlConnection Conexion = new SqlConnection();
+            SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
             string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, CargoCredito, CargoDebito, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +

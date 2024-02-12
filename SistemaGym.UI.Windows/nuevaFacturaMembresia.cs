@@ -249,15 +249,7 @@ namespace SistemaGym.UI.Windows
             int FacturaCC = int.Parse(TxbFacturacionCargoCredito.Text);
             int FacturaCD = int.Parse(TxbFacturaCargoDebito.Text);
 
-            if (chkConCargoCredito.Checked == true)
-            {
-                TxbFacturaValor.Text = Convert.ToString(ValorMembresia + FacturaCC);
-            }
-
-            if (chkConCargoDebito.Checked == true)
-            {
-                TxbFacturaValor.Text = Convert.ToString(ValorMembresia + FacturaCD);
-            }
+            TxbFacturaValor.Text = Convert.ToString(ValorMembresia + (FacturaCC + FacturaCD));
 
         }
 
@@ -271,8 +263,8 @@ namespace SistemaGym.UI.Windows
             nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
             nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
             nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
-            nuevaFacturaMembresia.CargoCredito = Convert.ToInt32(TxbFacturacionCargoCredito.Text);
-            nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbFacturaCargoDebito.Text);
+            nuevaFacturaMembresia.CargoCredito = Convert.ToInt32(TxbFacturaIDCargoCredito.Text);
+            nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbFacturaIDCargoDebito.Text);
             nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
             nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
             nuevaFacturaMembresia.FechaEmision = Convert.ToDateTime(dtpFacturaFechaEmision.Value.ToShortDateString());
@@ -324,9 +316,6 @@ namespace SistemaGym.UI.Windows
             dtpFacturaFechaVencimiento.Value = DateTime.Now;
             TxbFacturaValor.Clear();
             TxbFacturaEstatus.SelectedIndex = -1;
-
-            chkConCargoCredito.Checked = false;
-            chkConCargoDebito.Checked = false;
         }
 
     }
