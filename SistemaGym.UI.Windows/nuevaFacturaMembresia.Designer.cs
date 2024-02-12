@@ -286,6 +286,7 @@
             btnSave.TabIndex = 2;
             btnSave.Text = "Guardar Factura";
             btnSave.TextAlign = HorizontalAlignment.Right;
+            btnSave.Click += btnSave_Click;
             // 
             // panel4
             // 
@@ -1134,6 +1135,7 @@
             TxbFacturaValor.Enabled = false;
             TxbFacturaValor.Location = new Point(563, 73);
             TxbFacturaValor.Name = "TxbFacturaValor";
+            TxbFacturaValor.ReadOnly = true;
             TxbFacturaValor.Size = new Size(165, 24);
             TxbFacturaValor.TabIndex = 46;
             // 
@@ -1288,6 +1290,7 @@
             TxbFacturaMontoCargoDebito.Enabled = false;
             TxbFacturaMontoCargoDebito.Location = new Point(403, 63);
             TxbFacturaMontoCargoDebito.Name = "TxbFacturaMontoCargoDebito";
+            TxbFacturaMontoCargoDebito.ReadOnly = true;
             TxbFacturaMontoCargoDebito.Size = new Size(117, 24);
             TxbFacturaMontoCargoDebito.TabIndex = 45;
             // 
@@ -1296,6 +1299,7 @@
             TxbFacturaCargoDebito.Enabled = false;
             TxbFacturaCargoDebito.Location = new Point(280, 63);
             TxbFacturaCargoDebito.Name = "TxbFacturaCargoDebito";
+            TxbFacturaCargoDebito.ReadOnly = true;
             TxbFacturaCargoDebito.Size = new Size(117, 24);
             TxbFacturaCargoDebito.TabIndex = 44;
             // 
@@ -1398,6 +1402,7 @@
             TxbFacturaMontoCargoCredito.Enabled = false;
             TxbFacturaMontoCargoCredito.Location = new Point(403, 63);
             TxbFacturaMontoCargoCredito.Name = "TxbFacturaMontoCargoCredito";
+            TxbFacturaMontoCargoCredito.ReadOnly = true;
             TxbFacturaMontoCargoCredito.Size = new Size(117, 24);
             TxbFacturaMontoCargoCredito.TabIndex = 43;
             // 
@@ -1406,6 +1411,7 @@
             TxbFacturacionCargoCredito.Enabled = false;
             TxbFacturacionCargoCredito.Location = new Point(280, 63);
             TxbFacturacionCargoCredito.Name = "TxbFacturacionCargoCredito";
+            TxbFacturacionCargoCredito.ReadOnly = true;
             TxbFacturacionCargoCredito.Size = new Size(117, 24);
             TxbFacturacionCargoCredito.TabIndex = 42;
             // 

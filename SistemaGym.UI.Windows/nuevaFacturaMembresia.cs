@@ -260,5 +260,74 @@ namespace SistemaGym.UI.Windows
             }
 
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string SYSTEM_TITLE = "SISTEMA GESTION GIMNASIO (COMFORT GYM)";
+
+            FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
+            FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
+
+            nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
+            nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
+            nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
+            nuevaFacturaMembresia.CargoCredito = Convert.ToInt32(TxbFacturacionCargoCredito.Text);
+            nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbFacturaCargoDebito.Text);
+            nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
+            nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
+            nuevaFacturaMembresia.FechaEmision = Convert.ToDateTime(dtpFacturaFechaEmision.Value.ToShortDateString());
+            nuevaFacturaMembresia.FechaVencimiento = Convert.ToDateTime(dtpFacturaFechaVencimiento.Value.ToShortDateString());
+            nuevaFacturaMembresia.Estatus = TxbFacturaEstatus.Text;
+
+            try
+            {
+                facturaMembresiaBLL.Insertar(nuevaFacturaMembresia);
+                MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarTodosLosCampos();
+            }
+            catch (SqlException ex2)
+            {
+                MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex2.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex1)
+            {
+                MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex1.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void LimpiarTodosLosCampos()
+        {
+            TxbIDMembresia.Clear();
+            TxbNombreMembresia.Clear();
+            TxbDescrMembresia.Clear();
+            TxbValorMembresia.Clear();
+
+            TxbIDCliente.Clear();
+            TxbNombreCliente.Clear();
+            TxbApellidoCliente.Clear();
+            TxbDocumentoCliente.Clear();
+
+            TxbFacturacionCargoCredito.Clear();
+            TxbFacturaIDCargoCredito.Clear();
+            TxbFacturaMontoCargoCredito.Clear();
+            dtpFechaCargoCredito.Value = DateTime.Now;
+
+            TxbFacturaIDCargoDebito.Clear();
+            TxbFacturaCargoDebito.Clear();
+            TxbFacturaMontoCargoDebito.Clear();
+            dtpFechaCargoDebito.Value = DateTime.Now;
+
+            TxbFacturaNCF.Clear();
+            dtpFacturaFechaEmision.Value = DateTime.Now;
+            dtpFacturaFechaVencimiento.Value = DateTime.Now;
+            TxbFacturaValor.Clear();
+            TxbFacturaEstatus.SelectedIndex = -1;
+
+            chkConCargoCredito.Checked = false;
+            chkConCargoDebito.Checked = false;
+        }
+
     }
 }
