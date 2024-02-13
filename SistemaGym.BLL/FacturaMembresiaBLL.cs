@@ -22,9 +22,9 @@ namespace SistemaGym.BLL
             FacturacionMembresiaDAL.Actualizar(facturaMembresia);
         }
 
-        public bool Eliminar (FacturaMembresiaEntity facturaMembresia)
+        public bool Eliminar (int Id)
         {
-            return FacturacionMembresiaDAL.EliminarByID(facturaMembresia);
+            return FacturacionMembresiaDAL.EliminarByID(Id);
         }
 
         public DataTable Mostrar()

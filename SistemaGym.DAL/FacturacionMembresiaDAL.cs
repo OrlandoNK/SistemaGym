@@ -42,10 +42,10 @@ namespace SistemaGym.DAL
         public static void Actualizar(FacturaMembresiaEntity facturaMembresia)
         {
             ConexionDAL instancia = Instancia();
-            SqlConnection Conexion = new SqlConnection();
+            SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string Actualizar = "UPDATE FacturaMembresia SET IDMembresia = @IDMembresia, IDCliente = @IDCliente, IDUsuario = @IDUsuario, NCF = @NCF, ValorFactura = @ValorFactura, FechaEmision = @FechaEmision, FechaVencimiento = @FechaVencimiento, Estatus = @Estatus";
+            string Actualizar = "UPDATE FacturaMembresia SET IDMembresia = @IDMembresia, IDCliente = @IDCliente, IDUsuario = @IDUsuario, NCF = @NCF, ValorFactura = @ValorFactura, FechaEmision = @FechaEmision, FechaVencimiento = @FechaVencimiento, Estatus = @Estatus Where IDFactura = @IDFactura";
 
             SqlCommand cmd = new SqlCommand(Actualizar, Conexion);
             cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
@@ -54,17 +54,19 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@CargoCredito", facturaMembresia.CargoCredito);
             cmd.Parameters.AddWithValue("@CargoDebito", facturaMembresia.CargoDebito);
             cmd.Parameters.AddWithValue("@NCF", facturaMembresia.NCF);
+            cmd.Parameters.AddWithValue("@ValorFactura", facturaMembresia.ValorFactura);
             cmd.Parameters.AddWithValue("@FechaEmision", facturaMembresia.FechaEmision);
             cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
             cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
 
+            cmd.Parameters.AddWithValue("@IDFactura", facturaMembresia.IDFactura);
             cmd.ExecuteNonQuery();
 
         }
 
         /* Metodo Eliminar */
 
-        public static bool EliminarByID(FacturaMembresiaEntity facturaMembresia)
+        public static bool EliminarByID(int Id)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -74,7 +76,7 @@ namespace SistemaGym.DAL
             string Eliminar = "DELETE FROM FacturaMembresia WHERE IDFactura = @IDFactura";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
 
-            cmd.Parameters.AddWithValue("@IDFactura", facturaMembresia.IDFactura);
+            cmd.Parameters.AddWithValue("@IDFactura", Id);
             seElimino = cmd.ExecuteNonQuery() > 0;
 
             return seElimino;

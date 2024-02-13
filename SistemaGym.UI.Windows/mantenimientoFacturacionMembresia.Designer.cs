@@ -56,11 +56,12 @@
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel5 = new Panel();
             dgvFacturacionMembresia = new DataGridView();
-            IDMembresia = new DataGridViewTextBoxColumn();
-            IDCliente = new DataGridViewTextBoxColumn();
-            IDUsuario = new DataGridViewTextBoxColumn();
-            CargoCredito = new DataGridViewTextBoxColumn();
-            CargoDebito = new DataGridViewTextBoxColumn();
+            IDFactura = new DataGridViewTextBoxColumn();
+            IDMembresia = new DataGridViewComboBoxColumn();
+            IDCliente = new DataGridViewComboBoxColumn();
+            IDUsuario = new DataGridViewComboBoxColumn();
+            CargoCredito = new DataGridViewComboBoxColumn();
+            CargoDebito = new DataGridViewComboBoxColumn();
             NCF = new DataGridViewTextBoxColumn();
             ValorFactura = new DataGridViewTextBoxColumn();
             FechaEmision = new DataGridViewTextBoxColumn();
@@ -181,6 +182,7 @@
             btnDelete.TabIndex = 6;
             btnDelete.Text = "Eliminar";
             btnDelete.TextAlign = HorizontalAlignment.Right;
+            btnDelete.Click += btnDelete_Click;
             // 
             // panel8
             // 
@@ -214,6 +216,7 @@
             btnEdit.TabIndex = 4;
             btnEdit.Text = "Modificar";
             btnEdit.TextAlign = HorizontalAlignment.Right;
+            btnEdit.Click += btnEdit_Click;
             // 
             // panel7
             // 
@@ -245,6 +248,7 @@
             btnRefresh.Size = new Size(51, 45);
             btnRefresh.TabIndex = 2;
             btnRefresh.TextAlign = HorizontalAlignment.Right;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // panel6
             // 
@@ -324,22 +328,34 @@
             // 
             // dgvFacturacionMembresia
             // 
+            dgvFacturacionMembresia.AllowUserToAddRows = false;
+            dgvFacturacionMembresia.AllowUserToDeleteRows = false;
             dgvFacturacionMembresia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dgvFacturacionMembresia.BackgroundColor = Color.WhiteSmoke;
             dgvFacturacionMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvFacturacionMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, IDCliente, IDUsuario, CargoCredito, CargoDebito, NCF, ValorFactura, FechaEmision, FechaVencimiento, Estatus });
+            dgvFacturacionMembresia.Columns.AddRange(new DataGridViewColumn[] { IDFactura, IDMembresia, IDCliente, IDUsuario, CargoCredito, CargoDebito, NCF, ValorFactura, FechaEmision, FechaVencimiento, Estatus });
             dgvFacturacionMembresia.Location = new Point(0, 0);
             dgvFacturacionMembresia.Name = "dgvFacturacionMembresia";
             dgvFacturacionMembresia.RowHeadersVisible = false;
             dgvFacturacionMembresia.RowTemplate.Height = 25;
+            dgvFacturacionMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvFacturacionMembresia.Size = new Size(728, 419);
             dgvFacturacionMembresia.TabIndex = 0;
+            // 
+            // IDFactura
+            // 
+            IDFactura.DataPropertyName = "IDFactura";
+            IDFactura.HeaderText = "IDFactura";
+            IDFactura.Name = "IDFactura";
+            IDFactura.Width = 82;
             // 
             // IDMembresia
             // 
             IDMembresia.DataPropertyName = "IDMembresia";
             IDMembresia.HeaderText = "Membresia";
             IDMembresia.Name = "IDMembresia";
+            IDMembresia.Resizable = DataGridViewTriState.True;
+            IDMembresia.SortMode = DataGridViewColumnSortMode.Automatic;
             IDMembresia.Width = 91;
             // 
             // IDCliente
@@ -347,6 +363,8 @@
             IDCliente.DataPropertyName = "IDCliente";
             IDCliente.HeaderText = "Cliente";
             IDCliente.Name = "IDCliente";
+            IDCliente.Resizable = DataGridViewTriState.True;
+            IDCliente.SortMode = DataGridViewColumnSortMode.Automatic;
             IDCliente.Width = 69;
             // 
             // IDUsuario
@@ -354,6 +372,8 @@
             IDUsuario.DataPropertyName = "IDUsuario";
             IDUsuario.HeaderText = "Usuario";
             IDUsuario.Name = "IDUsuario";
+            IDUsuario.Resizable = DataGridViewTriState.True;
+            IDUsuario.SortMode = DataGridViewColumnSortMode.Automatic;
             IDUsuario.Width = 72;
             // 
             // CargoCredito
@@ -361,6 +381,8 @@
             CargoCredito.DataPropertyName = "CargoCredito";
             CargoCredito.HeaderText = "CargoCredito";
             CargoCredito.Name = "CargoCredito";
+            CargoCredito.Resizable = DataGridViewTriState.True;
+            CargoCredito.SortMode = DataGridViewColumnSortMode.Automatic;
             CargoCredito.Width = 103;
             // 
             // CargoDebito
@@ -368,6 +390,8 @@
             CargoDebito.DataPropertyName = "CargoDebito";
             CargoDebito.HeaderText = "CargoDebito";
             CargoDebito.Name = "CargoDebito";
+            CargoDebito.Resizable = DataGridViewTriState.True;
+            CargoDebito.SortMode = DataGridViewColumnSortMode.Automatic;
             CargoDebito.Width = 99;
             // 
             // NCF
@@ -449,11 +473,12 @@
         private Label lblTitleMantenimientoFacturaMembresia;
         private PictureBox pictureBox1;
         private DataGridView dgvFacturacionMembresia;
-        private DataGridViewTextBoxColumn IDMembresia;
-        private DataGridViewTextBoxColumn IDCliente;
-        private DataGridViewTextBoxColumn IDUsuario;
-        private DataGridViewTextBoxColumn CargoCredito;
-        private DataGridViewTextBoxColumn CargoDebito;
+        private DataGridViewTextBoxColumn IDFactura;
+        private DataGridViewComboBoxColumn IDMembresia;
+        private DataGridViewComboBoxColumn IDCliente;
+        private DataGridViewComboBoxColumn IDUsuario;
+        private DataGridViewComboBoxColumn CargoCredito;
+        private DataGridViewComboBoxColumn CargoDebito;
         private DataGridViewTextBoxColumn NCF;
         private DataGridViewTextBoxColumn ValorFactura;
         private DataGridViewTextBoxColumn FechaEmision;
