@@ -91,5 +91,26 @@ namespace SistemaGym.UI.Windows
                 SubMantenimientos.Visible = false;
             }
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            frmClientes clientesForm = new frmClientes();
+            clientesForm.Show();
+            subAdministracion.Visible = false;
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            frmUsuario frmUsuario = new frmUsuario();
+            frmUsuario.Show();
+            subAdministracion.Visible = false;
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            frmRol rolesForm = new frmRol();
+            rolesForm.Show();
+            subAdministracion.Visible = false;
+        }
     }
 }

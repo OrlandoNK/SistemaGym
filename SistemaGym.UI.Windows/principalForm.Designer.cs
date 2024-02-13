@@ -74,9 +74,9 @@
             btnFacturaMembresia = new Guna.UI2.WinForms.Guna2Button();
             btnFacturaProducto = new Guna.UI2.WinForms.Guna2Button();
             subAdministracion = new Panel();
-            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            btnClientes = new Guna.UI2.WinForms.Guna2Button();
+            btnUsuarios = new Guna.UI2.WinForms.Guna2Button();
+            btnRoles = new Guna.UI2.WinForms.Guna2Button();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel2.SuspendLayout();
@@ -388,86 +388,89 @@
             // subAdministracion
             // 
             subAdministracion.BackColor = Color.Black;
-            subAdministracion.Controls.Add(guna2Button4);
-            subAdministracion.Controls.Add(guna2Button3);
-            subAdministracion.Controls.Add(guna2Button2);
+            subAdministracion.Controls.Add(btnClientes);
+            subAdministracion.Controls.Add(btnUsuarios);
+            subAdministracion.Controls.Add(btnRoles);
             subAdministracion.Location = new Point(237, 98);
             subAdministracion.Name = "subAdministracion";
             subAdministracion.Size = new Size(234, 132);
             subAdministracion.TabIndex = 6;
             subAdministracion.Visible = false;
             // 
-            // guna2Button4
+            // btnClientes
             // 
-            guna2Button4.BackColor = Color.Transparent;
-            guna2Button4.CustomizableEdges = customizableEdges19;
-            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.FillColor = Color.Transparent;
-            guna2Button4.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button4.ForeColor = Color.White;
-            guna2Button4.HoverState.FillColor = Color.White;
-            guna2Button4.HoverState.ForeColor = Color.Black;
-            guna2Button4.Image = Properties.Resources.usuarios__mainScreen;
-            guna2Button4.ImageAlign = HorizontalAlignment.Left;
-            guna2Button4.ImageSize = new Size(32, 32);
-            guna2Button4.Location = new Point(3, 90);
-            guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Button4.Size = new Size(225, 37);
-            guna2Button4.TabIndex = 9;
-            guna2Button4.Text = "Clientes";
-            guna2Button4.TextAlign = HorizontalAlignment.Right;
+            btnClientes.BackColor = Color.Transparent;
+            btnClientes.CustomizableEdges = customizableEdges19;
+            btnClientes.DisabledState.BorderColor = Color.DarkGray;
+            btnClientes.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnClientes.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnClientes.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnClientes.FillColor = Color.Transparent;
+            btnClientes.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClientes.ForeColor = Color.White;
+            btnClientes.HoverState.FillColor = Color.White;
+            btnClientes.HoverState.ForeColor = Color.Black;
+            btnClientes.Image = Properties.Resources.usuarios__mainScreen;
+            btnClientes.ImageAlign = HorizontalAlignment.Left;
+            btnClientes.ImageSize = new Size(32, 32);
+            btnClientes.Location = new Point(3, 90);
+            btnClientes.Name = "btnClientes";
+            btnClientes.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnClientes.Size = new Size(225, 37);
+            btnClientes.TabIndex = 9;
+            btnClientes.Text = "Clientes";
+            btnClientes.TextAlign = HorizontalAlignment.Right;
+            btnClientes.Click += btnClientes_Click;
             // 
-            // guna2Button3
+            // btnUsuarios
             // 
-            guna2Button3.BackColor = Color.Transparent;
-            guna2Button3.CustomizableEdges = customizableEdges21;
-            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.Transparent;
-            guna2Button3.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button3.ForeColor = Color.White;
-            guna2Button3.HoverState.FillColor = Color.White;
-            guna2Button3.HoverState.ForeColor = Color.Black;
-            guna2Button3.Image = Properties.Resources._Clientes_mainScreen_;
-            guna2Button3.ImageAlign = HorizontalAlignment.Left;
-            guna2Button3.ImageSize = new Size(32, 32);
-            guna2Button3.Location = new Point(3, 47);
-            guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2Button3.Size = new Size(225, 37);
-            guna2Button3.TabIndex = 8;
-            guna2Button3.Text = "Usuarios";
-            guna2Button3.TextAlign = HorizontalAlignment.Right;
+            btnUsuarios.BackColor = Color.Transparent;
+            btnUsuarios.CustomizableEdges = customizableEdges21;
+            btnUsuarios.DisabledState.BorderColor = Color.DarkGray;
+            btnUsuarios.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnUsuarios.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnUsuarios.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnUsuarios.FillColor = Color.Transparent;
+            btnUsuarios.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUsuarios.ForeColor = Color.White;
+            btnUsuarios.HoverState.FillColor = Color.White;
+            btnUsuarios.HoverState.ForeColor = Color.Black;
+            btnUsuarios.Image = Properties.Resources._Clientes_mainScreen_;
+            btnUsuarios.ImageAlign = HorizontalAlignment.Left;
+            btnUsuarios.ImageSize = new Size(32, 32);
+            btnUsuarios.Location = new Point(3, 47);
+            btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnUsuarios.Size = new Size(225, 37);
+            btnUsuarios.TabIndex = 8;
+            btnUsuarios.Text = "Usuarios";
+            btnUsuarios.TextAlign = HorizontalAlignment.Right;
+            btnUsuarios.Click += btnUsuarios_Click;
             // 
-            // guna2Button2
+            // btnRoles
             // 
-            guna2Button2.BackColor = Color.Transparent;
-            guna2Button2.CustomizableEdges = customizableEdges23;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.Transparent;
-            guna2Button2.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.HoverState.FillColor = Color.White;
-            guna2Button2.HoverState.ForeColor = Color.Black;
-            guna2Button2.Image = Properties.Resources._Roles_mainScreen_;
-            guna2Button2.ImageAlign = HorizontalAlignment.Left;
-            guna2Button2.ImageSize = new Size(32, 32);
-            guna2Button2.Location = new Point(3, 4);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2Button2.Size = new Size(225, 37);
-            guna2Button2.TabIndex = 7;
-            guna2Button2.Text = "Roles";
-            guna2Button2.TextAlign = HorizontalAlignment.Right;
+            btnRoles.BackColor = Color.Transparent;
+            btnRoles.CustomizableEdges = customizableEdges23;
+            btnRoles.DisabledState.BorderColor = Color.DarkGray;
+            btnRoles.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRoles.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRoles.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRoles.FillColor = Color.Transparent;
+            btnRoles.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRoles.ForeColor = Color.White;
+            btnRoles.HoverState.FillColor = Color.White;
+            btnRoles.HoverState.ForeColor = Color.Black;
+            btnRoles.Image = Properties.Resources._Roles_mainScreen_;
+            btnRoles.ImageAlign = HorizontalAlignment.Left;
+            btnRoles.ImageSize = new Size(32, 32);
+            btnRoles.Location = new Point(3, 4);
+            btnRoles.Name = "btnRoles";
+            btnRoles.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnRoles.Size = new Size(225, 37);
+            btnRoles.TabIndex = 7;
+            btnRoles.Text = "Roles";
+            btnRoles.TextAlign = HorizontalAlignment.Right;
+            btnRoles.Click += btnRoles_Click;
             // 
             // guna2PictureBox1
             // 
@@ -546,9 +549,9 @@
         private Panel panel3;
         private Guna.UI2.WinForms.Guna2Button btnAdministracion;
         private Panel subAdministracion;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnClientes;
+        private Guna.UI2.WinForms.Guna2Button btnUsuarios;
+        private Guna.UI2.WinForms.Guna2Button btnRoles;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }

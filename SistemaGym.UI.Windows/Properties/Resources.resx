@@ -130,8 +130,8 @@
   <data name="tel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cerrar ventana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cerrar ventana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tiposmembresia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tiposmembresia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="#NuevaFacturaMembresia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#NuevaFacturaMembresia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,11 +151,14 @@
   <data name="facturacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facturacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="#ContraseñaLogin(x32)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#ContraseñaLogin(x32).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="&amp;SearchInMembershipFacturation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\&amp;SearchInMembershipFacturation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="#SiguenteEnRegFacturaMembresia(x32)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\#SiguenteEnRegFacturaMembresia(x32).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="#CerrarSesion(mainscreen)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#CerrarSesion(mainscreen).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="#EliminarFacturaMembresia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#EliminarFacturaMembresia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -168,6 +171,9 @@
   </data>
   <data name="desplegable true" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\desplegable true.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="#mantenimientosMainScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#mantenimientosMainScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="#ForCloseWindowX---" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#ForCloseWindowX---.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,6 +214,9 @@
   <data name="direccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\direccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cerrar ventana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cerrar ventana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="#MEMBRESIA(x32)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#MEMBRESIA(x32)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -247,9 +256,6 @@
   <data name="cerrar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tiposmembresia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tiposmembresia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="listaMiembros1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\listaMiembros1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -261,6 +267,9 @@
   </data>
   <data name="facturamembresia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facturamembresia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="#PasswordLogin(x32)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#PasswordLogin(x32).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="#BuscarClienteCCyCD(x32)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#BuscarClienteCCyCD(x32).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,8 +313,8 @@
   <data name="#ListaClientes(x64)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#ListaClientes(x64).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="#mantenimientosMainScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\#mantenimientosMainScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="#SiguenteEnRegFacturaMembresia(x32)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#SiguenteEnRegFacturaMembresia(x32).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="#RefrescarFacturaMembresia--." type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#RefrescarFacturaMembresia--..png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,7 +337,10 @@
   <data name="Comfort GYM - Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Comfort GYM - Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="#CerrarSesion(mainscreen)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\#CerrarSesion(mainscreen).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="#UsuarioLogin(x32)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#UsuarioLogin(x32).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="#AccederLogin(x32)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#AccederLogin(x32).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

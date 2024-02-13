@@ -35,45 +35,36 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnCerrarLogin = new PictureBox();
-            panel2 = new Panel();
             btnEntrar = new Guna.UI2.WinForms.Guna2Button();
             TxbContraseña = new Guna.UI2.WinForms.Guna2TextBox();
             TxbUsuario = new Guna.UI2.WinForms.Guna2TextBox();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)btnCerrarLogin).BeginInit();
+            panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnCerrarLogin
             // 
             btnCerrarLogin.Anchor = AnchorStyles.None;
             btnCerrarLogin.Cursor = Cursors.Hand;
-            btnCerrarLogin.Image = Properties.Resources.cerrar__1_;
-            btnCerrarLogin.Location = new Point(544, 125);
+            btnCerrarLogin.Image = Properties.Resources._ForCloseWindowX___;
+            btnCerrarLogin.Location = new Point(492, 11);
             btnCerrarLogin.Name = "btnCerrarLogin";
-            btnCerrarLogin.Size = new Size(32, 32);
-            btnCerrarLogin.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnCerrarLogin.Size = new Size(51, 49);
+            btnCerrarLogin.SizeMode = PictureBoxSizeMode.Zoom;
             btnCerrarLogin.TabIndex = 3;
             btnCerrarLogin.TabStop = false;
             btnCerrarLogin.Click += btnCerrarLogin_Click;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(btnCerrarLogin);
-            panel2.Controls.Add(btnEntrar);
-            panel2.Controls.Add(TxbContraseña);
-            panel2.Controls.Add(TxbUsuario);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(782, 438);
-            panel2.TabIndex = 1;
             // 
             // btnEntrar
             // 
             btnEntrar.Anchor = AnchorStyles.None;
             btnEntrar.BorderColor = Color.Gold;
-            btnEntrar.BorderRadius = 5;
+            btnEntrar.BorderRadius = 24;
             btnEntrar.BorderThickness = 1;
             btnEntrar.Cursor = Cursors.Hand;
             btnEntrar.CustomizableEdges = customizableEdges1;
@@ -82,22 +73,24 @@
             btnEntrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnEntrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnEntrar.FillColor = Color.Transparent;
-            btnEntrar.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEntrar.ForeColor = Color.FromArgb(39, 57, 80);
-            btnEntrar.HoverState.FillColor = Color.Khaki;
+            btnEntrar.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEntrar.ForeColor = Color.White;
+            btnEntrar.HoverState.FillColor = Color.Goldenrod;
             btnEntrar.HoverState.ForeColor = Color.Black;
-            btnEntrar.Location = new Point(207, 268);
+            btnEntrar.ImageSize = new Size(28, 28);
+            btnEntrar.Location = new Point(34, 273);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.PressedColor = Color.LightYellow;
             btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnEntrar.Size = new Size(369, 45);
+            btnEntrar.Size = new Size(487, 52);
             btnEntrar.TabIndex = 2;
-            btnEntrar.Text = "Iniciar Sesion";
+            btnEntrar.Text = "&Acceder";
             btnEntrar.Click += btnEntrar_Click;
             // 
             // TxbContraseña
             // 
             TxbContraseña.Anchor = AnchorStyles.None;
+            TxbContraseña.BorderColor = Color.WhiteSmoke;
             TxbContraseña.BorderThickness = 2;
             TxbContraseña.CustomizableEdges = customizableEdges3;
             TxbContraseña.DefaultText = "";
@@ -105,19 +98,20 @@
             TxbContraseña.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             TxbContraseña.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             TxbContraseña.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            TxbContraseña.FillColor = Color.Black;
             TxbContraseña.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbContraseña.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TxbContraseña.ForeColor = Color.Black;
+            TxbContraseña.ForeColor = Color.White;
             TxbContraseña.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxbContraseña.IconLeft = Properties.Resources.password;
-            TxbContraseña.Location = new Point(207, 210);
+            TxbContraseña.IconLeft = Properties.Resources._PasswordLogin_x32_;
+            TxbContraseña.Location = new Point(34, 184);
             TxbContraseña.Name = "TxbContraseña";
             TxbContraseña.PasswordChar = '●';
-            TxbContraseña.PlaceholderForeColor = Color.Silver;
+            TxbContraseña.PlaceholderForeColor = Color.Gainsboro;
             TxbContraseña.PlaceholderText = "Contraseña";
             TxbContraseña.SelectedText = "";
             TxbContraseña.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            TxbContraseña.Size = new Size(369, 41);
+            TxbContraseña.Size = new Size(487, 41);
             TxbContraseña.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             TxbContraseña.TabIndex = 1;
             TxbContraseña.UseSystemPasswordChar = true;
@@ -125,6 +119,7 @@
             // TxbUsuario
             // 
             TxbUsuario.Anchor = AnchorStyles.None;
+            TxbUsuario.BorderColor = Color.WhiteSmoke;
             TxbUsuario.BorderThickness = 2;
             TxbUsuario.CustomizableEdges = customizableEdges5;
             TxbUsuario.DefaultText = "";
@@ -132,21 +127,57 @@
             TxbUsuario.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             TxbUsuario.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             TxbUsuario.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            TxbUsuario.FillColor = Color.Black;
             TxbUsuario.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbUsuario.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TxbUsuario.ForeColor = Color.Black;
+            TxbUsuario.ForeColor = Color.White;
             TxbUsuario.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxbUsuario.IconLeft = Properties.Resources.usuario1;
-            TxbUsuario.Location = new Point(207, 163);
+            TxbUsuario.IconLeft = Properties.Resources._UsuarioLogin_x32_;
+            TxbUsuario.Location = new Point(34, 125);
             TxbUsuario.Name = "TxbUsuario";
             TxbUsuario.PasswordChar = '\0';
-            TxbUsuario.PlaceholderForeColor = Color.Silver;
+            TxbUsuario.PlaceholderForeColor = Color.Gainsboro;
             TxbUsuario.PlaceholderText = "Usuario";
             TxbUsuario.SelectedText = "";
             TxbUsuario.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            TxbUsuario.Size = new Size(369, 41);
+            TxbUsuario.Size = new Size(487, 41);
             TxbUsuario.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             TxbUsuario.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(226, 438);
+            panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Black;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(TxbUsuario);
+            panel2.Controls.Add(btnCerrarLogin);
+            panel2.Controls.Add(TxbContraseña);
+            panel2.Controls.Add(btnEntrar);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(226, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(556, 438);
+            panel2.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.Confort_GYM_SidePanel;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(224, 436);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
@@ -154,21 +185,25 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(782, 438);
             Controls.Add(panel2);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Comfort GYM - INICIAR SESION";
             ((System.ComponentModel.ISupportInitialize)btnCerrarLogin).EndInit();
+            panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private Panel panel2;
         private Guna.UI2.WinForms.Guna2Button btnEntrar;
         private Guna.UI2.WinForms.Guna2TextBox TxbContraseña;
         private Guna.UI2.WinForms.Guna2TextBox TxbUsuario;
         private PictureBox btnCerrarLogin;
+        private Panel panel1;
+        private Panel panel2;
+        private PictureBox pictureBox1;
     }
 }

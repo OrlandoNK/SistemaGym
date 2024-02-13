@@ -315,6 +315,7 @@
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             TxbBuscar.Size = new Size(720, 36);
             TxbBuscar.TabIndex = 0;
+            TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
             // panel5
             // 

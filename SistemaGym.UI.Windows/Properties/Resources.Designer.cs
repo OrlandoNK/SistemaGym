@@ -63,6 +63,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _AccederLogin_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("#AccederLogin(x32)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _ActualizarFacturaMembresia {
             get {
                 object obj = ResourceManager.GetObject("#ActualizarFacturaMembresia", resourceCulture);
@@ -203,6 +213,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _ContraseñaLogin_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("#ContraseñaLogin(x32)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _EditarFacturaMembresia {
             get {
                 object obj = ResourceManager.GetObject("#EditarFacturaMembresia", resourceCulture);
@@ -333,6 +353,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _PasswordLogin_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("#PasswordLogin(x32)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _PaymentMembresiaFactura {
             get {
                 object obj = ResourceManager.GetObject("#PaymentMembresiaFactura", resourceCulture);
@@ -386,6 +416,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap _SiguenteEnRegFacturaMembresia_x32_ {
             get {
                 object obj = ResourceManager.GetObject("#SiguenteEnRegFacturaMembresia(x32)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _UsuarioLogin_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("#UsuarioLogin(x32)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

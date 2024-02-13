@@ -179,5 +179,13 @@ namespace SistemaGym.UI.Windows
                 MessageBox.Show($"Se Produjo un Error al Intentar Modificar la Factura Membresia: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void TxbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = TxbBuscar.Text;
+
+            DataTable resultBusqueda = facturaMembresiaBLL.ObtenerByValor(buscar);
+            dgvFacturacionMembresia.DataSource = resultBusqueda;
+        }
     }
 }

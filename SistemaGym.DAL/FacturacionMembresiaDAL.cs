@@ -143,7 +143,7 @@ namespace SistemaGym.DAL
 
         /* Metodo Obtener por Valor */
 
-        public static DataTable ObtenerByValor(FacturaMembresiaEntity facturaMembresia)
+        public static DataTable ObtenerByValor(string busqueda)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -151,18 +151,13 @@ namespace SistemaGym.DAL
             Conexion.Open();
 
             DataTable dataTBL = new DataTable();
-            string GetByValor = "SELECT * FROM FacturaMembresia WHERE IDMembresia LIKE '%' + @IDMembresia + '%' or IDCliente LIKE '%' + @IDCliente + '%' or IDUsuario LIKE '%' + @IDUsuario + '%' or NCF LIKE '%' + @NCF + '%' or ValorFactura LIKE '%' + @ValorFactura + '%' or FechaEmision LIKE '%' + @FechaEmision + '%' or FechaVencimiento LIKE '%' + @FechaVencimiento + '%' or Estatus LIKE '%' + @Estatus + '%' ORDER BY IDFactura";
-            SqlCommand cmd = new SqlCommand(GetByValor, Conexion);
-            cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
-            cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
-            cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
-            cmd.Parameters.AddWithValue("@NCF", facturaMembresia.NCF);
-            cmd.Parameters.AddWithValue("@FechaEmision", facturaMembresia.FechaEmision);
-            cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
-            cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
-            SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
-            adapterDT.Fill(dataTBL);
-
+            string GetByValor = "SELECT * FROM FacturaMembresia WHERE IDMembresia LIKE @Busqueda OR IDCliente LIKE @Busqueda OR IDUsuario LIKE @Busqueda OR NCF LIKE @Busqueda OR ValorFactura LIKE @Busqueda OR FechaEmision LIKE @Busqueda OR FechaVencimiento LIKE @Busqueda OR Estatus LIKE @Busqueda ORDER BY IDFactura";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
             return dataTBL;
 
         }

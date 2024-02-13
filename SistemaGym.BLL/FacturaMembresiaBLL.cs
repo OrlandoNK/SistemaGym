@@ -45,9 +45,9 @@ namespace SistemaGym.BLL
             return dataTable;
         }
 
-        public DataTable ObtenerByValor(FacturaMembresiaEntity facturacionMembresia)
+        public DataTable ObtenerByValor(string busqueda)
         {
-            DataTable dataTable = FacturacionMembresiaDAL.ObtenerByValor(facturacionMembresia);
+            DataTable dataTable = FacturacionMembresiaDAL.ObtenerByValor(busqueda);
             return dataTable;
         }
     }
