@@ -90,6 +90,11 @@ namespace SistemaGym.UI.Windows
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             dgvFacturacionMembresia.DataSource = facturaMembresiaBLL.Mostrar();
+            CargarMembresia();
+            CargarCliente();
+            CargarUsuario();
+            CargarCargoCredito();
+            CargarCargoDebito();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
