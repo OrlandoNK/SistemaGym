@@ -348,6 +348,7 @@
             IDFactura.DataPropertyName = "IDFactura";
             IDFactura.HeaderText = "IDFactura";
             IDFactura.Name = "IDFactura";
+            IDFactura.ReadOnly = true;
             IDFactura.Width = 82;
             // 
             // IDMembresia
@@ -355,6 +356,7 @@
             IDMembresia.DataPropertyName = "IDMembresia";
             IDMembresia.HeaderText = "Membresia";
             IDMembresia.Name = "IDMembresia";
+            IDMembresia.ReadOnly = true;
             IDMembresia.Resizable = DataGridViewTriState.True;
             IDMembresia.SortMode = DataGridViewColumnSortMode.Automatic;
             IDMembresia.Width = 91;
@@ -364,6 +366,7 @@
             IDCliente.DataPropertyName = "IDCliente";
             IDCliente.HeaderText = "Cliente";
             IDCliente.Name = "IDCliente";
+            IDCliente.ReadOnly = true;
             IDCliente.Resizable = DataGridViewTriState.True;
             IDCliente.SortMode = DataGridViewColumnSortMode.Automatic;
             IDCliente.Width = 69;
@@ -373,6 +376,7 @@
             IDUsuario.DataPropertyName = "IDUsuario";
             IDUsuario.HeaderText = "Usuario";
             IDUsuario.Name = "IDUsuario";
+            IDUsuario.ReadOnly = true;
             IDUsuario.Resizable = DataGridViewTriState.True;
             IDUsuario.SortMode = DataGridViewColumnSortMode.Automatic;
             IDUsuario.Width = 72;
@@ -382,6 +386,7 @@
             CargoCredito.DataPropertyName = "CargoCredito";
             CargoCredito.HeaderText = "CargoCredito";
             CargoCredito.Name = "CargoCredito";
+            CargoCredito.ReadOnly = true;
             CargoCredito.Resizable = DataGridViewTriState.True;
             CargoCredito.SortMode = DataGridViewColumnSortMode.Automatic;
             CargoCredito.Width = 103;
@@ -391,6 +396,7 @@
             CargoDebito.DataPropertyName = "CargoDebito";
             CargoDebito.HeaderText = "CargoDebito";
             CargoDebito.Name = "CargoDebito";
+            CargoDebito.ReadOnly = true;
             CargoDebito.Resizable = DataGridViewTriState.True;
             CargoDebito.SortMode = DataGridViewColumnSortMode.Automatic;
             CargoDebito.Width = 99;
