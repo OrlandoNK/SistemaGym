@@ -62,8 +62,8 @@ namespace SistemaGym.UI.Windows
 
         private void btnFacturaProducto_Click(object sender, EventArgs e)
         {
-            MantenimientoProductos mantenimientoProductos = new MantenimientoProductos();
-            mantenimientoProductos.Show();
+            frmFacturaProductos mantenimientoFacturaProductos = new frmFacturaProductos();
+            mantenimientoFacturaProductos.Show();
             SubMantenimientos.Visible = false;
         }
 
@@ -111,6 +111,13 @@ namespace SistemaGym.UI.Windows
             frmRol rolesForm = new frmRol();
             rolesForm.Show();
             subAdministracion.Visible = false;
+        }
+
+        private void btnMantenimientoProducto_Click(object sender, EventArgs e)
+        {
+            MantenimientoProductos mantenimientoProductos = new MantenimientoProductos();
+            mantenimientoProductos.Show();
+            SubMantenimientos.Visible = false;
         }
     }
 }

@@ -303,6 +303,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _mantenimientoProductos_x32_MainsScreen_ {
+            get {
+                object obj = ResourceManager.GetObject("&mantenimientoProductos(x32-MainsScreen)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _mantenimientosMainScreen {
             get {
                 object obj = ResourceManager.GetObject("#mantenimientosMainScreen", resourceCulture);
