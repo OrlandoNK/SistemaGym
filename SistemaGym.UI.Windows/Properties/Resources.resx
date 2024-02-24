@@ -148,11 +148,17 @@
   <data name="proveedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proveedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Confort GYM SidePanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Confort GYM SidePanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GYM COMFORT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GYM COMFORT.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="direccion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\direccion1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="facturacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\facturacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="desplegable true 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\desplegable true 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cerrar-sesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrar-sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,23 +208,20 @@
   <data name="empleado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\empleado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Confort GYM SidePanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Confort GYM SidePanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="facturacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="desplegable true 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\desplegable true 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="#searchfacturabtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#searchfacturabtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="estatus 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\estatus 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="proveedor (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proveedor (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="telefono" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\telefono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="#cancelFacturaProduct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#cancelFacturaProduct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,8 +232,8 @@
   <data name="#NewFacturaProduct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#NewFacturaProduct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GYM COMFORT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GYM COMFORT.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="telefono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\telefono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="COMFORT GYM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\COMFORT GYM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,7 +247,7 @@
   <data name="#btnbuscarclienteee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#btnbuscarclienteee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="#searchfacturabtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\#searchfacturabtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Facturacion-Producto Icon." type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Facturacion-Producto Icon..png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

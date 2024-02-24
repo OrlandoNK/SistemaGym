@@ -323,6 +323,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Facturacion_Producto_Icon_ {
+            get {
+                object obj = ResourceManager.GetObject("Facturacion-Producto Icon.", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap facturamembresia {
             get {
                 object obj = ResourceManager.GetObject("facturamembresia", resourceCulture);

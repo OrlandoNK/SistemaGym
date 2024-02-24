@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle46 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle47 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle48 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle49 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle50 = new DataGridViewCellStyle();
             label1 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -101,6 +101,8 @@
             tabControl1 = new TabControl();
             groupBox1 = new GroupBox();
             groupBox4 = new GroupBox();
+            pictureBox2 = new PictureBox();
+            label21 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
@@ -112,6 +114,7 @@
             tabControl1.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -134,7 +137,7 @@
             // 
             label5.Location = new Point(304, 115);
             label5.Name = "label5";
-            label5.Size = new Size(261, 23);
+            label5.Size = new Size(244, 23);
             label5.TabIndex = 4;
             label5.Text = "Fecha Vencimiento";
             // 
@@ -252,7 +255,7 @@
             dgvProductos.BackgroundColor = Color.White;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { IDDetalle, IDProducto, Precio, Cantidad, Subtotal, Descuento, Impuesto, Total });
-            dgvProductos.Location = new Point(6, 176);
+            dgvProductos.Location = new Point(5, 176);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersVisible = false;
@@ -281,9 +284,9 @@
             // Precio
             // 
             Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle11.Format = "C2";
-            dataGridViewCellStyle11.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle46.Format = "C2";
+            dataGridViewCellStyle46.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle46;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
@@ -300,9 +303,9 @@
             // Subtotal
             // 
             Subtotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle12.Format = "C2";
-            dataGridViewCellStyle12.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle47.Format = "C2";
+            dataGridViewCellStyle47.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle47;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
             Subtotal.ReadOnly = true;
@@ -311,9 +314,9 @@
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle13.Format = "C2";
-            dataGridViewCellStyle13.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle48.Format = "C2";
+            dataGridViewCellStyle48.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle48;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
@@ -322,9 +325,9 @@
             // Impuesto
             // 
             Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle49.Format = "C2";
+            dataGridViewCellStyle49.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle49;
             Impuesto.HeaderText = "Impuesto";
             Impuesto.Name = "Impuesto";
             Impuesto.ReadOnly = true;
@@ -333,9 +336,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
-            dataGridViewCellStyle15.Format = "C2";
-            dataGridViewCellStyle15.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle50.Format = "C2";
+            dataGridViewCellStyle50.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle50;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
@@ -368,7 +371,7 @@
             btnAgregar.FlatAppearance.BorderColor = Color.Black;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Image = Properties.Resources._btnAgregarProductooo;
-            btnAgregar.Location = new Point(459, 95);
+            btnAgregar.Location = new Point(463, 95);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(57, 54);
             btnAgregar.TabIndex = 11;
@@ -381,7 +384,7 @@
             btnBuscarProducto.FlatAppearance.BorderColor = Color.Black;
             btnBuscarProducto.FlatStyle = FlatStyle.Flat;
             btnBuscarProducto.Image = Properties.Resources._BotonBuscarProducto;
-            btnBuscarProducto.Location = new Point(459, 30);
+            btnBuscarProducto.Location = new Point(463, 30);
             btnBuscarProducto.Name = "btnBuscarProducto";
             btnBuscarProducto.Size = new Size(57, 54);
             btnBuscarProducto.TabIndex = 10;
@@ -391,7 +394,7 @@
             // label13
             // 
             label13.BackColor = Color.Transparent;
-            label13.Location = new Point(201, 92);
+            label13.Location = new Point(205, 92);
             label13.Name = "label13";
             label13.Size = new Size(104, 21);
             label13.TabIndex = 9;
@@ -399,7 +402,7 @@
             // 
             // txtDescuento
             // 
-            txtDescuento.Location = new Point(201, 116);
+            txtDescuento.Location = new Point(205, 116);
             txtDescuento.Multiline = true;
             txtDescuento.Name = "txtDescuento";
             txtDescuento.Size = new Size(104, 30);
@@ -407,7 +410,7 @@
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(91, 116);
+            txtCantidad.Location = new Point(95, 116);
             txtCantidad.Multiline = true;
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(104, 30);
@@ -415,7 +418,7 @@
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(330, 54);
+            txtPrecio.Location = new Point(334, 54);
             txtPrecio.Multiline = true;
             txtPrecio.Name = "txtPrecio";
             txtPrecio.ReadOnly = true;
@@ -424,7 +427,7 @@
             // 
             // txtProducto
             // 
-            txtProducto.Location = new Point(144, 54);
+            txtProducto.Location = new Point(148, 54);
             txtProducto.Multiline = true;
             txtProducto.Name = "txtProducto";
             txtProducto.ReadOnly = true;
@@ -433,7 +436,7 @@
             // 
             // txtIDProducto
             // 
-            txtIDProducto.Location = new Point(91, 54);
+            txtIDProducto.Location = new Point(95, 54);
             txtIDProducto.Multiline = true;
             txtIDProducto.Name = "txtIDProducto";
             txtIDProducto.ReadOnly = true;
@@ -443,7 +446,7 @@
             // label12
             // 
             label12.BackColor = Color.Transparent;
-            label12.Location = new Point(91, 92);
+            label12.Location = new Point(95, 92);
             label12.Name = "label12";
             label12.Size = new Size(104, 23);
             label12.TabIndex = 3;
@@ -452,7 +455,7 @@
             // label11
             // 
             label11.BackColor = Color.Transparent;
-            label11.Location = new Point(330, 30);
+            label11.Location = new Point(334, 30);
             label11.Name = "label11";
             label11.Size = new Size(123, 21);
             label11.TabIndex = 2;
@@ -461,7 +464,7 @@
             // label10
             // 
             label10.BackColor = Color.Transparent;
-            label10.Location = new Point(144, 30);
+            label10.Location = new Point(148, 30);
             label10.Name = "label10";
             label10.Size = new Size(180, 21);
             label10.TabIndex = 1;
@@ -470,7 +473,7 @@
             // label9
             // 
             label9.BackColor = Color.Transparent;
-            label9.Location = new Point(91, 30);
+            label9.Location = new Point(95, 30);
             label9.Name = "label9";
             label9.Size = new Size(47, 21);
             label9.TabIndex = 0;
@@ -539,7 +542,7 @@
             // 
             label14.BackColor = Color.Transparent;
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(246, 349);
+            label14.Location = new Point(245, 353);
             label14.Name = "label14";
             label14.Size = new Size(89, 21);
             label14.TabIndex = 17;
@@ -549,7 +552,7 @@
             // 
             label15.BackColor = Color.Transparent;
             label15.ForeColor = Color.Black;
-            label15.Location = new Point(436, 349);
+            label15.Location = new Point(435, 353);
             label15.Name = "label15";
             label15.Size = new Size(89, 21);
             label15.TabIndex = 18;
@@ -559,7 +562,7 @@
             // 
             label16.BackColor = Color.Transparent;
             label16.ForeColor = Color.Black;
-            label16.Location = new Point(341, 349);
+            label16.Location = new Point(340, 353);
             label16.Name = "label16";
             label16.Size = new Size(89, 21);
             label16.TabIndex = 19;
@@ -569,7 +572,7 @@
             // 
             label17.BackColor = Color.Transparent;
             label17.ForeColor = Color.Black;
-            label17.Location = new Point(531, 348);
+            label17.Location = new Point(530, 352);
             label17.Name = "label17";
             label17.Size = new Size(89, 21);
             label17.TabIndex = 20;
@@ -577,7 +580,7 @@
             // 
             // txtSubTotal
             // 
-            txtSubTotal.Location = new Point(246, 373);
+            txtSubTotal.Location = new Point(245, 377);
             txtSubTotal.Multiline = true;
             txtSubTotal.Name = "txtSubTotal";
             txtSubTotal.ReadOnly = true;
@@ -586,7 +589,7 @@
             // 
             // txtImpuesto
             // 
-            txtImpuesto.Location = new Point(341, 373);
+            txtImpuesto.Location = new Point(340, 377);
             txtImpuesto.Multiline = true;
             txtImpuesto.Name = "txtImpuesto";
             txtImpuesto.ReadOnly = true;
@@ -595,7 +598,7 @@
             // 
             // txtTotalDescuento
             // 
-            txtTotalDescuento.Location = new Point(436, 373);
+            txtTotalDescuento.Location = new Point(435, 377);
             txtTotalDescuento.Multiline = true;
             txtTotalDescuento.Name = "txtTotalDescuento";
             txtTotalDescuento.ReadOnly = true;
@@ -604,7 +607,7 @@
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(531, 373);
+            txtTotal.Location = new Point(530, 377);
             txtTotal.Multiline = true;
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
@@ -619,6 +622,8 @@
             // 
             TopPanel.BackColor = Color.Black;
             TopPanel.BorderStyle = BorderStyle.FixedSingle;
+            TopPanel.Controls.Add(label21);
+            TopPanel.Controls.Add(pictureBox2);
             TopPanel.Controls.Add(pictureBox1);
             TopPanel.Dock = DockStyle.Top;
             TopPanel.Location = new Point(0, 0);
@@ -631,7 +636,7 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = Properties.Resources._BotonXcerrarVentana;
-            pictureBox1.Location = new Point(784, 8);
+            pictureBox1.Location = new Point(786, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(43, 43);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -677,7 +682,7 @@
             tabDetalleFactura.Location = new Point(4, 26);
             tabDetalleFactura.Name = "tabDetalleFactura";
             tabDetalleFactura.Padding = new Padding(3);
-            tabDetalleFactura.Size = new Size(626, 423);
+            tabDetalleFactura.Size = new Size(627, 433);
             tabDetalleFactura.TabIndex = 2;
             tabDetalleFactura.Text = "Detalle de Factura";
             tabDetalleFactura.UseVisualStyleBackColor = true;
@@ -689,7 +694,7 @@
             tabClientData.Location = new Point(4, 26);
             tabClientData.Name = "tabClientData";
             tabClientData.Padding = new Padding(3);
-            tabClientData.Size = new Size(626, 423);
+            tabClientData.Size = new Size(627, 433);
             tabClientData.TabIndex = 0;
             tabClientData.Text = "Datos de Cliente y Factura";
             tabClientData.UseVisualStyleBackColor = true;
@@ -779,11 +784,12 @@
             // 
             tabControl1.Controls.Add(tabClientData);
             tabControl1.Controls.Add(tabDetalleFactura);
+            tabControl1.Dock = DockStyle.Fill;
             tabControl1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            tabControl1.Location = new Point(207, 99);
+            tabControl1.Location = new Point(205, 93);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(634, 453);
+            tabControl1.Size = new Size(635, 463);
             tabControl1.TabIndex = 28;
             // 
             // groupBox1
@@ -828,6 +834,27 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Datos de Factura";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.Facturacion_Producto_Icon_;
+            pictureBox2.Location = new Point(3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(60, 50);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 29;
+            pictureBox2.TabStop = false;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.ForeColor = Color.Goldenrod;
+            label21.Location = new Point(69, 17);
+            label21.Name = "label21";
+            label21.Size = new Size(194, 24);
+            label21.TabIndex = 30;
+            label21.Text = "Facturación Producto";
+            // 
             // frmFacturaProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -846,6 +873,7 @@
             groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             TopPanel.ResumeLayout(false);
+            TopPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             tabDetalleFactura.ResumeLayout(false);
@@ -856,6 +884,7 @@
             groupBox1.PerformLayout();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -928,5 +957,7 @@
         private TabPage tabDetalleFactura;
         private GroupBox groupBox1;
         private GroupBox groupBox4;
+        private Label label21;
+        private PictureBox pictureBox2;
     }
 }
