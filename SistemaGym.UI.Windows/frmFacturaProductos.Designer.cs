@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle41 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle42 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle43 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle44 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle45 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
             label1 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -116,7 +116,7 @@
             // 
             // label1
             // 
-            label1.Location = new Point(42, 41);
+            label1.Location = new Point(42, 42);
             label1.Name = "label1";
             label1.Size = new Size(79, 26);
             label1.TabIndex = 0;
@@ -124,7 +124,7 @@
             // 
             // label4
             // 
-            label4.Location = new Point(42, 114);
+            label4.Location = new Point(42, 115);
             label4.Name = "label4";
             label4.Size = new Size(256, 23);
             label4.TabIndex = 3;
@@ -132,7 +132,7 @@
             // 
             // label5
             // 
-            label5.Location = new Point(304, 114);
+            label5.Location = new Point(304, 115);
             label5.Name = "label5";
             label5.Size = new Size(261, 23);
             label5.TabIndex = 4;
@@ -140,21 +140,21 @@
             // 
             // dtpFechaEmision
             // 
-            dtpFechaEmision.Location = new Point(42, 142);
+            dtpFechaEmision.Location = new Point(42, 143);
             dtpFechaEmision.Name = "dtpFechaEmision";
             dtpFechaEmision.Size = new Size(256, 23);
             dtpFechaEmision.TabIndex = 6;
             // 
             // dtpFechaVencimiento
             // 
-            dtpFechaVencimiento.Location = new Point(304, 142);
+            dtpFechaVencimiento.Location = new Point(304, 143);
             dtpFechaVencimiento.Name = "dtpFechaVencimiento";
-            dtpFechaVencimiento.Size = new Size(261, 23);
+            dtpFechaVencimiento.Size = new Size(244, 23);
             dtpFechaVencimiento.TabIndex = 7;
             // 
             // label3
             // 
-            label3.Location = new Point(212, 41);
+            label3.Location = new Point(212, 42);
             label3.Name = "label3";
             label3.Size = new Size(128, 26);
             label3.TabIndex = 10;
@@ -162,7 +162,7 @@
             // 
             // txtIDUsuario
             // 
-            txtIDUsuario.Location = new Point(127, 72);
+            txtIDUsuario.Location = new Point(127, 73);
             txtIDUsuario.Multiline = true;
             txtIDUsuario.Name = "txtIDUsuario";
             txtIDUsuario.ReadOnly = true;
@@ -171,7 +171,7 @@
             // 
             // label20
             // 
-            label20.Location = new Point(127, 41);
+            label20.Location = new Point(127, 42);
             label20.Name = "label20";
             label20.Size = new Size(79, 26);
             label20.TabIndex = 20;
@@ -181,14 +181,14 @@
             // 
             cbEstatus.FormattingEnabled = true;
             cbEstatus.Items.AddRange(new object[] { "Activo", "Inactivo", "En Proceso" });
-            cbEstatus.Location = new Point(42, 214);
+            cbEstatus.Location = new Point(42, 215);
             cbEstatus.Name = "cbEstatus";
             cbEstatus.Size = new Size(171, 25);
             cbEstatus.TabIndex = 19;
             // 
             // txtNCF
             // 
-            txtNCF.Location = new Point(419, 72);
+            txtNCF.Location = new Point(402, 73);
             txtNCF.Multiline = true;
             txtNCF.Name = "txtNCF";
             txtNCF.ReadOnly = true;
@@ -197,7 +197,7 @@
             // 
             // label19
             // 
-            label19.Location = new Point(42, 185);
+            label19.Location = new Point(42, 186);
             label19.Name = "label19";
             label19.Size = new Size(171, 26);
             label19.TabIndex = 17;
@@ -205,7 +205,7 @@
             // 
             // label18
             // 
-            label18.Location = new Point(419, 48);
+            label18.Location = new Point(402, 49);
             label18.Name = "label18";
             label18.Size = new Size(146, 21);
             label18.TabIndex = 16;
@@ -213,16 +213,22 @@
             // 
             // btnBuscarUsuario
             // 
-            btnBuscarUsuario.Location = new Point(346, 41);
+            btnBuscarUsuario.Cursor = Cursors.Hand;
+            btnBuscarUsuario.FlatAppearance.BorderColor = Color.Black;
+            btnBuscarUsuario.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnBuscarUsuario.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnBuscarUsuario.FlatStyle = FlatStyle.Flat;
+            btnBuscarUsuario.Image = Properties.Resources._searchfacturabtn;
+            btnBuscarUsuario.Location = new Point(346, 51);
             btnBuscarUsuario.Name = "btnBuscarUsuario";
-            btnBuscarUsuario.Size = new Size(67, 59);
+            btnBuscarUsuario.Size = new Size(50, 50);
             btnBuscarUsuario.TabIndex = 15;
             btnBuscarUsuario.UseVisualStyleBackColor = true;
             btnBuscarUsuario.Click += btnBuscarUsuario_Click;
             // 
             // txtIDFactura
             // 
-            txtIDFactura.Location = new Point(42, 72);
+            txtIDFactura.Location = new Point(42, 73);
             txtIDFactura.Multiline = true;
             txtIDFactura.Name = "txtIDFactura";
             txtIDFactura.ReadOnly = true;
@@ -231,7 +237,7 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(212, 72);
+            txtUsuario.Location = new Point(212, 73);
             txtUsuario.Multiline = true;
             txtUsuario.Name = "txtUsuario";
             txtUsuario.ReadOnly = true;
@@ -275,9 +281,9 @@
             // Precio
             // 
             Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle41.Format = "C2";
-            dataGridViewCellStyle41.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle11.Format = "C2";
+            dataGridViewCellStyle11.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle11;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
@@ -294,9 +300,9 @@
             // Subtotal
             // 
             Subtotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle42.Format = "C2";
-            dataGridViewCellStyle42.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle12;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
             Subtotal.ReadOnly = true;
@@ -305,9 +311,9 @@
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle43.Format = "C2";
-            dataGridViewCellStyle43.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle13.Format = "C2";
+            dataGridViewCellStyle13.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle13;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
@@ -316,9 +322,9 @@
             // Impuesto
             // 
             Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle44.Format = "C2";
-            dataGridViewCellStyle44.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle14.Format = "C2";
+            dataGridViewCellStyle14.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle14;
             Impuesto.HeaderText = "Impuesto";
             Impuesto.Name = "Impuesto";
             Impuesto.ReadOnly = true;
@@ -327,9 +333,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
-            dataGridViewCellStyle45.Format = "C2";
-            dataGridViewCellStyle45.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle15.Format = "C2";
+            dataGridViewCellStyle15.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle15;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
@@ -358,6 +364,7 @@
             // 
             // btnAgregar
             // 
+            btnAgregar.Cursor = Cursors.Hand;
             btnAgregar.FlatAppearance.BorderColor = Color.Black;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Image = Properties.Resources._btnAgregarProductooo;
@@ -370,6 +377,7 @@
             // 
             // btnBuscarProducto
             // 
+            btnBuscarProducto.Cursor = Cursors.Hand;
             btnBuscarProducto.FlatAppearance.BorderColor = Color.Black;
             btnBuscarProducto.FlatStyle = FlatStyle.Flat;
             btnBuscarProducto.Image = Properties.Resources._BotonBuscarProducto;
@@ -688,7 +696,7 @@
             // 
             // label2
             // 
-            label2.Location = new Point(114, 43);
+            label2.Location = new Point(134, 43);
             label2.Name = "label2";
             label2.Size = new Size(100, 20);
             label2.TabIndex = 6;
@@ -696,7 +704,7 @@
             // 
             // label6
             // 
-            label6.Location = new Point(220, 43);
+            label6.Location = new Point(240, 43);
             label6.Name = "label6";
             label6.Size = new Size(100, 20);
             label6.TabIndex = 5;
@@ -704,7 +712,7 @@
             // 
             // txtTipoCliente
             // 
-            txtTipoCliente.Location = new Point(114, 72);
+            txtTipoCliente.Location = new Point(134, 72);
             txtTipoCliente.Multiline = true;
             txtTipoCliente.Name = "txtTipoCliente";
             txtTipoCliente.ReadOnly = true;
@@ -713,7 +721,7 @@
             // 
             // txtCliente
             // 
-            txtCliente.Location = new Point(220, 72);
+            txtCliente.Location = new Point(240, 72);
             txtCliente.Multiline = true;
             txtCliente.Name = "txtCliente";
             txtCliente.ReadOnly = true;
@@ -722,7 +730,7 @@
             // 
             // label7
             // 
-            label7.Location = new Point(42, 43);
+            label7.Location = new Point(62, 43);
             label7.Name = "label7";
             label7.Size = new Size(66, 26);
             label7.TabIndex = 7;
@@ -730,7 +738,7 @@
             // 
             // label8
             // 
-            label8.Location = new Point(326, 46);
+            label8.Location = new Point(346, 46);
             label8.Name = "label8";
             label8.Size = new Size(143, 26);
             label8.TabIndex = 8;
@@ -738,7 +746,7 @@
             // 
             // txtIDCliente
             // 
-            txtIDCliente.Location = new Point(42, 72);
+            txtIDCliente.Location = new Point(62, 72);
             txtIDCliente.Multiline = true;
             txtIDCliente.Name = "txtIDCliente";
             txtIDCliente.ReadOnly = true;
@@ -747,7 +755,7 @@
             // 
             // txtDocumento
             // 
-            txtDocumento.Location = new Point(326, 72);
+            txtDocumento.Location = new Point(346, 72);
             txtDocumento.Multiline = true;
             txtDocumento.Name = "txtDocumento";
             txtDocumento.ReadOnly = true;
@@ -756,12 +764,13 @@
             // 
             // btnBuscarCliente
             // 
+            btnBuscarCliente.Cursor = Cursors.Hand;
             btnBuscarCliente.FlatAppearance.BorderColor = Color.Black;
             btnBuscarCliente.FlatStyle = FlatStyle.Flat;
             btnBuscarCliente.Image = Properties.Resources._btnbuscarclienteee;
-            btnBuscarCliente.Location = new Point(502, 43);
+            btnBuscarCliente.Location = new Point(495, 50);
             btnBuscarCliente.Name = "btnBuscarCliente";
-            btnBuscarCliente.Size = new Size(63, 57);
+            btnBuscarCliente.Size = new Size(50, 50);
             btnBuscarCliente.TabIndex = 12;
             btnBuscarCliente.UseVisualStyleBackColor = true;
             btnBuscarCliente.Click += btnBuscarCliente_Click;
