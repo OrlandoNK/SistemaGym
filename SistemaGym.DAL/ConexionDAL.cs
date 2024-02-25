@@ -21,7 +21,7 @@ namespace SistemaGym.DAL
         protected ConexionDAL()
         {
             this.Base = "SistemaGym";
-            this.servidor = "ORLANDO-ABREU\\SQLEXPRESS";
+            this.servidor = "DESKTOP-FT9L2OG\\SQLEXPRESS";
             this.seguridad = true;
         }
 
@@ -36,7 +36,9 @@ namespace SistemaGym.DAL
                 {
                     cadena.ConnectionString = cadena.ConnectionString + " Integrated Security = SSPI";
                 }
-                /*else if (this.seguridad) 
+
+                /*
+                else if (this.seguridad) 
                 { cadena.ConnectionString = "Server= LAPTOP-JHI5587U\\SQLEMANUEL" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }
                 else if (this.seguridad)
                 { cadena.ConnectionString = "Server= DESKTOP-FT9L2OG\\SQLEXPRESS" + "; Database =" + this.Base + ";" + " Integrated Security = SSPI"; }

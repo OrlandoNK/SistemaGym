@@ -49,7 +49,6 @@ namespace SistemaGym.DAL
 
 
         }
-        //funcion eliminar ProveedoresDAL
 
         public static bool EliminarProveedores(int Id)
         {
@@ -57,10 +56,8 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             bool seElimino;
 
-
-
             Conexion.Open();
-            string Eliminar = "Delete from Proveedores where IDProveedor= @idProveedor";
+            string Eliminar = "DELETE FROM Proveedores WHERE IDProveedor = @idProveedor";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
             cmd.Parameters.AddWithValue("@idProveedor", Id);
             seElimino = cmd.ExecuteNonQuery() > 0;
@@ -68,7 +65,7 @@ namespace SistemaGym.DAL
 
         }
 
-        //metodo mostrar cliente
+        //metodo mostrar provedores
         public static DataTable MostrarProveedores()
         {
             ConexionDAL instancia = Instancia();
