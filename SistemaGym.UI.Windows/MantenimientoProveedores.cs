@@ -120,7 +120,7 @@ namespace SistemaGym.UI.Windows
             {
                 MessageBox.Show($"Se Produjo un Error al Intentar Actualizar: \n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private List<ProveedoresEntity> ConvertirDatatableALista(DataTable dataTbl)

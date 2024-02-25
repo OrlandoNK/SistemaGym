@@ -158,9 +158,9 @@
             // 
             dgvProveedores.AllowUserToAddRows = false;
             dgvProveedores.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.LightBlue;
+            dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(39, 57, 80);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 100, 182);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dgvProveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -169,9 +169,9 @@
             dgvProveedores.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvProveedores.BackgroundColor = Color.WhiteSmoke;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(39, 57, 80);
+            dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 100, 182);
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
@@ -179,9 +179,9 @@
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProveedores.Columns.AddRange(new DataGridViewColumn[] { IDProveedor, Nombre, Telefono, Direccion, FechaRegistro, Estatus });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.LightBlue;
+            dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(39, 57, 80);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 100, 182);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
@@ -189,17 +189,17 @@
             dgvProveedores.Location = new Point(-1, -1);
             dgvProveedores.Name = "dgvProveedores";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(39, 57, 80);
+            dataGridViewCellStyle4.BackColor = Color.White;
             dataGridViewCellStyle4.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.ForeColor = Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(0, 100, 182);
             dataGridViewCellStyle4.SelectionForeColor = Color.White;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             dgvProveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvProveedores.RowHeadersVisible = false;
-            dataGridViewCellStyle5.BackColor = Color.LightBlue;
+            dataGridViewCellStyle5.BackColor = Color.White;
             dataGridViewCellStyle5.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(39, 57, 80);
+            dataGridViewCellStyle5.ForeColor = Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(0, 100, 182);
             dataGridViewCellStyle5.SelectionForeColor = Color.White;
             dgvProveedores.RowsDefaultCellStyle = dataGridViewCellStyle5;
