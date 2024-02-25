@@ -37,14 +37,16 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update ProveedoresDAL set Nombre=@Nombre, Telefono=@Telefono " +
-                "Direccion =@Direccion, FechaRegistro=@FechaRegistro, Estatus =@Estatus";
+            string actualizar = "UPDATE ProveedoresDAL SET Nombre= @Nombre, Telefono= @Telefono, Direccion = @Direccion, FechaRegistro = @FechaRegistro, Estatus = @Estatus WHERE IDProveedor = @IdProveedor";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@Nombre", proveedores.Nombre);
             cmd.Parameters.AddWithValue("@Telefono", proveedores.Telefono);
             cmd.Parameters.AddWithValue("@Direccion", proveedores.Direccion);
             cmd.Parameters.AddWithValue("@FechaRegistro", proveedores.FechaRegistro);
             cmd.Parameters.AddWithValue("@Estatus", proveedores.Estatus);
+
+            cmd.Parameters.AddWithValue("@IdProveedor", proveedores.IDProveedor);
+
             cmd.ExecuteNonQuery();
 
 

@@ -27,6 +27,11 @@ namespace SistemaGym.BLL
             }
         }
 
+        public static void Actualizar(ProveedoresEntity proveedor)
+        {
+            ProveedoresDAL.ActualizarProveedores(proveedor);
+        }
+
         public DataTable ShowProviders()
         {
             return ProveedoresDAL.ShowProviders();

@@ -17,7 +17,7 @@ namespace SistemaGym.UI.Windows
     public partial class MantenimientoProveedores : Form
     {
         private string SYSTEM_TITLE = "Sistema Gestion Gimnasio (COMFORT GYM) dice";
-
+        ProveedoresBLL proveedoresBLL = new ProveedoresBLL();
 
         public MantenimientoProveedores()
         {
@@ -91,5 +91,57 @@ namespace SistemaGym.UI.Windows
             dgvProveedores.DataSource = ProveedoresBLL.MostrarProveedores();
             dgvProveedores.AutoGenerateColumns = false;
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable changeData = ((DataTable)dgvProveedores.DataSource).GetChanges();
+
+                if (changeData != null)
+                {
+                    List<ProveedoresEntity> proveedorActualizar = ConvertirDatatableALista(changeData);
+
+                    foreach (ProveedoresEntity proveedor in proveedorActualizar)
+                    {
+                        ProveedoresBLL.Actualizar(proveedor);
+                    }
+
+                    dgvProveedores.DataSource = ProveedoresBLL.MostrarProveedores();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Se Produjo un Error al Intentar Actualizar: \n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Se Produjo un Error al Intentar Actualizar: \n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private List<ProveedoresEntity> ConvertirDatatableALista(DataTable dataTbl)
+        {
+            List<ProveedoresEntity> proveedorList = new List<ProveedoresEntity>();
+
+            foreach (DataRow fila in dataTbl.Rows)
+            {
+                ProveedoresEntity proveedoresEntity = new ProveedoresEntity
+                {
+                    IDProveedor = Convert.ToInt32(fila["IDProveedor"]),
+                    Nombre = Convert.ToString(fila["Nombre"]),
+                    Telefono = Convert.ToString(fila["Telefono"]),
+                    Direccion = Convert.ToString(fila["Direccion"]),
+                    Estatus = Convert.ToString(fila["Estatus"])
+                };
+
+                proveedorList.Add(proveedoresEntity);
+            }
+
+            return proveedorList;
+        }
+
     }
 }

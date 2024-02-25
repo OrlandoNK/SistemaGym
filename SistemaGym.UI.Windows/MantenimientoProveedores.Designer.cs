@@ -152,6 +152,7 @@
             btnEditar.TabIndex = 3;
             btnEditar.Text = "Modificar";
             btnEditar.TextAlign = HorizontalAlignment.Right;
+            btnEditar.Click += btnEditar_Click;
             // 
             // dgvProveedores
             // 
