@@ -18,6 +18,7 @@ namespace SistemaGym.UI.Windows
     {
         private string SYSTEM_TITLE = "Sistema Gestion Gimnasio (COMFORT GYM) dice";
 
+
         public MantenimientoProveedores()
         {
             InitializeComponent();
@@ -31,7 +32,6 @@ namespace SistemaGym.UI.Windows
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            ProveedoresBLL proveedoresBLL = new ProveedoresBLL();
 
             if (dgvProveedores.SelectedRows.Count > 0)
             {

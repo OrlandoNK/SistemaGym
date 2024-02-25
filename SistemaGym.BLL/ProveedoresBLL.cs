@@ -27,6 +27,11 @@ namespace SistemaGym.BLL
             }
         }
 
+        public DataTable ShowProviders()
+        {
+            return ProveedoresDAL.ShowProviders();
+        }
+
         public static bool Eliminar(int Id)
         {
             return ProveedoresDAL.EliminarProveedores(Id);

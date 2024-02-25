@@ -82,6 +82,22 @@ namespace SistemaGym.DAL
 
         }
 
+        public static DataTable ShowProviders()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            DataTable dt = new DataTable();
+            Conexion.Open();
+            string mostrar = "Select Nombre, Telefono, Direccion, FechaRegistro, Estatus From Proveedores";
+            SqlCommand cmd = new SqlCommand(mostrar, Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+
+            return dt;
+
+        }
+
         public static DataTable BuscarID(ProveedoresEntity proveedores)
         {
 

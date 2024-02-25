@@ -21,6 +21,8 @@ namespace SistemaGym.UI.Windows
         }
 
         private string SYSTEM_TITLE = "Sistema Gestion Gimnasio (COMFORT GYM) dice";
+        ProveedoresBLL proveedoresBLL = new ProveedoresBLL();
+
 
         private bool ValidarDatos()
         {
@@ -62,6 +64,7 @@ namespace SistemaGym.UI.Windows
             oProveedor.Telefono = mskbxTellProveedor.Text;
             oProveedor.FechaRegistro = DateTime.Now;
             oProveedor.Direccion = TxbDireccionProveedor.Text;
+
             if (chkEstatusProveedor.Checked)
             {
                 oProveedor.Estatus = "Activo";
@@ -75,6 +78,7 @@ namespace SistemaGym.UI.Windows
             {
                 ProveedoresBLL.Guardar(oProveedor);
                 MessageBox.Show("Proveedor Guardado Satisfactoriamente", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvProveedores.DataSource = proveedoresBLL.ShowProviders();
                 LimpiarCampos();
             }
             catch (SqlException ex)
