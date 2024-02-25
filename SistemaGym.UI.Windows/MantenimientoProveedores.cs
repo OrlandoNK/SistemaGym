@@ -107,6 +107,7 @@ namespace SistemaGym.UI.Windows
                         ProveedoresBLL.Actualizar(proveedor);
                     }
 
+                    MessageBox.Show("¡Dato(s) del Proveedor Actualizado(s) Correctamente!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvProveedores.DataSource = ProveedoresBLL.MostrarProveedores();
                 }
 
@@ -134,6 +135,7 @@ namespace SistemaGym.UI.Windows
                     Nombre = Convert.ToString(fila["Nombre"]),
                     Telefono = Convert.ToString(fila["Telefono"]),
                     Direccion = Convert.ToString(fila["Direccion"]),
+                    FechaRegistro = Convert.ToDateTime(fila["FechaRegistro"]),
                     Estatus = Convert.ToString(fila["Estatus"])
                 };
 
