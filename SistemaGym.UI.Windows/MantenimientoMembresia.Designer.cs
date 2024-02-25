@@ -44,12 +44,6 @@
             txtDuracion = new TextBox();
             txtValor = new TextBox();
             dgvMembresia = new DataGridView();
-            cbEstatus = new ComboBox();
-            btnNuevo = new Button();
-            btnGuardar = new Button();
-            btnCancelar = new Button();
-            errorProvider = new ErrorProvider(components);
-            dtpFechaCreacion = new DateTimePicker();
             IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
@@ -57,6 +51,9 @@
             Valor = new DataGridViewTextBoxColumn();
             FechaCreacion = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
+            cbEstatus = new ComboBox();
+            errorProvider = new ErrorProvider(components);
+            dtpFechaCreacion = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
@@ -179,56 +176,6 @@
             dgvMembresia.TabIndex = 14;
             dgvMembresia.CellClick += dgvMembresia_CellClick;
             // 
-            // cbEstatus
-            // 
-            cbEstatus.FormattingEnabled = true;
-            cbEstatus.Items.AddRange(new object[] { "Activo", "Inactivo" });
-            cbEstatus.Location = new Point(154, 277);
-            cbEstatus.Name = "cbEstatus";
-            cbEstatus.Size = new Size(100, 23);
-            cbEstatus.TabIndex = 16;
-            // 
-            // btnNuevo
-            // 
-            btnNuevo.Location = new Point(48, 332);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(75, 23);
-            btnNuevo.TabIndex = 17;
-            btnNuevo.Text = "Nuevo";
-            btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click;
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.Location = new Point(129, 332);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(75, 23);
-            btnGuardar.TabIndex = 18;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(210, 332);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 19;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
-            // errorProvider
-            // 
-            errorProvider.ContainerControl = this;
-            // 
-            // dtpFechaCreacion
-            // 
-            dtpFechaCreacion.Location = new Point(152, 248);
-            dtpFechaCreacion.Name = "dtpFechaCreacion";
-            dtpFechaCreacion.Size = new Size(158, 23);
-            dtpFechaCreacion.TabIndex = 20;
-            // 
             // IDMembresia
             // 
             IDMembresia.DataPropertyName = "IDMembresia";
@@ -284,14 +231,31 @@
             Estatus.Name = "Estatus";
             Estatus.ReadOnly = true;
             // 
+            // cbEstatus
+            // 
+            cbEstatus.FormattingEnabled = true;
+            cbEstatus.Items.AddRange(new object[] { "Activo", "Inactivo" });
+            cbEstatus.Location = new Point(154, 277);
+            cbEstatus.Name = "cbEstatus";
+            cbEstatus.Size = new Size(100, 23);
+            cbEstatus.TabIndex = 16;
+            // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
+            // 
+            // dtpFechaCreacion
+            // 
+            dtpFechaCreacion.Location = new Point(152, 248);
+            dtpFechaCreacion.Name = "dtpFechaCreacion";
+            dtpFechaCreacion.Size = new Size(158, 23);
+            dtpFechaCreacion.TabIndex = 20;
+            // 
             // frmMembresia
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1065, 530);
             Controls.Add(dtpFechaCreacion);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnGuardar);
-            Controls.Add(btnNuevo);
             Controls.Add(cbEstatus);
             Controls.Add(dgvMembresia);
             Controls.Add(txtValor);
@@ -306,9 +270,9 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "frmMembresia";
-            Text = "Membresias";
             Load += frmMembresia_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
@@ -332,9 +296,6 @@
         private TextBox txtValor;
         private DataGridView dgvMembresia;
         private ComboBox cbEstatus;
-        private Button btnNuevo;
-        private Button btnGuardar;
-        private Button btnCancelar;
         private ErrorProvider errorProvider;
         private DateTimePicker dtpFechaCreacion;
         private DataGridViewTextBoxColumn IDMembresia;
