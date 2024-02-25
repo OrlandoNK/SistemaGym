@@ -343,6 +343,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icono_proveedor_x32_qsy_xd {
+            get {
+                object obj = ResourceManager.GetObject("icono proveedor x32 qsy xd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_editar_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-editar-32", resourceCulture);
