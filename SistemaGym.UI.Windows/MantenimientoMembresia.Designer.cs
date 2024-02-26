@@ -273,6 +273,7 @@
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
             btnDelete.TextAlign = HorizontalAlignment.Right;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -299,6 +300,7 @@
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Modificar";
             btnEdit.TextAlign = HorizontalAlignment.Right;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnrefresh
             // 

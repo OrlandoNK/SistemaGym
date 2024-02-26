@@ -24,7 +24,7 @@ namespace SistemaGym.BLL
 
    
 
-    public static bool Eliminar(MembresiaEntity membresia)
+    public static bool Eliminar(int membresia)
     {
         return MembresiaDAL.EliminarMembresia(membresia);
     }

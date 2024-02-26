@@ -84,7 +84,16 @@ namespace SistemaGym.UI.Windows
             }
             else
             {
-                oMembresia.Estatus = "Inactivo";
+                DialogResult dialogResult = new DialogResult();
+                dialogResult = MessageBox.Show("¿Seguro que desea Guardar esta Membresia con Estatus «Inactivo»?", SYSTEM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    oMembresia.Estatus = "Inactivo";
+                }
+                if (dialogResult == DialogResult.No)
+                {
+                    
+                }
             }
 
             //Mandar a guardar el objeto creado a la base de datos
