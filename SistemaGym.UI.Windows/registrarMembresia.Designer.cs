@@ -32,6 +32,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            label1 = new Label();
+            pictureBox2 = new PictureBox();
             btnClose = new PictureBox();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
@@ -48,17 +50,18 @@
             Estatus = new DataGridViewTextBoxColumn();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
             panel6 = new Panel();
+            label4 = new Label();
             label2 = new Label();
             chkbxEstatus = new CheckBox();
             label3 = new Label();
             txtValor = new TextBox();
-            label4 = new Label();
             txtDuracion = new TextBox();
             label5 = new Label();
             txtDescripcion = new RichTextBox();
             txtNombre = new TextBox();
             errorProvider = new ErrorProvider(components);
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
@@ -71,6 +74,8 @@
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(btnClose);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
@@ -78,6 +83,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(571, 66);
             panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft YaHei UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Goldenrod;
+            label1.Location = new Point(69, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(110, 23);
+            label1.TabIndex = 4;
+            label1.Text = "Membresias";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.icon_membresia_mantenimiento_x32;
+            pictureBox2.Location = new Point(11, 7);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(52, 50);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
             // 
             // btnClose
             // 
@@ -257,6 +284,16 @@
             panel6.Size = new Size(216, 306);
             panel6.TabIndex = 34;
             // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(27, 175);
+            label4.Name = "label4";
+            label4.Size = new Size(163, 20);
+            label4.TabIndex = 24;
+            label4.Text = "Duracion";
+            // 
             // label2
             // 
             label2.Anchor = AnchorStyles.None;
@@ -297,16 +334,6 @@
             txtValor.Name = "txtValor";
             txtValor.Size = new Size(163, 21);
             txtValor.TabIndex = 32;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.None;
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(27, 175);
-            label4.Name = "label4";
-            label4.Size = new Size(163, 20);
-            label4.TabIndex = 24;
-            label4.Text = "Duracion";
             // 
             // txtDuracion
             // 
@@ -361,7 +388,10 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarMembresia";
+            StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel5.ResumeLayout(false);
@@ -401,5 +431,7 @@
         private PictureBox pictureBox1;
         private ErrorProvider errorProvider;
         private PictureBox btnClose;
+        private Label label1;
+        private PictureBox pictureBox2;
     }
 }

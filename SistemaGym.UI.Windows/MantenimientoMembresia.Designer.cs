@@ -47,9 +47,15 @@
             FechaCreacion = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
+            panel8 = new Panel();
+            panel7 = new Panel();
+            panel6 = new Panel();
+            panel5 = new Panel();
             btnDelete = new Guna.UI2.WinForms.Guna2Button();
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
             btnrefresh = new Guna.UI2.WinForms.Guna2Button();
@@ -57,6 +63,7 @@
             panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -75,6 +82,7 @@
             dgvMembresia.ReadOnly = true;
             dgvMembresia.RowHeadersVisible = false;
             dgvMembresia.RowTemplate.Height = 25;
+            dgvMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMembresia.Size = new Size(650, 441);
             dgvMembresia.TabIndex = 14;
             // 
@@ -137,12 +145,36 @@
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(871, 64);
             panel1.TabIndex = 15;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft YaHei UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Goldenrod;
+            label1.Location = new Point(69, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(110, 23);
+            label1.TabIndex = 2;
+            label1.Text = "Membresias";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.icon_membresia_mantenimiento_x32;
+            pictureBox1.Location = new Point(11, 6);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(52, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // btnClose
             // 
@@ -170,6 +202,10 @@
             // 
             panel3.BackColor = Color.Black;
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(panel8);
+            panel3.Controls.Add(panel7);
+            panel3.Controls.Add(panel6);
+            panel3.Controls.Add(panel5);
             panel3.Controls.Add(btnDelete);
             panel3.Controls.Add(btnEdit);
             panel3.Controls.Add(btnrefresh);
@@ -180,9 +216,41 @@
             panel3.Size = new Size(221, 441);
             panel3.TabIndex = 17;
             // 
+            // panel8
+            // 
+            panel8.BackColor = Color.DarkGoldenrod;
+            panel8.Location = new Point(-1, 203);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(13, 48);
+            panel8.TabIndex = 6;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.DarkGoldenrod;
+            panel7.Location = new Point(-1, 149);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(13, 48);
+            panel7.TabIndex = 5;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.DarkGoldenrod;
+            panel6.Location = new Point(-1, 95);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(13, 48);
+            panel6.TabIndex = 4;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.DarkGoldenrod;
+            panel5.Location = new Point(-1, 41);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(13, 48);
+            panel5.TabIndex = 3;
+            // 
             // btnDelete
             // 
-            btnDelete.BorderColor = Color.Goldenrod;
+            btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
             btnDelete.Cursor = Cursors.Hand;
             btnDelete.CustomizableEdges = customizableEdges1;
@@ -193,20 +261,22 @@
             btnDelete.FillColor = Color.Transparent;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
+            btnDelete.HoverState.FillColor = Color.DarkGoldenrod;
+            btnDelete.HoverState.ForeColor = Color.Black;
             btnDelete.Image = Properties.Resources.btn_btn_delete_membresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
-            btnDelete.Location = new Point(-1, 203);
+            btnDelete.Location = new Point(11, 203);
             btnDelete.Name = "btnDelete";
             btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnDelete.Size = new Size(221, 48);
+            btnDelete.Size = new Size(209, 48);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
             btnDelete.TextAlign = HorizontalAlignment.Right;
             // 
             // btnEdit
             // 
-            btnEdit.BorderColor = Color.Goldenrod;
+            btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
             btnEdit.Cursor = Cursors.Hand;
             btnEdit.CustomizableEdges = customizableEdges3;
@@ -217,20 +287,22 @@
             btnEdit.FillColor = Color.Transparent;
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.White;
+            btnEdit.HoverState.FillColor = Color.DarkGoldenrod;
+            btnEdit.HoverState.ForeColor = Color.Black;
             btnEdit.Image = Properties.Resources.btn_btn_edit_membresia_x32;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
-            btnEdit.Location = new Point(-1, 149);
+            btnEdit.Location = new Point(11, 149);
             btnEdit.Name = "btnEdit";
             btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnEdit.Size = new Size(221, 48);
+            btnEdit.Size = new Size(209, 48);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Modificar";
             btnEdit.TextAlign = HorizontalAlignment.Right;
             // 
             // btnrefresh
             // 
-            btnrefresh.BorderColor = Color.Goldenrod;
+            btnrefresh.BorderColor = Color.DarkGoldenrod;
             btnrefresh.BorderThickness = 1;
             btnrefresh.Cursor = Cursors.Hand;
             btnrefresh.CustomizableEdges = customizableEdges5;
@@ -241,18 +313,21 @@
             btnrefresh.FillColor = Color.Transparent;
             btnrefresh.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnrefresh.ForeColor = Color.White;
+            btnrefresh.HoverState.FillColor = Color.DarkGoldenrod;
+            btnrefresh.HoverState.ForeColor = Color.Black;
             btnrefresh.Image = Properties.Resources.btn_btn_actualizar_membresias_x32;
             btnrefresh.ImageSize = new Size(32, 32);
-            btnrefresh.Location = new Point(-1, 95);
+            btnrefresh.Location = new Point(11, 95);
             btnrefresh.Name = "btnrefresh";
             btnrefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnrefresh.Size = new Size(221, 48);
+            btnrefresh.Size = new Size(209, 48);
             btnrefresh.TabIndex = 1;
             btnrefresh.TextAlign = HorizontalAlignment.Right;
+            btnrefresh.Click += btnrefresh_Click;
             // 
             // btnNew
             // 
-            btnNew.BorderColor = Color.Goldenrod;
+            btnNew.BorderColor = Color.DarkGoldenrod;
             btnNew.BorderThickness = 1;
             btnNew.Cursor = Cursors.Hand;
             btnNew.CustomizableEdges = customizableEdges7;
@@ -263,13 +338,15 @@
             btnNew.FillColor = Color.Transparent;
             btnNew.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnNew.ForeColor = Color.White;
+            btnNew.HoverState.FillColor = Color.DarkGoldenrod;
+            btnNew.HoverState.ForeColor = Color.Black;
             btnNew.Image = Properties.Resources.btn_Nueva_Membresia_x32;
             btnNew.ImageAlign = HorizontalAlignment.Left;
             btnNew.ImageSize = new Size(25, 25);
-            btnNew.Location = new Point(-1, 41);
+            btnNew.Location = new Point(11, 41);
             btnNew.Name = "btnNew";
             btnNew.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnNew.Size = new Size(221, 48);
+            btnNew.Size = new Size(209, 48);
             btnNew.TabIndex = 0;
             btnNew.Text = "Nuevo";
             btnNew.TextAlign = HorizontalAlignment.Right;
@@ -297,9 +374,12 @@
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "frmMembresia";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += frmMembresia_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).EndInit();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -324,5 +404,11 @@
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnrefresh;
         private PictureBox btnClose;
+        private Label label1;
+        private PictureBox pictureBox1;
+        private Panel panel8;
+        private Panel panel7;
+        private Panel panel6;
+        private Panel panel5;
     }
 }

@@ -363,6 +363,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_membresia_mantenimiento_x32 {
+            get {
+                object obj = ResourceManager.GetObject("icon membresia mantenimiento x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ID {
             get {
                 object obj = ResourceManager.GetObject("ID", resourceCulture);

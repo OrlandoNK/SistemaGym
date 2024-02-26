@@ -26,24 +26,37 @@ namespace SistemaGym.UI.Windows
 
         private bool ValidarDatos()
         {
+            string CampoObligatorio = "Este Campo es Obligatorio";
             bool resultado = true;
             //inicializando los mensajes de validaciones
             errorProvider.Clear();
             //verificar que en los campos obligatorios hayan datos
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
-                errorProvider.SetError(txtNombre, "El nombre es obligatorio");
+                errorProvider.SetError(txtNombre, CampoObligatorio);
                 resultado = false;
             }
             if (string.IsNullOrEmpty(txtValor.Text))
             {
-                errorProvider.SetError(txtValor, "El valor es obligatorio");
+                errorProvider.SetError(txtValor, CampoObligatorio);
                 resultado = false;
             }
+
             decimal valor;
             if (!decimal.TryParse(txtValor.Text, out valor))
             {
                 errorProvider.SetError(txtValor, "Ingrese un valor decimal válido");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                errorProvider.SetError(txtDescripcion, CampoObligatorio);
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(txtDuracion.Text))
+            {
+                errorProvider.SetError(txtDuracion, CampoObligatorio);
                 resultado = false;
             }
 

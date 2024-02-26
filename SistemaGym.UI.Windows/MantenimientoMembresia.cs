@@ -36,5 +36,11 @@ namespace SistemaGym.UI.Windows
             registrarMembresia newMembership = new registrarMembresia();
             newMembership.Show();
         }
+
+        private void btnrefresh_Click(object sender, EventArgs e)
+        {
+            dgvMembresia.DataSource = MembresiaBLL.Mostrar();
+            dgvMembresia.AutoGenerateColumns = false;
+        }
     }
 }
