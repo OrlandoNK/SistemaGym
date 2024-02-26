@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
@@ -57,18 +57,21 @@
             txtDescripcion = new RichTextBox();
             txtNombre = new TextBox();
             errorProvider = new ErrorProvider(components);
+            btnClose = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnClose);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -203,7 +206,7 @@
             // 
             btnSave.BorderColor = Color.Goldenrod;
             btnSave.BorderThickness = 1;
-            btnSave.CustomizableEdges = customizableEdges1;
+            btnSave.CustomizableEdges = customizableEdges3;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -218,7 +221,7 @@
             btnSave.Location = new Point(221, 256);
             btnSave.Name = "btnSave";
             btnSave.PressedColor = Color.Transparent;
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnSave.Size = new Size(344, 45);
             btnSave.TabIndex = 35;
             btnSave.Text = "&Guardar";
@@ -334,6 +337,18 @@
             // 
             errorProvider.ContainerControl = this;
             // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources.btn_close_cerrar_x32;
+            btnClose.Location = new Point(504, 7);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(53, 50);
+            btnClose.SizeMode = PictureBoxSizeMode.Zoom;
+            btnClose.TabIndex = 1;
+            btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
+            // 
             // registrarMembresia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -353,6 +368,7 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ResumeLayout(false);
         }
 
@@ -384,5 +400,6 @@
         private DataGridViewTextBoxColumn Estatus;
         private PictureBox pictureBox1;
         private ErrorProvider errorProvider;
+        private PictureBox btnClose;
     }
 }

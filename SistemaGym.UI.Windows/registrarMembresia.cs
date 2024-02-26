@@ -90,7 +90,7 @@ namespace SistemaGym.UI.Windows
             {
                 MessageBox.Show("Se Ha Producido un Error al Intentar Registrar la Mambresia. \nDetalles a continuación\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void LimpiarCampos()
@@ -102,5 +102,9 @@ namespace SistemaGym.UI.Windows
             chkbxEstatus.Checked = false;
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

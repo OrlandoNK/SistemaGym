@@ -22,8 +22,19 @@ namespace SistemaGym.UI.Windows
 
         private void frmMembresia_Load(object sender, EventArgs e)
         {
-
+            dgvMembresia.DataSource = MembresiaBLL.Mostrar();
+            dgvMembresia.AutoGenerateColumns = false;
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            registrarMembresia newMembership = new registrarMembresia();
+            newMembership.Show();
+        }
     }
 }

@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvMembresia = new DataGridView();
             IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -39,10 +47,18 @@
             FechaCreacion = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
+            btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
+            btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            btnrefresh = new Guna.UI2.WinForms.Guna2Button();
+            btnNew = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
+            panel3.SuspendLayout();
             panel4.SuspendLayout();
             SuspendLayout();
             // 
@@ -93,9 +109,9 @@
             // Valor
             // 
             Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            Valor.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            Valor.DefaultCellStyle = dataGridViewCellStyle1;
             Valor.HeaderText = "Valor";
             Valor.Name = "Valor";
             Valor.ReadOnly = true;
@@ -103,9 +119,9 @@
             // FechaCreacion
             // 
             FechaCreacion.DataPropertyName = "FechaCreacion";
-            dataGridViewCellStyle6.Format = "g";
-            dataGridViewCellStyle6.NullValue = null;
-            FechaCreacion.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Format = "g";
+            dataGridViewCellStyle2.NullValue = null;
+            FechaCreacion.DefaultCellStyle = dataGridViewCellStyle2;
             FechaCreacion.HeaderText = "Fecha Creacion";
             FechaCreacion.Name = "FechaCreacion";
             FechaCreacion.ReadOnly = true;
@@ -121,11 +137,24 @@
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(871, 64);
             panel1.TabIndex = 15;
+            // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources.btn_close_cerrar_x32;
+            btnClose.Location = new Point(805, 6);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(53, 50);
+            btnClose.SizeMode = PictureBoxSizeMode.Zoom;
+            btnClose.TabIndex = 0;
+            btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
             // 
             // panel2
             // 
@@ -141,11 +170,106 @@
             // 
             panel3.BackColor = Color.Black;
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(btnDelete);
+            panel3.Controls.Add(btnEdit);
+            panel3.Controls.Add(btnrefresh);
+            panel3.Controls.Add(btnNew);
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 100);
             panel3.Name = "panel3";
             panel3.Size = new Size(221, 441);
             panel3.TabIndex = 17;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BorderColor = Color.Goldenrod;
+            btnDelete.BorderThickness = 1;
+            btnDelete.CustomizableEdges = customizableEdges1;
+            btnDelete.DisabledState.BorderColor = Color.DarkGray;
+            btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnDelete.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnDelete.FillColor = Color.Transparent;
+            btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Image = Properties.Resources.btn_btn_delete_membresia;
+            btnDelete.ImageAlign = HorizontalAlignment.Left;
+            btnDelete.ImageSize = new Size(25, 25);
+            btnDelete.Location = new Point(-1, 203);
+            btnDelete.Name = "btnDelete";
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnDelete.Size = new Size(221, 48);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Eliminar";
+            btnDelete.TextAlign = HorizontalAlignment.Right;
+            // 
+            // btnEdit
+            // 
+            btnEdit.BorderColor = Color.Goldenrod;
+            btnEdit.BorderThickness = 1;
+            btnEdit.CustomizableEdges = customizableEdges3;
+            btnEdit.DisabledState.BorderColor = Color.DarkGray;
+            btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEdit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEdit.FillColor = Color.Transparent;
+            btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.Image = Properties.Resources.btn_btn_edit_membresia_x32;
+            btnEdit.ImageAlign = HorizontalAlignment.Left;
+            btnEdit.ImageSize = new Size(25, 25);
+            btnEdit.Location = new Point(-1, 149);
+            btnEdit.Name = "btnEdit";
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnEdit.Size = new Size(221, 48);
+            btnEdit.TabIndex = 2;
+            btnEdit.Text = "Modificar";
+            btnEdit.TextAlign = HorizontalAlignment.Right;
+            // 
+            // btnrefresh
+            // 
+            btnrefresh.BorderColor = Color.Goldenrod;
+            btnrefresh.BorderThickness = 1;
+            btnrefresh.CustomizableEdges = customizableEdges5;
+            btnrefresh.DisabledState.BorderColor = Color.DarkGray;
+            btnrefresh.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnrefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnrefresh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnrefresh.FillColor = Color.Transparent;
+            btnrefresh.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnrefresh.ForeColor = Color.White;
+            btnrefresh.Image = Properties.Resources.btn_btn_actualizar_membresias_x32;
+            btnrefresh.ImageSize = new Size(32, 32);
+            btnrefresh.Location = new Point(-1, 95);
+            btnrefresh.Name = "btnrefresh";
+            btnrefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnrefresh.Size = new Size(221, 48);
+            btnrefresh.TabIndex = 1;
+            btnrefresh.TextAlign = HorizontalAlignment.Right;
+            // 
+            // btnNew
+            // 
+            btnNew.BorderColor = Color.Goldenrod;
+            btnNew.BorderThickness = 1;
+            btnNew.CustomizableEdges = customizableEdges7;
+            btnNew.DisabledState.BorderColor = Color.DarkGray;
+            btnNew.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnNew.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnNew.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnNew.FillColor = Color.Transparent;
+            btnNew.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNew.ForeColor = Color.White;
+            btnNew.Image = Properties.Resources.btn_Nueva_Membresia_x32;
+            btnNew.ImageAlign = HorizontalAlignment.Left;
+            btnNew.ImageSize = new Size(25, 25);
+            btnNew.Location = new Point(-1, 41);
+            btnNew.Name = "btnNew";
+            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnNew.Size = new Size(221, 48);
+            btnNew.TabIndex = 0;
+            btnNew.Text = "Nuevo";
+            btnNew.TextAlign = HorizontalAlignment.Right;
+            btnNew.Click += btnNew_Click;
             // 
             // panel4
             // 
@@ -171,6 +295,9 @@
             Name = "frmMembresia";
             Load += frmMembresia_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
+            panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -188,5 +315,10 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
+        private Guna.UI2.WinForms.Guna2Button btnNew;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private Guna.UI2.WinForms.Guna2Button btnrefresh;
+        private PictureBox btnClose;
     }
 }
