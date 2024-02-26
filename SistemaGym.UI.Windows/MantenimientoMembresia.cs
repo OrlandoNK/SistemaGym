@@ -78,11 +78,11 @@ namespace SistemaGym.UI.Windows
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show($"Se ha producido un Error al Intentar Eliminar el Empleado, \nDetalles A Continuacion.\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Se ha producido un Error al Intentar Eliminar la Membresia, \nDetalles A Continuacion.\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Se ha producido un Error al Intentar Eliminar el Empleado, \nDetalles A Continuacion.\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Se ha producido un Error al Intentar Eliminar la Membresia, \nDetalles A Continuacion.\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
