@@ -93,6 +93,26 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap button_for_deleting_providers_x32 {
+            get {
+                object obj = ResourceManager.GetObject("button for deleting providers x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_for_modifying_providers_x32 {
+            get {
+                object obj = ResourceManager.GetObject("button for modifying providers x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_for_saving_providers_x32 {
             get {
                 object obj = ResourceManager.GetObject("button for saving providers x32", resourceCulture);

@@ -113,7 +113,7 @@
             btnEliminar.ForeColor = Color.White;
             btnEliminar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnEliminar.HoverState.ForeColor = Color.Azure;
-            btnEliminar.Image = Properties.Resources.Delete_Icon_x32_;
+            btnEliminar.Image = Properties.Resources.button_for_deleting_providers_x32;
             btnEliminar.ImageAlign = HorizontalAlignment.Left;
             btnEliminar.ImageSize = new Size(25, 25);
             btnEliminar.Location = new Point(-1, 184);
@@ -142,7 +142,7 @@
             btnEditar.ForeColor = Color.White;
             btnEditar.HoverState.FillColor = Color.FromArgb(39, 57, 80);
             btnEditar.HoverState.ForeColor = Color.Azure;
-            btnEditar.Image = Properties.Resources.icon_for_editing_button_x32;
+            btnEditar.Image = Properties.Resources.button_for_modifying_providers_x32;
             btnEditar.ImageAlign = HorizontalAlignment.Left;
             btnEditar.ImageSize = new Size(25, 25);
             btnEditar.Location = new Point(-1, 137);
