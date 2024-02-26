@@ -28,21 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            txtID = new TextBox();
-            txtNombre = new TextBox();
-            txtDescripcion = new RichTextBox();
-            txtDuracion = new TextBox();
-            txtValor = new TextBox();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             dgvMembresia = new DataGridView();
             IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -51,130 +38,29 @@
             Valor = new DataGridViewTextBoxColumn();
             FechaCreacion = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
-            cbEstatus = new ComboBox();
-            errorProvider = new ErrorProvider(components);
-            dtpFechaCreacion = new DateTimePicker();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            panel4.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(58, 62);
-            label1.Name = "label1";
-            label1.Size = new Size(80, 15);
-            label1.TabIndex = 0;
-            label1.Text = "ID Membresia";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(58, 90);
-            label2.Name = "label2";
-            label2.Size = new Size(51, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Nombre";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(58, 118);
-            label3.Name = "label3";
-            label3.Size = new Size(69, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Descripcion";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(58, 179);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Duracion";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(58, 212);
-            label5.Name = "label5";
-            label5.Size = new Size(42, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Valor $";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(58, 246);
-            label6.Name = "label6";
-            label6.Size = new Size(88, 15);
-            label6.TabIndex = 5;
-            label6.Text = "Fecha Creacion";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(58, 277);
-            label7.Name = "label7";
-            label7.Size = new Size(44, 15);
-            label7.TabIndex = 6;
-            label7.Text = "Estatus";
-            // 
-            // txtID
-            // 
-            txtID.Location = new Point(154, 54);
-            txtID.Multiline = true;
-            txtID.Name = "txtID";
-            txtID.ReadOnly = true;
-            txtID.Size = new Size(28, 23);
-            txtID.TabIndex = 7;
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(154, 84);
-            txtNombre.Multiline = true;
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(100, 21);
-            txtNombre.TabIndex = 8;
-            // 
-            // txtDescripcion
-            // 
-            txtDescripcion.Location = new Point(154, 111);
-            txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(156, 47);
-            txtDescripcion.TabIndex = 9;
-            txtDescripcion.Text = "";
-            // 
-            // txtDuracion
-            // 
-            txtDuracion.Location = new Point(154, 173);
-            txtDuracion.Multiline = true;
-            txtDuracion.Name = "txtDuracion";
-            txtDuracion.Size = new Size(100, 21);
-            txtDuracion.TabIndex = 10;
-            // 
-            // txtValor
-            // 
-            txtValor.Location = new Point(154, 212);
-            txtValor.Multiline = true;
-            txtValor.Name = "txtValor";
-            txtValor.Size = new Size(100, 21);
-            txtValor.TabIndex = 11;
             // 
             // dgvMembresia
             // 
             dgvMembresia.AllowUserToAddRows = false;
             dgvMembresia.AllowUserToDeleteRows = false;
+            dgvMembresia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMembresia.BackgroundColor = Color.WhiteSmoke;
             dgvMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Descripcion, Duracion, Valor, FechaCreacion, Estatus });
-            dgvMembresia.Location = new Point(316, 54);
+            dgvMembresia.Location = new Point(-1, -1);
             dgvMembresia.Name = "dgvMembresia";
             dgvMembresia.ReadOnly = true;
+            dgvMembresia.RowHeadersVisible = false;
             dgvMembresia.RowTemplate.Height = 25;
-            dgvMembresia.Size = new Size(741, 356);
+            dgvMembresia.Size = new Size(650, 441);
             dgvMembresia.TabIndex = 14;
-            dgvMembresia.CellClick += dgvMembresia_CellClick;
             // 
             // IDMembresia
             // 
@@ -207,9 +93,9 @@
             // Valor
             // 
             Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            Valor.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            Valor.DefaultCellStyle = dataGridViewCellStyle5;
             Valor.HeaderText = "Valor";
             Valor.Name = "Valor";
             Valor.ReadOnly = true;
@@ -217,9 +103,9 @@
             // FechaCreacion
             // 
             FechaCreacion.DataPropertyName = "FechaCreacion";
-            dataGridViewCellStyle2.Format = "g";
-            dataGridViewCellStyle2.NullValue = null;
-            FechaCreacion.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Format = "g";
+            dataGridViewCellStyle6.NullValue = null;
+            FechaCreacion.DefaultCellStyle = dataGridViewCellStyle6;
             FechaCreacion.HeaderText = "Fecha Creacion";
             FechaCreacion.Name = "FechaCreacion";
             FechaCreacion.ReadOnly = true;
@@ -231,73 +117,66 @@
             Estatus.Name = "Estatus";
             Estatus.ReadOnly = true;
             // 
-            // cbEstatus
+            // panel1
             // 
-            cbEstatus.FormattingEnabled = true;
-            cbEstatus.Items.AddRange(new object[] { "Activo", "Inactivo" });
-            cbEstatus.Location = new Point(154, 277);
-            cbEstatus.Name = "cbEstatus";
-            cbEstatus.Size = new Size(100, 23);
-            cbEstatus.TabIndex = 16;
+            panel1.BackColor = Color.Black;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(871, 64);
+            panel1.TabIndex = 15;
             // 
-            // errorProvider
+            // panel2
             // 
-            errorProvider.ContainerControl = this;
+            panel2.BackColor = Color.Goldenrod;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 64);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(871, 36);
+            panel2.TabIndex = 16;
             // 
-            // dtpFechaCreacion
+            // panel3
             // 
-            dtpFechaCreacion.Location = new Point(152, 248);
-            dtpFechaCreacion.Name = "dtpFechaCreacion";
-            dtpFechaCreacion.Size = new Size(158, 23);
-            dtpFechaCreacion.TabIndex = 20;
+            panel3.BackColor = Color.Black;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Dock = DockStyle.Left;
+            panel3.Location = new Point(0, 100);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(221, 441);
+            panel3.TabIndex = 17;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.White;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(dgvMembresia);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(221, 100);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(650, 441);
+            panel4.TabIndex = 18;
             // 
             // frmMembresia
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1065, 530);
-            Controls.Add(dtpFechaCreacion);
-            Controls.Add(cbEstatus);
-            Controls.Add(dgvMembresia);
-            Controls.Add(txtValor);
-            Controls.Add(txtDuracion);
-            Controls.Add(txtDescripcion);
-            Controls.Add(txtNombre);
-            Controls.Add(txtID);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            ClientSize = new Size(871, 541);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "frmMembresia";
             Load += frmMembresia_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).EndInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            panel4.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private TextBox txtID;
-        private TextBox txtNombre;
-        private RichTextBox txtDescripcion;
-        private TextBox txtDuracion;
-        private TextBox txtValor;
         private DataGridView dgvMembresia;
-        private ComboBox cbEstatus;
-        private ErrorProvider errorProvider;
-        private DateTimePicker dtpFechaCreacion;
         private DataGridViewTextBoxColumn IDMembresia;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Descripcion;
@@ -305,5 +184,9 @@
         private DataGridViewTextBoxColumn Valor;
         private DataGridViewTextBoxColumn FechaCreacion;
         private DataGridViewTextBoxColumn Estatus;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
     }
 }
