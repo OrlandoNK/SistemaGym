@@ -79,7 +79,6 @@
             dgvMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Descripcion, Duracion, Valor, FechaCreacion, Estatus });
             dgvMembresia.Location = new Point(-1, -1);
             dgvMembresia.Name = "dgvMembresia";
-            dgvMembresia.ReadOnly = true;
             dgvMembresia.RowHeadersVisible = false;
             dgvMembresia.RowTemplate.Height = 25;
             dgvMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -91,28 +90,24 @@
             IDMembresia.DataPropertyName = "IDMembresia";
             IDMembresia.HeaderText = "ID Membresia";
             IDMembresia.Name = "IDMembresia";
-            IDMembresia.ReadOnly = true;
             // 
             // Nombre
             // 
             Nombre.DataPropertyName = "Nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
             // 
             // Descripcion
             // 
             Descripcion.DataPropertyName = "Descripcion";
             Descripcion.HeaderText = "Descripcion";
             Descripcion.Name = "Descripcion";
-            Descripcion.ReadOnly = true;
             // 
             // Duracion
             // 
             Duracion.DataPropertyName = "Duracion";
             Duracion.HeaderText = "Duracion";
             Duracion.Name = "Duracion";
-            Duracion.ReadOnly = true;
             // 
             // Valor
             // 
@@ -122,7 +117,6 @@
             Valor.DefaultCellStyle = dataGridViewCellStyle1;
             Valor.HeaderText = "Valor";
             Valor.Name = "Valor";
-            Valor.ReadOnly = true;
             // 
             // FechaCreacion
             // 
@@ -132,14 +126,12 @@
             FechaCreacion.DefaultCellStyle = dataGridViewCellStyle2;
             FechaCreacion.HeaderText = "Fecha Creacion";
             FechaCreacion.Name = "FechaCreacion";
-            FechaCreacion.ReadOnly = true;
             // 
             // Estatus
             // 
             Estatus.DataPropertyName = "Estatus";
             Estatus.HeaderText = "Estatus";
             Estatus.Name = "Estatus";
-            Estatus.ReadOnly = true;
             // 
             // panel1
             // 
