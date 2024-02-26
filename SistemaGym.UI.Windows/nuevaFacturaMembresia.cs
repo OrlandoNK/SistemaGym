@@ -269,7 +269,23 @@ namespace SistemaGym.UI.Windows
             nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
             nuevaFacturaMembresia.FechaEmision = Convert.ToDateTime(dtpFacturaFechaEmision.Value.ToShortDateString());
             nuevaFacturaMembresia.FechaVencimiento = Convert.ToDateTime(dtpFacturaFechaVencimiento.Value.ToShortDateString());
-            nuevaFacturaMembresia.Estatus = TxbFacturaEstatus.Text;
+            if (chkbxEstatus.Checked)
+            {
+                nuevaFacturaMembresia.Estatus = "Activo";
+            }
+            else
+            {
+                DialogResult dialogResult = new DialogResult();
+                dialogResult = MessageBox.Show("¿Seguro que desea Guardar esta Factura como «Inactivo»", SYSTEM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    nuevaFacturaMembresia.Estatus = "Inactivo";
+                }
+                if (dialogResult == DialogResult.No)
+                {
+
+                }
+            }
 
             try
             {
@@ -315,7 +331,6 @@ namespace SistemaGym.UI.Windows
             dtpFacturaFechaEmision.Value = DateTime.Now;
             dtpFacturaFechaVencimiento.Value = DateTime.Now;
             TxbFacturaValor.Clear();
-            TxbFacturaEstatus.SelectedIndex = -1;
         }
 
     }

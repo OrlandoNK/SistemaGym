@@ -128,10 +128,9 @@
             TxbNombreClienteCargoDebito = new TextBox();
             tabFacturacionMembresia = new TabPage();
             groupBox10 = new GroupBox();
+            chkbxEstatus = new CheckBox();
             TxbFacturaValor = new TextBox();
             btnFacturarMembresia = new Guna.UI2.WinForms.Guna2Button();
-            label38 = new Label();
-            TxbFacturaEstatus = new ComboBox();
             label37 = new Label();
             dtpFacturaFechaVencimiento = new DateTimePicker();
             label36 = new Label();
@@ -1100,10 +1099,9 @@
             // 
             // groupBox10
             // 
+            groupBox10.Controls.Add(chkbxEstatus);
             groupBox10.Controls.Add(TxbFacturaValor);
             groupBox10.Controls.Add(btnFacturarMembresia);
-            groupBox10.Controls.Add(label38);
-            groupBox10.Controls.Add(TxbFacturaEstatus);
             groupBox10.Controls.Add(label37);
             groupBox10.Controls.Add(dtpFacturaFechaVencimiento);
             groupBox10.Controls.Add(label36);
@@ -1117,6 +1115,16 @@
             groupBox10.TabIndex = 29;
             groupBox10.TabStop = false;
             groupBox10.Text = "Factura Membresia";
+            // 
+            // chkbxEstatus
+            // 
+            chkbxEstatus.CheckAlign = ContentAlignment.MiddleRight;
+            chkbxEstatus.Location = new Point(6, 147);
+            chkbxEstatus.Name = "chkbxEstatus";
+            chkbxEstatus.Size = new Size(165, 27);
+            chkbxEstatus.TabIndex = 47;
+            chkbxEstatus.Text = "Estatus";
+            chkbxEstatus.UseVisualStyleBackColor = true;
             // 
             // TxbFacturaValor
             // 
@@ -1150,24 +1158,6 @@
             btnFacturarMembresia.Text = "Facturar";
             btnFacturarMembresia.TextAlign = HorizontalAlignment.Right;
             btnFacturarMembresia.Click += btnFacturarMembresia_Click;
-            // 
-            // label38
-            // 
-            label38.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label38.Location = new Point(6, 124);
-            label38.Name = "label38";
-            label38.Size = new Size(165, 20);
-            label38.TabIndex = 35;
-            label38.Text = "Estatus";
-            // 
-            // TxbFacturaEstatus
-            // 
-            TxbFacturaEstatus.FormattingEnabled = true;
-            TxbFacturaEstatus.Items.AddRange(new object[] { "Pagado", "Cotizado", "Por Vencer", "Vencida", "Confirmando Pago", "Cancelada" });
-            TxbFacturaEstatus.Location = new Point(6, 147);
-            TxbFacturaEstatus.Name = "TxbFacturaEstatus";
-            TxbFacturaEstatus.Size = new Size(165, 27);
-            TxbFacturaEstatus.TabIndex = 34;
             // 
             // label37
             // 
@@ -1605,8 +1595,6 @@
         private DateTimePicker dtpFacturaFechaEmision;
         private Label label34;
         private TextBox TxbFacturaNCF;
-        private Label label38;
-        private ComboBox TxbFacturaEstatus;
         private Guna.UI2.WinForms.Guna2Button btnFacturarMembresia;
         private NumericUpDown numericUpDown1;
         private NumericUpDown numericUpDown2;
@@ -1616,5 +1604,6 @@
         private TextBox TxbFacturaCargoDebito;
         private TextBox TxbFacturaMontoCargoCredito;
         private TextBox TxbFacturacionCargoCredito;
+        private CheckBox chkbxEstatus;
     }
 }
