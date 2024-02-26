@@ -102,7 +102,6 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._PaymentMembresiaFactura;
             pictureBox1.Location = new Point(3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(62, 53);
@@ -113,7 +112,6 @@
             // btnClose
             // 
             btnClose.Cursor = Cursors.Hand;
-            btnClose.Image = Properties.Resources._ForCloseWindowX___;
             btnClose.Location = new Point(877, 9);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(48, 45);
@@ -172,7 +170,6 @@
             btnDelete.ForeColor = Color.White;
             btnDelete.HoverState.FillColor = Color.Goldenrod;
             btnDelete.HoverState.ForeColor = Color.Black;
-            btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(32, 32);
             btnDelete.Location = new Point(14, 179);
@@ -206,7 +203,6 @@
             btnEdit.ForeColor = Color.White;
             btnEdit.HoverState.FillColor = Color.Goldenrod;
             btnEdit.HoverState.ForeColor = Color.Black;
-            btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(32, 32);
             btnEdit.Location = new Point(14, 128);
@@ -240,12 +236,11 @@
             btnRefresh.ForeColor = Color.White;
             btnRefresh.HoverState.FillColor = Color.Goldenrod;
             btnRefresh.HoverState.ForeColor = Color.Black;
-            btnRefresh.Image = Properties.Resources._Refresh_FacturacionMembresia;
             btnRefresh.ImageSize = new Size(32, 32);
             btnRefresh.Location = new Point(14, 77);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnRefresh.Size = new Size(51, 45);
+            btnRefresh.Size = new Size(195, 45);
             btnRefresh.TabIndex = 2;
             btnRefresh.TextAlign = HorizontalAlignment.Right;
             btnRefresh.Click += btnRefresh_Click;
@@ -272,7 +267,6 @@
             btnNew.ForeColor = Color.White;
             btnNew.HoverState.FillColor = Color.Goldenrod;
             btnNew.HoverState.ForeColor = Color.Black;
-            btnNew.Image = Properties.Resources._NuevaFacturaMembresia;
             btnNew.ImageAlign = HorizontalAlignment.Left;
             btnNew.ImageSize = new Size(32, 32);
             btnNew.Location = new Point(14, 26);
@@ -306,7 +300,6 @@
             TxbBuscar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
             TxbBuscar.Location = new Point(4, 8);
             TxbBuscar.Name = "TxbBuscar";
             TxbBuscar.PasswordChar = '\0';
