@@ -55,7 +55,6 @@
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
-            panel6 = new Panel();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
             tabCargoDebito = new TabControl();
@@ -224,7 +223,7 @@
             btnClose.Location = new Point(909, 9);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(48, 45);
-            btnClose.SizeMode = PictureBoxSizeMode.Zoom;
+            btnClose.SizeMode = PictureBoxSizeMode.CenterImage;
             btnClose.TabIndex = 0;
             btnClose.TabStop = false;
             btnClose.Click += btnClose_Click;
@@ -242,7 +241,7 @@
             // panel3
             // 
             panel3.BackColor = Color.Black;
-            panel3.Controls.Add(panel6);
+            panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(btnSave);
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 97);
@@ -250,19 +249,11 @@
             panel3.Size = new Size(213, 484);
             panel3.TabIndex = 2;
             // 
-            // panel6
-            // 
-            panel6.BackColor = Color.Goldenrod;
-            panel6.Location = new Point(0, 23);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(10, 56);
-            panel6.TabIndex = 3;
-            // 
             // btnSave
             // 
             btnSave.BackColor = Color.Transparent;
             btnSave.BorderColor = Color.Goldenrod;
-            btnSave.BorderThickness = 2;
+            btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
             btnSave.CustomizableEdges = customizableEdges1;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
@@ -276,11 +267,11 @@
             btnSave.HoverState.ForeColor = Color.Black;
             btnSave.Image = Properties.Resources._GuardarFacturaMembresia;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.ImageSize = new Size(32, 32);
-            btnSave.Location = new Point(10, 23);
+            btnSave.ImageSize = new Size(25, 25);
+            btnSave.Location = new Point(-1, 23);
             btnSave.Name = "btnSave";
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnSave.Size = new Size(203, 56);
+            btnSave.Size = new Size(214, 56);
             btnSave.TabIndex = 2;
             btnSave.Text = "Guardar Factura";
             btnSave.TextAlign = HorizontalAlignment.Right;
@@ -289,6 +280,7 @@
             // panel4
             // 
             panel4.BackColor = Color.WhiteSmoke;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(tabCargoDebito);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(213, 97);
@@ -1515,7 +1507,6 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
-        private Panel panel6;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Label lblTitleMantenimientoFacturaMembresia;
         private PictureBox pictureBox1;

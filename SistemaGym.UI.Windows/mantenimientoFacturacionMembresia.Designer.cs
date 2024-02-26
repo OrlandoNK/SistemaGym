@@ -28,29 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             lblTitleMantenimientoFacturaMembresia = new Label();
             pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
-            panel9 = new Panel();
             btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            panel8 = new Panel();
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
-            panel7 = new Panel();
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
-            panel6 = new Panel();
             btnNew = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
@@ -102,6 +98,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = Properties.Resources._PaymentMembresiaFactura;
             pictureBox1.Location = new Point(3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(62, 53);
@@ -112,10 +109,11 @@
             // btnClose
             // 
             btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources._CloseWindowX;
             btnClose.Location = new Point(877, 9);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(48, 45);
-            btnClose.SizeMode = PictureBoxSizeMode.Zoom;
+            btnClose.SizeMode = PictureBoxSizeMode.CenterImage;
             btnClose.TabIndex = 0;
             btnClose.TabStop = false;
             btnClose.Click += btnClose_Click;
@@ -134,13 +132,9 @@
             // 
             panel3.BackColor = Color.Black;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(panel9);
             panel3.Controls.Add(btnDelete);
-            panel3.Controls.Add(panel8);
             panel3.Controls.Add(btnEdit);
-            panel3.Controls.Add(panel7);
             panel3.Controls.Add(btnRefresh);
-            panel3.Controls.Add(panel6);
             panel3.Controls.Add(btnNew);
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 90);
@@ -148,19 +142,13 @@
             panel3.Size = new Size(210, 471);
             panel3.TabIndex = 2;
             // 
-            // panel9
-            // 
-            panel9.BackColor = Color.Goldenrod;
-            panel9.Location = new Point(-1, 179);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(15, 45);
-            panel9.TabIndex = 7;
-            // 
             // btnDelete
             // 
             btnDelete.BackColor = Color.Transparent;
+            btnDelete.BorderColor = Color.DarkGoldenrod;
+            btnDelete.BorderThickness = 1;
             btnDelete.Cursor = Cursors.Hand;
-            btnDelete.CustomizableEdges = customizableEdges1;
+            btnDelete.CustomizableEdges = customizableEdges21;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -170,30 +158,25 @@
             btnDelete.ForeColor = Color.White;
             btnDelete.HoverState.FillColor = Color.Goldenrod;
             btnDelete.HoverState.ForeColor = Color.Black;
+            btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(32, 32);
-            btnDelete.Location = new Point(14, 179);
+            btnDelete.Location = new Point(-1, 179);
             btnDelete.Name = "btnDelete";
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnDelete.Size = new Size(195, 45);
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnDelete.Size = new Size(210, 45);
             btnDelete.TabIndex = 6;
             btnDelete.Text = "Eliminar";
             btnDelete.TextAlign = HorizontalAlignment.Right;
             btnDelete.Click += btnDelete_Click;
             // 
-            // panel8
-            // 
-            panel8.BackColor = Color.Goldenrod;
-            panel8.Location = new Point(-1, 128);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(15, 45);
-            panel8.TabIndex = 5;
-            // 
             // btnEdit
             // 
             btnEdit.BackColor = Color.Transparent;
+            btnEdit.BorderColor = Color.DarkGoldenrod;
+            btnEdit.BorderThickness = 1;
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.CustomizableEdges = customizableEdges3;
+            btnEdit.CustomizableEdges = customizableEdges23;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -203,30 +186,25 @@
             btnEdit.ForeColor = Color.White;
             btnEdit.HoverState.FillColor = Color.Goldenrod;
             btnEdit.HoverState.ForeColor = Color.Black;
+            btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(32, 32);
-            btnEdit.Location = new Point(14, 128);
+            btnEdit.Location = new Point(-1, 128);
             btnEdit.Name = "btnEdit";
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnEdit.Size = new Size(195, 45);
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnEdit.Size = new Size(210, 45);
             btnEdit.TabIndex = 4;
             btnEdit.Text = "Modificar";
             btnEdit.TextAlign = HorizontalAlignment.Right;
             btnEdit.Click += btnEdit_Click;
             // 
-            // panel7
-            // 
-            panel7.BackColor = Color.Goldenrod;
-            panel7.Location = new Point(-1, 77);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(15, 45);
-            panel7.TabIndex = 3;
-            // 
             // btnRefresh
             // 
             btnRefresh.BackColor = Color.Transparent;
+            btnRefresh.BorderColor = Color.DarkGoldenrod;
+            btnRefresh.BorderThickness = 1;
             btnRefresh.Cursor = Cursors.Hand;
-            btnRefresh.CustomizableEdges = customizableEdges5;
+            btnRefresh.CustomizableEdges = customizableEdges25;
             btnRefresh.DisabledState.BorderColor = Color.DarkGray;
             btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -236,28 +214,23 @@
             btnRefresh.ForeColor = Color.White;
             btnRefresh.HoverState.FillColor = Color.Goldenrod;
             btnRefresh.HoverState.ForeColor = Color.Black;
+            btnRefresh.Image = Properties.Resources._Refresh_FacturacionMembresia;
             btnRefresh.ImageSize = new Size(32, 32);
-            btnRefresh.Location = new Point(14, 77);
+            btnRefresh.Location = new Point(-1, 77);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnRefresh.Size = new Size(195, 45);
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnRefresh.Size = new Size(210, 45);
             btnRefresh.TabIndex = 2;
             btnRefresh.TextAlign = HorizontalAlignment.Right;
             btnRefresh.Click += btnRefresh_Click;
             // 
-            // panel6
-            // 
-            panel6.BackColor = Color.Goldenrod;
-            panel6.Location = new Point(-1, 26);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(15, 45);
-            panel6.TabIndex = 1;
-            // 
             // btnNew
             // 
             btnNew.BackColor = Color.Transparent;
+            btnNew.BorderColor = Color.DarkGoldenrod;
+            btnNew.BorderThickness = 1;
             btnNew.Cursor = Cursors.Hand;
-            btnNew.CustomizableEdges = customizableEdges7;
+            btnNew.CustomizableEdges = customizableEdges27;
             btnNew.DisabledState.BorderColor = Color.DarkGray;
             btnNew.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNew.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -267,12 +240,13 @@
             btnNew.ForeColor = Color.White;
             btnNew.HoverState.FillColor = Color.Goldenrod;
             btnNew.HoverState.ForeColor = Color.Black;
+            btnNew.Image = Properties.Resources._NuevaFacturaMembresia;
             btnNew.ImageAlign = HorizontalAlignment.Left;
             btnNew.ImageSize = new Size(32, 32);
-            btnNew.Location = new Point(14, 26);
+            btnNew.Location = new Point(-1, 26);
             btnNew.Name = "btnNew";
-            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnNew.Size = new Size(195, 45);
+            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnNew.Size = new Size(210, 45);
             btnNew.TabIndex = 0;
             btnNew.Text = "Nuevo";
             btnNew.TextAlign = HorizontalAlignment.Right;
@@ -291,7 +265,7 @@
             // TxbBuscar
             // 
             TxbBuscar.BorderRadius = 20;
-            TxbBuscar.CustomizableEdges = customizableEdges9;
+            TxbBuscar.CustomizableEdges = customizableEdges29;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -305,7 +279,7 @@
             TxbBuscar.PasswordChar = '\0';
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges30;
             TxbBuscar.Size = new Size(720, 36);
             TxbBuscar.TabIndex = 0;
             TxbBuscar.TextChanged += TxbBuscar_TextChanged;
@@ -462,13 +436,9 @@
         private Panel panel5;
         private Guna.UI2.WinForms.Guna2TextBox TxbBuscar;
         private PictureBox btnClose;
-        private Panel panel6;
         private Guna.UI2.WinForms.Guna2Button btnNew;
-        private Panel panel9;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
-        private Panel panel8;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
-        private Panel panel7;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private Label lblTitleMantenimientoFacturaMembresia;
         private PictureBox pictureBox1;
