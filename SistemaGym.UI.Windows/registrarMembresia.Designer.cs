@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            btnClose = new PictureBox();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -57,14 +58,13 @@
             txtDescripcion = new RichTextBox();
             txtNombre = new TextBox();
             errorProvider = new ErrorProvider(components);
-            btnClose = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -78,6 +78,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(571, 66);
             panel1.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources.btn_close_cerrar_x32;
+            btnClose.Location = new Point(504, 7);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(53, 50);
+            btnClose.SizeMode = PictureBoxSizeMode.Zoom;
+            btnClose.TabIndex = 1;
+            btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
             // 
             // pictureBox1
             // 
@@ -206,7 +218,7 @@
             // 
             btnSave.BorderColor = Color.Goldenrod;
             btnSave.BorderThickness = 1;
-            btnSave.CustomizableEdges = customizableEdges3;
+            btnSave.CustomizableEdges = customizableEdges1;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -221,7 +233,7 @@
             btnSave.Location = new Point(221, 256);
             btnSave.Name = "btnSave";
             btnSave.PressedColor = Color.Transparent;
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnSave.Size = new Size(344, 45);
             btnSave.TabIndex = 35;
             btnSave.Text = "&Guardar";
@@ -230,11 +242,11 @@
             // panel6
             // 
             panel6.BackColor = Color.Black;
+            panel6.Controls.Add(label4);
             panel6.Controls.Add(label2);
             panel6.Controls.Add(chkbxEstatus);
             panel6.Controls.Add(label3);
             panel6.Controls.Add(txtValor);
-            panel6.Controls.Add(label4);
             panel6.Controls.Add(txtDuracion);
             panel6.Controls.Add(label5);
             panel6.Controls.Add(txtDescripcion);
@@ -249,7 +261,7 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(27, 13);
+            label2.Location = new Point(27, 11);
             label2.Name = "label2";
             label2.Size = new Size(163, 20);
             label2.TabIndex = 22;
@@ -260,7 +272,7 @@
             chkbxEstatus.Anchor = AnchorStyles.None;
             chkbxEstatus.CheckAlign = ContentAlignment.MiddleRight;
             chkbxEstatus.ForeColor = Color.White;
-            chkbxEstatus.Location = new Point(27, 269);
+            chkbxEstatus.Location = new Point(27, 272);
             chkbxEstatus.Name = "chkbxEstatus";
             chkbxEstatus.Size = new Size(163, 24);
             chkbxEstatus.TabIndex = 33;
@@ -271,7 +283,7 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.ForeColor = Color.White;
-            label3.Location = new Point(27, 177);
+            label3.Location = new Point(27, 58);
             label3.Name = "label3";
             label3.Size = new Size(163, 20);
             label3.TabIndex = 23;
@@ -280,7 +292,7 @@
             // txtValor
             // 
             txtValor.Anchor = AnchorStyles.None;
-            txtValor.Location = new Point(27, 242);
+            txtValor.Location = new Point(27, 245);
             txtValor.Multiline = true;
             txtValor.Name = "txtValor";
             txtValor.Size = new Size(163, 21);
@@ -290,7 +302,7 @@
             // 
             label4.Anchor = AnchorStyles.None;
             label4.ForeColor = Color.White;
-            label4.Location = new Point(27, 60);
+            label4.Location = new Point(27, 175);
             label4.Name = "label4";
             label4.Size = new Size(163, 20);
             label4.TabIndex = 24;
@@ -299,7 +311,7 @@
             // txtDuracion
             // 
             txtDuracion.Anchor = AnchorStyles.None;
-            txtDuracion.Location = new Point(27, 195);
+            txtDuracion.Location = new Point(27, 198);
             txtDuracion.Multiline = true;
             txtDuracion.Name = "txtDuracion";
             txtDuracion.Size = new Size(163, 21);
@@ -309,7 +321,7 @@
             // 
             label5.Anchor = AnchorStyles.None;
             label5.ForeColor = Color.White;
-            label5.Location = new Point(27, 219);
+            label5.Location = new Point(27, 222);
             label5.Name = "label5";
             label5.Size = new Size(163, 20);
             label5.TabIndex = 25;
@@ -318,7 +330,7 @@
             // txtDescripcion
             // 
             txtDescripcion.Anchor = AnchorStyles.None;
-            txtDescripcion.Location = new Point(27, 83);
+            txtDescripcion.Location = new Point(27, 81);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(163, 91);
             txtDescripcion.TabIndex = 30;
@@ -327,7 +339,7 @@
             // txtNombre
             // 
             txtNombre.Anchor = AnchorStyles.None;
-            txtNombre.Location = new Point(27, 36);
+            txtNombre.Location = new Point(27, 34);
             txtNombre.Multiline = true;
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(163, 21);
@@ -336,18 +348,6 @@
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
-            // 
-            // btnClose
-            // 
-            btnClose.Cursor = Cursors.Hand;
-            btnClose.Image = Properties.Resources.btn_close_cerrar_x32;
-            btnClose.Location = new Point(504, 7);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(53, 50);
-            btnClose.SizeMode = PictureBoxSizeMode.Zoom;
-            btnClose.TabIndex = 1;
-            btnClose.TabStop = false;
-            btnClose.Click += btnClose_Click;
             // 
             // registrarMembresia
             // 
@@ -362,13 +362,13 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarMembresia";
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ResumeLayout(false);
         }
 

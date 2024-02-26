@@ -184,6 +184,7 @@
             // 
             btnDelete.BorderColor = Color.Goldenrod;
             btnDelete.BorderThickness = 1;
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.CustomizableEdges = customizableEdges1;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -207,6 +208,7 @@
             // 
             btnEdit.BorderColor = Color.Goldenrod;
             btnEdit.BorderThickness = 1;
+            btnEdit.Cursor = Cursors.Hand;
             btnEdit.CustomizableEdges = customizableEdges3;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -230,6 +232,7 @@
             // 
             btnrefresh.BorderColor = Color.Goldenrod;
             btnrefresh.BorderThickness = 1;
+            btnrefresh.Cursor = Cursors.Hand;
             btnrefresh.CustomizableEdges = customizableEdges5;
             btnrefresh.DisabledState.BorderColor = Color.DarkGray;
             btnrefresh.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -251,6 +254,7 @@
             // 
             btnNew.BorderColor = Color.Goldenrod;
             btnNew.BorderThickness = 1;
+            btnNew.Cursor = Cursors.Hand;
             btnNew.CustomizableEdges = customizableEdges7;
             btnNew.DisabledState.BorderColor = Color.DarkGray;
             btnNew.DisabledState.CustomBorderColor = Color.DarkGray;
