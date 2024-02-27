@@ -271,15 +271,15 @@ namespace SistemaGym.UI.Windows
             nuevaFacturaMembresia.FechaVencimiento = Convert.ToDateTime(dtpFacturaFechaVencimiento.Value.ToShortDateString());
             if (chkbxEstatus.Checked)
             {
-                nuevaFacturaMembresia.Estatus = "Activo";
+                nuevaFacturaMembresia.Estatus = "Pagado";
             }
             else
             {
                 DialogResult dialogResult = new DialogResult();
-                dialogResult = MessageBox.Show("¿Seguro que desea Guardar esta Factura como «Inactivo»", SYSTEM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                dialogResult = MessageBox.Show("¿Seguro que desea Guardar esta Factura como «No Pagado»", SYSTEM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    nuevaFacturaMembresia.Estatus = "Inactivo";
+                    nuevaFacturaMembresia.Estatus = "No Pagado";
                 }
                 if (dialogResult == DialogResult.No)
                 {
