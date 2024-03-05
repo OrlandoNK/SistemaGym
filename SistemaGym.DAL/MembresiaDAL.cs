@@ -37,8 +37,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update Membresia Set Nombre =@nombre, Descripcion =@descripcion," + 
-                " Duracion =@duracion, Valor =@valor, FechaCreacion =@fechacreacion, Estatus =@estatus where IDMembresia= @idmembresia";
+            string actualizar = "UPDATE Membresia SET Nombre =@nombre, Descripcion =@descripcion, Duracion =@duracion, Valor =@valor, FechaCreacion =@fechacreacion, Estatus =@estatus WHERE IDMembresia= @idmembresia";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@nombre", membresia.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", membresia.Descripcion);
@@ -52,18 +51,16 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar membresia
 
-        public static bool EliminarMembresia(MembresiaEntity membresia)
+        public static bool EliminarMembresia(int membresia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             bool seElimino;
 
-
-
             Conexion.Open();
             string eliminar = "Delete from Membresia where IDMembresia= @idmembresia";
             SqlCommand cmd = new SqlCommand(eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idmembresia", membresia.IDMembresia);
+            cmd.Parameters.AddWithValue("@idmembresia", membresia);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
@@ -95,7 +92,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             DataTable dt = new DataTable();
-            string buscar = "Select * From Clientes where IDMembresia= @idmembresia";
+            string buscar = "Select * From Membresia where IDMembresia= @idmembresia";
             SqlCommand cmd = new SqlCommand(buscar, Conexion);
             cmd.Parameters.AddWithValue("@idmembresia", membresia.IDMembresia);
             SqlDataAdapter da = new SqlDataAdapter(cmd);

@@ -453,6 +453,86 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btn_btn_actualizar_membresias_x32 {
+            get {
+                object obj = ResourceManager.GetObject("btn btn actualizar membresias x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btn_btn_delete_membresia {
+            get {
+                object obj = ResourceManager.GetObject("btn btn delete membresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btn_btn_edit_membresia_x32 {
+            get {
+                object obj = ResourceManager.GetObject("btn btn edit membresia x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btn_close_cerrar_x32 {
+            get {
+                object obj = ResourceManager.GetObject("btn close cerrar x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btn_Editar_Membresia_x32 {
+            get {
+                object obj = ResourceManager.GetObject("btn Editar Membresia x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btn_Nueva_Membresia_x32 {
+            get {
+                object obj = ResourceManager.GetObject("btn Nueva Membresia x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_for_saving_membership_x32 {
+            get {
+                object obj = ResourceManager.GetObject("button for saving membership x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_for_saving_membership_x321 {
+            get {
+                object obj = ResourceManager.GetObject("button for saving membership x321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar {
             get {
                 object obj = ResourceManager.GetObject("cerrar", resourceCulture);
@@ -666,6 +746,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap GYM_COMFORT {
             get {
                 object obj = ResourceManager.GetObject("GYM COMFORT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_membresia_mantenimiento_x32 {
+            get {
+                object obj = ResourceManager.GetObject("icon membresia mantenimiento x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
