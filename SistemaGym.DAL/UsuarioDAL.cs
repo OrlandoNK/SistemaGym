@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using SistemaGym.Entities;
@@ -48,6 +49,44 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
             cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
             cmd.ExecuteNonQuery();
+        }
+
+        public string GetNameFromUser(string usuario, string contraseña)
+        {
+            string? UserName = string.Empty;
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+                string qry = "SELECT Nombre + ' ' + Apellido FROM Usuarios WHERE NombreUsuario = @Usuario AND Contrasena = @Contrasena";
+                using (SqlCommand cmnd = new SqlCommand(qry, Conexion))
+                {
+                    cmnd.Parameters.AddWithValue("@Usuario", usuario);
+                    cmnd.Parameters.AddWithValue("@Contrasena", contraseña);
+                    Conexion.Open();
+                    UserName = Convert.ToString(cmnd.ExecuteScalar());
+                }
+
+            return UserName;
+        }
+
+        public string GetIDFromUser(string usuario, string contraseña)
+        {
+            string? UserName = string.Empty;
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            string qry = "SELECT IDUsuario FROM Usuarios WHERE NombreUsuario = @Usuario AND Contrasena = @Contrasena";
+            using (SqlCommand cmnd = new SqlCommand(qry, Conexion))
+            {
+                cmnd.Parameters.AddWithValue("@Usuario", usuario);
+                cmnd.Parameters.AddWithValue("@Contrasena", contraseña);
+                Conexion.Open();
+                UserName = Convert.ToString(cmnd.ExecuteScalar());
+            }
+
+            return UserName;
         }
 
         //metodo actualizar usuario

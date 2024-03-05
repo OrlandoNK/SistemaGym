@@ -19,6 +19,15 @@ namespace SistemaGym.BLL
             return usuarioDAL.ConsultaLogin(usuario);
         }
 
+        public string GetNameFromUser(string usuario, string contraseña)
+        {
+           return usuarioDAL.GetNameFromUser(usuario, contraseña);
+        }
+        public string GetIDFromUser(string usuario, string contraseña)
+        {
+            return usuarioDAL.GetIDFromUser(usuario, contraseña);
+        }
+
         public static void Guardar(UsuarioEntity usuario)
         {
             if (usuario.IDUsuario == 0)

@@ -106,6 +106,22 @@ namespace SistemaGym.DAL
 
         }
 
+        public static DataTable GetClients()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            DataTable dt = new DataTable();
+            Conexion.Open();
+            string mostrar = "Select IDCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus From Clientes Order By Nombre";
+            SqlCommand cmd = new SqlCommand(mostrar, Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+
+            return dt;
+
+        }
+
         /* public static DataTable BuscarID(int id)
          {
 
@@ -179,6 +195,47 @@ namespace SistemaGym.DAL
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
+        }
+
+        public static ClientesEntity GetByID(int? Id)
+        {
+            ClientesEntity cliente = null;
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            string GetID = "SELECT * FROM Clientes WHERE IDCliente = @IDCliente";
+            SqlCommand cmd = new SqlCommand(GetID, Conexion);
+            cmd.Parameters.AddWithValue("@IDCliente", Id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                cliente = ConvertToObject(reader);
+            }
+
+            return cliente;
+        }
+
+        private static ClientesEntity ConvertToObject(IDataReader reader)
+        {
+            ClientesEntity cliente = new ClientesEntity();
+
+            cliente.IDCliente = Convert.ToInt32(reader["IDCliente"]);
+            cliente.Nombre = Convert.ToString(reader["Nombre"]);
+            cliente.Apellido = Convert.ToString(reader["Apellido"]);
+            cliente.TipoDocumento = Convert.ToString(reader["TipoDocumento"]);
+            cliente.Documento = Convert.ToString(reader["Documento"]);
+            cliente.Direccion = Convert.ToString(reader["Direccion"]);
+            cliente.TelCell = Convert.ToString(reader["TelCell"]);
+            cliente.TelRes = Convert.ToString(reader["TelRes"]);
+            cliente.FechaRegistro = Convert.ToDateTime(reader["FechaRegistro"]);
+            cliente.Estatus = Convert.ToString(reader["Estatus"]);
+
+
+            return cliente;
         }
 
 

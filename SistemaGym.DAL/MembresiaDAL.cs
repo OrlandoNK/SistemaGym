@@ -102,6 +102,45 @@ namespace SistemaGym.DAL
             da.Fill(dt);
             return dt;
         }
+
+        public static MembresiaEntity GetByID(int Id)
+        {
+            MembresiaEntity membresia = null;
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            string GetID = "SELECT * FROM Membresia WHERE IDMembresia = @IDMembresia";
+            SqlCommand cmd = new SqlCommand(GetID, Conexion);
+            cmd.Parameters.AddWithValue("@IDMembresia", Id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                membresia = ConvertToObject(reader);
+            }
+                    
+            return membresia;
+        }
+
+        private static MembresiaEntity ConvertToObject(IDataReader reader)
+        {
+            MembresiaEntity membresia = new MembresiaEntity();
+
+            membresia.IDMembresia = Convert.ToInt32(reader["IDMembresia"]);
+            membresia.Nombre = Convert.ToString(reader["Nombre"]);
+            membresia.Descripcion = Convert.ToString(reader["Descripcion"]);
+            membresia.Duracion = Convert.ToString(reader["Duracion"]);
+            membresia.Valor = Convert.ToDecimal(reader["Valor"]);
+            membresia.FechaCreacion = Convert.ToDateTime(reader["FechaCreacion"]);
+            membresia.Estatus = Convert.ToString(reader["Estatus"]);
+
+            return membresia;
+        }
+
+
         //obtener valor de la base de datos en tabla membresia
         public static DataTable ObtenerPorValor(MembresiaEntity membresia)
         {

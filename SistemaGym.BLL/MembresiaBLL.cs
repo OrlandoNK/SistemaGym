@@ -44,6 +44,11 @@ namespace SistemaGym.BLL
             return MembresiaDAL.ObtenerPorValor(membresia);
            
         }
+
+    public static MembresiaEntity GetById(int Id)
+        {
+           return MembresiaDAL.GetByID(Id);
+        }
     }
         
         

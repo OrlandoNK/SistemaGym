@@ -32,7 +32,7 @@ namespace SistemaGym.BLL
             return CargoDebitoDAL.EliminarCargoDebito(cargoDebito);
         }
 
-        public static DataTable MostrarCargoDebito(CargoDebitoDAL cargoDebito)
+        public static DataTable MostrarCargoDebito()
         {
             return CargoDebitoDAL.MostrarCargoDebito();
 
@@ -46,6 +46,10 @@ namespace SistemaGym.BLL
         public static DataTable ObtenerPorValor(CargoDebitoEntity cargoDebito)
         {
             return CargoDebitoDAL.ObtenerPorValor(cargoDebito);
+        }
+        public static CargoDebitoEntity GetById(int Id)
+        {
+            return CargoDebitoDAL.GetByID(Id);
         }
     }
 }

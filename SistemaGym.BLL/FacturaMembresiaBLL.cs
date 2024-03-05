@@ -22,9 +22,9 @@ namespace SistemaGym.BLL
             FacturacionMembresiaDAL.Actualizar(facturaMembresia);
         }
 
-        public bool Eliminar (FacturaMembresiaEntity facturaMembresia)
+        public bool Eliminar (int Id)
         {
-            return FacturacionMembresiaDAL.EliminarByID(facturaMembresia);
+            return FacturacionMembresiaDAL.EliminarByID(Id);
         }
 
         public DataTable Mostrar()
@@ -33,15 +33,21 @@ namespace SistemaGym.BLL
             return dataTable;
         }
 
+        public DataTable MostrarFacturaMembresia()
+        {
+            DataTable dataTbl = FacturacionMembresiaDAL.MostrarFacturaMembresia();
+            return dataTbl;
+        }
+
         public DataTable BuscarByID(FacturaMembresiaEntity facturaMembresia)
         {
             DataTable dataTable = FacturacionMembresiaDAL.BuscarByID(facturaMembresia);
             return dataTable;
         }
 
-        public DataTable ObtenerByValor(FacturaMembresiaEntity facturacionMembresia)
+        public DataTable ObtenerByValor(string busqueda)
         {
-            DataTable dataTable = FacturacionMembresiaDAL.ObtenerByValor(facturacionMembresia);
+            DataTable dataTable = FacturacionMembresiaDAL.ObtenerByValor(busqueda);
             return dataTable;
         }
     }
