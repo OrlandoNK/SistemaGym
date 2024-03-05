@@ -36,8 +36,8 @@ namespace SistemaGym.DAL
                 string actualizar = "Update CategoriaProductos set Nombre=@Nombre, Descripcion=@Descripcion where IDCategoria = @IDCategoria";
                 SqlCommand cmd = new SqlCommand(actualizar, Conexion);
                 cmd.Parameters.AddWithValue("@Nombre", CategoriaProducto.Nombre);
-            cmd.Parameters.AddWithValue("@IDCategoria", CategoriaProducto.IDCategoria);
-            cmd.Parameters.AddWithValue("@Descripcion", CategoriaProducto.Descripcion);
+               cmd.Parameters.AddWithValue("@IDCategoria", CategoriaProducto.IDCategoria);
+               cmd.Parameters.AddWithValue("@Descripcion", CategoriaProducto.Descripcion);
                 cmd.ExecuteNonQuery();
 
 

@@ -40,8 +40,9 @@ namespace SistemaGym.DAL
                 SqlConnection Conexion = new SqlConnection();
 
                 Conexion.Open();
-                string UpdateProduct = "UPDATE Pago SET IDFacturaProductos = @idfacturaproductos, IDFacturaMembresia = @idfacturamembresia, MetodoPago = @metodopago, Monto = @monto, FechaPago = @fechapago, Estatus = @estatus";
+                string UpdateProduct = "UPDATE Pago SET IDFacturaProductos = @idfacturaproductos, IDFacturaMembresia = @idfacturamembresia, MetodoPago = @metodopago, Monto = @monto, FechaPago = @fechapago, Estatus = @estatus where IDPago= @IDPago ";
                 SqlCommand cmd = new SqlCommand(UpdateProduct, Conexion);
+                cmd.Parameters.AddWithValue("@IDPago", pago.IDPago);
                 cmd.Parameters.AddWithValue("@idfacturaproductos", pago.IDFacturaProductos);
                 cmd.Parameters.AddWithValue("@idfacturamembresia", pago.IDFacturaMembresia);
                 cmd.Parameters.AddWithValue("@metodopago", pago.MetodoPago);

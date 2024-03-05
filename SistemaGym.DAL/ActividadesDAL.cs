@@ -40,8 +40,9 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string actualizar = "Update Actividades set Area=@area, Nombre =@nombre, EncargadoActividad =@encargoactividad " +
-                "dia =@dia, horainicio =@horainicio, horacierre =@horariocierre, Estatus =@estatus";
-            SqlCommand cmd = new SqlCommand(actualizar, Conexion); 
+                "dia =@dia, horainicio =@horainicio, horacierre =@horariocierre, Estatus =@estatus Where IDActividad= @idactividad";
+            SqlCommand cmd = new SqlCommand(actualizar, Conexion);
+            cmd.Parameters.AddWithValue("@idactividad", actividades.IDActividad); 
             cmd.Parameters.AddWithValue("@area", actividades.Area);
             cmd.Parameters.AddWithValue("@nombre", actividades.Nombre);
             cmd.Parameters.AddWithValue("@encargadoactividad", actividades.EncargadoActividad);

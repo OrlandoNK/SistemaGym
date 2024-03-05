@@ -36,8 +36,9 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string actualizar = "Update AreasEmpresa set Encargado=@encargado, Nombre=@nombre " +
-                "Descripcion =@descripcion, FechaCreacion = @fechacreacion";
+                "Descripcion =@descripcion, FechaCreacion = @fechacreacion Where IDArea = @idarea";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
+            cmd.Parameters.AddWithValue("@idarea", areaEmpresa.IDArea);
             cmd.Parameters.AddWithValue("@encargado", areaEmpresa.Encargado);
             cmd.Parameters.AddWithValue("@nombre", areaEmpresa.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", areaEmpresa.Descripcion);

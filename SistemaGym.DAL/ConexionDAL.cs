@@ -21,7 +21,7 @@ namespace SistemaGym.DAL
         protected ConexionDAL()
         {
             this.Base = "SistemaGym";
-            this.servidor = "ORLANDO-ABREU\\SQLEXPRESS";
+            this.servidor = "ORLANDOABREU\\SQLEXPRESS01";
             this.seguridad = true;
         }
 

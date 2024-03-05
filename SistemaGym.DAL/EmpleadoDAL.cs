@@ -47,9 +47,11 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Actualizar = "UPDATE Empleados SET IDUsuario = @IDUsuario, Nombre = @Nombre, Apellido = @Apellido, TipoDocumento = @Tipodocumento, Documento = @Documento, Direccion = @Direccion, TellCell = @TellCell, TelRes = @TelRes, FechaRegistro = @FechaRegistro, Estatus = @Estatus";
+            string Actualizar = "UPDATE Empleados SET IDUsuario = @IDUsuario, Nombre = @Nombre, Apellido = @Apellido, TipoDocumento = @Tipodocumento, Documento = @Documento, Direccion = @Direccion, TellCell = @TellCell, TelRes = @TelRes, FechaRegistro = @FechaRegistro, Estatus = @Estatus " + 
+            "where IDEmpleado = @IDEmpleado";
 
             SqlCommand cmd = new SqlCommand(Actualizar, Conexion);
+            cmd.Parameters.AddWithValue("@IDEmpleado", empleado.IDEmpleado);
             cmd.Parameters.AddWithValue("@IDUsuario", empleado.IDUsuario);
             cmd.Parameters.AddWithValue("@Nombre", empleado.Nombre);
             cmd.Parameters.AddWithValue("@Apellido", empleado.Apellido);

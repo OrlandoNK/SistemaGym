@@ -40,8 +40,9 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
 
-            string Actualizar = "UPDATE BlacklistClientes SET IDTipoListaCliente = @IDTipoListaCliente, IDCliente = @IDCliente, Razones = @Razones, FechaInicial = @FechaInicial, FechaVencimiento = @FechaVencimiento, Estatus = @Estatus";
+            string Actualizar = "UPDATE BlacklistClientes SET IDTipoListaCliente = @IDTipoListaCliente, IDCliente = @IDCliente, Razones = @Razones, FechaInicial = @FechaInicial, FechaVencimiento = @FechaVencimiento, Estatus = @Estatus where IDBlackListCliente= @IDBlackListCliente";
             SqlCommand cmd = new SqlCommand(Actualizar, Conexion);
+            cmd.Parameters.AddWithValue("@IDBlackListCliente", blacklist.IDBlackListCliente);
             cmd.Parameters.AddWithValue("@IDTipoListaCliente", blacklist.IDTipoListaCliente);
             cmd.Parameters.AddWithValue("@IDCliente", blacklist.IDCliente);
             cmd.Parameters.AddWithValue("@Razones", blacklist.Razones);

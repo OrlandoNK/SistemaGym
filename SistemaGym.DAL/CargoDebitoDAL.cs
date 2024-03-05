@@ -36,8 +36,9 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update CargoDebito set IDCliente =@idcliente, Cargo =@cargo, FechaCargo =@fechacargo, Estatus =@estatus";
+            string actualizar = "Update CargoDebito set IDCliente =@idcliente, Cargo =@cargo, FechaCargo =@fechacargo, Estatus =@estatus where IDCargoDebito= @idcargodebito ";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
+            cmd.Parameters.AddWithValue("@idcargodebito", cargoDebito.IDCargoDebito);
             cmd.Parameters.AddWithValue("@idcliente", cargoDebito.IDCliente);
             cmd.Parameters.AddWithValue("@cargo", cargoDebito.Cargo);
             cmd.Parameters.AddWithValue("@monto", cargoDebito.Monto);

@@ -37,8 +37,9 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update GrupoAsistenciaUsuarioActividades Set IDActividad =@actividad, IDUsuario =@idusuario, Asistencia =@asistencia, Hora =@hora";
+            string actualizar = "Update GrupoAsistenciaUsuarioActividades Set IDActividad =@actividad, IDUsuario =@idusuario, Asistencia =@asistencia, Hora =@hora where IDGrupoAsistenciaUsuario= @idgrupoasistenciausuario ";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
+            cmd.Parameters.AddWithValue("@idgrupoasistenciausuario", grupoAsistencia.ID);
             cmd.Parameters.AddWithValue("@idactividad", grupoAsistencia.IDActividad);
             cmd.Parameters.AddWithValue("@idusuario", grupoAsistencia.IDUsuario);
             cmd.Parameters.AddWithValue("@asistencia", grupoAsistencia.Asistencia);
