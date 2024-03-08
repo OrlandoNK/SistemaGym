@@ -160,7 +160,6 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icon_membresia_mantenimiento_x32;
             pictureBox1.Location = new Point(11, 6);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(52, 50);
@@ -171,7 +170,6 @@
             // btnClose
             // 
             btnClose.Cursor = Cursors.Hand;
-            btnClose.Image = Properties.Resources.btn_close_cerrar_x32;
             btnClose.Location = new Point(805, 6);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(53, 50);
@@ -255,7 +253,6 @@
             btnDelete.ForeColor = Color.White;
             btnDelete.HoverState.FillColor = Color.DarkGoldenrod;
             btnDelete.HoverState.ForeColor = Color.Black;
-            btnDelete.Image = Properties.Resources.btn_btn_delete_membresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
             btnDelete.Location = new Point(11, 203);
@@ -282,7 +279,6 @@
             btnEdit.ForeColor = Color.White;
             btnEdit.HoverState.FillColor = Color.DarkGoldenrod;
             btnEdit.HoverState.ForeColor = Color.Black;
-            btnEdit.Image = Properties.Resources.btn_btn_edit_membresia_x32;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
             btnEdit.Location = new Point(11, 149);
@@ -309,7 +305,6 @@
             btnrefresh.ForeColor = Color.White;
             btnrefresh.HoverState.FillColor = Color.DarkGoldenrod;
             btnrefresh.HoverState.ForeColor = Color.Black;
-            btnrefresh.Image = Properties.Resources.btn_btn_actualizar_membresias_x32;
             btnrefresh.ImageSize = new Size(32, 32);
             btnrefresh.Location = new Point(11, 95);
             btnrefresh.Name = "btnrefresh";
@@ -334,7 +329,6 @@
             btnNew.ForeColor = Color.White;
             btnNew.HoverState.FillColor = Color.DarkGoldenrod;
             btnNew.HoverState.ForeColor = Color.Black;
-            btnNew.Image = Properties.Resources.btn_Nueva_Membresia_x32;
             btnNew.ImageAlign = HorizontalAlignment.Left;
             btnNew.ImageSize = new Size(25, 25);
             btnNew.Location = new Point(11, 41);

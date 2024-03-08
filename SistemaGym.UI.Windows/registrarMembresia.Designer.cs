@@ -98,7 +98,6 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.icon_membresia_mantenimiento_x32;
             pictureBox2.Location = new Point(11, 7);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(52, 50);
@@ -109,7 +108,6 @@
             // btnClose
             // 
             btnClose.Cursor = Cursors.Hand;
-            btnClose.Image = Properties.Resources.btn_close_cerrar_x32;
             btnClose.Location = new Point(504, 7);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(53, 50);
@@ -255,7 +253,6 @@
             btnSave.ForeColor = Color.Black;
             btnSave.HoverState.FillColor = Color.Black;
             btnSave.HoverState.ForeColor = Color.White;
-            btnSave.Image = Properties.Resources.button_for_saving_membership_x32;
             btnSave.ImageSize = new Size(25, 25);
             btnSave.Location = new Point(221, 256);
             btnSave.Name = "btnSave";
