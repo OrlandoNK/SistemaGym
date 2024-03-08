@@ -92,7 +92,7 @@ namespace SistemaGym.UI.Windows
             txtNCF.Text = "B0100000005";
             dgvProductos.AutoGenerateColumns = false;
             dgvProductos.DataSource = null;
-            
+
 
 
         }
@@ -134,8 +134,9 @@ namespace SistemaGym.UI.Windows
             dgvProductos.DataSource = null;
             dgvProductos.DataSource = oFactura.Detalles;
             txtSubTotal.Text = oFactura.SubTotal.ToString();
-            if (txtTotalDescuento.Text == "0") {
-                txtTotalDescuento.Text= 0.ToString("N2");
+            if (txtTotalDescuento.Text == "0")
+            {
+                txtTotalDescuento.Text = 0.ToString("N2");
             }
             txtTotalDescuento.Text = oFactura.TotalDescuento.ToString();
             txtImpuesto.Text = oFactura.TotalItbis.ToString();
@@ -149,7 +150,7 @@ namespace SistemaGym.UI.Windows
             txtProducto.Clear();
             txtCantidad.Text = "0";
             txtPrecio.Text = 0.ToString("N2");
-            
+
 
 
 
@@ -228,6 +229,11 @@ namespace SistemaGym.UI.Windows
                 resultado = false;
             }
             return resultado;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
