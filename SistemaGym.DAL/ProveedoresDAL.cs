@@ -39,6 +39,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string actualizar = "Update Proveedores set Nombre=@Nombre, Telefono=@Telefono " +
                 "Direccion =@Direccion, FechaRegistro=@FechaRegistro, Estatus =@Estatus where IDProveedor= @idProveedor";
+            string actualizar = "UPDATE Proveedores SET Nombre= @Nombre, Telefono= @Telefono, Direccion = @Direccion, FechaRegistro = @FechaRegistro, Estatus = @Estatus WHERE IDProveedor = @IdProveedor";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idProveedor", proveedores.IDProveedor);
             cmd.Parameters.AddWithValue("@Nombre", proveedores.Nombre);
@@ -46,11 +47,13 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@Direccion", proveedores.Direccion);
             cmd.Parameters.AddWithValue("@FechaRegistro", proveedores.FechaRegistro);
             cmd.Parameters.AddWithValue("@Estatus", proveedores.Estatus);
+
+            cmd.Parameters.AddWithValue("@IdProveedor", proveedores.IDProveedor);
+
             cmd.ExecuteNonQuery();
 
 
         }
-        //funcion eliminar ProveedoresDAL
 
         public static bool EliminarProveedores(int Id)
         {
@@ -58,10 +61,8 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             bool seElimino;
 
-
-
             Conexion.Open();
-            string Eliminar = "Delete from Proveedores where IDProveedor= @idProveedor";
+            string Eliminar = "DELETE FROM Proveedores WHERE IDProveedor = @idProveedor";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
             cmd.Parameters.AddWithValue("@idProveedor", Id);
             seElimino = cmd.ExecuteNonQuery() > 0;
@@ -69,7 +70,7 @@ namespace SistemaGym.DAL
 
         }
 
-        //metodo mostrar cliente
+        //metodo mostrar provedores
         public static DataTable MostrarProveedores()
         {
             ConexionDAL instancia = Instancia();
@@ -77,6 +78,22 @@ namespace SistemaGym.DAL
             DataTable dt = new DataTable();
             Conexion.Open();
             string mostrar = "Select * From Proveedores";
+            SqlCommand cmd = new SqlCommand(mostrar, Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+
+            return dt;
+
+        }
+
+        public static DataTable ShowProviders()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            DataTable dt = new DataTable();
+            Conexion.Open();
+            string mostrar = "Select Nombre, Telefono, Direccion, FechaRegistro, Estatus From Proveedores";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
