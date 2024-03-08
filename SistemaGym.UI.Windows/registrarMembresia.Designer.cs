@@ -98,6 +98,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Image = Properties.Resources.facturamembresia;
             pictureBox2.Location = new Point(11, 7);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(52, 50);
@@ -108,10 +109,11 @@
             // btnClose
             // 
             btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
             btnClose.Location = new Point(504, 7);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(53, 50);
-            btnClose.SizeMode = PictureBoxSizeMode.Zoom;
+            btnClose.SizeMode = PictureBoxSizeMode.CenterImage;
             btnClose.TabIndex = 1;
             btnClose.TabStop = false;
             btnClose.Click += btnClose_Click;

@@ -92,7 +92,7 @@ namespace SistemaGym.UI.Windows
                 }
                 if (dialogResult == DialogResult.No)
                 {
-                    
+
                 }
             }
 
