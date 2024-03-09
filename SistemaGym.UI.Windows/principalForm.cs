@@ -94,7 +94,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            mantenimientoClientes clientesForm = new mantenimientoClientes();
+            frmClientes clientesForm = new frmClientes();
             clientesForm.Show();
             subAdministracion.Visible = false;
         }

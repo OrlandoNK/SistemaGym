@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvCliente = new DataGridView();
             IDCliente = new DataGridViewTextBoxColumn();
             IDUsuario = new DataGridViewComboBoxColumn();
@@ -163,9 +163,9 @@
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle2;
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             // 
@@ -214,7 +214,7 @@
             btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
             btnDelete.Cursor = Cursors.Hand;
-            btnDelete.CustomizableEdges = customizableEdges1;
+            btnDelete.CustomizableEdges = customizableEdges11;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -230,7 +230,7 @@
             btnDelete.Location = new Point(-1, 205);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedColor = Color.Transparent;
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnDelete.Size = new Size(200, 47);
             btnDelete.TabIndex = 4;
             btnDelete.Text = "&Eliminar";
@@ -240,7 +240,7 @@
             btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.CustomizableEdges = customizableEdges3;
+            btnEdit.CustomizableEdges = customizableEdges13;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -256,7 +256,7 @@
             btnEdit.Location = new Point(-1, 152);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedColor = Color.Transparent;
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnEdit.Size = new Size(200, 47);
             btnEdit.TabIndex = 3;
             btnEdit.Text = "&Editar";
@@ -266,7 +266,7 @@
             btnUpdateDGV.BorderColor = Color.DarkGoldenrod;
             btnUpdateDGV.BorderThickness = 1;
             btnUpdateDGV.Cursor = Cursors.Hand;
-            btnUpdateDGV.CustomizableEdges = customizableEdges5;
+            btnUpdateDGV.CustomizableEdges = customizableEdges15;
             btnUpdateDGV.DisabledState.BorderColor = Color.DarkGray;
             btnUpdateDGV.DisabledState.CustomBorderColor = Color.DarkGray;
             btnUpdateDGV.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -281,7 +281,7 @@
             btnUpdateDGV.Location = new Point(-1, 99);
             btnUpdateDGV.Name = "btnUpdateDGV";
             btnUpdateDGV.PressedColor = Color.Transparent;
-            btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnUpdateDGV.Size = new Size(200, 47);
             btnUpdateDGV.TabIndex = 2;
             // 
@@ -290,7 +290,7 @@
             btnGuardar.BorderColor = Color.DarkGoldenrod;
             btnGuardar.BorderThickness = 1;
             btnGuardar.Cursor = Cursors.Hand;
-            btnGuardar.CustomizableEdges = customizableEdges7;
+            btnGuardar.CustomizableEdges = customizableEdges17;
             btnGuardar.DisabledState.BorderColor = Color.DarkGray;
             btnGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGuardar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -306,7 +306,7 @@
             btnGuardar.Location = new Point(-1, 46);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
-            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnGuardar.Size = new Size(200, 47);
             btnGuardar.TabIndex = 1;
             btnGuardar.Text = "&Nuevo";
@@ -326,7 +326,7 @@
             // TxbBuscar
             // 
             TxbBuscar.BorderRadius = 25;
-            TxbBuscar.CustomizableEdges = customizableEdges9;
+            TxbBuscar.CustomizableEdges = customizableEdges19;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -341,7 +341,7 @@
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges20;
             TxbBuscar.Size = new Size(735, 51);
             TxbBuscar.TabIndex = 0;
             // 
