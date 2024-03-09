@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvCliente = new DataGridView();
             IDCliente = new DataGridViewTextBoxColumn();
             IDUsuario = new DataGridViewComboBoxColumn();
@@ -55,6 +55,7 @@
             FechaRegistro = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
+            btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
             btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -64,10 +65,15 @@
             panel4 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel5 = new Panel();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvCliente
@@ -163,9 +169,9 @@
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             // 
@@ -179,11 +185,26 @@
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(943, 61);
             panel1.TabIndex = 73;
+            // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnClose.Location = new Point(898, 13);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(32, 32);
+            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnClose.TabIndex = 0;
+            btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
             // 
             // panel2
             // 
@@ -214,7 +235,7 @@
             btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
             btnDelete.Cursor = Cursors.Hand;
-            btnDelete.CustomizableEdges = customizableEdges11;
+            btnDelete.CustomizableEdges = customizableEdges1;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -230,7 +251,7 @@
             btnDelete.Location = new Point(-1, 205);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedColor = Color.Transparent;
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnDelete.Size = new Size(200, 47);
             btnDelete.TabIndex = 4;
             btnDelete.Text = "&Eliminar";
@@ -240,7 +261,7 @@
             btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.CustomizableEdges = customizableEdges13;
+            btnEdit.CustomizableEdges = customizableEdges3;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -256,7 +277,7 @@
             btnEdit.Location = new Point(-1, 152);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedColor = Color.Transparent;
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnEdit.Size = new Size(200, 47);
             btnEdit.TabIndex = 3;
             btnEdit.Text = "&Editar";
@@ -266,7 +287,7 @@
             btnUpdateDGV.BorderColor = Color.DarkGoldenrod;
             btnUpdateDGV.BorderThickness = 1;
             btnUpdateDGV.Cursor = Cursors.Hand;
-            btnUpdateDGV.CustomizableEdges = customizableEdges15;
+            btnUpdateDGV.CustomizableEdges = customizableEdges5;
             btnUpdateDGV.DisabledState.BorderColor = Color.DarkGray;
             btnUpdateDGV.DisabledState.CustomBorderColor = Color.DarkGray;
             btnUpdateDGV.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -281,7 +302,7 @@
             btnUpdateDGV.Location = new Point(-1, 99);
             btnUpdateDGV.Name = "btnUpdateDGV";
             btnUpdateDGV.PressedColor = Color.Transparent;
-            btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnUpdateDGV.Size = new Size(200, 47);
             btnUpdateDGV.TabIndex = 2;
             // 
@@ -290,7 +311,7 @@
             btnGuardar.BorderColor = Color.DarkGoldenrod;
             btnGuardar.BorderThickness = 1;
             btnGuardar.Cursor = Cursors.Hand;
-            btnGuardar.CustomizableEdges = customizableEdges17;
+            btnGuardar.CustomizableEdges = customizableEdges7;
             btnGuardar.DisabledState.BorderColor = Color.DarkGray;
             btnGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGuardar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -306,7 +327,7 @@
             btnGuardar.Location = new Point(-1, 46);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
-            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnGuardar.Size = new Size(200, 47);
             btnGuardar.TabIndex = 1;
             btnGuardar.Text = "&Nuevo";
@@ -326,7 +347,7 @@
             // TxbBuscar
             // 
             TxbBuscar.BorderRadius = 25;
-            TxbBuscar.CustomizableEdges = customizableEdges19;
+            TxbBuscar.CustomizableEdges = customizableEdges9;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -335,13 +356,14 @@
             TxbBuscar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
             TxbBuscar.Location = new Point(3, 9);
             TxbBuscar.Name = "TxbBuscar";
             TxbBuscar.PasswordChar = '\0';
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             TxbBuscar.Size = new Size(735, 51);
             TxbBuscar.TabIndex = 0;
             // 
@@ -355,6 +377,28 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(743, 381);
             panel5.TabIndex = 77;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._Clientes_mainScreen_;
+            pictureBox1.Location = new Point(3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(62, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Goldenrod;
+            label1.Location = new Point(71, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(216, 24);
+            label1.TabIndex = 2;
+            label1.Text = "Mantenimiento Clientes";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // frmClientes
             // 
@@ -372,9 +416,13 @@
             Text = "Clientes";
             Load += frmClientes_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -404,5 +452,8 @@
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnUpdateDGV;
+        private PictureBox btnClose;
+        private PictureBox pictureBox1;
+        private Label label1;
     }
 }

@@ -75,6 +75,11 @@ namespace SistemaGym.UI.Windows
             nuevoCliente nuevoCliente = new nuevoCliente();
             nuevoCliente.Show();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 
 }
