@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -82,6 +83,10 @@ namespace SistemaGym.UI.Windows
             {
                 ClientesBLL.guardar(oCliente);
                 MessageBox.Show("Cliente Guardado de Manera Satisfactoria", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cliente. \nDetalles a Continuacion\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
