@@ -55,6 +55,8 @@
             FechaRegistro = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -65,15 +67,13 @@
             panel4 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel5 = new Panel();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvCliente
@@ -191,14 +191,37 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(943, 61);
+            panel1.Size = new Size(905, 61);
             panel1.TabIndex = 73;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Goldenrod;
+            label1.Location = new Point(71, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(216, 24);
+            label1.TabIndex = 2;
+            label1.Text = "Mantenimiento Clientes";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._Clientes_mainScreen_;
+            pictureBox1.Location = new Point(3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(62, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // btnClose
             // 
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(898, 13);
+            btnClose.Location = new Point(860, 13);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -213,7 +236,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 61);
             panel2.Name = "panel2";
-            panel2.Size = new Size(943, 34);
+            panel2.Size = new Size(905, 34);
             panel2.TabIndex = 74;
             // 
             // panel3
@@ -227,7 +250,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 95);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 451);
+            panel3.Size = new Size(200, 459);
             panel3.TabIndex = 75;
             // 
             // btnDelete
@@ -341,7 +364,7 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(200, 95);
             panel4.Name = "panel4";
-            panel4.Size = new Size(743, 70);
+            panel4.Size = new Size(705, 70);
             panel4.TabIndex = 76;
             // 
             // TxbBuscar
@@ -375,36 +398,14 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(200, 165);
             panel5.Name = "panel5";
-            panel5.Size = new Size(743, 381);
+            panel5.Size = new Size(705, 389);
             panel5.TabIndex = 77;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources._Clientes_mainScreen_;
-            pictureBox1.Location = new Point(3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(62, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Goldenrod;
-            label1.Location = new Point(71, 17);
-            label1.Name = "label1";
-            label1.Size = new Size(216, 24);
-            label1.TabIndex = 2;
-            label1.Text = "Mantenimiento Clientes";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // frmClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(943, 546);
+            ClientSize = new Size(905, 554);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -418,11 +419,11 @@
             ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
