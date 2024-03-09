@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txtTelRes = new TextBox();
             txtTelCell = new TextBox();
             txtDireccion = new TextBox();
@@ -72,9 +72,7 @@
             cbUsuario = new ComboBox();
             cbTipoListaCliente = new ComboBox();
             cbEstatus = new ComboBox();
-            btnNuevo = new Button();
             btnGuardar = new Button();
-            btnEliminar = new Button();
             dtpFechaRegistro = new DateTimePicker();
             errorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
@@ -146,8 +144,9 @@
             dgvCliente.Location = new Point(285, 48);
             dgvCliente.Name = "dgvCliente";
             dgvCliente.ReadOnly = true;
+            dgvCliente.RowHeadersVisible = false;
             dgvCliente.RowTemplate.Height = 25;
-            dgvCliente.Size = new Size(724, 410);
+            dgvCliente.Size = new Size(702, 410);
             dgvCliente.TabIndex = 72;
             dgvCliente.CellClick += dgvCliente_CellClick;
             // 
@@ -242,9 +241,9 @@
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle2;
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.ReadOnly = true;
@@ -432,35 +431,15 @@
             cbEstatus.Size = new Size(100, 23);
             cbEstatus.TabIndex = 92;
             // 
-            // btnNuevo
-            // 
-            btnNuevo.Location = new Point(16, 487);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(75, 23);
-            btnNuevo.TabIndex = 93;
-            btnNuevo.Text = "Nuevo";
-            btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click;
-            // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(105, 487);
+            btnGuardar.Location = new Point(96, 482);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 94;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(195, 487);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.RightToLeft = RightToLeft.No;
-            btnEliminar.Size = new Size(75, 23);
-            btnEliminar.TabIndex = 95;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
             // 
             // dtpFechaRegistro
             // 
@@ -477,11 +456,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1021, 628);
+            ClientSize = new Size(1021, 526);
             Controls.Add(dtpFechaRegistro);
-            Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
-            Controls.Add(btnNuevo);
             Controls.Add(cbEstatus);
             Controls.Add(cbTipoListaCliente);
             Controls.Add(cbUsuario);
@@ -510,6 +487,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmClientes";
             Text = "Clientes";
             Load += frmClientes_Load;
@@ -548,9 +526,7 @@
         private ComboBox cbUsuario;
         private ComboBox cbTipoListaCliente;
         private ComboBox cbEstatus;
-        private Button btnNuevo;
         private Button btnGuardar;
-        private Button btnEliminar;
         private DateTimePicker dtpFechaRegistro;
         private ErrorProvider errorProvider;
         private DataGridViewTextBoxColumn IDCliente;

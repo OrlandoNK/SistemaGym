@@ -15,7 +15,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmClientes : Form
     {
-        const string sistema = "Sistema Gym";
+        const string sistema = "Sistema Gestion Gimnasion (COMFORT GYM) dice:";
         public frmClientes()
         {
             InitializeComponent();
@@ -23,13 +23,8 @@ namespace SistemaGym.UI.Windows
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-             InicializarControles();
-           
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
             InicializarControles();
+
         }
         private void InicializarControles()
         {
@@ -46,15 +41,14 @@ namespace SistemaGym.UI.Windows
             CargarTipoCliente();
             dgvCliente.AutoGenerateColumns = false;
             dgvCliente.DataSource = ClientesBLL.MostrarCliente();
-
-
         }
+
         private void CargarUsuarios()
         {
             cbUsuario.DataSource = UsuarioBLL.Mostrar();
             cbUsuario.ValueMember = "IDUsuario";
             cbUsuario.DisplayMember = "NombreUsuario";
-           
+
             var colUsuario = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDUsuario"];
 
             colUsuario.ValueMember = "IDUsuario";
@@ -82,7 +76,7 @@ namespace SistemaGym.UI.Windows
             cbTipoListaCliente.ValueMember = "IDTipoListaCliente";
             cbTipoListaCliente.DisplayMember = "Nombre";
             cbTipoListaCliente.DataSource = TipoListaClienteBLL.MostrarTipoListaCliente();
-            
+
             var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDTipoListaCliente"];
 
             colTipoListaCliente.ValueMember = "IDTipoListaCliente";
@@ -95,7 +89,7 @@ namespace SistemaGym.UI.Windows
             cbTipoCliente.ValueMember = "IDTipoCliente";
             cbTipoCliente.DisplayMember = "Nombre";
             cbTipoCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
-           
+
             var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDTipoCliente"];
 
             colTipoListaCliente.ValueMember = "IDTipoCliente";
@@ -155,10 +149,9 @@ namespace SistemaGym.UI.Windows
             }
             if (string.IsNullOrEmpty(cbMembresia.Text))
             {
-                errorProvider.SetError(cbMembresia, "La Membresia es obligatori");
+                errorProvider.SetError(cbMembresia, "La Membresia es obligatoria");
                 resultado = false;
             }
-
 
             if (string.IsNullOrEmpty(cbTipoListaCliente.Text))
             {
@@ -219,7 +212,7 @@ namespace SistemaGym.UI.Windows
             dtpFechaRegistro.Text = row.Cells["FechaRegistro"].Value?.ToString();
             cbEstatus.Text = row.Cells["Estatus"].Value?.ToString();
 
-            
+
         }
     }
 
