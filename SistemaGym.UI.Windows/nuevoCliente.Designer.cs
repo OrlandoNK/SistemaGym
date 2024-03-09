@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
@@ -38,6 +38,7 @@
             btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
             groupBox2 = new GroupBox();
+            txtIDUsuario = new TextBox();
             label1 = new Label();
             txtUsuario = new TextBox();
             cbTipoListaCliente = new ComboBox();
@@ -48,16 +49,12 @@
             cbMembresia = new ComboBox();
             groupBox1 = new GroupBox();
             txtNombre = new TextBox();
-            dtpFechaRegistro = new DateTimePicker();
-            cbEstatus = new ComboBox();
-            label14 = new Label();
             cbTipoDocumento = new ComboBox();
             label6 = new Label();
             label8 = new Label();
             txtDocumento = new TextBox();
             label7 = new Label();
             label9 = new Label();
-            label13 = new Label();
             label10 = new Label();
             txtApellido = new TextBox();
             txtDireccion = new TextBox();
@@ -66,7 +63,7 @@
             label12 = new Label();
             txtTelRes = new TextBox();
             errorProvider = new ErrorProvider(components);
-            txtIDUsuario = new TextBox();
+            chEstatus = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -125,7 +122,7 @@
             btnGuardar.BorderColor = Color.DarkGoldenrod;
             btnGuardar.BorderThickness = 1;
             btnGuardar.Cursor = Cursors.Hand;
-            btnGuardar.CustomizableEdges = customizableEdges3;
+            btnGuardar.CustomizableEdges = customizableEdges1;
             btnGuardar.DisabledState.BorderColor = Color.DarkGray;
             btnGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGuardar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -140,7 +137,7 @@
             btnGuardar.Location = new Point(-1, 44);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
-            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnGuardar.Size = new Size(204, 55);
             btnGuardar.TabIndex = 0;
             btnGuardar.Text = "&Guardar";
@@ -175,6 +172,16 @@
             groupBox2.TabIndex = 126;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Relacionados al Cliente";
+            // 
+            // txtIDUsuario
+            // 
+            txtIDUsuario.Enabled = false;
+            txtIDUsuario.Location = new Point(119, 130);
+            txtIDUsuario.Multiline = true;
+            txtIDUsuario.Name = "txtIDUsuario";
+            txtIDUsuario.ReadOnly = true;
+            txtIDUsuario.Size = new Size(96, 25);
+            txtIDUsuario.TabIndex = 125;
             // 
             // label1
             // 
@@ -244,17 +251,14 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(chEstatus);
             groupBox1.Controls.Add(txtNombre);
-            groupBox1.Controls.Add(dtpFechaRegistro);
-            groupBox1.Controls.Add(cbEstatus);
-            groupBox1.Controls.Add(label14);
             groupBox1.Controls.Add(cbTipoDocumento);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(txtDocumento);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(label13);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(txtApellido);
             groupBox1.Controls.Add(txtDireccion);
@@ -277,32 +281,6 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(100, 25);
             txtNombre.TabIndex = 112;
-            // 
-            // dtpFechaRegistro
-            // 
-            dtpFechaRegistro.Format = DateTimePickerFormat.Short;
-            dtpFechaRegistro.Location = new Point(6, 226);
-            dtpFechaRegistro.Name = "dtpFechaRegistro";
-            dtpFechaRegistro.RightToLeft = RightToLeft.No;
-            dtpFechaRegistro.Size = new Size(158, 23);
-            dtpFechaRegistro.TabIndex = 124;
-            // 
-            // cbEstatus
-            // 
-            cbEstatus.FormattingEnabled = true;
-            cbEstatus.Items.AddRange(new object[] { "Activo", "Inactivo" });
-            cbEstatus.Location = new Point(520, 228);
-            cbEstatus.Name = "cbEstatus";
-            cbEstatus.Size = new Size(136, 25);
-            cbEstatus.TabIndex = 123;
-            // 
-            // label14
-            // 
-            label14.Location = new Point(520, 207);
-            label14.Name = "label14";
-            label14.Size = new Size(136, 18);
-            label14.TabIndex = 110;
-            label14.Text = "Estatus";
             // 
             // cbTipoDocumento
             // 
@@ -353,17 +331,9 @@
             label9.TabIndex = 105;
             label9.Text = "Documento";
             // 
-            // label13
-            // 
-            label13.Location = new Point(6, 205);
-            label13.Name = "label13";
-            label13.Size = new Size(158, 18);
-            label13.TabIndex = 109;
-            label13.Text = "Fecha Registro";
-            // 
             // label10
             // 
-            label10.Location = new Point(175, 117);
+            label10.Location = new Point(93, 128);
             label10.Name = "label10";
             label10.Size = new Size(100, 18);
             label10.TabIndex = 106;
@@ -379,7 +349,7 @@
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(175, 138);
+            txtDireccion.Location = new Point(93, 149);
             txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(100, 25);
@@ -387,7 +357,7 @@
             // 
             // label11
             // 
-            label11.Location = new Point(281, 117);
+            label11.Location = new Point(199, 128);
             label11.Name = "label11";
             label11.Size = new Size(100, 18);
             label11.TabIndex = 107;
@@ -395,7 +365,7 @@
             // 
             // txtTelCell
             // 
-            txtTelCell.Location = new Point(281, 138);
+            txtTelCell.Location = new Point(199, 149);
             txtTelCell.Multiline = true;
             txtTelCell.Name = "txtTelCell";
             txtTelCell.Size = new Size(100, 25);
@@ -403,7 +373,7 @@
             // 
             // label12
             // 
-            label12.Location = new Point(387, 117);
+            label12.Location = new Point(305, 128);
             label12.Name = "label12";
             label12.Size = new Size(100, 18);
             label12.TabIndex = 108;
@@ -411,7 +381,7 @@
             // 
             // txtTelRes
             // 
-            txtTelRes.Location = new Point(387, 138);
+            txtTelRes.Location = new Point(305, 149);
             txtTelRes.Multiline = true;
             txtTelRes.Name = "txtTelRes";
             txtTelRes.Size = new Size(100, 25);
@@ -421,15 +391,15 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // txtIDUsuario
+            // chEstatus
             // 
-            txtIDUsuario.Enabled = false;
-            txtIDUsuario.Location = new Point(119, 130);
-            txtIDUsuario.Multiline = true;
-            txtIDUsuario.Name = "txtIDUsuario";
-            txtIDUsuario.ReadOnly = true;
-            txtIDUsuario.Size = new Size(96, 25);
-            txtIDUsuario.TabIndex = 125;
+            chEstatus.CheckAlign = ContentAlignment.MiddleRight;
+            chEstatus.Location = new Point(469, 149);
+            chEstatus.Name = "chEstatus";
+            chEstatus.Size = new Size(100, 25);
+            chEstatus.TabIndex = 124;
+            chEstatus.Text = "Estatus";
+            chEstatus.UseVisualStyleBackColor = true;
             // 
             // nuevoCliente
             // 
@@ -462,8 +432,6 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
-        private DateTimePicker dtpFechaRegistro;
-        private ComboBox cbEstatus;
         private ComboBox cbTipoListaCliente;
         private ComboBox cbTipoDocumento;
         private ComboBox cbTipoCliente;
@@ -474,8 +442,6 @@
         private TextBox txtDocumento;
         private TextBox txtApellido;
         private TextBox txtNombre;
-        private Label label14;
-        private Label label13;
         private Label label12;
         private Label label11;
         private Label label10;
@@ -494,5 +460,6 @@
         private PictureBox pictureBox1;
         private ErrorProvider errorProvider;
         private TextBox txtIDUsuario;
+        private CheckBox chEstatus;
     }
 }

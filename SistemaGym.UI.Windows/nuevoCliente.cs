@@ -76,8 +76,26 @@ namespace SistemaGym.UI.Windows
             oCliente.Direccion = txtDireccion.Text;
             oCliente.TelCell = txtTelCell.Text;
             oCliente.TelRes = txtTelRes.Text;
-            oCliente.FechaRegistro = DateTime.Parse(dtpFechaRegistro.Text);
-            oCliente.Estatus = cbEstatus.Text;
+            oCliente.FechaRegistro = DateTime.Now;
+
+            if (chEstatus.Checked)
+            {
+                oCliente.Estatus = "Activo";
+            }
+            else
+            {
+                DialogResult dialogResult = new DialogResult();
+                dialogResult = MessageBox.Show("¿Seguro que desea Guardar el Cliente como Inactivo?", sistema, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    oCliente.Estatus = "Inactivo";
+                }
+                if (dialogResult == DialogResult.No)
+                {
+
+                }
+            }
+
             // guardar base datos
             try
             {
@@ -125,16 +143,6 @@ namespace SistemaGym.UI.Windows
             if (string.IsNullOrEmpty(txtApellido.Text))
             {
                 errorProvider.SetError(txtApellido, "El Apellido es obligatorio");
-                resultado = false;
-            }
-            if (string.IsNullOrEmpty(dtpFechaRegistro.Text))
-            {
-                errorProvider.SetError(dtpFechaRegistro, "La Fecha es obligatorio");
-                resultado = false;
-            }
-            if (string.IsNullOrEmpty(cbEstatus.Text))
-            {
-                errorProvider.SetError(cbEstatus, "El Estatus es obligatorio");
                 resultado = false;
             }
 
