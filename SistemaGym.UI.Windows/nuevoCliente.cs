@@ -18,9 +18,10 @@ namespace SistemaGym.UI.Windows
         {
             InitializeComponent();
         }
-
+        const string sistema = "Sistema Gestion Gimnasion (COMFORT GYM) dice:";
         private void nuevoCliente_Load(object sender, EventArgs e)
         {
+            txtIDUsuario.Text = gestioUsuarioEntities.IDUserLogged;
             txtUsuario.Text = gestioUsuarioEntities.usernameLogged;
             CargarMembresia();
             CargarTipoCliente();
@@ -52,5 +53,88 @@ namespace SistemaGym.UI.Windows
         {
             Close();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //validar los datos
+            if (!ValidarDatos())
+            {
+                return;
+
+            }
+            //datos de control al objeto
+            ClientesEntity oCliente = new ClientesEntity();
+            oCliente.IDUsuario = Convert.ToInt32(txtIDUsuario.Text);
+            oCliente.IDMembresia = (int)cbMembresia.SelectedValue;
+            oCliente.TipoListaCliente = (int)cbTipoListaCliente.SelectedValue;
+            oCliente.TipoCliente = (int)cbTipoCliente.SelectedValue;
+            oCliente.Nombre = txtNombre.Text;
+            oCliente.Apellido = txtApellido.Text;
+            oCliente.TipoDocumento = cbTipoDocumento.Text;
+            oCliente.Documento = txtDocumento.Text;
+            oCliente.Direccion = txtDireccion.Text;
+            oCliente.TelCell = txtTelCell.Text;
+            oCliente.TelRes = txtTelRes.Text;
+            oCliente.FechaRegistro = DateTime.Parse(dtpFechaRegistro.Text);
+            oCliente.Estatus = cbEstatus.Text;
+            // guardar base datos
+            try
+            {
+                ClientesBLL.guardar(oCliente);
+                MessageBox.Show("Cliente Guardado de Manera Satisfactoria", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cliente. \nDetalles a Continuacion\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ValidarDatos()
+        {
+            bool resultado = true;
+            //inicializando los mensajes de validaciones
+            errorProvider.Clear();
+            //verificar que en los campos obligatorios hayan datos
+
+            if (string.IsNullOrEmpty(cbMembresia.Text))
+            {
+                errorProvider.SetError(cbMembresia, "La Membresia es obligatoria");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(cbTipoListaCliente.Text))
+            {
+                errorProvider.SetError(cbTipoListaCliente, "Obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(cbTipoCliente.Text))
+            {
+                errorProvider.SetError(cbTipoCliente, "El TipoCliente es obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                errorProvider.SetError(txtNombre, "El Nombre es obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(txtApellido.Text))
+            {
+                errorProvider.SetError(txtApellido, "El Apellido es obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(dtpFechaRegistro.Text))
+            {
+                errorProvider.SetError(dtpFechaRegistro, "La Fecha es obligatorio");
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(cbEstatus.Text))
+            {
+                errorProvider.SetError(cbEstatus, "El Estatus es obligatorio");
+                resultado = false;
+            }
+
+            return resultado;
+        }
+
     }
 }

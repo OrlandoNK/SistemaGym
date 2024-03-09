@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvCliente = new DataGridView();
             IDCliente = new DataGridViewTextBoxColumn();
             IDUsuario = new DataGridViewComboBoxColumn();
@@ -45,10 +44,7 @@
             TelRes = new DataGridViewTextBoxColumn();
             FechaRegistro = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
-            btnGuardar = new Button();
-            errorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // dgvCliente
@@ -64,7 +60,6 @@
             dgvCliente.RowTemplate.Height = 25;
             dgvCliente.Size = new Size(702, 410);
             dgvCliente.TabIndex = 72;
-            dgvCliente.CellClick += dgvCliente_CellClick;
             // 
             // IDCliente
             // 
@@ -157,9 +152,9 @@
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.ReadOnly = true;
@@ -171,40 +166,22 @@
             Estatus.Name = "Estatus";
             Estatus.ReadOnly = true;
             // 
-            // btnGuardar
-            // 
-            btnGuardar.Location = new Point(96, 482);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(75, 23);
-            btnGuardar.TabIndex = 94;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
-            // 
-            // errorProvider
-            // 
-            errorProvider.ContainerControl = this;
-            // 
             // frmClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1021, 526);
-            Controls.Add(btnGuardar);
             Controls.Add(dgvCliente);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmClientes";
             Text = "Clientes";
             Load += frmClientes_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private DataGridView dgvCliente;
-        private Button btnGuardar;
-        private ErrorProvider errorProvider;
         private DataGridViewTextBoxColumn IDCliente;
         private DataGridViewComboBoxColumn IDUsuario;
         private DataGridViewComboBoxColumn IDMembresia;

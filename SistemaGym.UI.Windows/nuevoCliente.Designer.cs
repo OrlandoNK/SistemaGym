@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
+            btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
             groupBox2 = new GroupBox();
             label1 = new Label();
@@ -62,14 +65,15 @@
             txtTelCell = new TextBox();
             label12 = new Label();
             txtTelRes = new TextBox();
-            btnGuardar = new Guna.UI2.WinForms.Guna2Button();
-            pictureBox1 = new PictureBox();
+            errorProvider = new ErrorProvider(components);
+            txtIDUsuario = new TextBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -82,6 +86,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(880, 60);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Image = Properties.Resources._BotonXcerrarVentana;
+            pictureBox1.Location = new Point(832, 13);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(32, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
@@ -104,6 +120,32 @@
             panel3.Size = new Size(200, 458);
             panel3.TabIndex = 2;
             // 
+            // btnGuardar
+            // 
+            btnGuardar.BorderColor = Color.DarkGoldenrod;
+            btnGuardar.BorderThickness = 1;
+            btnGuardar.Cursor = Cursors.Hand;
+            btnGuardar.CustomizableEdges = customizableEdges3;
+            btnGuardar.DisabledState.BorderColor = Color.DarkGray;
+            btnGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGuardar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGuardar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGuardar.FillColor = Color.Transparent;
+            btnGuardar.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.HoverState.FillColor = Color.DarkGoldenrod;
+            btnGuardar.HoverState.ForeColor = Color.Black;
+            btnGuardar.Image = Properties.Resources._SaveFacturaProduct;
+            btnGuardar.ImageSize = new Size(25, 25);
+            btnGuardar.Location = new Point(-1, 44);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.PressedColor = Color.Transparent;
+            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnGuardar.Size = new Size(204, 55);
+            btnGuardar.TabIndex = 0;
+            btnGuardar.Text = "&Guardar";
+            btnGuardar.Click += btnGuardar_Click;
+            // 
             // panel4
             // 
             panel4.BackColor = Color.WhiteSmoke;
@@ -117,6 +159,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(txtIDUsuario);
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(txtUsuario);
             groupBox2.Controls.Add(cbTipoListaCliente);
@@ -135,20 +178,20 @@
             // 
             // label1
             // 
-            label1.Location = new Point(168, 108);
+            label1.Location = new Point(119, 108);
             label1.Name = "label1";
-            label1.Size = new Size(326, 19);
+            label1.Size = new Size(424, 19);
             label1.TabIndex = 124;
             label1.Text = "Usuario";
             // 
             // txtUsuario
             // 
             txtUsuario.Enabled = false;
-            txtUsuario.Location = new Point(168, 130);
+            txtUsuario.Location = new Point(225, 130);
             txtUsuario.Multiline = true;
             txtUsuario.Name = "txtUsuario";
             txtUsuario.ReadOnly = true;
-            txtUsuario.Size = new Size(326, 25);
+            txtUsuario.Size = new Size(318, 25);
             txtUsuario.TabIndex = 123;
             // 
             // cbTipoListaCliente
@@ -374,42 +417,19 @@
             txtTelRes.Size = new Size(100, 25);
             txtTelRes.TabIndex = 117;
             // 
-            // btnGuardar
+            // errorProvider
             // 
-            btnGuardar.BorderColor = Color.DarkGoldenrod;
-            btnGuardar.BorderThickness = 1;
-            btnGuardar.Cursor = Cursors.Hand;
-            btnGuardar.CustomizableEdges = customizableEdges3;
-            btnGuardar.DisabledState.BorderColor = Color.DarkGray;
-            btnGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnGuardar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnGuardar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnGuardar.FillColor = Color.Transparent;
-            btnGuardar.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGuardar.ForeColor = Color.White;
-            btnGuardar.HoverState.FillColor = Color.DarkGoldenrod;
-            btnGuardar.HoverState.ForeColor = Color.Black;
-            btnGuardar.Image = Properties.Resources._SaveFacturaProduct;
-            btnGuardar.ImageSize = new Size(25, 25);
-            btnGuardar.Location = new Point(-1, 44);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.PressedColor = Color.Transparent;
-            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnGuardar.Size = new Size(204, 55);
-            btnGuardar.TabIndex = 0;
-            btnGuardar.Text = "&Guardar";
+            errorProvider.ContainerControl = this;
             // 
-            // pictureBox1
+            // txtIDUsuario
             // 
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = Properties.Resources._BotonXcerrarVentana;
-            pictureBox1.Location = new Point(832, 13);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(32, 32);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            txtIDUsuario.Enabled = false;
+            txtIDUsuario.Location = new Point(119, 130);
+            txtIDUsuario.Multiline = true;
+            txtIDUsuario.Name = "txtIDUsuario";
+            txtIDUsuario.ReadOnly = true;
+            txtIDUsuario.Size = new Size(96, 25);
+            txtIDUsuario.TabIndex = 125;
             // 
             // nuevoCliente
             // 
@@ -425,13 +445,14 @@
             Load += nuevoCliente_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -471,5 +492,7 @@
         private TextBox txtUsuario;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private PictureBox pictureBox1;
+        private ErrorProvider errorProvider;
+        private TextBox txtIDUsuario;
     }
 }
