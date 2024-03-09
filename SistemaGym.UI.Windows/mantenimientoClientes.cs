@@ -59,10 +59,6 @@ namespace SistemaGym.UI.Windows
         }
         private void CargarMembresia()
         {
-            cbMembresia.ValueMember = "IDMembresia";
-            cbMembresia.DisplayMember = "Nombre";
-            cbMembresia.DataSource = MembresiaBLL.Mostrar();
-
             var colMembresia = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDMembresia"];
 
             colMembresia.ValueMember = "IDMembresia";
@@ -72,11 +68,6 @@ namespace SistemaGym.UI.Windows
         }
         private void CargarTipoListaCliente()
         {
-
-            cbTipoListaCliente.ValueMember = "IDTipoListaCliente";
-            cbTipoListaCliente.DisplayMember = "Nombre";
-            cbTipoListaCliente.DataSource = TipoListaClienteBLL.MostrarTipoListaCliente();
-
             var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDTipoListaCliente"];
 
             colTipoListaCliente.ValueMember = "IDTipoListaCliente";
@@ -86,9 +77,6 @@ namespace SistemaGym.UI.Windows
         }
         private void CargarTipoCliente()
         {
-            cbTipoCliente.ValueMember = "IDTipoCliente";
-            cbTipoCliente.DisplayMember = "Nombre";
-            cbTipoCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
 
             var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDTipoCliente"];
 
