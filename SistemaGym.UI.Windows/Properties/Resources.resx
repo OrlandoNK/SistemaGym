@@ -128,8 +128,9 @@
     <value>..\Resources\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
     <data name="Asistencia Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Asistencia Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+      <value>..\Resources\Asistencia Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    </data>
+      <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="direccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -158,7 +159,8 @@
   </data>
   <data name="#SaveFacturaProduct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#SaveFacturaProduct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="COMFORT GYM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  </data>
+    <data name="COMFORT GYM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\COMFORT GYM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn cerrar ventana x x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -208,7 +210,8 @@
   </data>
   <data name="facturaproducto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facturaproducto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="facturaproducto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  </data>
+    <data name="facturaproducto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facturaproducto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Delete Icon x32-" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -246,7 +249,8 @@
   </data>
   <data name="#searchfacturabtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#searchfacturabtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="desplegable true 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  </data>
+    <data name="desplegable true 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\desplegable true 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn actualizar lista proveedores x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -272,7 +276,8 @@
   </data>
   <data name="COMFORT GYM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\COMFORT GYM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="telefono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  </data>
+    <data name="telefono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\telefono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-editar-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -514,7 +519,8 @@
   </data>
   <data name="#ActualizarFacturaMembresia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#ActualizarFacturaMembresia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="button for modifying providers x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+ </data>
+   <data name="button for modifying providers x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button for modifying providers x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Comfort GYM - Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -525,7 +531,8 @@
   </data>
   <data name="&amp;mantenimientoProductos(x32-MainsScreen)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\&amp;mantenimientoProductos(x32-MainsScreen).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="button for deleting providers x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  </data>
+    <data name="button for deleting providers x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button for deleting providers x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            label4 = new Label();
+            pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -51,15 +53,13 @@
             mskbxTellProveedor = new MaskedTextBox();
             label1 = new Label();
             errorProvider = new ErrorProvider(components);
-            label4 = new Label();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -75,15 +75,36 @@
             panel1.Size = new Size(642, 65);
             panel1.TabIndex = 0;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.Goldenrod;
+            label4.Location = new Point(71, 19);
+            label4.Name = "label4";
+            label4.Size = new Size(116, 24);
+            label4.TabIndex = 5;
+            label4.Text = "Proveedores";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.icono_proveedor_x32_qsy_xd;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(62, 57);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
             // btnClose
             // 
             btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources.btn_cerrar_ventana_x_x32;
-            btnClose.Location = new Point(584, 10);
+            btnClose.Location = new Point(597, 15);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(45, 42);
-            btnClose.SizeMode = PictureBoxSizeMode.Zoom;
+            btnClose.Size = new Size(32, 32);
+            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
             btnClose.TabIndex = 3;
             btnClose.TabStop = false;
             btnClose.Click += btnClose_Click;
@@ -202,7 +223,7 @@
             btnGuardarProveedor.BorderColor = Color.Goldenrod;
             btnGuardarProveedor.BorderThickness = 1;
             btnGuardarProveedor.Cursor = Cursors.Hand;
-            btnGuardarProveedor.CustomizableEdges = customizableEdges7;
+            btnGuardarProveedor.CustomizableEdges = customizableEdges1;
             btnGuardarProveedor.DisabledState.BorderColor = Color.DarkGray;
             btnGuardarProveedor.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGuardarProveedor.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -215,7 +236,7 @@
             btnGuardarProveedor.Image = Properties.Resources.button_for_saving_providers_x32;
             btnGuardarProveedor.Location = new Point(-1, 277);
             btnGuardarProveedor.Name = "btnGuardarProveedor";
-            btnGuardarProveedor.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnGuardarProveedor.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnGuardarProveedor.Size = new Size(198, 45);
             btnGuardarProveedor.TabIndex = 8;
             btnGuardarProveedor.Text = "&Guardar";
@@ -273,27 +294,6 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.Goldenrod;
-            label4.Location = new Point(71, 19);
-            label4.Name = "label4";
-            label4.Size = new Size(116, 24);
-            label4.TabIndex = 5;
-            label4.Text = "Proveedores";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.icono_proveedor_x32_qsy_xd;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(62, 57);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            // 
             // registrarProveedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -307,13 +307,13 @@
             StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
