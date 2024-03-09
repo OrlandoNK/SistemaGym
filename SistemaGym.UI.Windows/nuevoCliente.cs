@@ -101,6 +101,7 @@ namespace SistemaGym.UI.Windows
             {
                 ClientesBLL.guardar(oCliente);
                 MessageBox.Show("Cliente Guardado de Manera Satisfactoria", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarCampos();
             }
             catch (SqlException ex)
             {
@@ -147,6 +148,22 @@ namespace SistemaGym.UI.Windows
             }
 
             return resultado;
+        }
+
+        private void LimpiarCampos()
+        {
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtDocumento.Clear();
+            cbMembresia.SelectedIndex = -1;
+            cbTipoCliente.SelectedIndex = -1;
+            cbTipoDocumento.SelectedIndex = -1;
+            cbTipoListaCliente.SelectedIndex = -1;
+            txtDireccion.Clear();
+            txtUsuario.Clear();
+            txtIDUsuario.Clear();
+            txtTelCell.Clear();
+            txtTelRes.Clear();
         }
 
     }
