@@ -39,23 +39,23 @@
             TxbContraseña = new Guna.UI2.WinForms.Guna2TextBox();
             TxbUsuario = new Guna.UI2.WinForms.Guna2TextBox();
             panel1 = new Panel();
-            panel2 = new Panel();
             pictureBox1 = new PictureBox();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)btnCerrarLogin).BeginInit();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // btnCerrarLogin
             // 
-            btnCerrarLogin.Anchor = AnchorStyles.None;
+            btnCerrarLogin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCerrarLogin.Cursor = Cursors.Hand;
-            btnCerrarLogin.Image = Properties.Resources._ForCloseWindowX___;
-            btnCerrarLogin.Location = new Point(492, 11);
+            btnCerrarLogin.Image = Properties.Resources._BotonXcerrarVentana;
+            btnCerrarLogin.Location = new Point(532, 11);
             btnCerrarLogin.Name = "btnCerrarLogin";
-            btnCerrarLogin.Size = new Size(51, 49);
-            btnCerrarLogin.SizeMode = PictureBoxSizeMode.Zoom;
+            btnCerrarLogin.Size = new Size(32, 32);
+            btnCerrarLogin.SizeMode = PictureBoxSizeMode.AutoSize;
             btnCerrarLogin.TabIndex = 3;
             btnCerrarLogin.TabStop = false;
             btnCerrarLogin.Click += btnCerrarLogin_Click;
@@ -78,7 +78,7 @@
             btnEntrar.HoverState.FillColor = Color.Goldenrod;
             btnEntrar.HoverState.ForeColor = Color.Black;
             btnEntrar.ImageSize = new Size(28, 28);
-            btnEntrar.Location = new Point(34, 273);
+            btnEntrar.Location = new Point(44, 272);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.PressedColor = Color.LightYellow;
             btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -104,7 +104,7 @@
             TxbContraseña.ForeColor = Color.White;
             TxbContraseña.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbContraseña.IconLeft = Properties.Resources._PasswordLogin_x32_;
-            TxbContraseña.Location = new Point(34, 184);
+            TxbContraseña.Location = new Point(44, 183);
             TxbContraseña.Name = "TxbContraseña";
             TxbContraseña.PasswordChar = '●';
             TxbContraseña.PlaceholderForeColor = Color.Gainsboro;
@@ -133,7 +133,7 @@
             TxbUsuario.ForeColor = Color.White;
             TxbUsuario.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbUsuario.IconLeft = Properties.Resources._UsuarioLogin_x32_;
-            TxbUsuario.Location = new Point(34, 125);
+            TxbUsuario.Location = new Point(44, 124);
             TxbUsuario.Name = "TxbUsuario";
             TxbUsuario.PasswordChar = '\0';
             TxbUsuario.PlaceholderForeColor = Color.Gainsboro;
@@ -151,8 +151,19 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(226, 438);
+            panel1.Size = new Size(226, 436);
             panel1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.Confort_GYM_SidePanel;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(224, 434);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -165,25 +176,14 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(226, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(556, 438);
+            panel2.Size = new Size(577, 436);
             panel2.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.Confort_GYM_SidePanel;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(224, 436);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 438);
+            ClientSize = new Size(803, 436);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -192,8 +192,9 @@
             Text = "Comfort GYM - INICIAR SESION";
             ((System.ComponentModel.ISupportInitialize)btnCerrarLogin).EndInit();
             panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 

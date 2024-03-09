@@ -19,10 +19,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             
             Conexion.Open();
-            string insertar = "Insert into Clientes(IDUsuario, IDMembresia, TipoListaCliente, TipoCliente," +
-                " Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus)" +
-                " values(@idusuario, @idmembresia, @idtipolistacliente, @idtipocliente, @nombre, @apellido, " +
-                "@tipodocumento, @documento, @direccion, @telcell, @telres, @fecharegistro, @estatus)";
+            string insertar = "INSERT INTO Clientes(IDUsuario, IDMembresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus) VALUES(@idusuario, @idmembresia, @idtipolistacliente, @idtipocliente, @nombre, @apellido, @tipodocumento, @documento, @direccion, @telcell, @telres, @fecharegistro, @estatus)";
             SqlCommand cmd = new SqlCommand( insertar, Conexion );
             cmd.Parameters.AddWithValue("@idusuario", clientes.IDUsuario);
             cmd.Parameters.AddWithValue("@idmembresia", clientes.IDMembresia);

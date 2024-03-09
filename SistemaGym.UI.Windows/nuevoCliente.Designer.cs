@@ -64,6 +64,8 @@
             label12 = new Label();
             txtTelRes = new TextBox();
             errorProvider = new ErrorProvider(components);
+            label2 = new Label();
+            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -71,12 +73,15 @@
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -401,6 +406,28 @@
             // 
             errorProvider.ContainerControl = this;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.Goldenrod;
+            label2.Location = new Point(71, 17);
+            label2.Name = "label2";
+            label2.Size = new Size(161, 24);
+            label2.TabIndex = 4;
+            label2.Text = "Registrar Clientes";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources._Clientes_mainScreen_;
+            pictureBox2.Location = new Point(3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(62, 50);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
+            // 
             // nuevoCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -424,6 +451,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -462,5 +490,7 @@
         private ErrorProvider errorProvider;
         private TextBox txtIDUsuario;
         private CheckBox chEstatus;
+        private Label label2;
+        private PictureBox pictureBox2;
     }
 }
