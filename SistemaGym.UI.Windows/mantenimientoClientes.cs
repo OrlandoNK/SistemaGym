@@ -30,7 +30,7 @@ namespace SistemaGym.UI.Windows
             CargarTipoCliente();
             CargarTipoListaCliente();
         }
-        
+
         private void CargarUsuarios()
         {
             var colUsuario = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDUsuario"];
@@ -70,6 +70,11 @@ namespace SistemaGym.UI.Windows
             colTipoListaCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            nuevoCliente nuevoCliente = new nuevoCliente();
+            nuevoCliente.Show();
+        }
     }
 
 }

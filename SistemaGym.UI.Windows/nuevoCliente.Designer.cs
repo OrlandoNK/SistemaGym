@@ -48,6 +48,7 @@
             label5 = new Label();
             cbMembresia = new ComboBox();
             groupBox1 = new GroupBox();
+            chEstatus = new CheckBox();
             txtNombre = new TextBox();
             cbTipoDocumento = new ComboBox();
             label6 = new Label();
@@ -63,7 +64,6 @@
             label12 = new Label();
             txtTelRes = new TextBox();
             errorProvider = new ErrorProvider(components);
-            chEstatus = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -274,6 +274,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Personales del Cliente";
             // 
+            // chEstatus
+            // 
+            chEstatus.CheckAlign = ContentAlignment.MiddleRight;
+            chEstatus.Location = new Point(469, 149);
+            chEstatus.Name = "chEstatus";
+            chEstatus.Size = new Size(100, 25);
+            chEstatus.TabIndex = 124;
+            chEstatus.Text = "Estatus";
+            chEstatus.UseVisualStyleBackColor = true;
+            // 
             // txtNombre
             // 
             txtNombre.Location = new Point(363, 76);
@@ -391,16 +401,6 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // chEstatus
-            // 
-            chEstatus.CheckAlign = ContentAlignment.MiddleRight;
-            chEstatus.Location = new Point(469, 149);
-            chEstatus.Name = "chEstatus";
-            chEstatus.Size = new Size(100, 25);
-            chEstatus.TabIndex = 124;
-            chEstatus.Text = "Estatus";
-            chEstatus.UseVisualStyleBackColor = true;
-            // 
             // nuevoCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -412,6 +412,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "nuevoCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += nuevoCliente_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
