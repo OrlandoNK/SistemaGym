@@ -16,6 +16,11 @@ namespace SistemaGym.BLL
         {
             ClientesDAL.InsertarCliente(clientes);
         }
+
+        public static void update(ClientesEntity clientes)
+        {
+            ClientesDAL.ActualizarCliente(clientes);
+        }
         public static bool Eliminar(ClientesEntity clientes)
         {
             return ClientesDAL.EliminarCliente(clientes);
