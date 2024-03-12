@@ -27,6 +27,11 @@ namespace SistemaGym.BLL
             }
         }
 
+        public static string ObtenerRolUsuario(string usuario, string contraseña)
+        {
+            return RolDAL.ObtenerRolUsuario(usuario, contraseña);
+        }
+
         public static bool EliminarRol(RolEntity rol)
         {
             return RolDAL.EliminarRolDal(rol);

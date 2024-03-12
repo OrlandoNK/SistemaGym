@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Policy;
 
 namespace SistemaGym.DAL
 {
@@ -35,7 +36,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string actualizar = "Update Rol set Nombre=@Nombre, Descripcion=@Descripcion where IDRol= @idRol ";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
-           
+
             cmd.Parameters.AddWithValue("@Nombre", rol.Nombre);
             cmd.Parameters.AddWithValue("@Descripcion", rol.Descripcion);
             cmd.Parameters.AddWithValue("@idRol", rol.IDRol);
@@ -43,6 +44,41 @@ namespace SistemaGym.DAL
 
 
         }
+
+        public static string ObtenerRolUsuario(string usuario, string contraseña)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            string rol = string.Empty;
+
+            try
+            {
+                
+                {
+                    Conexion.Open();
+                    string consultaRol = "SELECT Rol.Nombre FROM Usuarios INNER JOIN Rol ON Usuarios.IDRol = Rol.IDRol WHERE NombreUsuario = @Usuario AND Contrasena = @Contrasena";
+
+                    using (SqlCommand cmd = new SqlCommand(consultaRol, Conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@Usuario", usuario);
+                        cmd.Parameters.AddWithValue("@Contrasena", contraseña);
+
+                        using (SqlDataReader lector = cmd.ExecuteReader())
+                        {
+                            if (lector.Read())
+                                rol = lector["Nombre"].ToString();
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                
+            }
+            return rol;
+        }
+
         //funcion eliminar Rol
 
         public static bool EliminarRolDal(RolEntity rol)

@@ -72,6 +72,7 @@ namespace SistemaGym.UI.Windows
         private void principalForm_Load(object sender, EventArgs e)
         {
             lblusuario.Text = gestioUsuarioEntities.usernameLogged;
+            lblRolUsuario.Text = "[" + gestioUsuarioEntities.rolUsuarioLogged + "]";
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)

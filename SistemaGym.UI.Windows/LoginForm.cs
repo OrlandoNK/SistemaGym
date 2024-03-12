@@ -38,6 +38,7 @@ namespace SistemaGym.UI.Windows
             UsuarioBLL usuarioBLL = new UsuarioBLL();
             gestioUsuarioEntities.IDUserLogged = usuarioBLL.GetIDFromUser(nombreUsuario, contrasena);
             gestioUsuarioEntities.usernameLogged = usuarioBLL.GetNameFromUser(nombreUsuario, contrasena);
+            gestioUsuarioEntities.rolUsuarioLogged = RolBLL.ObtenerRolUsuario(nombreUsuario, contrasena);
 
             if (resultadoAutenticacion > 0)
             {
