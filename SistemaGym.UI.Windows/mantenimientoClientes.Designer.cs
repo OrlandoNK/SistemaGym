@@ -28,32 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvCliente = new DataGridView();
-            IDCliente = new DataGridViewTextBoxColumn();
-            IDUsuario = new DataGridViewComboBoxColumn();
-            IDMembresia = new DataGridViewComboBoxColumn();
-            IDTipoListaCliente = new DataGridViewComboBoxColumn();
-            IDTipoCliente = new DataGridViewComboBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Apellido = new DataGridViewTextBoxColumn();
-            TipoDocumento = new DataGridViewTextBoxColumn();
-            Documento = new DataGridViewTextBoxColumn();
-            Direccion = new DataGridViewTextBoxColumn();
-            TelCell = new DataGridViewTextBoxColumn();
-            TelRes = new DataGridViewTextBoxColumn();
-            FechaRegistro = new DataGridViewTextBoxColumn();
-            Estatus = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -67,6 +53,20 @@
             panel4 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel5 = new Panel();
+            IDCliente = new DataGridViewTextBoxColumn();
+            IDUsuario = new DataGridViewComboBoxColumn();
+            IDMembresia = new DataGridViewComboBoxColumn();
+            TipoListaCliente = new DataGridViewComboBoxColumn();
+            TipoCliente = new DataGridViewComboBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            TipoDocumento = new DataGridViewTextBoxColumn();
+            Documento = new DataGridViewTextBoxColumn();
+            Direccion = new DataGridViewTextBoxColumn();
+            TelCell = new DataGridViewTextBoxColumn();
+            TelRes = new DataGridViewTextBoxColumn();
+            FechaRegistro = new DataGridViewTextBoxColumn();
+            Estatus = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -82,104 +82,13 @@
             dgvCliente.AllowUserToDeleteRows = false;
             dgvCliente.BackgroundColor = Color.White;
             dgvCliente.ColumnHeadersHeight = 22;
-            dgvCliente.Columns.AddRange(new DataGridViewColumn[] { IDCliente, IDUsuario, IDMembresia, IDTipoListaCliente, IDTipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus });
+            dgvCliente.Columns.AddRange(new DataGridViewColumn[] { IDCliente, IDUsuario, IDMembresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus });
             dgvCliente.Location = new Point(-1, -1);
             dgvCliente.Name = "dgvCliente";
             dgvCliente.RowHeadersVisible = false;
             dgvCliente.RowTemplate.Height = 25;
             dgvCliente.Size = new Size(705, 389);
             dgvCliente.TabIndex = 72;
-            // 
-            // IDCliente
-            // 
-            IDCliente.DataPropertyName = "IDCliente";
-            IDCliente.HeaderText = "IDCliente";
-            IDCliente.Name = "IDCliente";
-            // 
-            // IDUsuario
-            // 
-            IDUsuario.HeaderText = "Usuario";
-            IDUsuario.Name = "IDUsuario";
-            IDUsuario.Resizable = DataGridViewTriState.True;
-            IDUsuario.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // IDMembresia
-            // 
-            IDMembresia.HeaderText = "Membresia";
-            IDMembresia.Name = "IDMembresia";
-            IDMembresia.Resizable = DataGridViewTriState.True;
-            IDMembresia.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // IDTipoListaCliente
-            // 
-            IDTipoListaCliente.HeaderText = "Tipo Lista Cliente";
-            IDTipoListaCliente.Name = "IDTipoListaCliente";
-            IDTipoListaCliente.Resizable = DataGridViewTriState.True;
-            IDTipoListaCliente.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // IDTipoCliente
-            // 
-            IDTipoCliente.HeaderText = "Tipo Cliente";
-            IDTipoCliente.Name = "IDTipoCliente";
-            IDTipoCliente.Resizable = DataGridViewTriState.True;
-            IDTipoCliente.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Apellido
-            // 
-            Apellido.DataPropertyName = "Apellido";
-            Apellido.HeaderText = "Apellido";
-            Apellido.Name = "Apellido";
-            // 
-            // TipoDocumento
-            // 
-            TipoDocumento.DataPropertyName = "TipoDocumento";
-            TipoDocumento.HeaderText = "TipoDocumento";
-            TipoDocumento.Name = "TipoDocumento";
-            // 
-            // Documento
-            // 
-            Documento.DataPropertyName = "Documento";
-            Documento.HeaderText = "Documento";
-            Documento.Name = "Documento";
-            // 
-            // Direccion
-            // 
-            Direccion.DataPropertyName = "Direccion";
-            Direccion.HeaderText = "Direccion";
-            Direccion.Name = "Direccion";
-            // 
-            // TelCell
-            // 
-            TelCell.DataPropertyName = "TelCell";
-            TelCell.HeaderText = "TelCell";
-            TelCell.Name = "TelCell";
-            // 
-            // TelRes
-            // 
-            TelRes.DataPropertyName = "TelRes";
-            TelRes.HeaderText = "TelRes";
-            TelRes.Name = "TelRes";
-            // 
-            // FechaRegistro
-            // 
-            FechaRegistro.DataPropertyName = "FechaRegistro";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle2;
-            FechaRegistro.HeaderText = "FechaRegistro";
-            FechaRegistro.Name = "FechaRegistro";
-            // 
-            // Estatus
-            // 
-            Estatus.DataPropertyName = "Estatus";
-            Estatus.HeaderText = "Estatus";
-            Estatus.Name = "Estatus";
             // 
             // panel1
             // 
@@ -258,7 +167,7 @@
             btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
             btnDelete.Cursor = Cursors.Hand;
-            btnDelete.CustomizableEdges = customizableEdges11;
+            btnDelete.CustomizableEdges = customizableEdges1;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -274,7 +183,7 @@
             btnDelete.Location = new Point(-1, 205);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedColor = Color.Transparent;
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnDelete.Size = new Size(200, 47);
             btnDelete.TabIndex = 4;
             btnDelete.Text = "&Eliminar";
@@ -284,7 +193,7 @@
             btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.CustomizableEdges = customizableEdges13;
+            btnEdit.CustomizableEdges = customizableEdges3;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -300,7 +209,7 @@
             btnEdit.Location = new Point(-1, 152);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedColor = Color.Transparent;
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnEdit.Size = new Size(200, 47);
             btnEdit.TabIndex = 3;
             btnEdit.Text = "&Editar";
@@ -310,7 +219,7 @@
             btnUpdateDGV.BorderColor = Color.DarkGoldenrod;
             btnUpdateDGV.BorderThickness = 1;
             btnUpdateDGV.Cursor = Cursors.Hand;
-            btnUpdateDGV.CustomizableEdges = customizableEdges15;
+            btnUpdateDGV.CustomizableEdges = customizableEdges5;
             btnUpdateDGV.DisabledState.BorderColor = Color.DarkGray;
             btnUpdateDGV.DisabledState.CustomBorderColor = Color.DarkGray;
             btnUpdateDGV.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -325,7 +234,7 @@
             btnUpdateDGV.Location = new Point(-1, 99);
             btnUpdateDGV.Name = "btnUpdateDGV";
             btnUpdateDGV.PressedColor = Color.Transparent;
-            btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnUpdateDGV.Size = new Size(200, 47);
             btnUpdateDGV.TabIndex = 2;
             // 
@@ -334,7 +243,7 @@
             btnGuardar.BorderColor = Color.DarkGoldenrod;
             btnGuardar.BorderThickness = 1;
             btnGuardar.Cursor = Cursors.Hand;
-            btnGuardar.CustomizableEdges = customizableEdges17;
+            btnGuardar.CustomizableEdges = customizableEdges7;
             btnGuardar.DisabledState.BorderColor = Color.DarkGray;
             btnGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGuardar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -350,7 +259,7 @@
             btnGuardar.Location = new Point(-1, 46);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
-            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnGuardar.Size = new Size(200, 47);
             btnGuardar.TabIndex = 1;
             btnGuardar.Text = "&Nuevo";
@@ -370,7 +279,7 @@
             // TxbBuscar
             // 
             TxbBuscar.BorderRadius = 25;
-            TxbBuscar.CustomizableEdges = customizableEdges19;
+            TxbBuscar.CustomizableEdges = customizableEdges9;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -386,7 +295,7 @@
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             TxbBuscar.Size = new Size(735, 51);
             TxbBuscar.TabIndex = 0;
             // 
@@ -400,6 +309,97 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(705, 389);
             panel5.TabIndex = 77;
+            // 
+            // IDCliente
+            // 
+            IDCliente.DataPropertyName = "IDCliente";
+            IDCliente.HeaderText = "IDCliente";
+            IDCliente.Name = "IDCliente";
+            // 
+            // IDUsuario
+            // 
+            IDUsuario.HeaderText = "Usuario";
+            IDUsuario.Name = "IDUsuario";
+            IDUsuario.Resizable = DataGridViewTriState.True;
+            IDUsuario.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // IDMembresia
+            // 
+            IDMembresia.HeaderText = "Membresia";
+            IDMembresia.Name = "IDMembresia";
+            IDMembresia.Resizable = DataGridViewTriState.True;
+            IDMembresia.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // TipoListaCliente
+            // 
+            TipoListaCliente.HeaderText = "Tipo Lista Cliente";
+            TipoListaCliente.Name = "TipoListaCliente";
+            TipoListaCliente.Resizable = DataGridViewTriState.True;
+            TipoListaCliente.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // TipoCliente
+            // 
+            TipoCliente.HeaderText = "Tipo Cliente";
+            TipoCliente.Name = "TipoCliente";
+            TipoCliente.Resizable = DataGridViewTriState.True;
+            TipoCliente.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            Apellido.DataPropertyName = "Apellido";
+            Apellido.HeaderText = "Apellido";
+            Apellido.Name = "Apellido";
+            // 
+            // TipoDocumento
+            // 
+            TipoDocumento.DataPropertyName = "TipoDocumento";
+            TipoDocumento.HeaderText = "TipoDocumento";
+            TipoDocumento.Name = "TipoDocumento";
+            // 
+            // Documento
+            // 
+            Documento.DataPropertyName = "Documento";
+            Documento.HeaderText = "Documento";
+            Documento.Name = "Documento";
+            // 
+            // Direccion
+            // 
+            Direccion.DataPropertyName = "Direccion";
+            Direccion.HeaderText = "Direccion";
+            Direccion.Name = "Direccion";
+            // 
+            // TelCell
+            // 
+            TelCell.DataPropertyName = "TelCell";
+            TelCell.HeaderText = "TelCell";
+            TelCell.Name = "TelCell";
+            // 
+            // TelRes
+            // 
+            TelRes.DataPropertyName = "TelRes";
+            TelRes.HeaderText = "TelRes";
+            TelRes.Name = "TelRes";
+            // 
+            // FechaRegistro
+            // 
+            FechaRegistro.DataPropertyName = "FechaRegistro";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
+            FechaRegistro.HeaderText = "FechaRegistro";
+            FechaRegistro.Name = "FechaRegistro";
+            // 
+            // Estatus
+            // 
+            Estatus.DataPropertyName = "Estatus";
+            Estatus.HeaderText = "Estatus";
+            Estatus.Name = "Estatus";
             // 
             // frmClientes
             // 
@@ -429,20 +429,6 @@
 
         #endregion
         private DataGridView dgvCliente;
-        private DataGridViewTextBoxColumn IDCliente;
-        private DataGridViewComboBoxColumn IDUsuario;
-        private DataGridViewComboBoxColumn IDMembresia;
-        private DataGridViewComboBoxColumn IDTipoListaCliente;
-        private DataGridViewComboBoxColumn IDTipoCliente;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Apellido;
-        private DataGridViewTextBoxColumn TipoDocumento;
-        private DataGridViewTextBoxColumn Documento;
-        private DataGridViewTextBoxColumn Direccion;
-        private DataGridViewTextBoxColumn TelCell;
-        private DataGridViewTextBoxColumn TelRes;
-        private DataGridViewTextBoxColumn FechaRegistro;
-        private DataGridViewTextBoxColumn Estatus;
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
@@ -456,5 +442,19 @@
         private PictureBox btnClose;
         private PictureBox pictureBox1;
         private Label label1;
+        private DataGridViewTextBoxColumn IDCliente;
+        private DataGridViewComboBoxColumn IDUsuario;
+        private DataGridViewComboBoxColumn IDMembresia;
+        private DataGridViewComboBoxColumn TipoListaCliente;
+        private DataGridViewComboBoxColumn TipoCliente;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
+        private DataGridViewTextBoxColumn TipoDocumento;
+        private DataGridViewTextBoxColumn Documento;
+        private DataGridViewTextBoxColumn Direccion;
+        private DataGridViewTextBoxColumn TelCell;
+        private DataGridViewTextBoxColumn TelRes;
+        private DataGridViewTextBoxColumn FechaRegistro;
+        private DataGridViewTextBoxColumn Estatus;
     }
 }

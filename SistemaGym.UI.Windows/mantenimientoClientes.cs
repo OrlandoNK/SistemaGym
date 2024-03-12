@@ -24,6 +24,7 @@ namespace SistemaGym.UI.Windows
         private void frmClientes_Load(object sender, EventArgs e)
         {
             dgvCliente.DataSource = ClientesBLL.GetClients();
+            dgvCliente.AutoGenerateColumns = false;
             CargarUsuarios();
             CargarMembresia();
             CargarTipoCliente();
@@ -38,7 +39,7 @@ namespace SistemaGym.UI.Windows
             colUsuario.ValueMember = "IDUsuario";
             colUsuario.DisplayMember = "NombreUsuario";
             colUsuario.DataPropertyName = "IDUsuario";
-            
+
 
         }
         private void CargarMembresia()
@@ -49,28 +50,28 @@ namespace SistemaGym.UI.Windows
             colMembresia.ValueMember = "IDMembresia";
             colMembresia.DisplayMember = "Nombre";
             colMembresia.DataPropertyName = "IDMembresia";
-            
+
         }
         private void CargarTipoListaCliente()
         {
-            var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDTipoListaCliente"];
+            var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvCliente.Columns["TipoListaCliente"];
 
             colTipoListaCliente.DataSource = TipoListaClienteBLL.MostrarTipoListaCliente();
             colTipoListaCliente.ValueMember = "IDTipoListaCliente";
             colTipoListaCliente.DisplayMember = "Nombre";
             colTipoListaCliente.DataPropertyName = "TipoListaCliente";
-            
+
         }
         private void CargarTipoCliente()
         {
 
-            var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvCliente.Columns["IDTipoCliente"];
+            var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvCliente.Columns["TipoCliente"];
 
             colTipoListaCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
             colTipoListaCliente.ValueMember = "IDTipoCliente";
             colTipoListaCliente.DisplayMember = "Nombre";
             colTipoListaCliente.DataPropertyName = "TipoCliente";
-            
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
