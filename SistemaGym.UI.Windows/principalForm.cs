@@ -108,21 +108,24 @@ namespace SistemaGym.UI.Windows
 
         private void btnMembresiasMantenimiento_Click(object sender, EventArgs e)
         {
-
+            frmMembresia mantenimientoMembresias = new frmMembresia();
+            mantenimientoMembresias.Show();
 
             HideSubMenu();
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
-
+            MantenimientoProveedores mantenimientoProveedores = new MantenimientoProveedores();
+            mantenimientoProveedores.Show();
 
             HideSubMenu();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-
+            frmClientes mantenimientoClientes = new frmClientes();
+            mantenimientoClientes.Show();
 
             HideSubMenu();
         }
@@ -136,7 +139,8 @@ namespace SistemaGym.UI.Windows
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-
+            MantenimientoProductos mantenimientoProductos = new MantenimientoProductos();
+            mantenimientoProductos.Show();
 
             HideSubMenu();
         }
@@ -148,14 +152,16 @@ namespace SistemaGym.UI.Windows
 
         private void btnFacturaMembresia_Click(object sender, EventArgs e)
         {
-
+            mantenimientoFacturacionMembresia facturacionMembresia = new mantenimientoFacturacionMembresia();
+            facturacionMembresia.Show();
 
             HideSubMenu();
         }
 
         private void btnFacturaProducto_Click(object sender, EventArgs e)
         {
-
+            frmFacturaProductos mantenimientoFacturaProductos = new frmFacturaProductos();
+            mantenimientoFacturacionMembresia.Show();
 
             HideSubMenu();
         }
