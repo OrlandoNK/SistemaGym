@@ -38,7 +38,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -52,28 +51,14 @@
             panel4 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel5 = new Panel();
-            dgvCliente = new DataGridView();
-            IDCliente = new DataGridViewTextBoxColumn();
-            IDUsuario = new DataGridViewComboBoxColumn();
-            IDMembresia = new DataGridViewComboBoxColumn();
-            TipoListaCliente = new DataGridViewComboBoxColumn();
-            TipoCliente = new DataGridViewComboBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Apellido = new DataGridViewTextBoxColumn();
-            TipoDocumento = new DataGridViewTextBoxColumn();
-            Documento = new DataGridViewTextBoxColumn();
-            Direccion = new DataGridViewTextBoxColumn();
-            TelCell = new DataGridViewTextBoxColumn();
-            TelRes = new DataGridViewTextBoxColumn();
-            FechaRegistro = new DataGridViewTextBoxColumn();
-            Estatus = new DataGridViewTextBoxColumn();
+            dgvClientes = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -289,118 +274,21 @@
             // 
             panel5.BackColor = Color.White;
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(dgvCliente);
+            panel5.Controls.Add(dgvClientes);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(200, 165);
             panel5.Name = "panel5";
             panel5.Size = new Size(705, 389);
             panel5.TabIndex = 77;
             // 
-            // dgvCliente
+            // dgvClientes
             // 
-            dgvCliente.AllowUserToAddRows = false;
-            dgvCliente.AllowUserToDeleteRows = false;
-            dgvCliente.BackgroundColor = Color.White;
-            dgvCliente.ColumnHeadersHeight = 22;
-            dgvCliente.Columns.AddRange(new DataGridViewColumn[] { IDCliente, IDUsuario, IDMembresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus });
-            dgvCliente.Location = new Point(-1, -1);
-            dgvCliente.Name = "dgvCliente";
-            dgvCliente.RowHeadersVisible = false;
-            dgvCliente.RowTemplate.Height = 25;
-            dgvCliente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCliente.Size = new Size(705, 389);
-            dgvCliente.TabIndex = 72;
-            // 
-            // IDCliente
-            // 
-            IDCliente.DataPropertyName = "IDCliente";
-            IDCliente.HeaderText = "IDCliente";
-            IDCliente.Name = "IDCliente";
-            // 
-            // IDUsuario
-            // 
-            IDUsuario.HeaderText = "Usuario";
-            IDUsuario.Name = "IDUsuario";
-            IDUsuario.Resizable = DataGridViewTriState.True;
-            IDUsuario.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // IDMembresia
-            // 
-            IDMembresia.HeaderText = "Membresia";
-            IDMembresia.Name = "IDMembresia";
-            IDMembresia.Resizable = DataGridViewTriState.True;
-            IDMembresia.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // TipoListaCliente
-            // 
-            TipoListaCliente.HeaderText = "TipoListaCliente";
-            TipoListaCliente.Name = "TipoListaCliente";
-            TipoListaCliente.Resizable = DataGridViewTriState.True;
-            TipoListaCliente.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // TipoCliente
-            // 
-            TipoCliente.HeaderText = "TipoCliente";
-            TipoCliente.Name = "TipoCliente";
-            TipoCliente.Resizable = DataGridViewTriState.True;
-            TipoCliente.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Apellido
-            // 
-            Apellido.DataPropertyName = "Apellido";
-            Apellido.HeaderText = "Apellido";
-            Apellido.Name = "Apellido";
-            // 
-            // TipoDocumento
-            // 
-            TipoDocumento.DataPropertyName = "TipoDocumento";
-            TipoDocumento.HeaderText = "TipoDocumento";
-            TipoDocumento.Name = "TipoDocumento";
-            // 
-            // Documento
-            // 
-            Documento.DataPropertyName = "Documento";
-            Documento.HeaderText = "Documento";
-            Documento.Name = "Documento";
-            // 
-            // Direccion
-            // 
-            Direccion.DataPropertyName = "Direccion";
-            Direccion.HeaderText = "Direccion";
-            Direccion.Name = "Direccion";
-            // 
-            // TelCell
-            // 
-            TelCell.DataPropertyName = "TelCell";
-            TelCell.HeaderText = "TelCell";
-            TelCell.Name = "TelCell";
-            // 
-            // TelRes
-            // 
-            TelRes.DataPropertyName = "TelRes";
-            TelRes.HeaderText = "TelRes";
-            TelRes.Name = "TelRes";
-            // 
-            // FechaRegistro
-            // 
-            FechaRegistro.DataPropertyName = "FechaRegistro";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
-            FechaRegistro.HeaderText = "FechaRegistro";
-            FechaRegistro.Name = "FechaRegistro";
-            // 
-            // Estatus
-            // 
-            Estatus.DataPropertyName = "Estatus";
-            Estatus.HeaderText = "Estatus";
-            Estatus.Name = "Estatus";
+            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvClientes.Location = new Point(-1, -1);
+            dgvClientes.Name = "dgvClientes";
+            dgvClientes.RowTemplate.Height = 25;
+            dgvClientes.Size = new Size(705, 389);
+            dgvClientes.TabIndex = 0;
             // 
             // frmClientes
             // 
@@ -424,7 +312,7 @@
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
         }
 
@@ -442,20 +330,6 @@
         private PictureBox btnClose;
         private PictureBox pictureBox1;
         private Label label1;
-        private DataGridView dgvCliente;
-        private DataGridViewTextBoxColumn IDCliente;
-        private DataGridViewComboBoxColumn IDUsuario;
-        private DataGridViewComboBoxColumn IDMembresia;
-        private DataGridViewComboBoxColumn TipoListaCliente;
-        private DataGridViewComboBoxColumn TipoCliente;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Apellido;
-        private DataGridViewTextBoxColumn TipoDocumento;
-        private DataGridViewTextBoxColumn Documento;
-        private DataGridViewTextBoxColumn Direccion;
-        private DataGridViewTextBoxColumn TelCell;
-        private DataGridViewTextBoxColumn TelRes;
-        private DataGridViewTextBoxColumn FechaRegistro;
-        private DataGridViewTextBoxColumn Estatus;
+        private DataGridView dgvClientes;
     }
 }
