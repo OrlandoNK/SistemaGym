@@ -93,7 +93,7 @@ namespace SistemaGym.UI.Windows
 
             }
             //datos de control al objeto
-            UsuarioEntity oUsuario = new UsuarioEntity("","");
+            UsuarioEntity oUsuario = new UsuarioEntity("", "");
             oUsuario.IDUsuario = int.Parse(txtIDUsuario.Text);
             oUsuario.IDRol = (int)cbRol.SelectedValue;
             oUsuario.Nombre = txtNombre.Text;
@@ -162,7 +162,8 @@ namespace SistemaGym.UI.Windows
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 if (dgvUsuario.SelectedRows.Count > 0)
                 {
                     DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Usuario?", "¿Eliminar Usuario?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -192,7 +193,8 @@ namespace SistemaGym.UI.Windows
                         return;
                     }
                 }
-            } catch (Exception ex) { MessageBox.Show("Tienes que borrar el cliente que hace uso de este usuario", sistema, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            catch (Exception ex) { MessageBox.Show("Tienes que borrar el cliente que hace uso de este usuario", sistema, MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
         }
     }

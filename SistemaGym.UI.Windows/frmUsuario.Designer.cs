@@ -235,7 +235,6 @@
             label1.Size = new Size(61, 15);
             label1.TabIndex = 87;
             label1.Text = "ID Usuario";
-  
             // 
             // dgvUsuario
             // 
