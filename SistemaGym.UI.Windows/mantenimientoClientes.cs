@@ -23,7 +23,7 @@ namespace SistemaGym.UI.Windows
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            dgvCliente.DataSource = ClientesBLL.GetClients();
+            dgvCliente.DataSource = ClientesBLL.MostrarCliente();
             dgvCliente.AutoGenerateColumns = false;
             CargarUsuarios();
             CargarMembresia();
