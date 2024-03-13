@@ -155,7 +155,7 @@
             lblRolUsuario.Size = new Size(187, 25);
             lblRolUsuario.TabIndex = 6;
             lblRolUsuario.Text = null;
-            lblRolUsuario.TextAlignment = ContentAlignment.MiddleRight;
+            lblRolUsuario.TextAlignment = ContentAlignment.TopRight;
             // 
             // guna2CirclePictureBox1
             // 
@@ -211,7 +211,7 @@
             lblusuario.Size = new Size(187, 25);
             lblusuario.TabIndex = 1;
             lblusuario.Text = null;
-            lblusuario.TextAlignment = ContentAlignment.MiddleRight;
+            lblusuario.TextAlignment = ContentAlignment.BottomRight;
             // 
             // panelDesplegable
             // 
@@ -410,7 +410,7 @@
             btnFacturaProducto.ForeColor = Color.White;
             btnFacturaProducto.HoverState.FillColor = Color.White;
             btnFacturaProducto.HoverState.ForeColor = Color.Black;
-            btnFacturaProducto.Image = Properties.Resources._Clientes_mainScreen_;
+            btnFacturaProducto.Image = Properties.Resources.Facturacion_Producto_Icon_;
             btnFacturaProducto.ImageAlign = HorizontalAlignment.Left;
             btnFacturaProducto.ImageSize = new Size(25, 25);
             btnFacturaProducto.Location = new Point(0, 37);
@@ -436,7 +436,7 @@
             btnFacturaMembresia.ForeColor = Color.White;
             btnFacturaMembresia.HoverState.FillColor = Color.White;
             btnFacturaMembresia.HoverState.ForeColor = Color.Black;
-            btnFacturaMembresia.Image = Properties.Resources._Roles_mainScreen_;
+            btnFacturaMembresia.Image = Properties.Resources._PaymentMembresiaFactura;
             btnFacturaMembresia.ImageAlign = HorizontalAlignment.Left;
             btnFacturaMembresia.ImageSize = new Size(25, 25);
             btnFacturaMembresia.Location = new Point(0, 0);
@@ -462,7 +462,7 @@
             btnFacturacion.ForeColor = Color.White;
             btnFacturacion.HoverState.FillColor = Color.White;
             btnFacturacion.HoverState.ForeColor = Color.Black;
-            btnFacturacion.Image = Properties.Resources._mantenimientosMainScreen;
+            btnFacturacion.Image = Properties.Resources.facturaProducto_mainscreen_;
             btnFacturacion.ImageAlign = HorizontalAlignment.Left;
             btnFacturacion.ImageSize = new Size(28, 28);
             btnFacturacion.Location = new Point(0, 539);
