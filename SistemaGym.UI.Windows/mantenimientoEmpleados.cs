@@ -60,6 +60,7 @@ namespace SistemaGym.UI.Windows
                         EmpleadoBLL.Update(empleado);
                     }
 
+                    MessageBox.Show("¡Empleado Modificado de Manera Satisfactoria!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvEmpleados.DataSource = EmpleadoBLL.GetEmpleados();
                 }
 
