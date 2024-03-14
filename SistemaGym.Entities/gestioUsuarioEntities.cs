@@ -10,5 +10,6 @@ namespace SistemaGym.Entities
     {
         public static string usernameLogged;
         public static string IDUserLogged;
+        public static string rolUsuarioLogged;
     }
 }

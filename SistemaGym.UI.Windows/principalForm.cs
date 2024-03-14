@@ -16,6 +16,37 @@ namespace SistemaGym.UI.Windows
         public principalForm()
         {
             InitializeComponent();
+            CustomDesignForm();
+        }
+
+        public void CustomDesignForm()
+        {
+            subPanelAdministracion.Visible = false;
+            subPanelMantenimientos.Visible = false;
+            subPanelFacturacion.Visible = false;
+        }
+
+        private void HideSubMenu()
+        {
+            if (subPanelAdministracion.Visible == true)
+                subPanelAdministracion.Visible = false;
+            if (subPanelMantenimientos.Visible == true)
+                subPanelMantenimientos.Visible = false;
+            if (subPanelFacturacion.Visible == true)
+                subPanelFacturacion.Visible = false;
+        }
+
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                HideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
         }
 
         private void chbxdesplegable_CheckedChanged(object sender, EventArgs e)
@@ -41,83 +72,98 @@ namespace SistemaGym.UI.Windows
         private void principalForm_Load(object sender, EventArgs e)
         {
             lblusuario.Text = gestioUsuarioEntities.usernameLogged;
-        }
-
-        private void btnMantenimientos_Click(object sender, EventArgs e)
-        {
-            SubMantenimientos.Visible = true;
-
-            if (subAdministracion.Visible = true)
-            {
-                subAdministracion.Visible = false;
-            }
-        }
-
-        private void btnFacturaMembresia_Click(object sender, EventArgs e)
-        {
-            mantenimientoFacturacionMembresia facturacionMembresia = new mantenimientoFacturacionMembresia();
-            facturacionMembresia.Show();
-            SubMantenimientos.Visible = false;
-        }
-
-        private void btnFacturaProducto_Click(object sender, EventArgs e)
-        {
-            frmFacturaProductos mantenimientoFacturaProductos = new frmFacturaProductos();
-            mantenimientoFacturaProductos.Show();
-            SubMantenimientos.Visible = false;
-        }
-
-        private void btnManteProveedores_Click(object sender, EventArgs e)
-        {
-            MantenimientoProveedores mantenimientoProveedores = new MantenimientoProveedores();
-            mantenimientoProveedores.Show();
-            SubMantenimientos.Visible = false;
-        }
-
-        private void btnmembresia_Click(object sender, EventArgs e)
-        {
-            frmMembresia frmMembresia = new frmMembresia();
-            frmMembresia.Show();
-            SubMantenimientos.Visible = false;
-        }
-
-        private void btnAdministracion_Click(object sender, EventArgs e)
-        {
-
-            subAdministracion.Visible = true;
-
-            if (SubMantenimientos.Visible = true)
-            {
-                SubMantenimientos.Visible = false;
-            }
-        }
-
-        private void btnClientes_Click(object sender, EventArgs e)
-        {
-            frmClientes clientesForm = new frmClientes();
-            clientesForm.Show();
-            subAdministracion.Visible = false;
+            lblRolUsuario.Text = "[" + gestioUsuarioEntities.rolUsuarioLogged + "]";
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             frmUsuario frmUsuario = new frmUsuario();
             frmUsuario.Show();
-            subAdministracion.Visible = false;
+            HideSubMenu();
         }
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
             frmRol rolesForm = new frmRol();
             rolesForm.Show();
-            subAdministracion.Visible = false;
+            HideSubMenu();
         }
 
-        private void btnMantenimientoProducto_Click(object sender, EventArgs e)
+        private void btnAdministracion_Click(object sender, EventArgs e)
+        {
+            showSubMenu(subPanelAdministracion);
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+
+
+            HideSubMenu();
+        }
+
+        private void btnMantenimientos_Click(object sender, EventArgs e)
+        {
+            showSubMenu(subPanelMantenimientos);
+        }
+
+        private void btnMembresiasMantenimiento_Click(object sender, EventArgs e)
+        {
+            frmMembresia mantenimientoMembresias = new frmMembresia();
+            mantenimientoMembresias.Show();
+
+            HideSubMenu();
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            MantenimientoProveedores mantenimientoProveedores = new MantenimientoProveedores();
+            mantenimientoProveedores.Show();
+
+            HideSubMenu();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            frmClientes mantenimientoClientes = new frmClientes();
+            mantenimientoClientes.Show();
+
+            HideSubMenu();
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+
+
+            HideSubMenu();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
         {
             MantenimientoProductos mantenimientoProductos = new MantenimientoProductos();
             mantenimientoProductos.Show();
-            SubMantenimientos.Visible = false;
+
+            HideSubMenu();
+        }
+
+        private void btnFacturacion_Click(object sender, EventArgs e)
+        {
+            showSubMenu(subPanelFacturacion);
+        }
+
+        private void btnFacturaMembresia_Click(object sender, EventArgs e)
+        {
+            mantenimientoFacturacionMembresia facturacionMembresia = new mantenimientoFacturacionMembresia();
+            facturacionMembresia.Show();
+
+            HideSubMenu();
+        }
+
+        private void btnFacturaProducto_Click(object sender, EventArgs e)
+        {
+            frmFacturaProductos mantenimientoFacturaProductos = new frmFacturaProductos();
+            mantenimientoFacturaProductos.Show();
+
+            HideSubMenu();
         }
     }
 }

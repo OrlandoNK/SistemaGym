@@ -167,7 +167,6 @@
             btnDelete.Size = new Size(210, 45);
             btnDelete.TabIndex = 6;
             btnDelete.Text = "Eliminar";
-            btnDelete.TextAlign = HorizontalAlignment.Right;
             btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
@@ -195,7 +194,6 @@
             btnEdit.Size = new Size(210, 45);
             btnEdit.TabIndex = 4;
             btnEdit.Text = "Modificar";
-            btnEdit.TextAlign = HorizontalAlignment.Right;
             btnEdit.Click += btnEdit_Click;
             // 
             // btnRefresh
@@ -249,7 +247,6 @@
             btnNew.Size = new Size(210, 45);
             btnNew.TabIndex = 0;
             btnNew.Text = "Nuevo";
-            btnNew.TextAlign = HorizontalAlignment.Right;
             btnNew.Click += btnNew_Click;
             // 
             // panel4

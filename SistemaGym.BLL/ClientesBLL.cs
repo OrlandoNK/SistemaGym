@@ -14,14 +14,12 @@ namespace SistemaGym.BLL
         readonly ClientesDAL clientesDAL = new ClientesDAL();
         public static void guardar(ClientesEntity clientes)
         {
-            if (clientes.IDCliente == 0)
-            {
-                //agregar
-                ClientesDAL.InsertarCliente(clientes);
-            }
-            else
-                //Actualizar
-                ClientesDAL.ActualizarCliente(clientes);
+            ClientesDAL.InsertarCliente(clientes);
+        }
+
+        public static void update(ClientesEntity clientes)
+        {
+            ClientesDAL.ActualizarCliente(clientes);
         }
         public static bool Eliminar(ClientesEntity clientes)
         {

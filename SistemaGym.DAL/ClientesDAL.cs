@@ -19,10 +19,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             
             Conexion.Open();
-            string insertar = "Insert into Clientes(IDUsuario, IDMembresia, TipoListaCliente, TipoCliente," +
-                " Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus)" +
-                " values(@idusuario, @idmembresia, @idtipolistacliente, @idtipocliente, @nombre, @apellido, " +
-                "@tipodocumento, @documento, @direccion, @telcell, @telres, @fecharegistro, @estatus)";
+            string insertar = "INSERT INTO Clientes(IDUsuario, IDMembresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus) VALUES(@idusuario, @idmembresia, @idtipolistacliente, @idtipocliente, @nombre, @apellido, @tipodocumento, @documento, @direccion, @telcell, @telres, @fecharegistro, @estatus)";
             SqlCommand cmd = new SqlCommand( insertar, Conexion );
             cmd.Parameters.AddWithValue("@idusuario", clientes.IDUsuario);
             cmd.Parameters.AddWithValue("@idmembresia", clientes.IDMembresia);
@@ -96,7 +93,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From Clientes Order By Nombre";
+            string mostrar = "SELECT * FROM Clientes";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -112,7 +109,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select IDCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus From Clientes Order By Nombre";
+            string mostrar = "SELECT IDCliente, IDUsuario, IDMembresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus FROM Clientes";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
