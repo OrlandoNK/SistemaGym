@@ -13,13 +13,7 @@ namespace SistemaGym.BLL
     {
         public static void Insertar(MembresiaEntity membresia)
         {
-            if (membresia.IDMembresia == 0){             
-                MembresiaDAL.InsertarMembresia(membresia);
-            }
-            else
-            {          
-                    MembresiaDAL.ActualizarMembresia(membresia);
-            }         
+            MembresiaDAL.InsertarMembresia(membresia);
         }
 
    public static void ActualizarMembresia(MembresiaEntity membresia)

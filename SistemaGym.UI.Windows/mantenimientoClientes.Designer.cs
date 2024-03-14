@@ -52,6 +52,20 @@
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel5 = new Panel();
             dgvClientes = new DataGridView();
+            IDCliente = new DataGridViewTextBoxColumn();
+            IDUsuario = new DataGridViewComboBoxColumn();
+            IDMembresia = new DataGridViewComboBoxColumn();
+            TipoListaCliente = new DataGridViewComboBoxColumn();
+            TipoCliente = new DataGridViewComboBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            TipoDocumento = new DataGridViewTextBoxColumn();
+            Documento = new DataGridViewTextBoxColumn();
+            Direccion = new DataGridViewTextBoxColumn();
+            TelCell = new DataGridViewTextBoxColumn();
+            TelRes = new DataGridViewTextBoxColumn();
+            FechaRegistro = new DataGridViewTextBoxColumn();
+            Estatus = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
@@ -283,12 +297,85 @@
             // 
             // dgvClientes
             // 
+            dgvClientes.AllowUserToAddRows = false;
+            dgvClientes.AllowUserToDeleteRows = false;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { IDCliente, IDUsuario, IDMembresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus });
             dgvClientes.Location = new Point(-1, -1);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.RowTemplate.Height = 25;
             dgvClientes.Size = new Size(705, 389);
             dgvClientes.TabIndex = 0;
+            // 
+            // IDCliente
+            // 
+            IDCliente.HeaderText = "IDCliente";
+            IDCliente.Name = "IDCliente";
+            // 
+            // IDUsuario
+            // 
+            IDUsuario.HeaderText = "IDUsuario";
+            IDUsuario.Name = "IDUsuario";
+            // 
+            // IDMembresia
+            // 
+            IDMembresia.HeaderText = "IDMembresia";
+            IDMembresia.Name = "IDMembresia";
+            // 
+            // TipoListaCliente
+            // 
+            TipoListaCliente.HeaderText = "TipoListaCliente";
+            TipoListaCliente.Name = "TipoListaCliente";
+            // 
+            // TipoCliente
+            // 
+            TipoCliente.HeaderText = "TipoCliente";
+            TipoCliente.Name = "TipoCliente";
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            Apellido.HeaderText = "Apellido";
+            Apellido.Name = "Apellido";
+            // 
+            // TipoDocumento
+            // 
+            TipoDocumento.HeaderText = "TipoDocumento";
+            TipoDocumento.Name = "TipoDocumento";
+            // 
+            // Documento
+            // 
+            Documento.HeaderText = "Documento";
+            Documento.Name = "Documento";
+            // 
+            // Direccion
+            // 
+            Direccion.HeaderText = "Direccion";
+            Direccion.Name = "Direccion";
+            // 
+            // TelCell
+            // 
+            TelCell.HeaderText = "TelCell";
+            TelCell.Name = "TelCell";
+            // 
+            // TelRes
+            // 
+            TelRes.HeaderText = "TelRes";
+            TelRes.Name = "TelRes";
+            // 
+            // FechaRegistro
+            // 
+            FechaRegistro.HeaderText = "FechaRegistro";
+            FechaRegistro.Name = "FechaRegistro";
+            // 
+            // Estatus
+            // 
+            Estatus.HeaderText = "Estatus";
+            Estatus.Name = "Estatus";
             // 
             // frmClientes
             // 
@@ -331,5 +418,19 @@
         private PictureBox pictureBox1;
         private Label label1;
         private DataGridView dgvClientes;
+        private DataGridViewTextBoxColumn IDCliente;
+        private DataGridViewComboBoxColumn IDUsuario;
+        private DataGridViewComboBoxColumn IDMembresia;
+        private DataGridViewComboBoxColumn TipoListaCliente;
+        private DataGridViewComboBoxColumn TipoCliente;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
+        private DataGridViewTextBoxColumn TipoDocumento;
+        private DataGridViewTextBoxColumn Documento;
+        private DataGridViewTextBoxColumn Direccion;
+        private DataGridViewTextBoxColumn TelCell;
+        private DataGridViewTextBoxColumn TelRes;
+        private DataGridViewTextBoxColumn FechaRegistro;
+        private DataGridViewTextBoxColumn Estatus;
     }
 }
