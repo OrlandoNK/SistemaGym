@@ -231,6 +231,7 @@
             // cbTipoDocumento
             // 
             cbTipoDocumento.FormattingEnabled = true;
+            cbTipoDocumento.Items.AddRange(new object[] { "Cedula", "Pasaporte", "Carnet Universitario" });
             cbTipoDocumento.Location = new Point(315, 80);
             cbTipoDocumento.Name = "cbTipoDocumento";
             cbTipoDocumento.Size = new Size(141, 25);

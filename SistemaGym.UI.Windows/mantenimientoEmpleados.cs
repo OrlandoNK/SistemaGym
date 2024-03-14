@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGym.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,21 @@ namespace SistemaGym.UI.Windows
         {
             InitializeComponent();
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            registrarEmpleados nuevoEmpleado = new registrarEmpleados();
+            nuevoEmpleado.Show();
+        }
+
+        private void mantenimientoEmpleados_Load(object sender, EventArgs e)
+        {
+            dgvEmpleados.DataSource = EmpleadoBLL.GetEmpleados();
+            dgvEmpleados.AutoGenerateColumns = false;
         }
     }
 }

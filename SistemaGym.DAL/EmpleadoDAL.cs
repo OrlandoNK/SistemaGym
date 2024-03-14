@@ -17,11 +17,11 @@ namespace SistemaGym.DAL
         public static void insertarEmpleado(EmpleadoEntity empleado)
         {
             ConexionDAL instancia = Instancia();
-            SqlConnection Conexion = new SqlConnection();
+            SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string Insertar = "INSERT INTO Empleados(Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TelRes, FechaRegistro, Estatus)" +
-                              " VALUES(@Nombre, @Apellido, @TipoDocumento, @Documento, @Direccion, @TellCell, @TelRes, @FechaRegistro, @Estatus)";
+            string Insertar = "INSERT INTO Empleados(Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TellRes, FechaRegistro, Estatus)" +
+                              " VALUES(@Nombre, @Apellido, @TipoDocumento, @Documento, @Direccion, @TellCell, @TellRes, @FechaRegistro, @Estatus)";
 
             SqlCommand cmnd = new SqlCommand(Insertar, Conexion);
             cmnd.Parameters.AddWithValue("@Nombre", empleado.Nombre);
@@ -43,7 +43,7 @@ namespace SistemaGym.DAL
         public static void actualizarEmpleado(EmpleadoEntity empleado)
         {
             ConexionDAL instancia = Instancia();
-            SqlConnection Conexion = new SqlConnection();
+            SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
             string Actualizar = "UPDATE Empleados SET Nombre = @Nombre, Apellido = @Apellido, TipoDocumento = @Tipodocumento, Documento = @Documento, Direccion = @Direccion, TellCell = @TellCell, TelRes = @TelRes, FechaRegistro = @FechaRegistro, Estatus = @Estatus " + 
@@ -70,7 +70,7 @@ namespace SistemaGym.DAL
         public bool eliminarEmpleado(EmpleadoEntity empleado)
         {
             ConexionDAL instancia = Instancia();
-            SqlConnection Conexion = new SqlConnection();
+            SqlConnection Conexion = instancia.Conexion();
 
             bool seElimino;
 
@@ -92,7 +92,7 @@ namespace SistemaGym.DAL
         public static DataTable mostrarEmpleado()
         {
             ConexionDAL instancia = Instancia();
-            SqlConnection Conexion = new SqlConnection();
+            SqlConnection Conexion = instancia.Conexion();
 
             DataTable dtbl = new DataTable();
             Conexion.Open();

@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -57,18 +59,16 @@
             Documento = new DataGridViewTextBoxColumn();
             Direccion = new DataGridViewTextBoxColumn();
             TellCell = new DataGridViewTextBoxColumn();
-            TelRes = new DataGridViewTextBoxColumn();
+            TellRes = new DataGridViewTextBoxColumn();
             FechaRegistro = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -83,6 +83,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(889, 67);
             panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Goldenrod;
+            label1.Location = new Point(77, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(105, 24);
+            label1.TabIndex = 2;
+            label1.Text = "Empleados";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.icon_empleados_x32;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(68, 59);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // btnClose
             // 
@@ -124,7 +145,7 @@
             // 
             btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
-            btnDelete.CustomizableEdges = customizableEdges21;
+            btnDelete.CustomizableEdges = customizableEdges1;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -137,7 +158,7 @@
             btnDelete.ImageSize = new Size(25, 25);
             btnDelete.Location = new Point(-1, 282);
             btnDelete.Name = "btnDelete";
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnDelete.Size = new Size(205, 49);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
@@ -146,7 +167,7 @@
             // 
             btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
-            btnEdit.CustomizableEdges = customizableEdges23;
+            btnEdit.CustomizableEdges = customizableEdges3;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -159,7 +180,7 @@
             btnEdit.ImageSize = new Size(25, 25);
             btnEdit.Location = new Point(-1, 227);
             btnEdit.Name = "btnEdit";
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnEdit.Size = new Size(205, 49);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Modificar";
@@ -168,7 +189,7 @@
             // 
             btnRefresh.BorderColor = Color.DarkGoldenrod;
             btnRefresh.BorderThickness = 1;
-            btnRefresh.CustomizableEdges = customizableEdges25;
+            btnRefresh.CustomizableEdges = customizableEdges5;
             btnRefresh.DisabledState.BorderColor = Color.DarkGray;
             btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -180,7 +201,7 @@
             btnRefresh.ImageSize = new Size(25, 25);
             btnRefresh.Location = new Point(-1, 172);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnRefresh.Size = new Size(205, 49);
             btnRefresh.TabIndex = 1;
             // 
@@ -188,7 +209,7 @@
             // 
             btnNew.BorderColor = Color.DarkGoldenrod;
             btnNew.BorderThickness = 1;
-            btnNew.CustomizableEdges = customizableEdges27;
+            btnNew.CustomizableEdges = customizableEdges7;
             btnNew.DisabledState.BorderColor = Color.DarkGray;
             btnNew.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNew.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -201,10 +222,11 @@
             btnNew.ImageSize = new Size(25, 25);
             btnNew.Location = new Point(-1, 117);
             btnNew.Name = "btnNew";
-            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnNew.Size = new Size(205, 49);
             btnNew.TabIndex = 0;
             btnNew.Text = "Nuevo";
+            btnNew.Click += btnNew_Click;
             // 
             // panel4
             // 
@@ -219,7 +241,7 @@
             // btnBuscar
             // 
             btnBuscar.BorderRadius = 20;
-            btnBuscar.CustomizableEdges = customizableEdges29;
+            btnBuscar.CustomizableEdges = customizableEdges9;
             btnBuscar.DefaultText = "";
             btnBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             btnBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -235,7 +257,7 @@
             btnBuscar.PlaceholderForeColor = Color.Silver;
             btnBuscar.PlaceholderText = "Buscar";
             btnBuscar.SelectedText = "";
-            btnBuscar.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            btnBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnBuscar.Size = new Size(666, 42);
             btnBuscar.TabIndex = 0;
             // 
@@ -257,7 +279,7 @@
             dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dgvEmpleados.BackgroundColor = Color.WhiteSmoke;
             dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { IDEmpleado, Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TelRes, FechaRegistro, Estatus });
+            dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { IDEmpleado, Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TellRes, FechaRegistro, Estatus });
             dgvEmpleados.Location = new Point(-1, -1);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.RowHeadersVisible = false;
@@ -268,84 +290,73 @@
             // 
             // IDEmpleado
             // 
+            IDEmpleado.DataPropertyName = "IDEmpleado";
             IDEmpleado.HeaderText = "IDEmpleado";
             IDEmpleado.Name = "IDEmpleado";
             IDEmpleado.Width = 96;
             // 
             // Nombre
             // 
+            Nombre.DataPropertyName = "Nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
             Nombre.Width = 76;
             // 
             // Apellido
             // 
+            Apellido.DataPropertyName = "Apellido";
             Apellido.HeaderText = "Apellido";
             Apellido.Name = "Apellido";
             Apellido.Width = 76;
             // 
             // TipoDocumento
             // 
+            TipoDocumento.DataPropertyName = "TipoDocumento";
             TipoDocumento.HeaderText = "TipoDocumento";
             TipoDocumento.Name = "TipoDocumento";
             TipoDocumento.Width = 118;
             // 
             // Documento
             // 
+            Documento.DataPropertyName = "Documento";
             Documento.HeaderText = "Documento";
             Documento.Name = "Documento";
             Documento.Width = 95;
             // 
             // Direccion
             // 
+            Direccion.DataPropertyName = "Direccion";
             Direccion.HeaderText = "Direccion";
             Direccion.Name = "Direccion";
             Direccion.Width = 82;
             // 
             // TellCell
             // 
+            TellCell.DataPropertyName = "TellCell";
             TellCell.HeaderText = "TellCell";
             TellCell.Name = "TellCell";
             TellCell.Width = 69;
             // 
-            // TelRes
+            // TellRes
             // 
-            TelRes.HeaderText = "TelRes";
-            TelRes.Name = "TelRes";
-            TelRes.Width = 64;
+            TellRes.DataPropertyName = "TellRes";
+            TellRes.HeaderText = "TellRes";
+            TellRes.Name = "TellRes";
+            TellRes.Width = 67;
             // 
             // FechaRegistro
             // 
+            FechaRegistro.DataPropertyName = "FechaRegistro";
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.Width = 106;
             // 
             // Estatus
             // 
+            Estatus.DataPropertyName = "Estatus";
             Estatus.HeaderText = "Estatus";
             Estatus.Name = "Estatus";
             Estatus.Width = 69;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.icon_empleados_x32;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(68, 59);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Goldenrod;
-            label1.Location = new Point(77, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(105, 24);
-            label1.TabIndex = 2;
-            label1.Text = "Empleados";
             // 
             // mantenimientoEmpleados
             // 
@@ -360,14 +371,15 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "mantenimientoEmpleados";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += mantenimientoEmpleados_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -380,16 +392,6 @@
         private Guna.UI2.WinForms.Guna2TextBox btnBuscar;
         private Panel panel5;
         private DataGridView dgvEmpleados;
-        private DataGridViewTextBoxColumn IDEmpleado;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Apellido;
-        private DataGridViewTextBoxColumn TipoDocumento;
-        private DataGridViewTextBoxColumn Documento;
-        private DataGridViewTextBoxColumn Direccion;
-        private DataGridViewTextBoxColumn TellCell;
-        private DataGridViewTextBoxColumn TelRes;
-        private DataGridViewTextBoxColumn FechaRegistro;
-        private DataGridViewTextBoxColumn Estatus;
         private Guna.UI2.WinForms.Guna2Button btnNew;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
@@ -397,5 +399,15 @@
         private PictureBox btnClose;
         private Label label1;
         private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn IDEmpleado;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
+        private DataGridViewTextBoxColumn TipoDocumento;
+        private DataGridViewTextBoxColumn Documento;
+        private DataGridViewTextBoxColumn Direccion;
+        private DataGridViewTextBoxColumn TellCell;
+        private DataGridViewTextBoxColumn TellRes;
+        private DataGridViewTextBoxColumn FechaRegistro;
+        private DataGridViewTextBoxColumn Estatus;
     }
 }
