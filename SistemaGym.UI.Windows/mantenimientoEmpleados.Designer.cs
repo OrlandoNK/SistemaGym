@@ -162,6 +162,7 @@
             btnDelete.Size = new Size(205, 49);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -184,6 +185,7 @@
             btnEdit.Size = new Size(205, 49);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Modificar";
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnRefresh
             // 
@@ -204,6 +206,7 @@
             btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnRefresh.Size = new Size(205, 49);
             btnRefresh.TabIndex = 1;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnNew
             // 

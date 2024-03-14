@@ -46,8 +46,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string Actualizar = "UPDATE Empleados SET Nombre = @Nombre, Apellido = @Apellido, TipoDocumento = @Tipodocumento, Documento = @Documento, Direccion = @Direccion, TellCell = @TellCell, TelRes = @TelRes, FechaRegistro = @FechaRegistro, Estatus = @Estatus " + 
-            "where IDEmpleado = @IDEmpleado";
+            string Actualizar = "UPDATE Empleados SET Nombre = @Nombre, Apellido = @Apellido, TipoDocumento = @Tipodocumento, Documento = @Documento, Direccion = @Direccion, TellCell = @TellCell, TelRes = @TelRes, FechaRegistro = @FechaRegistro, Estatus = @Estatus WHERE IDEmpleado = @IDEmpleado";
 
             SqlCommand cmd = new SqlCommand(Actualizar, Conexion);
             cmd.Parameters.AddWithValue("@IDEmpleado", empleado.IDEmpleado);
@@ -67,7 +66,7 @@ namespace SistemaGym.DAL
 
         /* Metodo Eliminar Empleado poor ID */
 
-        public bool eliminarEmpleado(EmpleadoEntity empleado)
+        public bool eliminarEmpleado(int empleado)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -79,7 +78,7 @@ namespace SistemaGym.DAL
             string Delete = "DELETE FROM Empleados WHERE IDEmpleado = @IDEmpleado";
             SqlCommand cmnd = new SqlCommand(Delete, Conexion);
 
-            cmnd.Parameters.AddWithValue("@IDEmpleado", empleado.IDEmpleado);
+            cmnd.Parameters.AddWithValue("@IDEmpleado", empleado);
             seElimino = cmnd.ExecuteNonQuery() > 0;
 
 

@@ -25,5 +25,9 @@ namespace SistemaGym.BLL
         {
             return EmpleadoDAL.mostrarEmpleado();
         }
+        public bool Delete(int ID)
+        {
+            return empleadoDAL.eliminarEmpleado(ID);
+        }
     }
 }
