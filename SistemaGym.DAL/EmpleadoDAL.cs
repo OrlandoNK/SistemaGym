@@ -20,11 +20,10 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Insertar = "INSERT INTO Empleados(IDUsuario, Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TelRes, FechaRegistro, Estatus)" +
-                              " VALUES(@IDUsuario, @Nombre, @Apellido, @TipoDocumento, @Documento, @Direccion, @TellCell, @TelRes, @FechaRegistro, @Estatus)";
+            string Insertar = "INSERT INTO Empleados(Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TelRes, FechaRegistro, Estatus)" +
+                              " VALUES(@Nombre, @Apellido, @TipoDocumento, @Documento, @Direccion, @TellCell, @TelRes, @FechaRegistro, @Estatus)";
 
             SqlCommand cmnd = new SqlCommand(Insertar, Conexion);
-            cmnd.Parameters.AddWithValue("@IDUsuario", empleado.IDUsuario);
             cmnd.Parameters.AddWithValue("@Nombre", empleado.Nombre);
             cmnd.Parameters.AddWithValue("@Apellido", empleado.Apellido);
             cmnd.Parameters.AddWithValue("@TipoDocumento", empleado.TipoDocumento);
@@ -47,12 +46,11 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = new SqlConnection();
 
             Conexion.Open();
-            string Actualizar = "UPDATE Empleados SET IDUsuario = @IDUsuario, Nombre = @Nombre, Apellido = @Apellido, TipoDocumento = @Tipodocumento, Documento = @Documento, Direccion = @Direccion, TellCell = @TellCell, TelRes = @TelRes, FechaRegistro = @FechaRegistro, Estatus = @Estatus " + 
+            string Actualizar = "UPDATE Empleados SET Nombre = @Nombre, Apellido = @Apellido, TipoDocumento = @Tipodocumento, Documento = @Documento, Direccion = @Direccion, TellCell = @TellCell, TelRes = @TelRes, FechaRegistro = @FechaRegistro, Estatus = @Estatus " + 
             "where IDEmpleado = @IDEmpleado";
 
             SqlCommand cmd = new SqlCommand(Actualizar, Conexion);
             cmd.Parameters.AddWithValue("@IDEmpleado", empleado.IDEmpleado);
-            cmd.Parameters.AddWithValue("@IDUsuario", empleado.IDUsuario);
             cmd.Parameters.AddWithValue("@Nombre", empleado.Nombre);
             cmd.Parameters.AddWithValue("@Apellido", empleado.Apellido);
             cmd.Parameters.AddWithValue("@TipoDocumento", empleado.TipoDocumento);
@@ -133,12 +131,11 @@ namespace SistemaGym.DAL
             Conexion.Open();
             DataTable dataTBL = new DataTable();
             string GetValor = "SELECT * FROM Empleados " + 
-                              "WHERE IDUsuario LIKE '%' + @IDUsuario + '%' OR Nombre LIKE '%' + @Nombre + '%' OR Apellido LIKE '%' @Apellido + '%' OR" +
+                              "WHERE Nombre LIKE '%' + @Nombre + '%' OR Apellido LIKE '%' @Apellido + '%' OR" +
                               "TipoDocumento LIKE '%' + @TipoDocumento + '%' OR Documento LIKE '%' + @Documento + '%' OR Direccion LIKE '%' + @Direccion + '%' OR" +
                               "TellCell LIKE '%' + @TellCell + '%' OR TelRes LIKE '%' + @TelRes + '%' OR FechaRegistro LIKE '%' + @FechaRegistro + '%' OR Estatus LIKE '%' + @Estatus + '% ORDER BY Nombre'";
 
             SqlCommand cmnd = new SqlCommand(GetValor, Conexion);
-            cmnd.Parameters.AddWithValue("@IDUsuario", empleado.IDUsuario);
             cmnd.Parameters.AddWithValue("@Nombre", empleado.Nombre);
             cmnd.Parameters.AddWithValue("@Apellido", empleado.Apellido);
             cmnd.Parameters.AddWithValue("@TipoDocumento", empleado.TipoDocumento);
