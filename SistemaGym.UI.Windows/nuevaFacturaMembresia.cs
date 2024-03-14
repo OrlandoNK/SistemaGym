@@ -116,12 +116,12 @@ namespace SistemaGym.UI.Windows
                 }
                 else
                 {
-                    MessageBox.Show("Cliente No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Cliente No Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private string SYSTEM_TITLE = "Sistema Gestion Gimnasio (COMFORT GYM)";
+        private string SYSTEM_TITLE = "Sistema Gestion Gimnasio (COMFORT GYM) dice";
         private void btnGuardarCargoCredito_Click(object sender, EventArgs e)
         {
             CargoCreditoEntity nuevoCargoCredito = new CargoCreditoEntity();
