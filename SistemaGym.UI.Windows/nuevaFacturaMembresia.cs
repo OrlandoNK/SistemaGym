@@ -59,6 +59,7 @@ namespace SistemaGym.UI.Windows
                 if (oCliente != null)
                 {
                     this.TxbIDCliente.Text = oCliente.IDCliente.ToString();
+                    this.TxbTipoDocumento.Text = oCliente.TipoDocumento.ToString();
                     this.TxbDocumentoCliente.Text = oCliente.Documento.ToString();
                     this.TxbNombreCliente.Text = oCliente.Nombre.ToString();
                     this.TxbApellidoCliente.Text = oCliente.Apellido.ToString();
@@ -244,12 +245,22 @@ namespace SistemaGym.UI.Windows
 
         private void btnFacturarMembresia_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int ValorMembresia = int.Parse(TxbValorMembresia.Text);
+                int FacturaCC = int.Parse(TxbFacturacionCargoCredito.Text);
+                int FacturaCD = int.Parse(TxbFacturaCargoDebito.Text);
 
-            int ValorMembresia = int.Parse(TxbValorMembresia.Text);
-            int FacturaCC = int.Parse(TxbFacturacionCargoCredito.Text);
-            int FacturaCD = int.Parse(TxbFacturaCargoDebito.Text);
-
-            TxbFacturaValor.Text = Convert.ToString(ValorMembresia + (FacturaCC + FacturaCD));
+                TxbFacturaValor.Text = Convert.ToString(ValorMembresia + (FacturaCC + FacturaCD));
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Se produjo un error al Intentar Facturar. \nDetalles a continuación: \n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se produjo un error al Intentar Facturar. \nDetalles a continuación: \n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -315,6 +326,7 @@ namespace SistemaGym.UI.Windows
             TxbIDCliente.Clear();
             TxbNombreCliente.Clear();
             TxbApellidoCliente.Clear();
+            TxbTipoDocumento.Clear();
             TxbDocumentoCliente.Clear();
 
             TxbFacturacionCargoCredito.Clear();
