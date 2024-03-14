@@ -21,7 +21,7 @@ namespace SistemaGym.BLL
         {
             ClientesDAL.ActualizarCliente(clientes);
         }
-        public static bool Eliminar(ClientesEntity clientes)
+        public static bool Eliminar(int clientes)
         {
             return ClientesDAL.EliminarCliente(clientes);
         }
