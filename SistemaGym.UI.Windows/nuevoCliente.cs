@@ -22,12 +22,21 @@ namespace SistemaGym.UI.Windows
         const string sistema = "Sistema Gestion Gimnasion (COMFORT GYM) dice:";
         private void nuevoCliente_Load(object sender, EventArgs e)
         {
-            txtIDUsuario.Text = gestioUsuarioEntities.IDUserLogged;
-            txtUsuario.Text = gestioUsuarioEntities.usernameLogged;
+            CargarUsuario();
+            cbUsuario.SelectedValue = gestioUsuarioEntities.IDUserLogged;
             CargarMembresia();
             CargarTipoCliente();
             CargarTipoListaCliente();
         }
+
+        
+        private void CargarUsuario()
+        {
+            cbUsuario.DataSource = UsuarioBLL.Mostrar();
+            cbUsuario.ValueMember = "IDUsuario";
+            cbUsuario.DisplayMember = "Nombre";
+        }
+        
 
         private void CargarTipoListaCliente()
         {
@@ -65,7 +74,7 @@ namespace SistemaGym.UI.Windows
             }
             //datos de control al objeto
             ClientesEntity oCliente = new ClientesEntity();
-            oCliente.IDUsuario = Convert.ToInt32(txtIDUsuario.Text);
+            oCliente.IDUsuario = Convert.ToInt32(cbUsuario.Text);
             oCliente.IDMembresia = (int)cbMembresia.SelectedValue;
             oCliente.TipoListaCliente = (int)cbTipoListaCliente.SelectedValue;
             oCliente.TipoCliente = (int)cbTipoCliente.SelectedValue;
@@ -160,8 +169,6 @@ namespace SistemaGym.UI.Windows
             cbTipoDocumento.SelectedIndex = -1;
             cbTipoListaCliente.SelectedIndex = -1;
             txtDireccion.Clear();
-            txtUsuario.Clear();
-            txtIDUsuario.Clear();
             txtTelCell.Clear();
             txtTelRes.Clear();
         }
