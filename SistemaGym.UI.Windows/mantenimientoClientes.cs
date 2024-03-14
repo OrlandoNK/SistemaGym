@@ -164,7 +164,7 @@ namespace SistemaGym.UI.Windows
                     }
                     else
                     {
-                        MessageBox.Show("Error al Tratar de Eliminar la Factura de Membresia", sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error al Tratar de Eliminar el Cliente", sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
