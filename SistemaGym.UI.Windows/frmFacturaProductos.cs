@@ -31,7 +31,7 @@ namespace SistemaGym.UI.Windows
                 ClientesEntity cliente = ClientesBLL.BuscarPorID(frmBuscarCliente.id);
                 txtIDCliente.Text = cliente.IDCliente.ToString();
                 txtCliente.Text = cliente.Nombre;
-                txtDocumento.Text = cliente.Documento;
+                txtDocumento.Text = cliente.Documento.ToString();
                 txtTipoCliente.Text = cliente.TipoCliente.ToString();
 
             }
