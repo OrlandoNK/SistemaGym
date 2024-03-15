@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtDireccion = new TextBox();
             txtContrasena = new TextBox();
             txtApellido = new TextBox();
@@ -67,19 +67,25 @@
             cbRol = new ComboBox();
             errorProvider = new ErrorProvider(components);
             panel1 = new Panel();
+            btnclose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
             btnEditar = new Button();
+            panel5 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
+            panel6 = new Panel();
+            pictureBox1 = new PictureBox();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnclose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtDireccion
@@ -316,9 +322,9 @@
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
-            dataGridViewCellStyle2.Format = "g";
-            dataGridViewCellStyle2.NullValue = null;
-            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "g";
+            dataGridViewCellStyle1.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.ReadOnly = true;
@@ -406,11 +412,26 @@
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(btnclose);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(965, 61);
             panel1.TabIndex = 119;
+            // 
+            // btnclose
+            // 
+            btnclose.Cursor = Cursors.Hand;
+            btnclose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnclose.Location = new Point(920, 13);
+            btnclose.Name = "btnclose";
+            btnclose.Size = new Size(32, 32);
+            btnclose.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnclose.TabIndex = 0;
+            btnclose.TabStop = false;
+            btnclose.Click += btnclose_Click;
             // 
             // panel2
             // 
@@ -464,28 +485,6 @@
             panel4.Size = new Size(200, 504);
             panel4.TabIndex = 122;
             // 
-            // panel5
-            // 
-            panel5.BackColor = Color.WhiteSmoke;
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(TxbBuscar);
-            panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(278, 94);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(487, 68);
-            panel5.TabIndex = 123;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.WhiteSmoke;
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(dgvUsuario);
-            panel6.Dock = DockStyle.Fill;
-            panel6.Location = new Point(278, 162);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(487, 436);
-            panel6.TabIndex = 124;
-            // 
             // btnEditar
             // 
             btnEditar.FlatAppearance.BorderColor = Color.DarkGoldenrod;
@@ -501,10 +500,21 @@
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
             // 
+            // panel5
+            // 
+            panel5.BackColor = Color.WhiteSmoke;
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(TxbBuscar);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(278, 94);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(487, 68);
+            panel5.TabIndex = 123;
+            // 
             // TxbBuscar
             // 
             TxbBuscar.BorderRadius = 20;
-            TxbBuscar.CustomizableEdges = customizableEdges3;
+            TxbBuscar.CustomizableEdges = customizableEdges1;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -520,9 +530,41 @@
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             TxbBuscar.Size = new Size(475, 39);
             TxbBuscar.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.WhiteSmoke;
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(dgvUsuario);
+            panel6.Dock = DockStyle.Fill;
+            panel6.Location = new Point(278, 162);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(487, 436);
+            panel6.TabIndex = 124;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.usuarios__mainScreen;
+            pictureBox1.Location = new Point(3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(67, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.DarkGoldenrod;
+            label8.Location = new Point(76, 17);
+            label8.Name = "label8";
+            label8.Size = new Size(83, 24);
+            label8.TabIndex = 2;
+            label8.Text = "Usuarios";
             // 
             // frmUsuario
             // 
@@ -541,11 +583,15 @@
             Load += frmUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)dgvUsuario).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnclose).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -593,5 +639,8 @@
         private Panel panel4;
         private Button btnEditar;
         private Guna.UI2.WinForms.Guna2TextBox TxbBuscar;
+        private PictureBox btnclose;
+        private Label label8;
+        private PictureBox pictureBox1;
     }
 }
