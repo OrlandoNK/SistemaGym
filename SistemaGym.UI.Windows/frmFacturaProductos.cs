@@ -27,9 +27,9 @@ namespace SistemaGym.UI.Windows
             frmBuscarCliente frmBuscarCliente = new frmBuscarCliente();
             if (frmBuscarCliente.ShowDialog() == DialogResult.OK)
             {
-          
-            
-            ClientesEntity cliente = ClientesBLL.BuscarPorID(frmBuscarCliente.id);
+
+
+                ClientesEntity cliente = ClientesBLL.BuscarPorID(frmBuscarCliente.id);
                 txtIDCliente.Text = cliente.IDCliente.ToString();
                 txtCliente.Text = cliente.Nombre;
                 txtDocumento.Text = cliente.Documento;
@@ -153,10 +153,6 @@ namespace SistemaGym.UI.Windows
             txtProducto.Clear();
             txtCantidad.Text = "0";
             txtPrecio.Text = 0.ToString("N2");
-
-
-
-
         }
         public void CargarProducto()
         {
@@ -181,8 +177,8 @@ namespace SistemaGym.UI.Windows
             }
             oFactura.IDCliente = int.Parse(txtIDCliente.Text);
             oFactura.IDUsuario = int.Parse(txtIDUsuario.Text);
-            oFactura.Estatus = cbEstatus.Text;
-            oFactura.FechaEmision = DateTime.Parse(dtpFechaEmision.Text);
+            oFactura.Estatus = "Activo";
+            oFactura.FechaEmision = DateTime.Now;
             oFactura.FechaVencimiento = DateTime.Parse(dtpFechaVencimiento.Text);
             oFactura.NCF = txtNCF.Text;
             try
@@ -202,18 +198,13 @@ namespace SistemaGym.UI.Windows
 
             bool resultado = true;
             errorProvider.Clear();
-            if (string.IsNullOrEmpty(cbEstatus.Text))
-            {
-                errorProvider.SetError(cbEstatus, "El Estatus es obligatorio");
-                resultado = false;
-            }
+
             if (string.IsNullOrEmpty(txtCliente.Text))
             {
                 errorProvider.SetError(txtCliente, "El Cliente Es Obligatorio");
                 btnBuscarCliente.Focus();
                 resultado = false;
             }
-
 
             if (string.IsNullOrEmpty(txtUsuario.Text))
             {
