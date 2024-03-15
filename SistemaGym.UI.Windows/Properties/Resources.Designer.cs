@@ -823,6 +823,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_empleados_x32 {
+            get {
+                object obj = ResourceManager.GetObject("icon-empleados-x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_for_editing_button_x32 {
             get {
                 object obj = ResourceManager.GetObject("icon for editing button x32", resourceCulture);
@@ -996,6 +1006,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap proveedoresMainScreen {
             get {
                 object obj = ResourceManager.GetObject("proveedoresMainScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_8677771 {
+            get {
+                object obj = ResourceManager.GetObject("refresh_8677771", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

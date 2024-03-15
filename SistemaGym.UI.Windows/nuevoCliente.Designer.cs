@@ -32,15 +32,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            label2 = new Label();
+            pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
             btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
             groupBox2 = new GroupBox();
-            txtIDUsuario = new TextBox();
-            label1 = new Label();
-            txtUsuario = new TextBox();
             cbTipoListaCliente = new ComboBox();
             label3 = new Label();
             label4 = new Label();
@@ -64,16 +63,16 @@
             label12 = new Label();
             txtTelRes = new TextBox();
             errorProvider = new ErrorProvider(components);
-            label2 = new Label();
-            pictureBox2 = new PictureBox();
+            cbUsuario = new ComboBox();
+            label1 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -88,6 +87,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(880, 60);
             panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.Goldenrod;
+            label2.Location = new Point(71, 17);
+            label2.Name = "label2";
+            label2.Size = new Size(161, 24);
+            label2.TabIndex = 4;
+            label2.Text = "Registrar Clientes";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources._Clientes_mainScreen_;
+            pictureBox2.Location = new Point(3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(62, 50);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -161,9 +182,8 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(txtIDUsuario);
             groupBox2.Controls.Add(label1);
-            groupBox2.Controls.Add(txtUsuario);
+            groupBox2.Controls.Add(cbUsuario);
             groupBox2.Controls.Add(cbTipoListaCliente);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label4);
@@ -177,34 +197,6 @@
             groupBox2.TabIndex = 126;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Relacionados al Cliente";
-            // 
-            // txtIDUsuario
-            // 
-            txtIDUsuario.Enabled = false;
-            txtIDUsuario.Location = new Point(119, 130);
-            txtIDUsuario.Multiline = true;
-            txtIDUsuario.Name = "txtIDUsuario";
-            txtIDUsuario.ReadOnly = true;
-            txtIDUsuario.Size = new Size(96, 25);
-            txtIDUsuario.TabIndex = 125;
-            // 
-            // label1
-            // 
-            label1.Location = new Point(119, 108);
-            label1.Name = "label1";
-            label1.Size = new Size(424, 19);
-            label1.TabIndex = 124;
-            label1.Text = "Usuario";
-            // 
-            // txtUsuario
-            // 
-            txtUsuario.Enabled = false;
-            txtUsuario.Location = new Point(225, 130);
-            txtUsuario.Multiline = true;
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.ReadOnly = true;
-            txtUsuario.Size = new Size(318, 25);
-            txtUsuario.TabIndex = 123;
             // 
             // cbTipoListaCliente
             // 
@@ -406,27 +398,22 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // label2
+            // cbUsuario
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.Goldenrod;
-            label2.Location = new Point(71, 17);
-            label2.Name = "label2";
-            label2.Size = new Size(161, 24);
-            label2.TabIndex = 4;
-            label2.Text = "Registrar Clientes";
-            label2.TextAlign = ContentAlignment.MiddleLeft;
+            cbUsuario.Enabled = false;
+            cbUsuario.FormattingEnabled = true;
+            cbUsuario.Location = new Point(119, 129);
+            cbUsuario.Name = "cbUsuario";
+            cbUsuario.Size = new Size(424, 25);
+            cbUsuario.TabIndex = 123;
             // 
-            // pictureBox2
+            // label1
             // 
-            pictureBox2.Image = Properties.Resources._Clientes_mainScreen_;
-            pictureBox2.Location = new Point(3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(62, 50);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
+            label1.Location = new Point(119, 107);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 19);
+            label1.TabIndex = 124;
+            label1.Text = "Usuario";
             // 
             // nuevoCliente
             // 
@@ -443,15 +430,14 @@
             Load += nuevoCliente_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -483,14 +469,13 @@
         private Label label3;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private Label label1;
-        private TextBox txtUsuario;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private PictureBox pictureBox1;
         private ErrorProvider errorProvider;
-        private TextBox txtIDUsuario;
         private CheckBox chEstatus;
         private Label label2;
         private PictureBox pictureBox2;
+        private Label label1;
+        private ComboBox cbUsuario;
     }
 }

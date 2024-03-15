@@ -286,7 +286,7 @@
             btnEmpleados.ForeColor = Color.White;
             btnEmpleados.HoverState.FillColor = Color.White;
             btnEmpleados.HoverState.ForeColor = Color.Black;
-            btnEmpleados.Image = Properties.Resources.usuarios__mainScreen;
+            btnEmpleados.Image = Properties.Resources.icon_empleados_x32;
             btnEmpleados.ImageAlign = HorizontalAlignment.Left;
             btnEmpleados.ImageSize = new Size(25, 25);
             btnEmpleados.Location = new Point(0, 74);

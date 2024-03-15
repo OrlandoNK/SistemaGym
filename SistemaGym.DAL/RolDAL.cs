@@ -81,7 +81,7 @@ namespace SistemaGym.DAL
 
         //funcion eliminar Rol
 
-        public static bool EliminarRolDal(RolEntity rol)
+        public static bool EliminarRolDal(int rol)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -92,12 +92,30 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string Eliminar = "Delete from Rol where IDRol= @idRol";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idRol", rol.IDRol);
+            cmd.Parameters.AddWithValue("@idRol", rol);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
         }
 
+        public static DataTable ObtenerByValor(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM Rol WHERE IDRol LIKE @Busqueda OR Nombre LIKE @Busqueda OR Descripcion LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
+        }
 
         //metodo mostrar Rol
         public static DataTable MostrarRol()

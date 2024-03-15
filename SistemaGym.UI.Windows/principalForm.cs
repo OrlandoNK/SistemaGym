@@ -96,7 +96,8 @@ namespace SistemaGym.UI.Windows
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-
+            mantenimientoEmpleados mantenimientoEmpleados = new mantenimientoEmpleados();
+            mantenimientoEmpleados.Show();
 
             HideSubMenu();
         }
@@ -133,7 +134,8 @@ namespace SistemaGym.UI.Windows
         private void btnCategorias_Click(object sender, EventArgs e)
         {
 
-
+            frmCategoria frmCategoria = new frmCategoria();
+            frmCategoria.Show();
             HideSubMenu();
         }
 

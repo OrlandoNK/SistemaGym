@@ -68,18 +68,16 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar cliente
 
-        public static bool EliminarCliente(ClientesEntity clientes) 
+        public static bool EliminarCliente(int clientes) 
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             bool seElimino;
 
-            
-
             Conexion.Open();
             string Eliminar = "Delete from Clientes where IDCliente= @idcliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idcliente", clientes.IDCliente);
+            cmd.Parameters.AddWithValue("@idcliente", clientes);
             seElimino = cmd.ExecuteNonQuery() > 0 ;
             return seElimino;
 

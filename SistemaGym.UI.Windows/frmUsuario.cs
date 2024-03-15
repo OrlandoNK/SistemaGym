@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -49,7 +50,6 @@ namespace SistemaGym.UI.Windows
             txtDireccion.Clear();
             txtNombreUsuario.Clear();
             txtContrasena.Clear();
-            cbEstatus.Text = "";
             dgvUsuario.AutoGenerateColumns = false;
             dgvUsuario.DataSource = UsuarioBLL.Mostrar();
             CargarRol();
@@ -76,10 +76,8 @@ namespace SistemaGym.UI.Windows
             txtSexo.Text = row.Cells["Sexo"].Value?.ToString();
             txtCorreo.Text = row.Cells["Correo"].Value?.ToString();
             txtDireccion.Text = row.Cells["Direccion"].Value?.ToString();
-            dtpFechaRegistro.Text = row.Cells["FechaRegistro"].Value?.ToString();
             txtNombreUsuario.Text = row.Cells["NombreUsuario"].Value?.ToString();
             txtContrasena.Text = row.Cells["Contrasena"].Value?.ToString();
-            cbEstatus.Text = row.Cells["Estatus"].Value?.ToString();
 
         }
 
@@ -101,10 +99,10 @@ namespace SistemaGym.UI.Windows
             oUsuario.Sexo = txtSexo.Text;
             oUsuario.Correo = txtCorreo.Text;
             oUsuario.Direccion = txtDireccion.Text;
-            oUsuario.FechaRegistro = DateTime.Parse(dtpFechaRegistro.Text);
+            oUsuario.FechaRegistro = DateTime.Now;
             oUsuario.NombreUsuario = txtNombreUsuario.Text;
             oUsuario.Contrasena = txtContrasena.Text;
-            oUsuario.Estatus = cbEstatus.Text;
+            oUsuario.Estatus = "Activo";
             // guardar base datos
             try
             {
@@ -134,8 +132,6 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(txtNombre, "El Nombre es obligatorio");
                 resultado = false;
             }
-
-
             if (string.IsNullOrEmpty(txtApellido.Text))
             {
                 errorProvider.SetError(txtApellido, "El Apellido es Obligatorio");
@@ -144,16 +140,6 @@ namespace SistemaGym.UI.Windows
             if (string.IsNullOrEmpty(txtDireccion.Text))
             {
                 errorProvider.SetError(txtDireccion, "La Direccion es obligatorio");
-                resultado = false;
-            }
-            if (string.IsNullOrEmpty(dtpFechaRegistro.Text))
-            {
-                errorProvider.SetError(txtNombre, "La Fecha es obligatorio");
-                resultado = false;
-            }
-            if (string.IsNullOrEmpty(cbEstatus.Text))
-            {
-                errorProvider.SetError(cbEstatus, "El Estatus es obligatorio");
                 resultado = false;
             }
 
@@ -194,8 +180,20 @@ namespace SistemaGym.UI.Windows
                     }
                 }
             }
-            catch (Exception ex) { MessageBox.Show("Tienes que borrar el cliente que hace uso de este usuario", sistema, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Se Produjo un Error al Intentar Eliminar el Usuario. \nDetalles a Continuacion:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se Produjo un Error al Intentar Eliminar el Usuario. \nDetalles a Continuacion:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 

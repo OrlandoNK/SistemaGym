@@ -14,17 +14,12 @@ namespace SistemaGym.BLL
         readonly RolDAL rolDAL = new RolDAL();
         public static void Guardar(RolEntity rol)
         {
-            if (rol.IDRol == 0)
-            {
-                //agregar
-                RolDAL.InsertarRolDal(rol);
-            }
-            else
-            {
-                //Actualizar
-                RolDAL.ActualizarRolDal(rol);
+           RolDAL.InsertarRolDal(rol);
+        }
 
-            }
+        public static void ActualizarRol(RolEntity rol)
+        {
+            RolDAL.ActualizarRolDal(rol);
         }
 
         public static string ObtenerRolUsuario(string usuario, string contraseña)
@@ -32,7 +27,12 @@ namespace SistemaGym.BLL
             return RolDAL.ObtenerRolUsuario(usuario, contraseña);
         }
 
-        public static bool EliminarRol(RolEntity rol)
+        public static DataTable ObtenerByValor(string busqueda)
+        {
+            return RolDAL.ObtenerByValor(busqueda);
+        }
+
+        public static bool EliminarRol(int rol)
         {
             return RolDAL.EliminarRolDal(rol);
         }

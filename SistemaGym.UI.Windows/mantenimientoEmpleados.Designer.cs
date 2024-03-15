@@ -1,6 +1,6 @@
 ﻿namespace SistemaGym.UI.Windows
 {
-    partial class frmClientes
+    partial class mantenimientoEmpleados
     {
         /// <summary>
         /// Required designer variable.
@@ -46,24 +46,20 @@
             panel3 = new Panel();
             btnDelete = new Guna.UI2.WinForms.Guna2Button();
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
-            btnUpdateDGV = new Guna.UI2.WinForms.Guna2Button();
-            btnGuardar = new Guna.UI2.WinForms.Guna2Button();
+            btnRefresh = new Guna.UI2.WinForms.Guna2Button();
+            btnNew = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
-            TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
+            btnBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel5 = new Panel();
-            dgvClientes = new DataGridView();
-            IDCliente = new DataGridViewTextBoxColumn();
-            IDUsuario = new DataGridViewComboBoxColumn();
-            IDMembresia = new DataGridViewComboBoxColumn();
-            TipoListaCliente = new DataGridViewComboBoxColumn();
-            TipoCliente = new DataGridViewComboBoxColumn();
+            dgvEmpleados = new DataGridView();
+            IDEmpleado = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
             TipoDocumento = new DataGridViewTextBoxColumn();
             Documento = new DataGridViewTextBoxColumn();
             Direccion = new DataGridViewTextBoxColumn();
-            TelCell = new DataGridViewTextBoxColumn();
-            TelRes = new DataGridViewTextBoxColumn();
+            TellCell = new DataGridViewTextBoxColumn();
+            TellRes = new DataGridViewTextBoxColumn();
             FechaRegistro = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
@@ -72,7 +68,7 @@
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -85,37 +81,35 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(905, 61);
-            panel1.TabIndex = 73;
+            panel1.Size = new Size(889, 67);
+            panel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.Goldenrod;
-            label1.Location = new Point(71, 17);
+            label1.Location = new Point(77, 20);
             label1.Name = "label1";
-            label1.Size = new Size(216, 24);
+            label1.Size = new Size(105, 24);
             label1.TabIndex = 2;
-            label1.Text = "Mantenimiento Clientes";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
+            label1.Text = "Empleados";
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._Clientes_mainScreen_;
-            pictureBox1.Location = new Point(3, 4);
+            pictureBox1.Image = Properties.Resources.icon_empleados_x32;
+            pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(62, 50);
+            pictureBox1.Size = new Size(68, 59);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
             // btnClose
             // 
-            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(860, 13);
+            btnClose.Location = new Point(844, 16);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -128,10 +122,10 @@
             panel2.BackColor = Color.DarkGoldenrod;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 61);
+            panel2.Location = new Point(0, 67);
             panel2.Name = "panel2";
-            panel2.Size = new Size(905, 34);
-            panel2.TabIndex = 74;
+            panel2.Size = new Size(889, 36);
+            panel2.TabIndex = 1;
             // 
             // panel3
             // 
@@ -139,19 +133,18 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(btnDelete);
             panel3.Controls.Add(btnEdit);
-            panel3.Controls.Add(btnUpdateDGV);
-            panel3.Controls.Add(btnGuardar);
+            panel3.Controls.Add(btnRefresh);
+            panel3.Controls.Add(btnNew);
             panel3.Dock = DockStyle.Left;
-            panel3.Location = new Point(0, 95);
+            panel3.Location = new Point(0, 103);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 459);
-            panel3.TabIndex = 75;
+            panel3.Size = new Size(205, 456);
+            panel3.TabIndex = 2;
             // 
             // btnDelete
             // 
             btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
-            btnDelete.Cursor = Cursors.Hand;
             btnDelete.CustomizableEdges = customizableEdges1;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -160,25 +153,21 @@
             btnDelete.FillColor = Color.Transparent;
             btnDelete.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.White;
-            btnDelete.HoverState.FillColor = Color.DarkGoldenrod;
-            btnDelete.HoverState.ForeColor = Color.Black;
             btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
-            btnDelete.Location = new Point(-1, 205);
+            btnDelete.Location = new Point(-1, 282);
             btnDelete.Name = "btnDelete";
-            btnDelete.PressedColor = Color.Transparent;
             btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnDelete.Size = new Size(200, 47);
-            btnDelete.TabIndex = 4;
-            btnDelete.Text = "&Eliminar";
+            btnDelete.Size = new Size(205, 49);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Eliminar";
             btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
             btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
-            btnEdit.Cursor = Cursors.Hand;
             btnEdit.CustomizableEdges = customizableEdges3;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -187,231 +176,205 @@
             btnEdit.FillColor = Color.Transparent;
             btnEdit.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnEdit.ForeColor = Color.White;
-            btnEdit.HoverState.FillColor = Color.DarkGoldenrod;
-            btnEdit.HoverState.ForeColor = Color.Black;
             btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
-            btnEdit.Location = new Point(-1, 152);
+            btnEdit.Location = new Point(-1, 227);
             btnEdit.Name = "btnEdit";
-            btnEdit.PressedColor = Color.Transparent;
             btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnEdit.Size = new Size(200, 47);
-            btnEdit.TabIndex = 3;
-            btnEdit.Text = "&Editar";
+            btnEdit.Size = new Size(205, 49);
+            btnEdit.TabIndex = 2;
+            btnEdit.Text = "Modificar";
             btnEdit.Click += btnEdit_Click;
             // 
-            // btnUpdateDGV
+            // btnRefresh
             // 
-            btnUpdateDGV.BorderColor = Color.DarkGoldenrod;
-            btnUpdateDGV.BorderThickness = 1;
-            btnUpdateDGV.Cursor = Cursors.Hand;
-            btnUpdateDGV.CustomizableEdges = customizableEdges5;
-            btnUpdateDGV.DisabledState.BorderColor = Color.DarkGray;
-            btnUpdateDGV.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnUpdateDGV.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnUpdateDGV.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnUpdateDGV.FillColor = Color.Transparent;
-            btnUpdateDGV.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            btnUpdateDGV.ForeColor = Color.White;
-            btnUpdateDGV.HoverState.FillColor = Color.DarkGoldenrod;
-            btnUpdateDGV.HoverState.ForeColor = Color.Black;
-            btnUpdateDGV.Image = Properties.Resources._RefrescarFacturaMembresia___;
-            btnUpdateDGV.ImageSize = new Size(25, 25);
-            btnUpdateDGV.Location = new Point(-1, 99);
-            btnUpdateDGV.Name = "btnUpdateDGV";
-            btnUpdateDGV.PressedColor = Color.Transparent;
-            btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnUpdateDGV.Size = new Size(200, 47);
-            btnUpdateDGV.TabIndex = 2;
-            btnUpdateDGV.Click += btnUpdateDGV_Click;
+            btnRefresh.BorderColor = Color.DarkGoldenrod;
+            btnRefresh.BorderThickness = 1;
+            btnRefresh.CustomizableEdges = customizableEdges5;
+            btnRefresh.DisabledState.BorderColor = Color.DarkGray;
+            btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRefresh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRefresh.FillColor = Color.Transparent;
+            btnRefresh.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRefresh.ForeColor = Color.White;
+            btnRefresh.Image = Properties.Resources.refresh_8677771;
+            btnRefresh.ImageSize = new Size(25, 25);
+            btnRefresh.Location = new Point(-1, 172);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnRefresh.Size = new Size(205, 49);
+            btnRefresh.TabIndex = 1;
+            btnRefresh.Click += btnRefresh_Click;
             // 
-            // btnGuardar
+            // btnNew
             // 
-            btnGuardar.BorderColor = Color.DarkGoldenrod;
-            btnGuardar.BorderThickness = 1;
-            btnGuardar.Cursor = Cursors.Hand;
-            btnGuardar.CustomizableEdges = customizableEdges7;
-            btnGuardar.DisabledState.BorderColor = Color.DarkGray;
-            btnGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnGuardar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnGuardar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnGuardar.FillColor = Color.Transparent;
-            btnGuardar.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGuardar.ForeColor = Color.White;
-            btnGuardar.HoverState.FillColor = Color.DarkGoldenrod;
-            btnGuardar.HoverState.ForeColor = Color.Black;
-            btnGuardar.Image = Properties.Resources._NewFacturaProduct;
-            btnGuardar.ImageAlign = HorizontalAlignment.Left;
-            btnGuardar.ImageSize = new Size(25, 25);
-            btnGuardar.Location = new Point(-1, 46);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.PressedColor = Color.Transparent;
-            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnGuardar.Size = new Size(200, 47);
-            btnGuardar.TabIndex = 1;
-            btnGuardar.Text = "&Nuevo";
-            btnGuardar.Click += btnGuardar_Click;
+            btnNew.BorderColor = Color.DarkGoldenrod;
+            btnNew.BorderThickness = 1;
+            btnNew.CustomizableEdges = customizableEdges7;
+            btnNew.DisabledState.BorderColor = Color.DarkGray;
+            btnNew.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnNew.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnNew.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnNew.FillColor = Color.Transparent;
+            btnNew.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNew.ForeColor = Color.White;
+            btnNew.Image = Properties.Resources._NuevaFacturaMembresia;
+            btnNew.ImageAlign = HorizontalAlignment.Left;
+            btnNew.ImageSize = new Size(25, 25);
+            btnNew.Location = new Point(-1, 117);
+            btnNew.Name = "btnNew";
+            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnNew.Size = new Size(205, 49);
+            btnNew.TabIndex = 0;
+            btnNew.Text = "Nuevo";
+            btnNew.Click += btnNew_Click;
             // 
             // panel4
             // 
             panel4.BackColor = Color.WhiteSmoke;
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(TxbBuscar);
+            panel4.Controls.Add(btnBuscar);
             panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(200, 95);
+            panel4.Location = new Point(205, 103);
             panel4.Name = "panel4";
-            panel4.Size = new Size(705, 70);
-            panel4.TabIndex = 76;
+            panel4.Size = new Size(684, 66);
+            panel4.TabIndex = 3;
             // 
-            // TxbBuscar
+            // btnBuscar
             // 
-            TxbBuscar.BorderRadius = 25;
-            TxbBuscar.CustomizableEdges = customizableEdges9;
-            TxbBuscar.DefaultText = "";
-            TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            TxbBuscar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            TxbBuscar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            TxbBuscar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
-            TxbBuscar.Location = new Point(3, 9);
-            TxbBuscar.Name = "TxbBuscar";
-            TxbBuscar.PasswordChar = '\0';
-            TxbBuscar.PlaceholderForeColor = Color.Silver;
-            TxbBuscar.PlaceholderText = "Buscar";
-            TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TxbBuscar.Size = new Size(735, 51);
-            TxbBuscar.TabIndex = 0;
+            btnBuscar.BorderRadius = 20;
+            btnBuscar.CustomizableEdges = customizableEdges9;
+            btnBuscar.DefaultText = "";
+            btnBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            btnBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            btnBuscar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            btnBuscar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            btnBuscar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            btnBuscar.IconLeft = Properties.Resources._BusquedaBar__;
+            btnBuscar.Location = new Point(9, 12);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.PasswordChar = '\0';
+            btnBuscar.PlaceholderForeColor = Color.Silver;
+            btnBuscar.PlaceholderText = "Buscar";
+            btnBuscar.SelectedText = "";
+            btnBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnBuscar.Size = new Size(666, 42);
+            btnBuscar.TabIndex = 0;
             // 
             // panel5
             // 
-            panel5.BackColor = Color.White;
+            panel5.BackColor = Color.WhiteSmoke;
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(dgvClientes);
+            panel5.Controls.Add(dgvEmpleados);
             panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(200, 165);
+            panel5.Location = new Point(205, 169);
             panel5.Name = "panel5";
-            panel5.Size = new Size(705, 389);
-            panel5.TabIndex = 77;
+            panel5.Size = new Size(684, 390);
+            panel5.TabIndex = 4;
             // 
-            // dgvClientes
+            // dgvEmpleados
             // 
-            dgvClientes.AllowUserToAddRows = false;
-            dgvClientes.AllowUserToDeleteRows = false;
-            dgvClientes.BackgroundColor = Color.WhiteSmoke;
-            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { IDCliente, IDUsuario, IDMembresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus });
-            dgvClientes.Location = new Point(-1, -1);
-            dgvClientes.Name = "dgvClientes";
-            dgvClientes.RowHeadersVisible = false;
-            dgvClientes.RowTemplate.Height = 25;
-            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClientes.Size = new Size(705, 389);
-            dgvClientes.TabIndex = 0;
+            dgvEmpleados.AllowUserToAddRows = false;
+            dgvEmpleados.AllowUserToDeleteRows = false;
+            dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dgvEmpleados.BackgroundColor = Color.WhiteSmoke;
+            dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { IDEmpleado, Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TellRes, FechaRegistro, Estatus });
+            dgvEmpleados.Location = new Point(-1, -1);
+            dgvEmpleados.Name = "dgvEmpleados";
+            dgvEmpleados.RowHeadersVisible = false;
+            dgvEmpleados.RowTemplate.Height = 25;
+            dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvEmpleados.Size = new Size(684, 390);
+            dgvEmpleados.TabIndex = 0;
             // 
-            // IDCliente
+            // IDEmpleado
             // 
-            IDCliente.DataPropertyName = "IDCliente";
-            IDCliente.HeaderText = "IDCliente";
-            IDCliente.Name = "IDCliente";
-            // 
-            // IDUsuario
-            // 
-            IDUsuario.DataPropertyName = "IDUsuario";
-            IDUsuario.HeaderText = "IDUsuario";
-            IDUsuario.Name = "IDUsuario";
-            // 
-            // IDMembresia
-            // 
-            IDMembresia.DataPropertyName = "IDMembresia";
-            IDMembresia.HeaderText = "IDMembresia";
-            IDMembresia.Name = "IDMembresia";
-            // 
-            // TipoListaCliente
-            // 
-            TipoListaCliente.DataPropertyName = "TipoListaCliente";
-            TipoListaCliente.HeaderText = "TipoListaCliente";
-            TipoListaCliente.Name = "TipoListaCliente";
-            // 
-            // TipoCliente
-            // 
-            TipoCliente.DataPropertyName = "TipoCliente";
-            TipoCliente.HeaderText = "TipoCliente";
-            TipoCliente.Name = "TipoCliente";
+            IDEmpleado.DataPropertyName = "IDEmpleado";
+            IDEmpleado.HeaderText = "IDEmpleado";
+            IDEmpleado.Name = "IDEmpleado";
+            IDEmpleado.Width = 96;
             // 
             // Nombre
             // 
             Nombre.DataPropertyName = "Nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
+            Nombre.Width = 76;
             // 
             // Apellido
             // 
             Apellido.DataPropertyName = "Apellido";
             Apellido.HeaderText = "Apellido";
             Apellido.Name = "Apellido";
+            Apellido.Width = 76;
             // 
             // TipoDocumento
             // 
             TipoDocumento.DataPropertyName = "TipoDocumento";
             TipoDocumento.HeaderText = "TipoDocumento";
             TipoDocumento.Name = "TipoDocumento";
+            TipoDocumento.Width = 118;
             // 
             // Documento
             // 
             Documento.DataPropertyName = "Documento";
             Documento.HeaderText = "Documento";
             Documento.Name = "Documento";
+            Documento.Width = 95;
             // 
             // Direccion
             // 
             Direccion.DataPropertyName = "Direccion";
             Direccion.HeaderText = "Direccion";
             Direccion.Name = "Direccion";
+            Direccion.Width = 82;
             // 
-            // TelCell
+            // TellCell
             // 
-            TelCell.DataPropertyName = "TelCell";
-            TelCell.HeaderText = "TelCell";
-            TelCell.Name = "TelCell";
+            TellCell.DataPropertyName = "TellCell";
+            TellCell.HeaderText = "TellCell";
+            TellCell.Name = "TellCell";
+            TellCell.Width = 69;
             // 
-            // TelRes
+            // TellRes
             // 
-            TelRes.DataPropertyName = "TelRes";
-            TelRes.HeaderText = "TelRes";
-            TelRes.Name = "TelRes";
+            TellRes.DataPropertyName = "TellRes";
+            TellRes.HeaderText = "TellRes";
+            TellRes.Name = "TellRes";
+            TellRes.Width = 67;
             // 
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
+            FechaRegistro.Width = 106;
             // 
             // Estatus
             // 
             Estatus.DataPropertyName = "Estatus";
             Estatus.HeaderText = "Estatus";
             Estatus.Name = "Estatus";
+            Estatus.Width = 69;
             // 
-            // frmClientes
+            // mantenimientoEmpleados
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(905, 554);
+            ClientSize = new Size(889, 559);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frmClientes";
+            Name = "mantenimientoEmpleados";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Clientes";
-            Load += frmClientes_Load;
+            Load += mantenimientoEmpleados_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -419,37 +382,34 @@
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
+        private Guna.UI2.WinForms.Guna2TextBox btnBuscar;
         private Panel panel5;
-        private Guna.UI2.WinForms.Guna2TextBox TxbBuscar;
-        private Guna.UI2.WinForms.Guna2Button btnGuardar;
+        private DataGridView dgvEmpleados;
+        private Guna.UI2.WinForms.Guna2Button btnNew;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
-        private Guna.UI2.WinForms.Guna2Button btnUpdateDGV;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private PictureBox btnClose;
-        private PictureBox pictureBox1;
         private Label label1;
-        private DataGridView dgvClientes;
-        private DataGridViewTextBoxColumn IDCliente;
-        private DataGridViewComboBoxColumn IDUsuario;
-        private DataGridViewComboBoxColumn IDMembresia;
-        private DataGridViewComboBoxColumn TipoListaCliente;
-        private DataGridViewComboBoxColumn TipoCliente;
+        private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn IDEmpleado;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Apellido;
         private DataGridViewTextBoxColumn TipoDocumento;
         private DataGridViewTextBoxColumn Documento;
         private DataGridViewTextBoxColumn Direccion;
-        private DataGridViewTextBoxColumn TelCell;
-        private DataGridViewTextBoxColumn TelRes;
+        private DataGridViewTextBoxColumn TellCell;
+        private DataGridViewTextBoxColumn TellRes;
         private DataGridViewTextBoxColumn FechaRegistro;
         private DataGridViewTextBoxColumn Estatus;
     }

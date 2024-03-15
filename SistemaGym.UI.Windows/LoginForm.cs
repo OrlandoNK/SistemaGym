@@ -53,7 +53,9 @@ namespace SistemaGym.UI.Windows
 
                 this.Hide();
             }
-            else
+            else if (string.IsNullOrEmpty(TxbUsuario.Text) && string.IsNullOrEmpty(TxbContraseña.Text))
+            { MessageBox.Show("Por favor llene los campos", "ERROR DE INICIO DE SESION", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            else 
             {
                 MessageBox.Show("Datos de Usuario Incorrectos, Intente Nuevamente", "ERROR DE INICIO DE SESION", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
