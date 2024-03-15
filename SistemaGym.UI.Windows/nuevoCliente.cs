@@ -37,7 +37,7 @@ namespace SistemaGym.UI.Windows
             cbUsuario.DisplayMember = "Nombre";
         }
         
-
+        
         private void CargarTipoListaCliente()
         {
             cbTipoListaCliente.ValueMember = "IDTipoListaCliente";
@@ -74,7 +74,7 @@ namespace SistemaGym.UI.Windows
             }
             //datos de control al objeto
             ClientesEntity oCliente = new ClientesEntity();
-            oCliente.IDUsuario = Convert.ToInt32(cbUsuario.Text);
+            oCliente.IDUsuario = (int)cbUsuario.SelectedValue;
             oCliente.IDMembresia = (int)cbMembresia.SelectedValue;
             oCliente.TipoListaCliente = (int)cbTipoListaCliente.SelectedValue;
             oCliente.TipoCliente = (int)cbTipoCliente.SelectedValue;

@@ -27,12 +27,13 @@ namespace SistemaGym.UI.Windows
             frmBuscarCliente frmBuscarCliente = new frmBuscarCliente();
             if (frmBuscarCliente.ShowDialog() == DialogResult.OK)
             {
-
-                ClientesEntity cliente = ClientesBLL.BuscarPorID(frmBuscarCliente.id);
+          
+            
+            ClientesEntity cliente = ClientesBLL.BuscarPorID(frmBuscarCliente.id);
                 txtIDCliente.Text = cliente.IDCliente.ToString();
                 txtCliente.Text = cliente.Nombre;
                 txtDocumento.Text = cliente.Documento;
-                txtTipoCliente.Text = cliente.TipoCliente.ToString();
+                txtTipoCliente.Text= cliente.TipoCliente.ToString();
 
             }
 
