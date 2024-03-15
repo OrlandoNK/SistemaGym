@@ -224,6 +224,7 @@
             btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnUpdateDGV.Size = new Size(200, 47);
             btnUpdateDGV.TabIndex = 2;
+            btnUpdateDGV.Click += btnUpdateDGV_Click;
             // 
             // btnGuardar
             // 

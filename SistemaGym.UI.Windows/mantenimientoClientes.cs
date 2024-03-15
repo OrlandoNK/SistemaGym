@@ -175,6 +175,12 @@ namespace SistemaGym.UI.Windows
 
             }
         }
+
+        private void btnUpdateDGV_Click(object sender, EventArgs e)
+        {
+            dgvClientes.DataSource = ClientesBLL.MostrarCliente();
+            dgvClientes.AutoGenerateColumns = false;
+        }
     }
 
 }
