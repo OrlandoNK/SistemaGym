@@ -99,7 +99,7 @@ namespace SistemaGym.UI.Windows
             try
             {
                 CategoriaProductoBLL.Guardar(oCategoria);
-                MessageBox.Show("Usuario Guardado", "SistemaGym", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Categoria Guardada", "SistemaGym", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 InicializarControles();
             }
             catch (Exception ex)
