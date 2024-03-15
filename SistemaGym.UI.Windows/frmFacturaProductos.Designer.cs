@@ -34,6 +34,8 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -100,9 +102,9 @@
             label8 = new Label();
             label2 = new Label();
             label6 = new Label();
-            txtTipoCliente = new TextBox();
             txtCliente = new TextBox();
             tabControl1 = new TabControl();
+            cbTipoCliente = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
@@ -746,6 +748,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(cbTipoCliente);
             groupBox1.Controls.Add(btnBuscarCliente);
             groupBox1.Controls.Add(txtIDCliente);
             groupBox1.Controls.Add(txtDocumento);
@@ -753,7 +756,6 @@
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(txtTipoCliente);
             groupBox1.Controls.Add(txtCliente);
             groupBox1.Location = new Point(6, 6);
             groupBox1.Name = "groupBox1";
@@ -825,15 +827,6 @@
             label6.TabIndex = 5;
             label6.Text = "Cliente";
             // 
-            // txtTipoCliente
-            // 
-            txtTipoCliente.Location = new Point(134, 72);
-            txtTipoCliente.Multiline = true;
-            txtTipoCliente.Name = "txtTipoCliente";
-            txtTipoCliente.ReadOnly = true;
-            txtTipoCliente.Size = new Size(100, 28);
-            txtTipoCliente.TabIndex = 13;
-            // 
             // txtCliente
             // 
             txtCliente.Location = new Point(240, 72);
@@ -854,6 +847,23 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(635, 463);
             tabControl1.TabIndex = 28;
+            // 
+            // cbTipoCliente
+            // 
+            cbTipoCliente.BackColor = Color.Transparent;
+            cbTipoCliente.CustomizableEdges = customizableEdges1;
+            cbTipoCliente.DrawMode = DrawMode.OwnerDrawFixed;
+            cbTipoCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbTipoCliente.FocusedColor = Color.FromArgb(94, 148, 255);
+            cbTipoCliente.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cbTipoCliente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cbTipoCliente.ForeColor = Color.FromArgb(68, 88, 112);
+            cbTipoCliente.ItemHeight = 30;
+            cbTipoCliente.Location = new Point(134, 66);
+            cbTipoCliente.Name = "cbTipoCliente";
+            cbTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            cbTipoCliente.Size = new Size(100, 36);
+            cbTipoCliente.TabIndex = 16;
             // 
             // frmFacturaProductos
             // 
@@ -949,7 +959,6 @@
         private TextBox txtDocumento;
         private TextBox txtIDCliente;
         private TextBox txtCliente;
-        private TextBox txtTipoCliente;
         private Label label8;
         private Label label7;
         private Label label6;
@@ -959,5 +968,6 @@
         private GroupBox groupBox4;
         private Label label21;
         private PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2ComboBox cbTipoCliente;
     }
 }

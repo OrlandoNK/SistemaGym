@@ -33,7 +33,9 @@ namespace SistemaGym.UI.Windows
                 txtIDCliente.Text = cliente.IDCliente.ToString();
                 txtCliente.Text = cliente.Nombre;
                 txtDocumento.Text = cliente.Documento;
-                txtTipoCliente.Text= cliente.TipoCliente.ToString();
+                cbTipoCliente.ValueMember = "IDTipoCliente";
+                cbTipoCliente.DisplayMember = "Nombre";
+                cbTipoCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
 
             }
 
