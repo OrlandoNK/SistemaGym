@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle41 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle42 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle43 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle44 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle45 = new DataGridViewCellStyle();
             label1 = new Label();
             label5 = new Label();
             dtpFechaVencimiento = new DateTimePicker();
@@ -87,11 +85,8 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            tabDetalleFactura = new TabPage();
-            tabClientData = new TabPage();
             groupBox4 = new GroupBox();
             groupBox1 = new GroupBox();
-            cbTipoCliente = new Guna.UI2.WinForms.Guna2ComboBox();
             btnBuscarCliente = new Button();
             txtIDCliente = new TextBox();
             txtDocumento = new TextBox();
@@ -100,7 +95,9 @@
             label2 = new Label();
             label6 = new Label();
             txtCliente = new TextBox();
-            tabControl1 = new TabControl();
+            cbTipoCliente = new ComboBox();
+            panel3 = new Panel();
+            panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
@@ -108,75 +105,74 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            tabDetalleFactura.SuspendLayout();
-            tabClientData.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox1.SuspendLayout();
-            tabControl1.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.Location = new Point(50, 42);
+            label1.Location = new Point(69, 24);
             label1.Name = "label1";
-            label1.Size = new Size(79, 26);
+            label1.Size = new Size(79, 19);
             label1.TabIndex = 0;
             label1.Text = "ID Factura";
             // 
             // label5
             // 
-            label5.Location = new Point(312, 126);
+            label5.Location = new Point(69, 124);
             label5.Name = "label5";
-            label5.Size = new Size(244, 23);
+            label5.Size = new Size(365, 23);
             label5.TabIndex = 4;
             label5.Text = "Fecha Vencimiento";
             // 
             // dtpFechaVencimiento
             // 
-            dtpFechaVencimiento.Location = new Point(312, 152);
+            dtpFechaVencimiento.Location = new Point(69, 150);
             dtpFechaVencimiento.Name = "dtpFechaVencimiento";
-            dtpFechaVencimiento.Size = new Size(244, 23);
+            dtpFechaVencimiento.Size = new Size(365, 23);
             dtpFechaVencimiento.TabIndex = 7;
             // 
             // label3
             // 
-            label3.Location = new Point(220, 42);
+            label3.Location = new Point(154, 74);
             label3.Name = "label3";
-            label3.Size = new Size(128, 26);
+            label3.Size = new Size(128, 18);
             label3.TabIndex = 10;
             label3.Text = "Usuario";
             // 
             // txtIDUsuario
             // 
-            txtIDUsuario.Location = new Point(135, 73);
+            txtIDUsuario.Location = new Point(69, 96);
             txtIDUsuario.Multiline = true;
             txtIDUsuario.Name = "txtIDUsuario";
             txtIDUsuario.ReadOnly = true;
-            txtIDUsuario.Size = new Size(79, 28);
+            txtIDUsuario.Size = new Size(79, 25);
             txtIDUsuario.TabIndex = 21;
             // 
             // label20
             // 
-            label20.Location = new Point(135, 42);
+            label20.Location = new Point(69, 74);
             label20.Name = "label20";
-            label20.Size = new Size(79, 26);
+            label20.Size = new Size(79, 19);
             label20.TabIndex = 20;
             label20.Text = "IDUsuario";
             // 
             // txtNCF
             // 
-            txtNCF.Location = new Point(410, 73);
+            txtNCF.Location = new Point(288, 96);
             txtNCF.Multiline = true;
             txtNCF.Name = "txtNCF";
             txtNCF.ReadOnly = true;
-            txtNCF.Size = new Size(146, 28);
+            txtNCF.Size = new Size(146, 25);
             txtNCF.TabIndex = 18;
             // 
             // label18
             // 
-            label18.Location = new Point(410, 49);
+            label18.Location = new Point(288, 76);
             label18.Name = "label18";
-            label18.Size = new Size(146, 21);
+            label18.Size = new Size(146, 19);
             label18.TabIndex = 16;
             label18.Text = "NCF";
             // 
@@ -188,29 +184,29 @@
             btnBuscarUsuario.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnBuscarUsuario.FlatStyle = FlatStyle.Flat;
             btnBuscarUsuario.Image = Properties.Resources._searchfacturabtn;
-            btnBuscarUsuario.Location = new Point(354, 51);
+            btnBuscarUsuario.Location = new Point(154, 24);
             btnBuscarUsuario.Name = "btnBuscarUsuario";
-            btnBuscarUsuario.Size = new Size(50, 50);
+            btnBuscarUsuario.Size = new Size(50, 47);
             btnBuscarUsuario.TabIndex = 15;
             btnBuscarUsuario.UseVisualStyleBackColor = true;
             btnBuscarUsuario.Click += btnBuscarUsuario_Click;
             // 
             // txtIDFactura
             // 
-            txtIDFactura.Location = new Point(50, 73);
+            txtIDFactura.Location = new Point(69, 46);
             txtIDFactura.Multiline = true;
             txtIDFactura.Name = "txtIDFactura";
             txtIDFactura.ReadOnly = true;
-            txtIDFactura.Size = new Size(79, 28);
+            txtIDFactura.Size = new Size(79, 25);
             txtIDFactura.TabIndex = 12;
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(220, 73);
+            txtUsuario.Location = new Point(154, 96);
             txtUsuario.Multiline = true;
             txtUsuario.Name = "txtUsuario";
             txtUsuario.ReadOnly = true;
-            txtUsuario.Size = new Size(128, 28);
+            txtUsuario.Size = new Size(128, 25);
             txtUsuario.TabIndex = 11;
             // 
             // dgvProductos
@@ -221,12 +217,12 @@
             dgvProductos.BackgroundColor = Color.White;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { IDDetalle, IDProducto, Precio, Cantidad, Subtotal, Descuento, Impuesto, Total });
-            dgvProductos.Location = new Point(5, 176);
+            dgvProductos.Location = new Point(6, 177);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersVisible = false;
             dgvProductos.RowTemplate.Height = 25;
-            dgvProductos.Size = new Size(615, 157);
+            dgvProductos.Size = new Size(503, 249);
             dgvProductos.TabIndex = 12;
             // 
             // IDDetalle
@@ -235,7 +231,7 @@
             IDDetalle.HeaderText = "ID";
             IDDetalle.Name = "IDDetalle";
             IDDetalle.ReadOnly = true;
-            IDDetalle.Width = 46;
+            IDDetalle.Width = 43;
             // 
             // IDProducto
             // 
@@ -245,18 +241,18 @@
             IDProducto.ReadOnly = true;
             IDProducto.Resizable = DataGridViewTriState.True;
             IDProducto.SortMode = DataGridViewColumnSortMode.Automatic;
-            IDProducto.Width = 86;
+            IDProducto.Width = 81;
             // 
             // Precio
             // 
             Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle41.Format = "C2";
+            dataGridViewCellStyle41.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle41;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
-            Precio.Width = 69;
+            Precio.Width = 65;
             // 
             // Cantidad
             // 
@@ -264,51 +260,51 @@
             Cantidad.HeaderText = "Cantidad";
             Cantidad.Name = "Cantidad";
             Cantidad.ReadOnly = true;
-            Cantidad.Width = 85;
+            Cantidad.Width = 80;
             // 
             // Subtotal
             // 
             Subtotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle42.Format = "C2";
+            dataGridViewCellStyle42.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle42;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
             Subtotal.ReadOnly = true;
-            Subtotal.Width = 81;
+            Subtotal.Width = 76;
             // 
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle43.Format = "C2";
+            dataGridViewCellStyle43.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle43;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
-            Descuento.Width = 94;
+            Descuento.Width = 88;
             // 
             // Impuesto
             // 
             Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle44.Format = "C2";
+            dataGridViewCellStyle44.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle44;
             Impuesto.HeaderText = "Impuesto";
             Impuesto.Name = "Impuesto";
             Impuesto.ReadOnly = true;
-            Impuesto.Width = 88;
+            Impuesto.Width = 82;
             // 
             // Total
             // 
             Total.DataPropertyName = "Total";
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle45.Format = "C2";
+            dataGridViewCellStyle45.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle45;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
-            Total.Width = 62;
+            Total.Width = 57;
             // 
             // groupBox3
             // 
@@ -326,7 +322,7 @@
             groupBox3.Controls.Add(label12);
             groupBox3.Location = new Point(6, 6);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(615, 164);
+            groupBox3.Size = new Size(503, 165);
             groupBox3.TabIndex = 13;
             groupBox3.TabStop = false;
             groupBox3.Text = "Detalles Producto";
@@ -337,7 +333,7 @@
             btnAgregar.FlatAppearance.BorderColor = Color.Black;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Image = Properties.Resources._btnAgregarProductooo;
-            btnAgregar.Location = new Point(463, 95);
+            btnAgregar.Location = new Point(407, 100);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(57, 54);
             btnAgregar.TabIndex = 11;
@@ -346,7 +342,7 @@
             // 
             // txtProducto
             // 
-            txtProducto.Location = new Point(148, 54);
+            txtProducto.Location = new Point(92, 59);
             txtProducto.Multiline = true;
             txtProducto.Name = "txtProducto";
             txtProducto.ReadOnly = true;
@@ -356,7 +352,7 @@
             // label10
             // 
             label10.BackColor = Color.Transparent;
-            label10.Location = new Point(148, 30);
+            label10.Location = new Point(92, 35);
             label10.Name = "label10";
             label10.Size = new Size(180, 21);
             label10.TabIndex = 1;
@@ -368,7 +364,7 @@
             btnBuscarProducto.FlatAppearance.BorderColor = Color.Black;
             btnBuscarProducto.FlatStyle = FlatStyle.Flat;
             btnBuscarProducto.Image = Properties.Resources._BotonBuscarProducto;
-            btnBuscarProducto.Location = new Point(463, 30);
+            btnBuscarProducto.Location = new Point(407, 35);
             btnBuscarProducto.Name = "btnBuscarProducto";
             btnBuscarProducto.Size = new Size(57, 54);
             btnBuscarProducto.TabIndex = 10;
@@ -377,7 +373,7 @@
             // 
             // txtIDProducto
             // 
-            txtIDProducto.Location = new Point(95, 54);
+            txtIDProducto.Location = new Point(39, 59);
             txtIDProducto.Multiline = true;
             txtIDProducto.Name = "txtIDProducto";
             txtIDProducto.ReadOnly = true;
@@ -387,7 +383,7 @@
             // label9
             // 
             label9.BackColor = Color.Transparent;
-            label9.Location = new Point(95, 30);
+            label9.Location = new Point(39, 35);
             label9.Name = "label9";
             label9.Size = new Size(47, 21);
             label9.TabIndex = 0;
@@ -396,7 +392,7 @@
             // label13
             // 
             label13.BackColor = Color.Transparent;
-            label13.Location = new Point(205, 92);
+            label13.Location = new Point(149, 97);
             label13.Name = "label13";
             label13.Size = new Size(104, 21);
             label13.TabIndex = 9;
@@ -404,7 +400,7 @@
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(334, 54);
+            txtPrecio.Location = new Point(278, 59);
             txtPrecio.Multiline = true;
             txtPrecio.Name = "txtPrecio";
             txtPrecio.ReadOnly = true;
@@ -414,7 +410,7 @@
             // label11
             // 
             label11.BackColor = Color.Transparent;
-            label11.Location = new Point(334, 30);
+            label11.Location = new Point(278, 35);
             label11.Name = "label11";
             label11.Size = new Size(123, 21);
             label11.TabIndex = 2;
@@ -422,7 +418,7 @@
             // 
             // txtDescuento
             // 
-            txtDescuento.Location = new Point(205, 116);
+            txtDescuento.Location = new Point(149, 121);
             txtDescuento.Multiline = true;
             txtDescuento.Name = "txtDescuento";
             txtDescuento.Size = new Size(104, 30);
@@ -430,7 +426,7 @@
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(95, 116);
+            txtCantidad.Location = new Point(39, 121);
             txtCantidad.Multiline = true;
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(104, 30);
@@ -439,7 +435,7 @@
             // label12
             // 
             label12.BackColor = Color.Transparent;
-            label12.Location = new Point(95, 92);
+            label12.Location = new Point(39, 97);
             label12.Name = "label12";
             label12.Size = new Size(104, 23);
             label12.TabIndex = 3;
@@ -508,7 +504,7 @@
             // 
             label14.BackColor = Color.Transparent;
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(245, 353);
+            label14.Location = new Point(135, 454);
             label14.Name = "label14";
             label14.Size = new Size(89, 21);
             label14.TabIndex = 17;
@@ -518,7 +514,7 @@
             // 
             label15.BackColor = Color.Transparent;
             label15.ForeColor = Color.Black;
-            label15.Location = new Point(435, 353);
+            label15.Location = new Point(325, 454);
             label15.Name = "label15";
             label15.Size = new Size(89, 21);
             label15.TabIndex = 18;
@@ -528,7 +524,7 @@
             // 
             label16.BackColor = Color.Transparent;
             label16.ForeColor = Color.Black;
-            label16.Location = new Point(340, 353);
+            label16.Location = new Point(230, 454);
             label16.Name = "label16";
             label16.Size = new Size(89, 21);
             label16.TabIndex = 19;
@@ -538,7 +534,7 @@
             // 
             label17.BackColor = Color.Transparent;
             label17.ForeColor = Color.Black;
-            label17.Location = new Point(530, 352);
+            label17.Location = new Point(420, 454);
             label17.Name = "label17";
             label17.Size = new Size(89, 21);
             label17.TabIndex = 20;
@@ -546,38 +542,38 @@
             // 
             // txtSubTotal
             // 
-            txtSubTotal.Location = new Point(245, 377);
+            txtSubTotal.Location = new Point(135, 478);
             txtSubTotal.Multiline = true;
             txtSubTotal.Name = "txtSubTotal";
             txtSubTotal.ReadOnly = true;
-            txtSubTotal.Size = new Size(89, 33);
+            txtSubTotal.Size = new Size(89, 27);
             txtSubTotal.TabIndex = 21;
             // 
             // txtImpuesto
             // 
-            txtImpuesto.Location = new Point(340, 377);
+            txtImpuesto.Location = new Point(230, 478);
             txtImpuesto.Multiline = true;
             txtImpuesto.Name = "txtImpuesto";
             txtImpuesto.ReadOnly = true;
-            txtImpuesto.Size = new Size(89, 33);
+            txtImpuesto.Size = new Size(89, 27);
             txtImpuesto.TabIndex = 22;
             // 
             // txtTotalDescuento
             // 
-            txtTotalDescuento.Location = new Point(435, 377);
+            txtTotalDescuento.Location = new Point(325, 478);
             txtTotalDescuento.Multiline = true;
             txtTotalDescuento.Name = "txtTotalDescuento";
             txtTotalDescuento.ReadOnly = true;
-            txtTotalDescuento.Size = new Size(89, 33);
+            txtTotalDescuento.Size = new Size(89, 27);
             txtTotalDescuento.TabIndex = 23;
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(530, 377);
+            txtTotal.Location = new Point(420, 478);
             txtTotal.Multiline = true;
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
-            txtTotal.Size = new Size(89, 33);
+            txtTotal.Size = new Size(89, 27);
             txtTotal.TabIndex = 24;
             // 
             // errorProvider
@@ -594,7 +590,7 @@
             TopPanel.Dock = DockStyle.Top;
             TopPanel.Location = new Point(0, 0);
             TopPanel.Name = "TopPanel";
-            TopPanel.Size = new Size(840, 61);
+            TopPanel.Size = new Size(1243, 61);
             TopPanel.TabIndex = 25;
             // 
             // label21
@@ -623,10 +619,10 @@
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = Properties.Resources._BotonXcerrarVentana;
-            pictureBox1.Location = new Point(786, 8);
+            pictureBox1.Location = new Point(1198, 13);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(43, 43);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(32, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 28;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -638,7 +634,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 61);
             panel1.Name = "panel1";
-            panel1.Size = new Size(840, 32);
+            panel1.Size = new Size(1243, 32);
             panel1.TabIndex = 26;
             // 
             // panel2
@@ -651,57 +647,25 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 93);
             panel2.Name = "panel2";
-            panel2.Size = new Size(205, 463);
+            panel2.Size = new Size(205, 510);
             panel2.TabIndex = 27;
-            // 
-            // tabDetalleFactura
-            // 
-            tabDetalleFactura.Controls.Add(groupBox3);
-            tabDetalleFactura.Controls.Add(dgvProductos);
-            tabDetalleFactura.Controls.Add(txtSubTotal);
-            tabDetalleFactura.Controls.Add(txtTotal);
-            tabDetalleFactura.Controls.Add(label17);
-            tabDetalleFactura.Controls.Add(label14);
-            tabDetalleFactura.Controls.Add(txtImpuesto);
-            tabDetalleFactura.Controls.Add(txtTotalDescuento);
-            tabDetalleFactura.Controls.Add(label15);
-            tabDetalleFactura.Controls.Add(label16);
-            tabDetalleFactura.Location = new Point(4, 26);
-            tabDetalleFactura.Name = "tabDetalleFactura";
-            tabDetalleFactura.Padding = new Padding(3);
-            tabDetalleFactura.Size = new Size(627, 433);
-            tabDetalleFactura.TabIndex = 2;
-            tabDetalleFactura.Text = "Detalle de Factura";
-            tabDetalleFactura.UseVisualStyleBackColor = true;
-            // 
-            // tabClientData
-            // 
-            tabClientData.Controls.Add(groupBox4);
-            tabClientData.Controls.Add(groupBox1);
-            tabClientData.Location = new Point(4, 26);
-            tabClientData.Name = "tabClientData";
-            tabClientData.Padding = new Padding(3);
-            tabClientData.Size = new Size(627, 433);
-            tabClientData.TabIndex = 0;
-            tabClientData.Text = "Datos de Cliente y Factura";
-            tabClientData.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
             groupBox4.Controls.Add(txtIDUsuario);
             groupBox4.Controls.Add(txtNCF);
             groupBox4.Controls.Add(label5);
-            groupBox4.Controls.Add(dtpFechaVencimiento);
             groupBox4.Controls.Add(txtIDFactura);
             groupBox4.Controls.Add(label20);
+            groupBox4.Controls.Add(dtpFechaVencimiento);
             groupBox4.Controls.Add(label18);
-            groupBox4.Controls.Add(label1);
             groupBox4.Controls.Add(btnBuscarUsuario);
+            groupBox4.Controls.Add(label1);
             groupBox4.Controls.Add(txtUsuario);
             groupBox4.Controls.Add(label3);
-            groupBox4.Location = new Point(6, 147);
+            groupBox4.Location = new Point(10, 147);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(607, 258);
+            groupBox4.Size = new Size(503, 184);
             groupBox4.TabIndex = 1;
             groupBox4.TabStop = false;
             groupBox4.Text = "Datos de Factura";
@@ -717,29 +681,12 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(txtCliente);
-            groupBox1.Location = new Point(6, 6);
+            groupBox1.Location = new Point(10, 6);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(607, 135);
+            groupBox1.Size = new Size(503, 135);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del Cliente";
-            // 
-            // cbTipoCliente
-            // 
-            cbTipoCliente.BackColor = Color.Transparent;
-            cbTipoCliente.CustomizableEdges = customizableEdges1;
-            cbTipoCliente.DrawMode = DrawMode.OwnerDrawFixed;
-            cbTipoCliente.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbTipoCliente.FocusedColor = Color.FromArgb(94, 148, 255);
-            cbTipoCliente.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            cbTipoCliente.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cbTipoCliente.ForeColor = Color.FromArgb(68, 88, 112);
-            cbTipoCliente.ItemHeight = 30;
-            cbTipoCliente.Location = new Point(115, 72);
-            cbTipoCliente.Name = "cbTipoCliente";
-            cbTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            cbTipoCliente.Size = new Size(138, 36);
-            cbTipoCliente.TabIndex = 16;
             // 
             // btnBuscarCliente
             // 
@@ -747,50 +694,50 @@
             btnBuscarCliente.FlatAppearance.BorderColor = Color.Black;
             btnBuscarCliente.FlatStyle = FlatStyle.Flat;
             btnBuscarCliente.Image = Properties.Resources._btnbuscarclienteee;
-            btnBuscarCliente.Location = new Point(514, 58);
+            btnBuscarCliente.Location = new Point(127, 27);
             btnBuscarCliente.Name = "btnBuscarCliente";
-            btnBuscarCliente.Size = new Size(50, 50);
+            btnBuscarCliente.Size = new Size(50, 46);
             btnBuscarCliente.TabIndex = 12;
             btnBuscarCliente.UseVisualStyleBackColor = true;
             btnBuscarCliente.Click += btnBuscarCliente_Click;
             // 
             // txtIDCliente
             // 
-            txtIDCliente.Location = new Point(43, 72);
+            txtIDCliente.Location = new Point(55, 50);
             txtIDCliente.Multiline = true;
             txtIDCliente.Name = "txtIDCliente";
             txtIDCliente.ReadOnly = true;
-            txtIDCliente.Size = new Size(66, 36);
+            txtIDCliente.Size = new Size(66, 23);
             txtIDCliente.TabIndex = 13;
             // 
             // txtDocumento
             // 
-            txtDocumento.Location = new Point(365, 72);
+            txtDocumento.Location = new Point(305, 102);
             txtDocumento.Multiline = true;
             txtDocumento.Name = "txtDocumento";
             txtDocumento.ReadOnly = true;
-            txtDocumento.Size = new Size(143, 36);
+            txtDocumento.Size = new Size(143, 23);
             txtDocumento.TabIndex = 15;
             // 
             // label7
             // 
-            label7.Location = new Point(43, 43);
+            label7.Location = new Point(55, 27);
             label7.Name = "label7";
-            label7.Size = new Size(66, 26);
+            label7.Size = new Size(66, 20);
             label7.TabIndex = 7;
             label7.Text = "ID Cliente";
             // 
             // label8
             // 
-            label8.Location = new Point(365, 46);
+            label8.Location = new Point(305, 79);
             label8.Name = "label8";
-            label8.Size = new Size(143, 26);
+            label8.Size = new Size(143, 20);
             label8.TabIndex = 8;
             label8.Text = "Documento";
             // 
             // label2
             // 
-            label2.Location = new Point(115, 43);
+            label2.Location = new Point(55, 79);
             label2.Name = "label2";
             label2.Size = new Size(138, 20);
             label2.TabIndex = 6;
@@ -798,7 +745,7 @@
             // 
             // label6
             // 
-            label6.Location = new Point(259, 43);
+            label6.Location = new Point(199, 79);
             label6.Name = "label6";
             label6.Size = new Size(100, 20);
             label6.TabIndex = 5;
@@ -806,31 +753,60 @@
             // 
             // txtCliente
             // 
-            txtCliente.Location = new Point(259, 72);
+            txtCliente.Location = new Point(199, 102);
             txtCliente.Multiline = true;
             txtCliente.Name = "txtCliente";
             txtCliente.ReadOnly = true;
-            txtCliente.Size = new Size(100, 36);
+            txtCliente.Size = new Size(100, 23);
             txtCliente.TabIndex = 14;
             // 
-            // tabControl1
+            // cbTipoCliente
             // 
-            tabControl1.Controls.Add(tabClientData);
-            tabControl1.Controls.Add(tabDetalleFactura);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            tabControl1.Location = new Point(205, 93);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(635, 463);
-            tabControl1.TabIndex = 28;
+            cbTipoCliente.FormattingEnabled = true;
+            cbTipoCliente.Location = new Point(55, 102);
+            cbTipoCliente.Name = "cbTipoCliente";
+            cbTipoCliente.Size = new Size(138, 23);
+            cbTipoCliente.TabIndex = 22;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.WhiteSmoke;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(groupBox1);
+            panel3.Controls.Add(groupBox4);
+            panel3.Dock = DockStyle.Left;
+            panel3.Location = new Point(205, 93);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(523, 510);
+            panel3.TabIndex = 28;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.WhiteSmoke;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(groupBox3);
+            panel4.Controls.Add(txtTotal);
+            panel4.Controls.Add(label17);
+            panel4.Controls.Add(dgvProductos);
+            panel4.Controls.Add(label15);
+            panel4.Controls.Add(txtSubTotal);
+            panel4.Controls.Add(txtTotalDescuento);
+            panel4.Controls.Add(label14);
+            panel4.Controls.Add(label16);
+            panel4.Controls.Add(txtImpuesto);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(728, 93);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(515, 510);
+            panel4.TabIndex = 29;
             // 
             // frmFacturaProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(840, 556);
-            Controls.Add(tabControl1);
+            ClientSize = new Size(1243, 603);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(TopPanel);
@@ -847,14 +823,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
-            tabDetalleFactura.ResumeLayout(false);
-            tabDetalleFactura.PerformLayout();
-            tabClientData.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            tabControl1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -909,8 +884,6 @@
         private Panel TopPanel;
         private Panel panel2;
         private PictureBox pictureBox1;
-        private TabControl tabControl1;
-        private TabPage tabClientData;
         private Button btnBuscarCliente;
         private TextBox txtDocumento;
         private TextBox txtIDCliente;
@@ -919,11 +892,12 @@
         private Label label7;
         private Label label6;
         private Label label2;
-        private TabPage tabDetalleFactura;
         private GroupBox groupBox1;
         private GroupBox groupBox4;
         private Label label21;
         private PictureBox pictureBox2;
-        private Guna.UI2.WinForms.Guna2ComboBox cbTipoCliente;
+        private ComboBox cbTipoCliente;
+        private Panel panel3;
+        private Panel panel4;
     }
 }
