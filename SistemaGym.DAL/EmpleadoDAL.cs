@@ -152,5 +152,48 @@ namespace SistemaGym.DAL
 
         }
 
+        /* GETBYID */
+
+        public static EmpleadoEntity GetByID(int Id)
+        {
+            EmpleadoEntity empleado = null;
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            string GetID = "SELECT * FROM Empleados WHERE IDEmpleado = @IDEmpleado";
+                SqlCommand cmd = new SqlCommand(GetID, Conexion);
+                cmd.Parameters.AddWithValue("@IDEmpleado", Id);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                empleado = ConvertToObject(reader);
+            }
+            
+
+            return empleado;
+        }
+
+        private static EmpleadoEntity ConvertToObject(IDataReader reader)
+        {
+            EmpleadoEntity empleado = new EmpleadoEntity();
+
+            empleado.IDEmpleado = Convert.ToInt32(reader["IDEmpleado"]);
+            empleado.TipoDocumento = Convert.ToString(reader["TipoDocumento"]);
+            empleado.Documento = Convert.ToString(reader["Docuemnto"]);
+            empleado.Nombre = Convert.ToString(reader["Nombre"]);
+            empleado.Apellido = Convert.ToString(reader["Apellido"]);
+            empleado.Direccion = Convert.ToString(reader["Direccion"]);
+            empleado.TellCell = Convert.ToString(reader["TellCell"]);
+            empleado.TelRes = Convert.ToString(reader["TellRes"]);
+            empleado.FechaRegistro = Convert.ToDateTime(reader["FechaRegistro"]);
+            empleado.Estatus = Convert.ToString(reader["Estatus"]);
+
+            return empleado;
+        }
+
     }
 }
