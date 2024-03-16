@@ -34,11 +34,12 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into Usuarios(IDRol, Nombre, Apellido, Sexo, Correo, Direccion, FechaRegistro," +
+            string insertar = "Insert into Usuarios(IDEmpleado, IDRol, Nombre, Apellido, Sexo, Correo, Direccion, FechaRegistro," +
                 " NombreUSuario, Contrasena, Estatus)" +
-                " values(@idrol, @nombre, @apellido, @sexo, @correo, @direccion, @fecharegistro, @nombreusuario, @contrasena, @estatus)";
+                " values(@idempleado, @idrol, @nombre, @apellido, @sexo, @correo, @direccion, @fecharegistro, @nombreusuario, @contrasena, @estatus)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
+            cmd.Parameters.AddWithValue("@idempleado", usuario.IDEmpleado);
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
             cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);

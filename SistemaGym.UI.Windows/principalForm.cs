@@ -77,8 +77,8 @@ namespace SistemaGym.UI.Windows
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            frmUsuario frmUsuario = new frmUsuario();
-            frmUsuario.Show();
+            mantenimientoUsuarios mantenimientoUsuarios = new mantenimientoUsuarios();
+            mantenimientoUsuarios.Show();
             HideSubMenu();
         }
 

@@ -182,15 +182,9 @@ namespace SistemaGym.DAL
             EmpleadoEntity empleado = new EmpleadoEntity();
 
             empleado.IDEmpleado = Convert.ToInt32(reader["IDEmpleado"]);
-            empleado.TipoDocumento = Convert.ToString(reader["TipoDocumento"]);
-            empleado.Documento = Convert.ToString(reader["Docuemnto"]);
             empleado.Nombre = Convert.ToString(reader["Nombre"]);
             empleado.Apellido = Convert.ToString(reader["Apellido"]);
             empleado.Direccion = Convert.ToString(reader["Direccion"]);
-            empleado.TellCell = Convert.ToString(reader["TellCell"]);
-            empleado.TelRes = Convert.ToString(reader["TellRes"]);
-            empleado.FechaRegistro = Convert.ToDateTime(reader["FechaRegistro"]);
-            empleado.Estatus = Convert.ToString(reader["Estatus"]);
 
             return empleado;
         }

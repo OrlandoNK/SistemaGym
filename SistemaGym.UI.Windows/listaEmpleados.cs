@@ -18,10 +18,30 @@ namespace SistemaGym.UI.Windows
             InitializeComponent();
         }
 
+        private int _IdEmpleado;
+
+        public int IdEmpleado
+        {
+            get
+            {
+                return _IdEmpleado;
+            }
+        }
+
         private void listaEmpleados_Load(object sender, EventArgs e)
         {
             dgvEmpleados.DataSource = EmpleadoBLL.GetEmpleados();
             dgvEmpleados.AutoGenerateColumns = false;
+        }
+
+        private void dgvEmpleados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+                return;
+
+            _IdEmpleado = (int)dgvEmpleados.CurrentRow.Cells["IDEmpleado"].Value;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
