@@ -98,6 +98,7 @@
             btnclose.SizeMode = PictureBoxSizeMode.AutoSize;
             btnclose.TabIndex = 5;
             btnclose.TabStop = false;
+            btnclose.Click += btnclose_Click;
             // 
             // label8
             // 
@@ -196,6 +197,7 @@
             btnEdit.Size = new Size(208, 48);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Editar";
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnRefresh
             // 

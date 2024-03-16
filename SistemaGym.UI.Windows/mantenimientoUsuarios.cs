@@ -1,4 +1,5 @@
 ﻿using SistemaGym.BLL;
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,6 +95,71 @@ namespace SistemaGym.UI.Windows
         {
             frmUsuario registrarUsuario = new frmUsuario();
             registrarUsuario.Show();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable changeData = ((DataTable)dgvUsuario.DataSource).GetChanges();
+
+                if (changeData != null)
+                {
+                    List<UsuarioEntity> usuariosActualizar = ConvertirDatatableALista(changeData);
+
+                    foreach (UsuarioEntity usuario in usuariosActualizar)
+                    {
+                        UsuarioBLL.Update(usuario);
+                    }
+
+                    MessageBox.Show("¡Usuario Modificado de Manera Satisfactoria!", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvUsuario.DataSource = UsuarioBLL.Mostrar();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Se Produjo un Error al Intentar Actualizar. \nDetalles A Continuacion:\n {ex.Message}", sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Se Produjo un Error al Intentar Actualizar. \nDetalles A Continuacion:\n {ex.Message}", sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private string nombreUsuario;
+        private string contrasena;
+        private List<UsuarioEntity> ConvertirDatatableALista(DataTable dataTbl)
+        {
+            List<UsuarioEntity> UsuariosList = new List<UsuarioEntity>();
+
+            foreach (DataRow fila in dataTbl.Rows)
+            {
+                UsuarioEntity usuarios = new UsuarioEntity(nombreUsuario, contrasena)
+                {
+                    IDUsuario = Convert.ToInt32(fila["IDUsuario"]),
+                    IDRol = Convert.ToInt32(fila["IDRol"]),
+                    IDEmpleado = Convert.ToInt32(fila["IDEmpleado"]),
+                    Nombre = Convert.ToString(fila["Nombre"]),
+                    Apellido = Convert.ToString(fila["Apellido"]),
+                    Sexo = Convert.ToString(fila["Sexo"]),
+                    Correo = Convert.ToString(fila["Correo"]),
+                    Direccion = Convert.ToString(fila["Direccion"]),
+                    FechaRegistro = Convert.ToDateTime(fila["FechaRegistro"]),
+                    Estatus = Convert.ToString(fila["Estatus"]),
+                    NombreUsuario = Convert.ToString(fila["NombreUsuario"]),
+                    Contrasena = Convert.ToString(fila["Contrasena"])
+                };
+
+                UsuariosList.Add(usuarios);
+            }
+
+            return UsuariosList;
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
