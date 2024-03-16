@@ -17,15 +17,15 @@ namespace SistemaGym.DAL
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
-            int count;
-            Conexion.Open();
-            string Query = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario =@nombreusuario AND Contrasena =@contrasena ";
-            SqlCommand cmd = new SqlCommand(Query, Conexion);
-            cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
-            cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
-            count = Convert.ToInt32(cmd.ExecuteScalar());
+                int count;
+                Conexion.Open();
+                string Query = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario =@nombreusuario AND Contrasena =@contrasena ";
+                SqlCommand cmd = new SqlCommand(Query, Conexion);
+                cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
+                cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
+                count = Convert.ToInt32(cmd.ExecuteScalar());
 
-            return count;
+                return count;
         }
         //insertar usuario
         public static void InsertarUsuario(UsuarioEntity usuario)

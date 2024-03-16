@@ -44,7 +44,7 @@ namespace SistemaGym.DAL
             }
             //funcion eliminar CategoriaProducto
 
-            public static bool EliminarCategoriaProducto(CategoriaProductoEntity CategoriaProducto)
+            public static bool EliminarCategoriaProducto(int CategoriaProducto)
             {
                 ConexionDAL instancia = Instancia();
                 SqlConnection Conexion = instancia.Conexion();
@@ -55,7 +55,7 @@ namespace SistemaGym.DAL
                 Conexion.Open();
                 string Eliminar = "Delete from CategoriaProductos where IDCategoria= @idCategoria";
                 SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-                cmd.Parameters.AddWithValue("@idCategoria", CategoriaProducto.IDCategoria);
+                cmd.Parameters.AddWithValue("@idCategoria", CategoriaProducto);
                 seElimino = cmd.ExecuteNonQuery() > 0;
                 return seElimino;
 

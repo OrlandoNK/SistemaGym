@@ -12,19 +12,16 @@ namespace SistemaGym.BLL
 {
     public class CategoriaProductoBLL
     {
-        public static void Guardar(CategoriaProductoEntity categoria){
-         if (categoria.IDCategoria == 0) {
+        public static void Guardar(CategoriaProductoEntity categoria)
+        {
             CategoriaProductoDAL.InsertarCategoriaProducto(categoria);
-                
-            }
-            else
-            {
-                CategoriaProductoDAL.ActualizarCategoriaProducto(categoria);
-            }
-
+        }
+        public static void Actualizar(CategoriaProductoEntity categoria)
+        {
+            CategoriaProductoDAL.ActualizarCategoriaProducto(categoria);
         }
 
-        public static bool Eliminar(CategoriaProductoEntity categoria)
+        public static bool Eliminar(int categoria)
         {
             return CategoriaProductoDAL.EliminarCategoriaProducto(categoria);
         }

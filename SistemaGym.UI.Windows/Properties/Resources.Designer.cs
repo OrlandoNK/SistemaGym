@@ -803,6 +803,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap frmCategoria_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("frmCategoria[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Guardar {
             get {
                 object obj = ResourceManager.GetObject("Guardar", resourceCulture);
@@ -1016,6 +1026,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap refresh_8677771 {
             get {
                 object obj = ResourceManager.GetObject("refresh_8677771", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_5764942 {
+            get {
+                object obj = ResourceManager.GetObject("save_5764942", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
