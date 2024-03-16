@@ -136,7 +136,7 @@ namespace SistemaGym.UI.Windows
             oFactura.Detalles.Add(detalleFactura);
             dgvProductos.DataSource = null;
             dgvProductos.DataSource = oFactura.Detalles;
-            txtSubTotal.Text = oFactura.SubTotal.ToString();
+            txtSubTotal.Text = oFactura.SubTotal.ToString("N2");
             if (txtTotalDescuento.Text == "0")
             {
                 txtTotalDescuento.Text = 0.ToString("N2");
