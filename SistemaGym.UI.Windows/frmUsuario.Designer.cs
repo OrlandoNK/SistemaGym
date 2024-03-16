@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtDireccion = new TextBox();
             txtContrasena = new TextBox();
             txtApellido = new TextBox();
@@ -67,6 +69,8 @@
             cbRol = new ComboBox();
             errorProvider = new ErrorProvider(components);
             panel1 = new Panel();
+            label8 = new Label();
+            pictureBox1 = new PictureBox();
             btnclose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -75,30 +79,37 @@
             panel5 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel6 = new Panel();
-            pictureBox1 = new PictureBox();
-            label8 = new Label();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
+            btnSearch = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)dgvUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnclose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(18, 256);
+            txtDireccion.Enabled = false;
+            txtDireccion.Location = new Point(20, 136);
             txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(240, 25);
+            txtDireccion.ReadOnly = true;
+            txtDireccion.Size = new Size(237, 25);
             txtDireccion.TabIndex = 110;
             // 
             // txtContrasena
             // 
-            txtContrasena.Location = new Point(141, 325);
+            txtContrasena.Location = new Point(141, 48);
             txtContrasena.Multiline = true;
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Size = new Size(117, 23);
@@ -107,23 +118,27 @@
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(18, 202);
+            txtApellido.Enabled = false;
+            txtApellido.Location = new Point(140, 88);
             txtApellido.Multiline = true;
             txtApellido.Name = "txtApellido";
+            txtApellido.ReadOnly = true;
             txtApellido.Size = new Size(117, 20);
             txtApellido.TabIndex = 107;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(18, 145);
+            txtNombre.Enabled = false;
+            txtNombre.Location = new Point(20, 88);
             txtNombre.Multiline = true;
             txtNombre.Name = "txtNombre";
+            txtNombre.ReadOnly = true;
             txtNombre.Size = new Size(117, 20);
             txtNombre.TabIndex = 106;
             // 
             // txtSexo
             // 
-            txtSexo.Location = new Point(141, 145);
+            txtSexo.Location = new Point(20, 189);
             txtSexo.Multiline = true;
             txtSexo.Name = "txtSexo";
             txtSexo.Size = new Size(117, 20);
@@ -131,7 +146,7 @@
             // 
             // txtNombreUsuario
             // 
-            txtNombreUsuario.Location = new Point(18, 325);
+            txtNombreUsuario.Location = new Point(18, 48);
             txtNombreUsuario.Multiline = true;
             txtNombreUsuario.Name = "txtNombreUsuario";
             txtNombreUsuario.Size = new Size(117, 23);
@@ -139,7 +154,7 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(141, 202);
+            txtCorreo.Location = new Point(140, 189);
             txtCorreo.Multiline = true;
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(117, 20);
@@ -147,7 +162,7 @@
             // 
             // txtIDUsuario
             // 
-            txtIDUsuario.Location = new Point(18, 82);
+            txtIDUsuario.Location = new Point(18, 57);
             txtIDUsuario.Multiline = true;
             txtIDUsuario.Name = "txtIDUsuario";
             txtIDUsuario.ReadOnly = true;
@@ -157,7 +172,7 @@
             // label10
             // 
             label10.ForeColor = Color.White;
-            label10.Location = new Point(141, 300);
+            label10.Location = new Point(141, 23);
             label10.Name = "label10";
             label10.Size = new Size(117, 20);
             label10.TabIndex = 96;
@@ -167,7 +182,7 @@
             // label9
             // 
             label9.ForeColor = Color.White;
-            label9.Location = new Point(18, 300);
+            label9.Location = new Point(18, 23);
             label9.Name = "label9";
             label9.Size = new Size(117, 22);
             label9.TabIndex = 95;
@@ -177,9 +192,9 @@
             // label7
             // 
             label7.ForeColor = Color.White;
-            label7.Location = new Point(18, 231);
+            label7.Location = new Point(20, 111);
             label7.Name = "label7";
-            label7.Size = new Size(240, 22);
+            label7.Size = new Size(237, 22);
             label7.TabIndex = 93;
             label7.Text = "Direccion";
             label7.TextAlign = ContentAlignment.MiddleLeft;
@@ -187,7 +202,7 @@
             // label6
             // 
             label6.ForeColor = Color.White;
-            label6.Location = new Point(141, 177);
+            label6.Location = new Point(140, 164);
             label6.Name = "label6";
             label6.Size = new Size(117, 22);
             label6.TabIndex = 92;
@@ -197,7 +212,7 @@
             // label5
             // 
             label5.ForeColor = Color.White;
-            label5.Location = new Point(141, 120);
+            label5.Location = new Point(20, 164);
             label5.Name = "label5";
             label5.Size = new Size(117, 22);
             label5.TabIndex = 91;
@@ -207,7 +222,7 @@
             // label4
             // 
             label4.ForeColor = Color.White;
-            label4.Location = new Point(18, 177);
+            label4.Location = new Point(140, 63);
             label4.Name = "label4";
             label4.Size = new Size(117, 22);
             label4.TabIndex = 90;
@@ -217,7 +232,7 @@
             // label3
             // 
             label3.ForeColor = Color.White;
-            label3.Location = new Point(18, 120);
+            label3.Location = new Point(20, 63);
             label3.Name = "label3";
             label3.Size = new Size(117, 22);
             label3.TabIndex = 89;
@@ -227,7 +242,7 @@
             // label2
             // 
             label2.ForeColor = Color.White;
-            label2.Location = new Point(141, 57);
+            label2.Location = new Point(141, 32);
             label2.Name = "label2";
             label2.Size = new Size(117, 22);
             label2.TabIndex = 88;
@@ -237,7 +252,7 @@
             // label1
             // 
             label1.ForeColor = Color.White;
-            label1.Location = new Point(18, 57);
+            label1.Location = new Point(18, 32);
             label1.Name = "label1";
             label1.Size = new Size(117, 22);
             label1.TabIndex = 87;
@@ -258,7 +273,7 @@
             dgvUsuario.RowHeadersVisible = false;
             dgvUsuario.RowTemplate.Height = 25;
             dgvUsuario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsuario.Size = new Size(487, 436);
+            dgvUsuario.Size = new Size(539, 436);
             dgvUsuario.TabIndex = 112;
             dgvUsuario.CellClick += dgvUsuario_CellClick;
             // 
@@ -322,9 +337,9 @@
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
-            dataGridViewCellStyle1.Format = "g";
-            dataGridViewCellStyle1.NullValue = null;
-            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "g";
+            dataGridViewCellStyle2.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle2;
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.ReadOnly = true;
@@ -359,7 +374,7 @@
             btnNuevo.FlatAppearance.BorderColor = Color.DarkGoldenrod;
             btnNuevo.FlatStyle = FlatStyle.Flat;
             btnNuevo.ForeColor = Color.White;
-            btnNuevo.Location = new Point(18, 373);
+            btnNuevo.Location = new Point(17, 419);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(240, 33);
             btnNuevo.TabIndex = 113;
@@ -372,7 +387,7 @@
             btnGuardar.FlatAppearance.BorderColor = Color.DarkGoldenrod;
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(18, 412);
+            btnGuardar.Location = new Point(17, 458);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(240, 33);
             btnGuardar.TabIndex = 114;
@@ -399,7 +414,7 @@
             // cbRol
             // 
             cbRol.FormattingEnabled = true;
-            cbRol.Location = new Point(141, 82);
+            cbRol.Location = new Point(141, 57);
             cbRol.Name = "cbRol";
             cbRol.Size = new Size(117, 23);
             cbRol.TabIndex = 116;
@@ -418,14 +433,36 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(965, 61);
+            panel1.Size = new Size(1017, 61);
             panel1.TabIndex = 119;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.DarkGoldenrod;
+            label8.Location = new Point(76, 17);
+            label8.Name = "label8";
+            label8.Size = new Size(83, 24);
+            label8.TabIndex = 2;
+            label8.Text = "Usuarios";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.usuarios__mainScreen;
+            pictureBox1.Location = new Point(3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(67, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // btnclose
             // 
+            btnclose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnclose.Cursor = Cursors.Hand;
             btnclose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnclose.Location = new Point(920, 13);
+            btnclose.Location = new Point(972, 13);
             btnclose.Name = "btnclose";
             btnclose.Size = new Size(32, 32);
             btnclose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -440,33 +477,18 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 61);
             panel2.Name = "panel2";
-            panel2.Size = new Size(965, 33);
+            panel2.Size = new Size(1017, 33);
             panel2.TabIndex = 120;
             // 
             // panel3
             // 
             panel3.BackColor = Color.Black;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(label2);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(label4);
+            panel3.Controls.Add(groupBox3);
+            panel3.Controls.Add(groupBox2);
+            panel3.Controls.Add(groupBox1);
             panel3.Controls.Add(btnGuardar);
-            panel3.Controls.Add(label5);
             panel3.Controls.Add(btnNuevo);
-            panel3.Controls.Add(cbRol);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(label10);
-            panel3.Controls.Add(txtIDUsuario);
-            panel3.Controls.Add(txtDireccion);
-            panel3.Controls.Add(txtCorreo);
-            panel3.Controls.Add(txtContrasena);
-            panel3.Controls.Add(txtNombreUsuario);
-            panel3.Controls.Add(txtApellido);
-            panel3.Controls.Add(txtSexo);
-            panel3.Controls.Add(txtNombre);
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 94);
             panel3.Name = "panel3";
@@ -480,7 +502,7 @@
             panel4.Controls.Add(btnEditar);
             panel4.Controls.Add(btnEliminar);
             panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(765, 94);
+            panel4.Location = new Point(817, 94);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 504);
             panel4.TabIndex = 122;
@@ -508,13 +530,13 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(278, 94);
             panel5.Name = "panel5";
-            panel5.Size = new Size(487, 68);
+            panel5.Size = new Size(539, 68);
             panel5.TabIndex = 123;
             // 
             // TxbBuscar
             // 
             TxbBuscar.BorderRadius = 20;
-            TxbBuscar.CustomizableEdges = customizableEdges1;
+            TxbBuscar.CustomizableEdges = customizableEdges5;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -530,8 +552,8 @@
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            TxbBuscar.Size = new Size(475, 39);
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            TxbBuscar.Size = new Size(527, 39);
             TxbBuscar.TabIndex = 0;
             // 
             // panel6
@@ -542,35 +564,87 @@
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(278, 162);
             panel6.Name = "panel6";
-            panel6.Size = new Size(487, 436);
+            panel6.Size = new Size(539, 436);
             panel6.TabIndex = 124;
             // 
-            // pictureBox1
+            // groupBox1
             // 
-            pictureBox1.Image = Properties.Resources.usuarios__mainScreen;
-            pictureBox1.Location = new Point(3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(67, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(txtIDUsuario);
+            groupBox1.Controls.Add(cbRol);
+            groupBox1.Dock = DockStyle.Top;
+            groupBox1.ForeColor = Color.White;
+            groupBox1.Location = new Point(0, 0);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(276, 97);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Identificacioon y Privilegios";
             // 
-            // label8
+            // groupBox2
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.DarkGoldenrod;
-            label8.Location = new Point(76, 17);
-            label8.Name = "label8";
-            label8.Size = new Size(83, 24);
-            label8.TabIndex = 2;
-            label8.Text = "Usuarios";
+            groupBox2.Controls.Add(btnSearch);
+            groupBox2.Controls.Add(txtNombre);
+            groupBox2.Controls.Add(txtCorreo);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(label3);
+            groupBox2.Controls.Add(txtApellido);
+            groupBox2.Controls.Add(txtSexo);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(txtDireccion);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Dock = DockStyle.Top;
+            groupBox2.ForeColor = Color.White;
+            groupBox2.Location = new Point(0, 97);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(276, 225);
+            groupBox2.TabIndex = 117;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Datos Personales";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(txtContrasena);
+            groupBox3.Controls.Add(txtNombreUsuario);
+            groupBox3.Controls.Add(label10);
+            groupBox3.Controls.Add(label9);
+            groupBox3.Dock = DockStyle.Top;
+            groupBox3.ForeColor = Color.White;
+            groupBox3.Location = new Point(0, 322);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(276, 88);
+            groupBox3.TabIndex = 117;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Datos de Acceso de Usuario";
+            // 
+            // btnSearch
+            // 
+            btnSearch.BorderColor = Color.DarkGoldenrod;
+            btnSearch.BorderThickness = 1;
+            btnSearch.Cursor = Cursors.Hand;
+            btnSearch.CustomizableEdges = customizableEdges7;
+            btnSearch.DisabledState.BorderColor = Color.DarkGray;
+            btnSearch.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSearch.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSearch.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSearch.FillColor = Color.Transparent;
+            btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSearch.ForeColor = Color.White;
+            btnSearch.Image = Properties.Resources._BuscarEnFacturacionMembresiaDatos;
+            btnSearch.Location = new Point(20, 22);
+            btnSearch.Name = "btnSearch";
+            btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnSearch.Size = new Size(237, 38);
+            btnSearch.TabIndex = 0;
+            btnSearch.Text = "Buscar Empleado";
             // 
             // frmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(965, 598);
+            ClientSize = new Size(1017, 598);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -585,13 +659,18 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnclose).EndInit();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -642,5 +721,9 @@
         private PictureBox btnclose;
         private Label label8;
         private PictureBox pictureBox1;
+        private GroupBox groupBox1;
+        private GroupBox groupBox3;
+        private GroupBox groupBox2;
+        private Guna.UI2.WinForms.Guna2Button btnSearch;
     }
 }

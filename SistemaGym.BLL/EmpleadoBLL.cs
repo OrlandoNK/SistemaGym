@@ -21,6 +21,10 @@ namespace SistemaGym.BLL
         {
             EmpleadoDAL.actualizarEmpleado(empleado);
         }
+        public static EmpleadoEntity GetByID(int Id)
+        {
+            return EmpleadoDAL.GetByID(Id);
+        }
         public static DataTable GetEmpleados()
         {
             return EmpleadoDAL.mostrarEmpleado();
