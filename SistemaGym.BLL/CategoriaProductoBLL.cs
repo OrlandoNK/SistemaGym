@@ -20,7 +20,10 @@ namespace SistemaGym.BLL
         {
             CategoriaProductoDAL.ActualizarCategoriaProducto(categoria);
         }
-
+        public static DataTable Buscar(string busqueda)
+        {
+            return CategoriaProductoDAL.ObtenerByValor(busqueda);
+        }
         public static bool Eliminar(int categoria)
         {
             return CategoriaProductoDAL.EliminarCategoriaProducto(categoria);

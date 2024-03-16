@@ -136,5 +136,13 @@ namespace SistemaGym.UI.Windows
                 MessageBox.Show("Se Produjo un Error al Intentar Eliminar la Categoria. \nDetalles a Continuacion:\n" + ex.Message, SISTEMA_GYM, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void TxbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = TxbBuscar.Text;
+
+            DataTable resultBusqueda = CategoriaProductoBLL.Buscar(buscar);
+            dgvCategoria.DataSource = resultBusqueda;
+        }
     }
 }
