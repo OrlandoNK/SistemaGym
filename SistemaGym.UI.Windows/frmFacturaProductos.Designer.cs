@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle41 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle42 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle43 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle44 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle45 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle46 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle47 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle48 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle49 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle50 = new DataGridViewCellStyle();
             label1 = new Label();
             label5 = new Label();
             dtpFechaVencimiento = new DateTimePicker();
@@ -69,7 +69,6 @@
             label12 = new Label();
             btnNuevo = new Button();
             btnGuardar = new Button();
-            btnCancelar = new Button();
             label14 = new Label();
             label15 = new Label();
             label16 = new Label();
@@ -246,9 +245,9 @@
             // Precio
             // 
             Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle41.Format = "C2";
-            dataGridViewCellStyle41.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle46.Format = "C2";
+            dataGridViewCellStyle46.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle46;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
@@ -265,9 +264,9 @@
             // Subtotal
             // 
             Subtotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle42.Format = "C2";
-            dataGridViewCellStyle42.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle47.Format = "C2";
+            dataGridViewCellStyle47.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle47;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
             Subtotal.ReadOnly = true;
@@ -276,9 +275,9 @@
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle43.Format = "C2";
-            dataGridViewCellStyle43.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle48.Format = "C2";
+            dataGridViewCellStyle48.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle48;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
@@ -287,9 +286,9 @@
             // Impuesto
             // 
             Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle44.Format = "C2";
-            dataGridViewCellStyle44.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle49.Format = "C2";
+            dataGridViewCellStyle49.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle49;
             Impuesto.HeaderText = "Impuesto";
             Impuesto.Name = "Impuesto";
             Impuesto.ReadOnly = true;
@@ -298,9 +297,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
-            dataGridViewCellStyle45.Format = "C2";
-            dataGridViewCellStyle45.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle50.Format = "C2";
+            dataGridViewCellStyle50.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle50;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
@@ -481,25 +480,6 @@
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
-            // btnCancelar
-            // 
-            btnCancelar.Cursor = Cursors.Hand;
-            btnCancelar.FlatAppearance.BorderColor = Color.Goldenrod;
-            btnCancelar.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnCancelar.FlatAppearance.MouseOverBackColor = Color.Goldenrod;
-            btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.ForeColor = Color.White;
-            btnCancelar.Image = Properties.Resources._cancelFacturaProduct;
-            btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(-1, 134);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(205, 49);
-            btnCancelar.TabIndex = 16;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.TextAlign = ContentAlignment.MiddleRight;
-            btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // label14
             // 
             label14.BackColor = Color.Transparent;
@@ -643,7 +623,6 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(btnNuevo);
             panel2.Controls.Add(btnGuardar);
-            panel2.Controls.Add(btnCancelar);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 93);
             panel2.Name = "panel2";
@@ -857,7 +836,6 @@
         private Button btnBuscarProducto;
         private Button btnNuevo;
         private Button btnGuardar;
-        private Button btnCancelar;
         private Label label14;
         private Label label15;
         private Label label16;
