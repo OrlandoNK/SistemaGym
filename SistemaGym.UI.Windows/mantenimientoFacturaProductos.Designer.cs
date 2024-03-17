@@ -41,6 +41,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            btnClose = new PictureBox();
             lblTitleMantenimientoFacturaMembresia = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
@@ -65,14 +66,13 @@
             FechaEmision = new DataGridViewTextBoxColumn();
             FechaVencimiento = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
-            btnClose = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvFacturaProducto).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -87,6 +87,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(890, 64);
             panel1.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnClose.Location = new Point(845, 15);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(32, 32);
+            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnClose.TabIndex = 5;
+            btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
             // 
             // lblTitleMantenimientoFacturaMembresia
             // 
@@ -415,18 +428,6 @@
             Estatus.Name = "Estatus";
             Estatus.Width = 69;
             // 
-            // btnClose
-            // 
-            btnClose.Cursor = Cursors.Hand;
-            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(845, 15);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(32, 32);
-            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnClose.TabIndex = 5;
-            btnClose.TabStop = false;
-            btnClose.Click += btnClose_Click;
-            // 
             // mantenimientoFacturaProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -444,12 +445,12 @@
             Load += mantenimientoFacturaProductos_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvFacturaProducto).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ResumeLayout(false);
         }
 
