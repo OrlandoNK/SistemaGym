@@ -16,7 +16,7 @@ namespace SistemaGym.UI.Windows
     public partial class frmFacturaProductos : Form
     {
         FacturaProductoEntity oFactura = new FacturaProductoEntity();
-        const string SISTEMA = "Sistema Gym";
+        const string SISTEMA = "Sistema Gestión Gimnasio (COMFORT GYM) dice";
         public frmFacturaProductos()
         {
             InitializeComponent();
@@ -39,20 +39,6 @@ namespace SistemaGym.UI.Windows
 
             }
 
-        }
-
-        private void btnBuscarUsuario_Click(object sender, EventArgs e)
-        {
-            frmBuscarUsuario frmBuscarUsuario = new frmBuscarUsuario();
-            if (frmBuscarUsuario.ShowDialog() == DialogResult.OK)
-            {
-
-                UsuarioEntity usuario = UsuarioBLL.BuscarID(frmBuscarUsuario.id);
-                txtUsuario.Text = usuario.Nombre;
-                txtIDUsuario.Text = usuario.IDUsuario.ToString();
-
-
-            }
         }
         private bool ValidarDetalle()
         {
@@ -184,7 +170,7 @@ namespace SistemaGym.UI.Windows
             try
             {
                 FacturacionProductoBLL.Guardar(oFactura);
-                MessageBox.Show("FacturaGuardada", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("¡Factura Guardada de Manera Satisfactoria!", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 InicializarControles();
             }
             catch (Exception ex)
@@ -204,13 +190,6 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(txtCliente, "El Cliente Es Obligatorio");
                 btnBuscarCliente.Focus();
                 resultado = false;
-            }
-
-            if (string.IsNullOrEmpty(txtUsuario.Text))
-            {
-                MessageBox.Show("Por Favor Agregue el Usuario Que Realiza La Factura", SISTEMA);
-                resultado = false;
-                btnBuscarUsuario.Focus();
             }
             if (dgvProductos.Rows.Count == 0)
             {
