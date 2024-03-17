@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -179,9 +180,13 @@ namespace SistemaGym.UI.Windows
                 }
 
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Se Produjo un Error al Intentar Modificar la Factura Membresia: {ex.Message}", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show($"Se Produjo un Error al Intentar Modificar la Factura Membresia: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Se Produjo un Error al Intentar Modificar la Factura Membresia: {ex.Message}", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

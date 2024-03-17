@@ -13,16 +13,15 @@ namespace SistemaGym.BLL
     {
         public static void Guardar(FacturaProductoEntity factura)
         {
-            if (FacturacionProductosDAL.Exist(factura.IDFactura))
-            {
-                FacturacionProductosDAL.Actualizar(factura);
-
-
-            }else
-            {
-                FacturacionProductosDAL.InsertarFactura(factura);
-            }
-            
+            FacturacionProductosDAL.InsertarFactura(factura);
+        }
+        public static void Actualizar(FacturaProductoEntity factura)
+        {
+            FacturacionProductosDAL.Actualizar(factura);
+        }
+        public static bool DeleteByID(int Id)
+        {
+            return FacturacionProductosDAL.EliminarByID(Id);
         }
         public static DataTable Mostrar()
         {

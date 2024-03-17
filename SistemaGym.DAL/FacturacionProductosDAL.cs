@@ -148,6 +148,22 @@ namespace SistemaGym.DAL
             return dt;
 
         }
+        public static bool EliminarByID(int Id)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            bool seElimino;
+
+            Conexion.Open();
+            string Eliminar = "DELETE FROM FacturaProductos WHERE IDFactura = @IDFactura";
+            SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
+
+            cmd.Parameters.AddWithValue("@IDFactura", Id);
+            seElimino = cmd.ExecuteNonQuery() > 0;
+
+            return seElimino;
+
+        }
         public static bool Exist(int id)
         {
             ConexionDAL instancia = ConexionDAL.Instancia();
