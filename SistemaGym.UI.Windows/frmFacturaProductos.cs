@@ -104,6 +104,8 @@ namespace SistemaGym.UI.Windows
         private void frmFacturaProductos_Load(object sender, EventArgs e)
         {
             InicializarControles();
+            txtIDUsuario.Text = gestioUsuarioEntities.IDUserLogged;
+            txtUsuario.Text = gestioUsuarioEntities.usernameLogged;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

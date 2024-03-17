@@ -162,8 +162,8 @@ namespace SistemaGym.UI.Windows
 
         private void btnFacturaProducto_Click(object sender, EventArgs e)
         {
-            frmFacturaProductos mantenimientoFacturaProductos = new frmFacturaProductos();
-            mantenimientoFacturaProductos.Show();
+            mantenimientoFacturaProductos facturaProductos = new mantenimientoFacturaProductos();
+            facturaProductos.Show();
 
             HideSubMenu();
         }

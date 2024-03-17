@@ -65,18 +65,21 @@
             FechaEmision = new DataGridViewTextBoxColumn();
             FechaVencimiento = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
+            btnClose = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvFacturaProducto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnClose);
             panel1.Controls.Add(lblTitleMantenimientoFacturaMembresia);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
@@ -412,6 +415,18 @@
             Estatus.Name = "Estatus";
             Estatus.Width = 69;
             // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnClose.Location = new Point(845, 15);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(32, 32);
+            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnClose.TabIndex = 5;
+            btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
+            // 
             // mantenimientoFacturaProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -424,14 +439,17 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "mantenimientoFacturaProductos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "mantenimientoFacturaProductos";
             Load += mantenimientoFacturaProductos_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvFacturaProducto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ResumeLayout(false);
         }
 
@@ -462,5 +480,6 @@
         private Label lblTitleMantenimientoFacturaMembresia;
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private PictureBox btnClose;
     }
 }
