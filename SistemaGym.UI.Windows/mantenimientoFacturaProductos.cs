@@ -163,5 +163,11 @@ namespace SistemaGym.UI.Windows
         {
             Close();
         }
+
+        private void btnDetalleFactura_Click(object sender, EventArgs e)
+        {
+            mantenimientoDetalleFacturaProducto detalleFacturaProducto = new mantenimientoDetalleFacturaProducto();
+            detalleFacturaProducto.Show();
+        }
     }
 }

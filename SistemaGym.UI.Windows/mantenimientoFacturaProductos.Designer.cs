@@ -46,7 +46,7 @@
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnDetalleFactura = new Guna.UI2.WinForms.Guna2Button();
             btnDelete = new Guna.UI2.WinForms.Guna2Button();
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
@@ -136,7 +136,7 @@
             // 
             panel3.BackColor = Color.Black;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(guna2Button1);
+            panel3.Controls.Add(btnDetalleFactura);
             panel3.Controls.Add(btnDelete);
             panel3.Controls.Add(btnEdit);
             panel3.Controls.Add(btnRefresh);
@@ -147,32 +147,33 @@
             panel3.Size = new Size(200, 498);
             panel3.TabIndex = 2;
             // 
-            // guna2Button1
+            // btnDetalleFactura
             // 
-            guna2Button1.BorderColor = Color.DarkGoldenrod;
-            guna2Button1.BorderThickness = 1;
-            guna2Button1.Cursor = Cursors.Hand;
-            guna2Button1.CustomizableEdges = customizableEdges1;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.Transparent;
-            guna2Button1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.HoverState.FillColor = Color.DarkGoldenrod;
-            guna2Button1.HoverState.ForeColor = Color.Black;
-            guna2Button1.Image = Properties.Resources.VerDetalleFacturaProductos__x32_;
-            guna2Button1.ImageAlign = HorizontalAlignment.Left;
-            guna2Button1.ImageSize = new Size(25, 25);
-            guna2Button1.Location = new Point(-1, 63);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.PressedColor = Color.Goldenrod;
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button1.Size = new Size(200, 51);
-            guna2Button1.TabIndex = 4;
-            guna2Button1.Text = "Detalle Factura Producto";
-            guna2Button1.TextAlign = HorizontalAlignment.Right;
+            btnDetalleFactura.BorderColor = Color.DarkGoldenrod;
+            btnDetalleFactura.BorderThickness = 1;
+            btnDetalleFactura.Cursor = Cursors.Hand;
+            btnDetalleFactura.CustomizableEdges = customizableEdges1;
+            btnDetalleFactura.DisabledState.BorderColor = Color.DarkGray;
+            btnDetalleFactura.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnDetalleFactura.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnDetalleFactura.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnDetalleFactura.FillColor = Color.Transparent;
+            btnDetalleFactura.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDetalleFactura.ForeColor = Color.White;
+            btnDetalleFactura.HoverState.FillColor = Color.DarkGoldenrod;
+            btnDetalleFactura.HoverState.ForeColor = Color.Black;
+            btnDetalleFactura.Image = Properties.Resources.VerDetalleFacturaProductos__x32_;
+            btnDetalleFactura.ImageAlign = HorizontalAlignment.Left;
+            btnDetalleFactura.ImageSize = new Size(25, 25);
+            btnDetalleFactura.Location = new Point(-1, 63);
+            btnDetalleFactura.Name = "btnDetalleFactura";
+            btnDetalleFactura.PressedColor = Color.Goldenrod;
+            btnDetalleFactura.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnDetalleFactura.Size = new Size(200, 51);
+            btnDetalleFactura.TabIndex = 4;
+            btnDetalleFactura.Text = "Detalle Factura Producto";
+            btnDetalleFactura.TextAlign = HorizontalAlignment.Right;
+            btnDetalleFactura.Click += btnDetalleFactura_Click;
             // 
             // btnDelete
             // 
@@ -480,7 +481,7 @@
         private Guna.UI2.WinForms.Guna2Button btnNew;
         private Label lblTitleMantenimientoFacturaMembresia;
         private PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnDetalleFactura;
         private PictureBox btnClose;
     }
 }
