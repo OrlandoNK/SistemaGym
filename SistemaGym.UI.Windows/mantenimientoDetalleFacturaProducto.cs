@@ -27,7 +27,6 @@ namespace SistemaGym.UI.Windows
         {
             dgvDetalleFacturaProducto.DataSource = FacturacionProductoBLL.MostrarDetalle();
             CargarProducto();
-            CargarFacturaProducto();
             dgvDetalleFacturaProducto.AutoGenerateColumns = false;
         }
         private void CargarProducto()
@@ -38,14 +37,7 @@ namespace SistemaGym.UI.Windows
             colProducto.DisplayMember = "Nombre";
             colProducto.DataPropertyName = "IDProducto";
         }
-        private void CargarFacturaProducto()
-        {
-            var colIDCliente = (DataGridViewComboBoxColumn)dgvDetalleFacturaProducto.Columns["IDFacturaProducto"];
-            colIDCliente.DataSource = ClientesBLL.MostrarCliente();
-            colIDCliente.ValueMember = "IDCliente";
-            colIDCliente.DisplayMember = "Nombre";
-            colIDCliente.DataPropertyName = "IDCliente";
-        }
+
 
     }
 }

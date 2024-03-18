@@ -47,7 +47,7 @@
             panel5 = new Panel();
             dgvDetalleFacturaProducto = new DataGridView();
             IDDetalleFacturaProductos = new DataGridViewTextBoxColumn();
-            IDFacturaProducto = new DataGridViewComboBoxColumn();
+            IDFacturaProducto = new DataGridViewTextBoxColumn();
             IDProducto = new DataGridViewComboBoxColumn();
             precio = new DataGridViewTextBoxColumn();
             cantidad = new DataGridViewTextBoxColumn();
@@ -258,6 +258,7 @@
             IDFacturaProducto.HeaderText = "IDFacturaProducto";
             IDFacturaProducto.Name = "IDFacturaProducto";
             IDFacturaProducto.Resizable = DataGridViewTriState.True;
+            IDFacturaProducto.SortMode = DataGridViewColumnSortMode.NotSortable;
             IDFacturaProducto.Width = 112;
             // 
             // IDProducto
@@ -350,7 +351,7 @@
         private Panel panel5;
         private DataGridView dgvDetalleFacturaProducto;
         private DataGridViewTextBoxColumn IDDetalleFacturaProductos;
-        private DataGridViewComboBoxColumn IDFacturaProducto;
+        private DataGridViewTextBoxColumn IDFacturaProducto;
         private DataGridViewComboBoxColumn IDProducto;
         private DataGridViewTextBoxColumn precio;
         private DataGridViewTextBoxColumn cantidad;
