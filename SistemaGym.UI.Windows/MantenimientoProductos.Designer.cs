@@ -194,7 +194,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(97, 296);
+            btnAgregar.Location = new Point(30, 281);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(93, 39);
             btnAgregar.TabIndex = 11;
@@ -204,7 +204,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(231, 296);
+            btnGuardar.Location = new Point(126, 281);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(90, 39);
             btnGuardar.TabIndex = 12;
@@ -272,6 +272,7 @@
             Controls.Add(lblCategoria);
             Controls.Add(lblNombre);
             Controls.Add(lblIDProducto);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "MantenimientoProductos";
             Text = "MantenimientoProductos";
             Load += MantenimientoProductos_Load;

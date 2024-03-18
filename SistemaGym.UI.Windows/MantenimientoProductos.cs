@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace SistemaGym.UI.Windows
 {
     public partial class MantenimientoProductos : Form
     {
+
+        string SYSTEM_TITLE = "Sistema Gestión Gimnasio (COMFORT GYM) dice";
         public MantenimientoProductos()
         {
             InitializeComponent();
@@ -70,12 +73,16 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            bool CamposValidados = ValidarDatos();
 
+            /*
             if (!ValidarDatos())
             {
                 return;
 
             }
+            */
+
             ProductoEntity nuevoproducto = new ProductoEntity();
             nuevoproducto.Nombre = txtNombre.Text;
             nuevoproducto.IDCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
@@ -83,13 +90,23 @@ namespace SistemaGym.UI.Windows
             nuevoproducto.PrecioUnitario = Convert.ToDecimal(txtPrecioUnitario.Text);
             nuevoproducto.Stock = int.Parse(txtStock.Text);
 
-
-
-            ProductoBLL.Guardar(nuevoproducto);
-            MessageBox.Show("Producto Guardado", "mantenimineto producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            dgvProductos.DataSource = ProductoBLL.GetAll();
-
+            try
+            {
+                if (CamposValidados)
+                {
+                    ProductoBLL.Guardar(nuevoproducto);
+                    MessageBox.Show("¡El Producto ha sido Guardado de Manera Satisfactoria!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvProductos.DataSource = ProductoBLL.GetAll();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Se ha producido un Error al Intentar Guardar el Producto:\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un Error al Intentar Guardar el Producto:\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
         private bool ValidarDatos()
@@ -132,22 +149,10 @@ namespace SistemaGym.UI.Windows
             ProductoBLL productoBLL = new ProductoBLL();
             if (dgvProductos.SelectedRows.Count > 0)
             {
-                DialogResult dialogResult = MessageBox.Show("¿Seguro que quiere eliminar este producto?", "¿Eliminar Producto?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Producto?", "¿Eliminar Producto?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int idproducto = Convert.ToInt32(dgvProductos.SelectedRows[0].Cells["IDProducto"].Value);
-                    bool seElimino = true;
-
-                    if (seElimino)
-                    {
-                        dgvProductos.Rows.RemoveAt(dgvProductos.SelectedRows[0].Index);
-                        MessageBox.Show("Producto Eliminado", "Eliminar Producto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("No Se Elimino El Producto", "Error Al Eliminar Producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    
 
                 }
                 if (dialogResult == DialogResult.No)
