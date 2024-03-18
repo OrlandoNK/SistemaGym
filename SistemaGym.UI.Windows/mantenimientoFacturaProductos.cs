@@ -76,7 +76,7 @@ namespace SistemaGym.UI.Windows
                         FacturacionProductoBLL.Actualizar(facturaProducto);
                     }
 
-                    MessageBox.Show("¡Se Ha Modificado la Factura de Membresia Correctamente!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("¡Se Ha Modificado la Factura de Producto Correctamente!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvFacturaProducto.DataSource = FacturacionProductoBLL.Mostrar();
                 }
 

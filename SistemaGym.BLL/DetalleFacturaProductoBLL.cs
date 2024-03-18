@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaGym.DAL;
+using SistemaGym.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,13 @@ namespace SistemaGym.BLL
 {
     public class DetalleFacturaProductoBLL
     {
+        public static void ActualizarDetalle(DetalleFacturaProductoEntity detallefactura)
+        {
+            DetalleFacturaProductoDAL.Actualizar(detallefactura);
+        }
+        public static bool EliminarDetalle(int Id)
+        {
+            return DetalleFacturaProductoDAL.EliminarByID(Id);
+        }
     }
 }

@@ -83,8 +83,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update FacturaProducto set IDCliente= @idcliente, IDUsuario= @idusuario, NCF= @ncf, SubTotal= @subtotal, TotalDescuento= @TotalDescuento, TotalItbis= @totalitbis, Total= @total" +
-                " FechaEmision= @fechaemision, FechaVencimiento= @fechavencimiento, Estatus= @estatus where IDFactura = @idfactura";
+            string actualizar = "Update FacturaProducto set IDCliente= @idcliente, IDUsuario= @idusuario, NCF= @ncf, SubTotal= @subtotal, TotalDescuento= @TotalDescuento, TotalItbis= @totalitbis, Total= @total, FechaEmision= @fechaemision, FechaVencimiento= @fechavencimiento, Estatus= @estatus where IDFactura = @idfactura";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idcliente", factura.IDCliente);
             cmd.Parameters.AddWithValue("@idusuario", factura.IDUsuario);
