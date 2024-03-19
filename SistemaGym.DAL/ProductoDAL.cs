@@ -120,24 +120,30 @@ namespace SistemaGym.DAL
         }
 
         /* Metodo Obtener por Valor */
-        public static DataTable GetByValor(string producto)
+        public static DataTable ObtenerPorValor(ProductoEntity clientes)
         {
+
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            DataTable dataTBL = new DataTable();
-            string GetValor = "SELECT * FROM Productos WHERE Categoria LIKE '%' + @Categoria + '%' OR IDProveedor LIKE '%' + @IDProveedor + '%' OR Nombre LIKE '%' + @Nombre + '%' ORDER BY Nombre";
+            DataTable dt = new DataTable();
+            string obtenerValor = "SELECT * FROM Productos " +
+                "WHERE Categoria LIKE '%' + @categoria + '%' OR " +
+                "IDProveedor LIKE '%' + @proveedor + '%' OR " +
+                "Nombre LIKE '%' + @nombre + '%' OR " +
+                "PrecioUnitario LIKE '%' + @precio + '%' OR " +
+                "Stock LIKE '%' + @stock + '%' ORDER BY Nombre";
+            SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
+            cmd.Parameters.AddWithValue("@categoria", "%" + clientes.IDCategoria + "%");
+            cmd.Parameters.AddWithValue("@proveedor", "%" + clientes.IDProveedor + "%");
+            cmd.Parameters.AddWithValue("@nombre", "%" + clientes.Nombre + "%");
+            cmd.Parameters.AddWithValue("@precio", "%" + clientes.PrecioUnitario + "%");
+            cmd.Parameters.AddWithValue("@stock", "%" + clientes.Stock + "%");
 
-            SqlCommand cmd = new SqlCommand(GetValor, Conexion);
-            cmd.Parameters.AddWithValue("@Categoria", "%" + producto + "%");
-            cmd.Parameters.AddWithValue("@IDProveedor", "%" + producto + "%");
-            cmd.Parameters.AddWithValue("@Nombre", "%" + producto + "%");
-            SqlDataAdapter adaptTBL = new SqlDataAdapter(cmd);
-            adaptTBL.Fill(dataTBL);
-
-            return dataTBL;
-
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
         }
 
     }

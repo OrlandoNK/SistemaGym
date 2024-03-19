@@ -88,11 +88,8 @@ namespace SistemaGym.UI.Windows
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
         {
-          
-            
             string textoBusqueda = txtBuscarCliente.Text; 
 
-          
             ClientesEntity clienteBusqueda = new ClientesEntity();
             clienteBusqueda.Nombre = textoBusqueda; 
             clienteBusqueda.Apellido = textoBusqueda; 
@@ -108,7 +105,6 @@ namespace SistemaGym.UI.Windows
             clienteBusqueda.Estatus = textoBusqueda;
           
             dgvBuscarClientes.DataSource = ClientesBLL.ObtenerPorValor(clienteBusqueda);
-
         }
 
         private void dgvBuscarClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

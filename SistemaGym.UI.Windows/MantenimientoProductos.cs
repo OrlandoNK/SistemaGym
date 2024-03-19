@@ -165,10 +165,32 @@ namespace SistemaGym.UI.Windows
 
         private void btnBuscar_TextChanged(object sender, EventArgs e)
         {
-            string buscar = btnBuscar.Text;
+            string textoBusqueda = btnBuscar.Text;
 
-            DataTable resultBusqueda = ProductoBLL.GetByValor(buscar);
-            dgvProductos.DataSource = resultBusqueda;
+            ProductoEntity productoBusqueda = new ProductoEntity();
+            productoBusqueda.Nombre = textoBusqueda;
+            int idCategoria;
+            int idProveedor;
+            int stock;
+            decimal precio;
+            if (int.TryParse(textoBusqueda, out idCategoria))
+            {
+                productoBusqueda.IDCategoria = idCategoria;
+            }
+            if (int.TryParse(textoBusqueda, out idProveedor))
+            {
+                productoBusqueda.IDProveedor = idProveedor;
+            }
+            if (int.TryParse(textoBusqueda, out stock))
+            {
+                productoBusqueda.Stock = stock;
+            }
+            if (decimal.TryParse(textoBusqueda, out precio))
+            {
+                productoBusqueda.PrecioUnitario = precio;
+            }
+
+            dgvProductos.DataSource = ProductoBLL.GetByValor(productoBusqueda);
         }
     }
 }
