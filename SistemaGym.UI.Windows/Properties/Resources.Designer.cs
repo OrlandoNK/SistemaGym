@@ -533,6 +533,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap box_1942650 {
+            get {
+                object obj = ResourceManager.GetObject("box_1942650", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btn_actualizar_lista_proveedores_x32 {
             get {
                 object obj = ResourceManager.GetObject("btn actualizar lista proveedores x32", resourceCulture);

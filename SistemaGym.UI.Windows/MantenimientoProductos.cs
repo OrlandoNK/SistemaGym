@@ -24,7 +24,10 @@ namespace SistemaGym.UI.Windows
         }
         private void MantenimientoProductos_Load(object sender, EventArgs e)
         {
-
+            dgvProductos.DataSource = ProductoBLL.GetAll();
+            dgvProductos.AutoGenerateColumns = false;
+            CargarCategoria();
+            CargarProveedor();
         }
 
         private void CargarCategoria()
@@ -44,16 +47,34 @@ namespace SistemaGym.UI.Windows
             colProveedor.DataPropertyName = "IDProveedor";
             colProveedor.DataSource = ProveedoresBLL.MostrarProveedores();
         }
-        private void btnEliminar_Click(object sender, EventArgs e)
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            registrarProducto nuevoProducto = new registrarProducto();
+            nuevoProducto.Show();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             ProductoBLL productoBLL = new ProductoBLL();
             if (dgvProductos.SelectedRows.Count > 0)
             {
-                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Producto?", "¿Eliminar Producto?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Producto?", SYSTEM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    try
+                    {
 
+                    }
+                    catch (SqlException ex)
+                    {
 
+                    }
                 }
                 if (dialogResult == DialogResult.No)
                 {
@@ -61,6 +82,14 @@ namespace SistemaGym.UI.Windows
                 }
 
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvProductos.DataSource = ProductoBLL.GetAll();
+            dgvProductos.AutoGenerateColumns = false;
+            CargarCategoria();
+            CargarProveedor();
         }
     }
 }

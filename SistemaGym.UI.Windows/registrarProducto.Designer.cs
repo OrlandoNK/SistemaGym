@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -64,15 +64,24 @@
             lblNombre = new Label();
             lblIDProducto = new Label();
             errorProvider = new ErrorProvider(components);
+            label2 = new Label();
+            pictureBox1 = new PictureBox();
+            btnClose = new PictureBox();
+            panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnClose);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -106,7 +115,7 @@
             btnGuardar.BorderColor = Color.Goldenrod;
             btnGuardar.BorderThickness = 1;
             btnGuardar.Cursor = Cursors.Hand;
-            btnGuardar.CustomizableEdges = customizableEdges1;
+            btnGuardar.CustomizableEdges = customizableEdges13;
             btnGuardar.DisabledState.BorderColor = Color.DarkGray;
             btnGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGuardar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -119,7 +128,7 @@
             btnGuardar.Location = new Point(-1, 108);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
-            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnGuardar.Size = new Size(198, 49);
             btnGuardar.TabIndex = 1;
             btnGuardar.Text = "Guardar";
@@ -130,7 +139,7 @@
             btnNuevo.BorderColor = Color.Goldenrod;
             btnNuevo.BorderThickness = 1;
             btnNuevo.Cursor = Cursors.Hand;
-            btnNuevo.CustomizableEdges = customizableEdges3;
+            btnNuevo.CustomizableEdges = customizableEdges15;
             btnNuevo.DisabledState.BorderColor = Color.DarkGray;
             btnNuevo.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNuevo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -143,7 +152,7 @@
             btnNuevo.Location = new Point(-1, 53);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.PressedColor = Color.Transparent;
-            btnNuevo.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnNuevo.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnNuevo.Size = new Size(198, 49);
             btnNuevo.TabIndex = 0;
             btnNuevo.Text = "Nuevo";
@@ -181,7 +190,7 @@
             btnRefreshProviders.BorderColor = Color.Goldenrod;
             btnRefreshProviders.BorderThickness = 1;
             btnRefreshProviders.Cursor = Cursors.Hand;
-            btnRefreshProviders.CustomizableEdges = customizableEdges5;
+            btnRefreshProviders.CustomizableEdges = customizableEdges17;
             btnRefreshProviders.DisabledState.BorderColor = Color.DarkGray;
             btnRefreshProviders.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRefreshProviders.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -194,7 +203,7 @@
             btnRefreshProviders.ImageSize = new Size(25, 25);
             btnRefreshProviders.Location = new Point(238, 226);
             btnRefreshProviders.Name = "btnRefreshProviders";
-            btnRefreshProviders.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnRefreshProviders.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnRefreshProviders.Size = new Size(55, 48);
             btnRefreshProviders.TabIndex = 32;
             // 
@@ -204,7 +213,7 @@
             btnRefreshCategories.BorderColor = Color.Goldenrod;
             btnRefreshCategories.BorderThickness = 1;
             btnRefreshCategories.Cursor = Cursors.Hand;
-            btnRefreshCategories.CustomizableEdges = customizableEdges7;
+            btnRefreshCategories.CustomizableEdges = customizableEdges19;
             btnRefreshCategories.DisabledState.BorderColor = Color.DarkGray;
             btnRefreshCategories.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRefreshCategories.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -217,7 +226,7 @@
             btnRefreshCategories.ImageSize = new Size(25, 25);
             btnRefreshCategories.Location = new Point(238, 161);
             btnRefreshCategories.Name = "btnRefreshCategories";
-            btnRefreshCategories.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnRefreshCategories.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnRefreshCategories.Size = new Size(55, 48);
             btnRefreshCategories.TabIndex = 31;
             // 
@@ -227,7 +236,7 @@
             btnNewProvider.BorderColor = Color.Goldenrod;
             btnNewProvider.BorderThickness = 1;
             btnNewProvider.Cursor = Cursors.Hand;
-            btnNewProvider.CustomizableEdges = customizableEdges9;
+            btnNewProvider.CustomizableEdges = customizableEdges21;
             btnNewProvider.DisabledState.BorderColor = Color.DarkGray;
             btnNewProvider.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNewProvider.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -240,7 +249,7 @@
             btnNewProvider.ImageSize = new Size(25, 25);
             btnNewProvider.Location = new Point(177, 226);
             btnNewProvider.Name = "btnNewProvider";
-            btnNewProvider.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnNewProvider.ShadowDecoration.CustomizableEdges = customizableEdges22;
             btnNewProvider.Size = new Size(55, 48);
             btnNewProvider.TabIndex = 30;
             // 
@@ -250,7 +259,7 @@
             btnNewCategory.BorderColor = Color.Goldenrod;
             btnNewCategory.BorderThickness = 1;
             btnNewCategory.Cursor = Cursors.Hand;
-            btnNewCategory.CustomizableEdges = customizableEdges11;
+            btnNewCategory.CustomizableEdges = customizableEdges23;
             btnNewCategory.DisabledState.BorderColor = Color.DarkGray;
             btnNewCategory.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNewCategory.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -263,7 +272,7 @@
             btnNewCategory.ImageSize = new Size(25, 25);
             btnNewCategory.Location = new Point(177, 161);
             btnNewCategory.Name = "btnNewCategory";
-            btnNewCategory.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnNewCategory.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnNewCategory.Size = new Size(55, 48);
             btnNewCategory.TabIndex = 29;
             // 
@@ -387,6 +396,38 @@
             // 
             errorProvider.ContainerControl = this;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.Goldenrod;
+            label2.Location = new Point(69, 20);
+            label2.Name = "label2";
+            label2.Size = new Size(97, 24);
+            label2.TabIndex = 4;
+            label2.Text = "Productos";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.box_1942650;
+            pictureBox1.Location = new Point(3, 7);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(60, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnClose.Location = new Point(471, 16);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(32, 32);
+            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnClose.TabIndex = 5;
+            btnClose.TabStop = false;
+            // 
             // registrarProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -398,10 +439,14 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarProducto";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ResumeLayout(false);
         }
 
@@ -430,5 +475,8 @@
         private Guna.UI2.WinForms.Guna2Button btnRefreshProviders;
         private Guna.UI2.WinForms.Guna2Button btnRefreshCategories;
         private ErrorProvider errorProvider;
+        private Label label2;
+        private PictureBox pictureBox1;
+        private PictureBox btnClose;
     }
 }
