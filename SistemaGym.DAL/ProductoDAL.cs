@@ -56,7 +56,7 @@ namespace SistemaGym.DAL
         }
 
         /* Metodo para Eliminar un Producto por ID */
-        public bool DeleteProduct(ProductoEntity producto)
+        public bool DeleteProduct(int producto)
         {
             bool productDeleted;
 
@@ -67,7 +67,7 @@ namespace SistemaGym.DAL
             string Delete = "DELETE FROM Productos WHERE IDProducto = @IDProducto";
             SqlCommand cmd = new SqlCommand(Delete, Conexion);
 
-            cmd.Parameters.AddWithValue("@IDProducto", producto.IDProducto);
+            cmd.Parameters.AddWithValue("@IDProducto", producto);
             productDeleted = cmd.ExecuteNonQuery() > 0;
 
             return productDeleted;
@@ -113,9 +113,6 @@ namespace SistemaGym.DAL
                 productoEncontrado.IDProducto = Convert.ToInt32(reader["IDProducto"]);
                 productoEncontrado.Nombre = reader["Nombre"].ToString();
                 productoEncontrado.PrecioUnitario = Convert.ToInt32(reader["PrecioUnitario"]);
-
-
-
             }
 
             Conexion.Close();
@@ -123,20 +120,19 @@ namespace SistemaGym.DAL
         }
 
         /* Metodo Obtener por Valor */
-        public static DataTable GetByValor(ProductoEntity producto)
+        public static DataTable GetByValor(string producto)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
             DataTable dataTBL = new DataTable();
-            string GetValor = "SELECT * FROM Productos " +
-                      "WHERE Categoria LIKE '%' + @Categoria + '%' OR IDProveedor LIKE '%' + @IDProveedor + '%' OR Nombre LIKE '%' + @Nombre + '%' ORDER BY Nombre";
+            string GetValor = "SELECT * FROM Productos WHERE Categoria LIKE '%' + @Categoria + '%' OR IDProveedor LIKE '%' + @IDProveedor + '%' OR Nombre LIKE '%' + @Nombre + '%' ORDER BY Nombre";
 
             SqlCommand cmd = new SqlCommand(GetValor, Conexion);
-            cmd.Parameters.AddWithValue("@Categoria", "%" + producto.IDCategoria + "%");
-            cmd.Parameters.AddWithValue("@IDProveedor", "%" + producto.IDProveedor + "%");
-            cmd.Parameters.AddWithValue("@Nombre", "%" + producto.Nombre + "%");
+            cmd.Parameters.AddWithValue("@Categoria", "%" + producto + "%");
+            cmd.Parameters.AddWithValue("@IDProveedor", "%" + producto + "%");
+            cmd.Parameters.AddWithValue("@Nombre", "%" + producto + "%");
             SqlDataAdapter adaptTBL = new SqlDataAdapter(cmd);
             adaptTBL.Fill(dataTBL);
 

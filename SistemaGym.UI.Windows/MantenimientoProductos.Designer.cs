@@ -81,7 +81,6 @@
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { IDProducto, Nombre, IDCategoria, IDProveedor, PrecioUnitario, Stock });
             dgvProductos.Location = new Point(-1, -1);
             dgvProductos.Name = "dgvProductos";
-            dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersVisible = false;
             dgvProductos.RowTemplate.Height = 25;
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -93,21 +92,18 @@
             IDProducto.DataPropertyName = "IDProducto";
             IDProducto.HeaderText = "ID";
             IDProducto.Name = "IDProducto";
-            IDProducto.ReadOnly = true;
             // 
             // Nombre
             // 
             Nombre.DataPropertyName = "Nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
             // 
             // IDCategoria
             // 
             IDCategoria.DataPropertyName = "IDCategoria";
             IDCategoria.HeaderText = "Categoria";
             IDCategoria.Name = "IDCategoria";
-            IDCategoria.ReadOnly = true;
             IDCategoria.Resizable = DataGridViewTriState.True;
             IDCategoria.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
@@ -116,7 +112,6 @@
             IDProveedor.DataPropertyName = "IDProveedor";
             IDProveedor.HeaderText = "Proveedor";
             IDProveedor.Name = "IDProveedor";
-            IDProveedor.ReadOnly = true;
             IDProveedor.Resizable = DataGridViewTriState.True;
             IDProveedor.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
@@ -128,14 +123,12 @@
             PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
             PrecioUnitario.HeaderText = "PrecioUnitario";
             PrecioUnitario.Name = "PrecioUnitario";
-            PrecioUnitario.ReadOnly = true;
             // 
             // Stock
             // 
             Stock.DataPropertyName = "Stock";
             Stock.HeaderText = "Stock";
             Stock.Name = "Stock";
-            Stock.ReadOnly = true;
             // 
             // errorProvider
             // 
@@ -263,6 +256,7 @@
             btnEdit.Size = new Size(200, 49);
             btnEdit.TabIndex = 16;
             btnEdit.Text = "Editar";
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnRefresh
             // 
@@ -349,6 +343,7 @@
             btnBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnBuscar.Size = new Size(698, 43);
             btnBuscar.TabIndex = 0;
+            btnBuscar.TextChanged += btnBuscar_TextChanged;
             // 
             // panel5
             // 

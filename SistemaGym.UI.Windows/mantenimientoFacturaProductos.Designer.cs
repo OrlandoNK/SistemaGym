@@ -304,14 +304,14 @@
             TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
-            TxbBuscar.Location = new Point(10, 10);
+            TxbBuscar.Location = new Point(11, 10);
             TxbBuscar.Name = "TxbBuscar";
             TxbBuscar.PasswordChar = '\0';
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            TxbBuscar.Size = new Size(870, 44);
+            TxbBuscar.Size = new Size(668, 44);
             TxbBuscar.TabIndex = 0;
             // 
             // panel5

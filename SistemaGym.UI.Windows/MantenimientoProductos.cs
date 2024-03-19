@@ -69,11 +69,31 @@ namespace SistemaGym.UI.Windows
                 {
                     try
                     {
+                        if (dgvProductos.SelectedRows.Count > 0)
+                        {
+                            DataGridViewRow selectRow = dgvProductos.SelectedRows[0];
+                            int deleteEmpleado = Convert.ToInt32(selectRow.Cells["IDProducto"].Value);
+                            bool resultado = productoBLL.DeleteProduct(deleteEmpleado);
 
+                            if (resultado)
+                            {
+                                MessageBox.Show("¡El Producto ha sido Eliminado con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                dgvProductos.DataSource = ProductoBLL.GetAll();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error al Tratar de Eliminar el Producto", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+
+                        }
                     }
                     catch (SqlException ex)
                     {
-
+                        MessageBox.Show($"Se ha producido un Error al Intentar Eliminar el Producto, \nDetalles A Continuacion.\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Se ha producido un Error al Intentar Eliminar el Producto, \nDetalles A Continuacion.\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 if (dialogResult == DialogResult.No)
@@ -90,6 +110,65 @@ namespace SistemaGym.UI.Windows
             dgvProductos.AutoGenerateColumns = false;
             CargarCategoria();
             CargarProveedor();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable changeData = ((DataTable)dgvProductos.DataSource).GetChanges();
+
+                if (changeData != null)
+                {
+                    List<ProductoEntity> productoActualizar = ConvertirDatatableALista(changeData);
+
+                    foreach (ProductoEntity producto in productoActualizar)
+                    {
+                        ProductoBLL.Actualizar(producto);
+                    }
+
+                    MessageBox.Show("¡El Producto ha sido Modificado con Éxito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvProductos.DataSource = ProductoBLL.GetAll();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Se Produjo un Error al Intentar Actualizar el Producto. \nDetalles a Continuacion\n: {ex.Message}", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Se Produjo un Error al Intentar Actualizar el Producto. \nDetalles a Continuacion\n: {ex.Message}", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private List<ProductoEntity> ConvertirDatatableALista(DataTable dataTbl)
+        {
+            List<ProductoEntity> ProductList = new List<ProductoEntity>();
+
+            foreach (DataRow fila in dataTbl.Rows)
+            {
+                ProductoEntity producto = new ProductoEntity
+                {
+                    IDProducto = Convert.ToInt32(fila["IDProducto"]),
+                    IDCategoria = Convert.ToInt32(fila["IDCategoria"]),
+                    IDProveedor = Convert.ToInt32(fila["IDProveedor"]),
+                    Nombre = Convert.ToString(fila["Nombre"]),
+                    PrecioUnitario = Convert.ToDecimal(fila["PrecionUnitario"]),
+                    Stock = Convert.ToInt32(fila["Stock"])
+                };
+
+                ProductList.Add(producto);
+            }
+
+            return ProductList;
+        }
+
+        private void btnBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = btnBuscar.Text;
+
+            DataTable resultBusqueda = ProductoBLL.GetByValor(buscar);
+            dgvProductos.DataSource = resultBusqueda;
         }
     }
 }

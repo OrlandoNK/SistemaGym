@@ -115,5 +115,27 @@ namespace SistemaGym.UI.Windows
                 MessageBox.Show("Se ha producido un Error al Intentar Guardar el Producto:\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnNewCategory_Click(object sender, EventArgs e)
+        {
+            frmCategoria nuevaCategoria = new frmCategoria();
+            nuevaCategoria.Show();
+        }
+
+        private void btnNewProvider_Click(object sender, EventArgs e)
+        {
+            registrarProveedores nuevoProveedor = new registrarProveedores();
+            nuevoProveedor.Show();
+        }
+
+        private void btnRefreshCategories_Click(object sender, EventArgs e)
+        {
+            CargarCategoria();
+        }
+
+        private void btnRefreshProviders_Click(object sender, EventArgs e)
+        {
+            CargarProveedor();
+        }
     }
 }
