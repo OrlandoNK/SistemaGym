@@ -83,7 +83,7 @@ namespace SistemaGym.DAL
             DataTable dataTBL = new DataTable();
 
             Conexion.Open();
-            string Mostrar = "SELECT * FROM Productos Order by Nombre";
+            string Mostrar = "SELECT * FROM Productos";
             SqlCommand cmnd = new SqlCommand(Mostrar, Conexion);
             SqlDataAdapter adapterDTBL = new SqlDataAdapter(cmnd);
             adapterDTBL.Fill(dataTBL);
@@ -144,6 +144,25 @@ namespace SistemaGym.DAL
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
+        }
+
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM Productos WHERE Categoria LIKE @Busqueda OR IDProveedor LIKE @Busqueda OR Nombre LIKE @Busqueda OR PrecioUnitario LIKE @Busqueda OR Stock LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
         }
 
     }

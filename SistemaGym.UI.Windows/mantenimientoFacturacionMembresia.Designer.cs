@@ -125,7 +125,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 64);
             panel2.Name = "panel2";
-            panel2.Size = new Size(938, 26);
+            panel2.Size = new Size(938, 28);
             panel2.TabIndex = 1;
             // 
             // panel3
@@ -137,9 +137,9 @@
             panel3.Controls.Add(btnRefresh);
             panel3.Controls.Add(btnNew);
             panel3.Dock = DockStyle.Left;
-            panel3.Location = new Point(0, 90);
+            panel3.Location = new Point(0, 92);
             panel3.Name = "panel3";
-            panel3.Size = new Size(210, 471);
+            panel3.Size = new Size(210, 469);
             panel3.TabIndex = 2;
             // 
             // btnDelete
@@ -254,7 +254,7 @@
             panel4.BackColor = Color.WhiteSmoke;
             panel4.Controls.Add(TxbBuscar);
             panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(210, 90);
+            panel4.Location = new Point(210, 92);
             panel4.Name = "panel4";
             panel4.Size = new Size(728, 52);
             panel4.TabIndex = 3;
@@ -286,9 +286,9 @@
             panel5.BackColor = Color.White;
             panel5.Controls.Add(dgvFacturacionMembresia);
             panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(210, 142);
+            panel5.Location = new Point(210, 144);
             panel5.Name = "panel5";
-            panel5.Size = new Size(728, 419);
+            panel5.Size = new Size(728, 417);
             panel5.TabIndex = 4;
             // 
             // dgvFacturacionMembresia

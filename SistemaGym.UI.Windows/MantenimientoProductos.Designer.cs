@@ -59,7 +59,7 @@
             btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             btnNuevo = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
-            btnBuscar = new Guna.UI2.WinForms.Guna2TextBox();
+            TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel5 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
@@ -314,36 +314,36 @@
             // 
             panel4.BackColor = Color.FromArgb(35, 32, 39);
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(btnBuscar);
+            panel4.Controls.Add(TxbBuscar);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(200, 99);
             panel4.Name = "panel4";
             panel4.Size = new Size(716, 60);
             panel4.TabIndex = 17;
             // 
-            // btnBuscar
+            // TxbBuscar
             // 
-            btnBuscar.BorderRadius = 18;
-            btnBuscar.CustomizableEdges = customizableEdges1;
-            btnBuscar.DefaultText = "";
-            btnBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            btnBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            btnBuscar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            btnBuscar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            btnBuscar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            btnBuscar.IconLeft = Properties.Resources._BusquedaBar__;
-            btnBuscar.Location = new Point(8, 8);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.PasswordChar = '\0';
-            btnBuscar.PlaceholderForeColor = Color.DarkGray;
-            btnBuscar.PlaceholderText = "Buscar";
-            btnBuscar.SelectedText = "";
-            btnBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnBuscar.Size = new Size(698, 43);
-            btnBuscar.TabIndex = 0;
-            btnBuscar.TextChanged += btnBuscar_TextChanged;
+            TxbBuscar.BorderRadius = 18;
+            TxbBuscar.CustomizableEdges = customizableEdges1;
+            TxbBuscar.DefaultText = "";
+            TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            TxbBuscar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            TxbBuscar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            TxbBuscar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
+            TxbBuscar.Location = new Point(8, 8);
+            TxbBuscar.Name = "TxbBuscar";
+            TxbBuscar.PasswordChar = '\0';
+            TxbBuscar.PlaceholderForeColor = Color.DarkGray;
+            TxbBuscar.PlaceholderText = "Buscar";
+            TxbBuscar.SelectedText = "";
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            TxbBuscar.Size = new Size(698, 43);
+            TxbBuscar.TabIndex = 0;
+            TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
             // panel5
             // 
@@ -396,7 +396,7 @@
         private Panel panel2;
         private Panel panel1;
         private Panel panel5;
-        private Guna.UI2.WinForms.Guna2TextBox btnBuscar;
+        private Guna.UI2.WinForms.Guna2TextBox TxbBuscar;
         private PictureBox btnClose;
         private PictureBox pictureBox1;
         private Label label1;

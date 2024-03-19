@@ -25,7 +25,10 @@ namespace SistemaGym.BLL
         {
             return productoDAL.DeleteProduct(producto);
         }
-
+        public static DataTable BuscarProducto(string busqueda)
+        {
+            return ProductoDAL.Buscar(busqueda);
+        }
         public static DataTable GetAll()
         {
             return ProductoDAL.mostrarProductos();
