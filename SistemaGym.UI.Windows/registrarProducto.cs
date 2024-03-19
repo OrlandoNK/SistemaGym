@@ -137,5 +137,16 @@ namespace SistemaGym.UI.Windows
         {
             CargarProveedor();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void registrarProducto_Load(object sender, EventArgs e)
+        {
+            CargarCategoria();
+            CargarProveedor();
+        }
     }
 }

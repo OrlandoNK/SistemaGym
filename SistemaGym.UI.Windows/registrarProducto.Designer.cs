@@ -98,6 +98,7 @@
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
             btnClose.TabIndex = 5;
             btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
             // 
             // label2
             // 
@@ -443,6 +444,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarProducto";
+            Load += registrarProducto_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
