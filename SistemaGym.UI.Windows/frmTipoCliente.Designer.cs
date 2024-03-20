@@ -30,121 +30,94 @@
         {
             components = new System.ComponentModel.Container();
             txtNombre = new TextBox();
-            txtDescripcion = new TextBox();
             txtID = new TextBox();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            dgvTipoCliente = new DataGridView();
-            IDTipoCliente = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            FechaCreacion = new DataGridViewTextBoxColumn();
             btnNuevo = new Button();
             btnGuardar = new Button();
-            btnCancelar = new Button();
             errorProvider1 = new ErrorProvider(components);
-            ((System.ComponentModel.ISupportInitialize)dgvTipoCliente).BeginInit();
+            panel1 = new Panel();
+            btnClose = new PictureBox();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            txtDescripcion = new RichTextBox();
+            panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(220, 247);
+            txtNombre.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtNombre.Location = new Point(322, 81);
             txtNombre.Multiline = true;
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(125, 24);
+            txtNombre.Size = new Size(150, 24);
             txtNombre.TabIndex = 128;
-            // 
-            // txtDescripcion
-            // 
-            txtDescripcion.Location = new Point(220, 301);
-            txtDescripcion.Multiline = true;
-            txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(125, 24);
-            txtDescripcion.TabIndex = 124;
             // 
             // txtID
             // 
-            txtID.Location = new Point(220, 183);
+            txtID.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtID.Location = new Point(266, 81);
             txtID.Multiline = true;
             txtID.Name = "txtID";
-            txtID.Size = new Size(52, 25);
+            txtID.Size = new Size(50, 25);
             txtID.TabIndex = 123;
             // 
             // label3
             // 
-            label3.Location = new Point(220, 220);
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label3.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(322, 54);
             label3.Name = "label3";
-            label3.Size = new Size(125, 24);
+            label3.Size = new Size(150, 24);
             label3.TabIndex = 114;
             label3.Text = "Nombre";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
             label3.Click += label3_Click;
             // 
             // label2
             // 
-            label2.Location = new Point(220, 274);
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label2.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(266, 121);
             label2.Name = "label2";
-            label2.Size = new Size(125, 24);
+            label2.Size = new Size(206, 24);
             label2.TabIndex = 113;
             label2.Text = "Descripcion";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
-            label1.Location = new Point(220, 156);
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(266, 54);
             label1.Name = "label1";
-            label1.Size = new Size(52, 24);
+            label1.Size = new Size(50, 24);
             label1.TabIndex = 112;
             label1.Text = "ID";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // dgvTipoCliente
-            // 
-            dgvTipoCliente.AllowUserToAddRows = false;
-            dgvTipoCliente.AllowUserToDeleteRows = false;
-            dgvTipoCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTipoCliente.Columns.AddRange(new DataGridViewColumn[] { IDTipoCliente, Nombre, Descripcion, FechaCreacion });
-            dgvTipoCliente.Location = new Point(546, 256);
-            dgvTipoCliente.Name = "dgvTipoCliente";
-            dgvTipoCliente.ReadOnly = true;
-            dgvTipoCliente.RowTemplate.Height = 25;
-            dgvTipoCliente.Size = new Size(225, 175);
-            dgvTipoCliente.TabIndex = 134;
-            dgvTipoCliente.CellContentClick += dgvTipoCliente_CellContentClick;
-            // 
-            // IDTipoCliente
-            // 
-            IDTipoCliente.DataPropertyName = "IDTipoCliente";
-            IDTipoCliente.HeaderText = "IDTipoCliente";
-            IDTipoCliente.Name = "IDTipoCliente";
-            IDTipoCliente.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            Descripcion.DataPropertyName = "Descripcion";
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.Name = "Descripcion";
-            Descripcion.ReadOnly = true;
-            // 
-            // FechaCreacion
-            // 
-            FechaCreacion.DataPropertyName = "FechaCreacion";
-            FechaCreacion.HeaderText = "FechaCreacion";
-            FechaCreacion.Name = "FechaCreacion";
-            FechaCreacion.ReadOnly = true;
-            // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(546, 169);
+            btnNuevo.Cursor = Cursors.Hand;
+            btnNuevo.FlatAppearance.BorderColor = Color.DarkGoldenrod;
+            btnNuevo.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnNuevo.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod;
+            btnNuevo.FlatStyle = FlatStyle.Flat;
+            btnNuevo.ForeColor = Color.White;
+            btnNuevo.Image = Properties.Resources._NewFacturaProduct;
+            btnNuevo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNuevo.Location = new Point(-1, 53);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(75, 23);
+            btnNuevo.Size = new Size(200, 45);
             btnNuevo.TabIndex = 135;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
@@ -152,68 +125,132 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(546, 198);
+            btnGuardar.Cursor = Cursors.Hand;
+            btnGuardar.FlatAppearance.BorderColor = Color.DarkGoldenrod;
+            btnGuardar.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Image = Properties.Resources._SaveFacturaProduct;
+            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardar.Location = new Point(-1, 104);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.Size = new Size(200, 45);
             btnGuardar.TabIndex = 136;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(546, 227);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 137;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Black;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnClose);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(529, 63);
+            panel1.TabIndex = 138;
+            // 
+            // btnClose
+            // 
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnClose.Location = new Point(484, 14);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(32, 32);
+            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnClose.TabIndex = 0;
+            btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.DarkGoldenrod;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 63);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(529, 33);
+            panel2.TabIndex = 139;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Black;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(txtDescripcion);
+            panel3.Controls.Add(panel4);
+            panel3.Controls.Add(txtNombre);
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(txtID);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 96);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(529, 337);
+            panel3.TabIndex = 140;
+            // 
+            // txtDescripcion
+            // 
+            txtDescripcion.Location = new Point(266, 148);
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(206, 121);
+            txtDescripcion.TabIndex = 138;
+            txtDescripcion.Text = "";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(35, 32, 39);
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(btnNuevo);
+            panel4.Controls.Add(btnGuardar);
+            panel4.Dock = DockStyle.Left;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(200, 335);
+            panel4.TabIndex = 137;
             // 
             // frmTipoCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(783, 443);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnGuardar);
-            Controls.Add(btnNuevo);
-            Controls.Add(dgvTipoCliente);
-            Controls.Add(txtNombre);
-            Controls.Add(txtDescripcion);
-            Controls.Add(txtID);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            ClientSize = new Size(529, 433);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmTipoCliente";
             Text = "frmTipoCliente";
             Load += frmTipoCliente_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvTipoCliente).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private TextBox txtNombre;
-        private TextBox txtDescripcion;
         private TextBox txtID;
         private Label label3;
         private Label label2;
         private Label label1;
-        private DataGridView dgvTipoCliente;
         private Button btnNuevo;
         private Button btnGuardar;
-        private Button btnCancelar;
-        private DataGridViewTextBoxColumn IDTipoCliente;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn FechaCreacion;
         private ErrorProvider errorProvider1;
+        private Panel panel2;
+        private Panel panel1;
+        private Panel panel3;
+        private PictureBox btnClose;
+        private Panel panel4;
+        private RichTextBox txtDescripcion;
     }
 }
