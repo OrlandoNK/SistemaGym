@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            btnclose = new PictureBox();
             panel2 = new Panel();
             panel5 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
-            btnclose = new PictureBox();
             panel3 = new Panel();
             dgvEmpleados = new DataGridView();
             IDEmpleado = new DataGridViewTextBoxColumn();
@@ -48,8 +48,8 @@
             FechaRegistro = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
-            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnclose).BeginInit();
+            panel5.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
             SuspendLayout();
@@ -64,6 +64,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(858, 62);
             panel1.TabIndex = 0;
+            // 
+            // btnclose
+            // 
+            btnclose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnclose.Cursor = Cursors.Hand;
+            btnclose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnclose.Location = new Point(813, 14);
+            btnclose.Name = "btnclose";
+            btnclose.Size = new Size(32, 32);
+            btnclose.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnclose.TabIndex = 1;
+            btnclose.TabStop = false;
             // 
             // panel2
             // 
@@ -89,7 +101,7 @@
             // TxbBuscar
             // 
             TxbBuscar.BorderRadius = 20;
-            TxbBuscar.CustomizableEdges = customizableEdges7;
+            TxbBuscar.CustomizableEdges = customizableEdges1;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -105,21 +117,9 @@
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             TxbBuscar.Size = new Size(822, 39);
             TxbBuscar.TabIndex = 0;
-            // 
-            // btnclose
-            // 
-            btnclose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnclose.Cursor = Cursors.Hand;
-            btnclose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnclose.Location = new Point(813, 14);
-            btnclose.Name = "btnclose";
-            btnclose.Size = new Size(32, 32);
-            btnclose.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnclose.TabIndex = 1;
-            btnclose.TabStop = false;
             // 
             // panel3
             // 
@@ -149,6 +149,7 @@
             dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEmpleados.Size = new Size(856, 367);
             dgvEmpleados.TabIndex = 0;
+            dgvEmpleados.CellDoubleClick += dgvEmpleados_CellDoubleClick;
             // 
             // IDEmpleado
             // 
@@ -245,8 +246,8 @@
             Load += listaEmpleados_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnclose).EndInit();
+            panel5.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
             ResumeLayout(false);

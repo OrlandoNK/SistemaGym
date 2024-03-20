@@ -30,17 +30,13 @@ namespace SistemaGym.BLL
 
         public static void Guardar(UsuarioEntity usuario)
         {
-            if (usuario.IDUsuario == 0)
-            {
-                //agregar
-                UsuarioDAL.InsertarUsuario(usuario);
-            }
-            else
-            {
-                //Actualizacion de clientes
-                UsuarioDAL.ActualizarUsuario(usuario);
-            }      
-       }
+                UsuarioDAL.InsertarUsuario(usuario);     
+        }
+
+        public static void Update(UsuarioEntity usuario)
+        {
+            UsuarioDAL.ActualizarUsuario(usuario);
+        }
 
         public static bool Eliminar(int idUsuario)
         {

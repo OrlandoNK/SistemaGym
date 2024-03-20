@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace SistemaGym.UI.Windows
             InitializeComponent();
         }
 
+        private string SISTEMA_GYM = "Sistema Gestion Gimnasio (CONFORT GYM) dice";
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
@@ -35,8 +37,6 @@ namespace SistemaGym.UI.Windows
             txtIDCategoria.Text = "0";
             txtNombre.Clear();
             txtNombre.Focus();
-            dgvCategoria.AutoGenerateColumns = false;
-            dgvCategoria.DataSource = CategoriaProductoBLL.Mostrar();
 
         }
 
@@ -44,7 +44,7 @@ namespace SistemaGym.UI.Windows
         {
             InicializarControles();
         }
-
+        /*
         private void dgvCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)
@@ -59,6 +59,7 @@ namespace SistemaGym.UI.Windows
             txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
 
         }
+        */
         private bool ValidarDatos()
         {
             bool resultado = true;
@@ -75,9 +76,6 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(txtDescripcion, "La Descripcion es obligatorio");
                 resultado = false;
             }
-
-
-
             return resultado;
         }
 
@@ -92,20 +90,29 @@ namespace SistemaGym.UI.Windows
             //datos de control al objeto
             CategoriaProductoEntity oCategoria = new CategoriaProductoEntity();
             oCategoria.IDCategoria = int.Parse(txtIDCategoria.Text);
-            oCategoria.Nombre= txtNombre.Text;
-            oCategoria.Descripcion= txtDescripcion.Text;
+            oCategoria.Nombre = txtNombre.Text;
+            oCategoria.Descripcion = txtDescripcion.Text;
             InicializarControles();
             // guardar base datos
             try
             {
                 CategoriaProductoBLL.Guardar(oCategoria);
-                MessageBox.Show("Categoria Guardada", "SistemaGym", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("¡La Categoria Ha Sido Guardada de Manera Satisfactoria!", SISTEMA_GYM, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 InicializarControles();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("¡Se Ha Producido un Error al Intentar Guardar la Categoria! \nDetalles A Continuación:\n" + ex.Message, SISTEMA_GYM, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "SistemaGym", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("¡Se Ha Producido un Error al Intentar Guardar la Categoria! \nDetalles A Continuación:\n" + ex.Message, SISTEMA_GYM, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

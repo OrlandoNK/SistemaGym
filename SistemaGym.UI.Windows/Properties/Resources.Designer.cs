@@ -533,6 +533,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap box_1942650 {
+            get {
+                object obj = ResourceManager.GetObject("box_1942650", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btn_actualizar_lista_proveedores_x32 {
             get {
                 object obj = ResourceManager.GetObject("btn actualizar lista proveedores x32", resourceCulture);
@@ -803,6 +813,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap frmCategoria_x32_ {
+            get {
+                object obj = ResourceManager.GetObject("frmCategoria[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Guardar {
             get {
                 object obj = ResourceManager.GetObject("Guardar", resourceCulture);
@@ -1023,6 +1043,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap save_5764942 {
+            get {
+                object obj = ResourceManager.GetObject("save_5764942", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tel {
             get {
                 object obj = ResourceManager.GetObject("tel", resourceCulture);
@@ -1076,6 +1106,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap usuarios__mainScreen {
             get {
                 object obj = ResourceManager.GetObject("usuarios()mainScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VerDetalleFacturaProductos__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("VerDetalleFacturaProductos [x32]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

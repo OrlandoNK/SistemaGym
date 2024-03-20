@@ -77,8 +77,8 @@ namespace SistemaGym.UI.Windows
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            frmUsuario frmUsuario = new frmUsuario();
-            frmUsuario.Show();
+            mantenimientoUsuarios mantenimientoUsuarios = new mantenimientoUsuarios();
+            mantenimientoUsuarios.Show();
             HideSubMenu();
         }
 
@@ -134,8 +134,8 @@ namespace SistemaGym.UI.Windows
         private void btnCategorias_Click(object sender, EventArgs e)
         {
 
-            frmCategoria frmCategoria = new frmCategoria();
-            frmCategoria.Show();
+            mantenimientoCategorias categorias = new mantenimientoCategorias();
+            categorias.Show();
             HideSubMenu();
         }
 
@@ -162,8 +162,8 @@ namespace SistemaGym.UI.Windows
 
         private void btnFacturaProducto_Click(object sender, EventArgs e)
         {
-            frmFacturaProductos mantenimientoFacturaProductos = new frmFacturaProductos();
-            mantenimientoFacturaProductos.Show();
+            mantenimientoFacturaProductos facturaProductos = new mantenimientoFacturaProductos();
+            facturaProductos.Show();
 
             HideSubMenu();
         }

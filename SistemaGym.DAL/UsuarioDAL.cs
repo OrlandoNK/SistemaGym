@@ -17,15 +17,15 @@ namespace SistemaGym.DAL
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
-            int count;
-            Conexion.Open();
-            string Query = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario =@nombreusuario AND Contrasena =@contrasena ";
-            SqlCommand cmd = new SqlCommand(Query, Conexion);
-            cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
-            cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
-            count = Convert.ToInt32(cmd.ExecuteScalar());
+                int count;
+                Conexion.Open();
+                string Query = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario =@nombreusuario AND Contrasena =@contrasena ";
+                SqlCommand cmd = new SqlCommand(Query, Conexion);
+                cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
+                cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
+                count = Convert.ToInt32(cmd.ExecuteScalar());
 
-            return count;
+                return count;
         }
         //insertar usuario
         public static void InsertarUsuario(UsuarioEntity usuario)
@@ -34,11 +34,12 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into Usuarios(IDRol, Nombre, Apellido, Sexo, Correo, Direccion, FechaRegistro," +
-                " NombreUSuario, Contrasena, Estatus)" +
-                " values(@idrol, @nombre, @apellido, @sexo, @correo, @direccion, @fecharegistro, @nombreusuario, @contrasena, @estatus)";
+            string insertar = "Insert into Usuarios(IDEmpleado, IDRol, Nombre, Apellido, Sexo, Correo, Direccion, FechaRegistro," +
+                " NombreUsuario, Contrasena, Estatus)" +
+                " values(@idempleado, @idrol, @nombre, @apellido, @sexo, @correo, @direccion, @fecharegistro, @nombreusuario, @contrasena, @estatus)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
+            cmd.Parameters.AddWithValue("@idempleado", usuario.IDEmpleado);
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
             cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);
@@ -97,7 +98,7 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string actualizar = "Update Usuarios set IDRol =@idrol, Nombre =@nombre, Apellido =@apellido, Sexo =@sexo, Correo =@correo, Direccion =@direccion, " +
-                "FechaRegistro =@fecharegistro, Nombreusuario =@nombreusuario, Contrasena =@contrasena, Estatus =@estatus where IDUsuario = @idusuario";
+                "FechaRegistro =@fecharegistro, NombreUsuario =@nombreusuario, Contrasena =@contrasena, Estatus =@estatus where IDUsuario = @idusuario";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);

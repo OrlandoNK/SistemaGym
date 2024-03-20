@@ -56,7 +56,7 @@ namespace SistemaGym.DAL
         }
 
         /* Metodo para Eliminar un Producto por ID */
-        public bool DeleteProduct(ProductoEntity producto)
+        public bool DeleteProduct(int producto)
         {
             bool productDeleted;
 
@@ -67,7 +67,7 @@ namespace SistemaGym.DAL
             string Delete = "DELETE FROM Productos WHERE IDProducto = @IDProducto";
             SqlCommand cmd = new SqlCommand(Delete, Conexion);
 
-            cmd.Parameters.AddWithValue("@IDProducto", producto.IDProducto);
+            cmd.Parameters.AddWithValue("@IDProducto", producto);
             productDeleted = cmd.ExecuteNonQuery() > 0;
 
             return productDeleted;
@@ -83,7 +83,7 @@ namespace SistemaGym.DAL
             DataTable dataTBL = new DataTable();
 
             Conexion.Open();
-            string Mostrar = "SELECT * FROM Productos Order by Nombre";
+            string Mostrar = "SELECT * FROM Productos";
             SqlCommand cmnd = new SqlCommand(Mostrar, Conexion);
             SqlDataAdapter adapterDTBL = new SqlDataAdapter(cmnd);
             adapterDTBL.Fill(dataTBL);
@@ -113,9 +113,6 @@ namespace SistemaGym.DAL
                 productoEncontrado.IDProducto = Convert.ToInt32(reader["IDProducto"]);
                 productoEncontrado.Nombre = reader["Nombre"].ToString();
                 productoEncontrado.PrecioUnitario = Convert.ToInt32(reader["PrecioUnitario"]);
-
-
-
             }
 
             Conexion.Close();
@@ -123,23 +120,47 @@ namespace SistemaGym.DAL
         }
 
         /* Metodo Obtener por Valor */
-        public static DataTable GetByValor(ProductoEntity producto)
+        public static DataTable ObtenerPorValor(ProductoEntity clientes)
+        {
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            DataTable dt = new DataTable();
+            string obtenerValor = "SELECT * FROM Productos " +
+                "WHERE Categoria LIKE '%' + @categoria + '%' OR " +
+                "IDProveedor LIKE '%' + @proveedor + '%' OR " +
+                "Nombre LIKE '%' + @nombre + '%' OR " +
+                "PrecioUnitario LIKE '%' + @precio + '%' OR " +
+                "Stock LIKE '%' + @stock + '%' ORDER BY Nombre";
+            SqlCommand cmd = new SqlCommand(obtenerValor, Conexion);
+            cmd.Parameters.AddWithValue("@categoria", "%" + clientes.IDCategoria + "%");
+            cmd.Parameters.AddWithValue("@proveedor", "%" + clientes.IDProveedor + "%");
+            cmd.Parameters.AddWithValue("@nombre", "%" + clientes.Nombre + "%");
+            cmd.Parameters.AddWithValue("@precio", "%" + clientes.PrecioUnitario + "%");
+            cmd.Parameters.AddWithValue("@stock", "%" + clientes.Stock + "%");
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+
+        public static DataTable Buscar(string busqueda)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
+
             DataTable dataTBL = new DataTable();
-            string GetValor = "SELECT * FROM Productos " +
-                      "WHERE Categoria LIKE '%' + @Categoria + '%' OR IDProveedor LIKE '%' + @IDProveedor + '%' OR Nombre LIKE '%' + @Nombre + '%' ORDER BY Nombre";
-
-            SqlCommand cmd = new SqlCommand(GetValor, Conexion);
-            cmd.Parameters.AddWithValue("@Categoria", "%" + producto.IDCategoria + "%");
-            cmd.Parameters.AddWithValue("@IDProveedor", "%" + producto.IDProveedor + "%");
-            cmd.Parameters.AddWithValue("@Nombre", "%" + producto.Nombre + "%");
-            SqlDataAdapter adaptTBL = new SqlDataAdapter(cmd);
-            adaptTBL.Fill(dataTBL);
-
+            string GetByValor = "SELECT * FROM Productos WHERE Categoria LIKE @Busqueda OR IDProveedor LIKE @Busqueda OR Nombre LIKE @Busqueda OR PrecioUnitario LIKE @Busqueda OR Stock LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
             return dataTBL;
 
         }

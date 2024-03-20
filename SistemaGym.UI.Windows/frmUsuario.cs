@@ -30,18 +30,12 @@ namespace SistemaGym.UI.Windows
             cbRol.ValueMember = "IDRol";
             cbRol.DisplayMember = "Nombre";
             cbRol.DataSource = RolBLL.MostrarRol();
-
-            var colRol = (DataGridViewComboBoxColumn)dgvUsuario.Columns["Rol"];
-            colRol.ValueMember = "IDRol";
-            colRol.DisplayMember = "Nombre";
-            colRol.DataPropertyName = "IDRol";
-            colRol.DataSource = RolBLL.MostrarRol();
-
         }
         private void InicializarControles()
         {
             txtIDUsuario.Text = "0";
             cbRol.Text = "";
+            TxbIDEmpleado.Clear();
             txtNombre.Clear();
             txtApellido.Clear();
             txtSexo.Clear();
@@ -50,8 +44,6 @@ namespace SistemaGym.UI.Windows
             txtDireccion.Clear();
             txtNombreUsuario.Clear();
             txtContrasena.Clear();
-            dgvUsuario.AutoGenerateColumns = false;
-            dgvUsuario.DataSource = UsuarioBLL.Mostrar();
             CargarRol();
         }
 
@@ -62,22 +54,7 @@ namespace SistemaGym.UI.Windows
 
         private void dgvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
-            {
-                return;
 
-            }
-
-            DataGridViewRow row = dgvUsuario.CurrentRow;
-            txtIDUsuario.Text = row.Cells["IDUsuario"].Value?.ToString();
-            cbRol.Text = row.Cells["Rol"].EditedFormattedValue.ToString();
-            txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
-            txtApellido.Text = row.Cells["Apellido"].Value?.ToString();
-            txtSexo.Text = row.Cells["Sexo"].Value?.ToString();
-            txtCorreo.Text = row.Cells["Correo"].Value?.ToString();
-            txtDireccion.Text = row.Cells["Direccion"].Value?.ToString();
-            txtNombreUsuario.Text = row.Cells["NombreUsuario"].Value?.ToString();
-            txtContrasena.Text = row.Cells["Contrasena"].Value?.ToString();
 
         }
 
@@ -93,6 +70,7 @@ namespace SistemaGym.UI.Windows
             //datos de control al objeto
             UsuarioEntity oUsuario = new UsuarioEntity("", "");
             oUsuario.IDUsuario = int.Parse(txtIDUsuario.Text);
+            oUsuario.IDEmpleado = int.Parse(TxbIDEmpleado.Text);
             oUsuario.IDRol = (int)cbRol.SelectedValue;
             oUsuario.Nombre = txtNombre.Text;
             oUsuario.Apellido = txtApellido.Text;
@@ -110,9 +88,13 @@ namespace SistemaGym.UI.Windows
                 MessageBox.Show("Usuario Guardado", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 InicializarControles();
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \nDetalles a continuacion:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \nDetalles a continuacion:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -148,52 +130,35 @@ namespace SistemaGym.UI.Windows
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgvUsuario.SelectedRows.Count > 0)
-                {
-                    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea Eliminar este Usuario?", "¿Eliminar Usuario?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        int idUsuario = Convert.ToInt32(dgvUsuario.SelectedRows[0].Cells["IDUsuario"].Value);
 
-
-
-                        bool seElimino = UsuarioBLL.Eliminar(idUsuario);
-
-
-                        if (seElimino)
-                        {
-                            dgvUsuario.Rows.RemoveAt(dgvUsuario.SelectedRows[0].Index);
-                            MessageBox.Show("¡Usuario Eliminado Satisfactoriamente!", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            dgvUsuario.DataSource = UsuarioBLL.Mostrar();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Se Produjo un Error al Intentar Eliminar el Usuario", "Error al Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-
-                    if (dialogResult == DialogResult.No)
-                    {
-                        return;
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Se Produjo un Error al Intentar Eliminar el Usuario. \nDetalles a Continuacion:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se Produjo un Error al Intentar Eliminar el Usuario. \nDetalles a Continuacion:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
         }
 
         private void btnclose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            listaEmpleados empleadoLista = new listaEmpleados();
+
+            if (empleadoLista.ShowDialog() == DialogResult.OK)
+            {
+                EmpleadoEntity oEmpleados = EmpleadoBLL.GetByID(empleadoLista.IdEmpleado);
+
+                if (oEmpleados != null)
+                {
+                    this.TxbIDEmpleado.Text = oEmpleados.IDEmpleado.ToString();
+                    this.txtNombre.Text = oEmpleados.Nombre.ToString();
+                    this.txtApellido.Text = oEmpleados.Apellido.ToString();
+                    this.txtDireccion.Text = oEmpleados.Direccion.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Empleado No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 

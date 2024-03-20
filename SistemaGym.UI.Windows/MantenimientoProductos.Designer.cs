@@ -30,15 +30,16 @@
         {
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            lblIDProducto = new Label();
-            lblNombre = new Label();
-            lblCategoria = new Label();
-            lblPrecioUnitario = new Label();
-            label = new Label();
-            txtIDProducto = new TextBox();
-            txtNombre = new TextBox();
-            txtPrecioUnitario = new TextBox();
-            txtStock = new TextBox();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvProductos = new DataGridView();
             IDProducto = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -46,101 +47,44 @@
             IDProveedor = new DataGridViewComboBoxColumn();
             PrecioUnitario = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
-            btnAgregar = new Button();
-            btnGuardar = new Button();
-            btnEliminar = new Button();
-            cbCategoria = new ComboBox();
-            cbProveedor = new ComboBox();
-            label1 = new Label();
             errorProvider = new ErrorProvider(components);
+            panel1 = new Panel();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
+            btnClose = new PictureBox();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            btnRefresh = new Guna.UI2.WinForms.Guna2Button();
+            btnNuevo = new Guna.UI2.WinForms.Guna2Button();
+            panel4 = new Panel();
+            TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
+            panel5 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
-            // 
-            // lblIDProducto
-            // 
-            lblIDProducto.AutoSize = true;
-            lblIDProducto.Location = new Point(30, 22);
-            lblIDProducto.Name = "lblIDProducto";
-            lblIDProducto.Size = new Size(70, 15);
-            lblIDProducto.TabIndex = 0;
-            lblIDProducto.Text = "ID Producto";
-            // 
-            // lblNombre
-            // 
-            lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(30, 64);
-            lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(51, 15);
-            lblNombre.TabIndex = 1;
-            lblNombre.Text = "Nombre";
-            // 
-            // lblCategoria
-            // 
-            lblCategoria.AutoSize = true;
-            lblCategoria.Location = new Point(30, 109);
-            lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(58, 15);
-            lblCategoria.TabIndex = 2;
-            lblCategoria.Text = "Categoria";
-            // 
-            // lblPrecioUnitario
-            // 
-            lblPrecioUnitario.AutoSize = true;
-            lblPrecioUnitario.Location = new Point(30, 186);
-            lblPrecioUnitario.Name = "lblPrecioUnitario";
-            lblPrecioUnitario.Size = new Size(85, 15);
-            lblPrecioUnitario.TabIndex = 3;
-            lblPrecioUnitario.Text = "Precio Unitario";
-            // 
-            // label
-            // 
-            label.AutoSize = true;
-            label.Location = new Point(30, 227);
-            label.Name = "label";
-            label.Size = new Size(36, 15);
-            label.TabIndex = 4;
-            label.Text = "Stock";
-            // 
-            // txtIDProducto
-            // 
-            txtIDProducto.Location = new Point(136, 22);
-            txtIDProducto.Name = "txtIDProducto";
-            txtIDProducto.Size = new Size(54, 23);
-            txtIDProducto.TabIndex = 5;
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(136, 64);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(147, 23);
-            txtNombre.TabIndex = 6;
-            // 
-            // txtPrecioUnitario
-            // 
-            txtPrecioUnitario.Location = new Point(136, 183);
-            txtPrecioUnitario.Name = "txtPrecioUnitario";
-            txtPrecioUnitario.Size = new Size(147, 23);
-            txtPrecioUnitario.TabIndex = 8;
-            // 
-            // txtStock
-            // 
-            txtStock.Location = new Point(136, 224);
-            txtStock.Name = "txtStock";
-            txtStock.Size = new Size(147, 23);
-            txtStock.TabIndex = 9;
             // 
             // dgvProductos
             // 
             dgvProductos.AllowUserToAddRows = false;
             dgvProductos.AllowUserToDeleteRows = false;
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProductos.BackgroundColor = Color.White;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { IDProducto, Nombre, IDCategoria, IDProveedor, PrecioUnitario, Stock });
-            dgvProductos.Location = new Point(311, 14);
+            dgvProductos.Location = new Point(-1, -1);
             dgvProductos.Name = "dgvProductos";
-            dgvProductos.ReadOnly = true;
+            dgvProductos.RowHeadersVisible = false;
             dgvProductos.RowTemplate.Height = 25;
-            dgvProductos.Size = new Size(641, 233);
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductos.Size = new Size(716, 385);
             dgvProductos.TabIndex = 10;
             // 
             // IDProducto
@@ -148,21 +92,18 @@
             IDProducto.DataPropertyName = "IDProducto";
             IDProducto.HeaderText = "ID";
             IDProducto.Name = "IDProducto";
-            IDProducto.ReadOnly = true;
             // 
             // Nombre
             // 
             Nombre.DataPropertyName = "Nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
             // 
             // IDCategoria
             // 
             IDCategoria.DataPropertyName = "IDCategoria";
             IDCategoria.HeaderText = "Categoria";
             IDCategoria.Name = "IDCategoria";
-            IDCategoria.ReadOnly = true;
             IDCategoria.Resizable = DataGridViewTriState.True;
             IDCategoria.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
@@ -171,7 +112,6 @@
             IDProveedor.DataPropertyName = "IDProveedor";
             IDProveedor.HeaderText = "Proveedor";
             IDProveedor.Name = "IDProveedor";
-            IDProveedor.ReadOnly = true;
             IDProveedor.Resizable = DataGridViewTriState.True;
             IDProveedor.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
@@ -183,122 +123,267 @@
             PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
             PrecioUnitario.HeaderText = "PrecioUnitario";
             PrecioUnitario.Name = "PrecioUnitario";
-            PrecioUnitario.ReadOnly = true;
             // 
             // Stock
             // 
             Stock.DataPropertyName = "Stock";
             Stock.HeaderText = "Stock";
             Stock.Name = "Stock";
-            Stock.ReadOnly = true;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.Location = new Point(97, 296);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(93, 39);
-            btnAgregar.TabIndex = 11;
-            btnAgregar.Text = "Nuevo";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.Location = new Point(231, 296);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(90, 39);
-            btnGuardar.TabIndex = 12;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(366, 296);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(81, 39);
-            btnEliminar.TabIndex = 13;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // cbCategoria
-            // 
-            cbCategoria.FormattingEnabled = true;
-            cbCategoria.Location = new Point(136, 101);
-            cbCategoria.Name = "cbCategoria";
-            cbCategoria.Size = new Size(147, 23);
-            cbCategoria.TabIndex = 14;
-            // 
-            // cbProveedor
-            // 
-            cbProveedor.FormattingEnabled = true;
-            cbProveedor.Location = new Point(136, 141);
-            cbProveedor.Name = "cbProveedor";
-            cbProveedor.Size = new Size(147, 23);
-            cbProveedor.TabIndex = 16;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(30, 149);
-            label1.Name = "label1";
-            label1.Size = new Size(61, 15);
-            label1.TabIndex = 15;
-            label1.Text = "Proveedor";
             // 
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Black;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(btnClose);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(916, 62);
+            panel1.TabIndex = 14;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Goldenrod;
+            label1.Location = new Point(69, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(97, 24);
+            label1.TabIndex = 2;
+            label1.Text = "Productos";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.box_1942650;
+            pictureBox1.Location = new Point(3, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(60, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnClose.Location = new Point(871, 14);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(32, 32);
+            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnClose.TabIndex = 0;
+            btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.DarkGoldenrod;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 62);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(916, 37);
+            panel2.TabIndex = 15;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Black;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(btnDelete);
+            panel3.Controls.Add(btnEdit);
+            panel3.Controls.Add(btnRefresh);
+            panel3.Controls.Add(btnNuevo);
+            panel3.Dock = DockStyle.Left;
+            panel3.Location = new Point(0, 99);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(200, 445);
+            panel3.TabIndex = 16;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BorderColor = Color.Goldenrod;
+            btnDelete.BorderThickness = 1;
+            btnDelete.Cursor = Cursors.Hand;
+            btnDelete.CustomizableEdges = customizableEdges3;
+            btnDelete.DisabledState.BorderColor = Color.DarkGray;
+            btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnDelete.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnDelete.FillColor = Color.Transparent;
+            btnDelete.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.HoverState.FillColor = Color.FromArgb(35, 32, 39);
+            btnDelete.HoverState.ForeColor = Color.Goldenrod;
+            btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
+            btnDelete.ImageAlign = HorizontalAlignment.Left;
+            btnDelete.ImageSize = new Size(25, 25);
+            btnDelete.Location = new Point(-1, 224);
+            btnDelete.Name = "btnDelete";
+            btnDelete.PressedColor = Color.Transparent;
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnDelete.Size = new Size(200, 49);
+            btnDelete.TabIndex = 17;
+            btnDelete.Text = "Eliminar";
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnEdit
+            // 
+            btnEdit.BorderColor = Color.Goldenrod;
+            btnEdit.BorderThickness = 1;
+            btnEdit.Cursor = Cursors.Hand;
+            btnEdit.CustomizableEdges = customizableEdges5;
+            btnEdit.DisabledState.BorderColor = Color.DarkGray;
+            btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEdit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEdit.FillColor = Color.Transparent;
+            btnEdit.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.HoverState.FillColor = Color.FromArgb(35, 32, 39);
+            btnEdit.HoverState.ForeColor = Color.Goldenrod;
+            btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
+            btnEdit.ImageAlign = HorizontalAlignment.Left;
+            btnEdit.ImageSize = new Size(25, 25);
+            btnEdit.Location = new Point(-1, 169);
+            btnEdit.Name = "btnEdit";
+            btnEdit.PressedColor = Color.Transparent;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnEdit.Size = new Size(200, 49);
+            btnEdit.TabIndex = 16;
+            btnEdit.Text = "Editar";
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.BorderColor = Color.Goldenrod;
+            btnRefresh.BorderThickness = 1;
+            btnRefresh.Cursor = Cursors.Hand;
+            btnRefresh.CustomizableEdges = customizableEdges7;
+            btnRefresh.DisabledState.BorderColor = Color.DarkGray;
+            btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRefresh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRefresh.FillColor = Color.Transparent;
+            btnRefresh.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRefresh.ForeColor = Color.Goldenrod;
+            btnRefresh.HoverState.FillColor = Color.FromArgb(35, 32, 39);
+            btnRefresh.HoverState.ForeColor = Color.Goldenrod;
+            btnRefresh.Image = Properties.Resources.refresh_8677771;
+            btnRefresh.ImageSize = new Size(25, 25);
+            btnRefresh.Location = new Point(-1, 114);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.PressedColor = Color.Transparent;
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnRefresh.Size = new Size(200, 49);
+            btnRefresh.TabIndex = 15;
+            btnRefresh.Click += btnRefresh_Click;
+            // 
+            // btnNuevo
+            // 
+            btnNuevo.BorderColor = Color.Goldenrod;
+            btnNuevo.BorderThickness = 1;
+            btnNuevo.Cursor = Cursors.Hand;
+            btnNuevo.CustomizableEdges = customizableEdges9;
+            btnNuevo.DisabledState.BorderColor = Color.DarkGray;
+            btnNuevo.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnNuevo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnNuevo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnNuevo.FillColor = Color.Transparent;
+            btnNuevo.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNuevo.ForeColor = Color.White;
+            btnNuevo.HoverState.FillColor = Color.FromArgb(35, 32, 39);
+            btnNuevo.HoverState.ForeColor = Color.Goldenrod;
+            btnNuevo.Image = Properties.Resources._NewFacturaProduct;
+            btnNuevo.ImageAlign = HorizontalAlignment.Left;
+            btnNuevo.ImageSize = new Size(25, 25);
+            btnNuevo.Location = new Point(-1, 59);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.PressedColor = Color.Transparent;
+            btnNuevo.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnNuevo.Size = new Size(200, 49);
+            btnNuevo.TabIndex = 14;
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.Click += btnNuevo_Click;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(35, 32, 39);
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(TxbBuscar);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(200, 99);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(716, 60);
+            panel4.TabIndex = 17;
+            // 
+            // TxbBuscar
+            // 
+            TxbBuscar.BorderRadius = 18;
+            TxbBuscar.CustomizableEdges = customizableEdges1;
+            TxbBuscar.DefaultText = "";
+            TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            TxbBuscar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            TxbBuscar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            TxbBuscar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
+            TxbBuscar.Location = new Point(8, 8);
+            TxbBuscar.Name = "TxbBuscar";
+            TxbBuscar.PasswordChar = '\0';
+            TxbBuscar.PlaceholderForeColor = Color.DarkGray;
+            TxbBuscar.PlaceholderText = "Buscar";
+            TxbBuscar.SelectedText = "";
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            TxbBuscar.Size = new Size(698, 43);
+            TxbBuscar.TabIndex = 0;
+            TxbBuscar.TextChanged += TxbBuscar_TextChanged;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.White;
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(dgvProductos);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(200, 159);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(716, 385);
+            panel5.TabIndex = 18;
+            // 
             // MantenimientoProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(952, 531);
-            Controls.Add(cbProveedor);
-            Controls.Add(label1);
-            Controls.Add(cbCategoria);
-            Controls.Add(btnEliminar);
-            Controls.Add(btnGuardar);
-            Controls.Add(btnAgregar);
-            Controls.Add(dgvProductos);
-            Controls.Add(txtStock);
-            Controls.Add(txtPrecioUnitario);
-            Controls.Add(txtNombre);
-            Controls.Add(txtIDProducto);
-            Controls.Add(label);
-            Controls.Add(lblPrecioUnitario);
-            Controls.Add(lblCategoria);
-            Controls.Add(lblNombre);
-            Controls.Add(lblIDProducto);
+            ClientSize = new Size(916, 544);
+            Controls.Add(panel5);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "MantenimientoProductos";
             Text = "MantenimientoProductos";
             Load += MantenimientoProductos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
+            panel3.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label lblIDProducto;
-        private Label lblNombre;
-        private Label lblCategoria;
-        private Label lblPrecioUnitario;
-        private Label label;
-        private TextBox txtIDProducto;
-        private TextBox txtNombre;
-        private TextBox txtPrecioUnitario;
-        private TextBox txtStock;
         private DataGridView dgvProductos;
-        private Button btnAgregar;
-        private Button btnGuardar;
-        private Button btnEliminar;
-        private ComboBox cbCategoria;
-        private ComboBox cbProveedor;
-        private Label label1;
         private ErrorProvider errorProvider;
         private DataGridViewTextBoxColumn IDProducto;
         private DataGridViewTextBoxColumn Nombre;
@@ -306,5 +391,18 @@
         private DataGridViewComboBoxColumn IDProveedor;
         private DataGridViewTextBoxColumn PrecioUnitario;
         private DataGridViewTextBoxColumn Stock;
+        private Panel panel4;
+        private Panel panel3;
+        private Panel panel2;
+        private Panel panel1;
+        private Panel panel5;
+        private Guna.UI2.WinForms.Guna2TextBox TxbBuscar;
+        private PictureBox btnClose;
+        private PictureBox pictureBox1;
+        private Label label1;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
+        private Guna.UI2.WinForms.Guna2Button btnNuevo;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnEdit;
     }
 }

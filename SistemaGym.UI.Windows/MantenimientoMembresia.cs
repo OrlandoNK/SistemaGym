@@ -71,10 +71,6 @@ namespace SistemaGym.UI.Windows
                         }
 
                     }
-                    if (dialogResult == DialogResult.No)
-                    {
-
-                    }
                 }
                 catch (SqlException ex)
                 {
@@ -83,6 +79,11 @@ namespace SistemaGym.UI.Windows
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Se ha producido un Error al Intentar Eliminar la Membresia, \nDetalles A Continuacion.\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                if (dialogResult == DialogResult.No)
+                {
+
                 }
 
             }

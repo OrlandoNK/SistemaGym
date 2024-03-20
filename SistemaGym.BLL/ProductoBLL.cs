@@ -15,24 +15,20 @@ namespace SistemaGym.BLL
 
         public static void Guardar(ProductoEntity producto)
         {
-           
-            if (producto.IDProducto == 0)
-            {
-               ProductoDAL.InsertarProductos(producto);
-            } else
-            {
-                ProductoDAL.UpdateProduct(producto);
-            }
-           
+            ProductoDAL.InsertarProductos(producto);
         }
-
-     
-
-        public bool DeleteProduct(ProductoEntity producto)
+        public static void Actualizar(ProductoEntity producto)
+        {
+            ProductoDAL.UpdateProduct(producto);
+        }
+        public bool DeleteProduct(int producto)
         {
             return productoDAL.DeleteProduct(producto);
         }
-
+        public static DataTable BuscarProducto(string busqueda)
+        {
+            return ProductoDAL.Buscar(busqueda);
+        }
         public static DataTable GetAll()
         {
             return ProductoDAL.mostrarProductos();
@@ -45,7 +41,7 @@ namespace SistemaGym.BLL
 
         public static DataTable GetByValor(ProductoEntity producto)
         {
-            return ProductoDAL.GetByValor(producto);
+            return ProductoDAL.ObtenerPorValor(producto);
         }
     }
 }
