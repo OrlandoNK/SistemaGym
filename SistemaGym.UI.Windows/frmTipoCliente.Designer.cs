@@ -50,55 +50,53 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(116, 50);
+            txtNombre.Location = new Point(220, 247);
             txtNombre.Multiline = true;
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(100, 20);
+            txtNombre.Size = new Size(125, 24);
             txtNombre.TabIndex = 128;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(116, 76);
+            txtDescripcion.Location = new Point(220, 301);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(100, 20);
+            txtDescripcion.Size = new Size(125, 24);
             txtDescripcion.TabIndex = 124;
             // 
             // txtID
             // 
-            txtID.Location = new Point(116, 12);
+            txtID.Location = new Point(220, 183);
             txtID.Multiline = true;
             txtID.Name = "txtID";
-            txtID.Size = new Size(29, 25);
+            txtID.Size = new Size(52, 25);
             txtID.TabIndex = 123;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(18, 53);
+            label3.Location = new Point(220, 220);
             label3.Name = "label3";
-            label3.Size = new Size(51, 15);
+            label3.Size = new Size(125, 24);
             label3.TabIndex = 114;
             label3.Text = "Nombre";
             label3.Click += label3_Click;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(18, 81);
+            label2.Location = new Point(220, 274);
             label2.Name = "label2";
-            label2.Size = new Size(69, 15);
+            label2.Size = new Size(125, 24);
             label2.TabIndex = 113;
             label2.Text = "Descripcion";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(18, 22);
+            label1.Location = new Point(220, 156);
             label1.Name = "label1";
-            label1.Size = new Size(87, 15);
+            label1.Size = new Size(52, 24);
             label1.TabIndex = 112;
-            label1.Text = "ID Tipo CLiente";
+            label1.Text = "ID";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // dgvTipoCliente
             // 
@@ -106,11 +104,11 @@
             dgvTipoCliente.AllowUserToDeleteRows = false;
             dgvTipoCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTipoCliente.Columns.AddRange(new DataGridViewColumn[] { IDTipoCliente, Nombre, Descripcion, FechaCreacion });
-            dgvTipoCliente.Location = new Point(354, 128);
+            dgvTipoCliente.Location = new Point(546, 256);
             dgvTipoCliente.Name = "dgvTipoCliente";
             dgvTipoCliente.ReadOnly = true;
             dgvTipoCliente.RowTemplate.Height = 25;
-            dgvTipoCliente.Size = new Size(417, 175);
+            dgvTipoCliente.Size = new Size(225, 175);
             dgvTipoCliente.TabIndex = 134;
             dgvTipoCliente.CellContentClick += dgvTipoCliente_CellContentClick;
             // 
@@ -144,7 +142,7 @@
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(268, 152);
+            btnNuevo.Location = new Point(546, 169);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(75, 23);
             btnNuevo.TabIndex = 135;
@@ -154,7 +152,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(268, 181);
+            btnGuardar.Location = new Point(546, 198);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 136;
@@ -164,7 +162,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(268, 210);
+            btnCancelar.Location = new Point(546, 227);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 137;
@@ -180,7 +178,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(783, 315);
+            ClientSize = new Size(783, 443);
             Controls.Add(btnCancelar);
             Controls.Add(btnGuardar);
             Controls.Add(btnNuevo);
@@ -191,6 +189,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmTipoCliente";
             Text = "frmTipoCliente";
             Load += frmTipoCliente_Load;
