@@ -533,6 +533,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap best_product_6533121 {
+            get {
+                object obj = ResourceManager.GetObject("best-product_6533121", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap box_1942650 {
             get {
                 object obj = ResourceManager.GetObject("box_1942650", resourceCulture);
@@ -926,6 +936,26 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap listaMiembros1 {
             get {
                 object obj = ResourceManager.GetObject("listaMiembros1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mantenimiento_Clientes_x32__ {
+            get {
+                object obj = ResourceManager.GetObject("mantenimiento[Clientes(x32)]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mantenimiento_TipoCliente_x32__ {
+            get {
+                object obj = ResourceManager.GetObject("mantenimiento[TipoCliente(x32)]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
