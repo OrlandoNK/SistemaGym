@@ -52,8 +52,6 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             bool seElimino;
 
-
-
             Conexion.Open();
             string Eliminar = "DELETE FROM TipoCliente WHERE IDTipoCliente= @idtipocliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
@@ -63,6 +61,24 @@ namespace SistemaGym.DAL
 
         }
 
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM TipoCliente WHERE Nombre LIKE @Busqueda OR Descripcion LIKE @Busqueda OR FechaCreacion LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
+        }
 
         //metodo mostrar tipocliente
         public static DataTable MostrarTipoCliente()

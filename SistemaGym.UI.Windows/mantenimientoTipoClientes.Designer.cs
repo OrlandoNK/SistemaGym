@@ -46,12 +46,15 @@
             Nombre = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
             FechaCreacion = new DataGridViewTextBoxColumn();
+            pictureBox1 = new PictureBox();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTipoCliente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -68,6 +71,8 @@
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(guna2HtmlLabel1);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -205,6 +210,7 @@
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             TxbBuscar.Size = new Size(610, 41);
             TxbBuscar.TabIndex = 0;
+            TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
             // panel6
             // 
@@ -256,6 +262,27 @@
             FechaCreacion.HeaderText = "FechaCreacion";
             FechaCreacion.Name = "FechaCreacion";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(64, 55);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel1.ForeColor = Color.Goldenrod;
+            guna2HtmlLabel1.Location = new Point(73, 18);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(128, 25);
+            guna2HtmlLabel1.TabIndex = 2;
+            guna2HtmlLabel1.Text = "Tipo de Cliente";
+            // 
             // mantenimientoTipoClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -268,6 +295,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "mantenimientoTipoClientes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "mantenimientoTipoClientes";
             Load += mantenimientoTipoClientes_Load;
             panel1.ResumeLayout(false);
@@ -277,6 +305,7 @@
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvTipoCliente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -298,5 +327,7 @@
         private DataGridViewTextBoxColumn FechaCreacion;
         private Button btnRefresh;
         private Button btnNuevo;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private PictureBox pictureBox1;
     }
 }

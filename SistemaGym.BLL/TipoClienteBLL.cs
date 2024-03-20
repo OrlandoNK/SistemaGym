@@ -22,6 +22,10 @@ namespace SistemaGym.BLL
             //agregar
             TipoClienteDAL.ActualizarTipoCliente(tipoCliente);
         }
+        public static DataTable BuscarCliente(string busqueda)
+        {
+            return TipoClienteDAL.Buscar(busqueda);
+        }
 
         public static bool Eliminar(int tipoCliente)
         {

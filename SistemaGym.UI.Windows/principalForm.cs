@@ -167,5 +167,13 @@ namespace SistemaGym.UI.Windows
 
             HideSubMenu();
         }
+
+        private void btnTipoCliente_Click(object sender, EventArgs e)
+        {
+            mantenimientoTipoClientes mantenimientoTipoClientes = new mantenimientoTipoClientes();
+            mantenimientoTipoClientes.Show();
+
+            HideSubMenu();
+        }
     }
 }

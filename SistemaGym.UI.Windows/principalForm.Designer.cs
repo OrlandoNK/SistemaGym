@@ -93,7 +93,7 @@
             btnProveedores = new Guna.UI2.WinForms.Guna2Button();
             btnMembresiasMantenimiento = new Guna.UI2.WinForms.Guna2Button();
             btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnTipoCliente = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panelDesplegable.SuspendLayout();
@@ -480,7 +480,7 @@
             // subPanelMantenimientos
             // 
             subPanelMantenimientos.BackColor = Color.FromArgb(35, 32, 39);
-            subPanelMantenimientos.Controls.Add(guna2Button1);
+            subPanelMantenimientos.Controls.Add(btnTipoCliente);
             subPanelMantenimientos.Controls.Add(btnProductos);
             subPanelMantenimientos.Controls.Add(btnCategorias);
             subPanelMantenimientos.Controls.Add(btnClientes);
@@ -648,30 +648,31 @@
             btnMantenimientos.TextAlign = HorizontalAlignment.Right;
             btnMantenimientos.Click += btnMantenimientos_Click;
             // 
-            // guna2Button1
+            // btnTipoCliente
             // 
-            guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.CustomizableEdges = customizableEdges23;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.Dock = DockStyle.Top;
-            guna2Button1.FillColor = Color.Transparent;
-            guna2Button1.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.HoverState.FillColor = Color.White;
-            guna2Button1.HoverState.ForeColor = Color.Black;
-            guna2Button1.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
-            guna2Button1.ImageAlign = HorizontalAlignment.Left;
-            guna2Button1.ImageSize = new Size(25, 25);
-            guna2Button1.Location = new Point(0, 185);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2Button1.Size = new Size(237, 37);
-            guna2Button1.TabIndex = 12;
-            guna2Button1.Text = "Tipo de Clientes";
-            guna2Button1.TextAlign = HorizontalAlignment.Right;
+            btnTipoCliente.BackColor = Color.Transparent;
+            btnTipoCliente.CustomizableEdges = customizableEdges23;
+            btnTipoCliente.DisabledState.BorderColor = Color.DarkGray;
+            btnTipoCliente.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnTipoCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnTipoCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnTipoCliente.Dock = DockStyle.Top;
+            btnTipoCliente.FillColor = Color.Transparent;
+            btnTipoCliente.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTipoCliente.ForeColor = Color.White;
+            btnTipoCliente.HoverState.FillColor = Color.White;
+            btnTipoCliente.HoverState.ForeColor = Color.Black;
+            btnTipoCliente.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
+            btnTipoCliente.ImageAlign = HorizontalAlignment.Left;
+            btnTipoCliente.ImageSize = new Size(25, 25);
+            btnTipoCliente.Location = new Point(0, 185);
+            btnTipoCliente.Name = "btnTipoCliente";
+            btnTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnTipoCliente.Size = new Size(237, 37);
+            btnTipoCliente.TabIndex = 12;
+            btnTipoCliente.Text = "Tipo de Clientes";
+            btnTipoCliente.TextAlign = HorizontalAlignment.Right;
+            btnTipoCliente.Click += btnTipoCliente_Click;
             // 
             // principalForm
             // 
@@ -728,6 +729,6 @@
         private Guna.UI2.WinForms.Guna2Button btnFacturaMembresia;
         private Guna.UI2.WinForms.Guna2Button btnFacturacion;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblRolUsuario;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnTipoCliente;
     }
 }
