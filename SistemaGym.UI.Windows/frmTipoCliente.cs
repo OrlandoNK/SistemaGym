@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,7 +40,6 @@ namespace SistemaGym.UI.Windows
             txtID.Text = "0";
             txtNombre.Clear();
             txtDescripcion.Clear();
-            dtpFechaCreacion.Clear();
             dgvTipoCliente.AutoGenerateColumns = false;
             dgvTipoCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
             txtNombre.Focus();
@@ -57,7 +57,7 @@ namespace SistemaGym.UI.Windows
             TipoCliente.IDTipoCliente = int.Parse(txtID.Text);
             TipoCliente.Nombre = txtNombre.Text;
             TipoCliente.Descripcion = txtDescripcion.Text;
-            TipoCliente.FechaCreacion = DateTime.Parse(dtpFechaCreacion.Text);
+            TipoCliente.FechaCreacion = DateTime.Now;
 
             //Mandar a guardar el objeto creado a la base de datos
             try
@@ -66,7 +66,14 @@ namespace SistemaGym.UI.Windows
                 MessageBox.Show("TipoCliente guardada.", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 InicializarControles();
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Se ha producido un Error al Intentar Guardar el Tipo de Cliente:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un Error al Intentar Guardar el Tipo de Cliente:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
@@ -84,12 +91,6 @@ namespace SistemaGym.UI.Windows
             if (string.IsNullOrEmpty(txtDescripcion.Text))
             {
                 errorProvider1.SetError(txtDescripcion, "El valor no es obligatorio");
-                resultado = false;
-            }
-
-            if (string.IsNullOrEmpty(dtpFechaCreacion.Text))
-            {
-                errorProvider1.SetError(dtpFechaCreacion, "La fecha es obligatorio");
                 resultado = false;
             }
 
@@ -113,9 +114,6 @@ namespace SistemaGym.UI.Windows
             txtID.Text = row.Cells["IDTipoCliente"].Value?.ToString();
             txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
             txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
-            dtpFechaCreacion.Text = row.Cells["FechaCreacion"].Value?.ToString();
-
-
         }
 
 

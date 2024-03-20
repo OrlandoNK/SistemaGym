@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            dtpFechaCreacion = new TextBox();
             txtNombre = new TextBox();
             txtDescripcion = new TextBox();
             txtID = new TextBox();
-            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -49,14 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)dgvTipoCliente).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
-            // 
-            // dtpFechaCreacion
-            // 
-            dtpFechaCreacion.Location = new Point(116, 102);
-            dtpFechaCreacion.Multiline = true;
-            dtpFechaCreacion.Name = "dtpFechaCreacion";
-            dtpFechaCreacion.Size = new Size(100, 20);
-            dtpFechaCreacion.TabIndex = 129;
             // 
             // txtNombre
             // 
@@ -81,15 +71,6 @@
             txtID.Name = "txtID";
             txtID.Size = new Size(29, 25);
             txtID.TabIndex = 123;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(18, 108);
-            label4.Name = "label4";
-            label4.Size = new Size(85, 15);
-            label4.TabIndex = 115;
-            label4.Text = "FechaCreacion";
             // 
             // label3
             // 
@@ -125,7 +106,7 @@
             dgvTipoCliente.AllowUserToDeleteRows = false;
             dgvTipoCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTipoCliente.Columns.AddRange(new DataGridViewColumn[] { IDTipoCliente, Nombre, Descripcion, FechaCreacion });
-            dgvTipoCliente.Location = new Point(274, 12);
+            dgvTipoCliente.Location = new Point(354, 128);
             dgvTipoCliente.Name = "dgvTipoCliente";
             dgvTipoCliente.ReadOnly = true;
             dgvTipoCliente.RowTemplate.Height = 25;
@@ -163,7 +144,7 @@
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(77, 210);
+            btnNuevo.Location = new Point(268, 152);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(75, 23);
             btnNuevo.TabIndex = 135;
@@ -173,7 +154,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(172, 210);
+            btnGuardar.Location = new Point(268, 181);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 136;
@@ -199,16 +180,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(703, 252);
+            ClientSize = new Size(783, 315);
             Controls.Add(btnCancelar);
             Controls.Add(btnGuardar);
             Controls.Add(btnNuevo);
             Controls.Add(dgvTipoCliente);
-            Controls.Add(dtpFechaCreacion);
             Controls.Add(txtNombre);
             Controls.Add(txtDescripcion);
             Controls.Add(txtID);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -222,12 +201,9 @@
         }
 
         #endregion
-
-        private TextBox dtpFechaCreacion;
         private TextBox txtNombre;
         private TextBox txtDescripcion;
         private TextBox txtID;
-        private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
