@@ -158,6 +158,9 @@
             btnGuardar.ForeColor = Color.Goldenrod;
             btnGuardar.HoverState.FillColor = Color.FromArgb(35, 32, 39);
             btnGuardar.HoverState.ForeColor = Color.Goldenrod;
+            btnGuardar.Image = Properties.Resources._SaveFacturaProduct;
+            btnGuardar.ImageAlign = HorizontalAlignment.Left;
+            btnGuardar.ImageSize = new Size(25, 25);
             btnGuardar.Location = new Point(-1, 108);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
@@ -182,6 +185,9 @@
             btnNuevo.ForeColor = Color.Goldenrod;
             btnNuevo.HoverState.FillColor = Color.FromArgb(35, 32, 39);
             btnNuevo.HoverState.ForeColor = Color.Goldenrod;
+            btnNuevo.Image = Properties.Resources._NewFacturaProduct;
+            btnNuevo.ImageAlign = HorizontalAlignment.Left;
+            btnNuevo.ImageSize = new Size(25, 25);
             btnNuevo.Location = new Point(-1, 53);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.PressedColor = Color.Transparent;
