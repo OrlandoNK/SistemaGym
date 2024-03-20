@@ -152,6 +152,7 @@
             btnEliminar.TabIndex = 137;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnEditar
             // 
@@ -169,6 +170,7 @@
             btnEditar.TabIndex = 136;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // panel5
             // 
