@@ -27,8 +27,6 @@ namespace SistemaGym.UI.Windows
         }
         private void CargarUsuarios()
         {
-
-
             var colUsuario = (DataGridViewComboBoxColumn)dgvBuscarFactura.Columns["IDUsuario"];
 
             colUsuario.ValueMember = "IDUsuario";
@@ -39,8 +37,6 @@ namespace SistemaGym.UI.Windows
         }
         private void CargarClientes()
         {
-
-
             var colCliente = (DataGridViewComboBoxColumn)dgvBuscarFactura.Columns["IDCliente"];
 
             colCliente.ValueMember = "IDCliente";
@@ -48,6 +44,21 @@ namespace SistemaGym.UI.Windows
             colCliente.DataPropertyName = "IDCliente";
             colCliente.DataSource = ClientesBLL.MostrarCliente();
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void TxbBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = TxbBusqueda.Text;
+
+            DataTable resultBusqueda = FacturacionProductoBLL.BuscarFacturaProducto(buscar);
+            dgvBuscarFactura.DataSource = resultBusqueda;
+            CargarClientes();
+            CargarUsuarios();
         }
     }
 }

@@ -44,10 +44,26 @@ namespace SistemaGym.UI.Windows
 
         private void txtBuscarUsuario_TextChanged(object sender, EventArgs e)
         {
-            var textoBusqueda = txtBuscarUsuario.Text;
 
 
-            UsuarioEntity usuarioBusqueda = new UsuarioEntity("","");
+        }
+
+        private void dgvBuscarUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            idUsuario = (int)dgvBuscarUsuarios.CurrentRow.Cells["IDUsuario"].Value;
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void TxbBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            var textoBusqueda = TxbBusqueda.Text;
+
+            UsuarioEntity usuarioBusqueda = new UsuarioEntity("", "");
             usuarioBusqueda.Nombre = textoBusqueda;
             usuarioBusqueda.Apellido = textoBusqueda;
             usuarioBusqueda.Sexo = textoBusqueda;
@@ -62,19 +78,11 @@ namespace SistemaGym.UI.Windows
             usuarioBusqueda.NombreUsuario = textoBusqueda;
             usuarioBusqueda.Estatus = textoBusqueda;
 
-
             dgvBuscarUsuarios.DataSource = UsuarioBLL.ObtenerPorValor(usuarioBusqueda);
-
         }
 
-        private void dgvBuscarUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void btnclose_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex == -1)
-            {
-                return;
-            }
-            idUsuario = (int)dgvBuscarUsuarios.CurrentRow.Cells["IDUsuario"].Value;
-            DialogResult = DialogResult.OK;
             Close();
         }
     }

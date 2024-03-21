@@ -14,7 +14,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmBuscarCliente : Form
     {
-       
+
         private int idCliente;
         public frmBuscarCliente()
         {
@@ -88,12 +88,34 @@ namespace SistemaGym.UI.Windows
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
         {
-            string textoBusqueda = txtBuscarCliente.Text; 
+
+        }
+
+        private void dgvBuscarClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            idCliente = (int)dgvBuscarClientes.CurrentRow.Cells["IDCliente"].Value;
+            DialogResult = DialogResult.OK;
+            Close();
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void TxbBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            string textoBusqueda = TxbBusqueda.Text;
 
             ClientesEntity clienteBusqueda = new ClientesEntity();
-            clienteBusqueda.Nombre = textoBusqueda; 
-            clienteBusqueda.Apellido = textoBusqueda; 
-            clienteBusqueda.Documento = textoBusqueda; 
+            clienteBusqueda.Nombre = textoBusqueda;
+            clienteBusqueda.Apellido = textoBusqueda;
+            clienteBusqueda.Documento = textoBusqueda;
             int idMembresia;
             if (int.TryParse(textoBusqueda, out idMembresia))
             {
@@ -103,20 +125,8 @@ namespace SistemaGym.UI.Windows
             clienteBusqueda.TelCell = textoBusqueda;
             clienteBusqueda.TelRes = textoBusqueda;
             clienteBusqueda.Estatus = textoBusqueda;
-          
+
             dgvBuscarClientes.DataSource = ClientesBLL.ObtenerPorValor(clienteBusqueda);
-        }
-
-        private void dgvBuscarClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1)
-            {
-                return;
-            }
-            idCliente= (int)dgvBuscarClientes.CurrentRow.Cells["IDCliente"].Value;
-           DialogResult = DialogResult.OK;
-            Close();
-
         }
     }
 }

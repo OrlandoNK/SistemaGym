@@ -22,26 +22,7 @@ namespace SistemaGym.UI.Windows
 
         private void txtBuscarProducto_TextChanged(object sender, EventArgs e)
         {
-            string textoBusqueda = txtBuscarProducto.Text;
 
-
-            ProductoEntity productoBusqueda = new ProductoEntity();
-            productoBusqueda.Nombre = textoBusqueda;
-            int idProveedor;
-            if (int.TryParse(textoBusqueda, out idProveedor))
-            {
-                productoBusqueda.IDProveedor = idProveedor;
-            }
-
-            int idCategoria;
-            if (int.TryParse(textoBusqueda, out idCategoria))
-            {
-                productoBusqueda.IDCategoria = idCategoria;
-            }
-
-
-
-            dgvBuscarProductos.DataSource = ProductoBLL.GetByValor(productoBusqueda);
 
         }
         public int id
@@ -49,9 +30,6 @@ namespace SistemaGym.UI.Windows
             get { return idProducto; }
             set { }
         }
-
-
-
         private void frmBuscarProductos_Load(object sender, EventArgs e)
         {
             dgvBuscarProductos.AutoGenerateColumns = false;
@@ -95,6 +73,31 @@ namespace SistemaGym.UI.Windows
             DialogResult = DialogResult.OK;
             Close();
 
+        }
+
+        private void TxbBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            string textoBusqueda = TxbBusqueda.Text;
+
+            ProductoEntity productoBusqueda = new ProductoEntity();
+            productoBusqueda.Nombre = textoBusqueda;
+            int idProveedor;
+            if (int.TryParse(textoBusqueda, out idProveedor))
+            {
+                productoBusqueda.IDProveedor = idProveedor;
+            }
+
+            int idCategoria;
+            if (int.TryParse(textoBusqueda, out idCategoria))
+            {
+                productoBusqueda.IDCategoria = idCategoria;
+            }
+            dgvBuscarProductos.DataSource = ProductoBLL.GetByValor(productoBusqueda);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
