@@ -180,6 +180,28 @@ namespace SistemaGym.DAL
             Conexion.Close();
             return usuarioEncontrado;
         }
+
+        /* Metodo Buscar */
+
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM Usuarios WHERE Nombre LIKE @Busqueda OR Apellido LIKE @Busqueda OR Nombre LIKE @Busqueda OR NombreUsuario LIKE @Busqueda OR Sexo LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
+        }
+
         // buscar por valor
         public static DataTable ObtenerPorValor(UsuarioEntity usuario)
         {

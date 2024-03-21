@@ -27,7 +27,10 @@ namespace SistemaGym.BLL
         {
             return usuarioDAL.GetIDFromUser(usuario, contraseña);
         }
-
+        public static DataTable BuscarUsuario(string busqueda)
+        {
+            return UsuarioDAL.Buscar(busqueda);
+        }
         public static void Guardar(UsuarioEntity usuario)
         {
                 UsuarioDAL.InsertarUsuario(usuario);     
