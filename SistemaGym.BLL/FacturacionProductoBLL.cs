@@ -19,6 +19,10 @@ namespace SistemaGym.BLL
         {
             FacturacionProductosDAL.Actualizar(factura);
         }
+        public static DataTable BuscarFacturaProducto(string busqueda)
+        {
+            return FacturacionProductosDAL.Buscar(busqueda);
+        }
         public static bool DeleteByID(int Id)
         {
             return FacturacionProductosDAL.EliminarByID(Id);

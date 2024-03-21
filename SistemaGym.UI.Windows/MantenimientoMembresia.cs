@@ -142,5 +142,12 @@ namespace SistemaGym.UI.Windows
             return membresiaList;
         }
 
+        private void TxbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = TxbBuscar.Text;
+
+            DataTable resultBusqueda = MembresiaBLL.BuscarMembresia(buscar);
+            dgvMembresia.DataSource = resultBusqueda;
+        }
     }
 }

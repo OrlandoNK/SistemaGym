@@ -137,6 +137,25 @@ namespace SistemaGym.DAL
             return membresia;
         }
 
+        /* Buscar */
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM Membresia WHERE Nombre LIKE @Busqueda OR Descripcion LIKE @Busqueda OR Duracion LIKE @Busqueda OR Valor LIKE @Busqueda OR FechaCreacion LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
+        }
 
         //obtener valor de la base de datos en tabla membresia
         public static DataTable ObtenerPorValor(MembresiaEntity membresia)

@@ -14,17 +14,16 @@ namespace SistemaGym.BLL
         readonly ProveedoresDAL proveedores = new ProveedoresDAL();
         public static void Guardar(ProveedoresEntity proveedores)
         {
-            if (proveedores.IDProveedor == 0)
-            {
-                //agregar
-               ProveedoresDAL.InsertarProveedores(proveedores);
-            }
-            else
-            {
-                //Actualizar
-                ProveedoresDAL.ActualizarProveedores(proveedores);
+            ProveedoresDAL.InsertarProveedores(proveedores);
+        }
+        public static void Update(ProveedoresEntity proveedores)
+        {
+            ProveedoresDAL.ActualizarProveedores(proveedores);
+        }
 
-            }
+        public static DataTable BuscarProveedor(string buscar)
+        {
+            return ProveedoresDAL.Buscar(buscar);
         }
 
         public static void Actualizar(ProveedoresEntity proveedor)

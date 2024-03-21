@@ -251,12 +251,12 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.WhiteSmoke;
+            panel4.BackColor = Color.FromArgb(35, 32, 39);
             panel4.Controls.Add(TxbBuscar);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(210, 92);
             panel4.Name = "panel4";
-            panel4.Size = new Size(728, 52);
+            panel4.Size = new Size(728, 60);
             panel4.TabIndex = 3;
             // 
             // TxbBuscar
@@ -271,13 +271,15 @@
             TxbBuscar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxbBuscar.Location = new Point(4, 8);
+            TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
+            TxbBuscar.Location = new Point(4, 9);
             TxbBuscar.Name = "TxbBuscar";
             TxbBuscar.PasswordChar = '\0';
+            TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TxbBuscar.Size = new Size(720, 36);
+            TxbBuscar.Size = new Size(720, 43);
             TxbBuscar.TabIndex = 0;
             TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
@@ -286,9 +288,9 @@
             panel5.BackColor = Color.White;
             panel5.Controls.Add(dgvFacturacionMembresia);
             panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(210, 144);
+            panel5.Location = new Point(210, 152);
             panel5.Name = "panel5";
-            panel5.Size = new Size(728, 417);
+            panel5.Size = new Size(728, 409);
             panel5.TabIndex = 4;
             // 
             // dgvFacturacionMembresia

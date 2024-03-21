@@ -163,6 +163,28 @@ namespace SistemaGym.DAL
             return seElimino;
 
         }
+
+        /* Metodo Buscar */
+
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM FacturaProductos WHERE IDCliente LIKE @Busqueda OR IDUsuario LIKE @Busqueda OR Subtotal LIKE @Busqueda OR Total LIKE @Busqueda OR FechaEmision LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
+        }
+
         public static bool Exist(int id)
         {
             ConexionDAL instancia = ConexionDAL.Instancia();

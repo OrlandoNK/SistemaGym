@@ -21,6 +21,11 @@ namespace SistemaGym.BLL
             MembresiaDAL.ActualizarMembresia(membresia);
         }
 
+    public static DataTable BuscarMembresia(string busqueda)
+        {
+            return MembresiaDAL.Buscar(busqueda);
+        }
+
     public static bool Eliminar(int membresia)
     {
         return MembresiaDAL.EliminarMembresia(membresia);

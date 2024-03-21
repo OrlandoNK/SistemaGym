@@ -233,7 +233,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.WhiteSmoke;
+            panel4.BackColor = Color.FromArgb(35, 32, 39);
             panel4.Controls.Add(btnBuscar);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(205, 103);
@@ -263,6 +263,7 @@
             btnBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnBuscar.Size = new Size(666, 42);
             btnBuscar.TabIndex = 0;
+            btnBuscar.TextChanged += btnBuscar_TextChanged;
             // 
             // panel5
             // 

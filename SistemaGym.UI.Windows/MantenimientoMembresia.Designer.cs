@@ -38,6 +38,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvMembresia = new DataGridView();
             IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -56,12 +58,15 @@
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
             btnrefresh = new Guna.UI2.WinForms.Guna2Button();
             btnNew = new Guna.UI2.WinForms.Guna2Button();
+            panel5 = new Panel();
             panel4 = new Panel();
+            TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
+            panel5.SuspendLayout();
             panel4.SuspendLayout();
             SuspendLayout();
             // 
@@ -73,12 +78,12 @@
             dgvMembresia.BackgroundColor = Color.WhiteSmoke;
             dgvMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Descripcion, Duracion, Valor, FechaCreacion, Estatus });
-            dgvMembresia.Location = new Point(-1, -1);
+            dgvMembresia.Location = new Point(0, 0);
             dgvMembresia.Name = "dgvMembresia";
             dgvMembresia.RowHeadersVisible = false;
             dgvMembresia.RowTemplate.Height = 25;
             dgvMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMembresia.Size = new Size(650, 441);
+            dgvMembresia.Size = new Size(649, 382);
             dgvMembresia.TabIndex = 14;
             // 
             // IDMembresia
@@ -303,22 +308,58 @@
             btnNew.Text = "Nuevo";
             btnNew.Click += btnNew_Click;
             // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(35, 32, 39);
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(TxbBuscar);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(221, 100);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(650, 59);
+            panel5.TabIndex = 19;
+            // 
             // panel4
             // 
-            panel4.BackColor = Color.White;
+            panel4.BackColor = Color.FromArgb(35, 32, 39);
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(dgvMembresia);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(221, 100);
+            panel4.Location = new Point(221, 159);
             panel4.Name = "panel4";
-            panel4.Size = new Size(650, 441);
-            panel4.TabIndex = 18;
+            panel4.Size = new Size(650, 382);
+            panel4.TabIndex = 20;
+            // 
+            // TxbBuscar
+            // 
+            TxbBuscar.BorderRadius = 20;
+            TxbBuscar.CustomizableEdges = customizableEdges9;
+            TxbBuscar.DefaultText = "";
+            TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            TxbBuscar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            TxbBuscar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            TxbBuscar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
+            TxbBuscar.Location = new Point(8, 6);
+            TxbBuscar.Name = "TxbBuscar";
+            TxbBuscar.PasswordChar = '\0';
+            TxbBuscar.PlaceholderForeColor = Color.Silver;
+            TxbBuscar.PlaceholderText = "Buscar";
+            TxbBuscar.SelectedText = "";
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            TxbBuscar.Size = new Size(632, 44);
+            TxbBuscar.TabIndex = 0;
+            TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
             // frmMembresia
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(871, 541);
             Controls.Add(panel4);
+            Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -333,6 +374,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
+            panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -349,7 +391,6 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private Panel panel4;
         private Guna.UI2.WinForms.Guna2Button btnNew;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
@@ -357,5 +398,8 @@
         private PictureBox btnClose;
         private Label label1;
         private PictureBox pictureBox1;
+        private Panel panel5;
+        private Panel panel4;
+        private Guna.UI2.WinForms.Guna2TextBox TxbBuscar;
     }
 }

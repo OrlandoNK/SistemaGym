@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class LoginForm : Form
     {
-
+        private string SISTEMA = "Sistema Gestión Gimnasio (COMFORT GYM) dice";
         UsuarioBLL UsuarioBLL = new UsuarioBLL();
 
         public LoginForm()
@@ -40,24 +41,37 @@ namespace SistemaGym.UI.Windows
             gestioUsuarioEntities.usernameLogged = usuarioBLL.GetNameFromUser(nombreUsuario, contrasena);
             gestioUsuarioEntities.rolUsuarioLogged = RolBLL.ObtenerRolUsuario(nombreUsuario, contrasena);
 
-            if (resultadoAutenticacion > 0)
+            try
             {
-                MessageBox.Show("Sesión Iniciada Con Éxito", "INICIO DE SESION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (resultadoAutenticacion > 0)
+                {
+                    MessageBox.Show("¡Sesión Iniciada Con Éxito!\n\nBienvenido al Sistema " + gestioUsuarioEntities.usernameLogged, SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                principalForm formularioprincipal = new principalForm();
+                    principalForm formularioprincipal = new principalForm();
 
 
-                formularioprincipal.Show();
+                    formularioprincipal.Show();
 
 
-                this.Hide();
+                    this.Hide();
+                }
+                else if (string.IsNullOrEmpty(TxbUsuario.Text) && string.IsNullOrEmpty(TxbContraseña.Text))
+                { 
+                    MessageBox.Show("Por favor llene los campos", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                }
+                else
+                {
+                    MessageBox.Show("Datos de Usuario Incorrectos, Intente Nuevamente", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else if (string.IsNullOrEmpty(TxbUsuario.Text) && string.IsNullOrEmpty(TxbContraseña.Text))
-            { MessageBox.Show("Por favor llene los campos", "ERROR DE INICIO DE SESION", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            else 
+            catch (SqlException ex)
             {
-                MessageBox.Show("Datos de Usuario Incorrectos, Intente Nuevamente", "ERROR DE INICIO DE SESION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se ha producido un Error al Intentar Iniciar Sesion:\n" + ex.Message, SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un Error al Intentar Iniciar Sesion:\n" + ex.Message, SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

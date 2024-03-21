@@ -1,6 +1,7 @@
 ﻿using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,28 @@ namespace SistemaGym.DAL
             cmd.ExecuteNonQuery();
 
         }
+
+        /* Metodo Buscar */
+
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM DetalleFacturaProductos WHERE IDProducto LIKE @Busqueda OR Subototal LIKE @Busqueda OR cantidad LIKE @Busqueda OR precio LIKE @Busqueda OR Total LIKE @Busqueda OR Descuento LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
+        }
+
         public static bool EliminarByID(int Id)
         {
             ConexionDAL instancia = Instancia();

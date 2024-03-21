@@ -21,6 +21,10 @@ namespace SistemaGym.BLL
         {
             EmpleadoDAL.actualizarEmpleado(empleado);
         }
+        public static DataTable BuscarEmpleado(string busqueda)
+        {
+            return EmpleadoDAL.Buscar(busqueda);
+        }
         public static EmpleadoEntity GetByID(int Id)
         {
             return EmpleadoDAL.GetByID(Id);

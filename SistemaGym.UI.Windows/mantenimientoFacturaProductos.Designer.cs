@@ -283,7 +283,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.WhiteSmoke;
+            panel4.BackColor = Color.FromArgb(35, 32, 39);
             panel4.Controls.Add(TxbBuscar);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(200, 102);
@@ -313,6 +313,7 @@
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges12;
             TxbBuscar.Size = new Size(668, 44);
             TxbBuscar.TabIndex = 0;
+            TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
             // panel5
             // 
