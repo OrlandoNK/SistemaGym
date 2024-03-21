@@ -32,6 +32,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             panel1 = new Panel();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel4 = new Panel();
             btnRefresh = new Button();
@@ -46,15 +48,13 @@
             Nombre = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
             FechaCreacion = new DataGridViewTextBoxColumn();
-            pictureBox1 = new PictureBox();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTipoCliente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -79,6 +79,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(817, 63);
             panel1.TabIndex = 140;
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel1.ForeColor = Color.Goldenrod;
+            guna2HtmlLabel1.Location = new Point(73, 18);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(128, 25);
+            guna2HtmlLabel1.TabIndex = 2;
+            guna2HtmlLabel1.Text = "Tipo de Cliente";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(64, 55);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // btnClose
             // 
@@ -235,6 +256,7 @@
             dgvTipoCliente.Name = "dgvTipoCliente";
             dgvTipoCliente.RowHeadersVisible = false;
             dgvTipoCliente.RowTemplate.Height = 25;
+            dgvTipoCliente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTipoCliente.Size = new Size(617, 399);
             dgvTipoCliente.TabIndex = 134;
             // 
@@ -262,27 +284,6 @@
             FechaCreacion.HeaderText = "FechaCreacion";
             FechaCreacion.Name = "FechaCreacion";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(64, 55);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2HtmlLabel1.ForeColor = Color.Goldenrod;
-            guna2HtmlLabel1.Location = new Point(73, 18);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(128, 25);
-            guna2HtmlLabel1.TabIndex = 2;
-            guna2HtmlLabel1.Text = "Tipo de Cliente";
-            // 
             // mantenimientoTipoClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -300,12 +301,12 @@
             Load += mantenimientoTipoClientes_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvTipoCliente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
