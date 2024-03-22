@@ -34,6 +34,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnClose = new PictureBox();
             lblTitleMantenimientoFacturaMembresia = new Label();
@@ -51,7 +56,7 @@
             IDProducto = new DataGridViewComboBoxColumn();
             precio = new DataGridViewTextBoxColumn();
             cantidad = new DataGridViewTextBoxColumn();
-            Subototal = new DataGridViewTextBoxColumn();
+            Subtotal = new DataGridViewTextBoxColumn();
             Descuento = new DataGridViewTextBoxColumn();
             Itbis = new DataGridViewTextBoxColumn();
             Total = new DataGridViewTextBoxColumn();
@@ -239,7 +244,7 @@
             dgvDetalleFacturaProducto.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dgvDetalleFacturaProducto.BackgroundColor = Color.WhiteSmoke;
             dgvDetalleFacturaProducto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDetalleFacturaProducto.Columns.AddRange(new DataGridViewColumn[] { IDDetalleFacturaProductos, IDFacturaProducto, IDProducto, precio, cantidad, Subototal, Descuento, Itbis, Total });
+            dgvDetalleFacturaProducto.Columns.AddRange(new DataGridViewColumn[] { IDDetalleFacturaProductos, IDFacturaProducto, IDProducto, precio, cantidad, Subtotal, Descuento, Itbis, Total });
             dgvDetalleFacturaProducto.Location = new Point(-1, -1);
             dgvDetalleFacturaProducto.Name = "dgvDetalleFacturaProducto";
             dgvDetalleFacturaProducto.RowHeadersVisible = false;
@@ -274,6 +279,9 @@
             // precio
             // 
             precio.DataPropertyName = "precio";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            precio.DefaultCellStyle = dataGridViewCellStyle1;
             precio.HeaderText = "precio";
             precio.Name = "precio";
             precio.Width = 65;
@@ -285,16 +293,22 @@
             cantidad.Name = "cantidad";
             cantidad.Width = 78;
             // 
-            // Subototal
+            // Subtotal
             // 
-            Subototal.DataPropertyName = "Subototal";
-            Subototal.HeaderText = "Subtotal";
-            Subototal.Name = "Subototal";
-            Subototal.Width = 76;
+            Subtotal.DataPropertyName = "Subtotal";
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
+            Subtotal.HeaderText = "Subtotal";
+            Subtotal.Name = "Subtotal";
+            Subtotal.Width = 76;
             // 
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.Width = 88;
@@ -302,6 +316,9 @@
             // Itbis
             // 
             Itbis.DataPropertyName = "Itbis";
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            Itbis.DefaultCellStyle = dataGridViewCellStyle4;
             Itbis.HeaderText = "Itbis";
             Itbis.Name = "Itbis";
             Itbis.Width = 54;
@@ -309,6 +326,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle5;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.Width = 57;
@@ -358,7 +378,7 @@
         private DataGridViewComboBoxColumn IDProducto;
         private DataGridViewTextBoxColumn precio;
         private DataGridViewTextBoxColumn cantidad;
-        private DataGridViewTextBoxColumn Subototal;
+        private DataGridViewTextBoxColumn Subtotal;
         private DataGridViewTextBoxColumn Descuento;
         private DataGridViewTextBoxColumn Itbis;
         private DataGridViewTextBoxColumn Total;

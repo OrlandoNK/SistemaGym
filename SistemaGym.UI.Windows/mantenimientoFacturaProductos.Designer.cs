@@ -40,6 +40,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnClose = new PictureBox();
             lblTitleMantenimientoFacturaMembresia = new Label();
@@ -377,6 +381,9 @@
             // Subtotal
             // 
             Subtotal.DataPropertyName = "Subtotal";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle1;
             Subtotal.FillWeight = 97.83608F;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
@@ -385,6 +392,9 @@
             // TotalDescuento
             // 
             TotalDescuento.DataPropertyName = "TotalDescuento";
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            TotalDescuento.DefaultCellStyle = dataGridViewCellStyle2;
             TotalDescuento.FillWeight = 145.060074F;
             TotalDescuento.HeaderText = "TotalDescuento";
             TotalDescuento.Name = "TotalDescuento";
@@ -393,6 +403,9 @@
             // TotalItbis
             // 
             TotalItbis.DataPropertyName = "TotalItbis";
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            TotalItbis.DefaultCellStyle = dataGridViewCellStyle3;
             TotalItbis.FillWeight = 96.97023F;
             TotalItbis.HeaderText = "TotalItbis";
             TotalItbis.Name = "TotalItbis";
@@ -401,6 +414,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle4;
             Total.FillWeight = 69.81572F;
             Total.HeaderText = "Total";
             Total.Name = "Total";
@@ -465,6 +481,14 @@
         private Panel panel5;
         private DataGridView dgvFacturaProducto;
         private Guna.UI2.WinForms.Guna2TextBox TxbBuscar;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
+        private Guna.UI2.WinForms.Guna2Button btnNew;
+        private Label lblTitleMantenimientoFacturaMembresia;
+        private PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btnDetalleFactura;
+        private PictureBox btnClose;
         private DataGridViewTextBoxColumn IDFactura;
         private DataGridViewComboBoxColumn IDCliente;
         private DataGridViewComboBoxColumn IDUsuario;
@@ -476,13 +500,5 @@
         private DataGridViewTextBoxColumn FechaEmision;
         private DataGridViewTextBoxColumn FechaVencimiento;
         private DataGridViewTextBoxColumn Estatus;
-        private Guna.UI2.WinForms.Guna2Button btnDelete;
-        private Guna.UI2.WinForms.Guna2Button btnEdit;
-        private Guna.UI2.WinForms.Guna2Button btnRefresh;
-        private Guna.UI2.WinForms.Guna2Button btnNew;
-        private Label lblTitleMantenimientoFacturaMembresia;
-        private PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Button btnDetalleFactura;
-        private PictureBox btnClose;
     }
 }

@@ -16,4 +16,4 @@ namespace SistemaGym.UI.Windows
             Application.Run(new LoginForm());
         }
     }
-}
+}   

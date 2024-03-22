@@ -31,8 +31,13 @@ namespace SistemaGym.BLL
 
         public static DataTable Mostrar()
         {
-            DataTable dataTable = CategoriaProductoDAL.MostrarCategoria();
-            return dataTable;
+            return CategoriaProductoDAL.MostrarCategoria();
+            
+        }
+        public static DataTable MostrarCategoria()
+        {
+            return CategoriaProductoDAL.Mostrar();
+
         }
 
         public  static DataTable BuscarIDcategoria (CategoriaProductoEntity categoria)

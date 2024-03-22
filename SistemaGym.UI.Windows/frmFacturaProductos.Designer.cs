@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle41 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle42 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle43 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle44 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle45 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             label1 = new Label();
             label5 = new Label();
             dtpFechaVencimiento = new DateTimePicker();
@@ -57,15 +57,15 @@
             btnAgregar = new Button();
             txtProducto = new TextBox();
             label10 = new Label();
-            btnBuscarProducto = new Button();
             txtIDProducto = new TextBox();
             label9 = new Label();
+            btnBuscarProducto = new Button();
             label13 = new Label();
             txtPrecio = new TextBox();
             label11 = new Label();
-            txtDescuento = new TextBox();
             txtCantidad = new TextBox();
             label12 = new Label();
+            txtDescuento = new TextBox();
             btnNuevo = new Button();
             btnGuardar = new Button();
             label14 = new Label();
@@ -227,9 +227,9 @@
             // Precio
             // 
             Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle41.Format = "C2";
-            dataGridViewCellStyle41.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle1;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
@@ -246,9 +246,9 @@
             // Subtotal
             // 
             Subtotal.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle42.Format = "C2";
-            dataGridViewCellStyle42.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
             Subtotal.ReadOnly = true;
@@ -257,9 +257,9 @@
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle43.Format = "C2";
-            dataGridViewCellStyle43.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
@@ -268,9 +268,9 @@
             // Impuesto
             // 
             Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle44.Format = "C2";
-            dataGridViewCellStyle44.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle4;
             Impuesto.HeaderText = "Impuesto";
             Impuesto.Name = "Impuesto";
             Impuesto.ReadOnly = true;
@@ -279,9 +279,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
-            dataGridViewCellStyle45.Format = "C2";
-            dataGridViewCellStyle45.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle5;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
@@ -339,19 +339,6 @@
             label10.TabIndex = 1;
             label10.Text = "Producto";
             // 
-            // btnBuscarProducto
-            // 
-            btnBuscarProducto.Cursor = Cursors.Hand;
-            btnBuscarProducto.FlatAppearance.BorderColor = Color.Black;
-            btnBuscarProducto.FlatStyle = FlatStyle.Flat;
-            btnBuscarProducto.Image = Properties.Resources._BotonBuscarProducto;
-            btnBuscarProducto.Location = new Point(251, 88);
-            btnBuscarProducto.Name = "btnBuscarProducto";
-            btnBuscarProducto.Size = new Size(57, 54);
-            btnBuscarProducto.TabIndex = 10;
-            btnBuscarProducto.UseVisualStyleBackColor = true;
-            btnBuscarProducto.Click += btnBuscarProducto_Click;
-            // 
             // txtIDProducto
             // 
             txtIDProducto.Location = new Point(9, 59);
@@ -369,6 +356,19 @@
             label9.Size = new Size(47, 21);
             label9.TabIndex = 0;
             label9.Text = "ID";
+            // 
+            // btnBuscarProducto
+            // 
+            btnBuscarProducto.Cursor = Cursors.Hand;
+            btnBuscarProducto.FlatAppearance.BorderColor = Color.Black;
+            btnBuscarProducto.FlatStyle = FlatStyle.Flat;
+            btnBuscarProducto.Image = Properties.Resources._BotonBuscarProducto;
+            btnBuscarProducto.Location = new Point(251, 88);
+            btnBuscarProducto.Name = "btnBuscarProducto";
+            btnBuscarProducto.Size = new Size(57, 54);
+            btnBuscarProducto.TabIndex = 10;
+            btnBuscarProducto.UseVisualStyleBackColor = true;
+            btnBuscarProducto.Click += btnBuscarProducto_Click;
             // 
             // label13
             // 
@@ -397,14 +397,6 @@
             label11.TabIndex = 2;
             label11.Text = "Precio";
             // 
-            // txtDescuento
-            // 
-            txtDescuento.Location = new Point(119, 119);
-            txtDescuento.Multiline = true;
-            txtDescuento.Name = "txtDescuento";
-            txtDescuento.Size = new Size(104, 23);
-            txtDescuento.TabIndex = 8;
-            // 
             // txtCantidad
             // 
             txtCantidad.Location = new Point(9, 119);
@@ -421,6 +413,14 @@
             label12.Size = new Size(104, 23);
             label12.TabIndex = 3;
             label12.Text = "Cantidad";
+            // 
+            // txtDescuento
+            // 
+            txtDescuento.Location = new Point(119, 119);
+            txtDescuento.Multiline = true;
+            txtDescuento.Name = "txtDescuento";
+            txtDescuento.Size = new Size(104, 23);
+            txtDescuento.TabIndex = 8;
             // 
             // btnNuevo
             // 
@@ -655,6 +655,7 @@
             cbTipoCliente.Name = "cbTipoCliente";
             cbTipoCliente.Size = new Size(143, 23);
             cbTipoCliente.TabIndex = 22;
+            cbTipoCliente.Visible = false;
             // 
             // btnBuscarCliente
             // 
@@ -710,6 +711,7 @@
             label2.Size = new Size(143, 20);
             label2.TabIndex = 6;
             label2.Text = "Tipo Cliente";
+            label2.Visible = false;
             // 
             // label6
             // 

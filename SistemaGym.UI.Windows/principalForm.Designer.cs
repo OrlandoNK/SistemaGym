@@ -52,6 +52,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -64,8 +66,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnAdministracion = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             lblRolUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -87,13 +87,13 @@
             btnFacturaMembresia = new Guna.UI2.WinForms.Guna2Button();
             btnFacturacion = new Guna.UI2.WinForms.Guna2Button();
             subPanelMantenimientos = new Panel();
+            btnTipoCliente = new Guna.UI2.WinForms.Guna2Button();
             btnProductos = new Guna.UI2.WinForms.Guna2Button();
             btnCategorias = new Guna.UI2.WinForms.Guna2Button();
             btnClientes = new Guna.UI2.WinForms.Guna2Button();
             btnProveedores = new Guna.UI2.WinForms.Guna2Button();
             btnMembresiasMantenimiento = new Guna.UI2.WinForms.Guna2Button();
             btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
-            btnTipoCliente = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panelDesplegable.SuspendLayout();
@@ -492,6 +492,32 @@
             subPanelMantenimientos.Size = new Size(237, 225);
             subPanelMantenimientos.TabIndex = 8;
             // 
+            // btnTipoCliente
+            // 
+            btnTipoCliente.BackColor = Color.Transparent;
+            btnTipoCliente.CustomizableEdges = customizableEdges23;
+            btnTipoCliente.DisabledState.BorderColor = Color.DarkGray;
+            btnTipoCliente.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnTipoCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnTipoCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnTipoCliente.Dock = DockStyle.Top;
+            btnTipoCliente.FillColor = Color.Transparent;
+            btnTipoCliente.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTipoCliente.ForeColor = Color.White;
+            btnTipoCliente.HoverState.FillColor = Color.White;
+            btnTipoCliente.HoverState.ForeColor = Color.Black;
+            btnTipoCliente.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
+            btnTipoCliente.ImageAlign = HorizontalAlignment.Left;
+            btnTipoCliente.ImageSize = new Size(25, 25);
+            btnTipoCliente.Location = new Point(0, 185);
+            btnTipoCliente.Name = "btnTipoCliente";
+            btnTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnTipoCliente.Size = new Size(237, 37);
+            btnTipoCliente.TabIndex = 12;
+            btnTipoCliente.Text = "Tipo de Clientes";
+            btnTipoCliente.TextAlign = HorizontalAlignment.Right;
+            btnTipoCliente.Click += btnTipoCliente_Click;
+            // 
             // btnProductos
             // 
             btnProductos.BackColor = Color.Transparent;
@@ -647,32 +673,6 @@
             btnMantenimientos.Text = "&Mantenimientos";
             btnMantenimientos.TextAlign = HorizontalAlignment.Right;
             btnMantenimientos.Click += btnMantenimientos_Click;
-            // 
-            // btnTipoCliente
-            // 
-            btnTipoCliente.BackColor = Color.Transparent;
-            btnTipoCliente.CustomizableEdges = customizableEdges23;
-            btnTipoCliente.DisabledState.BorderColor = Color.DarkGray;
-            btnTipoCliente.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnTipoCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnTipoCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTipoCliente.Dock = DockStyle.Top;
-            btnTipoCliente.FillColor = Color.Transparent;
-            btnTipoCliente.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTipoCliente.ForeColor = Color.White;
-            btnTipoCliente.HoverState.FillColor = Color.White;
-            btnTipoCliente.HoverState.ForeColor = Color.Black;
-            btnTipoCliente.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
-            btnTipoCliente.ImageAlign = HorizontalAlignment.Left;
-            btnTipoCliente.ImageSize = new Size(25, 25);
-            btnTipoCliente.Location = new Point(0, 185);
-            btnTipoCliente.Name = "btnTipoCliente";
-            btnTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            btnTipoCliente.Size = new Size(237, 37);
-            btnTipoCliente.TabIndex = 12;
-            btnTipoCliente.Text = "Tipo de Clientes";
-            btnTipoCliente.TextAlign = HorizontalAlignment.Right;
-            btnTipoCliente.Click += btnTipoCliente_Click;
             // 
             // principalForm
             // 
