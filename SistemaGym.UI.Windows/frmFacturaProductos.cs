@@ -203,6 +203,19 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(txtNCF, "El NCF Es Obligatorio");
                 resultado = false;
             }
+            /*
+            int cant = txtCantidad.Text;
+            if (string.IsNullOrEmpty(txtCantidad.Text) ||  <= 0)
+            {
+                errorProvider.SetError(txtNCF, "El NCF Es Obligatorio");
+                resultado = false;
+            }
+            */
+            if (string.IsNullOrEmpty(txtUsuario.Text))
+            {
+                errorProvider.SetError(txtNCF, "El Usuario Es Obligatorio");
+                resultado = false;
+            }
             return resultado;
         }
 

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -40,13 +39,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvProductos = new DataGridView();
-            IDProducto = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            IDCategoria = new DataGridViewComboBoxColumn();
-            IDProveedor = new DataGridViewComboBoxColumn();
-            PrecioUnitario = new DataGridViewTextBoxColumn();
-            Stock = new DataGridViewTextBoxColumn();
             errorProvider = new ErrorProvider(components);
             panel1 = new Panel();
             label1 = new Label();
@@ -61,6 +55,12 @@
             panel4 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel5 = new Panel();
+            IDProducto = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            IDCategoria = new DataGridViewComboBoxColumn();
+            IDProveedor = new DataGridViewComboBoxColumn();
+            PrecioUnitario = new DataGridViewTextBoxColumn();
+            Stock = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             panel1.SuspendLayout();
@@ -86,49 +86,6 @@
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProductos.Size = new Size(716, 385);
             dgvProductos.TabIndex = 10;
-            // 
-            // IDProducto
-            // 
-            IDProducto.DataPropertyName = "IDProducto";
-            IDProducto.HeaderText = "ID";
-            IDProducto.Name = "IDProducto";
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // IDCategoria
-            // 
-            IDCategoria.DataPropertyName = "IDCategoria";
-            IDCategoria.HeaderText = "Categoria";
-            IDCategoria.Name = "IDCategoria";
-            IDCategoria.Resizable = DataGridViewTriState.True;
-            IDCategoria.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // IDProveedor
-            // 
-            IDProveedor.DataPropertyName = "IDProveedor";
-            IDProveedor.HeaderText = "Proveedor";
-            IDProveedor.Name = "IDProveedor";
-            IDProveedor.Resizable = DataGridViewTriState.True;
-            IDProveedor.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // PrecioUnitario
-            // 
-            PrecioUnitario.DataPropertyName = "PrecioUnitario";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = "$";
-            PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
-            PrecioUnitario.HeaderText = "PrecioUnitario";
-            PrecioUnitario.Name = "PrecioUnitario";
-            // 
-            // Stock
-            // 
-            Stock.DataPropertyName = "Stock";
-            Stock.HeaderText = "Stock";
-            Stock.Name = "Stock";
             // 
             // errorProvider
             // 
@@ -356,6 +313,50 @@
             panel5.Size = new Size(716, 385);
             panel5.TabIndex = 18;
             // 
+            // IDProducto
+            // 
+            IDProducto.DataPropertyName = "IDProducto";
+            IDProducto.HeaderText = "ID";
+            IDProducto.Name = "IDProducto";
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // IDCategoria
+            // 
+            IDCategoria.HeaderText = "Categoria";
+            IDCategoria.Name = "IDCategoria";
+            IDCategoria.ReadOnly = true;
+            IDCategoria.Resizable = DataGridViewTriState.True;
+            IDCategoria.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // IDProveedor
+            // 
+            IDProveedor.DataPropertyName = "IDProveedor";
+            IDProveedor.HeaderText = "Proveedor";
+            IDProveedor.Name = "IDProveedor";
+            IDProveedor.ReadOnly = true;
+            IDProveedor.Resizable = DataGridViewTriState.True;
+            IDProveedor.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // PrecioUnitario
+            // 
+            PrecioUnitario.DataPropertyName = "PrecioUnitario";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "$";
+            PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
+            PrecioUnitario.HeaderText = "PrecioUnitario";
+            PrecioUnitario.Name = "PrecioUnitario";
+            // 
+            // Stock
+            // 
+            Stock.DataPropertyName = "Stock";
+            Stock.HeaderText = "Stock";
+            Stock.Name = "Stock";
+            // 
             // MantenimientoProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -385,12 +386,6 @@
         #endregion
         private DataGridView dgvProductos;
         private ErrorProvider errorProvider;
-        private DataGridViewTextBoxColumn IDProducto;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewComboBoxColumn IDCategoria;
-        private DataGridViewComboBoxColumn IDProveedor;
-        private DataGridViewTextBoxColumn PrecioUnitario;
-        private DataGridViewTextBoxColumn Stock;
         private Panel panel4;
         private Panel panel3;
         private Panel panel2;
@@ -404,5 +399,11 @@
         private Guna.UI2.WinForms.Guna2Button btnNuevo;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private DataGridViewTextBoxColumn IDProducto;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewComboBoxColumn IDCategoria;
+        private DataGridViewComboBoxColumn IDProveedor;
+        private DataGridViewTextBoxColumn PrecioUnitario;
+        private DataGridViewTextBoxColumn Stock;
     }
 }

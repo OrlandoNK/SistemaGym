@@ -44,10 +44,10 @@ namespace SistemaGym.UI.Windows
 
             var colCategoria = (DataGridViewComboBoxColumn)dgvBuscarProductos.Columns["IDCategoria"];
 
+            colCategoria.DataSource = CategoriaProductoBLL.Mostrar();
             colCategoria.ValueMember = "IDCategoria";
             colCategoria.DisplayMember = "Nombre";
-            colCategoria.DataPropertyName = "IDCategoria";
-            colCategoria.DataSource = CategoriaProductoBLL.Mostrar();
+            colCategoria.DataPropertyName = "Categoria";
 
         }
         private void CargarProveedor()

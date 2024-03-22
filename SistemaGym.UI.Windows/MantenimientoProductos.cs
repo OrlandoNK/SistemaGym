@@ -36,7 +36,7 @@ namespace SistemaGym.UI.Windows
             colCategoria.DataSource = CategoriaProductoBLL.Mostrar();
             colCategoria.ValueMember = "IDCategoria";
             colCategoria.DisplayMember = "Nombre";
-            colCategoria.DataPropertyName = "IDCategoria";
+            colCategoria.DataPropertyName = "Categoria";
         }
         private void CargarProveedor()
         {
