@@ -51,6 +51,12 @@ namespace SistemaGym.UI.Windows
                 MessageBox.Show("Por Favor Agregue el Producto", SISTEMA);
                 resultado = false;
             }
+            int Cantidad = Convert.ToInt32(txtCantidad.Text);
+            if (Cantidad < 0)
+            {
+                errorProvider.SetError(txtCantidad, "La Cantidad no Puede ser un número negativo");
+                resultado = false;
+            }
             if (txtCantidad.Text == "0")
             {
                 MessageBox.Show("Por Favor Agregue La Cantidad", SISTEMA);
