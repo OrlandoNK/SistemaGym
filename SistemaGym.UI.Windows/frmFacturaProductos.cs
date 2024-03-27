@@ -43,6 +43,7 @@ namespace SistemaGym.UI.Windows
         private bool ValidarDetalle()
         {
             bool resultado = true;
+            string CampoNegativoError = "¡Este Campo No Puede Ser Negativo!";
             //inicializando los mensajes de validaciones
             errorProvider.Clear();
             //verificar que en los campos obligatorios hayan datos
@@ -54,7 +55,13 @@ namespace SistemaGym.UI.Windows
             int Cantidad = Convert.ToInt32(txtCantidad.Text);
             if (Cantidad < 0)
             {
-                errorProvider.SetError(txtCantidad, "La Cantidad no Puede ser un número negativo");
+                errorProvider.SetError(txtCantidad, CampoNegativoError);
+                resultado = false;
+            }
+            int Descuento = Convert.ToInt32(txtDescuento.Text);
+            if (Descuento < 0)
+            {
+                errorProvider.SetError(txtDescuento, CampoNegativoError);
                 resultado = false;
             }
             if (txtCantidad.Text == "0")

@@ -75,6 +75,8 @@ namespace SistemaGym.UI.Windows
         {
             TxbIDUsuario.Text = gestioUsuarioEntities.IDUserLogged;
             TxbNombreApellidoUsuario.Text = gestioUsuarioEntities.usernameLogged;
+
+            TxbFacturaNCF.Text = "B0100000005";
         }
 
         private void btnBuscarClienteCargoCredito_Click(object sender, EventArgs e)
