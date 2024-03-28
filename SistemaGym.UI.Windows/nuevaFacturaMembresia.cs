@@ -126,6 +126,12 @@ namespace SistemaGym.UI.Windows
 
         private void btnFacturarMembresia_Click(object sender, EventArgs e)
         {
+            if (!ValidateToFacturate())
+            {
+
+                return;
+            }
+
             try
             {
                 int ValorMembresia = int.Parse(TxbValorMembresia.Text);
@@ -321,6 +327,48 @@ namespace SistemaGym.UI.Windows
             }
         }
 
+        private bool ValidateToFacturate()
+        {
+            errorProvider.Clear();
+            bool facturarValidar = true;
+            string ObligatorioParaFacturar = "¡Debe Llenar este Campo para Facturar!";
+
+            if (string.IsNullOrEmpty(TxbValorMembresia.Text))
+            {
+                errorProvider.SetError(TxbValorMembresia, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+            int ValorMembresia;
+            if (!int.TryParse(TxbValorMembresia.Text, out ValorMembresia))
+            {
+                errorProvider.SetError(TxbValorMembresia, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturacionCargoCredito.Text))
+            {
+                errorProvider.SetError(TxbFacturacionCargoCredito, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+            int CargoCredito;
+            if (!int.TryParse(TxbFacturacionCargoCredito.Text, out CargoCredito))
+            {
+                errorProvider.SetError(TxbFacturacionCargoCredito, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturaCargoDebito.Text))
+            {
+                errorProvider.SetError(TxbFacturaCargoDebito, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+            int CargoDebito;
+            if (!int.TryParse(TxbFacturaCargoDebito.Text, out CargoDebito))
+            {
+                errorProvider.SetError(TxbFacturaCargoDebito, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+
+            return facturarValidar;
+        }
         private void LimpiarTodosLosCampos()
         {
             TxbIDMembresia.Clear();
@@ -345,7 +393,6 @@ namespace SistemaGym.UI.Windows
             dtpFechaFacturaCargoDebito.Value = DateTime.Now;
 
             TxbFacturaNCF.Clear();
-            dtpFacturaFechaEmision.Value = DateTime.Now;
             dtpFacturaFechaVencimiento.Value = DateTime.Now;
             TxbFacturaValor.Clear();
         }
