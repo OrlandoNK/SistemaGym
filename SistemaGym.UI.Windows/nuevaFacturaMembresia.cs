@@ -266,6 +266,109 @@ namespace SistemaGym.UI.Windows
 
         }
 
+        private bool ValidarCampos()
+        {
+            bool validacion = true;
+
+            errorProvider.Clear();
+            string MembresiaObligatoria = "¡Debes de Agregar la Membresia!";
+            string ClienteObligatorio = "¡Debes de Agregar el Cliente!";
+            string ValidaDatosFactura = "¡Este Campo es Obligatorio!";
+
+            /* Validar si se agregó la Membresia */
+            if (string.IsNullOrEmpty(TxbIDMembresia.Text))
+            {
+                errorProvider.SetError(TxbIDMembresia, MembresiaObligatoria);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbNombreMembresia.Text))
+            {
+                errorProvider.SetError(TxbNombreMembresia, MembresiaObligatoria);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbDescrMembresia.Text))
+            {
+                errorProvider.SetError(TxbDescrMembresia, MembresiaObligatoria);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbValorMembresia.Text))
+            {
+                errorProvider.SetError(TxbValorMembresia, MembresiaObligatoria);
+                validacion = false;
+            }
+            /* Validar si se agregó el Cliente */
+            if (string.IsNullOrEmpty(TxbIDCliente.Text))
+            {
+                errorProvider.SetError(TxbIDCliente, ClienteObligatorio);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbNombreCliente.Text))
+            {
+                errorProvider.SetError(TxbNombreCliente, ClienteObligatorio);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbDocumentoCliente.Text))
+            {
+                errorProvider.SetError(TxbDocumentoCliente, ClienteObligatorio);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbApellidoCliente.Text))
+            {
+                errorProvider.SetError(TxbApellidoCliente, ClienteObligatorio);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbTipoDocumento.Text))
+            {
+                errorProvider.SetError(TxbTipoDocumento, ClienteObligatorio);
+                validacion = false;
+            }
+
+            /* Validar Datos de la Factura */
+            if (string.IsNullOrEmpty(TxbFacturaIDCargoCredito.Text))
+            {
+                errorProvider.SetError(TxbFacturaIDCargoCredito, ValidaDatosFactura);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturacionCargoCredito.Text))
+            {
+                errorProvider.SetError(TxbFacturacionCargoCredito, ValidaDatosFactura);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturaMontoCargoCredito.Text))
+            {
+                errorProvider.SetError(TxbFacturaMontoCargoCredito, ValidaDatosFactura);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturaIDCargoDebito.Text))
+            {
+                errorProvider.SetError(TxbFacturaIDCargoDebito, ValidaDatosFactura);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturaCargoDebito.Text))
+            {
+                errorProvider.SetError(TxbFacturaCargoDebito, ValidaDatosFactura);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturaMontoCargoDebito.Text))
+            {
+                errorProvider.SetError(TxbFacturaMontoCargoDebito, ValidaDatosFactura);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturaValor.Text))
+            {
+                errorProvider.SetError(TxbFacturaValor, ValidaDatosFactura);
+                validacion = false;
+            }
+            if (dtpFacturaFechaVencimiento.Value <= DateTime.Now)
+            {
+                errorProvider.SetError(dtpFacturaFechaVencimiento, "¡La Fecha es Incorrecta!");
+                validacion = false;
+            }
+
+
+            return validacion;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             string SYSTEM_TITLE = "SISTEMA GESTION GIMNASIO (COMFORT GYM)";
@@ -300,19 +403,22 @@ namespace SistemaGym.UI.Windows
                 }
             }
 
-            try
+            if (!ValidarCampos())
             {
-                facturaMembresiaBLL.Insertar(nuevaFacturaMembresia);
-                MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarTodosLosCampos();
-            }
-            catch (SqlException ex2)
-            {
-                MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex2.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex1)
-            {
-                MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex1.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    facturaMembresiaBLL.Insertar(nuevaFacturaMembresia);
+                    MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarTodosLosCampos();
+                }
+                catch (SqlException ex2)
+                {
+                    MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex2.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex1)
+                {
+                    MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex1.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
 
