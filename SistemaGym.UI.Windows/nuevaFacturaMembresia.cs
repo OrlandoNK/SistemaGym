@@ -16,6 +16,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class nuevaFacturaMembresia : Form
     {
+        private string SYSTEM_TITLE = "Sistema Gestion Gimnasio (COMFORT GYM) dice";
         public nuevaFacturaMembresia()
         {
             InitializeComponent();
@@ -122,8 +123,6 @@ namespace SistemaGym.UI.Windows
                 }
             }
         }
-
-        private string SYSTEM_TITLE = "Sistema Gestion Gimnasio (COMFORT GYM) dice";
         private void btnGuardarCargoCredito_Click(object sender, EventArgs e)
         {
             CargoCreditoEntity nuevoCargoCredito = new CargoCreditoEntity();
@@ -276,10 +275,15 @@ namespace SistemaGym.UI.Windows
             string ValidaDatosFactura = "¡Este Campo es Obligatorio!";
 
             /* Validar si se agregó la Membresia */
+            int IDMembresia;
             if (string.IsNullOrEmpty(TxbIDMembresia.Text))
             {
                 errorProvider.SetError(TxbIDMembresia, MembresiaObligatoria);
                 validacion = false;
+            }
+            else if (!int.TryParse(TxbIDMembresia.Text, out IDMembresia))
+            {
+                errorProvider.SetError(TxbIDMembresia, MembresiaObligatoria);
             }
             if (string.IsNullOrEmpty(TxbNombreMembresia.Text))
             {
@@ -297,10 +301,15 @@ namespace SistemaGym.UI.Windows
                 validacion = false;
             }
             /* Validar si se agregó el Cliente */
+            int IDCliente;
             if (string.IsNullOrEmpty(TxbIDCliente.Text))
             {
                 errorProvider.SetError(TxbIDCliente, ClienteObligatorio);
                 validacion = false;
+            }
+            else if (!int.TryParse(TxbIDCliente.Text, out IDCliente))
+            {
+                errorProvider.SetError(TxbIDCliente, ClienteObligatorio);
             }
             if (string.IsNullOrEmpty(TxbNombreCliente.Text))
             {
@@ -324,10 +333,15 @@ namespace SistemaGym.UI.Windows
             }
 
             /* Validar Datos de la Factura */
+            int IDFactCC;
             if (string.IsNullOrEmpty(TxbFacturaIDCargoCredito.Text))
             {
                 errorProvider.SetError(TxbFacturaIDCargoCredito, ValidaDatosFactura);
                 validacion = false;
+            }
+            else if (!int.TryParse(TxbFacturaIDCargoCredito.Text, out IDFactCC))
+            {
+                errorProvider.SetError(TxbFacturaIDCargoCredito, ValidaDatosFactura);
             }
             if (string.IsNullOrEmpty(TxbFacturacionCargoCredito.Text))
             {
@@ -339,10 +353,15 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(TxbFacturaMontoCargoCredito, ValidaDatosFactura);
                 validacion = false;
             }
+            int IDFactCD;
             if (string.IsNullOrEmpty(TxbFacturaIDCargoDebito.Text))
             {
                 errorProvider.SetError(TxbFacturaIDCargoDebito, ValidaDatosFactura);
                 validacion = false;
+            }
+            else if (!int.TryParse(TxbFacturaIDCargoDebito.Text, out IDFactCD))
+            {
+                errorProvider.SetError(TxbFacturaIDCargoDebito, ValidaDatosFactura);
             }
             if (string.IsNullOrEmpty(TxbFacturaCargoDebito.Text))
             {
@@ -365,13 +384,16 @@ namespace SistemaGym.UI.Windows
                 validacion = false;
             }
 
-
             return validacion;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string SYSTEM_TITLE = "SISTEMA GESTION GIMNASIO (COMFORT GYM)";
+            if (!ValidarCampos())
+            {
+
+                return;
+            }
 
             FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
             FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
@@ -403,8 +425,6 @@ namespace SistemaGym.UI.Windows
                 }
             }
 
-            if (!ValidarCampos())
-            {
                 try
                 {
                     facturaMembresiaBLL.Insertar(nuevaFacturaMembresia);
@@ -419,9 +439,6 @@ namespace SistemaGym.UI.Windows
                 {
                     MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex1.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-
-
         }
 
         private void LimpiarTodosLosCampos()
