@@ -76,5 +76,10 @@ namespace SistemaGym.UI.Windows
                 MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cargo Debito.\n Detalles A Continuación: \n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

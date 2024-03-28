@@ -89,6 +89,7 @@
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
             btnClose.TabIndex = 1;
             btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
             // 
             // panel2
             // 
