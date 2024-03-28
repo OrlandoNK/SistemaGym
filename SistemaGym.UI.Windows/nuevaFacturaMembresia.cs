@@ -285,7 +285,7 @@ namespace SistemaGym.UI.Windows
             nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbFacturaIDCargoDebito.Text);
             nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
             nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
-            nuevaFacturaMembresia.FechaEmision = Convert.ToDateTime(dtpFacturaFechaEmision.Value.ToShortDateString());
+            nuevaFacturaMembresia.FechaEmision = DateTime.Now;
             nuevaFacturaMembresia.FechaVencimiento = Convert.ToDateTime(dtpFacturaFechaVencimiento.Value.ToShortDateString());
             if (chkbxEstatus.Checked)
             {
