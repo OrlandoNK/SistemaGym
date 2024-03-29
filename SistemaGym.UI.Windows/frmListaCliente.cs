@@ -27,16 +27,7 @@ namespace SistemaGym.UI.Windows
 
         private void dgvListaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
-            {
-                return;
 
-            }
-
-            DataGridViewRow row = dgvListaCliente.CurrentRow;
-            txtID.Text = row.Cells["IDListaCliente"].Value?.ToString();
-            txtNombre.Text = row.Cells["Nombres"].Value?.ToString();
-            txtDescripcion.Text = row.Cells["Descripciones"].Value?.ToString();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -48,8 +39,6 @@ namespace SistemaGym.UI.Windows
             txtID.Text = "0";
             txtNombre.Clear();
             txtDescripcion.Clear();
-            dgvListaCliente.AutoGenerateColumns = false;
-            dgvListaCliente.DataSource = TipoListaClienteBLL.MostrarTipoListaCliente();
             txtNombre.Focus();
         }
 

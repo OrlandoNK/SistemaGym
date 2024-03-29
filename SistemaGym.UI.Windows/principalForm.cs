@@ -24,6 +24,7 @@ namespace SistemaGym.UI.Windows
             subPanelAdministracion.Visible = false;
             subPanelMantenimientos.Visible = false;
             subPanelFacturacion.Visible = false;
+            subPanelCliente.Visible = false;
         }
 
         private void HideSubMenu()
@@ -34,6 +35,8 @@ namespace SistemaGym.UI.Windows
                 subPanelMantenimientos.Visible = false;
             if (subPanelFacturacion.Visible == true)
                 subPanelFacturacion.Visible = false;
+            if (subPanelCliente.Visible == true)
+                subPanelCliente.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -125,10 +128,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            frmClientes mantenimientoClientes = new frmClientes();
-            mantenimientoClientes.Show();
-
-            HideSubMenu();
+            showSubMenu(subPanelCliente);
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)
@@ -170,8 +170,31 @@ namespace SistemaGym.UI.Windows
 
         private void btnTipoCliente_Click(object sender, EventArgs e)
         {
-            mantenimientoTipoClientes mantenimientoTipoClientes = new mantenimientoTipoClientes();
-            mantenimientoTipoClientes.Show();
+            frmClientes mantenimientoClientes = new frmClientes();
+            mantenimientoClientes.Show();
+
+            HideSubMenu();
+        }
+
+        private void btnTipoCliente_Click_1(object sender, EventArgs e)
+        {
+            mantenimientoTipoClientes tipoClientes = new mantenimientoTipoClientes();
+            tipoClientes.Show();
+
+            HideSubMenu();
+        }
+
+        private void btnListaCliente_Click(object sender, EventArgs e)
+        {
+            frmListaCliente listaCliente = new frmListaCliente();
+            listaCliente.Show();
+
+            HideSubMenu();
+        }
+
+        private void btnTipoListaCliente_Click(object sender, EventArgs e)
+        {
+
 
             HideSubMenu();
         }

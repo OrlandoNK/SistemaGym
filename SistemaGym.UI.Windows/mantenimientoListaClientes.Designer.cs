@@ -1,6 +1,6 @@
 ﻿namespace SistemaGym.UI.Windows
 {
-    partial class mantenimientoTipoClientes
+    partial class mantenimientoListaClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -42,19 +42,18 @@
             btnEditar = new Button();
             panel5 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
-            panel6 = new Panel();
-            dgvTipoCliente = new DataGridView();
-            IDTipoCliente = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            FechaCreacion = new DataGridViewTextBoxColumn();
+            panel3 = new Panel();
+            dgvListaCliente = new DataGridView();
+            IdListaCliente = new DataGridViewTextBoxColumn();
+            Nombres = new DataGridViewTextBoxColumn();
+            Descripciones = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvTipoCliente).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvListaCliente).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -65,20 +64,20 @@
             panel2.Location = new Point(0, 63);
             panel2.Name = "panel2";
             panel2.Size = new Size(817, 33);
-            panel2.TabIndex = 141;
+            panel2.TabIndex = 143;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnClose);
             panel1.Controls.Add(guna2HtmlLabel1);
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(817, 63);
-            panel1.TabIndex = 140;
+            panel1.TabIndex = 142;
             // 
             // guna2HtmlLabel1
             // 
@@ -87,9 +86,9 @@
             guna2HtmlLabel1.ForeColor = Color.Goldenrod;
             guna2HtmlLabel1.Location = new Point(73, 18);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(128, 25);
+            guna2HtmlLabel1.Size = new Size(102, 25);
             guna2HtmlLabel1.TabIndex = 2;
-            guna2HtmlLabel1.Text = "Tipo de Cliente";
+            guna2HtmlLabel1.Text = "Lista Cliente";
             // 
             // pictureBox1
             // 
@@ -110,9 +109,8 @@
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnClose.TabIndex = 0;
+            btnClose.TabIndex = 3;
             btnClose.TabStop = false;
-            btnClose.Click += btnClose_Click;
             // 
             // panel4
             // 
@@ -126,7 +124,7 @@
             panel4.Location = new Point(0, 96);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 462);
-            panel4.TabIndex = 142;
+            panel4.TabIndex = 144;
             // 
             // btnRefresh
             // 
@@ -142,7 +140,6 @@
             btnRefresh.Size = new Size(200, 45);
             btnRefresh.TabIndex = 139;
             btnRefresh.UseVisualStyleBackColor = true;
-            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnNuevo
             // 
@@ -160,7 +157,6 @@
             btnNuevo.TabIndex = 138;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnEliminar
             // 
@@ -178,7 +174,6 @@
             btnEliminar.TabIndex = 137;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnEditar
             // 
@@ -196,7 +191,6 @@
             btnEditar.TabIndex = 136;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
-            btnEditar.Click += btnEditar_Click;
             // 
             // panel5
             // 
@@ -207,7 +201,7 @@
             panel5.Location = new Point(200, 96);
             panel5.Name = "panel5";
             panel5.Size = new Size(617, 63);
-            panel5.TabIndex = 143;
+            panel5.TabIndex = 145;
             // 
             // TxbBuscar
             // 
@@ -222,7 +216,7 @@
             TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
-            TxbBuscar.Location = new Point(8, 10);
+            TxbBuscar.Location = new Point(2, 10);
             TxbBuscar.Name = "TxbBuscar";
             TxbBuscar.PasswordChar = '\0';
             TxbBuscar.PlaceholderForeColor = Color.Silver;
@@ -231,82 +225,77 @@
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             TxbBuscar.Size = new Size(610, 41);
             TxbBuscar.TabIndex = 0;
-            TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
-            // panel6
+            // panel3
             // 
-            panel6.BackColor = Color.White;
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(dgvTipoCliente);
-            panel6.Dock = DockStyle.Fill;
-            panel6.Location = new Point(200, 159);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(617, 399);
-            panel6.TabIndex = 144;
+            panel3.BackColor = Color.WhiteSmoke;
+            panel3.Controls.Add(dgvListaCliente);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(200, 159);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(617, 399);
+            panel3.TabIndex = 146;
             // 
-            // dgvTipoCliente
+            // dgvListaCliente
             // 
-            dgvTipoCliente.AllowUserToAddRows = false;
-            dgvTipoCliente.AllowUserToDeleteRows = false;
-            dgvTipoCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvTipoCliente.BackgroundColor = Color.White;
-            dgvTipoCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTipoCliente.Columns.AddRange(new DataGridViewColumn[] { IDTipoCliente, Nombre, Descripcion, FechaCreacion });
-            dgvTipoCliente.Location = new Point(-1, -1);
-            dgvTipoCliente.Name = "dgvTipoCliente";
-            dgvTipoCliente.RowHeadersVisible = false;
-            dgvTipoCliente.RowTemplate.Height = 25;
-            dgvTipoCliente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTipoCliente.Size = new Size(617, 399);
-            dgvTipoCliente.TabIndex = 134;
+            dgvListaCliente.AllowUserToAddRows = false;
+            dgvListaCliente.AllowUserToDeleteRows = false;
+            dgvListaCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvListaCliente.BackgroundColor = Color.WhiteSmoke;
+            dgvListaCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvListaCliente.Columns.AddRange(new DataGridViewColumn[] { IdListaCliente, Nombres, Descripciones });
+            dgvListaCliente.Location = new Point(0, 0);
+            dgvListaCliente.Name = "dgvListaCliente";
+            dgvListaCliente.ReadOnly = true;
+            dgvListaCliente.RowHeadersVisible = false;
+            dgvListaCliente.RowTemplate.Height = 25;
+            dgvListaCliente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvListaCliente.Size = new Size(617, 399);
+            dgvListaCliente.TabIndex = 7;
             // 
-            // IDTipoCliente
+            // IdListaCliente
             // 
-            IDTipoCliente.DataPropertyName = "IDTipoCliente";
-            IDTipoCliente.HeaderText = "IDTipoCliente";
-            IDTipoCliente.Name = "IDTipoCliente";
+            IdListaCliente.DataPropertyName = "IDTipoListaCliente";
+            IdListaCliente.HeaderText = "IdListaCliente";
+            IdListaCliente.Name = "IdListaCliente";
+            IdListaCliente.ReadOnly = true;
             // 
-            // Nombre
+            // Nombres
             // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
+            Nombres.DataPropertyName = "Nombre";
+            Nombres.HeaderText = "Nombre";
+            Nombres.Name = "Nombres";
+            Nombres.ReadOnly = true;
             // 
-            // Descripcion
+            // Descripciones
             // 
-            Descripcion.DataPropertyName = "Descripcion";
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.Name = "Descripcion";
+            Descripciones.DataPropertyName = "Descripcion";
+            Descripciones.HeaderText = "Descripcion";
+            Descripciones.Name = "Descripciones";
+            Descripciones.ReadOnly = true;
             // 
-            // FechaCreacion
-            // 
-            FechaCreacion.DataPropertyName = "FechaCreacion";
-            FechaCreacion.HeaderText = "FechaCreacion";
-            FechaCreacion.Name = "FechaCreacion";
-            // 
-            // mantenimientoTipoClientes
+            // mantenimientoListaClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(817, 558);
-            Controls.Add(panel6);
+            Controls.Add(panel3);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "mantenimientoTipoClientes";
+            Name = "mantenimientoListaClientes";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "mantenimientoTipoClientes";
-            Load += mantenimientoTipoClientes_Load;
+            Load += mantenimientoListaClientes_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvTipoCliente).EndInit();
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvListaCliente).EndInit();
             ResumeLayout(false);
         }
 
@@ -314,21 +303,20 @@
 
         private Panel panel2;
         private Panel panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private PictureBox pictureBox1;
         private PictureBox btnClose;
         private Panel panel4;
+        private Button btnRefresh;
+        private Button btnNuevo;
         private Button btnEliminar;
         private Button btnEditar;
         private Panel panel5;
         private Guna.UI2.WinForms.Guna2TextBox TxbBuscar;
-        private Panel panel6;
-        private DataGridView dgvTipoCliente;
-        private DataGridViewTextBoxColumn IDTipoCliente;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn FechaCreacion;
-        private Button btnRefresh;
-        private Button btnNuevo;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private PictureBox pictureBox1;
+        private Panel panel3;
+        private DataGridView dgvListaCliente;
+        private DataGridViewTextBoxColumn IdListaCliente;
+        private DataGridViewTextBoxColumn Nombres;
+        private DataGridViewTextBoxColumn Descripciones;
     }
 }

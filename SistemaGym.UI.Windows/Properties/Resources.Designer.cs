@@ -733,6 +733,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap desplegar_a_la_derecha__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("desplegar a la derecha [x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap direccion {
             get {
                 object obj = ResourceManager.GetObject("direccion", resourceCulture);
