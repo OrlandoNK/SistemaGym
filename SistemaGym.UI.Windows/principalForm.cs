@@ -128,7 +128,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            showSubMenu(subPanelCliente);
+            subPanelCliente.Visible = true;
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)

@@ -91,6 +91,11 @@ namespace SistemaGym.UI.Windows
         {
             InicializarControles();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
 
