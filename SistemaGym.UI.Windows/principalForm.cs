@@ -194,7 +194,8 @@ namespace SistemaGym.UI.Windows
 
         private void btnTipoListaCliente_Click(object sender, EventArgs e)
         {
-
+            mantenimientoListaClientes tipoListaCliente = new mantenimientoListaClientes();
+            tipoListaCliente.Show();
 
             HideSubMenu();
         }

@@ -72,8 +72,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnAdministracion = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             lblRolUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -104,7 +102,6 @@
             btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
             subPanelCliente = new Panel();
             btnTipoListaCliente = new Guna.UI2.WinForms.Guna2Button();
-            btnListaCliente = new Guna.UI2.WinForms.Guna2Button();
             btnTipoCliente = new Guna.UI2.WinForms.Guna2Button();
             btnMantCliente = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2.SuspendLayout();
@@ -703,7 +700,6 @@
             // subPanelCliente
             // 
             subPanelCliente.Controls.Add(btnTipoListaCliente);
-            subPanelCliente.Controls.Add(btnListaCliente);
             subPanelCliente.Controls.Add(btnTipoCliente);
             subPanelCliente.Controls.Add(btnMantCliente);
             subPanelCliente.Location = new Point(238, 423);
@@ -729,7 +725,7 @@
             btnTipoListaCliente.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
             btnTipoListaCliente.ImageAlign = HorizontalAlignment.Left;
             btnTipoListaCliente.ImageSize = new Size(25, 25);
-            btnTipoListaCliente.Location = new Point(0, 111);
+            btnTipoListaCliente.Location = new Point(0, 74);
             btnTipoListaCliente.Name = "btnTipoListaCliente";
             btnTipoListaCliente.ShadowDecoration.CustomizableEdges = customizableEdges40;
             btnTipoListaCliente.Size = new Size(200, 37);
@@ -738,38 +734,11 @@
             btnTipoListaCliente.TextAlign = HorizontalAlignment.Right;
             btnTipoListaCliente.Click += btnTipoListaCliente_Click;
             // 
-            // btnListaCliente
-            // 
-            btnListaCliente.BackColor = Color.Transparent;
-            btnListaCliente.Cursor = Cursors.Hand;
-            btnListaCliente.CustomizableEdges = customizableEdges41;
-            btnListaCliente.DisabledState.BorderColor = Color.DarkGray;
-            btnListaCliente.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnListaCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnListaCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnListaCliente.Dock = DockStyle.Top;
-            btnListaCliente.FillColor = Color.Transparent;
-            btnListaCliente.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            btnListaCliente.ForeColor = Color.White;
-            btnListaCliente.HoverState.FillColor = Color.White;
-            btnListaCliente.HoverState.ForeColor = Color.Black;
-            btnListaCliente.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
-            btnListaCliente.ImageAlign = HorizontalAlignment.Left;
-            btnListaCliente.ImageSize = new Size(25, 25);
-            btnListaCliente.Location = new Point(0, 74);
-            btnListaCliente.Name = "btnListaCliente";
-            btnListaCliente.ShadowDecoration.CustomizableEdges = customizableEdges42;
-            btnListaCliente.Size = new Size(200, 37);
-            btnListaCliente.TabIndex = 14;
-            btnListaCliente.Text = "Lista Clientes";
-            btnListaCliente.TextAlign = HorizontalAlignment.Right;
-            btnListaCliente.Click += btnListaCliente_Click;
-            // 
             // btnTipoCliente
             // 
             btnTipoCliente.BackColor = Color.Transparent;
             btnTipoCliente.Cursor = Cursors.Hand;
-            btnTipoCliente.CustomizableEdges = customizableEdges43;
+            btnTipoCliente.CustomizableEdges = customizableEdges41;
             btnTipoCliente.DisabledState.BorderColor = Color.DarkGray;
             btnTipoCliente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTipoCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -785,7 +754,7 @@
             btnTipoCliente.ImageSize = new Size(25, 25);
             btnTipoCliente.Location = new Point(0, 37);
             btnTipoCliente.Name = "btnTipoCliente";
-            btnTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            btnTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges42;
             btnTipoCliente.Size = new Size(200, 37);
             btnTipoCliente.TabIndex = 13;
             btnTipoCliente.Text = "Tipo Cliente";
@@ -796,7 +765,7 @@
             // 
             btnMantCliente.BackColor = Color.Transparent;
             btnMantCliente.Cursor = Cursors.Hand;
-            btnMantCliente.CustomizableEdges = customizableEdges45;
+            btnMantCliente.CustomizableEdges = customizableEdges43;
             btnMantCliente.DisabledState.BorderColor = Color.DarkGray;
             btnMantCliente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnMantCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -812,7 +781,7 @@
             btnMantCliente.ImageSize = new Size(25, 25);
             btnMantCliente.Location = new Point(0, 0);
             btnMantCliente.Name = "btnMantCliente";
-            btnMantCliente.ShadowDecoration.CustomizableEdges = customizableEdges46;
+            btnMantCliente.ShadowDecoration.CustomizableEdges = customizableEdges44;
             btnMantCliente.Size = new Size(200, 37);
             btnMantCliente.TabIndex = 12;
             btnMantCliente.Text = "Clientes";
@@ -879,7 +848,6 @@
         private Guna.UI2.WinForms.Guna2Button btnHelpCenter;
         private Guna.UI2.WinForms.Guna2Button btnMantCliente;
         private Panel subPanelCliente;
-        private Guna.UI2.WinForms.Guna2Button btnListaCliente;
         private Guna.UI2.WinForms.Guna2Button btnTipoCliente;
         private Guna.UI2.WinForms.Guna2Button btnTipoListaCliente;
     }

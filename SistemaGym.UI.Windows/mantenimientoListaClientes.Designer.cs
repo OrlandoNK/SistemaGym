@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             panel1 = new Panel();
+            btnClose = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pictureBox1 = new PictureBox();
-            btnClose = new PictureBox();
             panel4 = new Panel();
             btnRefresh = new Button();
             btnNuevo = new Button();
@@ -48,8 +48,8 @@
             Nombres = new DataGridViewTextBoxColumn();
             Descripciones = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel3.SuspendLayout();
@@ -79,6 +79,18 @@
             panel1.Size = new Size(817, 63);
             panel1.TabIndex = 142;
             // 
+            // btnClose
+            // 
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnClose.Location = new Point(772, 14);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(32, 32);
+            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnClose.TabIndex = 3;
+            btnClose.TabStop = false;
+            // 
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
@@ -99,18 +111,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            // 
-            // btnClose
-            // 
-            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnClose.Cursor = Cursors.Hand;
-            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(772, 14);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(32, 32);
-            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnClose.TabIndex = 3;
-            btnClose.TabStop = false;
             // 
             // panel4
             // 
@@ -140,6 +140,7 @@
             btnRefresh.Size = new Size(200, 45);
             btnRefresh.TabIndex = 139;
             btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnNuevo
             // 
@@ -157,6 +158,7 @@
             btnNuevo.TabIndex = 138;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnEliminar
             // 
@@ -174,6 +176,7 @@
             btnEliminar.TabIndex = 137;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnEditar
             // 
@@ -191,6 +194,7 @@
             btnEditar.TabIndex = 136;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // panel5
             // 
@@ -206,7 +210,7 @@
             // TxbBuscar
             // 
             TxbBuscar.BorderRadius = 20;
-            TxbBuscar.CustomizableEdges = customizableEdges3;
+            TxbBuscar.CustomizableEdges = customizableEdges1;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -222,7 +226,7 @@
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             TxbBuscar.Size = new Size(610, 41);
             TxbBuscar.TabIndex = 0;
             // 
@@ -290,8 +294,8 @@
             Load += mantenimientoListaClientes_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel3.ResumeLayout(false);
