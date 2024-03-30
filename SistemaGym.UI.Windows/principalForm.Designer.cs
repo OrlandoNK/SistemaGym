@@ -284,7 +284,7 @@
             subPanelAdministracion.Dock = DockStyle.Top;
             subPanelAdministracion.Location = new Point(0, 181);
             subPanelAdministracion.Name = "subPanelAdministracion";
-            subPanelAdministracion.Size = new Size(237, 116);
+            subPanelAdministracion.Size = new Size(237, 111);
             subPanelAdministracion.TabIndex = 6;
             // 
             // btnEmpleados
@@ -434,7 +434,7 @@
             subPanelFacturacion.Controls.Add(btnFacturaProducto);
             subPanelFacturacion.Controls.Add(btnFacturaMembresia);
             subPanelFacturacion.Dock = DockStyle.Top;
-            subPanelFacturacion.Location = new Point(0, 590);
+            subPanelFacturacion.Location = new Point(0, 585);
             subPanelFacturacion.Name = "subPanelFacturacion";
             subPanelFacturacion.Size = new Size(237, 82);
             subPanelFacturacion.TabIndex = 10;
@@ -511,7 +511,7 @@
             btnFacturacion.Image = Properties.Resources.facturaProducto_mainscreen_;
             btnFacturacion.ImageAlign = HorizontalAlignment.Left;
             btnFacturacion.ImageSize = new Size(28, 28);
-            btnFacturacion.Location = new Point(0, 538);
+            btnFacturacion.Location = new Point(0, 533);
             btnFacturacion.Name = "btnFacturacion";
             btnFacturacion.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnFacturacion.Size = new Size(237, 52);
@@ -529,7 +529,7 @@
             subPanelMantenimientos.Controls.Add(btnProveedores);
             subPanelMantenimientos.Controls.Add(btnMembresiasMantenimiento);
             subPanelMantenimientos.Dock = DockStyle.Top;
-            subPanelMantenimientos.Location = new Point(0, 349);
+            subPanelMantenimientos.Location = new Point(0, 344);
             subPanelMantenimientos.Name = "subPanelMantenimientos";
             subPanelMantenimientos.Size = new Size(237, 189);
             subPanelMantenimientos.TabIndex = 8;
@@ -688,7 +688,7 @@
             btnMantenimientos.Image = Properties.Resources._mantenimientosMainScreen;
             btnMantenimientos.ImageAlign = HorizontalAlignment.Left;
             btnMantenimientos.ImageSize = new Size(28, 28);
-            btnMantenimientos.Location = new Point(0, 297);
+            btnMantenimientos.Location = new Point(0, 292);
             btnMantenimientos.Name = "btnMantenimientos";
             btnMantenimientos.ShadowDecoration.CustomizableEdges = customizableEdges36;
             btnMantenimientos.Size = new Size(237, 52);
@@ -702,9 +702,9 @@
             subPanelCliente.Controls.Add(btnTipoListaCliente);
             subPanelCliente.Controls.Add(btnTipoCliente);
             subPanelCliente.Controls.Add(btnMantCliente);
-            subPanelCliente.Location = new Point(242, 349);
+            subPanelCliente.Location = new Point(240, 255);
             subPanelCliente.Name = "subPanelCliente";
-            subPanelCliente.Size = new Size(200, 111);
+            subPanelCliente.Size = new Size(200, 110);
             subPanelCliente.TabIndex = 5;
             // 
             // btnTipoListaCliente
