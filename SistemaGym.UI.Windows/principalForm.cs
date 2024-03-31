@@ -76,6 +76,29 @@ namespace SistemaGym.UI.Windows
         {
             lblusuario.Text = gestioUsuarioEntities.usernameLogged;
             lblRolUsuario.Text = "[" + gestioUsuarioEntities.rolUsuarioLogged + "]";
+            Privilegios_Y_Roles();
+        }
+        private void Privilegios_Y_Roles()
+        {
+            if (gestioUsuarioEntities.rolUsuarioLogged == "Recepcionista")
+            {
+                btnAdministracion.Visible = false;
+                btnMembresiasMantenimiento.Visible = false;
+                btnProveedores.Visible = false;
+                btnCategorias.Visible = false;
+                btnProductos.Visible = false;
+            }
+            else if (gestioUsuarioEntities.rolUsuarioLogged == "Gerente de Ventas")
+            {
+                btnAdministracion.Visible = false;
+                btnMantenimientos.Visible = false;
+            }
+            else if (gestioUsuarioEntities.rolUsuarioLogged == "Entrenador")
+            {
+                btnAdministracion.Visible = false;
+                btnMantenimientos.Visible = false;
+                btnFacturacion.Visible = false;
+            }
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
