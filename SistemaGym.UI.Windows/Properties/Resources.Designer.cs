@@ -963,6 +963,26 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icono_factura_membresia__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icono-factura-membresia-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icono_factura_producto__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icono-factura-producto-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icono_proveedor_x32_qsy_xd {
             get {
                 object obj = ResourceManager.GetObject("icono proveedor x32 qsy xd", resourceCulture);

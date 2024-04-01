@@ -455,6 +455,7 @@
             btnFacturaProducto.ForeColor = Color.White;
             btnFacturaProducto.HoverState.FillColor = Color.White;
             btnFacturaProducto.HoverState.ForeColor = Color.Black;
+            btnFacturaProducto.Image = Properties.Resources.icono_factura_producto__x32_;
             btnFacturaProducto.ImageAlign = HorizontalAlignment.Left;
             btnFacturaProducto.ImageSize = new Size(25, 25);
             btnFacturaProducto.Location = new Point(0, 37);
@@ -481,6 +482,7 @@
             btnFacturaMembresia.ForeColor = Color.White;
             btnFacturaMembresia.HoverState.FillColor = Color.White;
             btnFacturaMembresia.HoverState.ForeColor = Color.Black;
+            btnFacturaMembresia.Image = Properties.Resources.icono_factura_membresia__x32_;
             btnFacturaMembresia.ImageAlign = HorizontalAlignment.Left;
             btnFacturaMembresia.ImageSize = new Size(25, 25);
             btnFacturaMembresia.Location = new Point(0, 0);
