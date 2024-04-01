@@ -76,9 +76,9 @@ namespace SistemaGym.UI.Windows
         {
             lblusuario.Text = gestioUsuarioEntities.usernameLogged;
             lblRolUsuario.Text = "[" + gestioUsuarioEntities.rolUsuarioLogged + "]";
-            Privilegios_Y_Roles();
+            FuncionRolUsuario();
         }
-        private void Privilegios_Y_Roles()
+        private void FuncionRolUsuario()
         {
             if (gestioUsuarioEntities.rolUsuarioLogged == "Recepcionista")
             {

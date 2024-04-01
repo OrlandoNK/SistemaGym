@@ -138,7 +138,7 @@
             btnAdministracion.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnAdministracion.Size = new Size(237, 52);
             btnAdministracion.TabIndex = 3;
-            btnAdministracion.Text = "&Administración";
+            btnAdministracion.Text = "Administración";
             btnAdministracion.TextAlign = HorizontalAlignment.Right;
             btnAdministracion.Click += btnAdministracion_Click;
             // 
@@ -247,20 +247,21 @@
             btncerrarSesion.DisabledState.CustomBorderColor = Color.DarkGray;
             btncerrarSesion.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btncerrarSesion.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btncerrarSesion.Dock = DockStyle.Bottom;
             btncerrarSesion.FillColor = Color.Transparent;
             btncerrarSesion.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btncerrarSesion.ForeColor = Color.Black;
             btncerrarSesion.HoverState.BorderColor = Color.Transparent;
             btncerrarSesion.HoverState.FillColor = Color.Black;
             btncerrarSesion.HoverState.ForeColor = Color.White;
-            btncerrarSesion.Image = Properties.Resources._CerrarSesion_mainscreen_;
+            btncerrarSesion.Image = Properties.Resources.logout_button__x32_;
             btncerrarSesion.ImageAlign = HorizontalAlignment.Left;
-            btncerrarSesion.ImageSize = new Size(25, 25);
-            btncerrarSesion.Location = new Point(8, 89);
+            btncerrarSesion.ImageSize = new Size(28, 28);
+            btncerrarSesion.Location = new Point(0, 97);
             btncerrarSesion.Name = "btncerrarSesion";
             btncerrarSesion.PressedColor = Color.Transparent;
             btncerrarSesion.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btncerrarSesion.Size = new Size(153, 43);
+            btncerrarSesion.Size = new Size(190, 43);
             btncerrarSesion.TabIndex = 4;
             btncerrarSesion.Text = "Cerrar Sesion";
             btncerrarSesion.TextAlign = HorizontalAlignment.Right;
@@ -302,7 +303,7 @@
             btnEmpleados.ForeColor = Color.White;
             btnEmpleados.HoverState.FillColor = Color.White;
             btnEmpleados.HoverState.ForeColor = Color.Black;
-            btnEmpleados.Image = Properties.Resources.icon_empleados_x32;
+            btnEmpleados.Image = Properties.Resources.businessman_mante__x32_;
             btnEmpleados.ImageAlign = HorizontalAlignment.Left;
             btnEmpleados.ImageSize = new Size(25, 25);
             btnEmpleados.Location = new Point(0, 74);
@@ -329,7 +330,7 @@
             btnUsuarios.ForeColor = Color.White;
             btnUsuarios.HoverState.FillColor = Color.White;
             btnUsuarios.HoverState.ForeColor = Color.Black;
-            btnUsuarios.Image = Properties.Resources._Clientes_mainScreen_;
+            btnUsuarios.Image = Properties.Resources.users_mante__x32_;
             btnUsuarios.ImageAlign = HorizontalAlignment.Left;
             btnUsuarios.ImageSize = new Size(25, 25);
             btnUsuarios.Location = new Point(0, 37);
@@ -356,7 +357,7 @@
             btnRoles.ForeColor = Color.White;
             btnRoles.HoverState.FillColor = Color.White;
             btnRoles.HoverState.ForeColor = Color.Black;
-            btnRoles.Image = Properties.Resources._Roles_mainScreen_;
+            btnRoles.Image = Properties.Resources.user_role__x32_;
             btnRoles.ImageAlign = HorizontalAlignment.Left;
             btnRoles.ImageSize = new Size(25, 25);
             btnRoles.Location = new Point(0, 0);
@@ -454,7 +455,6 @@
             btnFacturaProducto.ForeColor = Color.White;
             btnFacturaProducto.HoverState.FillColor = Color.White;
             btnFacturaProducto.HoverState.ForeColor = Color.Black;
-            btnFacturaProducto.Image = Properties.Resources.Facturacion_Producto_Icon_;
             btnFacturaProducto.ImageAlign = HorizontalAlignment.Left;
             btnFacturaProducto.ImageSize = new Size(25, 25);
             btnFacturaProducto.Location = new Point(0, 37);
@@ -481,7 +481,6 @@
             btnFacturaMembresia.ForeColor = Color.White;
             btnFacturaMembresia.HoverState.FillColor = Color.White;
             btnFacturaMembresia.HoverState.ForeColor = Color.Black;
-            btnFacturaMembresia.Image = Properties.Resources._PaymentMembresiaFactura;
             btnFacturaMembresia.ImageAlign = HorizontalAlignment.Left;
             btnFacturaMembresia.ImageSize = new Size(25, 25);
             btnFacturaMembresia.Location = new Point(0, 0);
@@ -516,7 +515,7 @@
             btnFacturacion.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnFacturacion.Size = new Size(237, 52);
             btnFacturacion.TabIndex = 9;
-            btnFacturacion.Text = "&Facturación";
+            btnFacturacion.Text = "Facturación";
             btnFacturacion.TextAlign = HorizontalAlignment.Right;
             btnFacturacion.Click += btnFacturacion_Click;
             // 
@@ -549,7 +548,6 @@
             btnProductos.ForeColor = Color.White;
             btnProductos.HoverState.FillColor = Color.White;
             btnProductos.HoverState.ForeColor = Color.Black;
-            btnProductos.Image = Properties.Resources.best_product_6533121;
             btnProductos.ImageAlign = HorizontalAlignment.Left;
             btnProductos.ImageSize = new Size(25, 25);
             btnProductos.Location = new Point(0, 148);
@@ -576,7 +574,6 @@
             btnCategorias.ForeColor = Color.White;
             btnCategorias.HoverState.FillColor = Color.White;
             btnCategorias.HoverState.ForeColor = Color.Black;
-            btnCategorias.Image = Properties.Resources.frmCategoria_x32_;
             btnCategorias.ImageAlign = HorizontalAlignment.Left;
             btnCategorias.ImageSize = new Size(25, 25);
             btnCategorias.Location = new Point(0, 111);
@@ -603,8 +600,6 @@
             btnClientes.ForeColor = Color.White;
             btnClientes.HoverState.FillColor = Color.White;
             btnClientes.HoverState.ForeColor = Color.Black;
-            btnClientes.HoverState.Image = Properties.Resources.desplegar_a_la_derecha__x32_;
-            btnClientes.Image = Properties.Resources.mantenimiento_Clientes_x32__;
             btnClientes.ImageAlign = HorizontalAlignment.Left;
             btnClientes.ImageSize = new Size(25, 25);
             btnClientes.Location = new Point(0, 74);
@@ -631,7 +626,7 @@
             btnProveedores.ForeColor = Color.White;
             btnProveedores.HoverState.FillColor = Color.White;
             btnProveedores.HoverState.ForeColor = Color.Black;
-            btnProveedores.Image = Properties.Resources.mantenimientoProveedores_x32__mainscreen;
+            btnProveedores.Image = Properties.Resources.gym_proveedor__x32_;
             btnProveedores.ImageAlign = HorizontalAlignment.Left;
             btnProveedores.ImageSize = new Size(25, 25);
             btnProveedores.Location = new Point(0, 37);
@@ -658,7 +653,7 @@
             btnMembresiasMantenimiento.ForeColor = Color.White;
             btnMembresiasMantenimiento.HoverState.FillColor = Color.White;
             btnMembresiasMantenimiento.HoverState.ForeColor = Color.Black;
-            btnMembresiasMantenimiento.Image = Properties.Resources.mantenimientoMembresias_x32__mainscreen;
+            btnMembresiasMantenimiento.Image = Properties.Resources.gym_membreship__x32_;
             btnMembresiasMantenimiento.ImageAlign = HorizontalAlignment.Left;
             btnMembresiasMantenimiento.ImageSize = new Size(25, 25);
             btnMembresiasMantenimiento.Location = new Point(0, 0);
@@ -693,7 +688,7 @@
             btnMantenimientos.ShadowDecoration.CustomizableEdges = customizableEdges36;
             btnMantenimientos.Size = new Size(237, 52);
             btnMantenimientos.TabIndex = 7;
-            btnMantenimientos.Text = "&Mantenimientos";
+            btnMantenimientos.Text = "Mantenimientos";
             btnMantenimientos.TextAlign = HorizontalAlignment.Right;
             btnMantenimientos.Click += btnMantenimientos_Click;
             // 
@@ -723,15 +718,14 @@
             btnTipoListaCliente.ForeColor = Color.White;
             btnTipoListaCliente.HoverState.FillColor = Color.White;
             btnTipoListaCliente.HoverState.ForeColor = Color.Black;
-            btnTipoListaCliente.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
             btnTipoListaCliente.ImageAlign = HorizontalAlignment.Left;
             btnTipoListaCliente.ImageSize = new Size(25, 25);
-            btnTipoListaCliente.Location = new Point(0, 74);
+            btnTipoListaCliente.Location = new Point(0, 102);
             btnTipoListaCliente.Name = "btnTipoListaCliente";
             btnTipoListaCliente.ShadowDecoration.CustomizableEdges = customizableEdges40;
-            btnTipoListaCliente.Size = new Size(198, 37);
+            btnTipoListaCliente.Size = new Size(198, 51);
             btnTipoListaCliente.TabIndex = 15;
-            btnTipoListaCliente.Text = "Tipo Lista Clientes";
+            btnTipoListaCliente.Text = "Lista Clientes";
             btnTipoListaCliente.TextAlign = HorizontalAlignment.Right;
             btnTipoListaCliente.Click += btnTipoListaCliente_Click;
             // 
@@ -750,13 +744,12 @@
             btnTipoCliente.ForeColor = Color.White;
             btnTipoCliente.HoverState.FillColor = Color.White;
             btnTipoCliente.HoverState.ForeColor = Color.Black;
-            btnTipoCliente.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
             btnTipoCliente.ImageAlign = HorizontalAlignment.Left;
             btnTipoCliente.ImageSize = new Size(25, 25);
-            btnTipoCliente.Location = new Point(0, 37);
+            btnTipoCliente.Location = new Point(0, 51);
             btnTipoCliente.Name = "btnTipoCliente";
             btnTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges42;
-            btnTipoCliente.Size = new Size(198, 37);
+            btnTipoCliente.Size = new Size(198, 51);
             btnTipoCliente.TabIndex = 13;
             btnTipoCliente.Text = "Tipo Cliente";
             btnTipoCliente.TextAlign = HorizontalAlignment.Right;
@@ -777,13 +770,12 @@
             btnMantCliente.ForeColor = Color.White;
             btnMantCliente.HoverState.FillColor = Color.White;
             btnMantCliente.HoverState.ForeColor = Color.Black;
-            btnMantCliente.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
             btnMantCliente.ImageAlign = HorizontalAlignment.Left;
             btnMantCliente.ImageSize = new Size(25, 25);
             btnMantCliente.Location = new Point(0, 0);
             btnMantCliente.Name = "btnMantCliente";
             btnMantCliente.ShadowDecoration.CustomizableEdges = customizableEdges44;
-            btnMantCliente.Size = new Size(198, 37);
+            btnMantCliente.Size = new Size(198, 51);
             btnMantCliente.TabIndex = 12;
             btnMantCliente.Text = "Clientes";
             btnMantCliente.TextAlign = HorizontalAlignment.Right;

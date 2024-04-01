@@ -573,6 +573,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap businessman_mante__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("businessman-mante-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_for_deleting_providers_x32 {
             get {
                 object obj = ResourceManager.GetObject("button for deleting providers x32", resourceCulture);
@@ -676,6 +686,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap Confort_GYM_SidePanel {
             get {
                 object obj = ResourceManager.GetObject("Confort GYM SidePanel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap customer_experience_12948497 {
+            get {
+                object obj = ResourceManager.GetObject("customer-experience_12948497", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -873,6 +893,26 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gym_membreship__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("gym-membreship-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gym_proveedor__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("gym-proveedor-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_empleados_x32 {
             get {
                 object obj = ResourceManager.GetObject("icon-empleados-x32", resourceCulture);
@@ -943,6 +983,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap inspection_12735753 {
+            get {
+                object obj = ResourceManager.GetObject("inspection_12735753", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap listaMiembros {
             get {
                 object obj = ResourceManager.GetObject("listaMiembros", resourceCulture);
@@ -956,6 +1006,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap listaMiembros1 {
             get {
                 object obj = ResourceManager.GetObject("listaMiembros1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_button__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("logout-button-[x32]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1136,6 +1196,26 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap tiposmembresia {
             get {
                 object obj = ResourceManager.GetObject("tiposmembresia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_role__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("user-role-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users_mante__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("users-mante-[x32]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
