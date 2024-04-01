@@ -553,6 +553,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap box_product_mante__32_ {
+            get {
+                object obj = ResourceManager.GetObject("box-product-mante-[32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btn_actualizar_lista_proveedores_x32 {
             get {
                 object obj = ResourceManager.GetObject("btn actualizar lista proveedores x32", resourceCulture);
@@ -756,6 +766,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap desplegar_a_la_derecha__x32_ {
             get {
                 object obj = ResourceManager.GetObject("desplegar a la derecha [x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap different_product_category__x32__waos {
+            get {
+                object obj = ResourceManager.GetObject("different-product-category-[x32]-waos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1106,6 +1126,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap plus_10693925 {
             get {
                 object obj = ResourceManager.GetObject("plus_10693925", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap producto_category__x32__mainscreen {
+            get {
+                object obj = ResourceManager.GetObject("producto-category-[x32]-mainscreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

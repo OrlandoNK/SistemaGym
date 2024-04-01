@@ -548,6 +548,7 @@
             btnProductos.ForeColor = Color.White;
             btnProductos.HoverState.FillColor = Color.White;
             btnProductos.HoverState.ForeColor = Color.Black;
+            btnProductos.Image = Properties.Resources.box_product_mante__32_;
             btnProductos.ImageAlign = HorizontalAlignment.Left;
             btnProductos.ImageSize = new Size(25, 25);
             btnProductos.Location = new Point(0, 148);
@@ -574,6 +575,7 @@
             btnCategorias.ForeColor = Color.White;
             btnCategorias.HoverState.FillColor = Color.White;
             btnCategorias.HoverState.ForeColor = Color.Black;
+            btnCategorias.Image = Properties.Resources.different_product_category__x32__waos;
             btnCategorias.ImageAlign = HorizontalAlignment.Left;
             btnCategorias.ImageSize = new Size(25, 25);
             btnCategorias.Location = new Point(0, 111);
@@ -600,6 +602,7 @@
             btnClientes.ForeColor = Color.White;
             btnClientes.HoverState.FillColor = Color.White;
             btnClientes.HoverState.ForeColor = Color.Black;
+            btnClientes.Image = Properties.Resources.customer_experience_12948497;
             btnClientes.ImageAlign = HorizontalAlignment.Left;
             btnClientes.ImageSize = new Size(25, 25);
             btnClientes.Location = new Point(0, 74);
