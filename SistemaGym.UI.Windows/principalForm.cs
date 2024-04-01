@@ -24,7 +24,6 @@ namespace SistemaGym.UI.Windows
             subPanelAdministracion.Visible = false;
             subPanelMantenimientos.Visible = false;
             subPanelFacturacion.Visible = false;
-            subPanelCliente.Visible = false;
         }
 
         private void HideSubMenu()
@@ -35,8 +34,6 @@ namespace SistemaGym.UI.Windows
                 subPanelMantenimientos.Visible = false;
             if (subPanelFacturacion.Visible == true)
                 subPanelFacturacion.Visible = false;
-            if (subPanelCliente.Visible == true)
-                subPanelCliente.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
