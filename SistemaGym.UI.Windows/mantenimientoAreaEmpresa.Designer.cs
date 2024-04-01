@@ -316,6 +316,7 @@
             Encargado.DataPropertyName = "Encargado";
             Encargado.HeaderText = "Encargado";
             Encargado.Name = "Encargado";
+            Encargado.ReadOnly = true;
             // 
             // Nombre
             // 
