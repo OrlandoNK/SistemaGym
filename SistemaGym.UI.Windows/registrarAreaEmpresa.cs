@@ -16,5 +16,10 @@ namespace SistemaGym.UI.Windows
         {
             InitializeComponent();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

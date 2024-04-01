@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             topPanel = new Panel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pictureBox1 = new PictureBox();
@@ -41,12 +41,10 @@
             btnCerrar = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            richTextBox1 = new RichTextBox();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            txbEncargado = new TextBox();
+            txbNombre = new TextBox();
+            txbApellido = new TextBox();
+            txbDescripcion = new RichTextBox();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -54,11 +52,17 @@
             btnBuscarEncargado = new Guna.UI2.WinForms.Guna2Button();
             btnNew = new Guna.UI2.WinForms.Guna2Button();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            txbNombreArea = new TextBox();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // topPanel
@@ -72,7 +76,7 @@
             topPanel.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             topPanel.Location = new Point(0, 0);
             topPanel.Name = "topPanel";
-            topPanel.Size = new Size(642, 64);
+            topPanel.Size = new Size(567, 64);
             topPanel.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -88,9 +92,11 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = Properties.Resources.area_GYM_empresa;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(63, 56);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -102,19 +108,20 @@
             subtopPanel.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             subtopPanel.Location = new Point(0, 64);
             subtopPanel.Name = "subtopPanel";
-            subtopPanel.Size = new Size(642, 35);
+            subtopPanel.Size = new Size(567, 35);
             subtopPanel.TabIndex = 2;
             // 
             // btnCerrar
             // 
             btnCerrar.Cursor = Cursors.Hand;
             btnCerrar.Image = Properties.Resources._BotonXcerrarVentana;
-            btnCerrar.Location = new Point(597, 15);
+            btnCerrar.Location = new Point(522, 15);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(32, 32);
             btnCerrar.SizeMode = PictureBoxSizeMode.AutoSize;
             btnCerrar.TabIndex = 3;
             btnCerrar.TabStop = false;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // panel1
             // 
@@ -132,82 +139,54 @@
             // 
             panel2.BackColor = Color.WhiteSmoke;
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(btnBuscarEncargado);
-            panel2.Controls.Add(guna2HtmlLabel6);
-            panel2.Controls.Add(guna2HtmlLabel5);
-            panel2.Controls.Add(guna2HtmlLabel4);
-            panel2.Controls.Add(guna2HtmlLabel3);
-            panel2.Controls.Add(guna2HtmlLabel2);
-            panel2.Controls.Add(richTextBox1);
-            panel2.Controls.Add(textBox4);
-            panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(groupBox2);
+            panel2.Controls.Add(groupBox1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(200, 99);
             panel2.Name = "panel2";
-            panel2.Size = new Size(442, 417);
+            panel2.Size = new Size(367, 417);
             panel2.TabIndex = 4;
             // 
-            // textBox1
+            // txbEncargado
             // 
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(46, 122);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(74, 23);
-            textBox1.TabIndex = 0;
+            txbEncargado.Enabled = false;
+            txbEncargado.Location = new Point(7, 59);
+            txbEncargado.Name = "txbEncargado";
+            txbEncargado.ReadOnly = true;
+            txbEncargado.Size = new Size(74, 23);
+            txbEncargado.TabIndex = 1;
             // 
-            // textBox2
+            // txbNombre
             // 
-            textBox2.Enabled = false;
-            textBox2.Location = new Point(46, 184);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(74, 23);
-            textBox2.TabIndex = 1;
+            txbNombre.Enabled = false;
+            txbNombre.Location = new Point(143, 59);
+            txbNombre.Name = "txbNombre";
+            txbNombre.ReadOnly = true;
+            txbNombre.Size = new Size(100, 23);
+            txbNombre.TabIndex = 2;
             // 
-            // textBox3
+            // txbApellido
             // 
-            textBox3.Enabled = false;
-            textBox3.Location = new Point(182, 184);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 2;
+            txbApellido.Enabled = false;
+            txbApellido.Location = new Point(249, 59);
+            txbApellido.Name = "txbApellido";
+            txbApellido.ReadOnly = true;
+            txbApellido.Size = new Size(100, 23);
+            txbApellido.TabIndex = 3;
             // 
-            // textBox4
+            // txbDescripcion
             // 
-            textBox4.Enabled = false;
-            textBox4.Location = new Point(288, 184);
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 3;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(46, 259);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(348, 59);
-            richTextBox1.TabIndex = 4;
-            richTextBox1.Text = "";
-            // 
-            // guna2HtmlLabel2
-            // 
-            guna2HtmlLabel2.AutoSize = false;
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Location = new Point(46, 97);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(74, 19);
-            guna2HtmlLabel2.TabIndex = 5;
-            guna2HtmlLabel2.Text = "IDArea";
+            txbDescripcion.Location = new Point(7, 110);
+            txbDescripcion.Name = "txbDescripcion";
+            txbDescripcion.Size = new Size(342, 72);
+            txbDescripcion.TabIndex = 4;
+            txbDescripcion.Text = "";
             // 
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.AutoSize = false;
             guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Location = new Point(46, 159);
+            guna2HtmlLabel3.Location = new Point(7, 34);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(74, 19);
             guna2HtmlLabel3.TabIndex = 6;
@@ -217,7 +196,7 @@
             // 
             guna2HtmlLabel4.AutoSize = false;
             guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Location = new Point(182, 159);
+            guna2HtmlLabel4.Location = new Point(143, 34);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(100, 19);
             guna2HtmlLabel4.TabIndex = 7;
@@ -227,7 +206,7 @@
             // 
             guna2HtmlLabel5.AutoSize = false;
             guna2HtmlLabel5.BackColor = Color.Transparent;
-            guna2HtmlLabel5.Location = new Point(288, 159);
+            guna2HtmlLabel5.Location = new Point(249, 34);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(100, 19);
             guna2HtmlLabel5.TabIndex = 8;
@@ -237,9 +216,9 @@
             // 
             guna2HtmlLabel6.AutoSize = false;
             guna2HtmlLabel6.BackColor = Color.Transparent;
-            guna2HtmlLabel6.Location = new Point(46, 234);
+            guna2HtmlLabel6.Location = new Point(7, 85);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new Size(348, 19);
+            guna2HtmlLabel6.Size = new Size(342, 19);
             guna2HtmlLabel6.TabIndex = 9;
             guna2HtmlLabel6.Text = "Descripcion del Área";
             // 
@@ -247,7 +226,7 @@
             // 
             btnBuscarEncargado.BorderThickness = 1;
             btnBuscarEncargado.Cursor = Cursors.Hand;
-            btnBuscarEncargado.CustomizableEdges = customizableEdges5;
+            btnBuscarEncargado.CustomizableEdges = customizableEdges13;
             btnBuscarEncargado.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarEncargado.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarEncargado.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -258,9 +237,9 @@
             btnBuscarEncargado.HoverState.FillColor = Color.DarkGoldenrod;
             btnBuscarEncargado.Image = Properties.Resources._BuscarEnFacturacionMembresiaDatos;
             btnBuscarEncargado.ImageSize = new Size(28, 28);
-            btnBuscarEncargado.Location = new Point(126, 159);
+            btnBuscarEncargado.Location = new Point(87, 34);
             btnBuscarEncargado.Name = "btnBuscarEncargado";
-            btnBuscarEncargado.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnBuscarEncargado.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnBuscarEncargado.Size = new Size(50, 48);
             btnBuscarEncargado.TabIndex = 10;
             // 
@@ -269,7 +248,7 @@
             btnNew.BorderColor = Color.DarkGoldenrod;
             btnNew.BorderThickness = 1;
             btnNew.Cursor = Cursors.Hand;
-            btnNew.CustomizableEdges = customizableEdges3;
+            btnNew.CustomizableEdges = customizableEdges15;
             btnNew.DisabledState.BorderColor = Color.DarkGray;
             btnNew.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNew.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -285,7 +264,7 @@
             btnNew.Location = new Point(-1, 40);
             btnNew.Name = "btnNew";
             btnNew.PressedColor = Color.Transparent;
-            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnNew.Size = new Size(202, 45);
             btnNew.TabIndex = 5;
             btnNew.Text = "Nuevo";
@@ -295,7 +274,7 @@
             btnSave.BorderColor = Color.DarkGoldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges1;
+            btnSave.CustomizableEdges = customizableEdges17;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -311,16 +290,62 @@
             btnSave.Location = new Point(-1, 91);
             btnSave.Name = "btnSave";
             btnSave.PressedColor = Color.Transparent;
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnSave.Size = new Size(202, 45);
             btnSave.TabIndex = 6;
             btnSave.Text = "Guardar";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(txbEncargado);
+            groupBox1.Controls.Add(btnBuscarEncargado);
+            groupBox1.Controls.Add(txbNombre);
+            groupBox1.Controls.Add(txbApellido);
+            groupBox1.Controls.Add(guna2HtmlLabel5);
+            groupBox1.Controls.Add(guna2HtmlLabel3);
+            groupBox1.Controls.Add(guna2HtmlLabel4);
+            groupBox1.Location = new Point(4, 40);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(357, 100);
+            groupBox1.TabIndex = 11;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Encargado del Area";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(guna2HtmlLabel2);
+            groupBox2.Controls.Add(txbNombreArea);
+            groupBox2.Controls.Add(txbDescripcion);
+            groupBox2.Controls.Add(guna2HtmlLabel6);
+            groupBox2.Location = new Point(4, 172);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(357, 206);
+            groupBox2.TabIndex = 12;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Área de la Empresa";
+            // 
+            // txbNombreArea
+            // 
+            txbNombreArea.Location = new Point(8, 56);
+            txbNombreArea.Name = "txbNombreArea";
+            txbNombreArea.Size = new Size(155, 23);
+            txbNombreArea.TabIndex = 10;
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.AutoSize = false;
+            guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Location = new Point(8, 35);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new Size(155, 19);
+            guna2HtmlLabel2.TabIndex = 11;
+            guna2HtmlLabel2.Text = "Nombre del Área";
             // 
             // registrarAreaEmpresa
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(642, 516);
+            ClientSize = new Size(567, 516);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(subtopPanel);
@@ -334,7 +359,10 @@
             ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -347,18 +375,20 @@
         private PictureBox btnCerrar;
         private Panel panel1;
         private Panel panel2;
-        private RichTextBox richTextBox1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private RichTextBox txbDescripcion;
+        private TextBox txbApellido;
+        private TextBox txbNombre;
+        private TextBox txbEncargado;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button btnBuscarEncargado;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnNew;
+        private GroupBox groupBox2;
+        private GroupBox groupBox1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private TextBox txbNombreArea;
     }
 }
