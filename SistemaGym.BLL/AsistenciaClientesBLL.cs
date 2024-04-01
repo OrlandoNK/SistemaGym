@@ -14,17 +14,13 @@ namespace SistemaGym.BLL
         readonly AsistenciaClientesDAL asistenciaClientesDAL = new AsistenciaClientesDAL();     
         public static void Guardar(AsistenciaClientesEntity asistencia)
         {
-            if (asistencia.IDAsistenciaCliente == 0)
-            {
-                //agregar
-                AsistenciaClientesDAL.InsertarAsistencia(asistencia);
-            }
-            else
-            {
-                //Actualizar
-                AsistenciaClientesDAL.ActualizarAsistencia(asistencia);
-
-            }
+            //agregar
+            AsistenciaClientesDAL.InsertarAsistencia(asistencia);
+        }
+        public static void Actualizar(AsistenciaClientesEntity asistencia)
+        {
+            //Actualizar
+            AsistenciaClientesDAL.ActualizarAsistencia(asistencia);
         }
 
         public static bool Eliminar(AsistenciaClientesEntity asistencia)

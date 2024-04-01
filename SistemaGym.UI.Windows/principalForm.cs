@@ -196,7 +196,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnTipoCliente_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnTipoCliente_Click_1(object sender, EventArgs e)
