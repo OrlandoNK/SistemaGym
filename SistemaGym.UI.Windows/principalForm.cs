@@ -219,5 +219,13 @@ namespace SistemaGym.UI.Windows
 
             HideSubMenu();
         }
+
+        private void btnAreasGYM_Click(object sender, EventArgs e)
+        {
+            mantenimientoAreaEmpresa areasGYM = new mantenimientoAreaEmpresa();
+            areasGYM.Show();
+
+            HideSubMenu();
+        }
     }
 }

@@ -18,8 +18,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "INSERT INTO AreasEmpresa(Encargado, Nombre, Descripcion, FechaRegistro" +
-                " VALUES(@encargado, @nombre, @descripcion, @FechaRegistro)";
+            string insertar = "INSERT INTO AreasEmpresa(Encargado, Nombre, Descripcion, FechaRegistro VALUES(@encargado, @nombre, @descripcion, @FechaRegistro)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@encargado", areaEmpresa.Encargado);
             cmd.Parameters.AddWithValue("@nombre", areaEmpresa.Nombre);

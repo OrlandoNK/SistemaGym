@@ -108,5 +108,26 @@ namespace SistemaGym.UI.Windows
             txbApellido.Clear();
             txbDescripcion.Clear();
         }
+
+        private void btnBuscarEncargado_Click(object sender, EventArgs e)
+        {
+            listaEmpleados empleadoLista = new listaEmpleados();
+
+            if (empleadoLista.ShowDialog() == DialogResult.OK)
+            {
+                EmpleadoEntity oEmpleados = EmpleadoBLL.GetByID(empleadoLista.IdEmpleado);
+
+                if (oEmpleados != null)
+                {
+                    this.txbEncargado.Text = oEmpleados.IDEmpleado.ToString();
+                    this.txbNombre.Text = oEmpleados.Nombre.ToString();
+                    this.txbApellido.Text = oEmpleados.Apellido.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Empleado No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

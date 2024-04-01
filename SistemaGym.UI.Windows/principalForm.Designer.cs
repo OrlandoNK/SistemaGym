@@ -44,8 +44,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -54,8 +54,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -66,6 +64,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnAdministracion = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             lblRolUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -94,6 +96,7 @@
             btnProveedores = new Guna.UI2.WinForms.Guna2Button();
             btnMembresiasMantenimiento = new Guna.UI2.WinForms.Guna2Button();
             btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
+            btnAreasGYM = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panelDesplegable.SuspendLayout();
@@ -389,11 +392,11 @@
             guna2Panel1.Controls.Add(subPanelAdministracion);
             guna2Panel1.Controls.Add(btnAdministracion);
             guna2Panel1.Controls.Add(guna2PictureBox1);
-            guna2Panel1.CustomizableEdges = customizableEdges37;
+            guna2Panel1.CustomizableEdges = customizableEdges39;
             guna2Panel1.Dock = DockStyle.Left;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges40;
             guna2Panel1.Size = new Size(237, 788);
             guna2Panel1.TabIndex = 0;
             // 
@@ -428,7 +431,7 @@
             subPanelFacturacion.Controls.Add(btnFacturaProducto);
             subPanelFacturacion.Controls.Add(btnFacturaMembresia);
             subPanelFacturacion.Dock = DockStyle.Top;
-            subPanelFacturacion.Location = new Point(0, 585);
+            subPanelFacturacion.Location = new Point(0, 621);
             subPanelFacturacion.Name = "subPanelFacturacion";
             subPanelFacturacion.Size = new Size(237, 82);
             subPanelFacturacion.TabIndex = 10;
@@ -507,7 +510,7 @@
             btnFacturacion.Image = Properties.Resources.facturaProducto_mainscreen_;
             btnFacturacion.ImageAlign = HorizontalAlignment.Left;
             btnFacturacion.ImageSize = new Size(28, 28);
-            btnFacturacion.Location = new Point(0, 533);
+            btnFacturacion.Location = new Point(0, 569);
             btnFacturacion.Name = "btnFacturacion";
             btnFacturacion.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnFacturacion.Size = new Size(237, 52);
@@ -519,6 +522,7 @@
             // subPanelMantenimientos
             // 
             subPanelMantenimientos.BackColor = Color.FromArgb(35, 32, 39);
+            subPanelMantenimientos.Controls.Add(btnAreasGYM);
             subPanelMantenimientos.Controls.Add(btnProductos);
             subPanelMantenimientos.Controls.Add(btnCategorias);
             subPanelMantenimientos.Controls.Add(btnClientes);
@@ -527,14 +531,14 @@
             subPanelMantenimientos.Dock = DockStyle.Top;
             subPanelMantenimientos.Location = new Point(0, 344);
             subPanelMantenimientos.Name = "subPanelMantenimientos";
-            subPanelMantenimientos.Size = new Size(237, 189);
+            subPanelMantenimientos.Size = new Size(237, 225);
             subPanelMantenimientos.TabIndex = 8;
             // 
             // btnProductos
             // 
             btnProductos.BackColor = Color.Transparent;
             btnProductos.Cursor = Cursors.Hand;
-            btnProductos.CustomizableEdges = customizableEdges25;
+            btnProductos.CustomizableEdges = customizableEdges27;
             btnProductos.DisabledState.BorderColor = Color.DarkGray;
             btnProductos.DisabledState.CustomBorderColor = Color.DarkGray;
             btnProductos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -551,7 +555,7 @@
             btnProductos.Location = new Point(0, 148);
             btnProductos.Name = "btnProductos";
             btnProductos.PressedColor = Color.Transparent;
-            btnProductos.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnProductos.ShadowDecoration.CustomizableEdges = customizableEdges28;
             btnProductos.Size = new Size(237, 37);
             btnProductos.TabIndex = 11;
             btnProductos.Text = "Productos";
@@ -562,7 +566,7 @@
             // 
             btnCategorias.BackColor = Color.Transparent;
             btnCategorias.Cursor = Cursors.Hand;
-            btnCategorias.CustomizableEdges = customizableEdges27;
+            btnCategorias.CustomizableEdges = customizableEdges29;
             btnCategorias.DisabledState.BorderColor = Color.DarkGray;
             btnCategorias.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCategorias.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -579,7 +583,7 @@
             btnCategorias.Location = new Point(0, 111);
             btnCategorias.Name = "btnCategorias";
             btnCategorias.PressedColor = Color.Transparent;
-            btnCategorias.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnCategorias.ShadowDecoration.CustomizableEdges = customizableEdges30;
             btnCategorias.Size = new Size(237, 37);
             btnCategorias.TabIndex = 10;
             btnCategorias.Text = "Categorias";
@@ -590,7 +594,7 @@
             // 
             btnClientes.BackColor = Color.Transparent;
             btnClientes.Cursor = Cursors.Hand;
-            btnClientes.CustomizableEdges = customizableEdges29;
+            btnClientes.CustomizableEdges = customizableEdges31;
             btnClientes.DisabledState.BorderColor = Color.DarkGray;
             btnClientes.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClientes.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -607,7 +611,7 @@
             btnClientes.Location = new Point(0, 74);
             btnClientes.Name = "btnClientes";
             btnClientes.PressedColor = Color.Transparent;
-            btnClientes.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            btnClientes.ShadowDecoration.CustomizableEdges = customizableEdges32;
             btnClientes.Size = new Size(237, 37);
             btnClientes.TabIndex = 9;
             btnClientes.Text = "Clientes";
@@ -618,7 +622,7 @@
             // 
             btnProveedores.BackColor = Color.Transparent;
             btnProveedores.Cursor = Cursors.Hand;
-            btnProveedores.CustomizableEdges = customizableEdges31;
+            btnProveedores.CustomizableEdges = customizableEdges33;
             btnProveedores.DisabledState.BorderColor = Color.DarkGray;
             btnProveedores.DisabledState.CustomBorderColor = Color.DarkGray;
             btnProveedores.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -635,7 +639,7 @@
             btnProveedores.Location = new Point(0, 37);
             btnProveedores.Name = "btnProveedores";
             btnProveedores.PressedColor = Color.Transparent;
-            btnProveedores.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            btnProveedores.ShadowDecoration.CustomizableEdges = customizableEdges34;
             btnProveedores.Size = new Size(237, 37);
             btnProveedores.TabIndex = 8;
             btnProveedores.Text = "Proveedores";
@@ -646,7 +650,7 @@
             // 
             btnMembresiasMantenimiento.BackColor = Color.Transparent;
             btnMembresiasMantenimiento.Cursor = Cursors.Hand;
-            btnMembresiasMantenimiento.CustomizableEdges = customizableEdges33;
+            btnMembresiasMantenimiento.CustomizableEdges = customizableEdges35;
             btnMembresiasMantenimiento.DisabledState.BorderColor = Color.DarkGray;
             btnMembresiasMantenimiento.DisabledState.CustomBorderColor = Color.DarkGray;
             btnMembresiasMantenimiento.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -663,7 +667,7 @@
             btnMembresiasMantenimiento.Location = new Point(0, 0);
             btnMembresiasMantenimiento.Name = "btnMembresiasMantenimiento";
             btnMembresiasMantenimiento.PressedColor = Color.Transparent;
-            btnMembresiasMantenimiento.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            btnMembresiasMantenimiento.ShadowDecoration.CustomizableEdges = customizableEdges36;
             btnMembresiasMantenimiento.Size = new Size(237, 37);
             btnMembresiasMantenimiento.TabIndex = 7;
             btnMembresiasMantenimiento.Text = "Membresias";
@@ -674,7 +678,7 @@
             // 
             btnMantenimientos.BackColor = Color.Transparent;
             btnMantenimientos.Cursor = Cursors.Hand;
-            btnMantenimientos.CustomizableEdges = customizableEdges35;
+            btnMantenimientos.CustomizableEdges = customizableEdges37;
             btnMantenimientos.DisabledState.BorderColor = Color.DarkGray;
             btnMantenimientos.DisabledState.CustomBorderColor = Color.DarkGray;
             btnMantenimientos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -690,12 +694,40 @@
             btnMantenimientos.ImageSize = new Size(28, 28);
             btnMantenimientos.Location = new Point(0, 292);
             btnMantenimientos.Name = "btnMantenimientos";
-            btnMantenimientos.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            btnMantenimientos.ShadowDecoration.CustomizableEdges = customizableEdges38;
             btnMantenimientos.Size = new Size(237, 52);
             btnMantenimientos.TabIndex = 7;
             btnMantenimientos.Text = "Mantenimientos";
             btnMantenimientos.TextAlign = HorizontalAlignment.Right;
             btnMantenimientos.Click += btnMantenimientos_Click;
+            // 
+            // btnAreasGYM
+            // 
+            btnAreasGYM.BackColor = Color.Transparent;
+            btnAreasGYM.Cursor = Cursors.Hand;
+            btnAreasGYM.CustomizableEdges = customizableEdges25;
+            btnAreasGYM.DisabledState.BorderColor = Color.DarkGray;
+            btnAreasGYM.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAreasGYM.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAreasGYM.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAreasGYM.Dock = DockStyle.Top;
+            btnAreasGYM.FillColor = Color.FromArgb(35, 32, 39);
+            btnAreasGYM.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAreasGYM.ForeColor = Color.White;
+            btnAreasGYM.HoverState.FillColor = Color.Black;
+            btnAreasGYM.HoverState.ForeColor = Color.White;
+            btnAreasGYM.Image = Properties.Resources.area_GYM_empresa;
+            btnAreasGYM.ImageAlign = HorizontalAlignment.Left;
+            btnAreasGYM.ImageSize = new Size(25, 25);
+            btnAreasGYM.Location = new Point(0, 185);
+            btnAreasGYM.Name = "btnAreasGYM";
+            btnAreasGYM.PressedColor = Color.Transparent;
+            btnAreasGYM.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnAreasGYM.Size = new Size(237, 37);
+            btnAreasGYM.TabIndex = 12;
+            btnAreasGYM.Text = "Areas Empresa";
+            btnAreasGYM.TextAlign = HorizontalAlignment.Right;
+            btnAreasGYM.Click += btnAreasGYM_Click;
             // 
             // principalForm
             // 
@@ -753,5 +785,6 @@
         private Guna.UI2.WinForms.Guna2Button btnFacturacion;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblRolUsuario;
         private Guna.UI2.WinForms.Guna2Button btnHelpCenter;
+        private Guna.UI2.WinForms.Guna2Button btnAreasGYM;
     }
 }

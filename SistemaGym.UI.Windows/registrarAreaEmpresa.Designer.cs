@@ -296,6 +296,7 @@
             btnBuscarEncargado.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnBuscarEncargado.Size = new Size(50, 48);
             btnBuscarEncargado.TabIndex = 10;
+            btnBuscarEncargado.Click += btnBuscarEncargado_Click;
             // 
             // txbNombre
             // 
