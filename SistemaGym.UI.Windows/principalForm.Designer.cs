@@ -756,7 +756,7 @@
             btnTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges42;
             btnTipoCliente.Size = new Size(198, 51);
             btnTipoCliente.TabIndex = 13;
-            btnTipoCliente.Text = "Tipo Cliente";
+            btnTipoCliente.Text = "Tipo Clientes";
             btnTipoCliente.TextAlign = HorizontalAlignment.Right;
             btnTipoCliente.Click += btnTipoCliente_Click_1;
             // 
@@ -775,6 +775,7 @@
             btnMantCliente.ForeColor = Color.White;
             btnMantCliente.HoverState.FillColor = Color.White;
             btnMantCliente.HoverState.ForeColor = Color.Black;
+            btnMantCliente.Image = Properties.Resources.customer_experience_12948497;
             btnMantCliente.ImageAlign = HorizontalAlignment.Left;
             btnMantCliente.ImageSize = new Size(25, 25);
             btnMantCliente.Location = new Point(0, 0);
