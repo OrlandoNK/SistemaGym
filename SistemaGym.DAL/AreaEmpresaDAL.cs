@@ -18,13 +18,13 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into AreasEmpresa(Encargado, Nombre, Descripcion, FechaCreacion" +
-                " values(@encargado, @nombre, @descripcion, @fechacreacion)";
+            string insertar = "INSERT INTO AreasEmpresa(Encargado, Nombre, Descripcion, FechaRegistro" +
+                " VALUES(@encargado, @nombre, @descripcion, @FechaRegistro)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@encargado", areaEmpresa.Encargado);
             cmd.Parameters.AddWithValue("@nombre", areaEmpresa.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", areaEmpresa.Descripcion);
-            cmd.Parameters.AddWithValue("@fechacreacion", areaEmpresa.FechaCreacion);
+            cmd.Parameters.AddWithValue("@FechaRegistro", areaEmpresa.FechaRegistro);
             cmd.ExecuteNonQuery();
         }
 
@@ -36,13 +36,13 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string actualizar = "Update AreasEmpresa set Encargado=@encargado, Nombre=@nombre " +
-                "Descripcion =@descripcion, FechaCreacion = @fechacreacion Where IDArea = @idarea";
+                "Descripcion =@descripcion, FechaRegistro = @FechaRegistro Where IDArea = @idarea";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idarea", areaEmpresa.IDArea);
             cmd.Parameters.AddWithValue("@encargado", areaEmpresa.Encargado);
             cmd.Parameters.AddWithValue("@nombre", areaEmpresa.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", areaEmpresa.Descripcion);
-            cmd.Parameters.AddWithValue("@fechacreacion", areaEmpresa.FechaCreacion);
+            cmd.Parameters.AddWithValue("@FechaRegistro", areaEmpresa.FechaRegistro);
             cmd.ExecuteNonQuery();
 
 
@@ -54,8 +54,6 @@ namespace SistemaGym.DAL
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             bool seElimino;
-
-
 
             Conexion.Open();
             string Eliminar = "Delete from AreasEmpresa where IDArea= @idarea";

@@ -12,7 +12,7 @@ namespace SistemaGym.Entities
         public int Encargado { set; get; }
         public string Nombre { set; get; }
         public string Descripcion {  set; get; }
-        public DateTime FechaCreacion { set; get; }
+        public DateTime FechaRegistro { set; get; }
         
     }
 }
