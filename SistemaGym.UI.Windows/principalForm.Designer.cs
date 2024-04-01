@@ -233,9 +233,9 @@
             panelDesplegable.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelDesplegable.BackColor = Color.White;
             panelDesplegable.Controls.Add(btncerrarSesion);
-            panelDesplegable.Location = new Point(894, 70);
+            panelDesplegable.Location = new Point(873, 70);
             panelDesplegable.Name = "panelDesplegable";
-            panelDesplegable.Size = new Size(169, 140);
+            panelDesplegable.Size = new Size(190, 140);
             panelDesplegable.TabIndex = 3;
             panelDesplegable.Visible = false;
             // 
@@ -699,12 +699,13 @@
             // 
             // subPanelCliente
             // 
+            subPanelCliente.BorderStyle = BorderStyle.FixedSingle;
             subPanelCliente.Controls.Add(btnTipoListaCliente);
             subPanelCliente.Controls.Add(btnTipoCliente);
             subPanelCliente.Controls.Add(btnMantCliente);
-            subPanelCliente.Location = new Point(240, 255);
+            subPanelCliente.Location = new Point(237, 181);
             subPanelCliente.Name = "subPanelCliente";
-            subPanelCliente.Size = new Size(200, 110);
+            subPanelCliente.Size = new Size(200, 241);
             subPanelCliente.TabIndex = 5;
             // 
             // btnTipoListaCliente
@@ -728,7 +729,7 @@
             btnTipoListaCliente.Location = new Point(0, 74);
             btnTipoListaCliente.Name = "btnTipoListaCliente";
             btnTipoListaCliente.ShadowDecoration.CustomizableEdges = customizableEdges40;
-            btnTipoListaCliente.Size = new Size(200, 37);
+            btnTipoListaCliente.Size = new Size(198, 37);
             btnTipoListaCliente.TabIndex = 15;
             btnTipoListaCliente.Text = "Tipo Lista Clientes";
             btnTipoListaCliente.TextAlign = HorizontalAlignment.Right;
@@ -755,7 +756,7 @@
             btnTipoCliente.Location = new Point(0, 37);
             btnTipoCliente.Name = "btnTipoCliente";
             btnTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges42;
-            btnTipoCliente.Size = new Size(200, 37);
+            btnTipoCliente.Size = new Size(198, 37);
             btnTipoCliente.TabIndex = 13;
             btnTipoCliente.Text = "Tipo Cliente";
             btnTipoCliente.TextAlign = HorizontalAlignment.Right;
@@ -782,7 +783,7 @@
             btnMantCliente.Location = new Point(0, 0);
             btnMantCliente.Name = "btnMantCliente";
             btnMantCliente.ShadowDecoration.CustomizableEdges = customizableEdges44;
-            btnMantCliente.Size = new Size(200, 37);
+            btnMantCliente.Size = new Size(198, 37);
             btnMantCliente.TabIndex = 12;
             btnMantCliente.Text = "Clientes";
             btnMantCliente.TextAlign = HorizontalAlignment.Right;
