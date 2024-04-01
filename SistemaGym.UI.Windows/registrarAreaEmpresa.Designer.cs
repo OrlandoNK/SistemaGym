@@ -33,8 +33,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             topPanel = new Panel();
             btnCerrar = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -42,7 +40,6 @@
             subtopPanel = new Panel();
             panel1 = new Panel();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
-            btnNew = new Guna.UI2.WinForms.Guna2Button();
             panel2 = new Panel();
             groupBox2 = new GroupBox();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -131,7 +128,6 @@
             panel1.BackColor = Color.FromArgb(35, 32, 39);
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnSave);
-            panel1.Controls.Add(btnNew);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 99);
             panel1.Name = "panel1";
@@ -156,40 +152,14 @@
             btnSave.Image = Properties.Resources._SaveFacturaProduct;
             btnSave.ImageAlign = HorizontalAlignment.Left;
             btnSave.ImageSize = new Size(25, 25);
-            btnSave.Location = new Point(-1, 91);
+            btnSave.Location = new Point(-1, 48);
             btnSave.Name = "btnSave";
             btnSave.PressedColor = Color.Transparent;
             btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnSave.Size = new Size(202, 45);
+            btnSave.Size = new Size(202, 54);
             btnSave.TabIndex = 6;
             btnSave.Text = "Guardar";
             btnSave.Click += btnSave_Click;
-            // 
-            // btnNew
-            // 
-            btnNew.BorderColor = Color.DarkGoldenrod;
-            btnNew.BorderThickness = 1;
-            btnNew.Cursor = Cursors.Hand;
-            btnNew.CustomizableEdges = customizableEdges3;
-            btnNew.DisabledState.BorderColor = Color.DarkGray;
-            btnNew.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnNew.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnNew.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnNew.FillColor = Color.Transparent;
-            btnNew.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnNew.ForeColor = Color.White;
-            btnNew.HoverState.FillColor = Color.DarkGoldenrod;
-            btnNew.HoverState.ForeColor = Color.Black;
-            btnNew.Image = Properties.Resources._NewFacturaProduct;
-            btnNew.ImageAlign = HorizontalAlignment.Left;
-            btnNew.ImageSize = new Size(25, 25);
-            btnNew.Location = new Point(-1, 40);
-            btnNew.Name = "btnNew";
-            btnNew.PressedColor = Color.Transparent;
-            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnNew.Size = new Size(202, 45);
-            btnNew.TabIndex = 5;
-            btnNew.Text = "Nuevo";
             // 
             // panel2
             // 
@@ -280,7 +250,7 @@
             // 
             btnBuscarEncargado.BorderThickness = 1;
             btnBuscarEncargado.Cursor = Cursors.Hand;
-            btnBuscarEncargado.CustomizableEdges = customizableEdges5;
+            btnBuscarEncargado.CustomizableEdges = customizableEdges3;
             btnBuscarEncargado.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarEncargado.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarEncargado.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -293,7 +263,7 @@
             btnBuscarEncargado.ImageSize = new Size(28, 28);
             btnBuscarEncargado.Location = new Point(87, 34);
             btnBuscarEncargado.Name = "btnBuscarEncargado";
-            btnBuscarEncargado.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnBuscarEncargado.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnBuscarEncargado.Size = new Size(50, 48);
             btnBuscarEncargado.TabIndex = 10;
             btnBuscarEncargado.Click += btnBuscarEncargado_Click;
@@ -395,7 +365,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2Button btnBuscarEncargado;
         private Guna.UI2.WinForms.Guna2Button btnSave;
-        private Guna.UI2.WinForms.Guna2Button btnNew;
         private GroupBox groupBox2;
         private GroupBox groupBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;

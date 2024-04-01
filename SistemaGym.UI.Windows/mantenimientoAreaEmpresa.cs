@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGym.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,23 @@ namespace SistemaGym.UI.Windows
         {
             registrarAreaEmpresa nuevaAreaEmpresa = new registrarAreaEmpresa();
             nuevaAreaEmpresa.Show();
+        }
+        private void CargarEncargado()
+        {
+            var colEncargado = (DataGridViewComboBoxColumn)dgvAreaEmpresa.Columns["Encargado"];
+
+            colEncargado.ValueMember = "IDEmpleado";
+            colEncargado.DisplayMember = "Nombre";
+            colEncargado.DataPropertyName = "Encargado";
+            colEncargado.DataSource = EmpleadoBLL.GetEmpleados();
+        }
+
+        private void mantenimientoAreaEmpresa_Load(object sender, EventArgs e)
+        {
+            AreaEmpresaBLL areaEmpresaBLL = new AreaEmpresaBLL();
+            dgvAreaEmpresa.DataSource = areaEmpresaBLL.Mostrar();
+            dgvAreaEmpresa.AutoGenerateColumns = false;
+            CargarEncargado();
         }
     }
 }
