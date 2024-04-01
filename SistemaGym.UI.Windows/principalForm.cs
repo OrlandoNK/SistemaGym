@@ -151,7 +151,10 @@ namespace SistemaGym.UI.Windows
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            subPanelCliente.Visible = true;
+            frmClientes mantenimientoClientes = new frmClientes();
+            mantenimientoClientes.Show();
+
+            HideSubMenu();
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)
@@ -193,10 +196,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnTipoCliente_Click(object sender, EventArgs e)
         {
-            frmClientes mantenimientoClientes = new frmClientes();
-            mantenimientoClientes.Show();
-
-            HideSubMenu();
+            
         }
 
         private void btnTipoCliente_Click_1(object sender, EventArgs e)
