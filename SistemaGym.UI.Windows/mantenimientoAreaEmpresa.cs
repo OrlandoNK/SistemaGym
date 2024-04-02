@@ -53,7 +53,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 DataTable changeData = ((DataTable)dgvAreaEmpresa.DataSource).GetChanges();
@@ -92,7 +92,7 @@ namespace SistemaGym.UI.Windows
                     IDArea = Convert.ToInt32(fila["IDArea"]),
                     Encargado = Convert.ToInt32(fila["Encargado"]),
                     Nombre = Convert.ToString(fila["Nombre"]),
-                    Descripcion = Convert.ToString(fila["Descripción"]),
+                    Descripcion = Convert.ToString(fila["Descripcion"]),
                     FechaRegistro = Convert.ToDateTime(fila["FechaRegistro"]),
                 };
 

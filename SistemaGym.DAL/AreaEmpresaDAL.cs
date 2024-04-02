@@ -18,7 +18,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "INSERT INTO AreasEmpresa(Encargado, Nombre, Descripción, FechaRegistro) VALUES(@encargado, @nombre, @descripcion, @FechaRegistro)";
+            string insertar = "INSERT INTO AreasEmpresa(Encargado, Nombre, Descripcion, FechaRegistro) VALUES(@encargado, @nombre, @descripcion, @FechaRegistro)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@encargado", areaEmpresa.Encargado);
             cmd.Parameters.AddWithValue("@nombre", areaEmpresa.Nombre);
@@ -34,7 +34,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "UPDATE AreasEmpresa SET Encargado = @encargado, Nombre = @nombre, Descripción = @descripcion, FechaRegistro = @FechaRegistro WHERE IDArea = @idarea";
+            string actualizar = "UPDATE AreasEmpresa SET Encargado = @encargado, Nombre = @nombre, Descripcion = @descripcion, FechaRegistro = @FechaRegistro WHERE IDArea = @idarea";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idarea", areaEmpresa.IDArea);
             cmd.Parameters.AddWithValue("@encargado", areaEmpresa.Encargado);

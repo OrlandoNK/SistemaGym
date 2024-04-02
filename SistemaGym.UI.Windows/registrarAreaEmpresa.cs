@@ -111,11 +111,11 @@ namespace SistemaGym.UI.Windows
 
         private void btnBuscarEncargado_Click(object sender, EventArgs e)
         {
-            listaEmpleados empleadoLista = new listaEmpleados();
+            listaUsuarios usuarioLista = new listaUsuarios();
 
-            if (empleadoLista.ShowDialog() == DialogResult.OK)
+            if (usuarioLista.ShowDialog() == DialogResult.OK)
             {
-                EmpleadoEntity oEmpleados = EmpleadoBLL.GetByID(empleadoLista.IdEmpleado);
+                UsuarioEntity oEmpleados = UsuarioBLL.GetByID(usuarioLista.IdUsuario);
 
                 if (oEmpleados != null)
                 {

@@ -90,6 +90,41 @@ namespace SistemaGym.DAL
             return UserName;
         }
 
+        public static UsuarioEntity GetByID(int Id)
+        {
+            UsuarioEntity usuario = null;
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            string GetID = "SELECT * FROM Usuarios WHERE IDUsuario = @IDUsuario";
+            SqlCommand cmd = new SqlCommand(GetID, Conexion);
+            cmd.Parameters.AddWithValue("@IDUsuario", Id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                usuario = ConvertToObject(reader);
+            }
+
+
+            return usuario;
+        }
+
+        private static UsuarioEntity ConvertToObject(IDataReader reader)
+        {
+            UsuarioEntity usuario = new UsuarioEntity(nombreUsuario:string.Empty, contrasena:string.Empty);
+
+            usuario.IDUsuario = Convert.ToInt32(reader["IDUsuario"]);
+            usuario.IDEmpleado = Convert.ToInt32(reader["IdEmpleado"]);
+            usuario.Nombre = Convert.ToString(reader["Nombre"]);
+            usuario.Apellido = Convert.ToString(reader["Apellido"]);
+
+            return usuario;
+        }
+
         //metodo actualizar usuario
         public static void ActualizarUsuario(UsuarioEntity usuario)
         {

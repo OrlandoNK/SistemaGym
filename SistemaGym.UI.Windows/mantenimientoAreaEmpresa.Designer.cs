@@ -328,7 +328,7 @@
             // 
             // Descripcion
             // 
-            Descripcion.DataPropertyName = "Descripción";
+            Descripcion.DataPropertyName = "Descripcion";
             Descripcion.HeaderText = "Descripcion";
             Descripcion.Name = "Descripcion";
             // 
