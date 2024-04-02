@@ -164,6 +164,7 @@
             btnDelete.Size = new Size(198, 45);
             btnDelete.TabIndex = 7;
             btnDelete.Text = "Eliminar";
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -190,6 +191,7 @@
             btnEdit.Size = new Size(198, 45);
             btnEdit.TabIndex = 6;
             btnEdit.Text = "Editar";
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnRefresh
             // 

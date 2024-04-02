@@ -34,8 +34,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update AreasEmpresa set Encargado=@encargado, Nombre=@nombre " +
-                "Descripcion =@descripcion, FechaRegistro = @FechaRegistro Where IDArea = @idarea";
+            string actualizar = "UPDATE AreasEmpresa SET Encargado = @encargado, Nombre = @nombre, Descripción = @descripcion, FechaRegistro = @FechaRegistro WHERE IDArea = @idarea";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idarea", areaEmpresa.IDArea);
             cmd.Parameters.AddWithValue("@encargado", areaEmpresa.Encargado);
@@ -48,7 +47,7 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar AreaEmpresa
 
-        public static bool EliminarArea(AreaEmpresaEntity areaEmpresa)
+        public static bool EliminarArea(int areaEmpresa)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -57,7 +56,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string Eliminar = "Delete from AreasEmpresa where IDArea= @idarea";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idarea", areaEmpresa.IDArea);
+            cmd.Parameters.AddWithValue("@idarea", areaEmpresa);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
