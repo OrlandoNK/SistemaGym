@@ -62,7 +62,7 @@ namespace SistemaGym.UI.Windows
                 }
                 else
                 {
-                    MessageBox.Show("Datos de Usuario Incorrectos, Intente Nuevamente", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Usuario o Contraseña Incorrectos, Intente Nuevamente", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (SqlException ex)
