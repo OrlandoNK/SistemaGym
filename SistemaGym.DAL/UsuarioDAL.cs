@@ -82,7 +82,7 @@ namespace SistemaGym.DAL
             cmd.ExecuteNonQuery();
         }
 
-        private static string EncriptarContraseña(string contraseña)
+       public static string EncriptarContraseña(string contraseña)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
@@ -108,7 +108,9 @@ namespace SistemaGym.DAL
                 using (SqlCommand cmnd = new SqlCommand(qry, Conexion))
                 {
                     cmnd.Parameters.AddWithValue("@Usuario", usuario);
-                    cmnd.Parameters.AddWithValue("@Contrasena", contraseña);
+                string contraseñaEncriptada = EncriptarContraseña(contraseña);
+               
+                cmnd.Parameters.AddWithValue("@Contrasena", contraseñaEncriptada);
                     Conexion.Open();
                     UserName = Convert.ToString(cmnd.ExecuteScalar());
                 }
@@ -127,7 +129,9 @@ namespace SistemaGym.DAL
             using (SqlCommand cmnd = new SqlCommand(qry, Conexion))
             {
                 cmnd.Parameters.AddWithValue("@Usuario", usuario);
-                cmnd.Parameters.AddWithValue("@Contrasena", contraseña);
+                string contraseñaEncriptada = EncriptarContraseña(contraseña);
+               
+                cmnd.Parameters.AddWithValue("@Contrasena", contraseñaEncriptada);
                 Conexion.Open();
                 UserName = Convert.ToString(cmnd.ExecuteScalar());
             }
