@@ -23,7 +23,8 @@ namespace SistemaGym.DAL
                 string Query = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario =@nombreusuario AND Contrasena =@contrasena ";
                 SqlCommand cmd = new SqlCommand(Query, Conexion);
                 cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
-                cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
+            string contraseñaEncriptada = EncriptarContraseña(usuario.Contrasena);
+            cmd.Parameters.AddWithValue("@contrasena", contraseñaEncriptada);
                 count = Convert.ToInt32(cmd.ExecuteScalar());
 
                 return count;
@@ -85,12 +86,13 @@ namespace SistemaGym.DAL
         {
             using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] bytes = Encoding.UTF8.GetBytes(contraseña);
-                byte[] hash = sha256.ComputeHash(bytes);
+                ASCIIEncoding enconding = new ASCIIEncoding();
+                byte[] hash = null;
                 StringBuilder builder = new StringBuilder();
+                hash = sha256.ComputeHash(enconding.GetBytes(contraseña));
                 for (int i = 0; i < hash.Length; i++)
                 {
-                    builder.Append(hash[i].ToString("x2"));
+                    builder.AppendFormat("{0:x2}", hash[i]);
                 }
                 return builder.ToString();
             }
