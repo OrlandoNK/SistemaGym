@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,30 @@ namespace SistemaGym.DAL
                 return count;
         }
         //insertar usuario
+        /* public static void InsertarUsuario(UsuarioEntity usuario)
+         {
+             ConexionDAL instancia = Instancia();
+             SqlConnection Conexion = instancia.Conexion();
+
+             Conexion.Open();
+             string insertar = "Insert into Usuarios(IDEmpleado, IDRol, Nombre, Apellido, Sexo, Correo, Direccion, FechaRegistro," +
+                 " NombreUsuario, Contrasena, Estatus)" +
+                 " values(@idempleado, @idrol, @nombre, @apellido, @sexo, @correo, @direccion, @fecharegistro, @nombreusuario, @contrasena, @estatus)";
+             SqlCommand cmd = new SqlCommand(insertar, Conexion);
+             cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
+             cmd.Parameters.AddWithValue("@idempleado", usuario.IDEmpleado);
+             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
+             cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
+             cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);
+             cmd.Parameters.AddWithValue("@correo", usuario.Correo);
+             cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
+             cmd.Parameters.AddWithValue("@FechaRegistro", usuario.FechaRegistro);
+             cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
+             cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
+             cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
+             cmd.ExecuteNonQuery();
+         }
+        */
         public static void InsertarUsuario(UsuarioEntity usuario)
         {
             ConexionDAL instancia = Instancia();
@@ -47,11 +72,29 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
             cmd.Parameters.AddWithValue("@FechaRegistro", usuario.FechaRegistro);
             cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
-            cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
+
+            // Encriptar la contraseña antes de asignarla al parámetro @contrasena
+            string contraseñaEncriptada = EncriptarContraseña(usuario.Contrasena);
+            cmd.Parameters.AddWithValue("@contrasena", contraseñaEncriptada);
+
             cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
             cmd.ExecuteNonQuery();
         }
 
+        private static string EncriptarContraseña(string contraseña)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(contraseña);
+                byte[] hash = sha256.ComputeHash(bytes);
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hash.Length; i++)
+                {
+                    builder.Append(hash[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
         public string GetNameFromUser(string usuario, string contraseña)
         {
             string? UserName = string.Empty;
