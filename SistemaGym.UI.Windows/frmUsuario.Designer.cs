@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtDireccion = new TextBox();
             txtContrasena = new TextBox();
             txtApellido = new TextBox();
@@ -65,6 +65,9 @@
             groupBox1 = new GroupBox();
             panel4 = new Panel();
             panel3 = new Panel();
+            groupBox4 = new GroupBox();
+            chNO = new CheckBox();
+            chSI = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -74,21 +77,22 @@
             groupBox1.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
+            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // txtDireccion
             // 
             txtDireccion.Enabled = false;
-            txtDireccion.Location = new Point(14, 158);
+            txtDireccion.Location = new Point(405, 49);
             txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
             txtDireccion.ReadOnly = true;
-            txtDireccion.Size = new Size(237, 25);
+            txtDireccion.Size = new Size(117, 25);
             txtDireccion.TabIndex = 110;
             // 
             // txtContrasena
             // 
-            txtContrasena.Location = new Point(141, 49);
+            txtContrasena.Location = new Point(138, 63);
             txtContrasena.Multiline = true;
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Size = new Size(117, 23);
@@ -98,7 +102,7 @@
             // txtApellido
             // 
             txtApellido.Enabled = false;
-            txtApellido.Location = new Point(137, 105);
+            txtApellido.Location = new Point(282, 49);
             txtApellido.Multiline = true;
             txtApellido.Name = "txtApellido";
             txtApellido.ReadOnly = true;
@@ -108,7 +112,7 @@
             // txtNombre
             // 
             txtNombre.Enabled = false;
-            txtNombre.Location = new Point(14, 105);
+            txtNombre.Location = new Point(159, 49);
             txtNombre.Multiline = true;
             txtNombre.Name = "txtNombre";
             txtNombre.ReadOnly = true;
@@ -117,7 +121,7 @@
             // 
             // txtSexo
             // 
-            txtSexo.Location = new Point(14, 211);
+            txtSexo.Location = new Point(282, 102);
             txtSexo.Multiline = true;
             txtSexo.Name = "txtSexo";
             txtSexo.Size = new Size(117, 25);
@@ -125,7 +129,7 @@
             // 
             // txtNombreUsuario
             // 
-            txtNombreUsuario.Location = new Point(18, 49);
+            txtNombreUsuario.Location = new Point(15, 63);
             txtNombreUsuario.Multiline = true;
             txtNombreUsuario.Name = "txtNombreUsuario";
             txtNombreUsuario.Size = new Size(117, 23);
@@ -133,7 +137,7 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(134, 211);
+            txtCorreo.Location = new Point(405, 102);
             txtCorreo.Multiline = true;
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(117, 25);
@@ -142,7 +146,7 @@
             // txtIDUsuario
             // 
             txtIDUsuario.Enabled = false;
-            txtIDUsuario.Location = new Point(18, 55);
+            txtIDUsuario.Location = new Point(15, 63);
             txtIDUsuario.Multiline = true;
             txtIDUsuario.Name = "txtIDUsuario";
             txtIDUsuario.ReadOnly = true;
@@ -152,7 +156,7 @@
             // label10
             // 
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(141, 24);
+            label10.Location = new Point(138, 38);
             label10.Name = "label10";
             label10.Size = new Size(117, 20);
             label10.TabIndex = 96;
@@ -162,7 +166,7 @@
             // label9
             // 
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(18, 24);
+            label9.Location = new Point(15, 38);
             label9.Name = "label9";
             label9.Size = new Size(117, 22);
             label9.TabIndex = 95;
@@ -172,9 +176,9 @@
             // label7
             // 
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(14, 133);
+            label7.Location = new Point(405, 24);
             label7.Name = "label7";
-            label7.Size = new Size(237, 22);
+            label7.Size = new Size(117, 22);
             label7.TabIndex = 93;
             label7.Text = "Direccion";
             label7.TextAlign = ContentAlignment.MiddleLeft;
@@ -182,7 +186,7 @@
             // label6
             // 
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(134, 186);
+            label6.Location = new Point(405, 77);
             label6.Name = "label6";
             label6.Size = new Size(117, 22);
             label6.TabIndex = 92;
@@ -192,7 +196,7 @@
             // label5
             // 
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(14, 186);
+            label5.Location = new Point(282, 77);
             label5.Name = "label5";
             label5.Size = new Size(117, 22);
             label5.TabIndex = 91;
@@ -202,7 +206,7 @@
             // label4
             // 
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(137, 80);
+            label4.Location = new Point(282, 24);
             label4.Name = "label4";
             label4.Size = new Size(117, 22);
             label4.TabIndex = 90;
@@ -212,7 +216,7 @@
             // label3
             // 
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(14, 80);
+            label3.Location = new Point(159, 24);
             label3.Name = "label3";
             label3.Size = new Size(117, 22);
             label3.TabIndex = 89;
@@ -222,7 +226,7 @@
             // label2
             // 
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(141, 30);
+            label2.Location = new Point(138, 38);
             label2.Name = "label2";
             label2.Size = new Size(117, 22);
             label2.TabIndex = 88;
@@ -232,7 +236,7 @@
             // label1
             // 
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(18, 30);
+            label1.Location = new Point(15, 38);
             label1.Name = "label1";
             label1.Size = new Size(117, 22);
             label1.TabIndex = 87;
@@ -268,7 +272,7 @@
             // cbRol
             // 
             cbRol.FormattingEnabled = true;
-            cbRol.Location = new Point(141, 55);
+            cbRol.Location = new Point(138, 63);
             cbRol.Name = "cbRol";
             cbRol.Size = new Size(117, 23);
             cbRol.TabIndex = 116;
@@ -287,7 +291,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(489, 61);
+            panel1.Size = new Size(844, 61);
             panel1.TabIndex = 119;
             // 
             // label8
@@ -316,7 +320,7 @@
             btnclose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnclose.Cursor = Cursors.Hand;
             btnclose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnclose.Location = new Point(444, 13);
+            btnclose.Location = new Point(799, 13);
             btnclose.Name = "btnclose";
             btnclose.Size = new Size(32, 32);
             btnclose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -331,7 +335,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 61);
             panel2.Name = "panel2";
-            panel2.Size = new Size(489, 33);
+            panel2.Size = new Size(844, 33);
             panel2.TabIndex = 120;
             // 
             // groupBox3
@@ -341,9 +345,9 @@
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(label9);
             groupBox3.ForeColor = Color.Black;
-            groupBox3.Location = new Point(6, 372);
+            groupBox3.Location = new Point(365, 256);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(274, 88);
+            groupBox3.Size = new Size(271, 125);
             groupBox3.TabIndex = 117;
             groupBox3.TabStop = false;
             groupBox3.Text = "Datos de Acceso de Usuario";
@@ -364,9 +368,9 @@
             groupBox2.Controls.Add(txtDireccion);
             groupBox2.Controls.Add(label7);
             groupBox2.ForeColor = Color.Black;
-            groupBox2.Location = new Point(6, 114);
+            groupBox2.Location = new Point(6, 90);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(274, 252);
+            groupBox2.Size = new Size(630, 144);
             groupBox2.TabIndex = 117;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Personales";
@@ -376,7 +380,7 @@
             label11.ForeColor = Color.Black;
             label11.Location = new Point(14, 24);
             label11.Name = "label11";
-            label11.Size = new Size(95, 22);
+            label11.Size = new Size(139, 22);
             label11.TabIndex = 117;
             label11.Text = "ID Empleado";
             label11.TextAlign = ContentAlignment.MiddleLeft;
@@ -386,7 +390,7 @@
             btnSearch.BorderColor = Color.DarkGoldenrod;
             btnSearch.BorderThickness = 1;
             btnSearch.Cursor = Cursors.Hand;
-            btnSearch.CustomizableEdges = customizableEdges3;
+            btnSearch.CustomizableEdges = customizableEdges1;
             btnSearch.DisabledState.BorderColor = Color.DarkGray;
             btnSearch.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSearch.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -395,9 +399,9 @@
             btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSearch.ForeColor = Color.Black;
             btnSearch.Image = Properties.Resources._BuscarEnFacturacionMembresiaDatos;
-            btnSearch.Location = new Point(115, 30);
+            btnSearch.Location = new Point(14, 83);
             btnSearch.Name = "btnSearch";
-            btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnSearch.Size = new Size(139, 44);
             btnSearch.TabIndex = 0;
             btnSearch.Text = "Buscar Empleado";
@@ -410,7 +414,7 @@
             TxbIDEmpleado.Multiline = true;
             TxbIDEmpleado.Name = "TxbIDEmpleado";
             TxbIDEmpleado.ReadOnly = true;
-            TxbIDEmpleado.Size = new Size(95, 25);
+            TxbIDEmpleado.Size = new Size(139, 25);
             TxbIDEmpleado.TabIndex = 118;
             // 
             // groupBox1
@@ -420,9 +424,9 @@
             groupBox1.Controls.Add(txtIDUsuario);
             groupBox1.Controls.Add(cbRol);
             groupBox1.ForeColor = Color.Black;
-            groupBox1.Location = new Point(6, 11);
+            groupBox1.Location = new Point(6, 256);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(274, 97);
+            groupBox1.Size = new Size(271, 125);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Identificacioon y Privilegios";
@@ -443,20 +447,56 @@
             // 
             panel3.BackColor = Color.WhiteSmoke;
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(groupBox4);
             panel3.Controls.Add(groupBox1);
             panel3.Controls.Add(groupBox3);
             panel3.Controls.Add(groupBox2);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(200, 94);
             panel3.Name = "panel3";
-            panel3.Size = new Size(289, 472);
+            panel3.Size = new Size(644, 472);
             panel3.TabIndex = 123;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(chNO);
+            groupBox4.Controls.Add(chSI);
+            groupBox4.Location = new Point(216, 10);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(211, 79);
+            groupBox4.TabIndex = 119;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "¿Eres Empleado?";
+            // 
+            // chNO
+            // 
+            chNO.AutoSize = true;
+            chNO.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            chNO.Location = new Point(102, 33);
+            chNO.Name = "chNO";
+            chNO.Size = new Size(55, 25);
+            chNO.TabIndex = 1;
+            chNO.Text = "NO";
+            chNO.UseVisualStyleBackColor = true;
+            chNO.CheckedChanged += chNO_CheckedChanged;
+            // 
+            // chSI
+            // 
+            chSI.AutoSize = true;
+            chSI.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            chSI.Location = new Point(53, 33);
+            chSI.Name = "chSI";
+            chSI.Size = new Size(43, 25);
+            chSI.TabIndex = 0;
+            chSI.Text = "SI";
+            chSI.UseVisualStyleBackColor = true;
+            chSI.CheckedChanged += chSI_CheckedChanged;
             // 
             // frmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(489, 566);
+            ClientSize = new Size(844, 566);
             Controls.Add(panel3);
             Controls.Add(panel4);
             Controls.Add(panel2);
@@ -478,6 +518,8 @@
             groupBox1.PerformLayout();
             panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -517,5 +559,8 @@
         private TextBox TxbIDEmpleado;
         private Panel panel4;
         private Panel panel3;
+        private GroupBox groupBox4;
+        private CheckBox chNO;
+        private CheckBox chSI;
     }
 }

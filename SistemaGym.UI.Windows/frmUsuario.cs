@@ -24,7 +24,9 @@ namespace SistemaGym.UI.Windows
         private void frmUsuario_Load(object sender, EventArgs e)
         {
             InicializarControles();
+
         }
+
         private void CargarRol()
         {
             cbRol.ValueMember = "IDRol";
@@ -158,6 +160,40 @@ namespace SistemaGym.UI.Windows
                 {
                     MessageBox.Show("Empleado No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void chNO_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chNO.Checked)
+            {
+                txtNombre.Enabled = true;
+                txtNombre.ReadOnly = false;
+
+                txtApellido.Enabled = true;
+                txtApellido.ReadOnly = false;
+
+                txtDireccion.Enabled = true;
+                txtDireccion.ReadOnly = false;
+
+                btnSearch.Enabled = false;
+            }
+        }
+
+        private void chSI_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chSI.Checked)
+            {
+                txtNombre.Enabled = false;
+                txtNombre.ReadOnly = true;
+
+                txtApellido.Enabled = false;
+                txtApellido.ReadOnly = true;
+
+                txtDireccion.Enabled = false;
+                txtDireccion.ReadOnly = true;
+
+                btnSearch.Enabled = true;
             }
         }
     }
