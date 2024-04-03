@@ -163,26 +163,9 @@ namespace SistemaGym.UI.Windows
             }
         }
 
-        private void chNO_CheckedChanged(object sender, EventArgs e)
+        private void rbtnSI_CheckedChanged(object sender, EventArgs e)
         {
-            if (chNO.Checked)
-            {
-                txtNombre.Enabled = true;
-                txtNombre.ReadOnly = false;
-
-                txtApellido.Enabled = true;
-                txtApellido.ReadOnly = false;
-
-                txtDireccion.Enabled = true;
-                txtDireccion.ReadOnly = false;
-
-                btnSearch.Enabled = false;
-            }
-        }
-
-        private void chSI_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chSI.Checked)
+            if (rbtnSI.Checked)
             {
                 txtNombre.Enabled = false;
                 txtNombre.ReadOnly = true;
@@ -194,6 +177,23 @@ namespace SistemaGym.UI.Windows
                 txtDireccion.ReadOnly = true;
 
                 btnSearch.Enabled = true;
+            }
+        }
+
+        private void rbtnNO_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnNO.Checked)
+            {
+                txtNombre.Enabled = true;
+                txtNombre.ReadOnly = false;
+
+                txtApellido.Enabled = true;
+                txtApellido.ReadOnly = false;
+
+                txtDireccion.Enabled = true;
+                txtDireccion.ReadOnly = false;
+
+                btnSearch.Enabled = false;
             }
         }
     }

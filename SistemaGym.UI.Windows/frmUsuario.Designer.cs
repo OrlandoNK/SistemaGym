@@ -66,8 +66,8 @@
             panel4 = new Panel();
             panel3 = new Panel();
             groupBox4 = new GroupBox();
-            chNO = new CheckBox();
-            chSI = new CheckBox();
+            rbtnNO = new RadioButton();
+            rbtnSI = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -459,8 +459,8 @@
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(chNO);
-            groupBox4.Controls.Add(chSI);
+            groupBox4.Controls.Add(rbtnNO);
+            groupBox4.Controls.Add(rbtnSI);
             groupBox4.Location = new Point(216, 10);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(211, 79);
@@ -468,29 +468,31 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "¿Eres Empleado?";
             // 
-            // chNO
+            // rbtnNO
             // 
-            chNO.AutoSize = true;
-            chNO.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            chNO.Location = new Point(102, 33);
-            chNO.Name = "chNO";
-            chNO.Size = new Size(55, 25);
-            chNO.TabIndex = 1;
-            chNO.Text = "NO";
-            chNO.UseVisualStyleBackColor = true;
-            chNO.CheckedChanged += chNO_CheckedChanged;
+            rbtnNO.AutoSize = true;
+            rbtnNO.Font = new Font("Microsoft YaHei UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtnNO.Location = new Point(103, 36);
+            rbtnNO.Name = "rbtnNO";
+            rbtnNO.Size = new Size(51, 24);
+            rbtnNO.TabIndex = 1;
+            rbtnNO.TabStop = true;
+            rbtnNO.Text = "NO";
+            rbtnNO.UseVisualStyleBackColor = true;
+            rbtnNO.CheckedChanged += rbtnNO_CheckedChanged;
             // 
-            // chSI
+            // rbtnSI
             // 
-            chSI.AutoSize = true;
-            chSI.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            chSI.Location = new Point(53, 33);
-            chSI.Name = "chSI";
-            chSI.Size = new Size(43, 25);
-            chSI.TabIndex = 0;
-            chSI.Text = "SI";
-            chSI.UseVisualStyleBackColor = true;
-            chSI.CheckedChanged += chSI_CheckedChanged;
+            rbtnSI.AutoSize = true;
+            rbtnSI.Font = new Font("Microsoft YaHei UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtnSI.Location = new Point(57, 36);
+            rbtnSI.Name = "rbtnSI";
+            rbtnSI.Size = new Size(40, 24);
+            rbtnSI.TabIndex = 0;
+            rbtnSI.TabStop = true;
+            rbtnSI.Text = "SI";
+            rbtnSI.UseVisualStyleBackColor = true;
+            rbtnSI.CheckedChanged += rbtnSI_CheckedChanged;
             // 
             // frmUsuario
             // 
@@ -560,7 +562,7 @@
         private Panel panel4;
         private Panel panel3;
         private GroupBox groupBox4;
-        private CheckBox chNO;
-        private CheckBox chSI;
+        private RadioButton rbtnNO;
+        private RadioButton rbtnSI;
     }
 }
