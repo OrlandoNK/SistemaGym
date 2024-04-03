@@ -62,7 +62,8 @@ namespace SistemaGym.DAL
                     using (SqlCommand cmd = new SqlCommand(consultaRol, Conexion))
                     {
                         cmd.Parameters.AddWithValue("@Usuario", usuario);
-                        cmd.Parameters.AddWithValue("@Contrasena", contraseña);
+                        string contraseñaEncriptada = UsuarioDAL.EncriptarContraseña(contraseña);
+                        cmd.Parameters.AddWithValue("@Contrasena",contraseñaEncriptada);
 
                         using (SqlDataReader lector = cmd.ExecuteReader())
                         {
