@@ -40,6 +40,10 @@ namespace SistemaGym.BLL
         {
                 UsuarioDAL.InsertarUsuario(usuario);     
         }
+        public static void GuardarNoEmpleado(UsuarioEntity usuario)
+        {
+            UsuarioDAL.InsertarUsuarioNOEmpleado(usuario);
+        }
 
         public static void Update(UsuarioEntity usuario)
         {

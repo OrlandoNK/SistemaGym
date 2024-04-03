@@ -51,6 +51,28 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
             cmd.ExecuteNonQuery();
         }
+        public static void InsertarUsuarioNOEmpleado(UsuarioEntity usuario)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            string insertar = "Insert into Usuarios(IDRol, Nombre, Apellido, Sexo, Correo, Direccion, FechaRegistro," +
+                " NombreUsuario, Contrasena, Estatus)" +
+                " values(@idrol, @nombre, @apellido, @sexo, @correo, @direccion, @fecharegistro, @nombreusuario, @contrasena, @estatus)";
+            SqlCommand cmd = new SqlCommand(insertar, Conexion);
+            cmd.Parameters.AddWithValue("@idrol", usuario.IDRol);
+            cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
+            cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
+            cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);
+            cmd.Parameters.AddWithValue("@correo", usuario.Correo);
+            cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
+            cmd.Parameters.AddWithValue("@FechaRegistro", usuario.FechaRegistro);
+            cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
+            cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
+            cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
+            cmd.ExecuteNonQuery();
+        }
 
         public string GetNameFromUser(string usuario, string contraseña)
         {
