@@ -553,6 +553,26 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boton_agregar_nuevo_empleado__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("boton-agregar-nuevo-empleado-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boton_buscar_empleado__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("boton-buscar-empleado-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap box_1942650 {
             get {
                 object obj = ResourceManager.GetObject("box_1942650", resourceCulture);

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtDireccion = new TextBox();
@@ -59,6 +61,7 @@
             panel2 = new Panel();
             groupBox3 = new GroupBox();
             groupBox2 = new GroupBox();
+            btnNuevoEmpleado = new Guna.UI2.WinForms.Guna2Button();
             label11 = new Label();
             btnSearch = new Guna.UI2.WinForms.Guna2Button();
             TxbIDEmpleado = new TextBox();
@@ -356,6 +359,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(btnNuevoEmpleado);
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(btnSearch);
             groupBox2.Controls.Add(TxbIDEmpleado);
@@ -376,6 +380,28 @@
             groupBox2.TabIndex = 117;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Personales";
+            // 
+            // btnNuevoEmpleado
+            // 
+            btnNuevoEmpleado.BorderColor = Color.DarkGoldenrod;
+            btnNuevoEmpleado.BorderThickness = 1;
+            btnNuevoEmpleado.Cursor = Cursors.Hand;
+            btnNuevoEmpleado.CustomizableEdges = customizableEdges1;
+            btnNuevoEmpleado.DisabledState.BorderColor = Color.DarkGray;
+            btnNuevoEmpleado.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnNuevoEmpleado.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnNuevoEmpleado.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnNuevoEmpleado.FillColor = Color.Transparent;
+            btnNuevoEmpleado.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNuevoEmpleado.ForeColor = Color.Black;
+            btnNuevoEmpleado.Image = Properties.Resources.boton_agregar_nuevo_empleado__x32_;
+            btnNuevoEmpleado.ImageSize = new Size(25, 25);
+            btnNuevoEmpleado.Location = new Point(149, 80);
+            btnNuevoEmpleado.Name = "btnNuevoEmpleado";
+            btnNuevoEmpleado.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnNuevoEmpleado.Size = new Size(51, 48);
+            btnNuevoEmpleado.TabIndex = 119;
+            btnNuevoEmpleado.Click += btnNuevoEmpleado_Click;
             // 
             // label11
             // 
@@ -400,13 +426,13 @@
             btnSearch.FillColor = Color.Transparent;
             btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSearch.ForeColor = Color.Black;
-            btnSearch.Image = Properties.Resources._BuscarEnFacturacionMembresiaDatos;
-            btnSearch.Location = new Point(61, 83);
+            btnSearch.Image = Properties.Resources.boton_buscar_empleado__x32_;
+            btnSearch.ImageSize = new Size(30, 30);
+            btnSearch.Location = new Point(61, 80);
             btnSearch.Name = "btnSearch";
             btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnSearch.Size = new Size(139, 44);
+            btnSearch.Size = new Size(82, 48);
             btnSearch.TabIndex = 0;
-            btnSearch.Text = "Buscar Empleado";
             btnSearch.Click += btnSearch_Click;
             // 
             // TxbIDEmpleado
@@ -586,5 +612,6 @@
         private RadioButton rbtnSI;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Panel panel5;
+        private Guna.UI2.WinForms.Guna2Button btnNuevoEmpleado;
     }
 }

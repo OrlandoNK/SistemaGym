@@ -217,6 +217,7 @@ namespace SistemaGym.UI.Windows
                 txtDireccion.ReadOnly = true;
 
                 btnSearch.Enabled = true;
+                btnNuevoEmpleado.Enabled = true;
             }
         }
 
@@ -234,7 +235,14 @@ namespace SistemaGym.UI.Windows
                 txtDireccion.ReadOnly = false;
 
                 btnSearch.Enabled = false;
+                btnNuevoEmpleado.Enabled = false;
             }
+        }
+
+        private void btnNuevoEmpleado_Click(object sender, EventArgs e)
+        {
+            registrarEmpleados nuevoEmpleado = new registrarEmpleados();
+            nuevoEmpleado.Show();
         }
     }
 
