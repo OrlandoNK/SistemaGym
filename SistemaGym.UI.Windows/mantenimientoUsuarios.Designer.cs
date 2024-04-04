@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             topPanel = new Panel();
             btnclose = new PictureBox();
             label8 = new Label();
@@ -105,7 +105,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.DarkGoldenrod;
-            label8.Location = new Point(76, 20);
+            label8.Location = new Point(62, 20);
             label8.Name = "label8";
             label8.Size = new Size(83, 24);
             label8.TabIndex = 4;
@@ -113,10 +113,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.usuarios__mainScreen;
+            pictureBox1.Image = Properties.Resources.logo_frmUsuarios__x32_;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(67, 56);
+            pictureBox1.Size = new Size(53, 56);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -150,7 +150,7 @@
             btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
             btnDelete.Cursor = Cursors.Hand;
-            btnDelete.CustomizableEdges = customizableEdges11;
+            btnDelete.CustomizableEdges = customizableEdges1;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -166,7 +166,7 @@
             btnDelete.Location = new Point(-1, 286);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedColor = Color.Transparent;
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnDelete.Size = new Size(208, 48);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
@@ -177,7 +177,7 @@
             btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.CustomizableEdges = customizableEdges13;
+            btnEdit.CustomizableEdges = customizableEdges3;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -193,7 +193,7 @@
             btnEdit.Location = new Point(-1, 232);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedColor = Color.Transparent;
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnEdit.Size = new Size(208, 48);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Editar";
@@ -204,7 +204,7 @@
             btnRefresh.BorderColor = Color.DarkGoldenrod;
             btnRefresh.BorderThickness = 1;
             btnRefresh.Cursor = Cursors.Hand;
-            btnRefresh.CustomizableEdges = customizableEdges15;
+            btnRefresh.CustomizableEdges = customizableEdges5;
             btnRefresh.DisabledState.BorderColor = Color.DarkGray;
             btnRefresh.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -219,7 +219,7 @@
             btnRefresh.Location = new Point(-1, 178);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.PressedColor = Color.Transparent;
-            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnRefresh.Size = new Size(208, 48);
             btnRefresh.TabIndex = 1;
             // 
@@ -228,7 +228,7 @@
             btnNew.BorderColor = Color.DarkGoldenrod;
             btnNew.BorderThickness = 1;
             btnNew.Cursor = Cursors.Hand;
-            btnNew.CustomizableEdges = customizableEdges17;
+            btnNew.CustomizableEdges = customizableEdges7;
             btnNew.DisabledState.BorderColor = Color.DarkGray;
             btnNew.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNew.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -244,7 +244,7 @@
             btnNew.Location = new Point(-1, 124);
             btnNew.Name = "btnNew";
             btnNew.PressedColor = Color.Transparent;
-            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnNew.Size = new Size(208, 48);
             btnNew.TabIndex = 0;
             btnNew.Text = "Nuevo";
@@ -264,7 +264,7 @@
             // TxbBuscar
             // 
             TxbBuscar.BorderRadius = 20;
-            TxbBuscar.CustomizableEdges = customizableEdges19;
+            TxbBuscar.CustomizableEdges = customizableEdges9;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -280,7 +280,7 @@
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             TxbBuscar.Size = new Size(645, 39);
             TxbBuscar.TabIndex = 0;
             TxbBuscar.TextChanged += TxbBuscar_TextChanged;
@@ -381,9 +381,9 @@
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
-            dataGridViewCellStyle2.Format = "g";
-            dataGridViewCellStyle2.NullValue = null;
-            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "g";
+            dataGridViewCellStyle1.NullValue = null;
+            FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
             FechaRegistro.ReadOnly = true;

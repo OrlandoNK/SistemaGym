@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtDireccion = new TextBox();
             txtContrasena = new TextBox();
             txtApellido = new TextBox();
@@ -304,7 +304,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.DarkGoldenrod;
-            label8.Location = new Point(76, 17);
+            label8.Location = new Point(63, 17);
             label8.Name = "label8";
             label8.Size = new Size(83, 24);
             label8.TabIndex = 2;
@@ -312,10 +312,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.usuarios__mainScreen;
+            pictureBox1.Image = Properties.Resources.logo_frmUsuarios__x32_;
             pictureBox1.Location = new Point(3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(67, 50);
+            pictureBox1.Size = new Size(54, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -386,7 +386,7 @@
             btnNuevoEmpleado.BorderColor = Color.DarkGoldenrod;
             btnNuevoEmpleado.BorderThickness = 1;
             btnNuevoEmpleado.Cursor = Cursors.Hand;
-            btnNuevoEmpleado.CustomizableEdges = customizableEdges1;
+            btnNuevoEmpleado.CustomizableEdges = customizableEdges5;
             btnNuevoEmpleado.DisabledState.BorderColor = Color.DarkGray;
             btnNuevoEmpleado.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNuevoEmpleado.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -398,7 +398,7 @@
             btnNuevoEmpleado.ImageSize = new Size(25, 25);
             btnNuevoEmpleado.Location = new Point(149, 80);
             btnNuevoEmpleado.Name = "btnNuevoEmpleado";
-            btnNuevoEmpleado.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnNuevoEmpleado.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnNuevoEmpleado.Size = new Size(51, 48);
             btnNuevoEmpleado.TabIndex = 119;
             btnNuevoEmpleado.Click += btnNuevoEmpleado_Click;
@@ -418,7 +418,7 @@
             btnSearch.BorderColor = Color.DarkGoldenrod;
             btnSearch.BorderThickness = 1;
             btnSearch.Cursor = Cursors.Hand;
-            btnSearch.CustomizableEdges = customizableEdges3;
+            btnSearch.CustomizableEdges = customizableEdges7;
             btnSearch.DisabledState.BorderColor = Color.DarkGray;
             btnSearch.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSearch.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -430,7 +430,7 @@
             btnSearch.ImageSize = new Size(30, 30);
             btnSearch.Location = new Point(61, 80);
             btnSearch.Name = "btnSearch";
-            btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnSearch.Size = new Size(82, 48);
             btnSearch.TabIndex = 0;
             btnSearch.Click += btnSearch_Click;

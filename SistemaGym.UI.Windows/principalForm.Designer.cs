@@ -54,6 +54,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -66,8 +68,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnAdministracion = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             lblRolUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -90,13 +90,13 @@
             btnFacturaMembresia = new Guna.UI2.WinForms.Guna2Button();
             btnFacturacion = new Guna.UI2.WinForms.Guna2Button();
             subPanelMantenimientos = new Panel();
+            btnAreasGYM = new Guna.UI2.WinForms.Guna2Button();
             btnProductos = new Guna.UI2.WinForms.Guna2Button();
             btnCategorias = new Guna.UI2.WinForms.Guna2Button();
             btnClientes = new Guna.UI2.WinForms.Guna2Button();
             btnProveedores = new Guna.UI2.WinForms.Guna2Button();
             btnMembresiasMantenimiento = new Guna.UI2.WinForms.Guna2Button();
             btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
-            btnAreasGYM = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panelDesplegable.SuspendLayout();
@@ -324,7 +324,7 @@
             btnUsuarios.ForeColor = Color.White;
             btnUsuarios.HoverState.FillColor = Color.Black;
             btnUsuarios.HoverState.ForeColor = Color.White;
-            btnUsuarios.Image = Properties.Resources.users_mante__x32_;
+            btnUsuarios.Image = Properties.Resources.logo_frmUsuarios__x32_;
             btnUsuarios.ImageAlign = HorizontalAlignment.Left;
             btnUsuarios.ImageSize = new Size(25, 25);
             btnUsuarios.Location = new Point(0, 37);
@@ -534,6 +534,34 @@
             subPanelMantenimientos.Size = new Size(237, 225);
             subPanelMantenimientos.TabIndex = 8;
             // 
+            // btnAreasGYM
+            // 
+            btnAreasGYM.BackColor = Color.Transparent;
+            btnAreasGYM.Cursor = Cursors.Hand;
+            btnAreasGYM.CustomizableEdges = customizableEdges25;
+            btnAreasGYM.DisabledState.BorderColor = Color.DarkGray;
+            btnAreasGYM.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAreasGYM.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAreasGYM.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAreasGYM.Dock = DockStyle.Top;
+            btnAreasGYM.FillColor = Color.FromArgb(35, 32, 39);
+            btnAreasGYM.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAreasGYM.ForeColor = Color.White;
+            btnAreasGYM.HoverState.FillColor = Color.Black;
+            btnAreasGYM.HoverState.ForeColor = Color.White;
+            btnAreasGYM.Image = Properties.Resources.area_GYM_empresa;
+            btnAreasGYM.ImageAlign = HorizontalAlignment.Left;
+            btnAreasGYM.ImageSize = new Size(25, 25);
+            btnAreasGYM.Location = new Point(0, 185);
+            btnAreasGYM.Name = "btnAreasGYM";
+            btnAreasGYM.PressedColor = Color.Transparent;
+            btnAreasGYM.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnAreasGYM.Size = new Size(237, 37);
+            btnAreasGYM.TabIndex = 12;
+            btnAreasGYM.Text = "Areas Empresa";
+            btnAreasGYM.TextAlign = HorizontalAlignment.Right;
+            btnAreasGYM.Click += btnAreasGYM_Click;
+            // 
             // btnProductos
             // 
             btnProductos.BackColor = Color.Transparent;
@@ -700,34 +728,6 @@
             btnMantenimientos.Text = "Mantenimientos";
             btnMantenimientos.TextAlign = HorizontalAlignment.Right;
             btnMantenimientos.Click += btnMantenimientos_Click;
-            // 
-            // btnAreasGYM
-            // 
-            btnAreasGYM.BackColor = Color.Transparent;
-            btnAreasGYM.Cursor = Cursors.Hand;
-            btnAreasGYM.CustomizableEdges = customizableEdges25;
-            btnAreasGYM.DisabledState.BorderColor = Color.DarkGray;
-            btnAreasGYM.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAreasGYM.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAreasGYM.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAreasGYM.Dock = DockStyle.Top;
-            btnAreasGYM.FillColor = Color.FromArgb(35, 32, 39);
-            btnAreasGYM.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAreasGYM.ForeColor = Color.White;
-            btnAreasGYM.HoverState.FillColor = Color.Black;
-            btnAreasGYM.HoverState.ForeColor = Color.White;
-            btnAreasGYM.Image = Properties.Resources.area_GYM_empresa;
-            btnAreasGYM.ImageAlign = HorizontalAlignment.Left;
-            btnAreasGYM.ImageSize = new Size(25, 25);
-            btnAreasGYM.Location = new Point(0, 185);
-            btnAreasGYM.Name = "btnAreasGYM";
-            btnAreasGYM.PressedColor = Color.Transparent;
-            btnAreasGYM.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            btnAreasGYM.Size = new Size(237, 37);
-            btnAreasGYM.TabIndex = 12;
-            btnAreasGYM.Text = "Areas Empresa";
-            btnAreasGYM.TextAlign = HorizontalAlignment.Right;
-            btnAreasGYM.Click += btnAreasGYM_Click;
             // 
             // principalForm
             // 
