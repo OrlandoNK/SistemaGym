@@ -89,7 +89,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.Goldenrod;
-            label1.Location = new Point(64, 20);
+            label1.Location = new Point(56, 20);
             label1.Name = "label1";
             label1.Size = new Size(105, 24);
             label1.TabIndex = 2;
@@ -100,7 +100,7 @@
             pictureBox1.Image = Properties.Resources.businessman_mante__x32_;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(55, 59);
+            pictureBox1.Size = new Size(47, 59);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
