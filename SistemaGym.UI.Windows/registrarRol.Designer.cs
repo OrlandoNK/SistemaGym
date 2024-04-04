@@ -42,17 +42,22 @@
             label3 = new Label();
             txtNombre = new TextBox();
             errorProvider = new ErrorProvider(components);
+            label8 = new Label();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -173,6 +178,27 @@
             // 
             errorProvider.ContainerControl = this;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.DarkGoldenrod;
+            label8.Location = new Point(62, 15);
+            label8.Name = "label8";
+            label8.Size = new Size(56, 24);
+            label8.TabIndex = 8;
+            label8.Text = "Roles";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.user_role__x32_;
+            pictureBox1.Location = new Point(3, 1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(53, 53);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
             // registrarRol
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -193,6 +219,7 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -209,5 +236,7 @@
         private TextBox txtNombre;
         private ErrorProvider errorProvider;
         private PictureBox btnClose;
+        private Label label8;
+        private PictureBox pictureBox1;
     }
 }

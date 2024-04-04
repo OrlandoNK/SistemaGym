@@ -53,12 +53,15 @@
             panel5 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel6 = new Panel();
+            label8 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvRol).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvRol
@@ -103,6 +106,8 @@
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -290,6 +295,27 @@
             panel6.Size = new Size(515, 363);
             panel6.TabIndex = 15;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.DarkGoldenrod;
+            label8.Location = new Point(62, 17);
+            label8.Name = "label8";
+            label8.Size = new Size(56, 24);
+            label8.TabIndex = 6;
+            label8.Text = "Roles";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.user_role__x32_;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(53, 53);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // frmRol
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -312,6 +338,7 @@
             panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -331,5 +358,7 @@
         private PictureBox btnClose;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private Guna.UI2.WinForms.Guna2Button btnNew;
+        private Label label8;
+        private PictureBox pictureBox1;
     }
 }
