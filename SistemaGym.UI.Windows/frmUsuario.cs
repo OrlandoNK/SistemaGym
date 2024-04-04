@@ -15,7 +15,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmUsuario : Form
     {
-        const string sistema = "Sistema Gym";
+        const string sistema = "Sistema Gestión Gimnasio (COMFORT GYM) dice";
         public frmUsuario()
         {
             InitializeComponent();
@@ -92,11 +92,11 @@ namespace SistemaGym.UI.Windows
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \nDetalles a continuacion:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \nDetalles a continuacion:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -131,11 +131,11 @@ namespace SistemaGym.UI.Windows
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \nDetalles a continuacion:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \nDetalles a continuacion:\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

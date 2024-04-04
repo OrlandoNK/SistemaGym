@@ -99,7 +99,11 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
             cmd.Parameters.AddWithValue("@FechaRegistro", usuario.FechaRegistro);
             cmd.Parameters.AddWithValue("@nombreusuario", usuario.NombreUsuario);
-            cmd.Parameters.AddWithValue("@contrasena", usuario.Contrasena);
+
+            // Encriptar la contraseña antes de asignarla al parámetro @contrasena
+            string contraseñaEncriptada = EncriptarContraseña(usuario.Contrasena);
+            cmd.Parameters.AddWithValue("@contrasena", contraseñaEncriptada);
+
             cmd.Parameters.AddWithValue("@estatus", usuario.Estatus);
             cmd.ExecuteNonQuery();
         }
@@ -186,7 +190,7 @@ namespace SistemaGym.DAL
 
         private static UsuarioEntity ConvertToObject(IDataReader reader)
         {
-            UsuarioEntity usuario = new UsuarioEntity(nombreUsuario:string.Empty, contrasena:string.Empty);
+            UsuarioEntity usuario = new UsuarioEntity("", "");
 
             usuario.IDUsuario = Convert.ToInt32(reader["IDUsuario"]);
             usuario.IDEmpleado = Convert.ToInt32(reader["IdEmpleado"]);
