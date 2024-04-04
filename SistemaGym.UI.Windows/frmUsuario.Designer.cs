@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtDireccion = new TextBox();
             txtContrasena = new TextBox();
             txtApellido = new TextBox();
@@ -65,10 +65,10 @@
             groupBox1 = new GroupBox();
             panel4 = new Panel();
             panel3 = new Panel();
+            panel5 = new Panel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             rbtnNO = new RadioButton();
             rbtnSI = new RadioButton();
-            panel5 = new Panel();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -392,7 +392,7 @@
             btnSearch.BorderColor = Color.DarkGoldenrod;
             btnSearch.BorderThickness = 1;
             btnSearch.Cursor = Cursors.Hand;
-            btnSearch.CustomizableEdges = customizableEdges9;
+            btnSearch.CustomizableEdges = customizableEdges3;
             btnSearch.DisabledState.BorderColor = Color.DarkGray;
             btnSearch.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSearch.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -403,7 +403,7 @@
             btnSearch.Image = Properties.Resources._BuscarEnFacturacionMembresiaDatos;
             btnSearch.Location = new Point(61, 83);
             btnSearch.Name = "btnSearch";
-            btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnSearch.Size = new Size(139, 44);
             btnSearch.TabIndex = 0;
             btnSearch.Text = "Buscar Empleado";
@@ -459,6 +459,18 @@
             panel3.Size = new Size(644, 472);
             panel3.TabIndex = 123;
             // 
+            // panel5
+            // 
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(guna2HtmlLabel1);
+            panel5.Controls.Add(rbtnNO);
+            panel5.Controls.Add(rbtnSI);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(0, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(642, 110);
+            panel5.TabIndex = 121;
+            // 
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.AutoSize = false;
@@ -467,7 +479,7 @@
             guna2HtmlLabel1.Font = new Font("Microsoft YaHei UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             guna2HtmlLabel1.Location = new Point(0, 0);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(640, 36);
+            guna2HtmlLabel1.Size = new Size(640, 56);
             guna2HtmlLabel1.TabIndex = 120;
             guna2HtmlLabel1.Text = "¿Es un Empleado?";
             guna2HtmlLabel1.TextAlignment = ContentAlignment.MiddleCenter;
@@ -479,7 +491,7 @@
             rbtnNO.FlatAppearance.MouseDownBackColor = Color.Transparent;
             rbtnNO.FlatAppearance.MouseOverBackColor = Color.Transparent;
             rbtnNO.Font = new Font("Microsoft YaHei UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtnNO.Location = new Point(350, 54);
+            rbtnNO.Location = new Point(350, 62);
             rbtnNO.Name = "rbtnNO";
             rbtnNO.Size = new Size(63, 24);
             rbtnNO.TabIndex = 1;
@@ -495,7 +507,7 @@
             rbtnSI.FlatAppearance.MouseDownBackColor = Color.Transparent;
             rbtnSI.FlatAppearance.MouseOverBackColor = Color.Transparent;
             rbtnSI.Font = new Font("Microsoft YaHei UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtnSI.Location = new Point(228, 54);
+            rbtnSI.Location = new Point(228, 62);
             rbtnSI.Name = "rbtnSI";
             rbtnSI.Size = new Size(63, 24);
             rbtnSI.TabIndex = 0;
@@ -503,18 +515,6 @@
             rbtnSI.Text = "SI";
             rbtnSI.UseVisualStyleBackColor = true;
             rbtnSI.CheckedChanged += rbtnSI_CheckedChanged;
-            // 
-            // panel5
-            // 
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(guna2HtmlLabel1);
-            panel5.Controls.Add(rbtnNO);
-            panel5.Controls.Add(rbtnSI);
-            panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(642, 110);
-            panel5.TabIndex = 121;
             // 
             // frmUsuario
             // 
