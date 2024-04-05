@@ -135,8 +135,8 @@ namespace SistemaGym.UI.Windows
             try
             {
                 int ValorMembresia = int.Parse(TxbValorMembresia.Text);
-                int FacturaCC = int.Parse(TxbFacturacionCargoCredito.Text);
-                int FacturaCD = int.Parse(TxbFacturaCargoDebito.Text);
+                int FacturaCC = int.Parse(TxbFacturaMontoCargoCredito.Text);
+                int FacturaCD = int.Parse(TxbFacturaMontoCargoDebito.Text);
 
                 TxbFacturaValor.Text = Convert.ToString(ValorMembresia + (FacturaCC + FacturaCD));
             }
@@ -264,11 +264,6 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(TxbFacturaValor, ValidaDatosFactura);
                 validacion = false;
             }
-            if (dtpFacturaFechaVencimiento.Value <= DateTime.Now)
-            {
-                errorProvider.SetError(dtpFacturaFechaVencimiento, "¡La Fecha es Incorrecta!");
-                validacion = false;
-            }
 
             return validacion;
         }
@@ -292,7 +287,7 @@ namespace SistemaGym.UI.Windows
             nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
             nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
             nuevaFacturaMembresia.FechaEmision = DateTime.Now;
-            nuevaFacturaMembresia.FechaVencimiento = Convert.ToDateTime(dtpFacturaFechaVencimiento.Value.ToShortDateString());
+            nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
             if (chkbxEstatus.Checked)
             {
                 nuevaFacturaMembresia.Estatus = "Pagado";
@@ -344,26 +339,26 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(TxbValorMembresia, ObligatorioParaFacturar);
                 facturarValidar = false;
             }
-            if (string.IsNullOrEmpty(TxbFacturacionCargoCredito.Text))
+            if (string.IsNullOrEmpty(TxbFacturaMontoCargoCredito.Text))
             {
-                errorProvider.SetError(TxbFacturacionCargoCredito, ObligatorioParaFacturar);
+                errorProvider.SetError(TxbFacturaMontoCargoCredito, ObligatorioParaFacturar);
                 facturarValidar = false;
             }
             int CargoCredito;
-            if (!int.TryParse(TxbFacturacionCargoCredito.Text, out CargoCredito))
+            if (!int.TryParse(TxbFacturaMontoCargoCredito.Text, out CargoCredito))
             {
-                errorProvider.SetError(TxbFacturacionCargoCredito, ObligatorioParaFacturar);
+                errorProvider.SetError(TxbFacturaMontoCargoCredito, ObligatorioParaFacturar);
                 facturarValidar = false;
             }
-            if (string.IsNullOrEmpty(TxbFacturaCargoDebito.Text))
+            if (string.IsNullOrEmpty(TxbFacturaMontoCargoDebito.Text))
             {
-                errorProvider.SetError(TxbFacturaCargoDebito, ObligatorioParaFacturar);
+                errorProvider.SetError(TxbFacturaMontoCargoDebito, ObligatorioParaFacturar);
                 facturarValidar = false;
             }
             int CargoDebito;
-            if (!int.TryParse(TxbFacturaCargoDebito.Text, out CargoDebito))
+            if (!int.TryParse(TxbFacturaMontoCargoDebito.Text, out CargoDebito))
             {
-                errorProvider.SetError(TxbFacturaCargoDebito, ObligatorioParaFacturar);
+                errorProvider.SetError(TxbFacturaMontoCargoDebito, ObligatorioParaFacturar);
                 facturarValidar = false;
             }
 
@@ -393,7 +388,6 @@ namespace SistemaGym.UI.Windows
             dtpFechaFacturaCargoDebito.Value = DateTime.Now;
 
             TxbFacturaNCF.Clear();
-            dtpFacturaFechaVencimiento.Value = DateTime.Now;
             TxbFacturaValor.Clear();
         }
 
