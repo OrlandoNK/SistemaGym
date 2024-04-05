@@ -34,7 +34,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtDireccion = new TextBox();
-            txtContrasena = new TextBox();
             txtApellido = new TextBox();
             txtNombre = new TextBox();
             txtSexo = new TextBox();
@@ -72,6 +71,7 @@
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             rbtnNO = new RadioButton();
             rbtnSI = new RadioButton();
+            txtContrasena = new TextBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -93,16 +93,6 @@
             txtDireccion.ReadOnly = true;
             txtDireccion.Size = new Size(117, 25);
             txtDireccion.TabIndex = 110;
-            // 
-            // txtContrasena
-            // 
-            txtContrasena.Location = new Point(138, 63);
-            txtContrasena.Multiline = true;
-            txtContrasena.Name = "txtContrasena";
-            txtContrasena.PasswordChar = '*';
-            txtContrasena.Size = new Size(117, 23);
-            txtContrasena.TabIndex = 109;
-            txtContrasena.UseSystemPasswordChar = true;
             // 
             // txtApellido
             // 
@@ -542,6 +532,15 @@
             rbtnSI.UseVisualStyleBackColor = true;
             rbtnSI.CheckedChanged += rbtnSI_CheckedChanged;
             // 
+            // txtContrasena
+            // 
+            txtContrasena.Location = new Point(138, 61);
+            txtContrasena.Name = "txtContrasena";
+            txtContrasena.PasswordChar = '*';
+            txtContrasena.Size = new Size(100, 23);
+            txtContrasena.TabIndex = 122;
+            txtContrasena.UseSystemPasswordChar = true;
+            // 
             // frmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -575,7 +574,6 @@
         #endregion
         private TextBox txtEstatus;
         private TextBox txtDireccion;
-        private TextBox txtContrasena;
         private TextBox txtApellido;
         private TextBox txtNombre;
         private TextBox txtSexo;
@@ -613,5 +611,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnNuevoEmpleado;
+        private TextBox txtContrasena;
     }
 }
