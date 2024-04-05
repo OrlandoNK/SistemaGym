@@ -193,7 +193,7 @@
             chbxPassShowHide.ImageOffset = new Point(0, 0);
             chbxPassShowHide.ImageRotate = 0F;
             chbxPassShowHide.ImageSize = new Size(25, 25);
-            chbxPassShowHide.Location = new Point(498, 183);
+            chbxPassShowHide.Location = new Point(498, 188);
             chbxPassShowHide.Name = "chbxPassShowHide";
             chbxPassShowHide.PressedState.ImageSize = new Size(25, 25);
             chbxPassShowHide.ShadowDecoration.CustomizableEdges = customizableEdges7;
