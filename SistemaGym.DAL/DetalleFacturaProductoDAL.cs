@@ -17,7 +17,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update DetalleFacturaProducto set IDFacturaProducto = @idfacturaproducto, IDProducto= @idproducto, precio= @precio, cantidad= @cantidad, Subototal= @subtotal, Descuento= @descuento, Itbis = @itbis, Total= @total WHERE IDDetalleFacturaProductos = @idfactura";
+            string actualizar = "Update DetalleFacturaProducto set IDFacturaProducto = @idfacturaproducto, IDProducto= @idproducto, precio= @precio, cantidad= @cantidad, Subtotal= @subtotal, Descuento= @descuento, Itbis = @itbis, Total= @total WHERE IDDetalleFacturaProductos = @idfactura";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idfacturaproducto", detallefactura.IDFacturaProducto);
             cmd.Parameters.AddWithValue("@idproducto", detallefactura.IDProducto);
