@@ -222,6 +222,7 @@
             btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnRefresh.Size = new Size(208, 48);
             btnRefresh.TabIndex = 1;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnNew
             // 
