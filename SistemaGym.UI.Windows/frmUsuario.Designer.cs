@@ -452,13 +452,14 @@
             // 
             btnSaveUser.BorderColor = Color.DarkGoldenrod;
             btnSaveUser.BorderThickness = 1;
+            btnSaveUser.Cursor = Cursors.Hand;
             btnSaveUser.CustomizableEdges = customizableEdges5;
             btnSaveUser.DisabledState.BorderColor = Color.DarkGray;
             btnSaveUser.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSaveUser.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnSaveUser.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnSaveUser.FillColor = Color.Transparent;
-            btnSaveUser.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSaveUser.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnSaveUser.ForeColor = Color.White;
             btnSaveUser.HoverState.FillColor = Color.DarkGoldenrod;
             btnSaveUser.HoverState.ForeColor = Color.Black;
@@ -478,13 +479,14 @@
             // 
             btnNewUser.BorderColor = Color.DarkGoldenrod;
             btnNewUser.BorderThickness = 1;
+            btnNewUser.Cursor = Cursors.Hand;
             btnNewUser.CustomizableEdges = customizableEdges7;
             btnNewUser.DisabledState.BorderColor = Color.DarkGray;
             btnNewUser.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNewUser.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnNewUser.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnNewUser.FillColor = Color.Transparent;
-            btnNewUser.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNewUser.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnNewUser.ForeColor = Color.White;
             btnNewUser.HoverState.FillColor = Color.DarkGoldenrod;
             btnNewUser.HoverState.ForeColor = Color.Black;
