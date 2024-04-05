@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -49,8 +53,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            btnNuevo = new Button();
-            btnGuardar = new Button();
             cbRol = new ComboBox();
             errorProvider = new ErrorProvider(components);
             panel1 = new Panel();
@@ -59,6 +61,7 @@
             btnclose = new PictureBox();
             panel2 = new Panel();
             groupBox3 = new GroupBox();
+            txtContrasena = new TextBox();
             groupBox2 = new GroupBox();
             btnNuevoEmpleado = new Guna.UI2.WinForms.Guna2Button();
             label11 = new Label();
@@ -66,12 +69,13 @@
             TxbIDEmpleado = new TextBox();
             groupBox1 = new GroupBox();
             panel4 = new Panel();
+            btnSaveUser = new Guna.UI2.WinForms.Guna2Button();
+            btnNewUser = new Guna.UI2.WinForms.Guna2Button();
             panel3 = new Panel();
             panel5 = new Panel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             rbtnNO = new RadioButton();
             rbtnSI = new RadioButton();
-            txtContrasena = new TextBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -238,32 +242,6 @@
             label1.Text = "ID Usuario";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // btnNuevo
-            // 
-            btnNuevo.FlatAppearance.BorderColor = Color.DarkGoldenrod;
-            btnNuevo.FlatStyle = FlatStyle.Flat;
-            btnNuevo.ForeColor = Color.White;
-            btnNuevo.Location = new Point(-1, 70);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(200, 40);
-            btnNuevo.TabIndex = 113;
-            btnNuevo.Text = "Nuevo";
-            btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click;
-            // 
-            // btnGuardar
-            // 
-            btnGuardar.FlatAppearance.BorderColor = Color.DarkGoldenrod;
-            btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(-1, 119);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(200, 40);
-            btnGuardar.TabIndex = 114;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
-            // 
             // cbRol
             // 
             cbRol.FormattingEnabled = true;
@@ -347,6 +325,15 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Datos de Acceso de Usuario";
             // 
+            // txtContrasena
+            // 
+            txtContrasena.Location = new Point(138, 61);
+            txtContrasena.Name = "txtContrasena";
+            txtContrasena.PasswordChar = '*';
+            txtContrasena.Size = new Size(100, 23);
+            txtContrasena.TabIndex = 122;
+            txtContrasena.UseSystemPasswordChar = true;
+            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(btnNuevoEmpleado);
@@ -376,7 +363,7 @@
             btnNuevoEmpleado.BorderColor = Color.DarkGoldenrod;
             btnNuevoEmpleado.BorderThickness = 1;
             btnNuevoEmpleado.Cursor = Cursors.Hand;
-            btnNuevoEmpleado.CustomizableEdges = customizableEdges5;
+            btnNuevoEmpleado.CustomizableEdges = customizableEdges1;
             btnNuevoEmpleado.DisabledState.BorderColor = Color.DarkGray;
             btnNuevoEmpleado.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNuevoEmpleado.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -388,7 +375,7 @@
             btnNuevoEmpleado.ImageSize = new Size(25, 25);
             btnNuevoEmpleado.Location = new Point(149, 80);
             btnNuevoEmpleado.Name = "btnNuevoEmpleado";
-            btnNuevoEmpleado.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnNuevoEmpleado.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnNuevoEmpleado.Size = new Size(51, 48);
             btnNuevoEmpleado.TabIndex = 119;
             btnNuevoEmpleado.Click += btnNuevoEmpleado_Click;
@@ -408,7 +395,7 @@
             btnSearch.BorderColor = Color.DarkGoldenrod;
             btnSearch.BorderThickness = 1;
             btnSearch.Cursor = Cursors.Hand;
-            btnSearch.CustomizableEdges = customizableEdges7;
+            btnSearch.CustomizableEdges = customizableEdges3;
             btnSearch.DisabledState.BorderColor = Color.DarkGray;
             btnSearch.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSearch.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -420,7 +407,7 @@
             btnSearch.ImageSize = new Size(30, 30);
             btnSearch.Location = new Point(61, 80);
             btnSearch.Name = "btnSearch";
-            btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnSearch.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnSearch.Size = new Size(82, 48);
             btnSearch.TabIndex = 0;
             btnSearch.Click += btnSearch_Click;
@@ -453,13 +440,65 @@
             // 
             panel4.BackColor = Color.Black;
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(btnGuardar);
-            panel4.Controls.Add(btnNuevo);
+            panel4.Controls.Add(btnSaveUser);
+            panel4.Controls.Add(btnNewUser);
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 94);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 472);
             panel4.TabIndex = 122;
+            // 
+            // btnSaveUser
+            // 
+            btnSaveUser.BorderColor = Color.DarkGoldenrod;
+            btnSaveUser.BorderThickness = 1;
+            btnSaveUser.CustomizableEdges = customizableEdges5;
+            btnSaveUser.DisabledState.BorderColor = Color.DarkGray;
+            btnSaveUser.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSaveUser.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSaveUser.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSaveUser.FillColor = Color.Transparent;
+            btnSaveUser.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSaveUser.ForeColor = Color.White;
+            btnSaveUser.HoverState.FillColor = Color.DarkGoldenrod;
+            btnSaveUser.HoverState.ForeColor = Color.Black;
+            btnSaveUser.Image = Properties.Resources.save_user_button__x32_;
+            btnSaveUser.ImageAlign = HorizontalAlignment.Left;
+            btnSaveUser.ImageSize = new Size(25, 25);
+            btnSaveUser.Location = new Point(1, 89);
+            btnSaveUser.Name = "btnSaveUser";
+            btnSaveUser.PressedColor = Color.Transparent;
+            btnSaveUser.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnSaveUser.Size = new Size(200, 45);
+            btnSaveUser.TabIndex = 115;
+            btnSaveUser.Text = "Guardar";
+            btnSaveUser.Click += btnSaveUser_Click;
+            // 
+            // btnNewUser
+            // 
+            btnNewUser.BorderColor = Color.DarkGoldenrod;
+            btnNewUser.BorderThickness = 1;
+            btnNewUser.CustomizableEdges = customizableEdges7;
+            btnNewUser.DisabledState.BorderColor = Color.DarkGray;
+            btnNewUser.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnNewUser.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnNewUser.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnNewUser.FillColor = Color.Transparent;
+            btnNewUser.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNewUser.ForeColor = Color.White;
+            btnNewUser.HoverState.FillColor = Color.DarkGoldenrod;
+            btnNewUser.HoverState.ForeColor = Color.Black;
+            btnNewUser.Image = Properties.Resources._NuevaFacturaMembresia;
+            btnNewUser.ImageAlign = HorizontalAlignment.Left;
+            btnNewUser.ImageSize = new Size(25, 25);
+            btnNewUser.Location = new Point(-1, 38);
+            btnNewUser.Name = "btnNewUser";
+            btnNewUser.PressedColor = Color.Transparent;
+            btnNewUser.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnNewUser.Size = new Size(200, 45);
+            btnNewUser.TabIndex = 3;
+            btnNewUser.Text = "Nuevo";
+            btnNewUser.Click += btnNewUser_Click;
             // 
             // panel3
             // 
@@ -507,12 +546,13 @@
             rbtnNO.FlatAppearance.MouseDownBackColor = Color.Transparent;
             rbtnNO.FlatAppearance.MouseOverBackColor = Color.Transparent;
             rbtnNO.Font = new Font("Microsoft YaHei UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtnNO.Location = new Point(350, 62);
+            rbtnNO.Image = Properties.Resources.checkbox_NO__x32_;
+            rbtnNO.Location = new Point(344, 51);
             rbtnNO.Name = "rbtnNO";
-            rbtnNO.Size = new Size(63, 24);
+            rbtnNO.Size = new Size(63, 43);
             rbtnNO.TabIndex = 1;
             rbtnNO.TabStop = true;
-            rbtnNO.Text = "NO";
+            rbtnNO.TextAlign = ContentAlignment.MiddleCenter;
             rbtnNO.UseVisualStyleBackColor = true;
             rbtnNO.CheckedChanged += rbtnNO_CheckedChanged;
             // 
@@ -523,23 +563,15 @@
             rbtnSI.FlatAppearance.MouseDownBackColor = Color.Transparent;
             rbtnSI.FlatAppearance.MouseOverBackColor = Color.Transparent;
             rbtnSI.Font = new Font("Microsoft YaHei UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtnSI.Location = new Point(228, 62);
+            rbtnSI.Image = Properties.Resources.checkbox_YES__x32_;
+            rbtnSI.Location = new Point(234, 51);
             rbtnSI.Name = "rbtnSI";
-            rbtnSI.Size = new Size(63, 24);
+            rbtnSI.Size = new Size(63, 43);
             rbtnSI.TabIndex = 0;
             rbtnSI.TabStop = true;
-            rbtnSI.Text = "SI";
+            rbtnSI.TextAlign = ContentAlignment.MiddleCenter;
             rbtnSI.UseVisualStyleBackColor = true;
             rbtnSI.CheckedChanged += rbtnSI_CheckedChanged;
-            // 
-            // txtContrasena
-            // 
-            txtContrasena.Location = new Point(138, 61);
-            txtContrasena.Name = "txtContrasena";
-            txtContrasena.PasswordChar = '*';
-            txtContrasena.Size = new Size(100, 23);
-            txtContrasena.TabIndex = 122;
-            txtContrasena.UseSystemPasswordChar = true;
             // 
             // frmUsuario
             // 
@@ -589,8 +621,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private Button btnNuevo;
-        private Button btnGuardar;
         private ComboBox cbRol;
         private ErrorProvider errorProvider;
         private Panel panel2;
@@ -612,5 +642,7 @@
         private Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnNuevoEmpleado;
         private TextBox txtContrasena;
+        private Guna.UI2.WinForms.Guna2Button btnNewUser;
+        private Guna.UI2.WinForms.Guna2Button btnSaveUser;
     }
 }

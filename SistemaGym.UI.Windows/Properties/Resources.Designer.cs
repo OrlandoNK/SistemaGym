@@ -703,6 +703,26 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap checkbox_NO__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("checkbox-NO-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checkbox_YES__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("checkbox-YES-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap COMFORT_GYM {
             get {
                 object obj = ResourceManager.GetObject("COMFORT GYM", resourceCulture);
@@ -1256,6 +1276,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap save_5764942 {
             get {
                 object obj = ResourceManager.GetObject("save_5764942", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_user_button__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("save-user-button-[x32]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

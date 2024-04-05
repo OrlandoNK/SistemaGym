@@ -62,82 +62,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (rbtnNO.Checked)
-            {
-                //validar los datos
-                if (!ValidarDatos())
-                {
-                    return;
 
-                }
-                //datos de control al objeto
-                UsuarioEntity oUsuario = new UsuarioEntity("", "");
-                oUsuario.IDUsuario = int.Parse(txtIDUsuario.Text);
-                oUsuario.IDRol = (int)cbRol.SelectedValue;
-                oUsuario.Nombre = txtNombre.Text;
-                oUsuario.Apellido = txtApellido.Text;
-                oUsuario.Sexo = txtSexo.Text;
-                oUsuario.Correo = txtCorreo.Text;
-                oUsuario.Direccion = txtDireccion.Text;
-                oUsuario.FechaRegistro = DateTime.Now;
-                oUsuario.NombreUsuario = txtNombreUsuario.Text;
-                oUsuario.Contrasena = txtContrasena.Text;
-                oUsuario.Estatus = "Activo";
-                // guardar base datos
-                try
-                {
-                    UsuarioBLL.GuardarNoEmpleado(oUsuario);
-                    MessageBox.Show("Usuario Guardado con Éxito", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    InicializarControles();
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            if (rbtnSI.Checked)
-            {
-                //validar los datos
-                if (!ValidarDatos())
-                {
-                    return;
-
-                }
-                //datos de control al objeto
-                UsuarioEntity oUsuario = new UsuarioEntity("", "");
-                oUsuario.IDUsuario = int.Parse(txtIDUsuario.Text);
-                oUsuario.IDEmpleado = int.Parse(TxbIDEmpleado.Text);
-                oUsuario.IDRol = (int)cbRol.SelectedValue;
-                oUsuario.Nombre = txtNombre.Text;
-                oUsuario.Apellido = txtApellido.Text;
-                oUsuario.Sexo = txtSexo.Text;
-                oUsuario.Correo = txtCorreo.Text;
-                oUsuario.Direccion = txtDireccion.Text;
-                oUsuario.FechaRegistro = DateTime.Now;
-                oUsuario.NombreUsuario = txtNombreUsuario.Text;
-                oUsuario.Contrasena = txtContrasena.Text;
-                oUsuario.Estatus = "Activo";
-                // guardar base datos
-                try
-                {
-                    UsuarioBLL.Guardar(oUsuario);
-                    MessageBox.Show("Usuario Guardado", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    InicializarControles();
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
 
         }
         private bool ValidarDatos()
@@ -243,6 +168,91 @@ namespace SistemaGym.UI.Windows
         {
             registrarEmpleados nuevoEmpleado = new registrarEmpleados();
             nuevoEmpleado.Show();
+        }
+
+        private void btnSaveUser_Click(object sender, EventArgs e)
+        {
+            if (rbtnNO.Checked)
+            {
+                //validar los datos
+                if (!ValidarDatos())
+                {
+                    return;
+
+                }
+                //datos de control al objeto
+                UsuarioEntity oUsuario = new UsuarioEntity("", "");
+                oUsuario.IDUsuario = int.Parse(txtIDUsuario.Text);
+                oUsuario.IDRol = (int)cbRol.SelectedValue;
+                oUsuario.Nombre = txtNombre.Text;
+                oUsuario.Apellido = txtApellido.Text;
+                oUsuario.Sexo = txtSexo.Text;
+                oUsuario.Correo = txtCorreo.Text;
+                oUsuario.Direccion = txtDireccion.Text;
+                oUsuario.FechaRegistro = DateTime.Now;
+                oUsuario.NombreUsuario = txtNombreUsuario.Text;
+                oUsuario.Contrasena = txtContrasena.Text;
+                oUsuario.Estatus = "Activo";
+                // guardar base datos
+                try
+                {
+                    UsuarioBLL.GuardarNoEmpleado(oUsuario);
+                    MessageBox.Show("Usuario Guardado con Éxito", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    InicializarControles();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            if (rbtnSI.Checked)
+            {
+                //validar los datos
+                if (!ValidarDatos())
+                {
+                    return;
+
+                }
+                //datos de control al objeto
+                UsuarioEntity oUsuario = new UsuarioEntity("", "");
+                oUsuario.IDUsuario = int.Parse(txtIDUsuario.Text);
+                oUsuario.IDEmpleado = int.Parse(TxbIDEmpleado.Text);
+                oUsuario.IDRol = (int)cbRol.SelectedValue;
+                oUsuario.Nombre = txtNombre.Text;
+                oUsuario.Apellido = txtApellido.Text;
+                oUsuario.Sexo = txtSexo.Text;
+                oUsuario.Correo = txtCorreo.Text;
+                oUsuario.Direccion = txtDireccion.Text;
+                oUsuario.FechaRegistro = DateTime.Now;
+                oUsuario.NombreUsuario = txtNombreUsuario.Text;
+                oUsuario.Contrasena = txtContrasena.Text;
+                oUsuario.Estatus = "Activo";
+                // guardar base datos
+                try
+                {
+                    UsuarioBLL.Guardar(oUsuario);
+                    MessageBox.Show("Usuario Guardado", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    InicializarControles();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Usuario. \n\nDetalles a continuacion:\n\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnNewUser_Click(object sender, EventArgs e)
+        {
+            InicializarControles();
         }
     }
 
