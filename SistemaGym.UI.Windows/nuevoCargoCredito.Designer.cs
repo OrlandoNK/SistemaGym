@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(nuevoCargoCredito));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             topPanel = new Panel();
             btnClose = new PictureBox();
             panel1 = new Panel();
@@ -52,15 +52,20 @@
             TxbDocClienteCargoCredito = new TextBox();
             TxbNombreClienteCargoCredito = new TextBox();
             label18 = new Label();
+            lblTitleMantenimientoFacturaMembresia = new Label();
+            pictureBox1 = new PictureBox();
             topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // topPanel
             // 
             topPanel.BackColor = Color.Black;
             topPanel.BorderStyle = BorderStyle.FixedSingle;
+            topPanel.Controls.Add(lblTitleMantenimientoFacturaMembresia);
+            topPanel.Controls.Add(pictureBox1);
             topPanel.Controls.Add(btnClose);
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
@@ -149,7 +154,7 @@
             btnBuscarClienteCargoCredito.BorderRadius = 10;
             btnBuscarClienteCargoCredito.BorderThickness = 2;
             btnBuscarClienteCargoCredito.Cursor = Cursors.Hand;
-            btnBuscarClienteCargoCredito.CustomizableEdges = customizableEdges9;
+            btnBuscarClienteCargoCredito.CustomizableEdges = customizableEdges1;
             btnBuscarClienteCargoCredito.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarClienteCargoCredito.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarClienteCargoCredito.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -161,7 +166,7 @@
             btnBuscarClienteCargoCredito.ImageSize = new Size(32, 32);
             btnBuscarClienteCargoCredito.Location = new Point(115, 94);
             btnBuscarClienteCargoCredito.Name = "btnBuscarClienteCargoCredito";
-            btnBuscarClienteCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnBuscarClienteCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnBuscarClienteCargoCredito.Size = new Size(60, 54);
             btnBuscarClienteCargoCredito.TabIndex = 38;
             btnBuscarClienteCargoCredito.Click += btnBuscarClienteCargoCredito_Click;
@@ -171,7 +176,7 @@
             btnGuardarCargoCredito.BorderRadius = 5;
             btnGuardarCargoCredito.BorderThickness = 2;
             btnGuardarCargoCredito.Cursor = Cursors.Hand;
-            btnGuardarCargoCredito.CustomizableEdges = customizableEdges11;
+            btnGuardarCargoCredito.CustomizableEdges = customizableEdges3;
             btnGuardarCargoCredito.DisabledState.BorderColor = Color.DarkGray;
             btnGuardarCargoCredito.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGuardarCargoCredito.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -187,7 +192,7 @@
             btnGuardarCargoCredito.ImageSize = new Size(45, 45);
             btnGuardarCargoCredito.Location = new Point(429, 213);
             btnGuardarCargoCredito.Name = "btnGuardarCargoCredito";
-            btnGuardarCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnGuardarCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnGuardarCargoCredito.Size = new Size(164, 62);
             btnGuardarCargoCredito.TabIndex = 39;
             btnGuardarCargoCredito.Text = "&Guardar Cargo Crédito";
@@ -285,6 +290,27 @@
             label18.Text = "Apellido";
             label18.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // lblTitleMantenimientoFacturaMembresia
+            // 
+            lblTitleMantenimientoFacturaMembresia.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitleMantenimientoFacturaMembresia.ForeColor = Color.Gold;
+            lblTitleMantenimientoFacturaMembresia.Location = new Point(71, 6);
+            lblTitleMantenimientoFacturaMembresia.Name = "lblTitleMantenimientoFacturaMembresia";
+            lblTitleMantenimientoFacturaMembresia.Size = new Size(200, 53);
+            lblTitleMantenimientoFacturaMembresia.TabIndex = 6;
+            lblTitleMantenimientoFacturaMembresia.Text = "Cargo Crédito";
+            lblTitleMantenimientoFacturaMembresia.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._PaymentMembresiaFactura;
+            pictureBox1.Location = new Point(3, 6);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(62, 53);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // nuevoCargoCredito
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -302,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -326,5 +353,7 @@
         private TextBox TxbCargoCredito;
         private Label label13;
         private Guna.UI2.WinForms.Guna2Button btnGuardarCargoCredito;
+        private Label lblTitleMantenimientoFacturaMembresia;
+        private PictureBox pictureBox1;
     }
 }

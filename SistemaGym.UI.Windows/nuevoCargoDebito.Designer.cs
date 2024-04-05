@@ -52,9 +52,12 @@
             label25 = new Label();
             btnGuardarCargoDebito = new Guna.UI2.WinForms.Guna2Button();
             panel3 = new Panel();
+            lblTitleMantenimientoFacturaMembresia = new Label();
+            pictureBox1 = new PictureBox();
             topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -71,6 +74,8 @@
             // 
             topPanel.BackColor = Color.Black;
             topPanel.BorderStyle = BorderStyle.FixedSingle;
+            topPanel.Controls.Add(lblTitleMantenimientoFacturaMembresia);
+            topPanel.Controls.Add(pictureBox1);
             topPanel.Controls.Add(btnClose);
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
@@ -284,6 +289,27 @@
             panel3.Size = new Size(636, 388);
             panel3.TabIndex = 50;
             // 
+            // lblTitleMantenimientoFacturaMembresia
+            // 
+            lblTitleMantenimientoFacturaMembresia.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitleMantenimientoFacturaMembresia.ForeColor = Color.Gold;
+            lblTitleMantenimientoFacturaMembresia.Location = new Point(71, 6);
+            lblTitleMantenimientoFacturaMembresia.Name = "lblTitleMantenimientoFacturaMembresia";
+            lblTitleMantenimientoFacturaMembresia.Size = new Size(200, 53);
+            lblTitleMantenimientoFacturaMembresia.TabIndex = 6;
+            lblTitleMantenimientoFacturaMembresia.Text = "Cargo Débito";
+            lblTitleMantenimientoFacturaMembresia.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._PaymentMembresiaFactura;
+            pictureBox1.Location = new Point(3, 6);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(62, 53);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // nuevoCargoDebito
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -301,6 +327,7 @@
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -325,5 +352,7 @@
         private Label label25;
         private Guna.UI2.WinForms.Guna2Button btnGuardarCargoDebito;
         private Panel panel3;
+        private Label lblTitleMantenimientoFacturaMembresia;
+        private PictureBox pictureBox1;
     }
 }
