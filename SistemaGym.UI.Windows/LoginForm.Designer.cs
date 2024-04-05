@@ -34,6 +34,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnCerrarLogin = new PictureBox();
             btnEntrar = new Guna.UI2.WinForms.Guna2Button();
             TxbContraseña = new Guna.UI2.WinForms.Guna2TextBox();
@@ -41,6 +42,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            chbxPassShowHide = new Guna.UI2.WinForms.Guna2ImageCheckBox();
             ((System.ComponentModel.ISupportInitialize)btnCerrarLogin).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -169,6 +171,7 @@
             // 
             panel2.BackColor = Color.Black;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(chbxPassShowHide);
             panel2.Controls.Add(TxbUsuario);
             panel2.Controls.Add(btnCerrarLogin);
             panel2.Controls.Add(TxbContraseña);
@@ -178,6 +181,25 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(577, 436);
             panel2.TabIndex = 4;
+            // 
+            // chbxPassShowHide
+            // 
+            chbxPassShowHide.BackColor = Color.Transparent;
+            chbxPassShowHide.CheckedState.Image = Properties.Resources.icon_hide_password__x32_;
+            chbxPassShowHide.CheckedState.ImageSize = new Size(25, 25);
+            chbxPassShowHide.Cursor = Cursors.Hand;
+            chbxPassShowHide.HoverState.ImageSize = new Size(25, 25);
+            chbxPassShowHide.Image = Properties.Resources.icon_show_password__x32_;
+            chbxPassShowHide.ImageOffset = new Point(0, 0);
+            chbxPassShowHide.ImageRotate = 0F;
+            chbxPassShowHide.ImageSize = new Size(25, 25);
+            chbxPassShowHide.Location = new Point(498, 183);
+            chbxPassShowHide.Name = "chbxPassShowHide";
+            chbxPassShowHide.PressedState.ImageSize = new Size(25, 25);
+            chbxPassShowHide.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            chbxPassShowHide.Size = new Size(33, 31);
+            chbxPassShowHide.TabIndex = 4;
+            chbxPassShowHide.CheckedChanged += chbxPassShowHide_CheckedChanged;
             // 
             // LoginForm
             // 
@@ -206,5 +228,6 @@
         private Panel panel1;
         private Panel panel2;
         private PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2ImageCheckBox chbxPassShowHide;
     }
 }

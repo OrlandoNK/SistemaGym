@@ -57,8 +57,8 @@ namespace SistemaGym.UI.Windows
                     this.Hide();
                 }
                 else if (string.IsNullOrEmpty(TxbUsuario.Text) && string.IsNullOrEmpty(TxbContraseña.Text))
-                { 
-                    MessageBox.Show("Por favor llene los campos", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                {
+                    MessageBox.Show("Por favor llene los campos", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -72,6 +72,20 @@ namespace SistemaGym.UI.Windows
             catch (Exception ex)
             {
                 MessageBox.Show("Se ha producido un Error al Intentar Iniciar Sesion:\n" + ex.Message, SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void chbxPassShowHide_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbxPassShowHide.Checked)
+            {
+                TxbContraseña.UseSystemPasswordChar = false;
+                TxbContraseña.PasswordChar = '\0';
+            }
+            else
+            {
+                TxbContraseña.UseSystemPasswordChar = true;
+                TxbContraseña.PasswordChar = '●';
             }
         }
     }

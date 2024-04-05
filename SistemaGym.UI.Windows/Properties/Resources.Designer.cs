@@ -1003,6 +1003,26 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_hide_password__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-hide-password-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_show_password__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-show-password-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icono_de_Proveedor_x32 {
             get {
                 object obj = ResourceManager.GetObject("Icono de Proveedor x32", resourceCulture);
