@@ -547,6 +547,7 @@
             rbtnNO.FlatAppearance.BorderSize = 0;
             rbtnNO.FlatAppearance.MouseDownBackColor = Color.Transparent;
             rbtnNO.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            rbtnNO.FlatStyle = FlatStyle.Flat;
             rbtnNO.Font = new Font("Microsoft YaHei UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             rbtnNO.Image = Properties.Resources.checkbox_NO__x32_;
             rbtnNO.Location = new Point(344, 51);
@@ -564,6 +565,7 @@
             rbtnSI.FlatAppearance.BorderSize = 0;
             rbtnSI.FlatAppearance.MouseDownBackColor = Color.Transparent;
             rbtnSI.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            rbtnSI.FlatStyle = FlatStyle.Flat;
             rbtnSI.Font = new Font("Microsoft YaHei UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             rbtnSI.Image = Properties.Resources.checkbox_YES__x32_;
             rbtnSI.Location = new Point(234, 51);
