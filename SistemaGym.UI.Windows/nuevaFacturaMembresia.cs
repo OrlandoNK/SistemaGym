@@ -49,27 +49,31 @@ namespace SistemaGym.UI.Windows
             }
         }
 
+        FacturacionMembresiaDAL facturacionMembresiaDAL = new FacturacionMembresiaDAL();
         private void btnBuscarIDCliente_Click(object sender, EventArgs e)
         {
-            listaClientes listaClientes = new listaClientes();
+            int idCliente = Convert.ToInt32(TxbIDCliente.Text);
 
-            if (listaClientes.ShowDialog() == DialogResult.OK)
+            DataTable DT = facturacionMembresiaDAL.GetClientWithMembership(idCliente);
+
+            if (DT.Rows.Count > 0)
             {
-                ClientesEntity oCliente = ClientesBLL.GetById((int)listaClientes.IdCliente);
+                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
+                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
+                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
+                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
+                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
 
-                if (oCliente != null)
-                {
-                    this.TxbIDCliente.Text = oCliente.IDCliente.ToString();
-                    this.TxbTipoDocumento.Text = oCliente.TipoDocumento.ToString();
-                    this.TxbDocumentoCliente.Text = oCliente.Documento.ToString();
-                    this.TxbNombreCliente.Text = oCliente.Nombre.ToString();
-                    this.TxbApellidoCliente.Text = oCliente.Apellido.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Cliente No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
+                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
+                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
+                TxbValorMembresia.Text = DT.Rows[0]["Valor"].ToString();
             }
+            else
+            {
+                MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void nuevaFacturaMembresia_Load(object sender, EventArgs e)

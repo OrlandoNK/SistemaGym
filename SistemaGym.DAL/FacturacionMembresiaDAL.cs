@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -161,6 +162,30 @@ namespace SistemaGym.DAL
             return dataTBL;
 
         }
+
+        public DataTable GetClientWithMembership(int idCliente)
+        {
+            DataTable DT = new DataTable();
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            string GetMemberClient = @"SELECT C.*, M.Nombre as NombreMembresia, M.Descripcion, M.Duracion, M.Valor 
+                                 FROM Clientes C 
+                                 LEFT JOIN Membresia M ON C.IDMembresia = M.IDMembresia 
+                                 WHERE C.IDCliente = @IDCliente";
+            using (SqlCommand cmd = new SqlCommand(GetMemberClient, Conexion)) 
+            {
+                cmd.Parameters.AddWithValue("@IDCliente", idCliente);
+
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DA.Fill(DT);
+            }
+
+            return DT;
+        }
+        
 
     }
 }
