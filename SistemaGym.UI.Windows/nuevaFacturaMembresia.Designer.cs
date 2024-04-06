@@ -56,6 +56,7 @@
             groupBox10 = new GroupBox();
             TxbFacturaValor = new TextBox();
             label35 = new Label();
+            btnFacturarMembresia = new Guna.UI2.WinForms.Guna2Button();
             label34 = new Label();
             TxbFacturaNCF = new TextBox();
             groupBox3 = new GroupBox();
@@ -63,7 +64,6 @@
             label10 = new Label();
             TxbIDUsuario = new TextBox();
             TxbNombreApellidoUsuario = new TextBox();
-            btnFacturarMembresia = new Guna.UI2.WinForms.Guna2Button();
             groupBox9 = new GroupBox();
             btnNuevoCargoDebito = new Guna.UI2.WinForms.Guna2Button();
             TxbFacturaMontoCargoDebito = new TextBox();
@@ -267,6 +267,29 @@
             label35.TabIndex = 31;
             label35.Text = "Valor Factura";
             // 
+            // btnFacturarMembresia
+            // 
+            btnFacturarMembresia.BorderRadius = 8;
+            btnFacturarMembresia.BorderThickness = 2;
+            btnFacturarMembresia.CustomizableEdges = customizableEdges3;
+            btnFacturarMembresia.DisabledState.BorderColor = Color.DarkGray;
+            btnFacturarMembresia.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnFacturarMembresia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnFacturarMembresia.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnFacturarMembresia.FillColor = Color.Transparent;
+            btnFacturarMembresia.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFacturarMembresia.ForeColor = Color.Black;
+            btnFacturarMembresia.Image = Properties.Resources._FacturarMembresia_x32_v_2;
+            btnFacturarMembresia.ImageAlign = HorizontalAlignment.Right;
+            btnFacturarMembresia.ImageSize = new Size(32, 32);
+            btnFacturarMembresia.Location = new Point(357, 34);
+            btnFacturarMembresia.Name = "btnFacturarMembresia";
+            btnFacturarMembresia.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnFacturarMembresia.Size = new Size(293, 50);
+            btnFacturarMembresia.TabIndex = 36;
+            btnFacturarMembresia.Text = "Facturar";
+            btnFacturarMembresia.Click += btnFacturarMembresia_Click;
+            // 
             // label34
             // 
             label34.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -335,29 +358,6 @@
             TxbNombreApellidoUsuario.ReadOnly = true;
             TxbNombreApellidoUsuario.Size = new Size(232, 23);
             TxbNombreApellidoUsuario.TabIndex = 21;
-            // 
-            // btnFacturarMembresia
-            // 
-            btnFacturarMembresia.BorderRadius = 8;
-            btnFacturarMembresia.BorderThickness = 2;
-            btnFacturarMembresia.CustomizableEdges = customizableEdges3;
-            btnFacturarMembresia.DisabledState.BorderColor = Color.DarkGray;
-            btnFacturarMembresia.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnFacturarMembresia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnFacturarMembresia.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnFacturarMembresia.FillColor = Color.Transparent;
-            btnFacturarMembresia.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnFacturarMembresia.ForeColor = Color.Black;
-            btnFacturarMembresia.Image = Properties.Resources._FacturarMembresia_x32_v_2;
-            btnFacturarMembresia.ImageAlign = HorizontalAlignment.Right;
-            btnFacturarMembresia.ImageSize = new Size(32, 32);
-            btnFacturarMembresia.Location = new Point(357, 34);
-            btnFacturarMembresia.Name = "btnFacturarMembresia";
-            btnFacturarMembresia.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnFacturarMembresia.Size = new Size(293, 50);
-            btnFacturarMembresia.TabIndex = 36;
-            btnFacturarMembresia.Text = "Facturar";
-            btnFacturarMembresia.Click += btnFacturarMembresia_Click;
             // 
             // groupBox9
             // 
@@ -548,7 +548,6 @@
             // 
             // TxbIDCliente
             // 
-            TxbIDCliente.Enabled = false;
             TxbIDCliente.Location = new Point(9, 58);
             TxbIDCliente.Name = "TxbIDCliente";
             TxbIDCliente.ReadOnly = true;
@@ -577,7 +576,6 @@
             // 
             // TxbApellidoCliente
             // 
-            TxbApellidoCliente.Enabled = false;
             TxbApellidoCliente.Location = new Point(255, 58);
             TxbApellidoCliente.Name = "TxbApellidoCliente";
             TxbApellidoCliente.ReadOnly = true;
@@ -586,7 +584,6 @@
             // 
             // TxbDocumentoCliente
             // 
-            TxbDocumentoCliente.Enabled = false;
             TxbDocumentoCliente.Location = new Point(132, 115);
             TxbDocumentoCliente.Name = "TxbDocumentoCliente";
             TxbDocumentoCliente.ReadOnly = true;
@@ -595,7 +592,6 @@
             // 
             // TxbTipoDocumento
             // 
-            TxbTipoDocumento.Enabled = false;
             TxbTipoDocumento.Location = new Point(9, 115);
             TxbTipoDocumento.Name = "TxbTipoDocumento";
             TxbTipoDocumento.ReadOnly = true;
@@ -624,7 +620,6 @@
             // 
             // TxbNombreCliente
             // 
-            TxbNombreCliente.Enabled = false;
             TxbNombreCliente.Location = new Point(132, 58);
             TxbNombreCliente.Name = "TxbNombreCliente";
             TxbNombreCliente.ReadOnly = true;
@@ -808,7 +803,6 @@
             // 
             // TxbIDMembresia
             // 
-            TxbIDMembresia.Enabled = false;
             TxbIDMembresia.Location = new Point(9, 67);
             TxbIDMembresia.Name = "TxbIDMembresia";
             TxbIDMembresia.ReadOnly = true;
@@ -817,7 +811,6 @@
             // 
             // TxbValorMembresia
             // 
-            TxbValorMembresia.Enabled = false;
             TxbValorMembresia.Location = new Point(255, 67);
             TxbValorMembresia.Name = "TxbValorMembresia";
             TxbValorMembresia.ReadOnly = true;
@@ -846,7 +839,6 @@
             // 
             // TxbNombreMembresia
             // 
-            TxbNombreMembresia.Enabled = false;
             TxbNombreMembresia.Location = new Point(132, 67);
             TxbNombreMembresia.Name = "TxbNombreMembresia";
             TxbNombreMembresia.ReadOnly = true;
@@ -865,7 +857,6 @@
             // 
             // TxbDescrMembresia
             // 
-            TxbDescrMembresia.Enabled = false;
             TxbDescrMembresia.Location = new Point(9, 124);
             TxbDescrMembresia.Name = "TxbDescrMembresia";
             TxbDescrMembresia.ReadOnly = true;

@@ -60,25 +60,25 @@ namespace SistemaGym.UI.Windows
                     int idCliente = listaClientes.IdCliente;
                     DataTable DT = clientesBLL.GetClientMembreship(idCliente);
 
-                        if (DT.Rows.Count > 0)
-                        {
-                            TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
-                            TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
-                            TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
-                            TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
-                            TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+                    if (DT.Rows.Count > 0)
+                    {
+                        TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
+                        TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
+                        TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
+                        TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
+                        TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
 
-                            TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
-                            TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
-                            TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
-                            TxbValorMembresia.Text = DT.Rows[0]["Valor"].ToString();
+                        TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
+                        TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
+                        TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
+                        TxbValorMembresia.Text = DT.Rows[0]["Valor"].ToString();
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
                     }
+                    else
+                    {
+                        MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
                 catch (SqlException ex)
                 {
                     MessageBox.Show("Se Produjo un Error al Intentar Obtener el Cliente:\n\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,7 +109,7 @@ namespace SistemaGym.UI.Windows
                 if (oCargoCredito != null)
                 {
                     this.TxbFacturaIDCargoCredito.Text = oCargoCredito.IDCargoCredito.ToString();
-                    this.TxbFacturacionCargoCredito.Text = Convert.ToInt32(oCargoCredito.Cargo).ToString();
+                    this.TxbFacturacionCargoCredito.Text = oCargoCredito.Cargo.ToString();
                     this.TxbFacturaMontoCargoCredito.Text = Convert.ToInt32(oCargoCredito.Monto).ToString();
                     this.dtpFechaFacturaCargoCredito.Text = oCargoCredito.FechaCargo.ToString();
                 }
@@ -131,7 +131,7 @@ namespace SistemaGym.UI.Windows
                 if (oCargoDebito != null)
                 {
                     this.TxbFacturaIDCargoDebito.Text = oCargoDebito.IDCargoDebito.ToString();
-                    this.TxbFacturaCargoDebito.Text = Convert.ToInt32(oCargoDebito.Cargo).ToString();
+                    this.TxbFacturaCargoDebito.Text = oCargoDebito.Cargo.ToString();
                     this.TxbFacturaMontoCargoDebito.Text = Convert.ToInt32(oCargoDebito.Monto).ToString();
                     this.dtpFechaFacturaCargoDebito.Text = oCargoDebito.FechaCargo.ToString();
                 }
@@ -152,7 +152,7 @@ namespace SistemaGym.UI.Windows
 
             try
             {
-                int ValorMembresia = int.Parse(TxbValorMembresia.Text);
+                decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
                 int FacturaCC = int.Parse(TxbFacturaMontoCargoCredito.Text);
                 int FacturaCD = int.Parse(TxbFacturaMontoCargoDebito.Text);
 
@@ -335,8 +335,8 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(TxbValorMembresia, ObligatorioParaFacturar);
                 facturarValidar = false;
             }
-            int ValorMembresia;
-            if (!int.TryParse(TxbValorMembresia.Text, out ValorMembresia))
+            decimal ValorMembresia;
+            if (!decimal.TryParse(TxbValorMembresia.Text, out ValorMembresia))
             {
                 errorProvider.SetError(TxbValorMembresia, ObligatorioParaFacturar);
                 facturarValidar = false;
