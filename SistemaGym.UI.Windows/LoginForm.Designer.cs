@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -43,10 +44,12 @@
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             chbxPassShowHide = new Guna.UI2.WinForms.Guna2ImageCheckBox();
+            ErrorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)btnCerrarLogin).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // btnCerrarLogin
@@ -201,6 +204,10 @@
             chbxPassShowHide.TabIndex = 4;
             chbxPassShowHide.CheckedChanged += chbxPassShowHide_CheckedChanged;
             // 
+            // ErrorProvider
+            // 
+            ErrorProvider.ContainerControl = this;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -217,6 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ErrorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -229,5 +237,6 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2ImageCheckBox chbxPassShowHide;
+        private ErrorProvider ErrorProvider;
     }
 }

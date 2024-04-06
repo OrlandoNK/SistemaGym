@@ -84,7 +84,7 @@
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
             topPanel.Name = "topPanel";
-            topPanel.Size = new Size(874, 66);
+            topPanel.Size = new Size(1258, 66);
             topPanel.TabIndex = 0;
             // 
             // btnclose
@@ -92,7 +92,7 @@
             btnclose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnclose.Cursor = Cursors.Hand;
             btnclose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnclose.Location = new Point(829, 16);
+            btnclose.Location = new Point(1213, 16);
             btnclose.Name = "btnclose";
             btnclose.Size = new Size(32, 32);
             btnclose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -128,7 +128,7 @@
             subtopPanel.Dock = DockStyle.Top;
             subtopPanel.Location = new Point(0, 66);
             subtopPanel.Name = "subtopPanel";
-            subtopPanel.Size = new Size(874, 31);
+            subtopPanel.Size = new Size(1258, 31);
             subtopPanel.TabIndex = 1;
             // 
             // sidePanel
@@ -142,7 +142,7 @@
             sidePanel.Dock = DockStyle.Left;
             sidePanel.Location = new Point(0, 97);
             sidePanel.Name = "sidePanel";
-            sidePanel.Size = new Size(208, 460);
+            sidePanel.Size = new Size(208, 565);
             sidePanel.TabIndex = 2;
             // 
             // btnDelete
@@ -259,11 +259,12 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(208, 97);
             panel5.Name = "panel5";
-            panel5.Size = new Size(666, 68);
+            panel5.Size = new Size(1050, 68);
             panel5.TabIndex = 124;
             // 
             // TxbBuscar
             // 
+            TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxbBuscar.BorderRadius = 20;
             TxbBuscar.CustomizableEdges = customizableEdges9;
             TxbBuscar.DefaultText = "";
@@ -275,14 +276,14 @@
             TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
-            TxbBuscar.Location = new Point(10, 14);
+            TxbBuscar.Location = new Point(11, 14);
             TxbBuscar.Name = "TxbBuscar";
             TxbBuscar.PasswordChar = '\0';
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TxbBuscar.Size = new Size(645, 39);
+            TxbBuscar.Size = new Size(1027, 39);
             TxbBuscar.TabIndex = 0;
             TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
@@ -292,92 +293,84 @@
             fillpanel.Dock = DockStyle.Fill;
             fillpanel.Location = new Point(208, 165);
             fillpanel.Name = "fillpanel";
-            fillpanel.Size = new Size(666, 392);
+            fillpanel.Size = new Size(1050, 497);
             fillpanel.TabIndex = 125;
             // 
             // dgvUsuario
             // 
             dgvUsuario.AllowUserToAddRows = false;
             dgvUsuario.AllowUserToDeleteRows = false;
-            dgvUsuario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dgvUsuario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvUsuario.BackgroundColor = Color.WhiteSmoke;
             dgvUsuario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuario.Columns.AddRange(new DataGridViewColumn[] { IDUsuario, IDEmpleado, Rol, Nombre, Apellido, Sexo, Correo, Direccion, FechaRegistro, NombreUsuario, Contrasena, Estatus });
-            dgvUsuario.Location = new Point(-3, 0);
+            dgvUsuario.Dock = DockStyle.Fill;
+            dgvUsuario.Location = new Point(0, 0);
             dgvUsuario.Name = "dgvUsuario";
-            dgvUsuario.ReadOnly = true;
             dgvUsuario.RowHeadersVisible = false;
             dgvUsuario.RowTemplate.Height = 25;
             dgvUsuario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsuario.Size = new Size(669, 392);
+            dgvUsuario.Size = new Size(1050, 497);
             dgvUsuario.TabIndex = 113;
             // 
             // IDUsuario
             // 
             IDUsuario.DataPropertyName = "IDUsuario";
+            IDUsuario.FillWeight = 150F;
             IDUsuario.HeaderText = "IDUsuario";
             IDUsuario.Name = "IDUsuario";
-            IDUsuario.ReadOnly = true;
-            IDUsuario.Width = 83;
             // 
             // IDEmpleado
             // 
             IDEmpleado.DataPropertyName = "IDEmpleado";
+            IDEmpleado.FillWeight = 200F;
             IDEmpleado.HeaderText = "IDEmpleado";
             IDEmpleado.Name = "IDEmpleado";
-            IDEmpleado.ReadOnly = true;
             IDEmpleado.Resizable = DataGridViewTriState.True;
             IDEmpleado.SortMode = DataGridViewColumnSortMode.Automatic;
-            IDEmpleado.Width = 96;
             // 
             // Rol
             // 
+            Rol.FillWeight = 200F;
             Rol.HeaderText = "Rol";
             Rol.Name = "Rol";
-            Rol.ReadOnly = true;
             Rol.Resizable = DataGridViewTriState.True;
             Rol.SortMode = DataGridViewColumnSortMode.Automatic;
-            Rol.Width = 49;
             // 
             // Nombre
             // 
             Nombre.DataPropertyName = "Nombre";
+            Nombre.FillWeight = 200F;
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            Nombre.Width = 76;
             // 
             // Apellido
             // 
             Apellido.DataPropertyName = "Apellido";
+            Apellido.FillWeight = 200F;
             Apellido.HeaderText = "Apellido";
             Apellido.Name = "Apellido";
-            Apellido.ReadOnly = true;
-            Apellido.Width = 76;
             // 
             // Sexo
             // 
             Sexo.DataPropertyName = "Sexo";
+            Sexo.FillWeight = 200F;
             Sexo.HeaderText = "Sexo";
             Sexo.Name = "Sexo";
-            Sexo.ReadOnly = true;
-            Sexo.Width = 57;
             // 
             // Correo
             // 
             Correo.DataPropertyName = "Correo";
+            Correo.FillWeight = 200F;
             Correo.HeaderText = "Correo";
             Correo.Name = "Correo";
-            Correo.ReadOnly = true;
-            Correo.Width = 68;
             // 
             // Direccion
             // 
             Direccion.DataPropertyName = "Direccion";
+            Direccion.FillWeight = 200F;
             Direccion.HeaderText = "Direccion";
             Direccion.Name = "Direccion";
-            Direccion.ReadOnly = true;
-            Direccion.Width = 82;
             // 
             // FechaRegistro
             // 
@@ -385,40 +378,36 @@
             dataGridViewCellStyle1.Format = "g";
             dataGridViewCellStyle1.NullValue = null;
             FechaRegistro.DefaultCellStyle = dataGridViewCellStyle1;
+            FechaRegistro.FillWeight = 200F;
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
-            FechaRegistro.ReadOnly = true;
-            FechaRegistro.Width = 106;
             // 
             // NombreUsuario
             // 
             NombreUsuario.DataPropertyName = "NombreUsuario";
+            NombreUsuario.FillWeight = 250F;
             NombreUsuario.HeaderText = "NombreUsuario";
             NombreUsuario.Name = "NombreUsuario";
-            NombreUsuario.ReadOnly = true;
-            NombreUsuario.Width = 116;
             // 
             // Contrasena
             // 
             Contrasena.DataPropertyName = "Contrasena";
+            Contrasena.FillWeight = 200F;
             Contrasena.HeaderText = "Contraseña";
             Contrasena.Name = "Contrasena";
-            Contrasena.ReadOnly = true;
-            Contrasena.Width = 92;
             // 
             // Estatus
             // 
             Estatus.DataPropertyName = "Estatus";
+            Estatus.FillWeight = 200F;
             Estatus.HeaderText = "Estatus";
             Estatus.Name = "Estatus";
-            Estatus.ReadOnly = true;
-            Estatus.Width = 69;
             // 
             // mantenimientoUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 557);
+            ClientSize = new Size(1258, 662);
             Controls.Add(fillpanel);
             Controls.Add(panel5);
             Controls.Add(sidePanel);
@@ -426,6 +415,7 @@
             Controls.Add(topPanel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "mantenimientoUsuarios";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += mantenimientoUsuarios_Load;
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();

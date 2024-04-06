@@ -28,8 +28,36 @@ namespace SistemaGym.UI.Windows
             Application.Exit();
         }
 
+        private bool ValidarCampos()
+        {
+            bool validacionLogin = true;
+
+            ErrorProvider.Clear();
+            string CampoObligatorio = "Por Favor, Llene este Campo";
+
+            if (string.IsNullOrEmpty(TxbUsuario.Text))
+            {
+                ErrorProvider.SetError(TxbUsuario, CampoObligatorio);
+                validacionLogin = false;
+            }
+            if (string.IsNullOrEmpty(TxbContraseña.Text))
+            {
+                ErrorProvider.SetError(TxbContraseña, CampoObligatorio);
+                validacionLogin = false;
+            }
+
+
+            return validacionLogin;
+        }
+
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos())
+            {
+
+                return;
+            }
+
             string nombreUsuario = TxbUsuario.Text;
             string contrasena = TxbContraseña.Text;
 
@@ -46,23 +74,13 @@ namespace SistemaGym.UI.Windows
                 if (resultadoAutenticacion > 0)
                 {
                     MessageBox.Show("¡Sesión Iniciada Con Éxito!\n\nBienvenido al Sistema " + gestioUsuarioEntities.usernameLogged, SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
                     principalForm formularioprincipal = new principalForm();
-
-
                     formularioprincipal.Show();
-
-
                     this.Hide();
-                }
-                else if (string.IsNullOrEmpty(TxbUsuario.Text) && string.IsNullOrEmpty(TxbContraseña.Text))
-                {
-                    MessageBox.Show("Por favor llene los campos", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o Contraseña Incorrectos, Intente Nuevamente", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("¡Usuario o Contraseña Incorrectos, Intente Nuevamente!", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (SqlException ex)
