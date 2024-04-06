@@ -79,7 +79,7 @@
             // 
             label1.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.Goldenrod;
-            label1.Location = new Point(79, 3);
+            label1.Location = new Point(67, 3);
             label1.Name = "label1";
             label1.Size = new Size(168, 59);
             label1.TabIndex = 3;
@@ -88,22 +88,22 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._ListaClientes_x64_;
+            pictureBox1.Image = Properties.Resources.customer_experience_12948497;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(70, 59);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(61, 59);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
             // btnClose
             // 
             btnClose.Cursor = Cursors.Hand;
-            btnClose.Image = Properties.Resources._ForCloseWindowX___;
-            btnClose.Location = new Point(710, 10);
+            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnClose.Location = new Point(726, 16);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(48, 45);
-            btnClose.SizeMode = PictureBoxSizeMode.Zoom;
+            btnClose.Size = new Size(32, 32);
+            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
             btnClose.TabIndex = 1;
             btnClose.TabStop = false;
             btnClose.Click += btnClose_Click;
@@ -229,6 +229,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Load += listaClientes_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);

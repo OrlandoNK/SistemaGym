@@ -22,10 +22,6 @@ namespace SistemaGym.BLL
             FacturacionMembresiaDAL.Actualizar(facturaMembresia);
         }
 
-        public DataTable GetClientMembreship(int idCliente)
-        {
-            return facturacionMembresiaDAL.GetClientWithMembership(idCliente);
-        }
 
         public bool Eliminar (int Id)
         {
