@@ -84,7 +84,7 @@
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
             topPanel.Name = "topPanel";
-            topPanel.Size = new Size(1258, 66);
+            topPanel.Size = new Size(1111, 66);
             topPanel.TabIndex = 0;
             // 
             // btnclose
@@ -92,7 +92,7 @@
             btnclose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnclose.Cursor = Cursors.Hand;
             btnclose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnclose.Location = new Point(1213, 16);
+            btnclose.Location = new Point(1066, 16);
             btnclose.Name = "btnclose";
             btnclose.Size = new Size(32, 32);
             btnclose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -128,7 +128,7 @@
             subtopPanel.Dock = DockStyle.Top;
             subtopPanel.Location = new Point(0, 66);
             subtopPanel.Name = "subtopPanel";
-            subtopPanel.Size = new Size(1258, 31);
+            subtopPanel.Size = new Size(1111, 31);
             subtopPanel.TabIndex = 1;
             // 
             // sidePanel
@@ -142,7 +142,7 @@
             sidePanel.Dock = DockStyle.Left;
             sidePanel.Location = new Point(0, 97);
             sidePanel.Name = "sidePanel";
-            sidePanel.Size = new Size(208, 565);
+            sidePanel.Size = new Size(208, 522);
             sidePanel.TabIndex = 2;
             // 
             // btnDelete
@@ -259,7 +259,7 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(208, 97);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1050, 68);
+            panel5.Size = new Size(903, 68);
             panel5.TabIndex = 124;
             // 
             // TxbBuscar
@@ -283,7 +283,7 @@
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TxbBuscar.Size = new Size(1027, 39);
+            TxbBuscar.Size = new Size(880, 39);
             TxbBuscar.TabIndex = 0;
             TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
@@ -293,7 +293,7 @@
             fillpanel.Dock = DockStyle.Fill;
             fillpanel.Location = new Point(208, 165);
             fillpanel.Name = "fillpanel";
-            fillpanel.Size = new Size(1050, 497);
+            fillpanel.Size = new Size(903, 454);
             fillpanel.TabIndex = 125;
             // 
             // dgvUsuario
@@ -310,7 +310,7 @@
             dgvUsuario.RowHeadersVisible = false;
             dgvUsuario.RowTemplate.Height = 25;
             dgvUsuario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsuario.Size = new Size(1050, 497);
+            dgvUsuario.Size = new Size(903, 454);
             dgvUsuario.TabIndex = 113;
             // 
             // IDUsuario
@@ -407,7 +407,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1258, 662);
+            ClientSize = new Size(1111, 619);
             Controls.Add(fillpanel);
             Controls.Add(panel5);
             Controls.Add(sidePanel);
@@ -416,6 +416,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "mantenimientoUsuarios";
             StartPosition = FormStartPosition.CenterScreen;
+            WindowState = FormWindowState.Maximized;
             Load += mantenimientoUsuarios_Load;
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();
