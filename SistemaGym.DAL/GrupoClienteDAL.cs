@@ -1,4 +1,5 @@
-﻿using SistemaGym.Entities;
+﻿
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
