@@ -20,7 +20,7 @@ namespace SistemaGym.DAL
 
         protected ConexionDAL()
         {
-            this.Base = "SistemaGym2";
+            this.Base = "SistemaGym";
             this.servidor = "DESKTOP-FT9L2OG\\SQLEXPRESS";
             this.seguridad = true;
         }

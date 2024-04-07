@@ -193,7 +193,7 @@ namespace SistemaGym.DAL
             UsuarioEntity usuario = new UsuarioEntity("", "");
 
             usuario.IDUsuario = Convert.ToInt32(reader["IDUsuario"]);
-            usuario.IDEmpleado = Convert.ToInt32(reader["IdEmpleado"]);
+            usuario.IDEmpleado = Convert.ToInt32(reader["IDEmpleado"]);
             usuario.Nombre = Convert.ToString(reader["Nombre"]);
             usuario.Apellido = Convert.ToString(reader["Apellido"]);
 

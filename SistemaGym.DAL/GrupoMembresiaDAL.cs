@@ -54,8 +54,6 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
             bool seElimino;
 
-
-
             Conexion.Open();
             string Eliminar = "Delete from GrupoMembresia where IDGrupoMembresia= @idgrupomembresia";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);

@@ -1,6 +1,6 @@
 ﻿namespace SistemaGym.UI.Windows
 {
-    partial class frmMembresia
+    partial class mantenimientoGrupoMembresia
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -38,21 +38,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            dgvMembresia = new DataGridView();
-            IDMembresia = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            Duracion = new DataGridViewTextBoxColumn();
-            Valor = new DataGridViewTextBoxColumn();
-            FechaCreacion = new DataGridViewTextBoxColumn();
-            Estatus = new DataGridViewTextBoxColumn();
+            panel2 = new Panel();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
-            panel2 = new Panel();
             panel3 = new Panel();
             btnDelete = new Guna.UI2.WinForms.Guna2Button();
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
@@ -60,80 +50,22 @@
             btnNew = new Guna.UI2.WinForms.Guna2Button();
             panel5 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
-            panel4 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel5.SuspendLayout();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
-            // dgvMembresia
+            // panel2
             // 
-            dgvMembresia.AllowUserToAddRows = false;
-            dgvMembresia.AllowUserToDeleteRows = false;
-            dgvMembresia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvMembresia.BackgroundColor = Color.WhiteSmoke;
-            dgvMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Descripcion, Duracion, Valor, FechaCreacion, Estatus });
-            dgvMembresia.Dock = DockStyle.Fill;
-            dgvMembresia.Location = new Point(0, 0);
-            dgvMembresia.Name = "dgvMembresia";
-            dgvMembresia.RowHeadersVisible = false;
-            dgvMembresia.RowTemplate.Height = 25;
-            dgvMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMembresia.Size = new Size(862, 524);
-            dgvMembresia.TabIndex = 14;
-            // 
-            // IDMembresia
-            // 
-            IDMembresia.DataPropertyName = "IDMembresia";
-            IDMembresia.HeaderText = "ID Membresia";
-            IDMembresia.Name = "IDMembresia";
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Descripcion
-            // 
-            Descripcion.DataPropertyName = "Descripcion";
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.Name = "Descripcion";
-            // 
-            // Duracion
-            // 
-            Duracion.DataPropertyName = "Duracion";
-            Duracion.HeaderText = "Duracion";
-            Duracion.Name = "Duracion";
-            // 
-            // Valor
-            // 
-            Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            Valor.DefaultCellStyle = dataGridViewCellStyle3;
-            Valor.HeaderText = "Valor";
-            Valor.Name = "Valor";
-            // 
-            // FechaCreacion
-            // 
-            FechaCreacion.DataPropertyName = "FechaCreacion";
-            dataGridViewCellStyle4.Format = "g";
-            dataGridViewCellStyle4.NullValue = null;
-            FechaCreacion.DefaultCellStyle = dataGridViewCellStyle4;
-            FechaCreacion.HeaderText = "Fecha Creacion";
-            FechaCreacion.Name = "FechaCreacion";
-            // 
-            // Estatus
-            // 
-            Estatus.DataPropertyName = "Estatus";
-            Estatus.HeaderText = "Estatus";
-            Estatus.Name = "Estatus";
+            panel2.BackColor = Color.Goldenrod;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 64);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1085, 36);
+            panel2.TabIndex = 18;
             // 
             // panel1
             // 
@@ -146,7 +78,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1085, 64);
-            panel1.TabIndex = 15;
+            panel1.TabIndex = 17;
             // 
             // label1
             // 
@@ -179,19 +111,8 @@
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnClose.TabIndex = 0;
+            btnClose.TabIndex = 3;
             btnClose.TabStop = false;
-            btnClose.Click += btnClose_Click;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Goldenrod;
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 64);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1085, 36);
-            panel2.TabIndex = 16;
             // 
             // panel3
             // 
@@ -205,14 +126,14 @@
             panel3.Location = new Point(0, 100);
             panel3.Name = "panel3";
             panel3.Size = new Size(221, 585);
-            panel3.TabIndex = 17;
+            panel3.TabIndex = 19;
             // 
             // btnDelete
             // 
             btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
             btnDelete.Cursor = Cursors.Hand;
-            btnDelete.CustomizableEdges = customizableEdges11;
+            btnDelete.CustomizableEdges = customizableEdges9;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -227,18 +148,17 @@
             btnDelete.ImageSize = new Size(25, 25);
             btnDelete.Location = new Point(-1, 296);
             btnDelete.Name = "btnDelete";
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnDelete.Size = new Size(221, 45);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
-            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
             btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.CustomizableEdges = customizableEdges13;
+            btnEdit.CustomizableEdges = customizableEdges11;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -253,18 +173,17 @@
             btnEdit.ImageSize = new Size(25, 25);
             btnEdit.Location = new Point(-1, 239);
             btnEdit.Name = "btnEdit";
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnEdit.Size = new Size(221, 45);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Modificar";
-            btnEdit.Click += btnEdit_Click;
             // 
             // btnrefresh
             // 
             btnrefresh.BorderColor = Color.DarkGoldenrod;
             btnrefresh.BorderThickness = 1;
             btnrefresh.Cursor = Cursors.Hand;
-            btnrefresh.CustomizableEdges = customizableEdges15;
+            btnrefresh.CustomizableEdges = customizableEdges13;
             btnrefresh.DisabledState.BorderColor = Color.DarkGray;
             btnrefresh.DisabledState.CustomBorderColor = Color.DarkGray;
             btnrefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -278,18 +197,17 @@
             btnrefresh.ImageSize = new Size(32, 32);
             btnrefresh.Location = new Point(-1, 182);
             btnrefresh.Name = "btnrefresh";
-            btnrefresh.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnrefresh.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnrefresh.Size = new Size(221, 45);
             btnrefresh.TabIndex = 1;
             btnrefresh.TextAlign = HorizontalAlignment.Right;
-            btnrefresh.Click += btnrefresh_Click;
             // 
             // btnNew
             // 
             btnNew.BorderColor = Color.DarkGoldenrod;
             btnNew.BorderThickness = 1;
             btnNew.Cursor = Cursors.Hand;
-            btnNew.CustomizableEdges = customizableEdges17;
+            btnNew.CustomizableEdges = customizableEdges15;
             btnNew.DisabledState.BorderColor = Color.DarkGray;
             btnNew.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNew.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -304,11 +222,10 @@
             btnNew.ImageSize = new Size(25, 25);
             btnNew.Location = new Point(-1, 125);
             btnNew.Name = "btnNew";
-            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnNew.Size = new Size(221, 45);
             btnNew.TabIndex = 0;
             btnNew.Text = "Nuevo";
-            btnNew.Click += btnNew_Click;
             // 
             // panel5
             // 
@@ -319,13 +236,13 @@
             panel5.Location = new Point(221, 100);
             panel5.Name = "panel5";
             panel5.Size = new Size(864, 59);
-            panel5.TabIndex = 19;
+            panel5.TabIndex = 20;
             // 
             // TxbBuscar
             // 
             TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxbBuscar.BorderRadius = 20;
-            TxbBuscar.CustomizableEdges = customizableEdges19;
+            TxbBuscar.CustomizableEdges = customizableEdges17;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -341,68 +258,45 @@
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges18;
             TxbBuscar.Size = new Size(846, 44);
             TxbBuscar.TabIndex = 0;
-            TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
-            // panel4
+            // mantenimientoGrupoMembresia
             // 
-            panel4.BackColor = Color.FromArgb(35, 32, 39);
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(dgvMembresia);
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(221, 159);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(864, 526);
-            panel4.TabIndex = 20;
-            // 
-            // frmMembresia
-            // 
-            AutoScaleMode = AutoScaleMode.None;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 685);
-            Controls.Add(panel4);
             Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            MaximizeBox = false;
-            Name = "frmMembresia";
+            Name = "mantenimientoGrupoMembresia";
             StartPosition = FormStartPosition.CenterScreen;
-            Load += frmMembresia_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvMembresia).EndInit();
+            Text = "mantenimientoGrupoMembresia";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private DataGridView dgvMembresia;
-        private DataGridViewTextBoxColumn IDMembresia;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn Duracion;
-        private DataGridViewTextBoxColumn Valor;
-        private DataGridViewTextBoxColumn FechaCreacion;
-        private DataGridViewTextBoxColumn Estatus;
-        private Panel panel1;
+
         private Panel panel2;
+        private Panel panel1;
+        private Label label1;
+        private PictureBox pictureBox1;
+        private PictureBox btnClose;
         private Panel panel3;
-        private Guna.UI2.WinForms.Guna2Button btnNew;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnrefresh;
-        private PictureBox btnClose;
-        private Label label1;
-        private PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Button btnNew;
         private Panel panel5;
-        private Panel panel4;
         private Guna.UI2.WinForms.Guna2TextBox TxbBuscar;
     }
 }

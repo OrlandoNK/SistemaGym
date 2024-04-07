@@ -15,16 +15,13 @@ namespace SistemaGym.BLL
         readonly GrupoMembresiaDAL grupoMembresiaDAL = new GrupoMembresiaDAL();
         public static void guardar(GrupoMembresiaEntity grupoMembresia)
         {
-            if (grupoMembresia.IDGrupoMembresia == 0)
-            {
-                //agregar
-                GrupoMembresiaDAL.InsertarGrupoMembresia(grupoMembresia);
-            }
-            else
-            {
-                //Actualizar
-                GrupoMembresiaDAL.ActualizarGrupoMembresia(grupoMembresia);
-            }
+            //agregar
+            GrupoMembresiaDAL.InsertarGrupoMembresia(grupoMembresia);
+        }
+        public static void actualizar(GrupoMembresiaEntity grupoMembresia)
+        {
+            //Actualizar
+            GrupoMembresiaDAL.ActualizarGrupoMembresia(grupoMembresia);
         }
         public static bool Eliminar(GrupoMembresiaEntity grupoMembresia)
         {
