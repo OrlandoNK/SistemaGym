@@ -43,6 +43,8 @@
             Nombre = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
+            label8 = new Label();
+            pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -53,15 +55,13 @@
             panel5 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel6 = new Panel();
-            label8 = new Label();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvRol).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvRol
@@ -72,13 +72,13 @@
             dgvRol.BackgroundColor = Color.WhiteSmoke;
             dgvRol.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRol.Columns.AddRange(new DataGridViewColumn[] { IDRol, Nombre, Descripcion });
+            dgvRol.Dock = DockStyle.Fill;
             dgvRol.Location = new Point(0, 0);
             dgvRol.Name = "dgvRol";
-            dgvRol.ReadOnly = true;
             dgvRol.RowHeadersVisible = false;
             dgvRol.RowTemplate.Height = 25;
             dgvRol.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRol.Size = new Size(514, 362);
+            dgvRol.Size = new Size(883, 526);
             dgvRol.TabIndex = 3;
             // 
             // IDRol
@@ -86,21 +86,18 @@
             IDRol.DataPropertyName = "IDRol";
             IDRol.HeaderText = "IDRol";
             IDRol.Name = "IDRol";
-            IDRol.ReadOnly = true;
             // 
             // Nombre
             // 
             Nombre.DataPropertyName = "Nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
             // 
             // Descripcion
             // 
             Descripcion.DataPropertyName = "Descripcion";
             Descripcion.HeaderText = "Descripcion";
             Descripcion.Name = "Descripcion";
-            Descripcion.ReadOnly = true;
             // 
             // panel1
             // 
@@ -112,15 +109,36 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(715, 61);
+            panel1.Size = new Size(1085, 61);
             panel1.TabIndex = 10;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.DarkGoldenrod;
+            label8.Location = new Point(62, 17);
+            label8.Name = "label8";
+            label8.Size = new Size(56, 24);
+            label8.TabIndex = 6;
+            label8.Text = "Roles";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.user_role__x32_;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(53, 53);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // btnClose
             // 
             btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(670, 13);
+            btnClose.Location = new Point(1040, 13);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -135,12 +153,12 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 61);
             panel2.Name = "panel2";
-            panel2.Size = new Size(715, 26);
+            panel2.Size = new Size(1085, 26);
             panel2.TabIndex = 11;
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(35, 32, 39);
+            panel3.BackColor = Color.Black;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(btnRefresh);
             panel3.Controls.Add(btnNew);
@@ -149,7 +167,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 87);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 433);
+            panel3.Size = new Size(200, 598);
             panel3.TabIndex = 12;
             // 
             // btnRefresh
@@ -258,11 +276,12 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(200, 87);
             panel5.Name = "panel5";
-            panel5.Size = new Size(515, 70);
+            panel5.Size = new Size(885, 70);
             panel5.TabIndex = 14;
             // 
             // TxbBuscar
             // 
+            TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxbBuscar.BorderRadius = 20;
             TxbBuscar.CustomizableEdges = customizableEdges9;
             TxbBuscar.DefaultText = "";
@@ -280,7 +299,7 @@
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TxbBuscar.Size = new Size(500, 41);
+            TxbBuscar.Size = new Size(870, 41);
             TxbBuscar.TabIndex = 0;
             TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
@@ -292,35 +311,14 @@
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(200, 157);
             panel6.Name = "panel6";
-            panel6.Size = new Size(515, 363);
+            panel6.Size = new Size(885, 528);
             panel6.TabIndex = 15;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.DarkGoldenrod;
-            label8.Location = new Point(62, 17);
-            label8.Name = "label8";
-            label8.Size = new Size(56, 24);
-            label8.TabIndex = 6;
-            label8.Text = "Roles";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.user_role__x32_;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(53, 53);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
             // 
             // frmRol
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(715, 520);
+            ClientSize = new Size(1085, 685);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel3);
@@ -334,11 +332,11 @@
             ((System.ComponentModel.ISupportInitialize)dgvRol).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
