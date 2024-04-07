@@ -91,7 +91,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1163, 61);
+            panel1.Size = new Size(1085, 61);
             panel1.TabIndex = 73;
             // 
             // label1
@@ -136,7 +136,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 61);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1163, 34);
+            panel2.Size = new Size(1085, 34);
             panel2.TabIndex = 74;
             // 
             // panel3
@@ -325,7 +325,7 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(200, 95);
             panel4.Name = "panel4";
-            panel4.Size = new Size(963, 70);
+            panel4.Size = new Size(885, 70);
             panel4.TabIndex = 76;
             // 
             // TxbBuscar
@@ -342,14 +342,14 @@
             TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
-            TxbBuscar.Location = new Point(3, 13);
+            TxbBuscar.Location = new Point(7, 13);
             TxbBuscar.Name = "TxbBuscar";
             TxbBuscar.PasswordChar = '\0';
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            TxbBuscar.Size = new Size(877, 42);
+            TxbBuscar.Size = new Size(869, 42);
             TxbBuscar.TabIndex = 0;
             // 
             // panel5
@@ -360,7 +360,7 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(200, 165);
             panel5.Name = "panel5";
-            panel5.Size = new Size(963, 520);
+            panel5.Size = new Size(885, 520);
             panel5.TabIndex = 77;
             // 
             // dgvClientes
@@ -377,7 +377,7 @@
             dgvClientes.RowHeadersVisible = false;
             dgvClientes.RowTemplate.Height = 25;
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClientes.Size = new Size(961, 518);
+            dgvClientes.Size = new Size(883, 518);
             dgvClientes.TabIndex = 0;
             // 
             // IDCliente
