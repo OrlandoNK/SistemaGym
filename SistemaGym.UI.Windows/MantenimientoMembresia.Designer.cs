@@ -59,8 +59,8 @@
             btnrefresh = new Guna.UI2.WinForms.Guna2Button();
             btnNew = new Guna.UI2.WinForms.Guna2Button();
             panel5 = new Panel();
-            panel4 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
+            panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -78,12 +78,13 @@
             dgvMembresia.BackgroundColor = Color.WhiteSmoke;
             dgvMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Descripcion, Duracion, Valor, FechaCreacion, Estatus });
+            dgvMembresia.Dock = DockStyle.Fill;
             dgvMembresia.Location = new Point(0, 0);
             dgvMembresia.Name = "dgvMembresia";
             dgvMembresia.RowHeadersVisible = false;
             dgvMembresia.RowTemplate.Height = 25;
             dgvMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMembresia.Size = new Size(649, 382);
+            dgvMembresia.Size = new Size(862, 524);
             dgvMembresia.TabIndex = 14;
             // 
             // IDMembresia
@@ -144,7 +145,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(871, 64);
+            panel1.Size = new Size(1085, 64);
             panel1.TabIndex = 15;
             // 
             // label1
@@ -171,9 +172,10 @@
             // 
             // btnClose
             // 
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(817, 15);
+            btnClose.Location = new Point(1031, 15);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -188,7 +190,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 64);
             panel2.Name = "panel2";
-            panel2.Size = new Size(871, 36);
+            panel2.Size = new Size(1085, 36);
             panel2.TabIndex = 16;
             // 
             // panel3
@@ -202,7 +204,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 100);
             panel3.Name = "panel3";
-            panel3.Size = new Size(221, 441);
+            panel3.Size = new Size(221, 585);
             panel3.TabIndex = 17;
             // 
             // btnDelete
@@ -223,10 +225,10 @@
             btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
-            btnDelete.Location = new Point(-1, 203);
+            btnDelete.Location = new Point(-1, 296);
             btnDelete.Name = "btnDelete";
             btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnDelete.Size = new Size(221, 48);
+            btnDelete.Size = new Size(221, 45);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
             btnDelete.Click += btnDelete_Click;
@@ -249,10 +251,10 @@
             btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
-            btnEdit.Location = new Point(-1, 149);
+            btnEdit.Location = new Point(-1, 239);
             btnEdit.Name = "btnEdit";
             btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnEdit.Size = new Size(221, 48);
+            btnEdit.Size = new Size(221, 45);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Modificar";
             btnEdit.Click += btnEdit_Click;
@@ -274,10 +276,10 @@
             btnrefresh.HoverState.ForeColor = Color.Black;
             btnrefresh.Image = Properties.Resources.refresh_8677771;
             btnrefresh.ImageSize = new Size(32, 32);
-            btnrefresh.Location = new Point(-1, 95);
+            btnrefresh.Location = new Point(-1, 182);
             btnrefresh.Name = "btnrefresh";
             btnrefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnrefresh.Size = new Size(221, 48);
+            btnrefresh.Size = new Size(221, 45);
             btnrefresh.TabIndex = 1;
             btnrefresh.TextAlign = HorizontalAlignment.Right;
             btnrefresh.Click += btnrefresh_Click;
@@ -300,10 +302,10 @@
             btnNew.Image = Properties.Resources._NewFacturaProduct;
             btnNew.ImageAlign = HorizontalAlignment.Left;
             btnNew.ImageSize = new Size(25, 25);
-            btnNew.Location = new Point(-1, 41);
+            btnNew.Location = new Point(-1, 125);
             btnNew.Name = "btnNew";
             btnNew.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnNew.Size = new Size(221, 48);
+            btnNew.Size = new Size(221, 45);
             btnNew.TabIndex = 0;
             btnNew.Text = "Nuevo";
             btnNew.Click += btnNew_Click;
@@ -316,22 +318,12 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(221, 100);
             panel5.Name = "panel5";
-            panel5.Size = new Size(650, 59);
+            panel5.Size = new Size(864, 59);
             panel5.TabIndex = 19;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(35, 32, 39);
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(dgvMembresia);
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(221, 159);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(650, 382);
-            panel4.TabIndex = 20;
             // 
             // TxbBuscar
             // 
+            TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxbBuscar.BorderRadius = 20;
             TxbBuscar.CustomizableEdges = customizableEdges9;
             TxbBuscar.DefaultText = "";
@@ -350,14 +342,25 @@
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TxbBuscar.Size = new Size(632, 44);
+            TxbBuscar.Size = new Size(846, 44);
             TxbBuscar.TabIndex = 0;
             TxbBuscar.TextChanged += TxbBuscar_TextChanged;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(35, 32, 39);
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(dgvMembresia);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(221, 159);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(864, 526);
+            panel4.TabIndex = 20;
             // 
             // frmMembresia
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(871, 541);
+            ClientSize = new Size(1085, 685);
             Controls.Add(panel4);
             Controls.Add(panel5);
             Controls.Add(panel3);

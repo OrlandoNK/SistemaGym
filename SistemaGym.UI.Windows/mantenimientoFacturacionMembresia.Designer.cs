@@ -82,7 +82,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1186, 64);
+            panel1.Size = new Size(1085, 64);
             panel1.TabIndex = 0;
             // 
             // lblTitleMantenimientoFacturaMembresia
@@ -98,7 +98,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._PaymentMembresiaFactura;
+            pictureBox1.Image = Properties.Resources.icon_facturacion_membresia__x32_;
             pictureBox1.Location = new Point(3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(62, 53);
@@ -111,7 +111,7 @@
             btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources._CloseWindowX;
-            btnClose.Location = new Point(1125, 9);
+            btnClose.Location = new Point(1024, 9);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(48, 45);
             btnClose.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -126,7 +126,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 64);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1186, 28);
+            panel2.Size = new Size(1085, 28);
             panel2.TabIndex = 1;
             // 
             // panel3
@@ -140,7 +140,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 92);
             panel3.Name = "panel3";
-            panel3.Size = new Size(210, 523);
+            panel3.Size = new Size(210, 593);
             panel3.TabIndex = 2;
             // 
             // btnDelete
@@ -257,7 +257,7 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(210, 92);
             panel4.Name = "panel4";
-            panel4.Size = new Size(976, 60);
+            panel4.Size = new Size(875, 60);
             panel4.TabIndex = 3;
             // 
             // TxbBuscar
@@ -281,7 +281,7 @@
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            TxbBuscar.Size = new Size(960, 43);
+            TxbBuscar.Size = new Size(859, 43);
             TxbBuscar.TabIndex = 0;
             TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
@@ -292,7 +292,7 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(210, 152);
             panel5.Name = "panel5";
-            panel5.Size = new Size(976, 463);
+            panel5.Size = new Size(875, 533);
             panel5.TabIndex = 4;
             // 
             // dgvFacturacionMembresia
@@ -309,7 +309,7 @@
             dgvFacturacionMembresia.RowHeadersVisible = false;
             dgvFacturacionMembresia.RowTemplate.Height = 25;
             dgvFacturacionMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvFacturacionMembresia.Size = new Size(976, 463);
+            dgvFacturacionMembresia.Size = new Size(875, 533);
             dgvFacturacionMembresia.TabIndex = 0;
             // 
             // IDFactura
@@ -398,7 +398,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1186, 615);
+            ClientSize = new Size(1085, 685);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);

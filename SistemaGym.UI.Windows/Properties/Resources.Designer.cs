@@ -993,6 +993,26 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_facturacion_membresia__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-facturacion-membresia-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_facturacion_producto_mantenimiento__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-facturacion-producto-mantenimiento-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_for_editing_button_x32 {
             get {
                 object obj = ResourceManager.GetObject("icon for editing button x32", resourceCulture);
@@ -1006,6 +1026,26 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap icon_hide_password__x32_ {
             get {
                 object obj = ResourceManager.GetObject("icon-hide-password-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_lista_cliente_mantenimiento__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-lista-cliente-mantenimiento-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_proveedor_mantenimiento__x32__waos {
+            get {
+                object obj = ResourceManager.GetObject("icon-proveedor-mantenimiento-[x32]-waos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
