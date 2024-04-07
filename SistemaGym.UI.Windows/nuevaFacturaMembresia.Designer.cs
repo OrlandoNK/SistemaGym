@@ -43,8 +43,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             lblTitleMantenimientoFacturaMembresia = new Label();
             pictureBox1 = new PictureBox();
@@ -99,7 +97,6 @@
             label11 = new Label();
             TxbFacturaIDCargoCredito = new TextBox();
             groupBox1 = new GroupBox();
-            btnBuscarIDMembresia = new Guna.UI2.WinForms.Guna2Button();
             TxbIDMembresia = new TextBox();
             TxbValorMembresia = new TextBox();
             label3 = new Label();
@@ -763,7 +760,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(btnBuscarIDMembresia);
             groupBox1.Controls.Add(TxbIDMembresia);
             groupBox1.Controls.Add(TxbValorMembresia);
             groupBox1.Controls.Add(label3);
@@ -778,28 +774,6 @@
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de la Membresia";
-            // 
-            // btnBuscarIDMembresia
-            // 
-            btnBuscarIDMembresia.BorderRadius = 10;
-            btnBuscarIDMembresia.BorderThickness = 2;
-            btnBuscarIDMembresia.Cursor = Cursors.Hand;
-            btnBuscarIDMembresia.CustomizableEdges = customizableEdges15;
-            btnBuscarIDMembresia.DisabledState.BorderColor = Color.DarkGray;
-            btnBuscarIDMembresia.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnBuscarIDMembresia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnBuscarIDMembresia.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnBuscarIDMembresia.FillColor = Color.Transparent;
-            btnBuscarIDMembresia.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscarIDMembresia.ForeColor = Color.White;
-            btnBuscarIDMembresia.Image = Properties.Resources._BuscarMembresia_x32_;
-            btnBuscarIDMembresia.ImageSize = new Size(32, 32);
-            btnBuscarIDMembresia.Location = new Point(255, 96);
-            btnBuscarIDMembresia.Name = "btnBuscarIDMembresia";
-            btnBuscarIDMembresia.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btnBuscarIDMembresia.Size = new Size(117, 55);
-            btnBuscarIDMembresia.TabIndex = 9;
-            btnBuscarIDMembresia.Click += btnBuscarIDMembresia_Click;
             // 
             // TxbIDMembresia
             // 
@@ -860,7 +834,7 @@
             TxbDescrMembresia.Location = new Point(9, 124);
             TxbDescrMembresia.Name = "TxbDescrMembresia";
             TxbDescrMembresia.ReadOnly = true;
-            TxbDescrMembresia.Size = new Size(240, 23);
+            TxbDescrMembresia.Size = new Size(363, 23);
             TxbDescrMembresia.TabIndex = 5;
             // 
             // label2
@@ -940,7 +914,6 @@
         private Label label7;
         private TextBox TxbApellidoCliente;
         private GroupBox groupBox1;
-        private Guna.UI2.WinForms.Guna2Button btnBuscarIDMembresia;
         private Label lblidmembresia;
         private Label label3;
         private Label label1;

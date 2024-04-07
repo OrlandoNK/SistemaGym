@@ -27,27 +27,6 @@ namespace SistemaGym.UI.Windows
             Close();
         }
 
-        private void btnBuscarIDMembresia_Click(object sender, EventArgs e)
-        {
-            listaMembresias listaMembresias = new listaMembresias();
-
-            if (listaMembresias.ShowDialog() == DialogResult.OK)
-            {
-                MembresiaEntity oMembresia = MembresiaBLL.GetById((int)listaMembresias.IdMembresia);
-
-                if (oMembresia != null)
-                {
-                    this.TxbIDMembresia.Text = oMembresia.IDMembresia.ToString();
-                    this.TxbNombreMembresia.Text = oMembresia.Nombre.ToString();
-                    this.TxbDescrMembresia.Text = oMembresia.Descripcion.ToString();
-                    this.TxbValorMembresia.Text = Convert.ToInt32(oMembresia.Valor).ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Membresia No Encontrada", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
         private void btnBuscarIDCliente_Click(object sender, EventArgs e)
         {
             ClientesBLL clientesBLL = new ClientesBLL();
