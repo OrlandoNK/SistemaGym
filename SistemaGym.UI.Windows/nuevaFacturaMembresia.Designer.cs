@@ -149,7 +149,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._PaymentMembresiaFactura;
+            pictureBox1.Image = Properties.Resources.icon_facturacion_membresia__x32_;
             pictureBox1.Location = new Point(3, 5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(62, 53);

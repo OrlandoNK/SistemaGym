@@ -983,6 +983,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_area_gym_registra__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-area-gym-registra-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_empleados_x32 {
             get {
                 object obj = ResourceManager.GetObject("icon-empleados-x32", resourceCulture);
@@ -1056,6 +1066,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap icon_show_password__x32_ {
             get {
                 object obj = ResourceManager.GetObject("icon-show-password-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icono_area_empresa_GYM__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icono-area-empresa-GYM-[x32]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

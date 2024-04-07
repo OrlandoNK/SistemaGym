@@ -29,15 +29,15 @@ namespace SistemaGym.UI.Windows
             CargarTipoListaCliente();
         }
 
-        
+
         private void CargarUsuario()
         {
             cbUsuario.DataSource = UsuarioBLL.Mostrar();
             cbUsuario.ValueMember = "IDUsuario";
             cbUsuario.DisplayMember = "Nombre";
         }
-        
-        
+
+
         private void CargarTipoListaCliente()
         {
             cbTipoListaCliente.ValueMember = "IDTipoListaCliente";

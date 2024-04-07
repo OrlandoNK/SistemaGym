@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             topPanel = new Panel();
             btnCerrar = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -104,11 +104,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.area_GYM_empresa;
+            pictureBox1.Image = Properties.Resources.icono_area_empresa_GYM__x32_;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(63, 56);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -139,7 +139,7 @@
             btnSave.BorderColor = Color.DarkGoldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges1;
+            btnSave.CustomizableEdges = customizableEdges9;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -155,7 +155,7 @@
             btnSave.Location = new Point(-1, 48);
             btnSave.Name = "btnSave";
             btnSave.PressedColor = Color.Transparent;
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnSave.Size = new Size(202, 54);
             btnSave.TabIndex = 6;
             btnSave.Text = "Guardar";
@@ -250,7 +250,7 @@
             // 
             btnBuscarEncargado.BorderThickness = 1;
             btnBuscarEncargado.Cursor = Cursors.Hand;
-            btnBuscarEncargado.CustomizableEdges = customizableEdges3;
+            btnBuscarEncargado.CustomizableEdges = customizableEdges11;
             btnBuscarEncargado.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarEncargado.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarEncargado.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -263,7 +263,7 @@
             btnBuscarEncargado.ImageSize = new Size(28, 28);
             btnBuscarEncargado.Location = new Point(87, 34);
             btnBuscarEncargado.Name = "btnBuscarEncargado";
-            btnBuscarEncargado.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnBuscarEncargado.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnBuscarEncargado.Size = new Size(50, 48);
             btnBuscarEncargado.TabIndex = 10;
             btnBuscarEncargado.Click += btnBuscarEncargado_Click;
@@ -332,6 +332,7 @@
             Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarAreaEmpresa";
+            StartPosition = FormStartPosition.CenterScreen;
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();

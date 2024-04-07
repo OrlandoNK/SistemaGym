@@ -450,6 +450,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarProducto";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += registrarProducto_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

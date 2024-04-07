@@ -38,19 +38,19 @@
             btnGuardar = new Button();
             errorProvider1 = new ErrorProvider(components);
             panel1 = new Panel();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
             txtDescripcion = new RichTextBox();
             panel4 = new Panel();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtNombre
@@ -160,6 +160,27 @@
             panel1.Size = new Size(529, 63);
             panel1.TabIndex = 138;
             // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2HtmlLabel1.ForeColor = Color.Goldenrod;
+            guna2HtmlLabel1.Location = new Point(73, 18);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(128, 25);
+            guna2HtmlLabel1.TabIndex = 4;
+            guna2HtmlLabel1.Text = "Tipo de Cliente";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.customer_experience_12948497;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(64, 55);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
             // btnClose
             // 
             btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -220,27 +241,6 @@
             panel4.Size = new Size(200, 335);
             panel4.TabIndex = 137;
             // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2HtmlLabel1.ForeColor = Color.Goldenrod;
-            guna2HtmlLabel1.Location = new Point(73, 18);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(128, 25);
-            guna2HtmlLabel1.TabIndex = 4;
-            guna2HtmlLabel1.Text = "Tipo de Cliente";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(64, 55);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
             // frmTipoCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -257,11 +257,11 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

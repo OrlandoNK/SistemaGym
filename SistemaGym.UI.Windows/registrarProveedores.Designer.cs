@@ -88,11 +88,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icono_proveedor_x32_qsy_xd;
+            pictureBox1.Image = Properties.Resources.icon_proveedor_mantenimiento__x32__waos;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(62, 57);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 

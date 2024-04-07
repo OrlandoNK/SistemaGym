@@ -173,7 +173,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.mantenimiento_TipoCliente_x32__;
+            pictureBox1.Image = Properties.Resources.customer_experience_12948497;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(64, 55);
@@ -242,6 +242,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmListaCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmListaCliente";
             Load += frmListaCliente_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();

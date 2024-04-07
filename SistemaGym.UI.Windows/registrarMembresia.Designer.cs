@@ -98,7 +98,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.facturamembresia;
+            pictureBox2.Image = Properties.Resources.icon_facturacion_membresia__x32_;
             pictureBox2.Location = new Point(11, 7);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(52, 50);
