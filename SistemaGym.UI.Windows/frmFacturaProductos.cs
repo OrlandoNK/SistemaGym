@@ -58,7 +58,7 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(txtCantidad, CampoNegativoError);
                 resultado = false;
             }
-            int Descuento = Convert.ToInt32(txtDescuento.Text);
+            Decimal Descuento = Convert.ToDecimal(txtDescuento.Text);
             if (Descuento < 0)
             {
                 errorProvider.SetError(txtDescuento, CampoNegativoError);
