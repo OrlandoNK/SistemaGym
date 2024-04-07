@@ -79,7 +79,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(974, 64);
+            panel1.Size = new Size(1085, 64);
             panel1.TabIndex = 0;
             // 
             // btnClose
@@ -87,7 +87,7 @@
             btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(929, 15);
+            btnClose.Location = new Point(1040, 15);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -108,7 +108,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._PaymentMembresiaFactura;
+            pictureBox1.Image = Properties.Resources.VerDetalleFacturaProductos__x32_;
             pictureBox1.Location = new Point(3, 5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(62, 53);
@@ -123,7 +123,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 64);
             panel2.Name = "panel2";
-            panel2.Size = new Size(974, 38);
+            panel2.Size = new Size(1085, 38);
             panel2.TabIndex = 2;
             // 
             // panel3
@@ -135,7 +135,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 102);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 498);
+            panel3.Size = new Size(200, 583);
             panel3.TabIndex = 3;
             // 
             // btnDelete
@@ -199,11 +199,12 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(200, 102);
             panel4.Name = "panel4";
-            panel4.Size = new Size(774, 64);
+            panel4.Size = new Size(885, 64);
             panel4.TabIndex = 4;
             // 
             // TxbBuscar
             // 
+            TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxbBuscar.BorderRadius = 20;
             TxbBuscar.CustomizableEdges = customizableEdges5;
             TxbBuscar.DefaultText = "";
@@ -222,7 +223,7 @@
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            TxbBuscar.Size = new Size(752, 44);
+            TxbBuscar.Size = new Size(863, 44);
             TxbBuscar.TabIndex = 0;
             TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
@@ -234,23 +235,24 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(200, 166);
             panel5.Name = "panel5";
-            panel5.Size = new Size(774, 434);
+            panel5.Size = new Size(885, 519);
             panel5.TabIndex = 5;
             // 
             // dgvDetalleFacturaProducto
             // 
             dgvDetalleFacturaProducto.AllowUserToAddRows = false;
             dgvDetalleFacturaProducto.AllowUserToDeleteRows = false;
-            dgvDetalleFacturaProducto.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dgvDetalleFacturaProducto.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDetalleFacturaProducto.BackgroundColor = Color.WhiteSmoke;
             dgvDetalleFacturaProducto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDetalleFacturaProducto.Columns.AddRange(new DataGridViewColumn[] { IDDetalleFacturaProductos, IDFacturaProducto, IDProducto, precio, cantidad, Subtotal, Descuento, Itbis, Total });
-            dgvDetalleFacturaProducto.Location = new Point(-1, -1);
+            dgvDetalleFacturaProducto.Dock = DockStyle.Fill;
+            dgvDetalleFacturaProducto.Location = new Point(0, 0);
             dgvDetalleFacturaProducto.Name = "dgvDetalleFacturaProducto";
             dgvDetalleFacturaProducto.RowHeadersVisible = false;
             dgvDetalleFacturaProducto.RowTemplate.Height = 25;
             dgvDetalleFacturaProducto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDetalleFacturaProducto.Size = new Size(773, 434);
+            dgvDetalleFacturaProducto.Size = new Size(883, 517);
             dgvDetalleFacturaProducto.TabIndex = 0;
             // 
             // IDDetalleFacturaProductos
@@ -258,7 +260,6 @@
             IDDetalleFacturaProductos.DataPropertyName = "IDDetalleFacturaProductos";
             IDDetalleFacturaProductos.HeaderText = "IDDetalleFacturaProductos";
             IDDetalleFacturaProductos.Name = "IDDetalleFacturaProductos";
-            IDDetalleFacturaProductos.Width = 172;
             // 
             // IDFacturaProducto
             // 
@@ -267,14 +268,12 @@
             IDFacturaProducto.Name = "IDFacturaProducto";
             IDFacturaProducto.Resizable = DataGridViewTriState.True;
             IDFacturaProducto.SortMode = DataGridViewColumnSortMode.NotSortable;
-            IDFacturaProducto.Width = 112;
             // 
             // IDProducto
             // 
             IDProducto.DataPropertyName = "IDProducto";
             IDProducto.HeaderText = "IDProducto";
             IDProducto.Name = "IDProducto";
-            IDProducto.Width = 73;
             // 
             // precio
             // 
@@ -284,14 +283,12 @@
             precio.DefaultCellStyle = dataGridViewCellStyle1;
             precio.HeaderText = "precio";
             precio.Name = "precio";
-            precio.Width = 65;
             // 
             // cantidad
             // 
             cantidad.DataPropertyName = "cantidad";
             cantidad.HeaderText = "cantidad";
             cantidad.Name = "cantidad";
-            cantidad.Width = 78;
             // 
             // Subtotal
             // 
@@ -301,7 +298,6 @@
             Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
-            Subtotal.Width = 76;
             // 
             // Descuento
             // 
@@ -311,7 +307,6 @@
             Descuento.DefaultCellStyle = dataGridViewCellStyle3;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
-            Descuento.Width = 88;
             // 
             // Itbis
             // 
@@ -321,7 +316,6 @@
             Itbis.DefaultCellStyle = dataGridViewCellStyle4;
             Itbis.HeaderText = "Itbis";
             Itbis.Name = "Itbis";
-            Itbis.Width = 54;
             // 
             // Total
             // 
@@ -331,13 +325,12 @@
             Total.DefaultCellStyle = dataGridViewCellStyle5;
             Total.HeaderText = "Total";
             Total.Name = "Total";
-            Total.Width = 57;
             // 
             // mantenimientoDetalleFacturaProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(974, 600);
+            ClientSize = new Size(1085, 685);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);

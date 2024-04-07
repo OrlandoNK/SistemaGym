@@ -77,7 +77,7 @@
             topPanel.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             topPanel.Location = new Point(0, 0);
             topPanel.Name = "topPanel";
-            topPanel.Size = new Size(816, 64);
+            topPanel.Size = new Size(1085, 64);
             topPanel.TabIndex = 0;
             // 
             // pictureBox1
@@ -92,9 +92,10 @@
             // 
             // btnCerrar
             // 
+            btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCerrar.Cursor = Cursors.Hand;
             btnCerrar.Image = Properties.Resources._BotonXcerrarVentana;
-            btnCerrar.Location = new Point(771, 15);
+            btnCerrar.Location = new Point(1040, 15);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(32, 32);
             btnCerrar.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -121,7 +122,7 @@
             subtopPanel.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             subtopPanel.Location = new Point(0, 64);
             subtopPanel.Name = "subtopPanel";
-            subtopPanel.Size = new Size(816, 35);
+            subtopPanel.Size = new Size(1085, 35);
             subtopPanel.TabIndex = 1;
             // 
             // sidePanel
@@ -136,7 +137,7 @@
             sidePanel.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             sidePanel.Location = new Point(0, 99);
             sidePanel.Name = "sidePanel";
-            sidePanel.Size = new Size(198, 460);
+            sidePanel.Size = new Size(198, 586);
             sidePanel.TabIndex = 2;
             // 
             // btnDelete
@@ -157,7 +158,7 @@
             btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
-            btnDelete.Location = new Point(-1, 275);
+            btnDelete.Location = new Point(-1, 274);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedColor = Color.Transparent;
             btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -184,7 +185,7 @@
             btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
-            btnEdit.Location = new Point(-1, 224);
+            btnEdit.Location = new Point(-1, 217);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedColor = Color.Transparent;
             btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -210,7 +211,7 @@
             btnRefresh.HoverState.ForeColor = Color.Black;
             btnRefresh.Image = Properties.Resources.refresh_8677771;
             btnRefresh.ImageSize = new Size(25, 25);
-            btnRefresh.Location = new Point(-1, 173);
+            btnRefresh.Location = new Point(-1, 160);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.PressedColor = Color.Transparent;
             btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -235,7 +236,7 @@
             btnNew.Image = Properties.Resources._NewFacturaProduct;
             btnNew.ImageAlign = HorizontalAlignment.Left;
             btnNew.ImageSize = new Size(25, 25);
-            btnNew.Location = new Point(-1, 122);
+            btnNew.Location = new Point(-1, 103);
             btnNew.Name = "btnNew";
             btnNew.PressedColor = Color.Transparent;
             btnNew.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -253,11 +254,12 @@
             searchbarPanel.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             searchbarPanel.Location = new Point(198, 99);
             searchbarPanel.Name = "searchbarPanel";
-            searchbarPanel.Size = new Size(618, 63);
+            searchbarPanel.Size = new Size(887, 63);
             searchbarPanel.TabIndex = 3;
             // 
             // TxbSearchBar
             // 
+            TxbSearchBar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxbSearchBar.BorderRadius = 20;
             TxbSearchBar.CustomizableEdges = customizableEdges9;
             TxbSearchBar.DefaultText = "";
@@ -269,14 +271,14 @@
             TxbSearchBar.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbSearchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbSearchBar.IconLeft = Properties.Resources._BusquedaBar__;
-            TxbSearchBar.Location = new Point(8, 7);
+            TxbSearchBar.Location = new Point(9, 10);
             TxbSearchBar.Name = "TxbSearchBar";
             TxbSearchBar.PasswordChar = '\0';
             TxbSearchBar.PlaceholderForeColor = Color.Silver;
             TxbSearchBar.PlaceholderText = "Buscar";
             TxbSearchBar.SelectedText = "";
             TxbSearchBar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TxbSearchBar.Size = new Size(598, 47);
+            TxbSearchBar.Size = new Size(867, 40);
             TxbSearchBar.TabIndex = 0;
             // 
             // fillPanel
@@ -288,7 +290,7 @@
             fillPanel.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             fillPanel.Location = new Point(198, 162);
             fillPanel.Name = "fillPanel";
-            fillPanel.Size = new Size(618, 397);
+            fillPanel.Size = new Size(887, 523);
             fillPanel.TabIndex = 4;
             // 
             // dgvAreaEmpresa
@@ -299,12 +301,13 @@
             dgvAreaEmpresa.BackgroundColor = Color.WhiteSmoke;
             dgvAreaEmpresa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAreaEmpresa.Columns.AddRange(new DataGridViewColumn[] { IDArea, Encargado, Nombre, Descripcion, FechaRegistro });
-            dgvAreaEmpresa.Location = new Point(-1, -3);
+            dgvAreaEmpresa.Dock = DockStyle.Fill;
+            dgvAreaEmpresa.Location = new Point(0, 0);
             dgvAreaEmpresa.Name = "dgvAreaEmpresa";
             dgvAreaEmpresa.RowHeadersVisible = false;
             dgvAreaEmpresa.RowTemplate.Height = 25;
             dgvAreaEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAreaEmpresa.Size = new Size(618, 399);
+            dgvAreaEmpresa.Size = new Size(885, 521);
             dgvAreaEmpresa.TabIndex = 0;
             // 
             // IDArea
@@ -342,7 +345,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(816, 559);
+            ClientSize = new Size(1085, 685);
             Controls.Add(fillPanel);
             Controls.Add(searchbarPanel);
             Controls.Add(sidePanel);
@@ -350,6 +353,7 @@
             Controls.Add(topPanel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "mantenimientoAreaEmpresa";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += mantenimientoAreaEmpresa_Load;
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();

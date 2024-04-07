@@ -91,7 +91,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(905, 61);
+            panel1.Size = new Size(1163, 61);
             panel1.TabIndex = 73;
             // 
             // label1
@@ -108,7 +108,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._Clientes_mainScreen_;
+            pictureBox1.Image = Properties.Resources.customer_experience_12948497;
             pictureBox1.Location = new Point(3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(62, 50);
@@ -121,7 +121,7 @@
             btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(860, 13);
+            btnClose.Location = new Point(1040, 13);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -136,7 +136,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 61);
             panel2.Name = "panel2";
-            panel2.Size = new Size(905, 34);
+            panel2.Size = new Size(1163, 34);
             panel2.TabIndex = 74;
             // 
             // panel3
@@ -152,7 +152,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 95);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 459);
+            panel3.Size = new Size(200, 590);
             panel3.TabIndex = 75;
             // 
             // btnListaCliente
@@ -229,7 +229,7 @@
             btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
-            btnDelete.Location = new Point(-1, 372);
+            btnDelete.Location = new Point(-1, 409);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedColor = Color.Transparent;
             btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -256,7 +256,7 @@
             btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
-            btnEdit.Location = new Point(-1, 319);
+            btnEdit.Location = new Point(-1, 349);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedColor = Color.Transparent;
             btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -282,7 +282,7 @@
             btnUpdateDGV.HoverState.ForeColor = Color.Black;
             btnUpdateDGV.Image = Properties.Resources.refresh_8677771;
             btnUpdateDGV.ImageSize = new Size(25, 25);
-            btnUpdateDGV.Location = new Point(-1, 266);
+            btnUpdateDGV.Location = new Point(-1, 289);
             btnUpdateDGV.Name = "btnUpdateDGV";
             btnUpdateDGV.PressedColor = Color.Transparent;
             btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges10;
@@ -308,7 +308,7 @@
             btnGuardar.Image = Properties.Resources._NewFacturaProduct;
             btnGuardar.ImageAlign = HorizontalAlignment.Left;
             btnGuardar.ImageSize = new Size(25, 25);
-            btnGuardar.Location = new Point(-1, 213);
+            btnGuardar.Location = new Point(-1, 229);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
             btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges12;
@@ -319,18 +319,19 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.WhiteSmoke;
+            panel4.BackColor = Color.FromArgb(35, 32, 39);
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(TxbBuscar);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(200, 95);
             panel4.Name = "panel4";
-            panel4.Size = new Size(705, 70);
+            panel4.Size = new Size(963, 70);
             panel4.TabIndex = 76;
             // 
             // TxbBuscar
             // 
-            TxbBuscar.BorderRadius = 25;
+            TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TxbBuscar.BorderRadius = 20;
             TxbBuscar.CustomizableEdges = customizableEdges13;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -341,14 +342,14 @@
             TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
-            TxbBuscar.Location = new Point(3, 9);
+            TxbBuscar.Location = new Point(3, 13);
             TxbBuscar.Name = "TxbBuscar";
             TxbBuscar.PasswordChar = '\0';
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            TxbBuscar.Size = new Size(735, 51);
+            TxbBuscar.Size = new Size(877, 42);
             TxbBuscar.TabIndex = 0;
             // 
             // panel5
@@ -359,22 +360,24 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(200, 165);
             panel5.Name = "panel5";
-            panel5.Size = new Size(705, 389);
+            panel5.Size = new Size(963, 520);
             panel5.TabIndex = 77;
             // 
             // dgvClientes
             // 
             dgvClientes.AllowUserToAddRows = false;
             dgvClientes.AllowUserToDeleteRows = false;
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvClientes.BackgroundColor = Color.WhiteSmoke;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.Columns.AddRange(new DataGridViewColumn[] { IDCliente, IDUsuario, IDMembresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus });
-            dgvClientes.Location = new Point(-1, -1);
+            dgvClientes.Dock = DockStyle.Fill;
+            dgvClientes.Location = new Point(0, 0);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.RowHeadersVisible = false;
             dgvClientes.RowTemplate.Height = 25;
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClientes.Size = new Size(705, 389);
+            dgvClientes.Size = new Size(961, 518);
             dgvClientes.TabIndex = 0;
             // 
             // IDCliente
@@ -465,7 +468,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(905, 554);
+            ClientSize = new Size(1085, 685);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);

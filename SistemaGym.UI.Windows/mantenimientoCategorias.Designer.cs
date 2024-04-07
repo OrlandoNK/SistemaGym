@@ -74,14 +74,15 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(755, 63);
+            panel1.Size = new Size(1085, 63);
             panel1.TabIndex = 0;
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = Properties.Resources._BotonXcerrarVentana;
-            pictureBox2.Location = new Point(710, 14);
+            pictureBox2.Location = new Point(1793, 14);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(32, 32);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -117,7 +118,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 63);
             panel2.Name = "panel2";
-            panel2.Size = new Size(755, 36);
+            panel2.Size = new Size(1085, 36);
             panel2.TabIndex = 1;
             // 
             // panel3
@@ -131,7 +132,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 99);
             panel3.Name = "panel3";
-            panel3.Size = new Size(202, 451);
+            panel3.Size = new Size(202, 586);
             panel3.TabIndex = 2;
             // 
             // btnDelete
@@ -152,7 +153,7 @@
             btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
-            btnDelete.Location = new Point(-1, 278);
+            btnDelete.Location = new Point(-1, 276);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedColor = Color.Transparent;
             btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -179,7 +180,7 @@
             btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
-            btnEdit.Location = new Point(-1, 227);
+            btnEdit.Location = new Point(-1, 221);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedColor = Color.Transparent;
             btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -205,7 +206,7 @@
             btnRefresh.HoverState.ForeColor = Color.Black;
             btnRefresh.Image = Properties.Resources.refresh_8677771;
             btnRefresh.ImageSize = new Size(25, 25);
-            btnRefresh.Location = new Point(-1, 176);
+            btnRefresh.Location = new Point(-1, 166);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.PressedColor = Color.Transparent;
             btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -231,7 +232,7 @@
             btnNew.Image = Properties.Resources._NewFacturaProduct;
             btnNew.ImageAlign = HorizontalAlignment.Left;
             btnNew.ImageSize = new Size(25, 25);
-            btnNew.Location = new Point(-1, 125);
+            btnNew.Location = new Point(-1, 111);
             btnNew.Name = "btnNew";
             btnNew.PressedColor = Color.Transparent;
             btnNew.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -242,17 +243,18 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.WhiteSmoke;
+            panel4.BackColor = Color.FromArgb(35, 32, 39);
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(TxbBuscar);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(202, 99);
             panel4.Name = "panel4";
-            panel4.Size = new Size(553, 60);
+            panel4.Size = new Size(883, 60);
             panel4.TabIndex = 3;
             // 
             // TxbBuscar
             // 
+            TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxbBuscar.BorderRadius = 20;
             TxbBuscar.CustomizableEdges = customizableEdges9;
             TxbBuscar.DefaultText = "";
@@ -271,7 +273,7 @@
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TxbBuscar.Size = new Size(535, 41);
+            TxbBuscar.Size = new Size(1416, 41);
             TxbBuscar.TabIndex = 0;
             TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
@@ -283,7 +285,7 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(202, 159);
             panel5.Name = "panel5";
-            panel5.Size = new Size(553, 391);
+            panel5.Size = new Size(883, 526);
             panel5.TabIndex = 4;
             // 
             // dgvCategoria
@@ -294,12 +296,13 @@
             dgvCategoria.BackgroundColor = Color.WhiteSmoke;
             dgvCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCategoria.Columns.AddRange(new DataGridViewColumn[] { IDCategoria, Nombre, Descripcion });
-            dgvCategoria.Location = new Point(-1, -1);
+            dgvCategoria.Dock = DockStyle.Fill;
+            dgvCategoria.Location = new Point(0, 0);
             dgvCategoria.Name = "dgvCategoria";
             dgvCategoria.RowHeadersVisible = false;
             dgvCategoria.RowTemplate.Height = 25;
             dgvCategoria.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCategoria.Size = new Size(553, 391);
+            dgvCategoria.Size = new Size(881, 524);
             dgvCategoria.TabIndex = 1;
             // 
             // IDCategoria
@@ -324,7 +327,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(755, 550);
+            ClientSize = new Size(1085, 685);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
