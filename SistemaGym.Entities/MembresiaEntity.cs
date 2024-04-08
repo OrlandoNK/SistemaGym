@@ -14,7 +14,9 @@ namespace SistemaGym.Entities
 
         public string? Descripcion { get; set; }
 
-        public string? Duracion {  get; set; }
+        public int? Duracion {  get; set; }
+
+        public int? CantidadPersonas { get; set; }
 
         public decimal? Valor { get; set; }
 

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -40,22 +40,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvMembresia = new DataGridView();
-            IDMembresia = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            Duracion = new DataGridViewTextBoxColumn();
-            Valor = new DataGridViewTextBoxColumn();
-            FechaCreacion = new DataGridViewTextBoxColumn();
-            Estatus = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             btnClose = new PictureBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
+            btnGrupoMembresia = new Guna.UI2.WinForms.Guna2Button();
             btnDelete = new Guna.UI2.WinForms.Guna2Button();
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
             btnrefresh = new Guna.UI2.WinForms.Guna2Button();
@@ -63,7 +57,14 @@
             panel5 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel4 = new Panel();
-            btnGrupoMembresia = new Guna.UI2.WinForms.Guna2Button();
+            IDMembresia = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Descripcion = new DataGridViewTextBoxColumn();
+            Duracion = new DataGridViewTextBoxColumn();
+            CantidadPersonas = new DataGridViewTextBoxColumn();
+            Valor = new DataGridViewTextBoxColumn();
+            FechaCreacion = new DataGridViewTextBoxColumn();
+            Estatus = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
@@ -80,7 +81,7 @@
             dgvMembresia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvMembresia.BackgroundColor = Color.WhiteSmoke;
             dgvMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Descripcion, Duracion, Valor, FechaCreacion, Estatus });
+            dgvMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Descripcion, Duracion, CantidadPersonas, Valor, FechaCreacion, Estatus });
             dgvMembresia.Dock = DockStyle.Fill;
             dgvMembresia.Location = new Point(0, 0);
             dgvMembresia.Name = "dgvMembresia";
@@ -89,54 +90,6 @@
             dgvMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMembresia.Size = new Size(862, 524);
             dgvMembresia.TabIndex = 14;
-            // 
-            // IDMembresia
-            // 
-            IDMembresia.DataPropertyName = "IDMembresia";
-            IDMembresia.HeaderText = "ID Membresia";
-            IDMembresia.Name = "IDMembresia";
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Descripcion
-            // 
-            Descripcion.DataPropertyName = "Descripcion";
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.Name = "Descripcion";
-            // 
-            // Duracion
-            // 
-            Duracion.DataPropertyName = "Duracion";
-            Duracion.HeaderText = "Duracion";
-            Duracion.Name = "Duracion";
-            // 
-            // Valor
-            // 
-            Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            Valor.DefaultCellStyle = dataGridViewCellStyle1;
-            Valor.HeaderText = "Valor";
-            Valor.Name = "Valor";
-            // 
-            // FechaCreacion
-            // 
-            FechaCreacion.DataPropertyName = "FechaCreacion";
-            dataGridViewCellStyle2.Format = "g";
-            dataGridViewCellStyle2.NullValue = null;
-            FechaCreacion.DefaultCellStyle = dataGridViewCellStyle2;
-            FechaCreacion.HeaderText = "Fecha Creacion";
-            FechaCreacion.Name = "FechaCreacion";
-            // 
-            // Estatus
-            // 
-            Estatus.DataPropertyName = "Estatus";
-            Estatus.HeaderText = "Estatus";
-            Estatus.Name = "Estatus";
             // 
             // panel1
             // 
@@ -210,6 +163,33 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(221, 585);
             panel3.TabIndex = 17;
+            // 
+            // btnGrupoMembresia
+            // 
+            btnGrupoMembresia.BorderColor = Color.DarkGoldenrod;
+            btnGrupoMembresia.BorderThickness = 1;
+            btnGrupoMembresia.Cursor = Cursors.Hand;
+            btnGrupoMembresia.CustomizableEdges = customizableEdges1;
+            btnGrupoMembresia.DisabledState.BorderColor = Color.DarkGray;
+            btnGrupoMembresia.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGrupoMembresia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGrupoMembresia.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGrupoMembresia.FillColor = Color.Transparent;
+            btnGrupoMembresia.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGrupoMembresia.ForeColor = Color.White;
+            btnGrupoMembresia.HoverState.FillColor = Color.DarkGoldenrod;
+            btnGrupoMembresia.HoverState.ForeColor = Color.Black;
+            btnGrupoMembresia.Image = Properties.Resources.icon_Membership_Group__x32_;
+            btnGrupoMembresia.ImageAlign = HorizontalAlignment.Left;
+            btnGrupoMembresia.ImageSize = new Size(32, 32);
+            btnGrupoMembresia.Location = new Point(-1, 47);
+            btnGrupoMembresia.Name = "btnGrupoMembresia";
+            btnGrupoMembresia.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnGrupoMembresia.Size = new Size(221, 49);
+            btnGrupoMembresia.TabIndex = 4;
+            btnGrupoMembresia.Text = "Grupo de Membresia";
+            btnGrupoMembresia.TextAlign = HorizontalAlignment.Right;
+            btnGrupoMembresia.Click += btnGrupoMembresia_Click;
             // 
             // btnDelete
             // 
@@ -361,32 +341,59 @@
             panel4.Size = new Size(864, 526);
             panel4.TabIndex = 20;
             // 
-            // btnGrupoMembresia
+            // IDMembresia
             // 
-            btnGrupoMembresia.BorderColor = Color.DarkGoldenrod;
-            btnGrupoMembresia.BorderThickness = 1;
-            btnGrupoMembresia.Cursor = Cursors.Hand;
-            btnGrupoMembresia.CustomizableEdges = customizableEdges1;
-            btnGrupoMembresia.DisabledState.BorderColor = Color.DarkGray;
-            btnGrupoMembresia.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnGrupoMembresia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnGrupoMembresia.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnGrupoMembresia.FillColor = Color.Transparent;
-            btnGrupoMembresia.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGrupoMembresia.ForeColor = Color.White;
-            btnGrupoMembresia.HoverState.FillColor = Color.DarkGoldenrod;
-            btnGrupoMembresia.HoverState.ForeColor = Color.Black;
-            btnGrupoMembresia.Image = Properties.Resources.icon_Membership_Group__x32_;
-            btnGrupoMembresia.ImageAlign = HorizontalAlignment.Left;
-            btnGrupoMembresia.ImageSize = new Size(32, 32);
-            btnGrupoMembresia.Location = new Point(-1, 47);
-            btnGrupoMembresia.Name = "btnGrupoMembresia";
-            btnGrupoMembresia.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnGrupoMembresia.Size = new Size(221, 49);
-            btnGrupoMembresia.TabIndex = 4;
-            btnGrupoMembresia.Text = "Grupo de Membresia";
-            btnGrupoMembresia.TextAlign = HorizontalAlignment.Right;
-            btnGrupoMembresia.Click += btnGrupoMembresia_Click;
+            IDMembresia.DataPropertyName = "IDMembresia";
+            IDMembresia.HeaderText = "ID Membresia";
+            IDMembresia.Name = "IDMembresia";
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // Descripcion
+            // 
+            Descripcion.DataPropertyName = "Descripcion";
+            Descripcion.HeaderText = "Descripcion";
+            Descripcion.Name = "Descripcion";
+            // 
+            // Duracion
+            // 
+            Duracion.DataPropertyName = "DuracionMeses";
+            Duracion.HeaderText = "Duracion(Meses)";
+            Duracion.Name = "Duracion";
+            // 
+            // CantidadPersonas
+            // 
+            CantidadPersonas.DataPropertyName = "CantidadPersonas";
+            CantidadPersonas.HeaderText = "Cantidad(Personas)";
+            CantidadPersonas.Name = "CantidadPersonas";
+            // 
+            // Valor
+            // 
+            Valor.DataPropertyName = "Valor";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            Valor.DefaultCellStyle = dataGridViewCellStyle1;
+            Valor.HeaderText = "Valor";
+            Valor.Name = "Valor";
+            // 
+            // FechaCreacion
+            // 
+            FechaCreacion.DataPropertyName = "FechaCreacion";
+            dataGridViewCellStyle2.Format = "g";
+            dataGridViewCellStyle2.NullValue = null;
+            FechaCreacion.DefaultCellStyle = dataGridViewCellStyle2;
+            FechaCreacion.HeaderText = "Fecha Creacion";
+            FechaCreacion.Name = "FechaCreacion";
+            // 
+            // Estatus
+            // 
+            Estatus.DataPropertyName = "Estatus";
+            Estatus.HeaderText = "Estatus";
+            Estatus.Name = "Estatus";
             // 
             // frmMembresia
             // 
@@ -415,13 +422,6 @@
 
         #endregion
         private DataGridView dgvMembresia;
-        private DataGridViewTextBoxColumn IDMembresia;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn Duracion;
-        private DataGridViewTextBoxColumn Valor;
-        private DataGridViewTextBoxColumn FechaCreacion;
-        private DataGridViewTextBoxColumn Estatus;
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
@@ -436,5 +436,13 @@
         private Panel panel4;
         private Guna.UI2.WinForms.Guna2TextBox TxbBuscar;
         private Guna.UI2.WinForms.Guna2Button btnGrupoMembresia;
+        private DataGridViewTextBoxColumn IDMembresia;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Descripcion;
+        private DataGridViewTextBoxColumn Duracion;
+        private DataGridViewTextBoxColumn CantidadPersonas;
+        private DataGridViewTextBoxColumn Valor;
+        private DataGridViewTextBoxColumn FechaCreacion;
+        private DataGridViewTextBoxColumn Estatus;
     }
 }

@@ -77,24 +77,8 @@ namespace SistemaGym.UI.Windows
             oMembresia.Duracion = txtDuracion.Text;
             oMembresia.Valor = decimal.Parse(txtValor.Text);
             oMembresia.FechaCreacion = DateTime.Now;
+            oMembresia.Estatus = "Activo";
 
-            if (chkbxEstatus.Checked)
-            {
-                oMembresia.Estatus = "Activo";
-            }
-            else
-            {
-                DialogResult dialogResult = new DialogResult();
-                dialogResult = MessageBox.Show("¿Seguro que desea Guardar esta Membresia con Estatus «Inactivo»?", SYSTEM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    oMembresia.Estatus = "Inactivo";
-                }
-                if (dialogResult == DialogResult.No)
-                {
-
-                }
-            }
 
             //Mandar a guardar el objeto creado a la base de datos
             try
@@ -102,7 +86,6 @@ namespace SistemaGym.UI.Windows
                 MembresiaBLL.Insertar(oMembresia);
                 MessageBox.Show("¡La Membresia Ha Sido Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarCampos();
-                dgvMembresia.DataSource = MembresiaBLL.Mostrar();
             }
             catch (SqlException ex)
             {
@@ -121,7 +104,6 @@ namespace SistemaGym.UI.Windows
             txtDescripcion.Clear();
             txtDuracion.Clear();
             txtValor.Clear();
-            chkbxEstatus.Checked = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
