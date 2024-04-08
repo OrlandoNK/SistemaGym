@@ -106,5 +106,49 @@ namespace SistemaGym.UI.Windows
 
             return grupoMembresiaList;
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = new DialogResult();
+            dialogResult = MessageBox.Show("¿Seguro que Desea Eliminar este Grupo de Membresia?", SYSTEM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    if (dgvGrupoMembresia.SelectedRows.Count > 0)
+                    {
+                        DataGridViewRow selectRow = dgvGrupoMembresia.SelectedRows[0];
+                        int deleteEmpleado = Convert.ToInt32(selectRow.Cells["IDGrupoMembresia"].Value);
+                        bool resultado = GrupoMembresiaBLL.Eliminar(deleteEmpleado);
+
+                        if (resultado)
+                        {
+                            MessageBox.Show("¡Grupo de Membresia Eliminado con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dgvGrupoMembresia.DataSource = GrupoMembresiaBLL.MostrarGrupoMembresia();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al Tratar de Eliminar el Grupo de Membresia", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show($"Se ha producido un Error al Intentar Eliminar el Grupo de Membresia, \nDetalles A Continuacion.\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Se ha producido un Error al Intentar Eliminar el Grupo de Membresia, \nDetalles A Continuacion.\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                if (dialogResult == DialogResult.No)
+                {
+
+                }
+
+            }
+        }
     }
 }
