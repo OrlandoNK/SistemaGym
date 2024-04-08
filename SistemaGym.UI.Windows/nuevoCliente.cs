@@ -77,7 +77,9 @@ namespace SistemaGym.UI.Windows
             oCliente.IDUsuario = (int)cbUsuario.SelectedValue;
             oCliente.IDMembresia = (int)cbMembresia.SelectedValue;
             oCliente.TipoListaCliente = (int)cbTipoListaCliente.SelectedValue;
+            
             oCliente.TipoCliente = (int)cbTipoCliente.SelectedValue;
+           
             oCliente.Nombre = txtNombre.Text;
             oCliente.Apellido = txtApellido.Text;
             oCliente.TipoDocumento = cbTipoDocumento.Text;
@@ -113,11 +115,11 @@ namespace SistemaGym.UI.Windows
             errorProvider.Clear();
             //verificar que en los campos obligatorios hayan datos
 
-            if (string.IsNullOrEmpty(cbMembresia.Text))
+           /* if (string.IsNullOrEmpty(cbMembresia.Text))
             {
                 errorProvider.SetError(cbMembresia, "La Membresia es obligatoria");
                 resultado = false;
-            }
+            }*/
 
             if (string.IsNullOrEmpty(cbTipoListaCliente.Text))
             {

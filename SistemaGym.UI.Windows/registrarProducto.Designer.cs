@@ -375,7 +375,8 @@
             // txtIDProducto
             // 
             txtIDProducto.Anchor = AnchorStyles.None;
-            txtIDProducto.Location = new Point(24, 78);
+            txtIDProducto.Enabled = false;
+            txtIDProducto.Location = new Point(24, 75);
             txtIDProducto.Name = "txtIDProducto";
             txtIDProducto.Size = new Size(70, 23);
             txtIDProducto.TabIndex = 22;
