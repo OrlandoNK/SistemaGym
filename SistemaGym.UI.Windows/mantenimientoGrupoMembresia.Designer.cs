@@ -188,6 +188,7 @@
             btnEdit.Size = new Size(221, 45);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Modificar";
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnrefresh
             // 
@@ -212,6 +213,7 @@
             btnrefresh.Size = new Size(221, 45);
             btnrefresh.TabIndex = 1;
             btnrefresh.TextAlign = HorizontalAlignment.Right;
+            btnrefresh.Click += btnrefresh_Click;
             // 
             // btnNew
             // 

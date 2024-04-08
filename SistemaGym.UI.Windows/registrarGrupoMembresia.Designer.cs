@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             panel5 = new Panel();
             btnCerrar = new PictureBox();
@@ -172,7 +172,7 @@
             btnSave.BorderColor = Color.DarkGoldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges17;
+            btnSave.CustomizableEdges = customizableEdges5;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -187,7 +187,7 @@
             btnSave.ImageSize = new Size(35, 35);
             btnSave.Location = new Point(-1, 46);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSave.Size = new Size(210, 54);
             btnSave.TabIndex = 2;
             btnSave.Text = "Guardar";
@@ -214,7 +214,7 @@
             btnBuscarMembresia.BorderRadius = 4;
             btnBuscarMembresia.BorderThickness = 2;
             btnBuscarMembresia.Cursor = Cursors.Hand;
-            btnBuscarMembresia.CustomizableEdges = customizableEdges19;
+            btnBuscarMembresia.CustomizableEdges = customizableEdges7;
             btnBuscarMembresia.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarMembresia.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarMembresia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -228,14 +228,14 @@
             btnBuscarMembresia.Location = new Point(605, 21);
             btnBuscarMembresia.Name = "btnBuscarMembresia";
             btnBuscarMembresia.PressedColor = Color.Transparent;
-            btnBuscarMembresia.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnBuscarMembresia.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnBuscarMembresia.Size = new Size(61, 51);
             btnBuscarMembresia.TabIndex = 2;
             btnBuscarMembresia.Click += btnBuscarMembresia_Click;
             // 
             // TxbNombreGrupoMembresia
             // 
-            TxbNombreGrupoMembresia.Location = new Point(487, 165);
+            TxbNombreGrupoMembresia.Location = new Point(487, 164);
             TxbNombreGrupoMembresia.Name = "TxbNombreGrupoMembresia";
             TxbNombreGrupoMembresia.Size = new Size(179, 23);
             TxbNombreGrupoMembresia.TabIndex = 4;
@@ -244,7 +244,7 @@
             // 
             guna2HtmlLabel6.AutoSize = false;
             guna2HtmlLabel6.BackColor = Color.Transparent;
-            guna2HtmlLabel6.Location = new Point(487, 138);
+            guna2HtmlLabel6.Location = new Point(487, 137);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             guna2HtmlLabel6.Size = new Size(179, 21);
             guna2HtmlLabel6.TabIndex = 5;

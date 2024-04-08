@@ -36,29 +36,29 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update GrupoMembresia set IDMembresia=@idmembresia, Nombre =@nombre, FechaRegistro =@fecharegistro, Estatus =@estatus where IDGrupoMembresia= @idgrupomembresia ";
+            string actualizar = "UPDATE GrupoMembresia SET IDMembresia=@idmembresia, Nombre =@nombre, MontoTotal = @montoTotal, FechaRegistro =@fecharegistro, Estatus =@estatus where IDGrupoMembresia= @idgrupomembresia ";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idgrupomembresia", grupoMembresia.IDGrupoMembresia);
             cmd.Parameters.AddWithValue("@idmembresia", grupoMembresia.IDMembresia);
             cmd.Parameters.AddWithValue("@nombre", grupoMembresia.Nombre);
+            cmd.Parameters.AddWithValue("@montoTotal", grupoMembresia.MontoTotal);
             cmd.Parameters.AddWithValue("@fecharegistro", grupoMembresia.FechaRegistro);
             cmd.Parameters.AddWithValue("@estatus", grupoMembresia.Estatus);
             cmd.ExecuteNonQuery();
 
-
         }
         //funcion eliminar GrupoMembresia
 
-        public static bool EliminarGrupoMembresia(GrupoMembresiaEntity grupoMembresia)
+        public static bool EliminarGrupoMembresia(int grupoMembresia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             bool seElimino;
 
             Conexion.Open();
-            string Eliminar = "Delete from GrupoMembresia where IDGrupoMembresia= @idgrupomembresia";
+            string Eliminar = "DELETE FROM GrupoMembresia WHERE IDGrupoMembresia= @idgrupomembresia";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idgrupomembresia", grupoMembresia.IDGrupoMembresia);
+            cmd.Parameters.AddWithValue("@idgrupomembresia", grupoMembresia);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 

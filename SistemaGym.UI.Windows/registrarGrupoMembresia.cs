@@ -168,6 +168,7 @@ namespace SistemaGym.UI.Windows
             TxbDescrMembresia.Clear();
             TxbNombreGrupoMembresia.Clear();
             TxbMontoTotal.Clear();
+            txtCantidadPersonas.Clear();
         }
     }
 }

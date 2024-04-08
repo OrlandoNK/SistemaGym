@@ -23,7 +23,7 @@ namespace SistemaGym.BLL
             //Actualizar
             GrupoMembresiaDAL.ActualizarGrupoMembresia(grupoMembresia);
         }
-        public static bool Eliminar(GrupoMembresiaEntity grupoMembresia)
+        public static bool Eliminar(int grupoMembresia)
         {
             return GrupoMembresiaDAL.EliminarGrupoMembresia(grupoMembresia);
         }
