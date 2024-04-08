@@ -1073,6 +1073,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_save_button__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon.save-button-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_show_password__x32_ {
             get {
                 object obj = ResourceManager.GetObject("icon-show-password-[x32]", resourceCulture);
