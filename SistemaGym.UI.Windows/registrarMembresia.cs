@@ -59,6 +59,11 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(txtDuracion, CampoObligatorio);
                 resultado = false;
             }
+            if (string.IsNullOrEmpty(txtCantidadPersonas.Text))
+            {
+                errorProvider.SetError(txtCantidadPersonas, CampoObligatorio);
+                resultado = false;
+            }
 
             return resultado;
         }
@@ -105,6 +110,7 @@ namespace SistemaGym.UI.Windows
             txtDescripcion.Clear();
             txtDuracion.Clear();
             txtValor.Clear();
+            txtCantidadPersonas.Clear();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

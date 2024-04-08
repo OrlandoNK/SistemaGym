@@ -37,8 +37,8 @@ namespace SistemaGym.UI.Windows
 
         private void listaMembresias_Load(object sender, EventArgs e)
         {
-            dgvListaMembresias.DataSource = MembresiaBLL.Mostrar();
-            dgvListaMembresias.AutoGenerateColumns = false;
+            dgvListaMembresia.DataSource = MembresiaBLL.Mostrar();
+            dgvListaMembresia.AutoGenerateColumns = false;
         }
 
         private void dgvListaMembresias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -46,7 +46,17 @@ namespace SistemaGym.UI.Windows
             if (e.RowIndex == -1)
                 return;
 
-            _IdMembresia = (int?)dgvListaMembresias.CurrentRow.Cells["IDMembresia"].Value;
+            _IdMembresia = (int?)dgvListaMembresia.CurrentRow.Cells["IDMembresia"].Value;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void dgvListaMembresia_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+                return;
+
+            _IdMembresia = (int?)dgvListaMembresia.CurrentRow.Cells["IDMembresia"].Value;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

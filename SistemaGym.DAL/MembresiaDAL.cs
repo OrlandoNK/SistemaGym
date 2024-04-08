@@ -132,8 +132,9 @@ namespace SistemaGym.DAL
             membresia.IDMembresia = Convert.ToInt32(reader["IDMembresia"]);
             membresia.Nombre = Convert.ToString(reader["Nombre"]);
             membresia.Descripcion = Convert.ToString(reader["Descripcion"]);
-            membresia.Duracion = Convert.ToInt32(reader["Duracion"]);
+            membresia.Duracion = Convert.ToInt32(reader["DuracionMeses"]);
             membresia.Valor = Convert.ToDecimal(reader["Valor"]);
+            membresia.CantidadPersonas = Convert.ToInt32(reader["CantidadPersonas"]);
             membresia.FechaCreacion = Convert.ToDateTime(reader["FechaCreacion"]);
             membresia.Estatus = Convert.ToString(reader["Estatus"]);
 

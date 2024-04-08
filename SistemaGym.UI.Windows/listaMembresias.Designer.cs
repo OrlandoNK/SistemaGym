@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -131,6 +131,7 @@
             dgvListaMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvListaMembresia.Size = new Size(771, 422);
             dgvListaMembresia.TabIndex = 15;
+            dgvListaMembresia.CellDoubleClick += dgvListaMembresia_CellDoubleClick;
             // 
             // IDMembresia
             // 
@@ -159,9 +160,9 @@
             // Valor
             // 
             Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            Valor.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            Valor.DefaultCellStyle = dataGridViewCellStyle1;
             Valor.HeaderText = "Valor";
             Valor.Name = "Valor";
             // 
