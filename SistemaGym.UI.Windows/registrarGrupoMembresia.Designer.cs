@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             panel5 = new Panel();
             btnCerrar = new PictureBox();
@@ -172,7 +172,7 @@
             btnSave.BorderColor = Color.DarkGoldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges9;
+            btnSave.CustomizableEdges = customizableEdges17;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -187,7 +187,7 @@
             btnSave.ImageSize = new Size(35, 35);
             btnSave.Location = new Point(-1, 46);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnSave.Size = new Size(210, 54);
             btnSave.TabIndex = 2;
             btnSave.Text = "Guardar";
@@ -214,7 +214,7 @@
             btnBuscarMembresia.BorderRadius = 4;
             btnBuscarMembresia.BorderThickness = 2;
             btnBuscarMembresia.Cursor = Cursors.Hand;
-            btnBuscarMembresia.CustomizableEdges = customizableEdges11;
+            btnBuscarMembresia.CustomizableEdges = customizableEdges19;
             btnBuscarMembresia.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarMembresia.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarMembresia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -228,7 +228,7 @@
             btnBuscarMembresia.Location = new Point(605, 21);
             btnBuscarMembresia.Name = "btnBuscarMembresia";
             btnBuscarMembresia.PressedColor = Color.Transparent;
-            btnBuscarMembresia.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnBuscarMembresia.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnBuscarMembresia.Size = new Size(61, 51);
             btnBuscarMembresia.TabIndex = 2;
             btnBuscarMembresia.Click += btnBuscarMembresia_Click;
@@ -259,7 +259,7 @@
             groupBox2.Controls.Add(guna2HtmlLabel5);
             groupBox2.Controls.Add(TxbValorMembresia);
             groupBox2.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(7, 194);
+            groupBox2.Location = new Point(5, 194);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(665, 122);
             groupBox2.TabIndex = 6;
@@ -302,19 +302,19 @@
             // TxbMontoTotal
             // 
             TxbMontoTotal.Enabled = false;
-            TxbMontoTotal.Location = new Point(480, 72);
+            TxbMontoTotal.Location = new Point(482, 72);
             TxbMontoTotal.Name = "TxbMontoTotal";
             TxbMontoTotal.ReadOnly = true;
-            TxbMontoTotal.Size = new Size(177, 24);
+            TxbMontoTotal.Size = new Size(179, 24);
             TxbMontoTotal.TabIndex = 2;
             // 
             // guna2HtmlLabel5
             // 
             guna2HtmlLabel5.AutoSize = false;
             guna2HtmlLabel5.BackColor = Color.Transparent;
-            guna2HtmlLabel5.Location = new Point(480, 45);
+            guna2HtmlLabel5.Location = new Point(482, 45);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(177, 21);
+            guna2HtmlLabel5.Size = new Size(179, 21);
             guna2HtmlLabel5.TabIndex = 3;
             guna2HtmlLabel5.Text = "Monto Total";
             // 
@@ -336,7 +336,7 @@
             groupBox1.Controls.Add(guna2HtmlLabel1);
             groupBox1.Controls.Add(TxbIDMembresia);
             groupBox1.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(7, 3);
+            groupBox1.Location = new Point(5, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(474, 185);
             groupBox1.TabIndex = 0;
