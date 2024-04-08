@@ -149,5 +149,11 @@ namespace SistemaGym.UI.Windows
             DataTable resultBusqueda = MembresiaBLL.BuscarMembresia(buscar);
             dgvMembresia.DataSource = resultBusqueda;
         }
+
+        private void btnGrupoMembresia_Click(object sender, EventArgs e)
+        {
+            mantenimientoGrupoMembresia IrGrupoMembresia = new mantenimientoGrupoMembresia();
+            IrGrupoMembresia.Show();
+        }
     }
 }

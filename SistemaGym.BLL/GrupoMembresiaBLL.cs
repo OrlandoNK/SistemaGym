@@ -27,7 +27,7 @@ namespace SistemaGym.BLL
         {
             return GrupoMembresiaDAL.EliminarGrupoMembresia(grupoMembresia);
         }
-        public static DataTable MostrarGrupoMembresia(GrupoMembresiaEntity grupoMembresia)
+        public static DataTable MostrarGrupoMembresia()
         {
             return GrupoMembresiaDAL.MostrarGrupoMembresia();
         }

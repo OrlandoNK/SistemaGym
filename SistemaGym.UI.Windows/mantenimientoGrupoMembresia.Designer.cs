@@ -101,6 +101,7 @@
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
             btnClose.TabIndex = 3;
             btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
             // 
             // label1
             // 

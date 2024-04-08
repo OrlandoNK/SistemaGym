@@ -29,5 +29,10 @@ namespace SistemaGym.UI.Windows
             dgvGrupoMembresia.DataSource = GrupoMembresiaBLL.MostrarGrupoMembresia();
             dgvGrupoMembresia.AutoGenerateColumns = false;
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
