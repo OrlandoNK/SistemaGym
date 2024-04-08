@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -40,7 +41,7 @@
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
-            btnrefresh = new Guna.UI2.WinForms.Guna2Button();
+            btnSave = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
             groupBox2 = new GroupBox();
             TxbNombreGrupoMembresia = new TextBox();
@@ -57,6 +58,7 @@
             TxbNombreMembresia = new TextBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             TxbIDMembresia = new TextBox();
+            ErrorProvider = new ErrorProvider(components);
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
@@ -66,6 +68,7 @@
             panel4.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -154,37 +157,38 @@
             // 
             panel3.BackColor = Color.Black;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(btnrefresh);
+            panel3.Controls.Add(btnSave);
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 108);
             panel3.Name = "panel3";
             panel3.Size = new Size(210, 350);
             panel3.TabIndex = 2;
             // 
-            // btnrefresh
+            // btnSave
             // 
-            btnrefresh.BorderColor = Color.DarkGoldenrod;
-            btnrefresh.BorderThickness = 1;
-            btnrefresh.Cursor = Cursors.Hand;
-            btnrefresh.CustomizableEdges = customizableEdges1;
-            btnrefresh.DisabledState.BorderColor = Color.DarkGray;
-            btnrefresh.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnrefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnrefresh.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnrefresh.FillColor = Color.Transparent;
-            btnrefresh.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            btnrefresh.ForeColor = Color.White;
-            btnrefresh.HoverState.FillColor = Color.DarkGoldenrod;
-            btnrefresh.HoverState.ForeColor = Color.Black;
-            btnrefresh.Image = Properties.Resources.icon_save_button__x32_;
-            btnrefresh.ImageAlign = HorizontalAlignment.Left;
-            btnrefresh.ImageSize = new Size(35, 35);
-            btnrefresh.Location = new Point(-1, 46);
-            btnrefresh.Name = "btnrefresh";
-            btnrefresh.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnrefresh.Size = new Size(210, 54);
-            btnrefresh.TabIndex = 2;
-            btnrefresh.Text = "Guardar";
+            btnSave.BorderColor = Color.DarkGoldenrod;
+            btnSave.BorderThickness = 1;
+            btnSave.Cursor = Cursors.Hand;
+            btnSave.CustomizableEdges = customizableEdges1;
+            btnSave.DisabledState.BorderColor = Color.DarkGray;
+            btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSave.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSave.FillColor = Color.Transparent;
+            btnSave.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.HoverState.FillColor = Color.DarkGoldenrod;
+            btnSave.HoverState.ForeColor = Color.Black;
+            btnSave.Image = Properties.Resources.icon_save_button__x32_;
+            btnSave.ImageAlign = HorizontalAlignment.Left;
+            btnSave.ImageSize = new Size(35, 35);
+            btnSave.Location = new Point(-1, 46);
+            btnSave.Name = "btnSave";
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnSave.Size = new Size(210, 54);
+            btnSave.TabIndex = 2;
+            btnSave.Text = "Guardar";
+            btnSave.Click += btnSave_Click;
             // 
             // panel4
             // 
@@ -277,7 +281,7 @@
             // 
             // btnBuscarMembresia
             // 
-            btnBuscarMembresia.BorderRadius = 8;
+            btnBuscarMembresia.BorderRadius = 4;
             btnBuscarMembresia.BorderThickness = 2;
             btnBuscarMembresia.Cursor = Cursors.Hand;
             btnBuscarMembresia.CustomizableEdges = customizableEdges3;
@@ -288,12 +292,14 @@
             btnBuscarMembresia.FillColor = Color.Transparent;
             btnBuscarMembresia.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnBuscarMembresia.ForeColor = Color.White;
-            btnBuscarMembresia.Image = Properties.Resources._BotonDeBuscar;
+            btnBuscarMembresia.HoverState.FillColor = Color.Black;
+            btnBuscarMembresia.Image = Properties.Resources.btn_icon_searching_for_membership__x32_;
             btnBuscarMembresia.ImageSize = new Size(32, 32);
-            btnBuscarMembresia.Location = new Point(314, 110);
+            btnBuscarMembresia.Location = new Point(379, 110);
             btnBuscarMembresia.Name = "btnBuscarMembresia";
+            btnBuscarMembresia.PressedColor = Color.Transparent;
             btnBuscarMembresia.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnBuscarMembresia.Size = new Size(126, 51);
+            btnBuscarMembresia.Size = new Size(61, 51);
             btnBuscarMembresia.TabIndex = 2;
             btnBuscarMembresia.Click += btnBuscarMembresia_Click;
             // 
@@ -303,7 +309,7 @@
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Location = new Point(50, 110);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(258, 21);
+            guna2HtmlLabel3.Size = new Size(323, 21);
             guna2HtmlLabel3.TabIndex = 6;
             guna2HtmlLabel3.Text = "Descripción";
             // 
@@ -313,7 +319,7 @@
             TxbDescrMembresia.Location = new Point(50, 137);
             TxbDescrMembresia.Name = "TxbDescrMembresia";
             TxbDescrMembresia.ReadOnly = true;
-            TxbDescrMembresia.Size = new Size(258, 24);
+            TxbDescrMembresia.Size = new Size(323, 24);
             TxbDescrMembresia.TabIndex = 5;
             // 
             // TxbValorMembresia
@@ -363,6 +369,10 @@
             TxbIDMembresia.Size = new Size(126, 24);
             TxbIDMembresia.TabIndex = 0;
             // 
+            // ErrorProvider
+            // 
+            ErrorProvider.ContainerControl = this;
+            // 
             // registrarGrupoMembresia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -388,6 +398,7 @@
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ErrorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -402,7 +413,7 @@
         private Label label1;
         private PictureBox pictureBox1;
         private PictureBox btnCerrar;
-        private Guna.UI2.WinForms.Guna2Button btnrefresh;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
         private GroupBox groupBox1;
         private Guna.UI2.WinForms.Guna2Button btnBuscarMembresia;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
@@ -418,5 +429,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private TextBox TxbMontoTotal;
         private GroupBox groupBox2;
+        private ErrorProvider ErrorProvider;
     }
 }

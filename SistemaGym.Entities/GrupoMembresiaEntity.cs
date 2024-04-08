@@ -12,6 +12,7 @@ namespace SistemaGym.Entities
 
         public int IDMembresia { get; set; }
         public string Nombre { get; set; }  
+        public Decimal MontoTotal { get; set; }
 
         public DateTime FechaRegistro { get; set; }
 

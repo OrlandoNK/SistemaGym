@@ -613,6 +613,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btn_icon_searching_for_membership__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("btn-icon-searching-for-membership-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap businessman_mante__x32_ {
             get {
                 object obj = ResourceManager.GetObject("businessman-mante-[x32]", resourceCulture);
