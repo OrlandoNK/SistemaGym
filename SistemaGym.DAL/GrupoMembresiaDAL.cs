@@ -18,7 +18,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into GrupoMembresia(IDMembresia, Nombre, MontoTotal FechaRegistro, Estatus)" +
+            string insertar = "Insert into GrupoMembresia(IDMembresia, Nombre, MontoTotal, FechaRegistro, Estatus)" +
                 " values(@idmembresia, @nombre, @MontoTotal, @fecharegistro, @estatus)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@idmembresia", grupoMembresia.IDMembresia);

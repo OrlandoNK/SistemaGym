@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace SistemaGym.UI.Windows
 {
-    
+
     public partial class registrarGrupoMembresia : Form
     {
         private string SYSTEM_TITLE = "Sistema Gestión Gimnasion (COMFORT GYM) dice";
@@ -79,6 +79,17 @@ namespace SistemaGym.UI.Windows
                 ErrorProvider.SetError(TxbDescrMembresia, AgregarMembresia);
                 validation = false;
             }
+            if (string.IsNullOrEmpty(txtCantidadPersonas.Text))
+            {
+                ErrorProvider.SetError(txtCantidadPersonas, AgregarMembresia);
+                validation = false;
+            }
+            int CantidadPersonas;
+            if (!int.TryParse(txtCantidadPersonas.Text, out CantidadPersonas))
+            {
+                ErrorProvider.SetError(txtCantidadPersonas, CampoNumerico);
+                validation = false;
+            }
 
 
 
@@ -98,6 +109,11 @@ namespace SistemaGym.UI.Windows
                     this.TxbNombreMembresia.Text = oMembresia.Nombre.ToString();
                     this.TxbDescrMembresia.Text = oMembresia.Descripcion.ToString();
                     this.TxbValorMembresia.Text = Convert.ToInt32(oMembresia.Valor).ToString();
+                    this.txtCantidadPersonas.Text = Convert.ToInt32(oMembresia.CantidadPersonas).ToString();
+
+                    int CantidadPersonas = int.Parse(txtCantidadPersonas.Text);
+                    int ValorMembresia = int.Parse(TxbValorMembresia.Text);
+                    this.TxbMontoTotal.Text = Convert.ToInt32(CantidadPersonas * ValorMembresia).ToString();
                 }
                 else
                 {

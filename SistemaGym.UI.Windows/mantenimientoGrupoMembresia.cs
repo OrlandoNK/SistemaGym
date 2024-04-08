@@ -28,6 +28,16 @@ namespace SistemaGym.UI.Windows
         {
             dgvGrupoMembresia.DataSource = GrupoMembresiaBLL.MostrarGrupoMembresia();
             dgvGrupoMembresia.AutoGenerateColumns = false;
+            CargarMembresia();
+        }
+
+        private void CargarMembresia()
+        {
+            var colIDMembresia = (DataGridViewComboBoxColumn)dgvGrupoMembresia.Columns["IDMembresia"];
+            colIDMembresia.DataSource = MembresiaBLL.Mostrar();
+            colIDMembresia.ValueMember = "IDMembresia";
+            colIDMembresia.DisplayMember = "Nombre";
+            colIDMembresia.DataPropertyName = "IDMembresia";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
