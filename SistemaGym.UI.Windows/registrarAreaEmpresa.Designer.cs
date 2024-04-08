@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             topPanel = new Panel();
             btnCerrar = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -139,7 +139,7 @@
             btnSave.BorderColor = Color.DarkGoldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges9;
+            btnSave.CustomizableEdges = customizableEdges1;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -149,13 +149,13 @@
             btnSave.ForeColor = Color.White;
             btnSave.HoverState.FillColor = Color.DarkGoldenrod;
             btnSave.HoverState.ForeColor = Color.Black;
-            btnSave.Image = Properties.Resources._SaveFacturaProduct;
+            btnSave.Image = Properties.Resources.icon_save_button__x32_;
             btnSave.ImageAlign = HorizontalAlignment.Left;
-            btnSave.ImageSize = new Size(25, 25);
+            btnSave.ImageSize = new Size(32, 32);
             btnSave.Location = new Point(-1, 48);
             btnSave.Name = "btnSave";
             btnSave.PressedColor = Color.Transparent;
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnSave.Size = new Size(202, 54);
             btnSave.TabIndex = 6;
             btnSave.Text = "Guardar";
@@ -248,9 +248,10 @@
             // 
             // btnBuscarEncargado
             // 
-            btnBuscarEncargado.BorderThickness = 1;
+            btnBuscarEncargado.BorderRadius = 5;
+            btnBuscarEncargado.BorderThickness = 2;
             btnBuscarEncargado.Cursor = Cursors.Hand;
-            btnBuscarEncargado.CustomizableEdges = customizableEdges11;
+            btnBuscarEncargado.CustomizableEdges = customizableEdges3;
             btnBuscarEncargado.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarEncargado.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarEncargado.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -260,10 +261,10 @@
             btnBuscarEncargado.ForeColor = Color.White;
             btnBuscarEncargado.HoverState.FillColor = Color.DarkGoldenrod;
             btnBuscarEncargado.Image = Properties.Resources._BuscarEnFacturacionMembresiaDatos;
-            btnBuscarEncargado.ImageSize = new Size(28, 28);
+            btnBuscarEncargado.ImageSize = new Size(25, 25);
             btnBuscarEncargado.Location = new Point(87, 34);
             btnBuscarEncargado.Name = "btnBuscarEncargado";
-            btnBuscarEncargado.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnBuscarEncargado.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnBuscarEncargado.Size = new Size(50, 48);
             btnBuscarEncargado.TabIndex = 10;
             btnBuscarEncargado.Click += btnBuscarEncargado_Click;

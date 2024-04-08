@@ -77,7 +77,7 @@
             btnGuardar.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod;
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Image = Properties.Resources.save_5764942;
+            btnGuardar.Image = Properties.Resources.icon_save_button__x32_;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
             btnGuardar.Location = new Point(-1, 102);
             btnGuardar.Name = "btnGuardar";

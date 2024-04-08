@@ -45,6 +45,14 @@
             txtIDFactura = new TextBox();
             txtUsuario = new TextBox();
             dgvProductos = new DataGridView();
+            IDDetalle = new DataGridViewTextBoxColumn();
+            IDProducto = new DataGridViewComboBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
+            Cantidad = new DataGridViewTextBoxColumn();
+            Subtotal = new DataGridViewTextBoxColumn();
+            Descuento = new DataGridViewTextBoxColumn();
+            Impuesto = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
             groupBox3 = new GroupBox();
             btnAgregar = new Button();
             txtProducto = new TextBox();
@@ -87,14 +95,6 @@
             label6 = new Label();
             txtCliente = new TextBox();
             panel3 = new Panel();
-            IDDetalle = new DataGridViewTextBoxColumn();
-            IDProducto = new DataGridViewComboBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            Subtotal = new DataGridViewTextBoxColumn();
-            Descuento = new DataGridViewTextBoxColumn();
-            Impuesto = new DataGridViewTextBoxColumn();
-            Total = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
@@ -205,6 +205,87 @@
             dgvProductos.RowTemplate.Height = 25;
             dgvProductos.Size = new Size(576, 342);
             dgvProductos.TabIndex = 12;
+            // 
+            // IDDetalle
+            // 
+            IDDetalle.DataPropertyName = "IDProducto";
+            IDDetalle.HeaderText = "ID";
+            IDDetalle.Name = "IDDetalle";
+            IDDetalle.ReadOnly = true;
+            IDDetalle.Width = 43;
+            // 
+            // IDProducto
+            // 
+            IDProducto.DataPropertyName = "IDProducto";
+            IDProducto.HeaderText = "Producto";
+            IDProducto.Name = "IDProducto";
+            IDProducto.ReadOnly = true;
+            IDProducto.Resizable = DataGridViewTriState.True;
+            IDProducto.SortMode = DataGridViewColumnSortMode.Automatic;
+            IDProducto.Width = 81;
+            // 
+            // Precio
+            // 
+            Precio.DataPropertyName = "Precio";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle1;
+            Precio.HeaderText = "Precio";
+            Precio.Name = "Precio";
+            Precio.ReadOnly = true;
+            Precio.Width = 65;
+            // 
+            // Cantidad
+            // 
+            Cantidad.DataPropertyName = "Cantidad";
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.Name = "Cantidad";
+            Cantidad.ReadOnly = true;
+            Cantidad.Width = 80;
+            // 
+            // Subtotal
+            // 
+            Subtotal.DataPropertyName = "Subtotal";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
+            Subtotal.HeaderText = "Subtotal";
+            Subtotal.Name = "Subtotal";
+            Subtotal.ReadOnly = true;
+            Subtotal.Width = 76;
+            // 
+            // Descuento
+            // 
+            Descuento.DataPropertyName = "Descuento";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
+            Descuento.HeaderText = "Descuento";
+            Descuento.Name = "Descuento";
+            Descuento.ReadOnly = true;
+            Descuento.Width = 88;
+            // 
+            // Impuesto
+            // 
+            Impuesto.DataPropertyName = "Itbis";
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle4;
+            Impuesto.HeaderText = "Impuesto";
+            Impuesto.Name = "Impuesto";
+            Impuesto.ReadOnly = true;
+            Impuesto.Width = 82;
+            // 
+            // Total
+            // 
+            Total.DataPropertyName = "Total";
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle5;
+            Total.HeaderText = "Total";
+            Total.Name = "Total";
+            Total.ReadOnly = true;
+            Total.Width = 57;
             // 
             // groupBox3
             // 
@@ -370,7 +451,7 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Image = Properties.Resources._SaveFacturaProduct;
+            btnGuardar.Image = Properties.Resources.icon_save_button__x32_;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
             btnGuardar.Location = new Point(-1, 79);
             btnGuardar.Name = "btnGuardar";
@@ -670,87 +751,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(983, 534);
             panel3.TabIndex = 28;
-            // 
-            // IDDetalle
-            // 
-            IDDetalle.DataPropertyName = "IDProducto";
-            IDDetalle.HeaderText = "ID";
-            IDDetalle.Name = "IDDetalle";
-            IDDetalle.ReadOnly = true;
-            IDDetalle.Width = 43;
-            // 
-            // IDProducto
-            // 
-            IDProducto.DataPropertyName = "IDProducto";
-            IDProducto.HeaderText = "Producto";
-            IDProducto.Name = "IDProducto";
-            IDProducto.ReadOnly = true;
-            IDProducto.Resizable = DataGridViewTriState.True;
-            IDProducto.SortMode = DataGridViewColumnSortMode.Automatic;
-            IDProducto.Width = 81;
-            // 
-            // Precio
-            // 
-            Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle1;
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
-            Precio.ReadOnly = true;
-            Precio.Width = 65;
-            // 
-            // Cantidad
-            // 
-            Cantidad.DataPropertyName = "Cantidad";
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.Name = "Cantidad";
-            Cantidad.ReadOnly = true;
-            Cantidad.Width = 80;
-            // 
-            // Subtotal
-            // 
-            Subtotal.DataPropertyName = "Subtotal";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
-            Subtotal.HeaderText = "Subtotal";
-            Subtotal.Name = "Subtotal";
-            Subtotal.ReadOnly = true;
-            Subtotal.Width = 76;
-            // 
-            // Descuento
-            // 
-            Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle3;
-            Descuento.HeaderText = "Descuento";
-            Descuento.Name = "Descuento";
-            Descuento.ReadOnly = true;
-            Descuento.Width = 88;
-            // 
-            // Impuesto
-            // 
-            Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle4;
-            Impuesto.HeaderText = "Impuesto";
-            Impuesto.Name = "Impuesto";
-            Impuesto.ReadOnly = true;
-            Impuesto.Width = 82;
-            // 
-            // Total
-            // 
-            Total.DataPropertyName = "Total";
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle5;
-            Total.HeaderText = "Total";
-            Total.Name = "Total";
-            Total.ReadOnly = true;
-            Total.Width = 57;
             // 
             // frmFacturaProductos
             // 

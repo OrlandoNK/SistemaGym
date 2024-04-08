@@ -135,7 +135,7 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Image = Properties.Resources._SaveFacturaProduct;
+            btnGuardar.Image = Properties.Resources.icon_save_button__x32_;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
             btnGuardar.Location = new Point(-1, 80);
             btnGuardar.Name = "btnGuardar";

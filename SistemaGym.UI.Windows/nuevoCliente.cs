@@ -86,24 +86,8 @@ namespace SistemaGym.UI.Windows
             oCliente.TelCell = txtTelCell.Text;
             oCliente.TelRes = txtTelRes.Text;
             oCliente.FechaRegistro = DateTime.Now;
+            oCliente.Estatus = "Activo";
 
-            if (chEstatus.Checked)
-            {
-                oCliente.Estatus = "Activo";
-            }
-            else
-            {
-                DialogResult dialogResult = new DialogResult();
-                dialogResult = MessageBox.Show("¿Seguro que desea Guardar el Cliente como Inactivo?", sistema, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    oCliente.Estatus = "Inactivo";
-                }
-                if (dialogResult == DialogResult.No)
-                {
-
-                }
-            }
 
             // guardar base datos
             try

@@ -49,7 +49,6 @@
             label5 = new Label();
             cbMembresia = new ComboBox();
             groupBox1 = new GroupBox();
-            chEstatus = new CheckBox();
             txtNombre = new TextBox();
             cbTipoDocumento = new ComboBox();
             label6 = new Label();
@@ -158,15 +157,16 @@
             btnGuardar.ForeColor = Color.White;
             btnGuardar.HoverState.FillColor = Color.DarkGoldenrod;
             btnGuardar.HoverState.ForeColor = Color.Black;
-            btnGuardar.Image = Properties.Resources._SaveFacturaProduct;
-            btnGuardar.ImageSize = new Size(25, 25);
+            btnGuardar.Image = Properties.Resources.icon_save_button__x32_;
+            btnGuardar.ImageAlign = HorizontalAlignment.Left;
+            btnGuardar.ImageSize = new Size(32, 32);
             btnGuardar.Location = new Point(-1, 44);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
             btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnGuardar.Size = new Size(204, 55);
             btnGuardar.TabIndex = 0;
-            btnGuardar.Text = "&Guardar";
+            btnGuardar.Text = "Guardar";
             btnGuardar.Click += btnGuardar_Click;
             // 
             // panel4
@@ -265,7 +265,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(chEstatus);
             groupBox1.Controls.Add(txtNombre);
             groupBox1.Controls.Add(cbTipoDocumento);
             groupBox1.Controls.Add(label6);
@@ -287,16 +286,6 @@
             groupBox1.TabIndex = 125;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Personales del Cliente";
-            // 
-            // chEstatus
-            // 
-            chEstatus.CheckAlign = ContentAlignment.MiddleRight;
-            chEstatus.Location = new Point(469, 149);
-            chEstatus.Name = "chEstatus";
-            chEstatus.Size = new Size(100, 25);
-            chEstatus.TabIndex = 124;
-            chEstatus.Text = "Estatus";
-            chEstatus.UseVisualStyleBackColor = true;
             // 
             // txtNombre
             // 
@@ -472,7 +461,6 @@
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private PictureBox pictureBox1;
         private ErrorProvider errorProvider;
-        private CheckBox chEstatus;
         private Label label2;
         private PictureBox pictureBox2;
         private Label label1;

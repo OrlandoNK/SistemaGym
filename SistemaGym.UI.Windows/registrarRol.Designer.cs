@@ -32,6 +32,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            label8 = new Label();
+            pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -42,14 +44,12 @@
             label3 = new Label();
             txtNombre = new TextBox();
             errorProvider = new ErrorProvider(components);
-            label8 = new Label();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -64,6 +64,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(470, 56);
             panel1.TabIndex = 0;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.DarkGoldenrod;
+            label8.Location = new Point(62, 15);
+            label8.Name = "label8";
+            label8.Size = new Size(56, 24);
+            label8.TabIndex = 8;
+            label8.Text = "Roles";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.user_role__x32_;
+            pictureBox1.Location = new Point(3, 1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(53, 53);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // btnClose
             // 
@@ -113,14 +134,14 @@
             btnGuardar.ForeColor = Color.White;
             btnGuardar.HoverState.FillColor = Color.DarkGoldenrod;
             btnGuardar.HoverState.ForeColor = Color.Black;
-            btnGuardar.Image = Properties.Resources._SaveFacturaProduct;
+            btnGuardar.Image = Properties.Resources.icon_save_button__x32_;
             btnGuardar.ImageAlign = HorizontalAlignment.Left;
-            btnGuardar.ImageSize = new Size(25, 25);
-            btnGuardar.Location = new Point(-1, 36);
+            btnGuardar.ImageSize = new Size(32, 32);
+            btnGuardar.Location = new Point(-1, 30);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
             btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnGuardar.Size = new Size(167, 45);
+            btnGuardar.Size = new Size(167, 54);
             btnGuardar.TabIndex = 0;
             btnGuardar.Text = "Guardar";
             btnGuardar.TextAlign = HorizontalAlignment.Right;
@@ -178,27 +199,6 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.DarkGoldenrod;
-            label8.Location = new Point(62, 15);
-            label8.Name = "label8";
-            label8.Size = new Size(56, 24);
-            label8.TabIndex = 8;
-            label8.Text = "Roles";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.user_role__x32_;
-            pictureBox1.Location = new Point(3, 1);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(53, 53);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
-            // 
             // registrarRol
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -214,12 +214,12 @@
             Text = "registrarRol";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

@@ -158,9 +158,9 @@
             btnGuardar.ForeColor = Color.Goldenrod;
             btnGuardar.HoverState.FillColor = Color.FromArgb(35, 32, 39);
             btnGuardar.HoverState.ForeColor = Color.Goldenrod;
-            btnGuardar.Image = Properties.Resources._SaveFacturaProduct;
+            btnGuardar.Image = Properties.Resources.icon_save_button__x32_;
             btnGuardar.ImageAlign = HorizontalAlignment.Left;
-            btnGuardar.ImageSize = new Size(25, 25);
+            btnGuardar.ImageSize = new Size(32, 32);
             btnGuardar.Location = new Point(-1, 108);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;

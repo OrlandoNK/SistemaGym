@@ -463,9 +463,9 @@
             btnSaveUser.ForeColor = Color.White;
             btnSaveUser.HoverState.FillColor = Color.DarkGoldenrod;
             btnSaveUser.HoverState.ForeColor = Color.Black;
-            btnSaveUser.Image = Properties.Resources.save_user_button__x32_;
+            btnSaveUser.Image = Properties.Resources.icon_save_button__x32_;
             btnSaveUser.ImageAlign = HorizontalAlignment.Left;
-            btnSaveUser.ImageSize = new Size(25, 25);
+            btnSaveUser.ImageSize = new Size(32, 32);
             btnSaveUser.Location = new Point(1, 89);
             btnSaveUser.Name = "btnSaveUser";
             btnSaveUser.PressedColor = Color.Transparent;
