@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel2 = new Panel();
             panel1 = new Panel();
+            btnClose = new PictureBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            btnClose = new PictureBox();
             panel3 = new Panel();
             btnDelete = new Guna.UI2.WinForms.Guna2Button();
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
@@ -50,11 +50,21 @@
             btnNew = new Guna.UI2.WinForms.Guna2Button();
             panel5 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
+            panel4 = new Panel();
+            dgvGrupoMembresia = new DataGridView();
+            IDGrupoMembresia = new DataGridViewTextBoxColumn();
+            IDMembresia = new DataGridViewComboBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            MontoTotal = new DataGridViewTextBoxColumn();
+            FechaRegistro = new DataGridViewTextBoxColumn();
+            Estatus = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvGrupoMembresia).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -80,28 +90,6 @@
             panel1.Size = new Size(1085, 64);
             panel1.TabIndex = 17;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft YaHei UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Goldenrod;
-            label1.Location = new Point(69, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(110, 23);
-            label1.TabIndex = 2;
-            label1.Text = "Membresias";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.facturamembresia;
-            pictureBox1.Location = new Point(11, 6);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(52, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
             // btnClose
             // 
             btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -113,6 +101,28 @@
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
             btnClose.TabIndex = 3;
             btnClose.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft YaHei UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Goldenrod;
+            label1.Location = new Point(69, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(158, 23);
+            label1.TabIndex = 2;
+            label1.Text = "Grupo Membresia";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.icon_Membership_Group__x32_;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(60, 56);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -133,7 +143,7 @@
             btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
             btnDelete.Cursor = Cursors.Hand;
-            btnDelete.CustomizableEdges = customizableEdges9;
+            btnDelete.CustomizableEdges = customizableEdges31;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -148,7 +158,7 @@
             btnDelete.ImageSize = new Size(25, 25);
             btnDelete.Location = new Point(-1, 296);
             btnDelete.Name = "btnDelete";
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges32;
             btnDelete.Size = new Size(221, 45);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
@@ -158,7 +168,7 @@
             btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.CustomizableEdges = customizableEdges11;
+            btnEdit.CustomizableEdges = customizableEdges33;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -173,7 +183,7 @@
             btnEdit.ImageSize = new Size(25, 25);
             btnEdit.Location = new Point(-1, 239);
             btnEdit.Name = "btnEdit";
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges34;
             btnEdit.Size = new Size(221, 45);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Modificar";
@@ -183,7 +193,7 @@
             btnrefresh.BorderColor = Color.DarkGoldenrod;
             btnrefresh.BorderThickness = 1;
             btnrefresh.Cursor = Cursors.Hand;
-            btnrefresh.CustomizableEdges = customizableEdges13;
+            btnrefresh.CustomizableEdges = customizableEdges35;
             btnrefresh.DisabledState.BorderColor = Color.DarkGray;
             btnrefresh.DisabledState.CustomBorderColor = Color.DarkGray;
             btnrefresh.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -197,7 +207,7 @@
             btnrefresh.ImageSize = new Size(32, 32);
             btnrefresh.Location = new Point(-1, 182);
             btnrefresh.Name = "btnrefresh";
-            btnrefresh.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnrefresh.ShadowDecoration.CustomizableEdges = customizableEdges36;
             btnrefresh.Size = new Size(221, 45);
             btnrefresh.TabIndex = 1;
             btnrefresh.TextAlign = HorizontalAlignment.Right;
@@ -207,7 +217,7 @@
             btnNew.BorderColor = Color.DarkGoldenrod;
             btnNew.BorderThickness = 1;
             btnNew.Cursor = Cursors.Hand;
-            btnNew.CustomizableEdges = customizableEdges15;
+            btnNew.CustomizableEdges = customizableEdges37;
             btnNew.DisabledState.BorderColor = Color.DarkGray;
             btnNew.DisabledState.CustomBorderColor = Color.DarkGray;
             btnNew.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -222,7 +232,7 @@
             btnNew.ImageSize = new Size(25, 25);
             btnNew.Location = new Point(-1, 125);
             btnNew.Name = "btnNew";
-            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnNew.ShadowDecoration.CustomizableEdges = customizableEdges38;
             btnNew.Size = new Size(221, 45);
             btnNew.TabIndex = 0;
             btnNew.Text = "Nuevo";
@@ -242,7 +252,7 @@
             // 
             TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxbBuscar.BorderRadius = 20;
-            TxbBuscar.CustomizableEdges = customizableEdges17;
+            TxbBuscar.CustomizableEdges = customizableEdges39;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -258,15 +268,79 @@
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges40;
             TxbBuscar.Size = new Size(846, 44);
             TxbBuscar.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.White;
+            panel4.Controls.Add(dgvGrupoMembresia);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(221, 159);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(864, 526);
+            panel4.TabIndex = 21;
+            // 
+            // dgvGrupoMembresia
+            // 
+            dgvGrupoMembresia.AllowUserToAddRows = false;
+            dgvGrupoMembresia.AllowUserToDeleteRows = false;
+            dgvGrupoMembresia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvGrupoMembresia.BackgroundColor = Color.White;
+            dgvGrupoMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvGrupoMembresia.Columns.AddRange(new DataGridViewColumn[] { IDGrupoMembresia, IDMembresia, Nombre, MontoTotal, FechaRegistro, Estatus });
+            dgvGrupoMembresia.Dock = DockStyle.Fill;
+            dgvGrupoMembresia.Location = new Point(0, 0);
+            dgvGrupoMembresia.Name = "dgvGrupoMembresia";
+            dgvGrupoMembresia.RowHeadersVisible = false;
+            dgvGrupoMembresia.RowTemplate.Height = 25;
+            dgvGrupoMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvGrupoMembresia.Size = new Size(864, 526);
+            dgvGrupoMembresia.TabIndex = 0;
+            // 
+            // IDGrupoMembresia
+            // 
+            IDGrupoMembresia.DataPropertyName = "IDGrupoMembresia";
+            IDGrupoMembresia.HeaderText = "IDGrupoMembresia";
+            IDGrupoMembresia.Name = "IDGrupoMembresia";
+            // 
+            // IDMembresia
+            // 
+            IDMembresia.DataPropertyName = "IDMembresia";
+            IDMembresia.HeaderText = "IDMembresia";
+            IDMembresia.Name = "IDMembresia";
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // MontoTotal
+            // 
+            MontoTotal.DataPropertyName = "MontoTotal";
+            MontoTotal.HeaderText = "MontoTotal";
+            MontoTotal.Name = "MontoTotal";
+            // 
+            // FechaRegistro
+            // 
+            FechaRegistro.DataPropertyName = "FechaRegistro";
+            FechaRegistro.HeaderText = "FechaRegistro";
+            FechaRegistro.Name = "FechaRegistro";
+            // 
+            // Estatus
+            // 
+            Estatus.DataPropertyName = "Estatus";
+            Estatus.HeaderText = "Estatus";
+            Estatus.Name = "Estatus";
             // 
             // mantenimientoGrupoMembresia
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 685);
+            Controls.Add(panel4);
             Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -277,10 +351,12 @@
             Text = "mantenimientoGrupoMembresia";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel5.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvGrupoMembresia).EndInit();
             ResumeLayout(false);
         }
 
@@ -298,5 +374,13 @@
         private Guna.UI2.WinForms.Guna2Button btnNew;
         private Panel panel5;
         private Guna.UI2.WinForms.Guna2TextBox TxbBuscar;
+        private Panel panel4;
+        private DataGridView dgvGrupoMembresia;
+        private DataGridViewTextBoxColumn IDGrupoMembresia;
+        private DataGridViewComboBoxColumn IDMembresia;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn MontoTotal;
+        private DataGridViewTextBoxColumn FechaRegistro;
+        private DataGridViewTextBoxColumn Estatus;
     }
 }
