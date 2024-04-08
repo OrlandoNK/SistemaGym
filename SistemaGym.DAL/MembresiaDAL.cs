@@ -19,13 +19,13 @@ namespace SistemaGym.DAL
 
             Conexion.Open();
             string insertar = "INSERT INTO Membresia(Nombre, Descripcion, DuracionMeses, Valor, CantidadPersonas, FechaCreacion, Estatus)" +
-                " values(@nombre, @descripcion, @duracion, @cantidad, @valor, @fechacreacion, @estatus)";
+                " values(@nombre, @descripcion, @duracion, @valor, @cantidad, @fechacreacion, @estatus)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@nombre", membresia.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", membresia.Descripcion);
             cmd.Parameters.AddWithValue("@duracion", membresia.Duracion);
-            cmd.Parameters.AddWithValue("@cantidad", membresia.CantidadPersonas);
             cmd.Parameters.AddWithValue("@valor", membresia.Valor);
+            cmd.Parameters.AddWithValue("@cantidad", membresia.CantidadPersonas);
             cmd.Parameters.AddWithValue("@fechacreacion", membresia.FechaCreacion);
             cmd.Parameters.AddWithValue("@estatus", membresia.Estatus);
             cmd.ExecuteNonQuery();
@@ -72,11 +72,12 @@ namespace SistemaGym.DAL
         //metodo mostrar membresias
         public static DataTable MostrarMembresia()
         {
+
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From Membresia";
+            string mostrar = "SELECT * FROM Membresia";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);

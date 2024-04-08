@@ -41,7 +41,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvMembresia = new DataGridView();
             panel1 = new Panel();
             btnClose = new PictureBox();
@@ -60,9 +59,9 @@
             IDMembresia = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
-            Duracion = new DataGridViewTextBoxColumn();
-            CantidadPersonas = new DataGridViewTextBoxColumn();
+            DuracionMeses = new DataGridViewTextBoxColumn();
             Valor = new DataGridViewTextBoxColumn();
+            CantidadPersonas = new DataGridViewTextBoxColumn();
             FechaCreacion = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
@@ -81,7 +80,7 @@
             dgvMembresia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvMembresia.BackgroundColor = Color.WhiteSmoke;
             dgvMembresia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Descripcion, Duracion, CantidadPersonas, Valor, FechaCreacion, Estatus });
+            dgvMembresia.Columns.AddRange(new DataGridViewColumn[] { IDMembresia, Nombre, Descripcion, DuracionMeses, Valor, CantidadPersonas, FechaCreacion, Estatus });
             dgvMembresia.Dock = DockStyle.Fill;
             dgvMembresia.Location = new Point(0, 0);
             dgvMembresia.Name = "dgvMembresia";
@@ -344,7 +343,7 @@
             // IDMembresia
             // 
             IDMembresia.DataPropertyName = "IDMembresia";
-            IDMembresia.HeaderText = "ID Membresia";
+            IDMembresia.HeaderText = "IDMembresia";
             IDMembresia.Name = "IDMembresia";
             // 
             // Nombre
@@ -359,17 +358,11 @@
             Descripcion.HeaderText = "Descripcion";
             Descripcion.Name = "Descripcion";
             // 
-            // Duracion
+            // DuracionMeses
             // 
-            Duracion.DataPropertyName = "DuracionMeses";
-            Duracion.HeaderText = "Duracion(Meses)";
-            Duracion.Name = "Duracion";
-            // 
-            // CantidadPersonas
-            // 
-            CantidadPersonas.DataPropertyName = "CantidadPersonas";
-            CantidadPersonas.HeaderText = "Cantidad(Personas)";
-            CantidadPersonas.Name = "CantidadPersonas";
+            DuracionMeses.DataPropertyName = "DuracionMeses";
+            DuracionMeses.HeaderText = "DuracionMeses";
+            DuracionMeses.Name = "DuracionMeses";
             // 
             // Valor
             // 
@@ -380,13 +373,16 @@
             Valor.HeaderText = "Valor";
             Valor.Name = "Valor";
             // 
+            // CantidadPersonas
+            // 
+            CantidadPersonas.DataPropertyName = "CantidadPersonas";
+            CantidadPersonas.HeaderText = "CantidadPersonas";
+            CantidadPersonas.Name = "CantidadPersonas";
+            // 
             // FechaCreacion
             // 
             FechaCreacion.DataPropertyName = "FechaCreacion";
-            dataGridViewCellStyle2.Format = "g";
-            dataGridViewCellStyle2.NullValue = null;
-            FechaCreacion.DefaultCellStyle = dataGridViewCellStyle2;
-            FechaCreacion.HeaderText = "Fecha Creacion";
+            FechaCreacion.HeaderText = "FechaCreacion";
             FechaCreacion.Name = "FechaCreacion";
             // 
             // Estatus
@@ -439,9 +435,9 @@
         private DataGridViewTextBoxColumn IDMembresia;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn Duracion;
-        private DataGridViewTextBoxColumn CantidadPersonas;
+        private DataGridViewTextBoxColumn DuracionMeses;
         private DataGridViewTextBoxColumn Valor;
+        private DataGridViewTextBoxColumn CantidadPersonas;
         private DataGridViewTextBoxColumn FechaCreacion;
         private DataGridViewTextBoxColumn Estatus;
     }

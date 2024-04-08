@@ -34,7 +34,7 @@ namespace SistemaGym.BLL
     public static DataTable Mostrar()
     {
         return MembresiaDAL.MostrarMembresia();
-        }
+    }
 
     public static DataTable BuscarByID(MembresiaEntity membresia)
     {

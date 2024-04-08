@@ -74,9 +74,10 @@ namespace SistemaGym.UI.Windows
             MembresiaEntity oMembresia = new MembresiaEntity();
             oMembresia.Nombre = txtNombre.Text;
             oMembresia.Descripcion = txtDescripcion.Text;
-            oMembresia.Duracion = txtDuracion.Text;
-            oMembresia.Valor = decimal.Parse(txtValor.Text);
+            oMembresia.Duracion = Convert.ToInt32(txtDuracion.Text);
+            oMembresia.Valor = Decimal.Parse(txtValor.Text);
             oMembresia.FechaCreacion = DateTime.Now;
+            oMembresia.CantidadPersonas = Convert.ToInt32(txtCantidadPersonas.Text);
             oMembresia.Estatus = "Activo";
 
 
