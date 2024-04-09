@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnClose = new PictureBox();
             label1 = new Label();
@@ -157,7 +157,7 @@
             btnSave.BorderColor = Color.DarkGoldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges7;
+            btnSave.CustomizableEdges = customizableEdges1;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -172,7 +172,7 @@
             btnSave.ImageSize = new Size(35, 35);
             btnSave.Location = new Point(-1, 69);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnSave.Size = new Size(201, 54);
             btnSave.TabIndex = 3;
             btnSave.Text = "Guardar";
@@ -335,7 +335,7 @@
             btnBuscarCliente.BorderRadius = 4;
             btnBuscarCliente.BorderThickness = 2;
             btnBuscarCliente.Cursor = Cursors.Hand;
-            btnBuscarCliente.CustomizableEdges = customizableEdges9;
+            btnBuscarCliente.CustomizableEdges = customizableEdges3;
             btnBuscarCliente.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarCliente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -349,7 +349,7 @@
             btnBuscarCliente.Location = new Point(347, 86);
             btnBuscarCliente.Name = "btnBuscarCliente";
             btnBuscarCliente.PressedColor = Color.Transparent;
-            btnBuscarCliente.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnBuscarCliente.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnBuscarCliente.Size = new Size(61, 51);
             btnBuscarCliente.TabIndex = 8;
             btnBuscarCliente.Click += btnBuscarCliente_Click;
@@ -476,7 +476,7 @@
             btnBuscarGrupoMembresia.BorderRadius = 4;
             btnBuscarGrupoMembresia.BorderThickness = 2;
             btnBuscarGrupoMembresia.Cursor = Cursors.Hand;
-            btnBuscarGrupoMembresia.CustomizableEdges = customizableEdges11;
+            btnBuscarGrupoMembresia.CustomizableEdges = customizableEdges5;
             btnBuscarGrupoMembresia.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarGrupoMembresia.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarGrupoMembresia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -490,7 +490,7 @@
             btnBuscarGrupoMembresia.Location = new Point(346, 86);
             btnBuscarGrupoMembresia.Name = "btnBuscarGrupoMembresia";
             btnBuscarGrupoMembresia.PressedColor = Color.Transparent;
-            btnBuscarGrupoMembresia.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnBuscarGrupoMembresia.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnBuscarGrupoMembresia.Size = new Size(61, 51);
             btnBuscarGrupoMembresia.TabIndex = 3;
             // 
@@ -566,6 +566,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarGrupoClientes";
             Text = "registrarGrupoClientes";
+            Load += registrarGrupoClientes_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();

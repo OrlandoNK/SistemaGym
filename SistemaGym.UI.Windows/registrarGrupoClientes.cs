@@ -67,5 +67,10 @@ namespace SistemaGym.UI.Windows
                 }
             }
         }
+
+        private void registrarGrupoClientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
