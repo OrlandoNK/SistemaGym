@@ -64,8 +64,9 @@ namespace SistemaGym.DAL
 
                 
                 }
-                string insertarPagoQuery = "INSERT INTO Pagos(IDFacturaProducto, IDFacturaMembresia, MetodoPago, Monto, Pagado, Devuelta, FechaPago, Estatus) " +
-           "VALUES(@idfacturaproducto, @idfacturamembresia, @metodopago, @monto, @pagado, @devuelta, @fechapago, @estatus); " +
+
+                string insertarPagoQuery = "INSERT INTO Pago(IDFacturaProducto, MetodoPago, Monto, Pagado, Devuelta, FechaPago, Estatus) " +
+           "VALUES(@idfacturaproducto, @metodopago, @monto, @pagado, @devuelta, @fechapago, @estatus); " +
            "SELECT SCOPE_IDENTITY();";
 
                 SqlCommand cmdPago = new SqlCommand(insertarPagoQuery, Conexion, transaccion);

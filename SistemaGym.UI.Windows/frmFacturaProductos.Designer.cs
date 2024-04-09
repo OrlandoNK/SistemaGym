@@ -95,6 +95,15 @@
             label6 = new Label();
             txtCliente = new TextBox();
             panel3 = new Panel();
+            groupBox2 = new GroupBox();
+            cbMetodoPago = new ComboBox();
+            label22 = new Label();
+            txtMontoRecibido = new TextBox();
+            label4 = new Label();
+            txtMontoTotal = new TextBox();
+            label19 = new Label();
+            txtDevuelta = new TextBox();
+            label23 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
@@ -105,6 +114,7 @@
             groupBox4.SuspendLayout();
             groupBox1.SuspendLayout();
             panel3.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -404,6 +414,7 @@
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(104, 23);
             txtCantidad.TabIndex = 7;
+            txtCantidad.KeyPress += txtCantidad_KeyPress;
             // 
             // label12
             // 
@@ -421,6 +432,7 @@
             txtDescuento.Name = "txtDescuento";
             txtDescuento.Size = new Size(104, 23);
             txtDescuento.TabIndex = 8;
+            txtDescuento.KeyPress += txtDescuento_KeyPress;
             // 
             // btnNuevo
             // 
@@ -734,6 +746,7 @@
             // 
             panel3.BackColor = Color.WhiteSmoke;
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(groupBox2);
             panel3.Controls.Add(txtTotal);
             panel3.Controls.Add(groupBox3);
             panel3.Controls.Add(label17);
@@ -751,6 +764,95 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(983, 534);
             panel3.TabIndex = 28;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(cbMetodoPago);
+            groupBox2.Controls.Add(label22);
+            groupBox2.Controls.Add(txtMontoRecibido);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(txtMontoTotal);
+            groupBox2.Controls.Add(label19);
+            groupBox2.Controls.Add(txtDevuelta);
+            groupBox2.Controls.Add(label23);
+            groupBox2.Location = new Point(5, 325);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(380, 133);
+            groupBox2.TabIndex = 25;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Pagos";
+            // 
+            // cbMetodoPago
+            // 
+            cbMetodoPago.FormattingEnabled = true;
+            cbMetodoPago.Items.AddRange(new object[] { "Efectivo", "Transferencia" });
+            cbMetodoPago.Location = new Point(99, 86);
+            cbMetodoPago.Name = "cbMetodoPago";
+            cbMetodoPago.Size = new Size(143, 23);
+            cbMetodoPago.TabIndex = 23;
+            // 
+            // label22
+            // 
+            label22.BackColor = Color.Transparent;
+            label22.Location = new Point(4, 88);
+            label22.Name = "label22";
+            label22.Size = new Size(100, 21);
+            label22.TabIndex = 7;
+            label22.Text = "Metodo de Pago";
+            // 
+            // txtMontoRecibido
+            // 
+            txtMontoRecibido.Location = new Point(123, 52);
+            txtMontoRecibido.Multiline = true;
+            txtMontoRecibido.Name = "txtMontoRecibido";
+            txtMontoRecibido.Size = new Size(122, 23);
+            txtMontoRecibido.TabIndex = 5;
+            txtMontoRecibido.KeyPress += txtMontoRecibido_KeyPress;
+            // 
+            // label4
+            // 
+            label4.BackColor = Color.Transparent;
+            label4.Location = new Point(126, 28);
+            label4.Name = "label4";
+            label4.Size = new Size(104, 21);
+            label4.TabIndex = 1;
+            label4.Text = "Monto Recibido";
+            // 
+            // txtMontoTotal
+            // 
+            txtMontoTotal.Location = new Point(12, 52);
+            txtMontoTotal.Multiline = true;
+            txtMontoTotal.Name = "txtMontoTotal";
+            txtMontoTotal.ReadOnly = true;
+            txtMontoTotal.Size = new Size(105, 23);
+            txtMontoTotal.TabIndex = 4;
+            // 
+            // label19
+            // 
+            label19.BackColor = Color.Transparent;
+            label19.Location = new Point(12, 28);
+            label19.Name = "label19";
+            label19.Size = new Size(72, 21);
+            label19.TabIndex = 0;
+            label19.Text = "Monto Total";
+            // 
+            // txtDevuelta
+            // 
+            txtDevuelta.Location = new Point(251, 52);
+            txtDevuelta.Multiline = true;
+            txtDevuelta.Name = "txtDevuelta";
+            txtDevuelta.Size = new Size(123, 23);
+            txtDevuelta.TabIndex = 6;
+            txtDevuelta.KeyPress += txtDevuelta_KeyPress;
+            // 
+            // label23
+            // 
+            label23.BackColor = Color.Transparent;
+            label23.Location = new Point(251, 28);
+            label23.Name = "label23";
+            label23.Size = new Size(123, 21);
+            label23.TabIndex = 2;
+            label23.Text = "Devuelta";
             // 
             // frmFacturaProductos
             // 
@@ -781,6 +883,8 @@
             groupBox1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -847,5 +951,14 @@
         private DataGridViewTextBoxColumn Descuento;
         private DataGridViewTextBoxColumn Impuesto;
         private DataGridViewTextBoxColumn Total;
+        private GroupBox groupBox2;
+        private TextBox txtMontoRecibido;
+        private Label label4;
+        private TextBox txtMontoTotal;
+        private Label label19;
+        private TextBox txtDevuelta;
+        private Label label23;
+        private ComboBox cbMetodoPago;
+        private Label label22;
     }
 }
