@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnClose = new PictureBox();
             label1 = new Label();
@@ -246,7 +246,7 @@
             btnBuscarGrupoMembresia.BorderRadius = 4;
             btnBuscarGrupoMembresia.BorderThickness = 2;
             btnBuscarGrupoMembresia.Cursor = Cursors.Hand;
-            btnBuscarGrupoMembresia.CustomizableEdges = customizableEdges5;
+            btnBuscarGrupoMembresia.CustomizableEdges = customizableEdges7;
             btnBuscarGrupoMembresia.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarGrupoMembresia.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarGrupoMembresia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -260,7 +260,7 @@
             btnBuscarGrupoMembresia.Location = new Point(346, 86);
             btnBuscarGrupoMembresia.Name = "btnBuscarGrupoMembresia";
             btnBuscarGrupoMembresia.PressedColor = Color.Transparent;
-            btnBuscarGrupoMembresia.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnBuscarGrupoMembresia.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnBuscarGrupoMembresia.Size = new Size(61, 51);
             btnBuscarGrupoMembresia.TabIndex = 3;
             // 
@@ -288,7 +288,7 @@
             btnBuscarClente.BorderRadius = 4;
             btnBuscarClente.BorderThickness = 2;
             btnBuscarClente.Cursor = Cursors.Hand;
-            btnBuscarClente.CustomizableEdges = customizableEdges3;
+            btnBuscarClente.CustomizableEdges = customizableEdges9;
             btnBuscarClente.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarClente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarClente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -302,7 +302,7 @@
             btnBuscarClente.Location = new Point(347, 86);
             btnBuscarClente.Name = "btnBuscarClente";
             btnBuscarClente.PressedColor = Color.Transparent;
-            btnBuscarClente.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnBuscarClente.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnBuscarClente.Size = new Size(61, 51);
             btnBuscarClente.TabIndex = 3;
             // 
@@ -488,7 +488,7 @@
             // 
             guna2HtmlLabel12.AutoSize = false;
             guna2HtmlLabel12.BackColor = Color.Transparent;
-            guna2HtmlLabel12.Location = new Point(706, 333);
+            guna2HtmlLabel12.Location = new Point(691, 333);
             guna2HtmlLabel12.Name = "guna2HtmlLabel12";
             guna2HtmlLabel12.Size = new Size(157, 19);
             guna2HtmlLabel12.TabIndex = 7;
@@ -498,7 +498,7 @@
             // 
             textBox3.Enabled = false;
             textBox3.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(706, 358);
+            textBox3.Location = new Point(691, 358);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
             textBox3.Size = new Size(157, 24);
@@ -509,7 +509,7 @@
             btnSave.BorderColor = Color.DarkGoldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges1;
+            btnSave.CustomizableEdges = customizableEdges11;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -524,7 +524,7 @@
             btnSave.ImageSize = new Size(35, 35);
             btnSave.Location = new Point(-1, 69);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnSave.Size = new Size(201, 54);
             btnSave.TabIndex = 3;
             btnSave.Text = "Guardar";
