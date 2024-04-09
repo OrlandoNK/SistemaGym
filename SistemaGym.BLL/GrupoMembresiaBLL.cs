@@ -35,6 +35,10 @@ namespace SistemaGym.BLL
         {
             return GrupoMembresiaDAL.BuscarID(grupoMembresia);
         }
+        public static GrupoMembresiaEntity GetByID(int Id)
+        {
+            return GrupoMembresiaDAL.GetByID(Id);
+        }
         public static DataTable ObtenerPorValor(GrupoMembresiaEntity grupoMembresia)
         {
             return GrupoMembresiaDAL.ObtenerPorValor(grupoMembresia);

@@ -118,5 +118,41 @@ namespace SistemaGym.DAL
             da.Fill(dt);
             return dt;
         }
+
+        public static GrupoMembresiaEntity GetByID(int Id)
+        {
+            GrupoMembresiaEntity grupoMembresia = null;
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            string GetID = "SELECT * FROM GrupoMembresia WHERE IDGrupoMembresia = @IDGrupoMembresia";
+            SqlCommand cmd = new SqlCommand(GetID, Conexion);
+            cmd.Parameters.AddWithValue("@IDGrupoMembresia", Id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                grupoMembresia = ConvertToObject(reader);
+            }
+                    
+            return grupoMembresia;
+        }
+
+        private static GrupoMembresiaEntity ConvertToObject(IDataReader reader)
+        {
+            GrupoMembresiaEntity grupoMembresia = new GrupoMembresiaEntity();
+
+            grupoMembresia.IDGrupoMembresia = Convert.ToInt32(reader["IDGrupoMembresia"]);
+            grupoMembresia.IDMembresia = Convert.ToInt32(reader["IDMembresia"]);
+            grupoMembresia.Nombre = Convert.ToString(reader["Nombre"]);
+            grupoMembresia.MontoTotal = Convert.ToDecimal(reader["MontoTotal"]);
+            grupoMembresia.FechaRegistro = Convert.ToDateTime(reader["FechaRegistro"]);
+            grupoMembresia.Estatus = Convert.ToString(reader["Estatus"]);
+
+            return grupoMembresia;
+        }
     }
 }
