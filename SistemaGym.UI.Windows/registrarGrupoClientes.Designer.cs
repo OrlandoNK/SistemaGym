@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -73,6 +74,7 @@
             txbNombreGrupoMembresia = new TextBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txbIdGrupoMembresia = new TextBox();
+            ErrorProvider = new ErrorProvider(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -81,6 +83,7 @@
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -176,6 +179,7 @@
             btnSave.Size = new Size(201, 54);
             btnSave.TabIndex = 3;
             btnSave.Text = "Guardar";
+            btnSave.Click += btnSave_Click;
             // 
             // panel4
             // 
@@ -555,6 +559,10 @@
             txbIdGrupoMembresia.Size = new Size(127, 24);
             txbIdGrupoMembresia.TabIndex = 0;
             // 
+            // ErrorProvider
+            // 
+            ErrorProvider.ContainerControl = this;
+            // 
             // registrarGrupoClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -581,6 +589,7 @@
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ErrorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -627,5 +636,6 @@
         private TextBox TxbNombreMembresia;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
         private TextBox TxbTipoDocumento;
+        private ErrorProvider ErrorProvider;
     }
 }

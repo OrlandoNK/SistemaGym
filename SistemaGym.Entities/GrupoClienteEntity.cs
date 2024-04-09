@@ -11,6 +11,7 @@ namespace SistemaGym.Entities
         public int IDGrupoCliente { get; set; }
         public int IDGrupoMembresia { get; set; }
         public int IDCliente { get; set; }
+        public Decimal Monto { get; set; }
         public DateTime FechaRegistro { get; set; }
         public string Estatus { get; set; }
 

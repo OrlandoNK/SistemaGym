@@ -95,5 +95,123 @@ namespace SistemaGym.UI.Windows
                 }
             }
         }
+
+        private bool ValidarCampos()
+        {
+            ErrorProvider.Clear();
+            bool validation = true;
+
+            string GrupoMembresiaObligatorio = "Debe de Agregar el Grupo de Membresia";
+            string ClienteObligatorio = "Debe de Agregar el Cliente";
+            string MembresiaObligatoria = "Debe de Agregar la Membresia";
+
+            if (string.IsNullOrEmpty(txbIdGrupoMembresia.Text))
+            {
+                ErrorProvider.SetError(txbIdGrupoMembresia, GrupoMembresiaObligatorio);
+                validation = false;
+            }
+            int IDGrupoMembresia;
+            if (!int.TryParse(txbIdGrupoMembresia.Text, out IDGrupoMembresia))
+            {
+                ErrorProvider.SetError(txbIdGrupoMembresia, GrupoMembresiaObligatorio);
+                validation = false;
+            }
+            if (string.IsNullOrEmpty(txbNombreGrupoMembresia.Text))
+            {
+                ErrorProvider.SetError(txbNombreGrupoMembresia, GrupoMembresiaObligatorio);
+                validation = false;
+            }
+            if (string.IsNullOrEmpty(txbMontoTotalGrupoMembresia.Text))
+            {
+                ErrorProvider.SetError(txbMontoTotalGrupoMembresia, GrupoMembresiaObligatorio);
+                validation = false;
+            }
+            decimal MontoTotalGrupoMembresia;
+            if (!decimal.TryParse(txbMontoTotalGrupoMembresia.Text, out MontoTotalGrupoMembresia))
+            {
+                ErrorProvider.SetError(txbMontoTotalGrupoMembresia, GrupoMembresiaObligatorio);
+                validation = false;
+            }
+
+            if (string.IsNullOrEmpty(TxbIDCliente.Text))
+            {
+                ErrorProvider.SetError(TxbIDCliente, ClienteObligatorio);
+                validation = false;
+            }
+            int IDCliente;
+            if (!int.TryParse(TxbIDCliente.Text, out IDCliente))
+            {
+                ErrorProvider.SetError(TxbIDCliente, ClienteObligatorio);
+                validation = false;
+            }
+            if (string.IsNullOrEmpty(TxbNombreCliente.Text))
+            {
+                ErrorProvider.SetError(TxbNombreCliente, ClienteObligatorio);
+                validation = false;
+            }
+            if (string.IsNullOrEmpty(TxbApellidoCliente.Text))
+            {
+                ErrorProvider.SetError(TxbApellidoCliente, ClienteObligatorio);
+                validation = false;
+            }
+            if (string.IsNullOrEmpty(TxbTipoDocumento.Text))
+            {
+                ErrorProvider.SetError(TxbTipoDocumento, ClienteObligatorio);
+                validation = false;
+            }
+            if (string.IsNullOrEmpty(TxbDocumentoCliente.Text))
+            {
+                ErrorProvider.SetError(TxbDocumentoCliente, ClienteObligatorio);
+                validation = false;
+            }
+
+
+            if (string.IsNullOrEmpty(TxbIDMembresia.Text))
+            {
+                ErrorProvider.SetError(TxbIDMembresia, MembresiaObligatoria);
+                validation = false;
+            }
+            int IDMembresia;
+            if (!int.TryParse(TxbIDMembresia.Text, out IDMembresia))
+            {
+                ErrorProvider.SetError(TxbIDMembresia, MembresiaObligatoria);
+                validation = false;
+            }
+            if (string.IsNullOrEmpty(TxbNombreMembresia.Text))
+            {
+                ErrorProvider.SetError(TxbNombreMembresia, MembresiaObligatoria);
+                validation = false;
+            }
+            if (string.IsNullOrEmpty(TxbDescrMembresia.Text))
+            {
+                ErrorProvider.SetError(TxbDescrMembresia, MembresiaObligatoria);
+                validation = false;
+            }
+            if (string.IsNullOrEmpty(TxbValorMembresia.Text))
+            {
+                ErrorProvider.SetError(TxbValorMembresia, MembresiaObligatoria);
+                validation = false;
+            }
+            decimal ValorMembresia;
+            if (!decimal.TryParse(TxbValorMembresia.Text, out ValorMembresia))
+            {
+                ErrorProvider.SetError(TxbValorMembresia, MembresiaObligatoria);
+                validation = false;
+            }
+
+            return validation;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!ValidarCampos())
+            {
+
+                return;
+            }
+
+
+
+        }
     }
 }
