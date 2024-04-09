@@ -210,6 +210,29 @@ namespace SistemaGym.UI.Windows
                 return;
             }
 
+            GrupoClienteEntity nuevoGrupoCliente = new GrupoClienteEntity();
+            GrupoClienteBLL grupoClienteBLL = new GrupoClienteBLL();
+
+            nuevoGrupoCliente.IDGrupoMembresia = Convert.ToInt32(txbIdGrupoMembresia.Text);
+            nuevoGrupoCliente.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
+            nuevoGrupoCliente.Monto = Convert.ToDecimal(txbMontoGrupoCliente.Text);
+            nuevoGrupoCliente.FechaRegistro = DateTime.Now;
+            nuevoGrupoCliente.Estatus = "Activo";
+
+            try
+            {
+                GrupoClienteBLL.Insertar(nuevoGrupoCliente);
+                MessageBox.Show("¡El Grupo de Cliente ha sido Guardado de Manera Satisfactoria!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Grupo de Clientes:\n\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Grupo de Clientes:\n\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
