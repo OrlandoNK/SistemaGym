@@ -108,12 +108,12 @@ namespace SistemaGym.UI.Windows
                     this.TxbIDMembresia.Text = oMembresia.IDMembresia.ToString();
                     this.TxbNombreMembresia.Text = oMembresia.Nombre.ToString();
                     this.TxbDescrMembresia.Text = oMembresia.Descripcion.ToString();
-                    this.TxbValorMembresia.Text = Convert.ToInt32(oMembresia.Valor).ToString();
-                    this.txtCantidadPersonas.Text = Convert.ToInt32(oMembresia.CantidadPersonas).ToString();
+                    this.TxbValorMembresia.Text = Convert.ToDecimal(oMembresia.Valor).ToString("0.00");
+                    this.txtCantidadPersonas.Text = Convert.ToDecimal(oMembresia.CantidadPersonas).ToString("0.00");
 
-                    int CantidadPersonas = int.Parse(txtCantidadPersonas.Text);
-                    int ValorMembresia = int.Parse(TxbValorMembresia.Text);
-                    this.TxbMontoTotal.Text = Convert.ToInt32(CantidadPersonas * ValorMembresia).ToString();
+                    decimal CantidadPersonas = decimal.Parse(txtCantidadPersonas.Text);
+                    decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+                    this.TxbMontoTotal.Text = Convert.ToDecimal(CantidadPersonas * ValorMembresia).ToString("0.00");
                 }
                 else
                 {
