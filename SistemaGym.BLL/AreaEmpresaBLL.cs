@@ -21,7 +21,7 @@ namespace SistemaGym.BLL
             AreaEmpresaDAL.ActualizarArea(areaEmpresa);
         }
 
-        public bool Eliminar (AreaEmpresaEntity areaEmpresa)
+        public bool Eliminar (int areaEmpresa)
         {
             return AreaEmpresaDAL.EliminarArea(areaEmpresa);
         }

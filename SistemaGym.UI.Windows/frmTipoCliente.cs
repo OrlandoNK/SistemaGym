@@ -15,7 +15,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class frmTipoCliente : Form
     {
-        const string sistema = "Sistema Gym";
+        const string sistema = "Sistema Gestion Gimnasio (COMFORT GYM) dice";
         public frmTipoCliente()
         {
             InitializeComponent();
@@ -33,15 +33,23 @@ namespace SistemaGym.UI.Windows
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            InicializarControles();
+            DialogResult dialogResult = new DialogResult();
+            dialogResult = MessageBox.Show("¿Desea crear un Nuevo Tipo de Cliente?", sistema, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                InicializarControles();
+            }
+            if (dialogResult == DialogResult.No)
+            {
+
+            }
+
         }
         private void InicializarControles()
         {
             txtID.Text = "0";
             txtNombre.Clear();
             txtDescripcion.Clear();
-            dgvTipoCliente.AutoGenerateColumns = false;
-            dgvTipoCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
             txtNombre.Focus();
         }
 
@@ -63,7 +71,7 @@ namespace SistemaGym.UI.Windows
             try
             {
                 TipoClienteBLL.Guardar(TipoCliente);
-                MessageBox.Show("TipoCliente guardada.", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("¡El Tipo de Cliente ha sido Guardado de Manera Satisfactoria!", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 InicializarControles();
             }
             catch (SqlException ex)
@@ -82,15 +90,16 @@ namespace SistemaGym.UI.Windows
             bool resultado = true;
             //inicializando los mensajes de validaciones
             errorProvider1.Clear();
+            string CampoObligatorio = "¡Este Campo es Obligatorio!";
             //verificar que en los campos obligatorios hayan datos
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
-                errorProvider1.SetError(txtNombre, "El nombre es obligatorio");
+                errorProvider1.SetError(txtNombre, CampoObligatorio);
                 resultado = false;
             }
             if (string.IsNullOrEmpty(txtDescripcion.Text))
             {
-                errorProvider1.SetError(txtDescripcion, "El valor no es obligatorio");
+                errorProvider1.SetError(txtDescripcion, CampoObligatorio);
                 resultado = false;
             }
 
@@ -102,20 +111,9 @@ namespace SistemaGym.UI.Windows
             Close();
         }
 
-        private void dgvTipoCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex == -1)
-            {
-                return;
-
-            }
-
-            DataGridViewRow row = dgvTipoCliente.CurrentRow;
-            txtID.Text = row.Cells["IDTipoCliente"].Value?.ToString();
-            txtNombre.Text = row.Cells["Nombre"].Value?.ToString();
-            txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString();
+            Close();
         }
-
-
     }
 }

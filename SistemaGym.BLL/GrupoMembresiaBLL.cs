@@ -15,28 +15,29 @@ namespace SistemaGym.BLL
         readonly GrupoMembresiaDAL grupoMembresiaDAL = new GrupoMembresiaDAL();
         public static void guardar(GrupoMembresiaEntity grupoMembresia)
         {
-            if (grupoMembresia.IDGrupoMembresia == 0)
-            {
-                //agregar
-                GrupoMembresiaDAL.InsertarGrupoMembresia(grupoMembresia);
-            }
-            else
-            {
-                //Actualizar
-                GrupoMembresiaDAL.ActualizarGrupoMembresia(grupoMembresia);
-            }
+            //agregar
+            GrupoMembresiaDAL.InsertarGrupoMembresia(grupoMembresia);
         }
-        public static bool Eliminar(GrupoMembresiaEntity grupoMembresia)
+        public static void actualizar(GrupoMembresiaEntity grupoMembresia)
+        {
+            //Actualizar
+            GrupoMembresiaDAL.ActualizarGrupoMembresia(grupoMembresia);
+        }
+        public static bool Eliminar(int grupoMembresia)
         {
             return GrupoMembresiaDAL.EliminarGrupoMembresia(grupoMembresia);
         }
-        public static DataTable MostrarGrupoMembresia(GrupoMembresiaEntity grupoMembresia)
+        public static DataTable MostrarGrupoMembresia()
         {
             return GrupoMembresiaDAL.MostrarGrupoMembresia();
         }
         public static DataTable BuscarID(GrupoMembresiaEntity grupoMembresia)
         {
             return GrupoMembresiaDAL.BuscarID(grupoMembresia);
+        }
+        public static GrupoMembresiaEntity GetByID(int Id)
+        {
+            return GrupoMembresiaDAL.GetByID(Id);
         }
         public static DataTable ObtenerPorValor(GrupoMembresiaEntity grupoMembresia)
         {

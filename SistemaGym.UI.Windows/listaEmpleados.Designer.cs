@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnclose = new PictureBox();
             panel2 = new Panel();
@@ -76,6 +76,7 @@
             btnclose.SizeMode = PictureBoxSizeMode.AutoSize;
             btnclose.TabIndex = 1;
             btnclose.TabStop = false;
+            btnclose.Click += btnclose_Click;
             // 
             // panel2
             // 
@@ -101,7 +102,7 @@
             // TxbBuscar
             // 
             TxbBuscar.BorderRadius = 20;
-            TxbBuscar.CustomizableEdges = customizableEdges1;
+            TxbBuscar.CustomizableEdges = customizableEdges5;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -117,7 +118,7 @@
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             TxbBuscar.Size = new Size(822, 39);
             TxbBuscar.TabIndex = 0;
             // 
@@ -242,6 +243,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "listaEmpleados";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "listaEmpleados";
             Load += listaEmpleados_Load;
             panel1.ResumeLayout(false);

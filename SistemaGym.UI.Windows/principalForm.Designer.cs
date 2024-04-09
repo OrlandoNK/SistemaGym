@@ -44,8 +44,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -64,6 +64,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnAdministracion = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             lblRolUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -80,11 +84,13 @@
             btnRoles = new Guna.UI2.WinForms.Guna2Button();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            btnHelpCenter = new Guna.UI2.WinForms.Guna2Button();
             subPanelFacturacion = new Panel();
             btnFacturaProducto = new Guna.UI2.WinForms.Guna2Button();
             btnFacturaMembresia = new Guna.UI2.WinForms.Guna2Button();
             btnFacturacion = new Guna.UI2.WinForms.Guna2Button();
             subPanelMantenimientos = new Panel();
+            btnAreasGYM = new Guna.UI2.WinForms.Guna2Button();
             btnProductos = new Guna.UI2.WinForms.Guna2Button();
             btnCategorias = new Guna.UI2.WinForms.Guna2Button();
             btnClientes = new Guna.UI2.WinForms.Guna2Button();
@@ -104,6 +110,7 @@
             // btnAdministracion
             // 
             btnAdministracion.BackColor = Color.Transparent;
+            btnAdministracion.Cursor = Cursors.Hand;
             btnAdministracion.CustomizableEdges = customizableEdges1;
             btnAdministracion.DisabledState.BorderColor = Color.DarkGray;
             btnAdministracion.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -123,7 +130,7 @@
             btnAdministracion.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnAdministracion.Size = new Size(237, 52);
             btnAdministracion.TabIndex = 3;
-            btnAdministracion.Text = "&Administración";
+            btnAdministracion.Text = "Administración";
             btnAdministracion.TextAlign = HorizontalAlignment.Right;
             btnAdministracion.Click += btnAdministracion_Click;
             // 
@@ -217,10 +224,11 @@
             // 
             panelDesplegable.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelDesplegable.BackColor = Color.White;
+            panelDesplegable.BorderStyle = BorderStyle.FixedSingle;
             panelDesplegable.Controls.Add(btncerrarSesion);
-            panelDesplegable.Location = new Point(894, 70);
+            panelDesplegable.Location = new Point(873, 70);
             panelDesplegable.Name = "panelDesplegable";
-            panelDesplegable.Size = new Size(169, 140);
+            panelDesplegable.Size = new Size(190, 140);
             panelDesplegable.TabIndex = 3;
             panelDesplegable.Visible = false;
             // 
@@ -232,20 +240,21 @@
             btncerrarSesion.DisabledState.CustomBorderColor = Color.DarkGray;
             btncerrarSesion.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btncerrarSesion.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btncerrarSesion.Dock = DockStyle.Bottom;
             btncerrarSesion.FillColor = Color.Transparent;
             btncerrarSesion.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btncerrarSesion.ForeColor = Color.Black;
             btncerrarSesion.HoverState.BorderColor = Color.Transparent;
             btncerrarSesion.HoverState.FillColor = Color.Black;
             btncerrarSesion.HoverState.ForeColor = Color.White;
-            btncerrarSesion.Image = Properties.Resources._CerrarSesion_mainscreen_;
+            btncerrarSesion.Image = Properties.Resources.logout_button__x32_;
             btncerrarSesion.ImageAlign = HorizontalAlignment.Left;
-            btncerrarSesion.ImageSize = new Size(25, 25);
-            btncerrarSesion.Location = new Point(8, 89);
+            btncerrarSesion.ImageSize = new Size(28, 28);
+            btncerrarSesion.Location = new Point(0, 95);
             btncerrarSesion.Name = "btncerrarSesion";
             btncerrarSesion.PressedColor = Color.Transparent;
             btncerrarSesion.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btncerrarSesion.Size = new Size(153, 43);
+            btncerrarSesion.Size = new Size(188, 43);
             btncerrarSesion.TabIndex = 4;
             btncerrarSesion.Text = "Cerrar Sesion";
             btncerrarSesion.TextAlign = HorizontalAlignment.Right;
@@ -269,28 +278,30 @@
             subPanelAdministracion.Dock = DockStyle.Top;
             subPanelAdministracion.Location = new Point(0, 181);
             subPanelAdministracion.Name = "subPanelAdministracion";
-            subPanelAdministracion.Size = new Size(237, 116);
+            subPanelAdministracion.Size = new Size(237, 111);
             subPanelAdministracion.TabIndex = 6;
             // 
             // btnEmpleados
             // 
             btnEmpleados.BackColor = Color.Transparent;
+            btnEmpleados.Cursor = Cursors.Hand;
             btnEmpleados.CustomizableEdges = customizableEdges9;
             btnEmpleados.DisabledState.BorderColor = Color.DarkGray;
             btnEmpleados.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEmpleados.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnEmpleados.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnEmpleados.Dock = DockStyle.Top;
-            btnEmpleados.FillColor = Color.Transparent;
+            btnEmpleados.FillColor = Color.FromArgb(35, 32, 39);
             btnEmpleados.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnEmpleados.ForeColor = Color.White;
-            btnEmpleados.HoverState.FillColor = Color.White;
-            btnEmpleados.HoverState.ForeColor = Color.Black;
-            btnEmpleados.Image = Properties.Resources.icon_empleados_x32;
+            btnEmpleados.HoverState.FillColor = Color.Black;
+            btnEmpleados.HoverState.ForeColor = Color.White;
+            btnEmpleados.Image = Properties.Resources.businessman_mante__x32_;
             btnEmpleados.ImageAlign = HorizontalAlignment.Left;
             btnEmpleados.ImageSize = new Size(25, 25);
             btnEmpleados.Location = new Point(0, 74);
             btnEmpleados.Name = "btnEmpleados";
+            btnEmpleados.PressedColor = Color.Transparent;
             btnEmpleados.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnEmpleados.Size = new Size(237, 37);
             btnEmpleados.TabIndex = 9;
@@ -301,22 +312,24 @@
             // btnUsuarios
             // 
             btnUsuarios.BackColor = Color.Transparent;
+            btnUsuarios.Cursor = Cursors.Hand;
             btnUsuarios.CustomizableEdges = customizableEdges11;
             btnUsuarios.DisabledState.BorderColor = Color.DarkGray;
             btnUsuarios.DisabledState.CustomBorderColor = Color.DarkGray;
             btnUsuarios.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnUsuarios.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnUsuarios.Dock = DockStyle.Top;
-            btnUsuarios.FillColor = Color.Transparent;
+            btnUsuarios.FillColor = Color.FromArgb(35, 32, 39);
             btnUsuarios.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnUsuarios.ForeColor = Color.White;
-            btnUsuarios.HoverState.FillColor = Color.White;
-            btnUsuarios.HoverState.ForeColor = Color.Black;
-            btnUsuarios.Image = Properties.Resources._Clientes_mainScreen_;
+            btnUsuarios.HoverState.FillColor = Color.Black;
+            btnUsuarios.HoverState.ForeColor = Color.White;
+            btnUsuarios.Image = Properties.Resources.logo_frmUsuarios__x32_;
             btnUsuarios.ImageAlign = HorizontalAlignment.Left;
             btnUsuarios.ImageSize = new Size(25, 25);
             btnUsuarios.Location = new Point(0, 37);
             btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.PressedColor = Color.Transparent;
             btnUsuarios.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnUsuarios.Size = new Size(237, 37);
             btnUsuarios.TabIndex = 8;
@@ -327,22 +340,24 @@
             // btnRoles
             // 
             btnRoles.BackColor = Color.Transparent;
+            btnRoles.Cursor = Cursors.Hand;
             btnRoles.CustomizableEdges = customizableEdges13;
             btnRoles.DisabledState.BorderColor = Color.DarkGray;
             btnRoles.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRoles.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnRoles.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnRoles.Dock = DockStyle.Top;
-            btnRoles.FillColor = Color.Transparent;
+            btnRoles.FillColor = Color.FromArgb(35, 32, 39);
             btnRoles.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnRoles.ForeColor = Color.White;
-            btnRoles.HoverState.FillColor = Color.White;
-            btnRoles.HoverState.ForeColor = Color.Black;
-            btnRoles.Image = Properties.Resources._Roles_mainScreen_;
+            btnRoles.HoverState.FillColor = Color.Black;
+            btnRoles.HoverState.ForeColor = Color.White;
+            btnRoles.Image = Properties.Resources.user_role__x32_;
             btnRoles.ImageAlign = HorizontalAlignment.Left;
             btnRoles.ImageSize = new Size(25, 25);
             btnRoles.Location = new Point(0, 0);
             btnRoles.Name = "btnRoles";
+            btnRoles.PressedColor = Color.Transparent;
             btnRoles.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnRoles.Size = new Size(237, 37);
             btnRoles.TabIndex = 7;
@@ -367,9 +382,9 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.AutoScroll = true;
             guna2Panel1.BackColor = Color.Black;
             guna2Panel1.BorderThickness = 1;
+            guna2Panel1.Controls.Add(btnHelpCenter);
             guna2Panel1.Controls.Add(subPanelFacturacion);
             guna2Panel1.Controls.Add(btnFacturacion);
             guna2Panel1.Controls.Add(subPanelMantenimientos);
@@ -377,13 +392,38 @@
             guna2Panel1.Controls.Add(subPanelAdministracion);
             guna2Panel1.Controls.Add(btnAdministracion);
             guna2Panel1.Controls.Add(guna2PictureBox1);
-            guna2Panel1.CustomizableEdges = customizableEdges35;
+            guna2Panel1.CustomizableEdges = customizableEdges39;
             guna2Panel1.Dock = DockStyle.Left;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges40;
             guna2Panel1.Size = new Size(237, 788);
             guna2Panel1.TabIndex = 0;
+            // 
+            // btnHelpCenter
+            // 
+            btnHelpCenter.Cursor = Cursors.Hand;
+            btnHelpCenter.CustomizableEdges = customizableEdges17;
+            btnHelpCenter.DisabledState.BorderColor = Color.DarkGray;
+            btnHelpCenter.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnHelpCenter.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnHelpCenter.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnHelpCenter.Dock = DockStyle.Bottom;
+            btnHelpCenter.FillColor = Color.Transparent;
+            btnHelpCenter.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHelpCenter.ForeColor = Color.White;
+            btnHelpCenter.HoverState.FillColor = Color.White;
+            btnHelpCenter.HoverState.ForeColor = Color.Black;
+            btnHelpCenter.Image = Properties.Resources.Centro_de_Ayuda___MainScreen_;
+            btnHelpCenter.ImageAlign = HorizontalAlignment.Left;
+            btnHelpCenter.ImageSize = new Size(28, 28);
+            btnHelpCenter.Location = new Point(0, 736);
+            btnHelpCenter.Name = "btnHelpCenter";
+            btnHelpCenter.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnHelpCenter.Size = new Size(237, 52);
+            btnHelpCenter.TabIndex = 5;
+            btnHelpCenter.Text = "Centro de Ayuda";
+            btnHelpCenter.TextAlign = HorizontalAlignment.Right;
             // 
             // subPanelFacturacion
             // 
@@ -391,7 +431,7 @@
             subPanelFacturacion.Controls.Add(btnFacturaProducto);
             subPanelFacturacion.Controls.Add(btnFacturaMembresia);
             subPanelFacturacion.Dock = DockStyle.Top;
-            subPanelFacturacion.Location = new Point(0, 591);
+            subPanelFacturacion.Location = new Point(0, 621);
             subPanelFacturacion.Name = "subPanelFacturacion";
             subPanelFacturacion.Size = new Size(237, 82);
             subPanelFacturacion.TabIndex = 10;
@@ -399,23 +439,25 @@
             // btnFacturaProducto
             // 
             btnFacturaProducto.BackColor = Color.Transparent;
-            btnFacturaProducto.CustomizableEdges = customizableEdges17;
+            btnFacturaProducto.Cursor = Cursors.Hand;
+            btnFacturaProducto.CustomizableEdges = customizableEdges19;
             btnFacturaProducto.DisabledState.BorderColor = Color.DarkGray;
             btnFacturaProducto.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFacturaProducto.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnFacturaProducto.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnFacturaProducto.Dock = DockStyle.Top;
-            btnFacturaProducto.FillColor = Color.Transparent;
+            btnFacturaProducto.FillColor = Color.FromArgb(35, 32, 39);
             btnFacturaProducto.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnFacturaProducto.ForeColor = Color.White;
-            btnFacturaProducto.HoverState.FillColor = Color.White;
-            btnFacturaProducto.HoverState.ForeColor = Color.Black;
-            btnFacturaProducto.Image = Properties.Resources.Facturacion_Producto_Icon_;
+            btnFacturaProducto.HoverState.FillColor = Color.Black;
+            btnFacturaProducto.HoverState.ForeColor = Color.White;
+            btnFacturaProducto.Image = Properties.Resources.icono_factura_producto__x32_;
             btnFacturaProducto.ImageAlign = HorizontalAlignment.Left;
             btnFacturaProducto.ImageSize = new Size(25, 25);
             btnFacturaProducto.Location = new Point(0, 37);
             btnFacturaProducto.Name = "btnFacturaProducto";
-            btnFacturaProducto.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnFacturaProducto.PressedColor = Color.Transparent;
+            btnFacturaProducto.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnFacturaProducto.Size = new Size(237, 37);
             btnFacturaProducto.TabIndex = 8;
             btnFacturaProducto.Text = "Producto";
@@ -425,23 +467,25 @@
             // btnFacturaMembresia
             // 
             btnFacturaMembresia.BackColor = Color.Transparent;
-            btnFacturaMembresia.CustomizableEdges = customizableEdges19;
+            btnFacturaMembresia.Cursor = Cursors.Hand;
+            btnFacturaMembresia.CustomizableEdges = customizableEdges21;
             btnFacturaMembresia.DisabledState.BorderColor = Color.DarkGray;
             btnFacturaMembresia.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFacturaMembresia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnFacturaMembresia.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnFacturaMembresia.Dock = DockStyle.Top;
-            btnFacturaMembresia.FillColor = Color.Transparent;
+            btnFacturaMembresia.FillColor = Color.FromArgb(35, 32, 39);
             btnFacturaMembresia.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnFacturaMembresia.ForeColor = Color.White;
-            btnFacturaMembresia.HoverState.FillColor = Color.White;
-            btnFacturaMembresia.HoverState.ForeColor = Color.Black;
-            btnFacturaMembresia.Image = Properties.Resources._PaymentMembresiaFactura;
+            btnFacturaMembresia.HoverState.FillColor = Color.Black;
+            btnFacturaMembresia.HoverState.ForeColor = Color.White;
+            btnFacturaMembresia.Image = Properties.Resources.icono_factura_membresia__x32_;
             btnFacturaMembresia.ImageAlign = HorizontalAlignment.Left;
             btnFacturaMembresia.ImageSize = new Size(25, 25);
             btnFacturaMembresia.Location = new Point(0, 0);
             btnFacturaMembresia.Name = "btnFacturaMembresia";
-            btnFacturaMembresia.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnFacturaMembresia.PressedColor = Color.Transparent;
+            btnFacturaMembresia.ShadowDecoration.CustomizableEdges = customizableEdges22;
             btnFacturaMembresia.Size = new Size(237, 37);
             btnFacturaMembresia.TabIndex = 7;
             btnFacturaMembresia.Text = "Membresia";
@@ -451,7 +495,8 @@
             // btnFacturacion
             // 
             btnFacturacion.BackColor = Color.Transparent;
-            btnFacturacion.CustomizableEdges = customizableEdges21;
+            btnFacturacion.Cursor = Cursors.Hand;
+            btnFacturacion.CustomizableEdges = customizableEdges23;
             btnFacturacion.DisabledState.BorderColor = Color.DarkGray;
             btnFacturacion.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFacturacion.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -465,49 +510,80 @@
             btnFacturacion.Image = Properties.Resources.facturaProducto_mainscreen_;
             btnFacturacion.ImageAlign = HorizontalAlignment.Left;
             btnFacturacion.ImageSize = new Size(28, 28);
-            btnFacturacion.Location = new Point(0, 539);
+            btnFacturacion.Location = new Point(0, 569);
             btnFacturacion.Name = "btnFacturacion";
-            btnFacturacion.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            btnFacturacion.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnFacturacion.Size = new Size(237, 52);
             btnFacturacion.TabIndex = 9;
-            btnFacturacion.Text = "&Facturación";
+            btnFacturacion.Text = "Facturación";
             btnFacturacion.TextAlign = HorizontalAlignment.Right;
             btnFacturacion.Click += btnFacturacion_Click;
             // 
             // subPanelMantenimientos
             // 
             subPanelMantenimientos.BackColor = Color.FromArgb(35, 32, 39);
+            subPanelMantenimientos.Controls.Add(btnAreasGYM);
             subPanelMantenimientos.Controls.Add(btnProductos);
             subPanelMantenimientos.Controls.Add(btnCategorias);
             subPanelMantenimientos.Controls.Add(btnClientes);
             subPanelMantenimientos.Controls.Add(btnProveedores);
             subPanelMantenimientos.Controls.Add(btnMembresiasMantenimiento);
             subPanelMantenimientos.Dock = DockStyle.Top;
-            subPanelMantenimientos.Location = new Point(0, 349);
+            subPanelMantenimientos.Location = new Point(0, 344);
             subPanelMantenimientos.Name = "subPanelMantenimientos";
-            subPanelMantenimientos.Size = new Size(237, 190);
+            subPanelMantenimientos.Size = new Size(237, 225);
             subPanelMantenimientos.TabIndex = 8;
+            // 
+            // btnAreasGYM
+            // 
+            btnAreasGYM.BackColor = Color.Transparent;
+            btnAreasGYM.Cursor = Cursors.Hand;
+            btnAreasGYM.CustomizableEdges = customizableEdges25;
+            btnAreasGYM.DisabledState.BorderColor = Color.DarkGray;
+            btnAreasGYM.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAreasGYM.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAreasGYM.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAreasGYM.Dock = DockStyle.Top;
+            btnAreasGYM.FillColor = Color.FromArgb(35, 32, 39);
+            btnAreasGYM.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAreasGYM.ForeColor = Color.White;
+            btnAreasGYM.HoverState.FillColor = Color.Black;
+            btnAreasGYM.HoverState.ForeColor = Color.White;
+            btnAreasGYM.Image = Properties.Resources.area_GYM_empresa;
+            btnAreasGYM.ImageAlign = HorizontalAlignment.Left;
+            btnAreasGYM.ImageSize = new Size(25, 25);
+            btnAreasGYM.Location = new Point(0, 185);
+            btnAreasGYM.Name = "btnAreasGYM";
+            btnAreasGYM.PressedColor = Color.Transparent;
+            btnAreasGYM.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnAreasGYM.Size = new Size(237, 37);
+            btnAreasGYM.TabIndex = 12;
+            btnAreasGYM.Text = "Areas Empresa";
+            btnAreasGYM.TextAlign = HorizontalAlignment.Right;
+            btnAreasGYM.Click += btnAreasGYM_Click;
             // 
             // btnProductos
             // 
             btnProductos.BackColor = Color.Transparent;
-            btnProductos.CustomizableEdges = customizableEdges23;
+            btnProductos.Cursor = Cursors.Hand;
+            btnProductos.CustomizableEdges = customizableEdges27;
             btnProductos.DisabledState.BorderColor = Color.DarkGray;
             btnProductos.DisabledState.CustomBorderColor = Color.DarkGray;
             btnProductos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnProductos.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnProductos.Dock = DockStyle.Top;
-            btnProductos.FillColor = Color.Transparent;
+            btnProductos.FillColor = Color.FromArgb(35, 32, 39);
             btnProductos.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnProductos.ForeColor = Color.White;
-            btnProductos.HoverState.FillColor = Color.White;
-            btnProductos.HoverState.ForeColor = Color.Black;
-            btnProductos.Image = Properties.Resources.usuarios__mainScreen;
+            btnProductos.HoverState.FillColor = Color.Black;
+            btnProductos.HoverState.ForeColor = Color.White;
+            btnProductos.Image = Properties.Resources.box_product_mante__32_;
             btnProductos.ImageAlign = HorizontalAlignment.Left;
             btnProductos.ImageSize = new Size(25, 25);
             btnProductos.Location = new Point(0, 148);
             btnProductos.Name = "btnProductos";
-            btnProductos.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnProductos.PressedColor = Color.Transparent;
+            btnProductos.ShadowDecoration.CustomizableEdges = customizableEdges28;
             btnProductos.Size = new Size(237, 37);
             btnProductos.TabIndex = 11;
             btnProductos.Text = "Productos";
@@ -517,23 +593,25 @@
             // btnCategorias
             // 
             btnCategorias.BackColor = Color.Transparent;
-            btnCategorias.CustomizableEdges = customizableEdges25;
+            btnCategorias.Cursor = Cursors.Hand;
+            btnCategorias.CustomizableEdges = customizableEdges29;
             btnCategorias.DisabledState.BorderColor = Color.DarkGray;
             btnCategorias.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCategorias.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnCategorias.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnCategorias.Dock = DockStyle.Top;
-            btnCategorias.FillColor = Color.Transparent;
+            btnCategorias.FillColor = Color.FromArgb(35, 32, 39);
             btnCategorias.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnCategorias.ForeColor = Color.White;
-            btnCategorias.HoverState.FillColor = Color.White;
-            btnCategorias.HoverState.ForeColor = Color.Black;
-            btnCategorias.Image = Properties.Resources.usuarios__mainScreen;
+            btnCategorias.HoverState.FillColor = Color.Black;
+            btnCategorias.HoverState.ForeColor = Color.White;
+            btnCategorias.Image = Properties.Resources.different_product_category__x32__waos;
             btnCategorias.ImageAlign = HorizontalAlignment.Left;
             btnCategorias.ImageSize = new Size(25, 25);
             btnCategorias.Location = new Point(0, 111);
             btnCategorias.Name = "btnCategorias";
-            btnCategorias.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnCategorias.PressedColor = Color.Transparent;
+            btnCategorias.ShadowDecoration.CustomizableEdges = customizableEdges30;
             btnCategorias.Size = new Size(237, 37);
             btnCategorias.TabIndex = 10;
             btnCategorias.Text = "Categorias";
@@ -543,23 +621,25 @@
             // btnClientes
             // 
             btnClientes.BackColor = Color.Transparent;
-            btnClientes.CustomizableEdges = customizableEdges27;
+            btnClientes.Cursor = Cursors.Hand;
+            btnClientes.CustomizableEdges = customizableEdges31;
             btnClientes.DisabledState.BorderColor = Color.DarkGray;
             btnClientes.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClientes.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnClientes.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnClientes.Dock = DockStyle.Top;
-            btnClientes.FillColor = Color.Transparent;
+            btnClientes.FillColor = Color.FromArgb(35, 32, 39);
             btnClientes.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnClientes.ForeColor = Color.White;
-            btnClientes.HoverState.FillColor = Color.White;
-            btnClientes.HoverState.ForeColor = Color.Black;
-            btnClientes.Image = Properties.Resources.mantenimientoClientes_x32__mainscreen;
+            btnClientes.HoverState.FillColor = Color.Black;
+            btnClientes.HoverState.ForeColor = Color.White;
+            btnClientes.Image = Properties.Resources.customer_experience_12948497;
             btnClientes.ImageAlign = HorizontalAlignment.Left;
             btnClientes.ImageSize = new Size(25, 25);
             btnClientes.Location = new Point(0, 74);
             btnClientes.Name = "btnClientes";
-            btnClientes.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnClientes.PressedColor = Color.Transparent;
+            btnClientes.ShadowDecoration.CustomizableEdges = customizableEdges32;
             btnClientes.Size = new Size(237, 37);
             btnClientes.TabIndex = 9;
             btnClientes.Text = "Clientes";
@@ -569,23 +649,25 @@
             // btnProveedores
             // 
             btnProveedores.BackColor = Color.Transparent;
-            btnProveedores.CustomizableEdges = customizableEdges29;
+            btnProveedores.Cursor = Cursors.Hand;
+            btnProveedores.CustomizableEdges = customizableEdges33;
             btnProveedores.DisabledState.BorderColor = Color.DarkGray;
             btnProveedores.DisabledState.CustomBorderColor = Color.DarkGray;
             btnProveedores.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnProveedores.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnProveedores.Dock = DockStyle.Top;
-            btnProveedores.FillColor = Color.Transparent;
+            btnProveedores.FillColor = Color.FromArgb(35, 32, 39);
             btnProveedores.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnProveedores.ForeColor = Color.White;
-            btnProveedores.HoverState.FillColor = Color.White;
-            btnProveedores.HoverState.ForeColor = Color.Black;
-            btnProveedores.Image = Properties.Resources.mantenimientoProveedores_x32__mainscreen;
+            btnProveedores.HoverState.FillColor = Color.Black;
+            btnProveedores.HoverState.ForeColor = Color.White;
+            btnProveedores.Image = Properties.Resources.gym_proveedor__x32_;
             btnProveedores.ImageAlign = HorizontalAlignment.Left;
             btnProveedores.ImageSize = new Size(25, 25);
             btnProveedores.Location = new Point(0, 37);
             btnProveedores.Name = "btnProveedores";
-            btnProveedores.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            btnProveedores.PressedColor = Color.Transparent;
+            btnProveedores.ShadowDecoration.CustomizableEdges = customizableEdges34;
             btnProveedores.Size = new Size(237, 37);
             btnProveedores.TabIndex = 8;
             btnProveedores.Text = "Proveedores";
@@ -595,23 +677,25 @@
             // btnMembresiasMantenimiento
             // 
             btnMembresiasMantenimiento.BackColor = Color.Transparent;
-            btnMembresiasMantenimiento.CustomizableEdges = customizableEdges31;
+            btnMembresiasMantenimiento.Cursor = Cursors.Hand;
+            btnMembresiasMantenimiento.CustomizableEdges = customizableEdges35;
             btnMembresiasMantenimiento.DisabledState.BorderColor = Color.DarkGray;
             btnMembresiasMantenimiento.DisabledState.CustomBorderColor = Color.DarkGray;
             btnMembresiasMantenimiento.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnMembresiasMantenimiento.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnMembresiasMantenimiento.Dock = DockStyle.Top;
-            btnMembresiasMantenimiento.FillColor = Color.Transparent;
+            btnMembresiasMantenimiento.FillColor = Color.FromArgb(35, 32, 39);
             btnMembresiasMantenimiento.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnMembresiasMantenimiento.ForeColor = Color.White;
-            btnMembresiasMantenimiento.HoverState.FillColor = Color.White;
-            btnMembresiasMantenimiento.HoverState.ForeColor = Color.Black;
-            btnMembresiasMantenimiento.Image = Properties.Resources.mantenimientoMembresias_x32__mainscreen;
+            btnMembresiasMantenimiento.HoverState.FillColor = Color.Black;
+            btnMembresiasMantenimiento.HoverState.ForeColor = Color.White;
+            btnMembresiasMantenimiento.Image = Properties.Resources.gym_membreship__x32_;
             btnMembresiasMantenimiento.ImageAlign = HorizontalAlignment.Left;
             btnMembresiasMantenimiento.ImageSize = new Size(25, 25);
             btnMembresiasMantenimiento.Location = new Point(0, 0);
             btnMembresiasMantenimiento.Name = "btnMembresiasMantenimiento";
-            btnMembresiasMantenimiento.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            btnMembresiasMantenimiento.PressedColor = Color.Transparent;
+            btnMembresiasMantenimiento.ShadowDecoration.CustomizableEdges = customizableEdges36;
             btnMembresiasMantenimiento.Size = new Size(237, 37);
             btnMembresiasMantenimiento.TabIndex = 7;
             btnMembresiasMantenimiento.Text = "Membresias";
@@ -621,7 +705,8 @@
             // btnMantenimientos
             // 
             btnMantenimientos.BackColor = Color.Transparent;
-            btnMantenimientos.CustomizableEdges = customizableEdges33;
+            btnMantenimientos.Cursor = Cursors.Hand;
+            btnMantenimientos.CustomizableEdges = customizableEdges37;
             btnMantenimientos.DisabledState.BorderColor = Color.DarkGray;
             btnMantenimientos.DisabledState.CustomBorderColor = Color.DarkGray;
             btnMantenimientos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -635,12 +720,12 @@
             btnMantenimientos.Image = Properties.Resources._mantenimientosMainScreen;
             btnMantenimientos.ImageAlign = HorizontalAlignment.Left;
             btnMantenimientos.ImageSize = new Size(28, 28);
-            btnMantenimientos.Location = new Point(0, 297);
+            btnMantenimientos.Location = new Point(0, 292);
             btnMantenimientos.Name = "btnMantenimientos";
-            btnMantenimientos.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            btnMantenimientos.ShadowDecoration.CustomizableEdges = customizableEdges38;
             btnMantenimientos.Size = new Size(237, 52);
             btnMantenimientos.TabIndex = 7;
-            btnMantenimientos.Text = "&Mantenimientos";
+            btnMantenimientos.Text = "Mantenimientos";
             btnMantenimientos.TextAlign = HorizontalAlignment.Right;
             btnMantenimientos.Click += btnMantenimientos_Click;
             // 
@@ -699,5 +784,7 @@
         private Guna.UI2.WinForms.Guna2Button btnFacturaMembresia;
         private Guna.UI2.WinForms.Guna2Button btnFacturacion;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblRolUsuario;
+        private Guna.UI2.WinForms.Guna2Button btnHelpCenter;
+        private Guna.UI2.WinForms.Guna2Button btnAreasGYM;
     }
 }

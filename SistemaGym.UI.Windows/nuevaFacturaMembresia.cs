@@ -16,6 +16,7 @@ namespace SistemaGym.UI.Windows
 {
     public partial class nuevaFacturaMembresia : Form
     {
+        private string SYSTEM_TITLE = "Sistema Gestion Gimnasio (COMFORT GYM) dice";
         public nuevaFacturaMembresia()
         {
             InitializeComponent();
@@ -26,47 +27,44 @@ namespace SistemaGym.UI.Windows
             Close();
         }
 
-        private void btnBuscarIDMembresia_Click(object sender, EventArgs e)
-        {
-            listaMembresias listaMembresias = new listaMembresias();
-
-            if (listaMembresias.ShowDialog() == DialogResult.OK)
-            {
-                MembresiaEntity oMembresia = MembresiaBLL.GetById((int)listaMembresias.IdMembresia);
-
-                if (oMembresia != null)
-                {
-                    this.TxbIDMembresia.Text = oMembresia.IDMembresia.ToString();
-                    this.TxbNombreMembresia.Text = oMembresia.Nombre.ToString();
-                    this.TxbDescrMembresia.Text = oMembresia.Descripcion.ToString();
-                    this.TxbValorMembresia.Text = Convert.ToInt32(oMembresia.Valor).ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Membresia No Encontrada", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void btnBuscarIDCliente_Click(object sender, EventArgs e)
         {
+            ClientesBLL clientesBLL = new ClientesBLL();
             listaClientes listaClientes = new listaClientes();
 
             if (listaClientes.ShowDialog() == DialogResult.OK)
             {
-                ClientesEntity oCliente = ClientesBLL.GetById((int)listaClientes.IdCliente);
+                try
+                {
+                    int idCliente = listaClientes.IdCliente;
+                    DataTable DT = clientesBLL.GetClientMembreship(idCliente);
 
-                if (oCliente != null)
-                {
-                    this.TxbIDCliente.Text = oCliente.IDCliente.ToString();
-                    this.TxbTipoDocumento.Text = oCliente.TipoDocumento.ToString();
-                    this.TxbDocumentoCliente.Text = oCliente.Documento.ToString();
-                    this.TxbNombreCliente.Text = oCliente.Nombre.ToString();
-                    this.TxbApellidoCliente.Text = oCliente.Apellido.ToString();
+                    if (DT.Rows.Count > 0)
+                    {
+                        TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
+                        TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
+                        TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
+                        TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
+                        TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+
+                        TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
+                        TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
+                        TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
+                        TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch (SqlException ex)
                 {
-                    MessageBox.Show("Cliente No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se Produjo un Error al Intentar Obtener el Cliente:\n\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se Produjo un Error al Intentar Obtener el Cliente:\n\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -75,128 +73,8 @@ namespace SistemaGym.UI.Windows
         {
             TxbIDUsuario.Text = gestioUsuarioEntities.IDUserLogged;
             TxbNombreApellidoUsuario.Text = gestioUsuarioEntities.usernameLogged;
-        }
 
-        private void btnBuscarClienteCargoCredito_Click(object sender, EventArgs e)
-        {
-            listaClientes listaClientes = new listaClientes();
-
-            if (listaClientes.ShowDialog() == DialogResult.OK)
-            {
-                ClientesEntity oCliente = ClientesBLL.GetById((int)listaClientes.IdCliente);
-
-                if (oCliente != null)
-                {
-                    this.TxbIDClienteCargoCredito.Text = oCliente.IDCliente.ToString();
-                    this.TxbDocClienteCargoCredito.Text = oCliente.Documento.ToString();
-                    this.TxbNombreClienteCargoCredito.Text = oCliente.Nombre.ToString();
-                    this.TxbApellidoClienteCargoCredito.Text = oCliente.Apellido.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Cliente No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void btnBuscarClienteCargoDebito_Click(object sender, EventArgs e)
-        {
-            listaClientes listaClientes = new listaClientes();
-
-            if (listaClientes.ShowDialog() == DialogResult.OK)
-            {
-                ClientesEntity oCliente = ClientesBLL.GetById((int)listaClientes.IdCliente);
-
-                if (oCliente != null)
-                {
-                    this.TxbIDClienteCargoDebito.Text = oCliente.IDCliente.ToString();
-                    this.TxbDocClienteCargoDebito.Text = oCliente.Documento.ToString();
-                    this.TxbNombreClienteCargoDebito.Text = oCliente.Nombre.ToString();
-                    this.TxbApellidoClienteCargoDebito.Text = oCliente.Apellido.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Cliente No Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private string SYSTEM_TITLE = "Sistema Gestion Gimnasio (COMFORT GYM) dice";
-        private void btnGuardarCargoCredito_Click(object sender, EventArgs e)
-        {
-            CargoCreditoEntity nuevoCargoCredito = new CargoCreditoEntity();
-
-            nuevoCargoCredito.IDCliente = Convert.ToInt32(TxbIDClienteCargoCredito.Text);
-            nuevoCargoCredito.Cargo = TxbCargoCredito.Text;
-            nuevoCargoCredito.Monto = Convert.ToDecimal(TxbMontoCargoCredito.Text);
-            nuevoCargoCredito.FechaCargo = Convert.ToDateTime(dtpFechaCargoCredito.Value.ToShortDateString());
-            nuevoCargoCredito.Estatus = TxbEstatusCargoCredito.SelectedItem.ToString();
-
-            try
-            {
-                CargoCreditoBLL.Guardar(nuevoCargoCredito);
-                MessageBox.Show("¡Cargo Credito del Cliente Guardado Satisfactoriamente!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarCamposCC();
-            }
-            catch (SqlException ext)
-            {
-                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cargo Credito. \nDetalles A Continuación: \n" + ext.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cargo Credito.\n Detalles A Continuación: \n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-        }
-
-        private void LimpiarCamposCC()
-        {
-            TxbIDClienteCargoCredito.Clear();
-            TxbNombreClienteCargoCredito.Clear();
-            TxbApellidoClienteCargoCredito.Clear();
-            TxbDocClienteCargoCredito.Clear();
-            TxbCargoCredito.Clear();
-            TxbMontoCargoCredito.Clear();
-            dtpFechaCargoCredito.Value = DateTime.Now;
-            TxbEstatusCargoCredito.SelectedIndex = -1;
-        }
-        private void LimpiarCamposCD()
-        {
-            TxbIDClienteCargoDebito.Clear();
-            TxbNombreClienteCargoDebito.Clear();
-            TxbApellidoClienteCargoDebito.Clear();
-            TxbDocClienteCargoDebito.Clear();
-            TxbCargoDebito.Clear();
-            TxbMontoCargoDebito.Clear();
-            dtpFechaCargoDebito.Value = DateTime.Now;
-            TxbEstatusCargoDebito.SelectedIndex = -1;
-        }
-
-        private void btnGuardarCargoDebito_Click(object sender, EventArgs e)
-        {
-            CargoDebitoEntity nuevoCargoDebito = new CargoDebitoEntity();
-
-            nuevoCargoDebito.IDCliente = Convert.ToInt32(TxbIDClienteCargoDebito.Text);
-            nuevoCargoDebito.Cargo = TxbCargoDebito.Text;
-            nuevoCargoDebito.Monto = Convert.ToDecimal(TxbMontoCargoDebito.Text);
-            nuevoCargoDebito.FechaCargo = Convert.ToDateTime(dtpFechaCargoDebito.Value.ToShortDateString());
-            nuevoCargoDebito.Estatus = TxbEstatusCargoDebito.SelectedItem.ToString();
-
-            try
-            {
-                CargoDebitoBLL.Guardar(nuevoCargoDebito);
-                MessageBox.Show("¡Cargo Debito del Cliente Guardado Satisfactoriamente!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarCamposCD();
-            }
-            catch (SqlException ext)
-            {
-                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cargo Debito. \nDetalles A Continuación: \n" + ext.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cargo Debito.\n Detalles A Continuación: \n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            TxbFacturaNCF.Text = "B0100000005";
         }
 
         private void btnBuscarFacturaCargoCredito_Click(object sender, EventArgs e)
@@ -210,7 +88,7 @@ namespace SistemaGym.UI.Windows
                 if (oCargoCredito != null)
                 {
                     this.TxbFacturaIDCargoCredito.Text = oCargoCredito.IDCargoCredito.ToString();
-                    this.TxbFacturacionCargoCredito.Text = Convert.ToInt32(oCargoCredito.Cargo).ToString();
+                    this.TxbFacturacionCargoCredito.Text = oCargoCredito.Cargo.ToString();
                     this.TxbFacturaMontoCargoCredito.Text = Convert.ToInt32(oCargoCredito.Monto).ToString();
                     this.dtpFechaFacturaCargoCredito.Text = oCargoCredito.FechaCargo.ToString();
                 }
@@ -232,7 +110,7 @@ namespace SistemaGym.UI.Windows
                 if (oCargoDebito != null)
                 {
                     this.TxbFacturaIDCargoDebito.Text = oCargoDebito.IDCargoDebito.ToString();
-                    this.TxbFacturaCargoDebito.Text = Convert.ToInt32(oCargoDebito.Cargo).ToString();
+                    this.TxbFacturaCargoDebito.Text = oCargoDebito.Cargo.ToString();
                     this.TxbFacturaMontoCargoDebito.Text = Convert.ToInt32(oCargoDebito.Monto).ToString();
                     this.dtpFechaFacturaCargoDebito.Text = oCargoDebito.FechaCargo.ToString();
                 }
@@ -245,11 +123,17 @@ namespace SistemaGym.UI.Windows
 
         private void btnFacturarMembresia_Click(object sender, EventArgs e)
         {
+            if (!ValidateToFacturate())
+            {
+
+                return;
+            }
+
             try
             {
-                int ValorMembresia = int.Parse(TxbValorMembresia.Text);
-                int FacturaCC = int.Parse(TxbFacturacionCargoCredito.Text);
-                int FacturaCD = int.Parse(TxbFacturaCargoDebito.Text);
+                decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+                int FacturaCC = int.Parse(TxbFacturaMontoCargoCredito.Text);
+                int FacturaCD = int.Parse(TxbFacturaMontoCargoDebito.Text);
 
                 TxbFacturaValor.Text = Convert.ToString(ValorMembresia + (FacturaCC + FacturaCD));
             }
@@ -264,9 +148,130 @@ namespace SistemaGym.UI.Windows
 
         }
 
+        private bool ValidarCampos()
+        {
+            bool validacion = true;
+
+            errorProvider.Clear();
+            string MembresiaObligatoria = "¡Debes de Agregar la Membresia!";
+            string ClienteObligatorio = "¡Debes de Agregar el Cliente!";
+            string ValidaDatosFactura = "¡Este Campo es Obligatorio!";
+
+            /* Validar si se agregó la Membresia */
+            int IDMembresia;
+            if (string.IsNullOrEmpty(TxbIDMembresia.Text))
+            {
+                errorProvider.SetError(TxbIDMembresia, MembresiaObligatoria);
+                validacion = false;
+            }
+            else if (!int.TryParse(TxbIDMembresia.Text, out IDMembresia))
+            {
+                errorProvider.SetError(TxbIDMembresia, MembresiaObligatoria);
+            }
+            if (string.IsNullOrEmpty(TxbNombreMembresia.Text))
+            {
+                errorProvider.SetError(TxbNombreMembresia, MembresiaObligatoria);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbDescrMembresia.Text))
+            {
+                errorProvider.SetError(TxbDescrMembresia, MembresiaObligatoria);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbValorMembresia.Text))
+            {
+                errorProvider.SetError(TxbValorMembresia, MembresiaObligatoria);
+                validacion = false;
+            }
+            /* Validar si se agregó el Cliente */
+            int IDCliente;
+            if (string.IsNullOrEmpty(TxbIDCliente.Text))
+            {
+                errorProvider.SetError(TxbIDCliente, ClienteObligatorio);
+                validacion = false;
+            }
+            else if (!int.TryParse(TxbIDCliente.Text, out IDCliente))
+            {
+                errorProvider.SetError(TxbIDCliente, ClienteObligatorio);
+            }
+            if (string.IsNullOrEmpty(TxbNombreCliente.Text))
+            {
+                errorProvider.SetError(TxbNombreCliente, ClienteObligatorio);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbDocumentoCliente.Text))
+            {
+                errorProvider.SetError(TxbDocumentoCliente, ClienteObligatorio);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbApellidoCliente.Text))
+            {
+                errorProvider.SetError(TxbApellidoCliente, ClienteObligatorio);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbTipoDocumento.Text))
+            {
+                errorProvider.SetError(TxbTipoDocumento, ClienteObligatorio);
+                validacion = false;
+            }
+
+            /* Validar Datos de la Factura */
+            int IDFactCC;
+            if (string.IsNullOrEmpty(TxbFacturaIDCargoCredito.Text))
+            {
+                errorProvider.SetError(TxbFacturaIDCargoCredito, ValidaDatosFactura);
+                validacion = false;
+            }
+            else if (!int.TryParse(TxbFacturaIDCargoCredito.Text, out IDFactCC))
+            {
+                errorProvider.SetError(TxbFacturaIDCargoCredito, ValidaDatosFactura);
+            }
+            if (string.IsNullOrEmpty(TxbFacturacionCargoCredito.Text))
+            {
+                errorProvider.SetError(TxbFacturacionCargoCredito, ValidaDatosFactura);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturaMontoCargoCredito.Text))
+            {
+                errorProvider.SetError(TxbFacturaMontoCargoCredito, ValidaDatosFactura);
+                validacion = false;
+            }
+            int IDFactCD;
+            if (string.IsNullOrEmpty(TxbFacturaIDCargoDebito.Text))
+            {
+                errorProvider.SetError(TxbFacturaIDCargoDebito, ValidaDatosFactura);
+                validacion = false;
+            }
+            else if (!int.TryParse(TxbFacturaIDCargoDebito.Text, out IDFactCD))
+            {
+                errorProvider.SetError(TxbFacturaIDCargoDebito, ValidaDatosFactura);
+            }
+            if (string.IsNullOrEmpty(TxbFacturaCargoDebito.Text))
+            {
+                errorProvider.SetError(TxbFacturaCargoDebito, ValidaDatosFactura);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturaMontoCargoDebito.Text))
+            {
+                errorProvider.SetError(TxbFacturaMontoCargoDebito, ValidaDatosFactura);
+                validacion = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturaValor.Text))
+            {
+                errorProvider.SetError(TxbFacturaValor, ValidaDatosFactura);
+                validacion = false;
+            }
+
+            return validacion;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string SYSTEM_TITLE = "SISTEMA GESTION GIMNASIO (COMFORT GYM)";
+            if (!ValidarCampos())
+            {
+
+                return;
+            }
 
             FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
             FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
@@ -278,25 +283,9 @@ namespace SistemaGym.UI.Windows
             nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbFacturaIDCargoDebito.Text);
             nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
             nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
-            nuevaFacturaMembresia.FechaEmision = Convert.ToDateTime(dtpFacturaFechaEmision.Value.ToShortDateString());
-            nuevaFacturaMembresia.FechaVencimiento = Convert.ToDateTime(dtpFacturaFechaVencimiento.Value.ToShortDateString());
-            if (chkbxEstatus.Checked)
-            {
-                nuevaFacturaMembresia.Estatus = "Pagado";
-            }
-            else
-            {
-                DialogResult dialogResult = new DialogResult();
-                dialogResult = MessageBox.Show("¿Seguro que desea Guardar esta Factura como «No Pagado»", SYSTEM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    nuevaFacturaMembresia.Estatus = "No Pagado";
-                }
-                if (dialogResult == DialogResult.No)
-                {
-
-                }
-            }
+            nuevaFacturaMembresia.FechaEmision = DateTime.Now;
+            nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
+            nuevaFacturaMembresia.Estatus = "Pagado";
 
             try
             {
@@ -312,10 +301,50 @@ namespace SistemaGym.UI.Windows
             {
                 MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex1.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
+        private bool ValidateToFacturate()
+        {
+            errorProvider.Clear();
+            bool facturarValidar = true;
+            string ObligatorioParaFacturar = "¡Debe Llenar este Campo para Facturar!";
+
+            if (string.IsNullOrEmpty(TxbValorMembresia.Text))
+            {
+                errorProvider.SetError(TxbValorMembresia, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+            decimal ValorMembresia;
+            if (!decimal.TryParse(TxbValorMembresia.Text, out ValorMembresia))
+            {
+                errorProvider.SetError(TxbValorMembresia, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturaMontoCargoCredito.Text))
+            {
+                errorProvider.SetError(TxbFacturaMontoCargoCredito, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+            int CargoCredito;
+            if (!int.TryParse(TxbFacturaMontoCargoCredito.Text, out CargoCredito))
+            {
+                errorProvider.SetError(TxbFacturaMontoCargoCredito, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+            if (string.IsNullOrEmpty(TxbFacturaMontoCargoDebito.Text))
+            {
+                errorProvider.SetError(TxbFacturaMontoCargoDebito, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+            int CargoDebito;
+            if (!int.TryParse(TxbFacturaMontoCargoDebito.Text, out CargoDebito))
+            {
+                errorProvider.SetError(TxbFacturaMontoCargoDebito, ObligatorioParaFacturar);
+                facturarValidar = false;
+            }
+
+            return facturarValidar;
+        }
         private void LimpiarTodosLosCampos()
         {
             TxbIDMembresia.Clear();
@@ -332,18 +361,27 @@ namespace SistemaGym.UI.Windows
             TxbFacturacionCargoCredito.Clear();
             TxbFacturaIDCargoCredito.Clear();
             TxbFacturaMontoCargoCredito.Clear();
-            dtpFechaCargoCredito.Value = DateTime.Now;
+            dtpFechaFacturaCargoCredito.Value = DateTime.Now;
 
             TxbFacturaIDCargoDebito.Clear();
             TxbFacturaCargoDebito.Clear();
             TxbFacturaMontoCargoDebito.Clear();
-            dtpFechaCargoDebito.Value = DateTime.Now;
+            dtpFechaFacturaCargoDebito.Value = DateTime.Now;
 
             TxbFacturaNCF.Clear();
-            dtpFacturaFechaEmision.Value = DateTime.Now;
-            dtpFacturaFechaVencimiento.Value = DateTime.Now;
             TxbFacturaValor.Clear();
         }
 
+        private void btnNuevoCargoCredito_Click(object sender, EventArgs e)
+        {
+            nuevoCargoCredito nuevoCargoCredito = new nuevoCargoCredito();
+            nuevoCargoCredito.Show();
+        }
+
+        private void btnNuevoCargoDebito_Click(object sender, EventArgs e)
+        {
+            nuevoCargoDebito nuevoCargoDebito = new nuevoCargoDebito();
+            nuevoCargoDebito.Show();
+        }
     }
 }

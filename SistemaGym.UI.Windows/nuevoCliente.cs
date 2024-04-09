@@ -29,15 +29,15 @@ namespace SistemaGym.UI.Windows
             CargarTipoListaCliente();
         }
 
-        
+
         private void CargarUsuario()
         {
             cbUsuario.DataSource = UsuarioBLL.Mostrar();
             cbUsuario.ValueMember = "IDUsuario";
             cbUsuario.DisplayMember = "Nombre";
         }
-        
-        
+
+
         private void CargarTipoListaCliente()
         {
             cbTipoListaCliente.ValueMember = "IDTipoListaCliente";
@@ -77,7 +77,9 @@ namespace SistemaGym.UI.Windows
             oCliente.IDUsuario = (int)cbUsuario.SelectedValue;
             oCliente.IDMembresia = (int)cbMembresia.SelectedValue;
             oCliente.TipoListaCliente = (int)cbTipoListaCliente.SelectedValue;
+            
             oCliente.TipoCliente = (int)cbTipoCliente.SelectedValue;
+           
             oCliente.Nombre = txtNombre.Text;
             oCliente.Apellido = txtApellido.Text;
             oCliente.TipoDocumento = cbTipoDocumento.Text;
@@ -86,24 +88,8 @@ namespace SistemaGym.UI.Windows
             oCliente.TelCell = txtTelCell.Text;
             oCliente.TelRes = txtTelRes.Text;
             oCliente.FechaRegistro = DateTime.Now;
+            oCliente.Estatus = "Activo";
 
-            if (chEstatus.Checked)
-            {
-                oCliente.Estatus = "Activo";
-            }
-            else
-            {
-                DialogResult dialogResult = new DialogResult();
-                dialogResult = MessageBox.Show("¿Seguro que desea Guardar el Cliente como Inactivo?", sistema, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    oCliente.Estatus = "Inactivo";
-                }
-                if (dialogResult == DialogResult.No)
-                {
-
-                }
-            }
 
             // guardar base datos
             try
@@ -129,11 +115,11 @@ namespace SistemaGym.UI.Windows
             errorProvider.Clear();
             //verificar que en los campos obligatorios hayan datos
 
-            if (string.IsNullOrEmpty(cbMembresia.Text))
+           /* if (string.IsNullOrEmpty(cbMembresia.Text))
             {
                 errorProvider.SetError(cbMembresia, "La Membresia es obligatoria");
                 resultado = false;
-            }
+            }*/
 
             if (string.IsNullOrEmpty(cbTipoListaCliente.Text))
             {

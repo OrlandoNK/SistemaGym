@@ -16,7 +16,10 @@ namespace SistemaGym.BLL
         {
             ClientesDAL.InsertarCliente(clientes);
         }
-
+        public DataTable GetClientMembreship(int idCliente)
+        {
+            return clientesDAL.GetClientWithMembership(idCliente);
+        }
         public static void update(ClientesEntity clientes)
         {
             ClientesDAL.ActualizarCliente(clientes);

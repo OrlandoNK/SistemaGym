@@ -73,6 +73,29 @@ namespace SistemaGym.UI.Windows
         {
             lblusuario.Text = gestioUsuarioEntities.usernameLogged;
             lblRolUsuario.Text = "[" + gestioUsuarioEntities.rolUsuarioLogged + "]";
+            FuncionRolUsuario();
+        }
+        private void FuncionRolUsuario()
+        {
+            if (gestioUsuarioEntities.rolUsuarioLogged == "Recepcionista")
+            {
+                btnAdministracion.Visible = false;
+                btnMembresiasMantenimiento.Visible = false;
+                btnProveedores.Visible = false;
+                btnCategorias.Visible = false;
+                btnProductos.Visible = false;
+            }
+            else if (gestioUsuarioEntities.rolUsuarioLogged == "Gerente de Ventas")
+            {
+                btnAdministracion.Visible = false;
+                btnMantenimientos.Visible = false;
+            }
+            else if (gestioUsuarioEntities.rolUsuarioLogged == "Entrenador")
+            {
+                btnAdministracion.Visible = false;
+                btnMantenimientos.Visible = false;
+                btnFacturacion.Visible = false;
+            }
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -164,6 +187,43 @@ namespace SistemaGym.UI.Windows
         {
             mantenimientoFacturaProductos facturaProductos = new mantenimientoFacturaProductos();
             facturaProductos.Show();
+
+            HideSubMenu();
+        }
+
+        private void btnTipoCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTipoCliente_Click_1(object sender, EventArgs e)
+        {
+            mantenimientoTipoClientes tipoClientes = new mantenimientoTipoClientes();
+            tipoClientes.Show();
+
+            HideSubMenu();
+        }
+
+        private void btnListaCliente_Click(object sender, EventArgs e)
+        {
+            frmListaCliente listaCliente = new frmListaCliente();
+            listaCliente.Show();
+
+            HideSubMenu();
+        }
+
+        private void btnTipoListaCliente_Click(object sender, EventArgs e)
+        {
+            mantenimientoListaClientes tipoListaCliente = new mantenimientoListaClientes();
+            tipoListaCliente.Show();
+
+            HideSubMenu();
+        }
+
+        private void btnAreasGYM_Click(object sender, EventArgs e)
+        {
+            mantenimientoAreaEmpresa areasGYM = new mantenimientoAreaEmpresa();
+            areasGYM.Show();
 
             HideSubMenu();
         }

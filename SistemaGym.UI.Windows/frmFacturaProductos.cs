@@ -43,12 +43,25 @@ namespace SistemaGym.UI.Windows
         private bool ValidarDetalle()
         {
             bool resultado = true;
+            string CampoNegativoError = "¡Este Campo No Puede Ser Negativo!";
             //inicializando los mensajes de validaciones
             errorProvider.Clear();
             //verificar que en los campos obligatorios hayan datos
             if (txtIDProducto.Text == "0")
             {
                 MessageBox.Show("Por Favor Agregue el Producto", SISTEMA);
+                resultado = false;
+            }
+            int Cantidad = Convert.ToInt32(txtCantidad.Text);
+            if (Cantidad < 0)
+            {
+                errorProvider.SetError(txtCantidad, CampoNegativoError);
+                resultado = false;
+            }
+            Decimal Descuento = Convert.ToDecimal(txtDescuento.Text);
+            if (Descuento < 0)
+            {
+                errorProvider.SetError(txtDescuento, CampoNegativoError);
                 resultado = false;
             }
             if (txtCantidad.Text == "0")
@@ -201,6 +214,19 @@ namespace SistemaGym.UI.Windows
             if (string.IsNullOrEmpty(txtNCF.Text))
             {
                 errorProvider.SetError(txtNCF, "El NCF Es Obligatorio");
+                resultado = false;
+            }
+            /*
+            int cant = txtCantidad.Text;
+            if (string.IsNullOrEmpty(txtCantidad.Text) ||  <= 0)
+            {
+                errorProvider.SetError(txtNCF, "El NCF Es Obligatorio");
+                resultado = false;
+            }
+            */
+            if (string.IsNullOrEmpty(txtUsuario.Text))
+            {
+                errorProvider.SetError(txtNCF, "El Usuario Es Obligatorio");
                 resultado = false;
             }
             return resultado;

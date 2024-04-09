@@ -40,6 +40,8 @@
             btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
             groupBox2 = new GroupBox();
+            label1 = new Label();
+            cbUsuario = new ComboBox();
             cbTipoListaCliente = new ComboBox();
             label3 = new Label();
             label4 = new Label();
@@ -47,7 +49,6 @@
             label5 = new Label();
             cbMembresia = new ComboBox();
             groupBox1 = new GroupBox();
-            chEstatus = new CheckBox();
             txtNombre = new TextBox();
             cbTipoDocumento = new ComboBox();
             label6 = new Label();
@@ -63,8 +64,6 @@
             label12 = new Label();
             txtTelRes = new TextBox();
             errorProvider = new ErrorProvider(components);
-            cbUsuario = new ComboBox();
-            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -102,7 +101,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources._Clientes_mainScreen_;
+            pictureBox2.Image = Properties.Resources.customer_experience_12948497;
             pictureBox2.Location = new Point(3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(62, 50);
@@ -158,15 +157,16 @@
             btnGuardar.ForeColor = Color.White;
             btnGuardar.HoverState.FillColor = Color.DarkGoldenrod;
             btnGuardar.HoverState.ForeColor = Color.Black;
-            btnGuardar.Image = Properties.Resources._SaveFacturaProduct;
-            btnGuardar.ImageSize = new Size(25, 25);
+            btnGuardar.Image = Properties.Resources.icon_save_button__x32_;
+            btnGuardar.ImageAlign = HorizontalAlignment.Left;
+            btnGuardar.ImageSize = new Size(32, 32);
             btnGuardar.Location = new Point(-1, 44);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
             btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnGuardar.Size = new Size(204, 55);
             btnGuardar.TabIndex = 0;
-            btnGuardar.Text = "&Guardar";
+            btnGuardar.Text = "Guardar";
             btnGuardar.Click += btnGuardar_Click;
             // 
             // panel4
@@ -197,6 +197,23 @@
             groupBox2.TabIndex = 126;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Relacionados al Cliente";
+            // 
+            // label1
+            // 
+            label1.Location = new Point(119, 107);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 19);
+            label1.TabIndex = 124;
+            label1.Text = "Usuario";
+            // 
+            // cbUsuario
+            // 
+            cbUsuario.Enabled = false;
+            cbUsuario.FormattingEnabled = true;
+            cbUsuario.Location = new Point(119, 129);
+            cbUsuario.Name = "cbUsuario";
+            cbUsuario.Size = new Size(424, 25);
+            cbUsuario.TabIndex = 123;
             // 
             // cbTipoListaCliente
             // 
@@ -248,7 +265,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(chEstatus);
             groupBox1.Controls.Add(txtNombre);
             groupBox1.Controls.Add(cbTipoDocumento);
             groupBox1.Controls.Add(label6);
@@ -270,16 +286,6 @@
             groupBox1.TabIndex = 125;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos Personales del Cliente";
-            // 
-            // chEstatus
-            // 
-            chEstatus.CheckAlign = ContentAlignment.MiddleRight;
-            chEstatus.Location = new Point(469, 149);
-            chEstatus.Name = "chEstatus";
-            chEstatus.Size = new Size(100, 25);
-            chEstatus.TabIndex = 124;
-            chEstatus.Text = "Estatus";
-            chEstatus.UseVisualStyleBackColor = true;
             // 
             // txtNombre
             // 
@@ -398,23 +404,6 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // cbUsuario
-            // 
-            cbUsuario.Enabled = false;
-            cbUsuario.FormattingEnabled = true;
-            cbUsuario.Location = new Point(119, 129);
-            cbUsuario.Name = "cbUsuario";
-            cbUsuario.Size = new Size(424, 25);
-            cbUsuario.TabIndex = 123;
-            // 
-            // label1
-            // 
-            label1.Location = new Point(119, 107);
-            label1.Name = "label1";
-            label1.Size = new Size(100, 19);
-            label1.TabIndex = 124;
-            label1.Text = "Usuario";
-            // 
             // nuevoCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -472,7 +461,6 @@
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private PictureBox pictureBox1;
         private ErrorProvider errorProvider;
-        private CheckBox chEstatus;
         private Label label2;
         private PictureBox pictureBox2;
         private Label label1;

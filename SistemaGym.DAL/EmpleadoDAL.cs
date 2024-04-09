@@ -152,6 +152,27 @@ namespace SistemaGym.DAL
 
         }
 
+        /* Metodo Buscar */
+
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM Empleados WHERE Nombre LIKE @Busqueda OR Apellido LIKE @Busqueda OR Documento LIKE @Busqueda OR TellCell LIKE @Busqueda OR TellRes LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
+        }
+
         /* GETBYID */
 
         public static EmpleadoEntity GetByID(int Id)

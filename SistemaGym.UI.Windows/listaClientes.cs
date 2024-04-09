@@ -14,9 +14,9 @@ namespace SistemaGym.UI.Windows
     public partial class listaClientes : Form
     {
 
-        private int? _IdCliente;
+        private int _IdCliente;
 
-        public int? IdCliente
+        public int IdCliente
         {
             get
             {
@@ -42,12 +42,17 @@ namespace SistemaGym.UI.Windows
 
         private void dgvListaClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
-                return;
+            if (dgvListaClientes.SelectedRows.Count > 0)
+            {
+                _IdCliente = Convert.ToInt32(dgvListaClientes.SelectedRows[0].Cells["IDCliente"].Value);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, Seleccione un Cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            _IdCliente = (int?)dgvListaClientes.CurrentRow.Cells["IDCliente"].Value;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
         }
     }
 }

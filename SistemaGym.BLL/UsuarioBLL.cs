@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using SistemaGym.Entities;
 using System.Security.Cryptography.X509Certificates;
 using System.Data;
+using System.Net.NetworkInformation;
 
 namespace SistemaGym.BLL
 {
@@ -19,6 +20,10 @@ namespace SistemaGym.BLL
             return usuarioDAL.ConsultaLogin(usuario);
         }
 
+        public static UsuarioEntity GetByID(int Id)
+        {
+            return UsuarioDAL.GetByID(Id);
+        }
         public string GetNameFromUser(string usuario, string contraseña)
         {
            return usuarioDAL.GetNameFromUser(usuario, contraseña);
@@ -27,10 +32,17 @@ namespace SistemaGym.BLL
         {
             return usuarioDAL.GetIDFromUser(usuario, contraseña);
         }
-
+        public static DataTable BuscarUsuario(string busqueda)
+        {
+            return UsuarioDAL.Buscar(busqueda);
+        }
         public static void Guardar(UsuarioEntity usuario)
         {
                 UsuarioDAL.InsertarUsuario(usuario);     
+        }
+        public static void GuardarNoEmpleado(UsuarioEntity usuario)
+        {
+            UsuarioDAL.InsertarUsuarioNOEmpleado(usuario);
         }
 
         public static void Update(UsuarioEntity usuario)

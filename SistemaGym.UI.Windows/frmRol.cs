@@ -21,51 +21,6 @@ namespace SistemaGym.UI.Windows
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-
-            //validacion de datos
-            if (!ValidarDatos())
-            {
-                return;
-            }
-            //pasar datos de controles a un objeto
-            RolEntity Rol = new RolEntity();
-            Rol.Nombre = txtNombre.Text;
-            Rol.Descripcion = txtDescripcion.Text;
-
-            //Mandar a guardar el objeto creado a la base de datos
-            try
-            {
-                RolBLL.Guardar(Rol);
-                MessageBox.Show("Rol guardada.", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-
-
-        }
-        private bool ValidarDatos()
-        {
-            bool resultado = true;
-            //inicializando los mensajes de validaciones
-            errorProvider1.Clear();
-            //verificar que en los campos obligatorios hayan datos
-            if (string.IsNullOrEmpty(txtNombre.Text))
-            {
-                errorProvider1.SetError(txtNombre, "El nombre es obligatorio");
-                resultado = false;
-                errorProvider1.SetError(txtDescripcion, "La Descripcion no es obligatorio");
-                resultado = false;
-            }
-            return resultado;
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
@@ -167,6 +122,18 @@ namespace SistemaGym.UI.Windows
 
             DataTable resultBusqueda = RolBLL.ObtenerByValor(buscar);
             dgvRol.DataSource = resultBusqueda;
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            registrarRol nuevoRol = new registrarRol();
+            nuevoRol.Show();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvRol.DataSource = RolBLL.MostrarRol();
+            dgvRol.AutoGenerateColumns = false;
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnClose = new PictureBox();
             panel2 = new Panel();
@@ -131,6 +132,9 @@
             // Monto
             // 
             Monto.DataPropertyName = "Monto";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            Monto.DefaultCellStyle = dataGridViewCellStyle1;
             Monto.HeaderText = "Monto";
             Monto.Name = "Monto";
             Monto.ReadOnly = true;
@@ -174,12 +178,12 @@
         private Panel panel2;
         private Panel panel3;
         private DataGridView dgvListaCargoCredito;
+        private PictureBox btnClose;
         private DataGridViewTextBoxColumn IDCargoCredito;
         private DataGridViewTextBoxColumn IDCliente;
         private DataGridViewTextBoxColumn Cargo;
         private DataGridViewTextBoxColumn Monto;
         private DataGridViewTextBoxColumn FechaCargo;
         private DataGridViewTextBoxColumn Estatus;
-        private PictureBox btnClose;
     }
 }

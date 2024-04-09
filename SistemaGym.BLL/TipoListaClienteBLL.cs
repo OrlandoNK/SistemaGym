@@ -14,20 +14,16 @@ namespace SistemaGym.BLL
         readonly TipoListaClienteDAL tipoListaClienteDAL = new TipoListaClienteDAL();
         public static void Guardar(TipoListaClienteEntity tipoListaCliente)
         {
-            if (tipoListaCliente.IDTipoListaCliente == 0)
-            {
-                //agregar
-                TipoListaClienteDAL.InsertarTipoListaCliente(tipoListaCliente);
-            }
-            else
-            {
-                //Actualizar
-                TipoListaClienteDAL.ActualizarTipoListaCliente(tipoListaCliente);
-
-            }
+           //agregar
+           TipoListaClienteDAL.InsertarTipoListaCliente(tipoListaCliente);
+        }
+        public static void Actualizar(TipoListaClienteEntity tipoListaCliente)
+        {
+            //Actualizar
+            TipoListaClienteDAL.ActualizarTipoListaCliente(tipoListaCliente);
         }
 
-        public static bool Eliminar(TipoListaClienteEntity tipoListaCliente)
+        public static bool Eliminar(int tipoListaCliente)
         {
             return TipoListaClienteDAL.EliminarTipoListaCliente(tipoListaCliente);
         }

@@ -181,6 +181,24 @@ namespace SistemaGym.UI.Windows
             dgvClientes.DataSource = ClientesBLL.MostrarCliente();
             dgvClientes.AutoGenerateColumns = false;
         }
+
+        private void btnTipoCliente_Click(object sender, EventArgs e)
+        {
+            mantenimientoTipoClientes tipoClientes = new mantenimientoTipoClientes();
+            tipoClientes.Show();
+        }
+
+        private void btnListaCliente_Click(object sender, EventArgs e)
+        {
+            mantenimientoListaClientes listaClientes = new mantenimientoListaClientes();
+            listaClientes.Show();
+        }
+
+        private void btnGrupoClientes_Click(object sender, EventArgs e)
+        {
+            mantenimientoGrupoClientes grupoClientes = new mantenimientoGrupoClientes();
+            grupoClientes.Show();
+        }
     }
 
 }

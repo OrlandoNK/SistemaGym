@@ -169,5 +169,13 @@ namespace SistemaGym.UI.Windows
             mantenimientoDetalleFacturaProducto detalleFacturaProducto = new mantenimientoDetalleFacturaProducto();
             detalleFacturaProducto.Show();
         }
+
+        private void TxbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = TxbBuscar.Text;
+
+            DataTable resultBusqueda = FacturacionProductoBLL.BuscarFacturaProducto(buscar);
+            dgvFacturaProducto.DataSource = resultBusqueda;
+        }
     }
 }

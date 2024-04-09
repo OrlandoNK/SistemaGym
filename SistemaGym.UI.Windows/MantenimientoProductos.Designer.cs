@@ -79,12 +79,13 @@
             dgvProductos.BackgroundColor = Color.White;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { IDProducto, Nombre, IDCategoria, IDProveedor, PrecioUnitario, Stock });
-            dgvProductos.Location = new Point(-1, -1);
+            dgvProductos.Dock = DockStyle.Fill;
+            dgvProductos.Location = new Point(0, 0);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersVisible = false;
             dgvProductos.RowTemplate.Height = 25;
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProductos.Size = new Size(716, 385);
+            dgvProductos.Size = new Size(883, 524);
             dgvProductos.TabIndex = 10;
             // 
             // IDProducto
@@ -101,9 +102,9 @@
             // 
             // IDCategoria
             // 
-            IDCategoria.DataPropertyName = "IDCategoria";
             IDCategoria.HeaderText = "Categoria";
             IDCategoria.Name = "IDCategoria";
+            IDCategoria.ReadOnly = true;
             IDCategoria.Resizable = DataGridViewTriState.True;
             IDCategoria.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
@@ -112,6 +113,7 @@
             IDProveedor.DataPropertyName = "IDProveedor";
             IDProveedor.HeaderText = "Proveedor";
             IDProveedor.Name = "IDProveedor";
+            IDProveedor.ReadOnly = true;
             IDProveedor.Resizable = DataGridViewTriState.True;
             IDProveedor.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
@@ -144,7 +146,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(916, 62);
+            panel1.Size = new Size(1085, 62);
             panel1.TabIndex = 14;
             // 
             // label1
@@ -170,9 +172,10 @@
             // 
             // btnClose
             // 
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(871, 14);
+            btnClose.Location = new Point(1040, 14);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -187,7 +190,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 62);
             panel2.Name = "panel2";
-            panel2.Size = new Size(916, 37);
+            panel2.Size = new Size(1085, 37);
             panel2.TabIndex = 15;
             // 
             // panel3
@@ -201,7 +204,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 99);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 445);
+            panel3.Size = new Size(200, 586);
             panel3.TabIndex = 16;
             // 
             // btnDelete
@@ -222,11 +225,11 @@
             btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
-            btnDelete.Location = new Point(-1, 224);
+            btnDelete.Location = new Point(-1, 304);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedColor = Color.Transparent;
             btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnDelete.Size = new Size(200, 49);
+            btnDelete.Size = new Size(200, 45);
             btnDelete.TabIndex = 17;
             btnDelete.Text = "Eliminar";
             btnDelete.Click += btnDelete_Click;
@@ -249,11 +252,11 @@
             btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
-            btnEdit.Location = new Point(-1, 169);
+            btnEdit.Location = new Point(-1, 244);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedColor = Color.Transparent;
             btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnEdit.Size = new Size(200, 49);
+            btnEdit.Size = new Size(200, 45);
             btnEdit.TabIndex = 16;
             btnEdit.Text = "Editar";
             btnEdit.Click += btnEdit_Click;
@@ -275,11 +278,11 @@
             btnRefresh.HoverState.ForeColor = Color.Goldenrod;
             btnRefresh.Image = Properties.Resources.refresh_8677771;
             btnRefresh.ImageSize = new Size(25, 25);
-            btnRefresh.Location = new Point(-1, 114);
+            btnRefresh.Location = new Point(-1, 184);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.PressedColor = Color.Transparent;
             btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnRefresh.Size = new Size(200, 49);
+            btnRefresh.Size = new Size(200, 45);
             btnRefresh.TabIndex = 15;
             btnRefresh.Click += btnRefresh_Click;
             // 
@@ -301,11 +304,11 @@
             btnNuevo.Image = Properties.Resources._NewFacturaProduct;
             btnNuevo.ImageAlign = HorizontalAlignment.Left;
             btnNuevo.ImageSize = new Size(25, 25);
-            btnNuevo.Location = new Point(-1, 59);
+            btnNuevo.Location = new Point(-1, 124);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.PressedColor = Color.Transparent;
             btnNuevo.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnNuevo.Size = new Size(200, 49);
+            btnNuevo.Size = new Size(200, 45);
             btnNuevo.TabIndex = 14;
             btnNuevo.Text = "Nuevo";
             btnNuevo.Click += btnNuevo_Click;
@@ -318,11 +321,12 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(200, 99);
             panel4.Name = "panel4";
-            panel4.Size = new Size(716, 60);
+            panel4.Size = new Size(885, 60);
             panel4.TabIndex = 17;
             // 
             // TxbBuscar
             // 
+            TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxbBuscar.BorderRadius = 18;
             TxbBuscar.CustomizableEdges = customizableEdges1;
             TxbBuscar.DefaultText = "";
@@ -341,7 +345,7 @@
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            TxbBuscar.Size = new Size(698, 43);
+            TxbBuscar.Size = new Size(867, 43);
             TxbBuscar.TabIndex = 0;
             TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
@@ -353,14 +357,14 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(200, 159);
             panel5.Name = "panel5";
-            panel5.Size = new Size(716, 385);
+            panel5.Size = new Size(885, 526);
             panel5.TabIndex = 18;
             // 
             // MantenimientoProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(916, 544);
+            ClientSize = new Size(1085, 685);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -368,6 +372,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MantenimientoProductos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MantenimientoProductos";
             Load += MantenimientoProductos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
@@ -385,12 +390,6 @@
         #endregion
         private DataGridView dgvProductos;
         private ErrorProvider errorProvider;
-        private DataGridViewTextBoxColumn IDProducto;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewComboBoxColumn IDCategoria;
-        private DataGridViewComboBoxColumn IDProveedor;
-        private DataGridViewTextBoxColumn PrecioUnitario;
-        private DataGridViewTextBoxColumn Stock;
         private Panel panel4;
         private Panel panel3;
         private Panel panel2;
@@ -404,5 +403,11 @@
         private Guna.UI2.WinForms.Guna2Button btnNuevo;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private DataGridViewTextBoxColumn IDProducto;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewComboBoxColumn IDCategoria;
+        private DataGridViewComboBoxColumn IDProveedor;
+        private DataGridViewTextBoxColumn PrecioUnitario;
+        private DataGridViewTextBoxColumn Stock;
     }
 }

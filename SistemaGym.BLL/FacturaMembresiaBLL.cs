@@ -11,7 +11,7 @@ namespace SistemaGym.BLL
 {
     public class FacturaMembresiaBLL
     {
-
+        FacturacionMembresiaDAL facturacionMembresiaDAL = new FacturacionMembresiaDAL();
         public void Insertar (FacturaMembresiaEntity facturacionMembresia)
         {
             FacturacionMembresiaDAL.Insertar(facturacionMembresia);
@@ -21,6 +21,7 @@ namespace SistemaGym.BLL
         {
             FacturacionMembresiaDAL.Actualizar(facturaMembresia);
         }
+
 
         public bool Eliminar (int Id)
         {

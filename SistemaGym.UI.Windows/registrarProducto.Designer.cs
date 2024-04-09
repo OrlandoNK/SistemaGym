@@ -158,9 +158,9 @@
             btnGuardar.ForeColor = Color.Goldenrod;
             btnGuardar.HoverState.FillColor = Color.FromArgb(35, 32, 39);
             btnGuardar.HoverState.ForeColor = Color.Goldenrod;
-            btnGuardar.Image = Properties.Resources._SaveFacturaProduct;
+            btnGuardar.Image = Properties.Resources.icon_save_button__x32_;
             btnGuardar.ImageAlign = HorizontalAlignment.Left;
-            btnGuardar.ImageSize = new Size(25, 25);
+            btnGuardar.ImageSize = new Size(32, 32);
             btnGuardar.Location = new Point(-1, 108);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
@@ -375,7 +375,8 @@
             // txtIDProducto
             // 
             txtIDProducto.Anchor = AnchorStyles.None;
-            txtIDProducto.Location = new Point(24, 78);
+            txtIDProducto.Enabled = false;
+            txtIDProducto.Location = new Point(24, 75);
             txtIDProducto.Name = "txtIDProducto";
             txtIDProducto.Size = new Size(70, 23);
             txtIDProducto.TabIndex = 22;
@@ -450,6 +451,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarProducto";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += registrarProducto_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

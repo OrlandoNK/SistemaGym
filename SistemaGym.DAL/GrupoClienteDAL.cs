@@ -18,11 +18,12 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into GrupoClientes(IDGrupoMembresia, IDCliente, FechaRegistro, Estatus)" +
-                " values(@idgrupomembresia, @idcliente, @fecharegistro, @estatus)";
+            string insertar = "INSERT INTO GrupoClientes(IDGrupoMembresia, IDCliente, Monto, FechaRegistro, Estatus)" +
+                " values(@idgrupomembresia, @idcliente, @monto, @fecharegistro, @estatus)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@idgrupomembresia", grupoCliente.IDGrupoMembresia);
             cmd.Parameters.AddWithValue("@idcliente", grupoCliente.IDCliente);
+            cmd.Parameters.AddWithValue("@monto", grupoCliente.Monto);
             cmd.Parameters.AddWithValue("@fecharegistro", grupoCliente.FechaRegistro);
             cmd.Parameters.AddWithValue("@estatus", grupoCliente.Estatus);
             cmd.ExecuteNonQuery();
@@ -35,12 +36,12 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "Update GrupoClientes set IDGrupoMembresia=@idgrupomembresia, IDCliente=@idcliente " +
-                "FechaRegistro =@fecharegistro, Estatus =@estatus where IDGrupoCliente= @idGrupoCliente ";
+            string actualizar = "Update GrupoClientes set IDGrupoMembresia=@idgrupomembresia, IDCliente=@idcliente, Monto = @monto, FechaRegistro =@fecharegistro, Estatus =@estatus where IDGrupoCliente= @idGrupoCliente ";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idGrupoCliente", grupoCliente.IDGrupoCliente);
             cmd.Parameters.AddWithValue("@idgrupomembresia", grupoCliente.IDGrupoMembresia);
             cmd.Parameters.AddWithValue("@idcliente", grupoCliente.IDCliente);
+            cmd.Parameters.AddWithValue("@monto", grupoCliente.Monto);
             cmd.Parameters.AddWithValue("@fecharegistro", grupoCliente.FechaRegistro);
             cmd.Parameters.AddWithValue("@estatus", grupoCliente.Estatus);
             cmd.ExecuteNonQuery();
@@ -54,8 +55,6 @@ namespace SistemaGym.DAL
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             bool seElimino;
-
-
 
             Conexion.Open();
             string Eliminar = "Delete from GrupoClientes where IDGrupoCliente= @idGrupoCliente ";

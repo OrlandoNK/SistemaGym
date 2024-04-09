@@ -88,23 +88,7 @@ namespace SistemaGym.UI.Windows
             nuevoEmpleado.TellCell = TxbTellCell.Text;
             nuevoEmpleado.TelRes = TxbTelRes.Text;
             nuevoEmpleado.FechaRegistro = DateTime.Now;
-            if (chEstatus.Checked)
-            {
-                nuevoEmpleado.Estatus = "Activo";
-            }
-            else
-            {
-                DialogResult dialogResults = new DialogResult();
-                dialogResults = MessageBox.Show("¿Seguro que desea Registrar el Empleado como Inactivo?", SYSTEM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResults == DialogResult.Yes)
-                {
-                    nuevoEmpleado.Estatus = "Inactivo";
-                }
-                if (dialogResults == DialogResult.No)
-                {
-
-                }
-            }
+            nuevoEmpleado.Estatus = "Activo";
 
             try
             {
@@ -135,7 +119,6 @@ namespace SistemaGym.UI.Windows
             TxbTellCell.Clear();
             TxbTelRes.Clear();
             TxbDireccion.Clear();
-            chEstatus.Checked = false;
         }
 
     }

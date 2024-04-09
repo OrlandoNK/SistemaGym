@@ -18,13 +18,14 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into Membresia(Nombre, Descripcion, Duracion, Valor , FechaCreacion, Estatus)" +
-                " values(@nombre, @descripcion, @duracion, @valor, @fechacreacion, @estatus)";
+            string insertar = "INSERT INTO Membresia(Nombre, Descripcion, DuracionMeses, Valor, CantidadPersonas, FechaCreacion, Estatus)" +
+                " values(@nombre, @descripcion, @duracion, @valor, @cantidad, @fechacreacion, @estatus)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@nombre", membresia.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", membresia.Descripcion);
             cmd.Parameters.AddWithValue("@duracion", membresia.Duracion);
             cmd.Parameters.AddWithValue("@valor", membresia.Valor);
+            cmd.Parameters.AddWithValue("@cantidad", membresia.CantidadPersonas);
             cmd.Parameters.AddWithValue("@fechacreacion", membresia.FechaCreacion);
             cmd.Parameters.AddWithValue("@estatus", membresia.Estatus);
             cmd.ExecuteNonQuery();
@@ -37,11 +38,12 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string actualizar = "UPDATE Membresia SET Nombre =@nombre, Descripcion =@descripcion, Duracion =@duracion, Valor =@valor, FechaCreacion =@fechacreacion, Estatus =@estatus WHERE IDMembresia= @idmembresia";
+            string actualizar = "UPDATE Membresia SET Nombre =@nombre, Descripcion =@descripcion, DuracionMeses =@duracion, CantidadPersonas = @cantidad, Valor =@valor, FechaCreacion =@fechacreacion, Estatus =@estatus WHERE IDMembresia= @idmembresia";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@nombre", membresia.Nombre);
             cmd.Parameters.AddWithValue("@descripcion", membresia.Descripcion);
             cmd.Parameters.AddWithValue("@duracion", membresia.Duracion);
+            cmd.Parameters.AddWithValue("@cantidad", membresia.CantidadPersonas);
             cmd.Parameters.AddWithValue("@valor", membresia.Valor);
             cmd.Parameters.AddWithValue("@fechacreacion", membresia.FechaCreacion);
             cmd.Parameters.AddWithValue("@estatus", membresia.Estatus);
@@ -70,11 +72,12 @@ namespace SistemaGym.DAL
         //metodo mostrar membresias
         public static DataTable MostrarMembresia()
         {
+
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
             DataTable dt = new DataTable();
             Conexion.Open();
-            string mostrar = "Select * From Membresia";
+            string mostrar = "SELECT * FROM Membresia";
             SqlCommand cmd = new SqlCommand(mostrar, Conexion);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
@@ -129,14 +132,34 @@ namespace SistemaGym.DAL
             membresia.IDMembresia = Convert.ToInt32(reader["IDMembresia"]);
             membresia.Nombre = Convert.ToString(reader["Nombre"]);
             membresia.Descripcion = Convert.ToString(reader["Descripcion"]);
-            membresia.Duracion = Convert.ToString(reader["Duracion"]);
+            membresia.Duracion = Convert.ToInt32(reader["DuracionMeses"]);
             membresia.Valor = Convert.ToDecimal(reader["Valor"]);
+            membresia.CantidadPersonas = Convert.ToInt32(reader["CantidadPersonas"]);
             membresia.FechaCreacion = Convert.ToDateTime(reader["FechaCreacion"]);
             membresia.Estatus = Convert.ToString(reader["Estatus"]);
 
             return membresia;
         }
 
+        /* Buscar */
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM Membresia WHERE Nombre LIKE @Busqueda OR Descripcion LIKE @Busqueda OR DuracionMeses LIKE @Busqueda OR Valor LIKE @Busqueda OR CantidadPersonas LIKE @Busqueda OR FechaCreacion LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
+        }
 
         //obtener valor de la base de datos en tabla membresia
         public static DataTable ObtenerPorValor(MembresiaEntity membresia)

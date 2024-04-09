@@ -143,5 +143,13 @@ namespace SistemaGym.UI.Windows
                 }
             }
         }
+
+        private void btnBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = btnBuscar.Text;
+
+            DataTable resultBusqueda = EmpleadoBLL.BuscarEmpleado(buscar);
+            dgvEmpleados.DataSource = resultBusqueda;
+        }
     }
 }

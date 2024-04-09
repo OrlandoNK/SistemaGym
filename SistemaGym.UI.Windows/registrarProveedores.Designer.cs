@@ -88,11 +88,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icono_proveedor_x32_qsy_xd;
+            pictureBox1.Image = Properties.Resources.icon_proveedor_mantenimiento__x32__waos;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(62, 57);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
@@ -233,13 +233,15 @@
             btnGuardarProveedor.ForeColor = Color.White;
             btnGuardarProveedor.HoverState.FillColor = Color.Goldenrod;
             btnGuardarProveedor.HoverState.ForeColor = Color.Black;
-            btnGuardarProveedor.Image = Properties.Resources.button_for_saving_providers_x32;
+            btnGuardarProveedor.Image = Properties.Resources.icon_save_button__x32_;
+            btnGuardarProveedor.ImageAlign = HorizontalAlignment.Left;
+            btnGuardarProveedor.ImageSize = new Size(32, 32);
             btnGuardarProveedor.Location = new Point(-1, 277);
             btnGuardarProveedor.Name = "btnGuardarProveedor";
             btnGuardarProveedor.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnGuardarProveedor.Size = new Size(198, 45);
             btnGuardarProveedor.TabIndex = 8;
-            btnGuardarProveedor.Text = "&Guardar";
+            btnGuardarProveedor.Text = "Guardar";
             btnGuardarProveedor.Click += btnGuardarProveedor_Click;
             // 
             // TxbNombreProveedor

@@ -59,6 +59,11 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(txtDuracion, CampoObligatorio);
                 resultado = false;
             }
+            if (string.IsNullOrEmpty(txtCantidadPersonas.Text))
+            {
+                errorProvider.SetError(txtCantidadPersonas, CampoObligatorio);
+                resultado = false;
+            }
 
             return resultado;
         }
@@ -74,27 +79,12 @@ namespace SistemaGym.UI.Windows
             MembresiaEntity oMembresia = new MembresiaEntity();
             oMembresia.Nombre = txtNombre.Text;
             oMembresia.Descripcion = txtDescripcion.Text;
-            oMembresia.Duracion = txtDuracion.Text;
-            oMembresia.Valor = decimal.Parse(txtValor.Text);
+            oMembresia.Duracion = Convert.ToInt32(txtDuracion.Text);
+            oMembresia.Valor = Decimal.Parse(txtValor.Text);
             oMembresia.FechaCreacion = DateTime.Now;
+            oMembresia.CantidadPersonas = Convert.ToInt32(txtCantidadPersonas.Text);
+            oMembresia.Estatus = "Activo";
 
-            if (chkbxEstatus.Checked)
-            {
-                oMembresia.Estatus = "Activo";
-            }
-            else
-            {
-                DialogResult dialogResult = new DialogResult();
-                dialogResult = MessageBox.Show("¿Seguro que desea Guardar esta Membresia con Estatus «Inactivo»?", SYSTEM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    oMembresia.Estatus = "Inactivo";
-                }
-                if (dialogResult == DialogResult.No)
-                {
-
-                }
-            }
 
             //Mandar a guardar el objeto creado a la base de datos
             try
@@ -102,7 +92,6 @@ namespace SistemaGym.UI.Windows
                 MembresiaBLL.Insertar(oMembresia);
                 MessageBox.Show("¡La Membresia Ha Sido Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarCampos();
-                dgvMembresia.DataSource = MembresiaBLL.Mostrar();
             }
             catch (SqlException ex)
             {
@@ -121,7 +110,7 @@ namespace SistemaGym.UI.Windows
             txtDescripcion.Clear();
             txtDuracion.Clear();
             txtValor.Clear();
-            chkbxEstatus.Checked = false;
+            txtCantidadPersonas.Clear();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

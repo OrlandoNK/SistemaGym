@@ -81,7 +81,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(889, 67);
+            panel1.Size = new Size(1085, 67);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -89,7 +89,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.Goldenrod;
-            label1.Location = new Point(77, 20);
+            label1.Location = new Point(56, 20);
             label1.Name = "label1";
             label1.Size = new Size(105, 24);
             label1.TabIndex = 2;
@@ -97,19 +97,20 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icon_empleados_x32;
+            pictureBox1.Image = Properties.Resources.businessman_mante__x32_;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(68, 59);
+            pictureBox1.Size = new Size(47, 59);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
             // btnClose
             // 
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(844, 16);
+            btnClose.Location = new Point(1040, 16);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -124,7 +125,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 67);
             panel2.Name = "panel2";
-            panel2.Size = new Size(889, 36);
+            panel2.Size = new Size(1085, 36);
             panel2.TabIndex = 1;
             // 
             // panel3
@@ -138,7 +139,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 103);
             panel3.Name = "panel3";
-            panel3.Size = new Size(205, 456);
+            panel3.Size = new Size(205, 582);
             panel3.TabIndex = 2;
             // 
             // btnDelete
@@ -156,7 +157,7 @@
             btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
-            btnDelete.Location = new Point(-1, 282);
+            btnDelete.Location = new Point(-1, 311);
             btnDelete.Name = "btnDelete";
             btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnDelete.Size = new Size(205, 49);
@@ -179,7 +180,7 @@
             btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
-            btnEdit.Location = new Point(-1, 227);
+            btnEdit.Location = new Point(-1, 250);
             btnEdit.Name = "btnEdit";
             btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnEdit.Size = new Size(205, 49);
@@ -201,7 +202,7 @@
             btnRefresh.ForeColor = Color.White;
             btnRefresh.Image = Properties.Resources.refresh_8677771;
             btnRefresh.ImageSize = new Size(25, 25);
-            btnRefresh.Location = new Point(-1, 172);
+            btnRefresh.Location = new Point(-1, 189);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnRefresh.Size = new Size(205, 49);
@@ -223,7 +224,7 @@
             btnNew.Image = Properties.Resources._NuevaFacturaMembresia;
             btnNew.ImageAlign = HorizontalAlignment.Left;
             btnNew.ImageSize = new Size(25, 25);
-            btnNew.Location = new Point(-1, 117);
+            btnNew.Location = new Point(-1, 128);
             btnNew.Name = "btnNew";
             btnNew.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnNew.Size = new Size(205, 49);
@@ -233,16 +234,17 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.WhiteSmoke;
+            panel4.BackColor = Color.FromArgb(35, 32, 39);
             panel4.Controls.Add(btnBuscar);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(205, 103);
             panel4.Name = "panel4";
-            panel4.Size = new Size(684, 66);
+            panel4.Size = new Size(880, 66);
             panel4.TabIndex = 3;
             // 
             // btnBuscar
             // 
+            btnBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             btnBuscar.BorderRadius = 20;
             btnBuscar.CustomizableEdges = customizableEdges9;
             btnBuscar.DefaultText = "";
@@ -261,8 +263,9 @@
             btnBuscar.PlaceholderText = "Buscar";
             btnBuscar.SelectedText = "";
             btnBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnBuscar.Size = new Size(666, 42);
+            btnBuscar.Size = new Size(862, 42);
             btnBuscar.TabIndex = 0;
+            btnBuscar.TextChanged += btnBuscar_TextChanged;
             // 
             // panel5
             // 
@@ -272,23 +275,24 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(205, 169);
             panel5.Name = "panel5";
-            panel5.Size = new Size(684, 390);
+            panel5.Size = new Size(880, 516);
             panel5.TabIndex = 4;
             // 
             // dgvEmpleados
             // 
             dgvEmpleados.AllowUserToAddRows = false;
             dgvEmpleados.AllowUserToDeleteRows = false;
-            dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvEmpleados.BackgroundColor = Color.WhiteSmoke;
             dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { IDEmpleado, Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TellRes, FechaRegistro, Estatus });
-            dgvEmpleados.Location = new Point(-1, -1);
+            dgvEmpleados.Dock = DockStyle.Fill;
+            dgvEmpleados.Location = new Point(0, 0);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.RowHeadersVisible = false;
             dgvEmpleados.RowTemplate.Height = 25;
             dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEmpleados.Size = new Size(684, 390);
+            dgvEmpleados.Size = new Size(878, 514);
             dgvEmpleados.TabIndex = 0;
             // 
             // IDEmpleado
@@ -296,76 +300,66 @@
             IDEmpleado.DataPropertyName = "IDEmpleado";
             IDEmpleado.HeaderText = "IDEmpleado";
             IDEmpleado.Name = "IDEmpleado";
-            IDEmpleado.Width = 96;
             // 
             // Nombre
             // 
             Nombre.DataPropertyName = "Nombre";
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
-            Nombre.Width = 76;
             // 
             // Apellido
             // 
             Apellido.DataPropertyName = "Apellido";
             Apellido.HeaderText = "Apellido";
             Apellido.Name = "Apellido";
-            Apellido.Width = 76;
             // 
             // TipoDocumento
             // 
             TipoDocumento.DataPropertyName = "TipoDocumento";
             TipoDocumento.HeaderText = "TipoDocumento";
             TipoDocumento.Name = "TipoDocumento";
-            TipoDocumento.Width = 118;
             // 
             // Documento
             // 
             Documento.DataPropertyName = "Documento";
             Documento.HeaderText = "Documento";
             Documento.Name = "Documento";
-            Documento.Width = 95;
             // 
             // Direccion
             // 
             Direccion.DataPropertyName = "Direccion";
             Direccion.HeaderText = "Direccion";
             Direccion.Name = "Direccion";
-            Direccion.Width = 82;
             // 
             // TellCell
             // 
             TellCell.DataPropertyName = "TellCell";
             TellCell.HeaderText = "TellCell";
             TellCell.Name = "TellCell";
-            TellCell.Width = 69;
             // 
             // TellRes
             // 
             TellRes.DataPropertyName = "TellRes";
             TellRes.HeaderText = "TellRes";
             TellRes.Name = "TellRes";
-            TellRes.Width = 67;
             // 
             // FechaRegistro
             // 
             FechaRegistro.DataPropertyName = "FechaRegistro";
             FechaRegistro.HeaderText = "FechaRegistro";
             FechaRegistro.Name = "FechaRegistro";
-            FechaRegistro.Width = 106;
             // 
             // Estatus
             // 
             Estatus.DataPropertyName = "Estatus";
             Estatus.HeaderText = "Estatus";
             Estatus.Name = "Estatus";
-            Estatus.Width = 69;
             // 
             // mantenimientoEmpleados
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(889, 559);
+            ClientSize = new Size(1085, 685);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);

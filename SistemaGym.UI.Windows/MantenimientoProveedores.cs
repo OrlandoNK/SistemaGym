@@ -145,5 +145,12 @@ namespace SistemaGym.UI.Windows
             return proveedorList;
         }
 
+        private void TxbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = TxbBuscar.Text;
+
+            DataTable resultBusqueda = ProveedoresBLL.BuscarProveedor(buscar);
+            dgvProveedores.DataSource = resultBusqueda;
+        }
     }
 }

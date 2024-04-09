@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -42,7 +42,6 @@
             gbPersonalData = new GroupBox();
             TxbNombre = new TextBox();
             TxbTellCell = new MaskedTextBox();
-            chEstatus = new CheckBox();
             label4 = new Label();
             cbTipoDocumento = new ComboBox();
             label2 = new Label();
@@ -83,7 +82,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.Goldenrod;
-            label1.Location = new Point(77, 19);
+            label1.Location = new Point(67, 19);
             label1.Name = "label1";
             label1.Size = new Size(105, 24);
             label1.TabIndex = 5;
@@ -91,10 +90,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icon_empleados_x32;
+            pictureBox1.Image = Properties.Resources.businessman_mante__x32_;
             pictureBox1.Location = new Point(3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(68, 59);
+            pictureBox1.Size = new Size(58, 59);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -138,7 +137,7 @@
             btnSave.BorderColor = Color.DarkGoldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges1;
+            btnSave.CustomizableEdges = customizableEdges3;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -148,14 +147,15 @@
             btnSave.ForeColor = Color.White;
             btnSave.HoverState.FillColor = Color.DarkGoldenrod;
             btnSave.HoverState.ForeColor = Color.Black;
-            btnSave.Image = Properties.Resources._GuardarFacturaMembresia;
-            btnSave.ImageSize = new Size(25, 25);
-            btnSave.Location = new Point(-1, 196);
+            btnSave.Image = Properties.Resources.icon_save_button__x32_;
+            btnSave.ImageAlign = HorizontalAlignment.Left;
+            btnSave.ImageSize = new Size(32, 32);
+            btnSave.Location = new Point(-1, 91);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnSave.Size = new Size(206, 61);
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnSave.Size = new Size(206, 52);
             btnSave.TabIndex = 0;
-            btnSave.Text = "&Guardar";
+            btnSave.Text = "Guardar";
             btnSave.Click += btnSave_Click;
             // 
             // panel4
@@ -173,7 +173,6 @@
             // 
             gbPersonalData.Controls.Add(TxbNombre);
             gbPersonalData.Controls.Add(TxbTellCell);
-            gbPersonalData.Controls.Add(chEstatus);
             gbPersonalData.Controls.Add(label4);
             gbPersonalData.Controls.Add(cbTipoDocumento);
             gbPersonalData.Controls.Add(label2);
@@ -203,21 +202,11 @@
             // 
             // TxbTellCell
             // 
-            TxbTellCell.Location = new Point(315, 150);
+            TxbTellCell.Location = new Point(315, 200);
             TxbTellCell.Mask = "(999)-999-9999";
             TxbTellCell.Name = "TxbTellCell";
             TxbTellCell.Size = new Size(141, 23);
             TxbTellCell.TabIndex = 10;
-            // 
-            // chEstatus
-            // 
-            chEstatus.CheckAlign = ContentAlignment.MiddleRight;
-            chEstatus.Location = new Point(480, 199);
-            chEstatus.Name = "chEstatus";
-            chEstatus.Size = new Size(123, 24);
-            chEstatus.TabIndex = 14;
-            chEstatus.Text = "Estatus";
-            chEstatus.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -248,7 +237,7 @@
             // 
             // label7
             // 
-            label7.Location = new Point(315, 124);
+            label7.Location = new Point(315, 174);
             label7.Name = "label7";
             label7.Size = new Size(141, 23);
             label7.TabIndex = 11;
@@ -257,7 +246,7 @@
             // 
             // label8
             // 
-            label8.Location = new Point(462, 124);
+            label8.Location = new Point(462, 174);
             label8.Name = "label8";
             label8.Size = new Size(141, 23);
             label8.TabIndex = 13;
@@ -273,7 +262,7 @@
             // 
             // TxbTelRes
             // 
-            TxbTelRes.Location = new Point(462, 150);
+            TxbTelRes.Location = new Point(462, 200);
             TxbTelRes.Mask = "(999)-999-9999";
             TxbTelRes.Name = "TxbTelRes";
             TxbTelRes.Size = new Size(141, 23);
@@ -337,6 +326,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarEmpleados";
+            StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -371,7 +361,6 @@
         private TextBox TxbApellido;
         private Label label2;
         private TextBox TxbNombre;
-        private CheckBox chEstatus;
         private Label label8;
         private MaskedTextBox TxbTelRes;
         private GroupBox gbPersonalData;

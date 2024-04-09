@@ -137,5 +137,13 @@ namespace SistemaGym.UI.Windows
 
             }
         }
+
+        private void TxbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = TxbBuscar.Text;
+
+            DataTable resultBusqueda = DetalleFacturaProductoBLL.BuscarDetalle(buscar);
+            dgvDetalleFacturaProducto.DataSource = resultBusqueda;
+        }
     }
 }

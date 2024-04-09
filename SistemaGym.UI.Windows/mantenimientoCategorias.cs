@@ -144,5 +144,10 @@ namespace SistemaGym.UI.Windows
             DataTable resultBusqueda = CategoriaProductoBLL.Buscar(buscar);
             dgvCategoria.DataSource = resultBusqueda;
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

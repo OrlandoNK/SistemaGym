@@ -45,7 +45,7 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar tipo listacliente
 
-        public static bool EliminarTipoListaCliente(TipoListaClienteEntity tipoListaCliente)
+        public static bool EliminarTipoListaCliente(int tipoListaCliente)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -56,7 +56,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string Eliminar = "Delete from TipoListaCliente where IDTipoListaCliente= @idtipolistacliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idtipolistacliente", tipoListaCliente.IDTipoListaCliente);
+            cmd.Parameters.AddWithValue("@idtipolistacliente", tipoListaCliente);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 

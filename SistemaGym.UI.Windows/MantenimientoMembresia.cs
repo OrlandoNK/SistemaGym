@@ -130,8 +130,9 @@ namespace SistemaGym.UI.Windows
                     IDMembresia = Convert.ToInt32(fila["IDMembresia"]),
                     Nombre = Convert.ToString(fila["Nombre"]),
                     Descripcion = Convert.ToString(fila["Descripcion"]),
-                    Duracion = Convert.ToString(fila["Duracion"]),
+                    Duracion = Convert.ToInt32(fila["Duracion"]),
                     Valor = Convert.ToDecimal(fila["Valor"]),
+                    CantidadPersonas = Convert.ToInt32(fila["CantidadPersonas"]),
                     FechaCreacion = Convert.ToDateTime(fila["FechaCreacion"]),
                     Estatus = Convert.ToString(fila["Estatus"])
                 };
@@ -142,5 +143,18 @@ namespace SistemaGym.UI.Windows
             return membresiaList;
         }
 
+        private void TxbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = TxbBuscar.Text;
+
+            DataTable resultBusqueda = MembresiaBLL.BuscarMembresia(buscar);
+            dgvMembresia.DataSource = resultBusqueda;
+        }
+
+        private void btnGrupoMembresia_Click(object sender, EventArgs e)
+        {
+            mantenimientoGrupoMembresia IrGrupoMembresia = new mantenimientoGrupoMembresia();
+            IrGrupoMembresia.Show();
+        }
     }
 }

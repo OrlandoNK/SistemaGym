@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -38,12 +36,22 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
+            btnListaCliente = new Guna.UI2.WinForms.Guna2Button();
+            btnTipoCliente = new Guna.UI2.WinForms.Guna2Button();
             btnDelete = new Guna.UI2.WinForms.Guna2Button();
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
             btnUpdateDGV = new Guna.UI2.WinForms.Guna2Button();
@@ -66,6 +74,7 @@
             TelRes = new DataGridViewTextBoxColumn();
             FechaRegistro = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
+            btnGrupoClientes = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
@@ -85,7 +94,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(905, 61);
+            panel1.Size = new Size(1085, 61);
             panel1.TabIndex = 73;
             // 
             // label1
@@ -102,7 +111,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._Clientes_mainScreen_;
+            pictureBox1.Image = Properties.Resources.customer_experience_12948497;
             pictureBox1.Location = new Point(3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(62, 50);
@@ -115,7 +124,7 @@
             btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(860, 13);
+            btnClose.Location = new Point(1040, 13);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -130,13 +139,16 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 61);
             panel2.Name = "panel2";
-            panel2.Size = new Size(905, 34);
+            panel2.Size = new Size(1085, 34);
             panel2.TabIndex = 74;
             // 
             // panel3
             // 
             panel3.BackColor = Color.Black;
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(btnGrupoClientes);
+            panel3.Controls.Add(btnListaCliente);
+            panel3.Controls.Add(btnTipoCliente);
             panel3.Controls.Add(btnDelete);
             panel3.Controls.Add(btnEdit);
             panel3.Controls.Add(btnUpdateDGV);
@@ -144,15 +156,71 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 95);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 459);
+            panel3.Size = new Size(200, 590);
             panel3.TabIndex = 75;
+            // 
+            // btnListaCliente
+            // 
+            btnListaCliente.BorderColor = Color.DarkGoldenrod;
+            btnListaCliente.BorderThickness = 1;
+            btnListaCliente.Cursor = Cursors.Hand;
+            btnListaCliente.CustomizableEdges = customizableEdges3;
+            btnListaCliente.DisabledState.BorderColor = Color.DarkGray;
+            btnListaCliente.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnListaCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnListaCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnListaCliente.FillColor = Color.Transparent;
+            btnListaCliente.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnListaCliente.ForeColor = Color.White;
+            btnListaCliente.HoverState.FillColor = Color.DarkGoldenrod;
+            btnListaCliente.HoverState.ForeColor = Color.Black;
+            btnListaCliente.Image = Properties.Resources.customer_experience_12948497;
+            btnListaCliente.ImageAlign = HorizontalAlignment.Left;
+            btnListaCliente.ImageSize = new Size(25, 25);
+            btnListaCliente.Location = new Point(-1, 97);
+            btnListaCliente.Name = "btnListaCliente";
+            btnListaCliente.PressedColor = Color.Transparent;
+            btnListaCliente.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnListaCliente.Size = new Size(200, 47);
+            btnListaCliente.TabIndex = 6;
+            btnListaCliente.Text = "Ir a Lista Clientes";
+            btnListaCliente.TextAlign = HorizontalAlignment.Right;
+            btnListaCliente.Click += btnListaCliente_Click;
+            // 
+            // btnTipoCliente
+            // 
+            btnTipoCliente.BorderColor = Color.DarkGoldenrod;
+            btnTipoCliente.BorderThickness = 1;
+            btnTipoCliente.Cursor = Cursors.Hand;
+            btnTipoCliente.CustomizableEdges = customizableEdges5;
+            btnTipoCliente.DisabledState.BorderColor = Color.DarkGray;
+            btnTipoCliente.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnTipoCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnTipoCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnTipoCliente.FillColor = Color.Transparent;
+            btnTipoCliente.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTipoCliente.ForeColor = Color.White;
+            btnTipoCliente.HoverState.FillColor = Color.DarkGoldenrod;
+            btnTipoCliente.HoverState.ForeColor = Color.Black;
+            btnTipoCliente.Image = Properties.Resources.customer_experience_12948497;
+            btnTipoCliente.ImageAlign = HorizontalAlignment.Left;
+            btnTipoCliente.ImageSize = new Size(25, 25);
+            btnTipoCliente.Location = new Point(-1, 44);
+            btnTipoCliente.Name = "btnTipoCliente";
+            btnTipoCliente.PressedColor = Color.Transparent;
+            btnTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnTipoCliente.Size = new Size(200, 47);
+            btnTipoCliente.TabIndex = 5;
+            btnTipoCliente.Text = "Ir a Tipo Clientes";
+            btnTipoCliente.TextAlign = HorizontalAlignment.Right;
+            btnTipoCliente.Click += btnTipoCliente_Click;
             // 
             // btnDelete
             // 
             btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
             btnDelete.Cursor = Cursors.Hand;
-            btnDelete.CustomizableEdges = customizableEdges1;
+            btnDelete.CustomizableEdges = customizableEdges7;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -165,10 +233,10 @@
             btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
-            btnDelete.Location = new Point(-1, 205);
+            btnDelete.Location = new Point(-1, 440);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedColor = Color.Transparent;
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnDelete.Size = new Size(200, 47);
             btnDelete.TabIndex = 4;
             btnDelete.Text = "&Eliminar";
@@ -179,7 +247,7 @@
             btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.CustomizableEdges = customizableEdges3;
+            btnEdit.CustomizableEdges = customizableEdges9;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -192,10 +260,10 @@
             btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
-            btnEdit.Location = new Point(-1, 152);
+            btnEdit.Location = new Point(-1, 380);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedColor = Color.Transparent;
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnEdit.Size = new Size(200, 47);
             btnEdit.TabIndex = 3;
             btnEdit.Text = "&Editar";
@@ -206,7 +274,7 @@
             btnUpdateDGV.BorderColor = Color.DarkGoldenrod;
             btnUpdateDGV.BorderThickness = 1;
             btnUpdateDGV.Cursor = Cursors.Hand;
-            btnUpdateDGV.CustomizableEdges = customizableEdges5;
+            btnUpdateDGV.CustomizableEdges = customizableEdges11;
             btnUpdateDGV.DisabledState.BorderColor = Color.DarkGray;
             btnUpdateDGV.DisabledState.CustomBorderColor = Color.DarkGray;
             btnUpdateDGV.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -216,12 +284,12 @@
             btnUpdateDGV.ForeColor = Color.White;
             btnUpdateDGV.HoverState.FillColor = Color.DarkGoldenrod;
             btnUpdateDGV.HoverState.ForeColor = Color.Black;
-            btnUpdateDGV.Image = Properties.Resources._RefrescarFacturaMembresia___;
+            btnUpdateDGV.Image = Properties.Resources.refresh_8677771;
             btnUpdateDGV.ImageSize = new Size(25, 25);
-            btnUpdateDGV.Location = new Point(-1, 99);
+            btnUpdateDGV.Location = new Point(-1, 320);
             btnUpdateDGV.Name = "btnUpdateDGV";
             btnUpdateDGV.PressedColor = Color.Transparent;
-            btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnUpdateDGV.Size = new Size(200, 47);
             btnUpdateDGV.TabIndex = 2;
             btnUpdateDGV.Click += btnUpdateDGV_Click;
@@ -231,7 +299,7 @@
             btnGuardar.BorderColor = Color.DarkGoldenrod;
             btnGuardar.BorderThickness = 1;
             btnGuardar.Cursor = Cursors.Hand;
-            btnGuardar.CustomizableEdges = customizableEdges7;
+            btnGuardar.CustomizableEdges = customizableEdges13;
             btnGuardar.DisabledState.BorderColor = Color.DarkGray;
             btnGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGuardar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -244,10 +312,10 @@
             btnGuardar.Image = Properties.Resources._NewFacturaProduct;
             btnGuardar.ImageAlign = HorizontalAlignment.Left;
             btnGuardar.ImageSize = new Size(25, 25);
-            btnGuardar.Location = new Point(-1, 46);
+            btnGuardar.Location = new Point(-1, 260);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
-            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnGuardar.Size = new Size(200, 47);
             btnGuardar.TabIndex = 1;
             btnGuardar.Text = "&Nuevo";
@@ -255,19 +323,20 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.WhiteSmoke;
+            panel4.BackColor = Color.FromArgb(35, 32, 39);
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(TxbBuscar);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(200, 95);
             panel4.Name = "panel4";
-            panel4.Size = new Size(705, 70);
+            panel4.Size = new Size(885, 70);
             panel4.TabIndex = 76;
             // 
             // TxbBuscar
             // 
-            TxbBuscar.BorderRadius = 25;
-            TxbBuscar.CustomizableEdges = customizableEdges9;
+            TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TxbBuscar.BorderRadius = 20;
+            TxbBuscar.CustomizableEdges = customizableEdges15;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -277,14 +346,14 @@
             TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
-            TxbBuscar.Location = new Point(3, 9);
+            TxbBuscar.Location = new Point(7, 13);
             TxbBuscar.Name = "TxbBuscar";
             TxbBuscar.PasswordChar = '\0';
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TxbBuscar.Size = new Size(735, 51);
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            TxbBuscar.Size = new Size(869, 42);
             TxbBuscar.TabIndex = 0;
             // 
             // panel5
@@ -295,22 +364,24 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(200, 165);
             panel5.Name = "panel5";
-            panel5.Size = new Size(705, 389);
+            panel5.Size = new Size(885, 520);
             panel5.TabIndex = 77;
             // 
             // dgvClientes
             // 
             dgvClientes.AllowUserToAddRows = false;
             dgvClientes.AllowUserToDeleteRows = false;
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvClientes.BackgroundColor = Color.WhiteSmoke;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.Columns.AddRange(new DataGridViewColumn[] { IDCliente, IDUsuario, IDMembresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus });
-            dgvClientes.Location = new Point(-1, -1);
+            dgvClientes.Dock = DockStyle.Fill;
+            dgvClientes.Location = new Point(0, 0);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.RowHeadersVisible = false;
             dgvClientes.RowTemplate.Height = 25;
             dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClientes.Size = new Size(705, 389);
+            dgvClientes.Size = new Size(883, 518);
             dgvClientes.TabIndex = 0;
             // 
             // IDCliente
@@ -397,11 +468,39 @@
             Estatus.HeaderText = "Estatus";
             Estatus.Name = "Estatus";
             // 
+            // btnGrupoClientes
+            // 
+            btnGrupoClientes.BorderColor = Color.DarkGoldenrod;
+            btnGrupoClientes.BorderThickness = 1;
+            btnGrupoClientes.Cursor = Cursors.Hand;
+            btnGrupoClientes.CustomizableEdges = customizableEdges1;
+            btnGrupoClientes.DisabledState.BorderColor = Color.DarkGray;
+            btnGrupoClientes.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGrupoClientes.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGrupoClientes.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGrupoClientes.FillColor = Color.Transparent;
+            btnGrupoClientes.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGrupoClientes.ForeColor = Color.White;
+            btnGrupoClientes.HoverState.FillColor = Color.DarkGoldenrod;
+            btnGrupoClientes.HoverState.ForeColor = Color.Black;
+            btnGrupoClientes.Image = Properties.Resources.icon_Membership_Group__x32_;
+            btnGrupoClientes.ImageAlign = HorizontalAlignment.Left;
+            btnGrupoClientes.ImageSize = new Size(25, 25);
+            btnGrupoClientes.Location = new Point(-1, 150);
+            btnGrupoClientes.Name = "btnGrupoClientes";
+            btnGrupoClientes.PressedColor = Color.Transparent;
+            btnGrupoClientes.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnGrupoClientes.Size = new Size(200, 47);
+            btnGrupoClientes.TabIndex = 7;
+            btnGrupoClientes.Text = "Ir a Grupo Clientes";
+            btnGrupoClientes.TextAlign = HorizontalAlignment.Right;
+            btnGrupoClientes.Click += btnGrupoClientes_Click;
+            // 
             // frmClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(905, 554);
+            ClientSize = new Size(1085, 685);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -452,5 +551,8 @@
         private DataGridViewTextBoxColumn TelRes;
         private DataGridViewTextBoxColumn FechaRegistro;
         private DataGridViewTextBoxColumn Estatus;
+        private Guna.UI2.WinForms.Guna2Button btnListaCliente;
+        private Guna.UI2.WinForms.Guna2Button btnTipoCliente;
+        private Guna.UI2.WinForms.Guna2Button btnGrupoClientes;
     }
 }
