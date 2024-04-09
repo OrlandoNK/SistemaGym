@@ -52,5 +52,10 @@ namespace SistemaGym.UI.Windows
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
