@@ -352,6 +352,7 @@
             Name = "mantenimientoGrupoClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "mantenimientoGrupoClientes";
+            Load += mantenimientoGrupoClientes_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();

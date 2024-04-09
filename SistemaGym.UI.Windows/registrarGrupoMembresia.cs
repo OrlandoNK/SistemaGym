@@ -28,7 +28,7 @@ namespace SistemaGym.UI.Windows
             bool validation = true;
             string CampoObligatorio = "¡Este Campo es Obligatorio!";
             string AgregarMembresia = "¡Debe de Agregar la Membresia!";
-            string CampoNumerico = "¡Este Campo debe Ser Numerico!";
+            string CampoNumerico = "¡Este Campo debe Ser Numerico Decimal!";
 
 
             if (string.IsNullOrEmpty(TxbIDMembresia.Text))
@@ -84,8 +84,8 @@ namespace SistemaGym.UI.Windows
                 ErrorProvider.SetError(txtCantidadPersonas, AgregarMembresia);
                 validation = false;
             }
-            int CantidadPersonas;
-            if (!int.TryParse(txtCantidadPersonas.Text, out CantidadPersonas))
+            decimal CantidadPersonas;
+            if (!decimal.TryParse(txtCantidadPersonas.Text, out CantidadPersonas))
             {
                 ErrorProvider.SetError(txtCantidadPersonas, CampoNumerico);
                 validation = false;
