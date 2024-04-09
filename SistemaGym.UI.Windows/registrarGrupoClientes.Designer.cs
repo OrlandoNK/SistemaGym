@@ -493,6 +493,7 @@
             btnBuscarGrupoMembresia.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnBuscarGrupoMembresia.Size = new Size(61, 51);
             btnBuscarGrupoMembresia.TabIndex = 3;
+            btnBuscarGrupoMembresia.Click += btnBuscarGrupoMembresia_Click;
             // 
             // guna2HtmlLabel3
             // 

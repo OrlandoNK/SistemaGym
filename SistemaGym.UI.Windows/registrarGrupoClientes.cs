@@ -1,4 +1,5 @@
 ﻿using SistemaGym.BLL;
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace SistemaGym.UI.Windows
 {
@@ -71,6 +73,27 @@ namespace SistemaGym.UI.Windows
         private void registrarGrupoClientes_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBuscarGrupoMembresia_Click(object sender, EventArgs e)
+        {
+            listaGrupoMembresia listaGrupoMembresias = new listaGrupoMembresia();
+
+            if (listaGrupoMembresias.ShowDialog() == DialogResult.OK)
+            {
+                GrupoMembresiaEntity oGrupoMembresia = GrupoMembresiaBLL.GetByID((int)listaGrupoMembresias.IdGrupoMembresia);
+
+                if (oGrupoMembresia != null)
+                {
+                    this.txbIdGrupoMembresia.Text = oGrupoMembresia.IDGrupoMembresia.ToString();
+                    this.txbNombreGrupoMembresia.Text = oGrupoMembresia.Nombre.ToString();
+                    this.txbMontoTotalGrupoMembresia.Text = Convert.ToDecimal(oGrupoMembresia.MontoTotal).ToString("0.00");
+                }
+                else
+                {
+                    MessageBox.Show("Grupo de Membresia No Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
