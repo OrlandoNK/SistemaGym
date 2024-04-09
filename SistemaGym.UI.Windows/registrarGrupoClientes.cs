@@ -47,9 +47,9 @@ namespace SistemaGym.UI.Windows
                         TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
                         TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
                         TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
-                        TxbValorMembresia.Text = DT.Rows[0]["Valor"].ToString();
+                        TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
 
-                        txbMontoGrupoCliente.Text = DT.Rows[0]["Valor"].ToString();
+                        txbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
 
                     }
                     else
