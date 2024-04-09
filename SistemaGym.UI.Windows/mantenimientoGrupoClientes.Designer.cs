@@ -237,6 +237,7 @@
             btnNew.Size = new Size(221, 45);
             btnNew.TabIndex = 0;
             btnNew.Text = "Nuevo";
+            btnNew.Click += btnNew_Click;
             // 
             // panel5
             // 

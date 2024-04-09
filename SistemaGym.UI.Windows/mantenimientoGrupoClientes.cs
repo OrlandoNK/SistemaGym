@@ -21,5 +21,11 @@ namespace SistemaGym.UI.Windows
         {
             Close();
         }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            registrarGrupoClientes nuevoGrupoCliente = new registrarGrupoClientes();
+            nuevoGrupoCliente.Show();
+        }
     }
 }

@@ -193,6 +193,12 @@ namespace SistemaGym.UI.Windows
             mantenimientoListaClientes listaClientes = new mantenimientoListaClientes();
             listaClientes.Show();
         }
+
+        private void btnGrupoClientes_Click(object sender, EventArgs e)
+        {
+            mantenimientoGrupoClientes grupoClientes = new mantenimientoGrupoClientes();
+            grupoClientes.Show();
+        }
     }
 
 }
