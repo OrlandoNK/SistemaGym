@@ -72,6 +72,12 @@ namespace SistemaGym.UI.Windows
                             TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
                             TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
 
+                            decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
+                            decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
+                            decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+
+                            TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia + (MontoCredito + MontoDebito)).ToString("0.00");
+
                         }
                         else
                         {
@@ -97,6 +103,8 @@ namespace SistemaGym.UI.Windows
                             TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
                             TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
                             TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+
+                            TxbFacturaValor.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
 
                         }
                         else
@@ -131,6 +139,11 @@ namespace SistemaGym.UI.Windows
                             TxbFechaCargoCredito.Text = DT.Rows[0]["FechaCargoCredito"].ToString();
                             TxbEstatusCredito.Text = DT.Rows[0]["EstatusCredito"].ToString();
 
+                            decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
+                            decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+
+                            TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia + MontoCredito).ToString("0.00");
+
                         }
                         else
                         {
@@ -163,6 +176,11 @@ namespace SistemaGym.UI.Windows
                             TxbMontoDebito.Text = Convert.ToDecimal(DT.Rows[0]["MontoDebito"]).ToString("0.00");
                             TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
                             TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
+
+                            decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
+                            decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+
+                            TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia + MontoDebito).ToString("0.00");
 
                         }
 
