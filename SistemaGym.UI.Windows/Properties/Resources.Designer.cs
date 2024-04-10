@@ -1113,6 +1113,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_logo_button_cargo_credito_debito__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-logo-button-cargo-credito-debito-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_Membership_Group__x32_ {
             get {
                 object obj = ResourceManager.GetObject("icon-Membership-Group-[x32]", resourceCulture);

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             label1 = new Label();
             label5 = new Label();
             dtpFechaVencimiento = new DateTimePicker();
@@ -96,7 +96,6 @@
             txtCliente = new TextBox();
             panel3 = new Panel();
             groupBox2 = new GroupBox();
-            btnDevolver = new Button();
             cbMetodoPago = new ComboBox();
             label22 = new Label();
             txtMontoRecibido = new TextBox();
@@ -240,9 +239,9 @@
             // Precio
             // 
             Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle21.Format = "C2";
-            dataGridViewCellStyle21.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle6;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
@@ -259,9 +258,9 @@
             // Subtotal
             // 
             Subtotal.DataPropertyName = "Subtotal";
-            dataGridViewCellStyle22.Format = "C2";
-            dataGridViewCellStyle22.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle7;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
             Subtotal.ReadOnly = true;
@@ -270,9 +269,9 @@
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle23.Format = "C2";
-            dataGridViewCellStyle23.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle8;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
@@ -281,9 +280,9 @@
             // Impuesto
             // 
             Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle24.Format = "C2";
-            dataGridViewCellStyle24.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle9;
             Impuesto.HeaderText = "Impuesto";
             Impuesto.Name = "Impuesto";
             Impuesto.ReadOnly = true;
@@ -292,9 +291,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
-            dataGridViewCellStyle25.Format = "C2";
-            dataGridViewCellStyle25.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle10;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
@@ -779,7 +778,6 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(btnDevolver);
             groupBox2.Controls.Add(cbMetodoPago);
             groupBox2.Controls.Add(label22);
             groupBox2.Controls.Add(txtMontoRecibido);
@@ -794,23 +792,6 @@
             groupBox2.TabIndex = 25;
             groupBox2.TabStop = false;
             groupBox2.Text = "Pagos";
-            // 
-            // btnDevolver
-            // 
-            btnDevolver.Cursor = Cursors.Hand;
-            btnDevolver.FlatAppearance.BorderColor = Color.Black;
-            btnDevolver.FlatAppearance.BorderSize = 2;
-            btnDevolver.FlatStyle = FlatStyle.Flat;
-            btnDevolver.Image = Properties.Resources.icon_btn_Devolver__x32_;
-            btnDevolver.ImageAlign = ContentAlignment.MiddleRight;
-            btnDevolver.Location = new Point(268, 94);
-            btnDevolver.Name = "btnDevolver";
-            btnDevolver.Size = new Size(106, 47);
-            btnDevolver.TabIndex = 24;
-            btnDevolver.Text = "Devolver";
-            btnDevolver.TextAlign = ContentAlignment.BottomLeft;
-            btnDevolver.UseVisualStyleBackColor = true;
-            btnDevolver.Click += btnDevolver_Click;
             // 
             // cbMetodoPago
             // 
@@ -832,17 +813,18 @@
             // 
             // txtMontoRecibido
             // 
-            txtMontoRecibido.Location = new Point(140, 59);
+            txtMontoRecibido.Location = new Point(246, 59);
             txtMontoRecibido.Multiline = true;
             txtMontoRecibido.Name = "txtMontoRecibido";
             txtMontoRecibido.Size = new Size(122, 23);
             txtMontoRecibido.TabIndex = 5;
+            txtMontoRecibido.TextChanged += txtMontoRecibido_TextChanged;
             txtMontoRecibido.KeyPress += txtMontoRecibido_KeyPress;
             // 
             // label4
             // 
             label4.BackColor = Color.Transparent;
-            label4.Location = new Point(140, 35);
+            label4.Location = new Point(246, 35);
             label4.Name = "label4";
             label4.Size = new Size(122, 21);
             label4.TabIndex = 1;
@@ -869,7 +851,7 @@
             // txtDevuelta
             // 
             txtDevuelta.Enabled = false;
-            txtDevuelta.Location = new Point(140, 118);
+            txtDevuelta.Location = new Point(246, 118);
             txtDevuelta.Multiline = true;
             txtDevuelta.Name = "txtDevuelta";
             txtDevuelta.ReadOnly = true;
@@ -880,7 +862,7 @@
             // label23
             // 
             label23.BackColor = Color.Transparent;
-            label23.Location = new Point(140, 94);
+            label23.Location = new Point(246, 94);
             label23.Name = "label23";
             label23.Size = new Size(122, 21);
             label23.TabIndex = 2;
@@ -992,6 +974,5 @@
         private Label label23;
         private ComboBox cbMetodoPago;
         private Label label22;
-        private Button btnDevolver;
     }
 }

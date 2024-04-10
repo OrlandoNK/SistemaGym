@@ -37,20 +37,36 @@ namespace SistemaGym.UI.Windows
                 try
                 {
                     int idCliente = listaClientes.IdCliente;
-                    DataTable DT = clientesBLL.GetClientMembreship(idCliente);
+                    DataTable DT = clientesBLL.GetClientCargos(idCliente);
 
                     if (DT.Rows.Count > 0)
                     {
+                        /* Llenar Campos de Cliente */
                         TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
                         TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
                         TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
                         TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
                         TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
 
+                        /* Llenar Campos de Membresia */
                         TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
                         TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
                         TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
                         TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+
+                        /* Llenar Campos de CargoCredito */
+                        TxbIDCargoCredito.Text = DT.Rows[0]["IDCargoCredito"].ToString();
+                        TxbCargoCredito.Text = DT.Rows[0]["CargoCredito"].ToString();
+                        TxbMontoCredito.Text = Convert.ToDecimal(DT.Rows[0]["MontoCredito"]).ToString("0.00");
+                        TxbFechaCargoCredito.Text = DT.Rows[0]["FechaCargoCredito"].ToString();
+                        TxbEstatusCredito.Text = DT.Rows[0]["EstatusCredito"].ToString();
+
+                        /* Llenar Campos de CargoDebito */
+                        TxbIDCargoDebito.Text = DT.Rows[0]["IDCargoDebito"].ToString();
+                        TxbCargoDebito.Text = DT.Rows[0]["CargoDebito"].ToString();
+                        TxbMontoDebito.Text = Convert.ToDecimal(DT.Rows[0]["MontoDebito"]).ToString("0.00");
+                        TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
+                        TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
 
                     }
                     else
@@ -76,34 +92,6 @@ namespace SistemaGym.UI.Windows
 
             TxbFacturaNCF.Text = "B0100000005";
         }
-
-        private void btnFacturarMembresia_Click(object sender, EventArgs e)
-        {
-            if (!ValidateToFacturate())
-            {
-
-                return;
-            }
-
-            try
-            {
-                decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
-                int FacturaCC = int.Parse(TxbFacturaMontoCargoCredito.Text);
-                int FacturaCD = int.Parse(TxbFacturaMontoCargoDebito.Text);
-
-                TxbFacturaValor.Text = Convert.ToString(ValorMembresia + (FacturaCC + FacturaCD));
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Se produjo un error al Intentar Facturar. \nDetalles a continuación: \n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se produjo un error al Intentar Facturar. \nDetalles a continuación: \n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
         private bool ValidarCampos()
         {
             bool validacion = true;
@@ -189,8 +177,8 @@ namespace SistemaGym.UI.Windows
             nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
             nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
             nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
-            nuevaFacturaMembresia.CargoCredito = Convert.ToInt32(TxbFacturaIDCargoCredito.Text);
-            nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbFacturaIDCargoDebito.Text);
+            nuevaFacturaMembresia.CargoCredito = Convert.ToInt32(TxbIDCargoCredito.Text);
+            nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbIDCargoDebito.Text);
             nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
             nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
             nuevaFacturaMembresia.FechaEmision = DateTime.Now;
@@ -212,28 +200,6 @@ namespace SistemaGym.UI.Windows
                 MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex1.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private bool ValidateToFacturate()
-        {
-            errorProvider.Clear();
-            bool facturarValidar = true;
-            string ObligatorioParaFacturar = "¡Debe Llenar este Campo para Facturar!";
-
-            if (string.IsNullOrEmpty(TxbValorMembresia.Text))
-            {
-                errorProvider.SetError(TxbValorMembresia, ObligatorioParaFacturar);
-                facturarValidar = false;
-            }
-            decimal ValorMembresia;
-            if (!decimal.TryParse(TxbValorMembresia.Text, out ValorMembresia))
-            {
-                errorProvider.SetError(TxbValorMembresia, ObligatorioParaFacturar);
-                facturarValidar = false;
-            }
-            
-
-            return facturarValidar;
-        }
         private void LimpiarTodosLosCampos()
         {
             TxbIDMembresia.Clear();
@@ -251,5 +217,16 @@ namespace SistemaGym.UI.Windows
             TxbFacturaValor.Clear();
         }
 
+        private void btnCargoCredito_Click(object sender, EventArgs e)
+        {
+            nuevoCargoCredito newCargoCredito = new nuevoCargoCredito();
+            newCargoCredito.Show();
+        }
+
+        private void btnCargosDebito_Click(object sender, EventArgs e)
+        {
+            nuevoCargoDebito newCargoDebito = new nuevoCargoDebito();
+            newCargoDebito.Show();
+        }
     }
 }

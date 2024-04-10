@@ -125,6 +125,29 @@ namespace SistemaGym.UI.Windows
 
         }
 
+        private void CalcularDevuelta()
+        {
+            if (decimal.TryParse(txtMontoTotal.Text, out decimal MontoTotal) &&
+                decimal.TryParse(txtMontoRecibido.Text, out decimal MontoRecibido))
+            {
+                decimal devuelta = MontoRecibido - MontoTotal;
+
+                if (devuelta >= 0)
+                {
+                    txtDevuelta.Text = devuelta.ToString("N2");
+                }
+                else
+                {
+                    txtDevuelta.Text = "0.00";
+                }
+
+            }
+            else
+            {
+                txtDevuelta.Text = "0.00";
+            }
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (!ValidarDetalle())
@@ -358,6 +381,11 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(txtMontoTotal, "¡El Monto Total es Obligatorio!");
                 validation = false;
             }
+        }
+
+        private void txtMontoRecibido_TextChanged(object sender, EventArgs e)
+        {
+            CalcularDevuelta();
         }
     }
 }
