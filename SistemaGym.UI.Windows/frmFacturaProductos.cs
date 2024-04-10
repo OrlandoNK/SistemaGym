@@ -348,47 +348,7 @@ namespace SistemaGym.UI.Windows
             }
         }
         
-        private void btnDevolver_Click(object sender, EventArgs e)
-        {
-            errorProvider.Clear();
-            bool validation = true;
-            decimal MontoRecibido = decimal.Parse(txtMontoRecibido.Text);
-            decimal MontoTotal = decimal.Parse(txtMontoTotal.Text);
-
-            if (MontoRecibido > MontoTotal)
-            {
-                txtDevuelta.Text = Convert.ToDecimal(MontoRecibido - MontoTotal).ToString("0.00");
-            }
-            else if (MontoRecibido < MontoTotal)
-            {
-                MessageBox.Show("¡El Monto esta Incompleto para Pagar!", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (MontoRecibido == MontoTotal)
-            {
-                txtDevuelta.Text = "0";
-            }
-            if (txtMontoRecibido.Text == "0")
-            {
-                errorProvider.SetError(txtMontoRecibido, "¡El Monto Recibido es Obligatorio!");
-                validation = false;
-            }
-            if (!decimal.TryParse(txtMontoRecibido.Text, out MontoRecibido))
-            {
-                errorProvider.SetError(txtMontoRecibido, "¡El Monto Recibido es Obligatorio!");
-                validation = false;
-            }
-            if (txtMontoTotal.Text == "0")
-            {
-                errorProvider.SetError(txtMontoTotal, "¡El Monto Total es Obligatorio!");
-                validation = false;
-            }
-            if (!decimal.TryParse(txtMontoTotal.Text, out MontoRecibido))
-            {
-                errorProvider.SetError(txtMontoTotal, "¡El Monto Total es Obligatorio!");
-                validation = false;
-            }
-        }
-
+        
         private void txtMontoRecibido_TextChanged(object sender, EventArgs e)
         {
             CalcularDevuelta();
