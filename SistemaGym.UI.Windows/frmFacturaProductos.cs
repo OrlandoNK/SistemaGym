@@ -278,7 +278,7 @@ namespace SistemaGym.UI.Windows
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-             
+
                 e.Handled = true;
             }
         }
@@ -287,7 +287,7 @@ namespace SistemaGym.UI.Windows
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-          
+
                 e.Handled = true;
             }
         }
@@ -296,7 +296,7 @@ namespace SistemaGym.UI.Windows
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-               
+
                 e.Handled = true;
             }
         }
@@ -306,17 +306,52 @@ namespace SistemaGym.UI.Windows
             DetalleFacturaProductoEntity detalleFactura = new DetalleFacturaProductoEntity();
 
             int cantidad = detalleFactura.Cantidad;
-            int stock = producto.Stock; 
+            int stock = producto.Stock;
             if (cantidad <= stock)
             {
                 stock -= cantidad;
-                
+
             }
             else
             {
                 MessageBox.Show("La cantidad de producto no puede exceder el stock");
             }
 
+        }
+
+        private void btnDevolver_Click(object sender, EventArgs e)
+        {
+            decimal MontoRecibido = decimal.Parse(txtMontoRecibido.Text);
+            decimal MontoTotal = decimal.Parse(txtMontoTotal.Text);
+
+            if (MontoRecibido > MontoTotal)
+            {
+                txtDevuelta.Text = Convert.ToDecimal(MontoRecibido - MontoTotal).ToString("0.00");
+            }
+            else if (MontoRecibido < MontoTotal)
+            {
+                MessageBox.Show("¡El Monto esta Incompleto para Pagar!", SISTEMA, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (MontoRecibido == MontoTotal)
+            {
+               txtDevuelta.Text = "0";
+            }
+            else if (string.IsNullOrEmpty(txtMontoRecibido.Text))
+            {
+                errorProvider.SetError(txtMontoRecibido, "¡El Monto Recibido es Obligatorio!");
+            }
+            else if (!decimal.TryParse(txtMontoRecibido.Text, out MontoRecibido))
+            {
+                errorProvider.SetError(txtMontoRecibido, "¡El Monto Recibido es Obligatorio!");
+            }
+            else if (string.IsNullOrEmpty(txtMontoTotal.Text))
+            {
+                errorProvider.SetError(txtMontoTotal, "¡El Monto Total es Obligatorio!");
+            }
+            else if (!decimal.TryParse(txtMontoTotal.Text, out MontoRecibido))
+            {
+                errorProvider.SetError(txtMontoTotal, "¡El Monto Total es Obligatorio!");
+            }
         }
     }
 }
