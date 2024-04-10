@@ -10,11 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Guna.UI2.Native.WinApi;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemaGym.UI.Windows
 {
     public partial class frmFacturaProductos : Form
     {
+        PagoEntity Pago = new PagoEntity();
         FacturaProductoEntity oFactura = new FacturaProductoEntity();
         const string SISTEMA = "Sistema Gestión Gimnasio (COMFORT GYM) dice";
         public frmFacturaProductos()
@@ -94,9 +96,10 @@ namespace SistemaGym.UI.Windows
             txtNCF.Text = "B0100000005";
             dgvProductos.AutoGenerateColumns = false;
             dgvProductos.DataSource = null;
-
-
-
+            txtMontoTotal.Text = 0.ToString("N2");
+            txtMontoRecibido.Text = "0";
+            txtDevuelta.Text = "0";
+            cbMetodoPago.Text = Convert.ToString(cbMetodoPago.SelectedItem);
         }
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
@@ -119,6 +122,7 @@ namespace SistemaGym.UI.Windows
             InicializarControles();
             txtIDUsuario.Text = gestioUsuarioEntities.IDUserLogged;
             txtUsuario.Text = gestioUsuarioEntities.usernameLogged;
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -135,6 +139,7 @@ namespace SistemaGym.UI.Windows
             detalleFactura.Precio = decimal.Parse(txtPrecio.Text);
             detalleFactura.Descuento = decimal.Parse(txtDescuento.Text);
             oFactura.Detalles.Add(detalleFactura);
+            txtMontoTotal.Text = txtTotal.SelectedText;
             dgvProductos.DataSource = null;
             dgvProductos.DataSource = oFactura.Detalles;
             txtSubTotal.Text = oFactura.SubTotal.ToString("N2");
@@ -145,8 +150,10 @@ namespace SistemaGym.UI.Windows
             txtTotalDescuento.Text = oFactura.TotalDescuento.ToString();
             txtImpuesto.Text = oFactura.TotalItbis.ToString();
             txtTotal.Text = oFactura.Total.ToString();
+            txtMontoTotal.Text = oFactura.Total.ToString();
             InicializarDetalles();
             CargarProducto();
+            stockControl();
         }
         private void InicializarDetalles()
         {
@@ -176,12 +183,21 @@ namespace SistemaGym.UI.Windows
             {
                 return;
             }
+
             oFactura.IDCliente = int.Parse(txtIDCliente.Text);
             oFactura.IDUsuario = int.Parse(txtIDUsuario.Text);
             oFactura.Estatus = "Activo";
             oFactura.FechaEmision = DateTime.Now;
             oFactura.FechaVencimiento = DateTime.Parse(dtpFechaVencimiento.Text);
             oFactura.NCF = txtNCF.Text;
+
+            Pago.MetodoPago = cbMetodoPago.Text;
+            Pago.Monto = decimal.Parse(txtTotal.Text);
+            Pago.Pagado = decimal.Parse(txtMontoRecibido.Text);
+            Pago.Devuelta = decimal.Parse(txtDevuelta.Text);
+            Pago.FechaPago = DateTime.Now;
+            Pago.Estatus = "Pagado";
+            oFactura.Pagos.Add(Pago);
             try
             {
                 FacturacionProductoBLL.Guardar(oFactura);
@@ -224,6 +240,18 @@ namespace SistemaGym.UI.Windows
                 resultado = false;
             }
             */
+            decimal montorecibido = decimal.Parse(txtMontoRecibido.Text);
+            if (montorecibido <= 0)
+            {
+                errorProvider.SetError(txtMontoRecibido, "Introduzca un monto valido");
+                resultado = false;
+            }
+            decimal devuelta = decimal.Parse(txtMontoRecibido.Text);
+            if (devuelta < 0)
+            {
+                errorProvider.SetError(txtDevuelta, "Introduzca una devuelta valida");
+                resultado = false;
+            }
             if (string.IsNullOrEmpty(txtUsuario.Text))
             {
                 errorProvider.SetError(txtNCF, "El Usuario Es Obligatorio");
@@ -235,6 +263,60 @@ namespace SistemaGym.UI.Windows
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+
+                e.Handled = true;
+            }
+        }
+
+        private void txtDevuelta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+             
+                e.Handled = true;
+            }
+        }
+
+        private void txtMontoRecibido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+          
+                e.Handled = true;
+            }
+        }
+
+        private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+               
+                e.Handled = true;
+            }
+        }
+        private void stockControl()
+        {
+            ProductoEntity producto = new ProductoEntity();
+            DetalleFacturaProductoEntity detalleFactura = new DetalleFacturaProductoEntity();
+
+            int cantidad = detalleFactura.Cantidad;
+            int stock = producto.Stock; 
+            if (cantidad <= stock)
+            {
+                stock -= cantidad;
+                
+            }
+            else
+            {
+                MessageBox.Show("La cantidad de producto no puede exceder el stock");
+            }
+
         }
     }
 }

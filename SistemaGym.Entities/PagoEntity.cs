@@ -16,6 +16,10 @@ namespace SistemaGym.Entities
         public string MetodoPago { get; set; }
 
         public decimal Monto { get; set; }
+        
+        public decimal Pagado { get; set; }
+
+        public decimal Devuelta { get; set; }
 
         public DateTime FechaPago { get; set; }
 

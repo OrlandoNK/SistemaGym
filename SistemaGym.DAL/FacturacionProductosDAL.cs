@@ -61,9 +61,30 @@ namespace SistemaGym.DAL
                     cmddetalle.Parameters.AddWithValue("@total", detalle.Total);
                     detalle.IDDetalleFacturaProducto = Convert.ToInt32(cmddetalle.ExecuteScalar());
 
+                    ProductoDAL.ActualizarStock(detalle.IDProducto, detalle.Cantidad);
 
-                
                 }
+
+                string insertarPagoQuery = "INSERT INTO Pago(IDFacturaProducto, MetodoPago, Monto, Pagado, Devuelta, FechaPago, Estatus) " +
+           "VALUES(@idfacturaproducto, @metodopago, @monto, @pagado, @devuelta, @fechapago, @estatus); " +
+           "SELECT SCOPE_IDENTITY();";
+
+                SqlCommand cmdPago = new SqlCommand(insertarPagoQuery, Conexion, transaccion);
+
+                foreach (var pago in factura.Pagos)
+                {
+                    cmdPago.Parameters.Clear();
+                    cmdPago.Parameters.AddWithValue("@idfacturaproducto", factura.IDFactura);
+                    cmdPago.Parameters.AddWithValue("@idfacturamembresia", pago.IDFacturaMembresia);
+                    cmdPago.Parameters.AddWithValue("@metodopago", pago.MetodoPago);
+                    cmdPago.Parameters.AddWithValue("@monto", pago.Monto);
+                    cmdPago.Parameters.AddWithValue("@pagado", pago.Pagado);
+                    cmdPago.Parameters.AddWithValue("@devuelta", pago.Devuelta);
+                    cmdPago.Parameters.AddWithValue("@fechapago", pago.FechaPago);
+                    cmdPago.Parameters.AddWithValue("@estatus", pago.Estatus);
+                    pago.IDPago = Convert.ToInt32(cmdPago.ExecuteScalar());
+                }
+
 
                 transaccion.Commit();
             } 
