@@ -47,6 +47,12 @@
             btnCargoCredito = new Guna.UI2.WinForms.Guna2Button();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
+            groupBox5 = new GroupBox();
+            rbtnNoTieneCargoDebito = new RadioButton();
+            rbtnSiTieneCargoDebito = new RadioButton();
+            groupBox4 = new GroupBox();
+            rbtnNoTieneCargoCredito = new RadioButton();
+            rbtnSiTieneCargoCredito = new RadioButton();
             groupBox10 = new GroupBox();
             TxbFacturaValor = new TextBox();
             label35 = new Label();
@@ -101,17 +107,13 @@
             TxbDescrMembresia = new TextBox();
             label2 = new Label();
             errorProvider = new ErrorProvider(components);
-            rbtnSiTieneCargoCredito = new RadioButton();
-            rbtnNoTieneCargoCredito = new RadioButton();
-            rbtnNoTieneCargoDebito = new RadioButton();
-            rbtnSiTieneCargoDebito = new RadioButton();
-            groupBox4 = new GroupBox();
-            groupBox5 = new GroupBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
+            groupBox5.SuspendLayout();
+            groupBox4.SuspendLayout();
             groupBox10.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox9.SuspendLayout();
@@ -119,8 +121,6 @@
             groupBox8.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
-            groupBox4.SuspendLayout();
-            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -296,6 +296,78 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1072, 584);
             panel4.TabIndex = 3;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(rbtnNoTieneCargoDebito);
+            groupBox5.Controls.Add(rbtnSiTieneCargoDebito);
+            groupBox5.Location = new Point(856, 215);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(200, 100);
+            groupBox5.TabIndex = 35;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "¿Tiene Cargo Débito?";
+            // 
+            // rbtnNoTieneCargoDebito
+            // 
+            rbtnNoTieneCargoDebito.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnNoTieneCargoDebito.Cursor = Cursors.Hand;
+            rbtnNoTieneCargoDebito.Image = Properties.Resources.checkbox_NO__x32_;
+            rbtnNoTieneCargoDebito.ImageAlign = ContentAlignment.MiddleLeft;
+            rbtnNoTieneCargoDebito.Location = new Point(103, 35);
+            rbtnNoTieneCargoDebito.Name = "rbtnNoTieneCargoDebito";
+            rbtnNoTieneCargoDebito.Size = new Size(66, 43);
+            rbtnNoTieneCargoDebito.TabIndex = 33;
+            rbtnNoTieneCargoDebito.TabStop = true;
+            rbtnNoTieneCargoDebito.UseVisualStyleBackColor = true;
+            // 
+            // rbtnSiTieneCargoDebito
+            // 
+            rbtnSiTieneCargoDebito.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnSiTieneCargoDebito.Cursor = Cursors.Hand;
+            rbtnSiTieneCargoDebito.Image = Properties.Resources.checkbox_YES__x32_;
+            rbtnSiTieneCargoDebito.ImageAlign = ContentAlignment.MiddleLeft;
+            rbtnSiTieneCargoDebito.Location = new Point(31, 35);
+            rbtnSiTieneCargoDebito.Name = "rbtnSiTieneCargoDebito";
+            rbtnSiTieneCargoDebito.Size = new Size(66, 43);
+            rbtnSiTieneCargoDebito.TabIndex = 32;
+            rbtnSiTieneCargoDebito.TabStop = true;
+            rbtnSiTieneCargoDebito.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(rbtnNoTieneCargoCredito);
+            groupBox4.Controls.Add(rbtnSiTieneCargoCredito);
+            groupBox4.Location = new Point(390, 215);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(200, 100);
+            groupBox4.TabIndex = 34;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "¿Tiene Cargo Crédito?";
+            // 
+            // rbtnNoTieneCargoCredito
+            // 
+            rbtnNoTieneCargoCredito.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnNoTieneCargoCredito.Cursor = Cursors.Hand;
+            rbtnNoTieneCargoCredito.Image = Properties.Resources.checkbox_NO__x32_;
+            rbtnNoTieneCargoCredito.Location = new Point(103, 35);
+            rbtnNoTieneCargoCredito.Name = "rbtnNoTieneCargoCredito";
+            rbtnNoTieneCargoCredito.Size = new Size(66, 43);
+            rbtnNoTieneCargoCredito.TabIndex = 31;
+            rbtnNoTieneCargoCredito.TabStop = true;
+            rbtnNoTieneCargoCredito.UseVisualStyleBackColor = true;
+            // 
+            // rbtnSiTieneCargoCredito
+            // 
+            rbtnSiTieneCargoCredito.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnSiTieneCargoCredito.Cursor = Cursors.Hand;
+            rbtnSiTieneCargoCredito.Image = Properties.Resources.checkbox_YES__x32_;
+            rbtnSiTieneCargoCredito.Location = new Point(31, 35);
+            rbtnSiTieneCargoCredito.Name = "rbtnSiTieneCargoCredito";
+            rbtnSiTieneCargoCredito.Size = new Size(66, 43);
+            rbtnSiTieneCargoCredito.TabIndex = 30;
+            rbtnSiTieneCargoCredito.TabStop = true;
+            rbtnSiTieneCargoCredito.UseVisualStyleBackColor = true;
             // 
             // groupBox10
             // 
@@ -850,78 +922,6 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // rbtnSiTieneCargoCredito
-            // 
-            rbtnSiTieneCargoCredito.CheckAlign = ContentAlignment.MiddleRight;
-            rbtnSiTieneCargoCredito.Cursor = Cursors.Hand;
-            rbtnSiTieneCargoCredito.Image = Properties.Resources.checkbox_YES__x32_;
-            rbtnSiTieneCargoCredito.Location = new Point(31, 35);
-            rbtnSiTieneCargoCredito.Name = "rbtnSiTieneCargoCredito";
-            rbtnSiTieneCargoCredito.Size = new Size(66, 43);
-            rbtnSiTieneCargoCredito.TabIndex = 30;
-            rbtnSiTieneCargoCredito.TabStop = true;
-            rbtnSiTieneCargoCredito.UseVisualStyleBackColor = true;
-            // 
-            // rbtnNoTieneCargoCredito
-            // 
-            rbtnNoTieneCargoCredito.CheckAlign = ContentAlignment.MiddleRight;
-            rbtnNoTieneCargoCredito.Cursor = Cursors.Hand;
-            rbtnNoTieneCargoCredito.Image = Properties.Resources.checkbox_NO__x32_;
-            rbtnNoTieneCargoCredito.Location = new Point(103, 35);
-            rbtnNoTieneCargoCredito.Name = "rbtnNoTieneCargoCredito";
-            rbtnNoTieneCargoCredito.Size = new Size(66, 43);
-            rbtnNoTieneCargoCredito.TabIndex = 31;
-            rbtnNoTieneCargoCredito.TabStop = true;
-            rbtnNoTieneCargoCredito.UseVisualStyleBackColor = true;
-            // 
-            // rbtnNoTieneCargoDebito
-            // 
-            rbtnNoTieneCargoDebito.CheckAlign = ContentAlignment.MiddleRight;
-            rbtnNoTieneCargoDebito.Cursor = Cursors.Hand;
-            rbtnNoTieneCargoDebito.Image = Properties.Resources.checkbox_NO__x32_;
-            rbtnNoTieneCargoDebito.ImageAlign = ContentAlignment.MiddleLeft;
-            rbtnNoTieneCargoDebito.Location = new Point(103, 35);
-            rbtnNoTieneCargoDebito.Name = "rbtnNoTieneCargoDebito";
-            rbtnNoTieneCargoDebito.Size = new Size(66, 43);
-            rbtnNoTieneCargoDebito.TabIndex = 33;
-            rbtnNoTieneCargoDebito.TabStop = true;
-            rbtnNoTieneCargoDebito.UseVisualStyleBackColor = true;
-            // 
-            // rbtnSiTieneCargoDebito
-            // 
-            rbtnSiTieneCargoDebito.CheckAlign = ContentAlignment.MiddleRight;
-            rbtnSiTieneCargoDebito.Cursor = Cursors.Hand;
-            rbtnSiTieneCargoDebito.Image = Properties.Resources.checkbox_YES__x32_;
-            rbtnSiTieneCargoDebito.ImageAlign = ContentAlignment.MiddleLeft;
-            rbtnSiTieneCargoDebito.Location = new Point(31, 35);
-            rbtnSiTieneCargoDebito.Name = "rbtnSiTieneCargoDebito";
-            rbtnSiTieneCargoDebito.Size = new Size(66, 43);
-            rbtnSiTieneCargoDebito.TabIndex = 32;
-            rbtnSiTieneCargoDebito.TabStop = true;
-            rbtnSiTieneCargoDebito.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(rbtnNoTieneCargoCredito);
-            groupBox4.Controls.Add(rbtnSiTieneCargoCredito);
-            groupBox4.Location = new Point(390, 215);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(200, 100);
-            groupBox4.TabIndex = 34;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "¿Tiene Cargo Crédito?";
-            // 
-            // groupBox5
-            // 
-            groupBox5.Controls.Add(rbtnNoTieneCargoDebito);
-            groupBox5.Controls.Add(rbtnSiTieneCargoDebito);
-            groupBox5.Location = new Point(856, 215);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(200, 100);
-            groupBox5.TabIndex = 35;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "¿Tiene Cargo Débito?";
-            // 
             // nuevaFacturaMembresia
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -942,6 +942,8 @@
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
             groupBox10.ResumeLayout(false);
             groupBox10.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -955,8 +957,6 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
-            groupBox4.ResumeLayout(false);
-            groupBox5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
