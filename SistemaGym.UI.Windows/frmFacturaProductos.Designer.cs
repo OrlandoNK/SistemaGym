@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
             label1 = new Label();
             label5 = new Label();
             dtpFechaVencimiento = new DateTimePicker();
@@ -96,6 +96,7 @@
             txtCliente = new TextBox();
             panel3 = new Panel();
             groupBox2 = new GroupBox();
+            btnDevolver = new Button();
             cbMetodoPago = new ComboBox();
             label22 = new Label();
             txtMontoRecibido = new TextBox();
@@ -104,7 +105,6 @@
             label19 = new Label();
             txtDevuelta = new TextBox();
             label23 = new Label();
-            btnDevolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
@@ -128,17 +128,19 @@
             // 
             // label5
             // 
-            label5.Location = new Point(399, 97);
+            label5.Location = new Point(437, 97);
             label5.Name = "label5";
-            label5.Size = new Size(213, 23);
+            label5.Size = new Size(175, 23);
             label5.TabIndex = 4;
             label5.Text = "Fecha Vencimiento";
             // 
             // dtpFechaVencimiento
             // 
-            dtpFechaVencimiento.Location = new Point(399, 123);
+            dtpFechaVencimiento.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpFechaVencimiento.Format = DateTimePickerFormat.Short;
+            dtpFechaVencimiento.Location = new Point(437, 123);
             dtpFechaVencimiento.Name = "dtpFechaVencimiento";
-            dtpFechaVencimiento.Size = new Size(213, 23);
+            dtpFechaVencimiento.Size = new Size(175, 23);
             dtpFechaVencimiento.TabIndex = 7;
             // 
             // label3
@@ -209,12 +211,12 @@
             dgvProductos.BackgroundColor = Color.White;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { IDDetalle, IDProducto, Precio, Cantidad, Subtotal, Descuento, Impuesto, Total });
-            dgvProductos.Location = new Point(395, 179);
+            dgvProductos.Location = new Point(396, 179);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersVisible = false;
             dgvProductos.RowTemplate.Height = 25;
-            dgvProductos.Size = new Size(576, 427);
+            dgvProductos.Size = new Size(575, 360);
             dgvProductos.TabIndex = 12;
             // 
             // IDDetalle
@@ -238,9 +240,9 @@
             // Precio
             // 
             Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle11.Format = "C2";
-            dataGridViewCellStyle11.NullValue = null;
-            Precio.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle21.Format = "C2";
+            dataGridViewCellStyle21.NullValue = null;
+            Precio.DefaultCellStyle = dataGridViewCellStyle21;
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
             Precio.ReadOnly = true;
@@ -257,9 +259,9 @@
             // Subtotal
             // 
             Subtotal.DataPropertyName = "Subtotal";
-            dataGridViewCellStyle12.Format = "C2";
-            dataGridViewCellStyle12.NullValue = null;
-            Subtotal.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle22.Format = "C2";
+            dataGridViewCellStyle22.NullValue = null;
+            Subtotal.DefaultCellStyle = dataGridViewCellStyle22;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
             Subtotal.ReadOnly = true;
@@ -268,9 +270,9 @@
             // Descuento
             // 
             Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle13.Format = "C2";
-            dataGridViewCellStyle13.NullValue = null;
-            Descuento.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle23.Format = "C2";
+            dataGridViewCellStyle23.NullValue = null;
+            Descuento.DefaultCellStyle = dataGridViewCellStyle23;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
             Descuento.ReadOnly = true;
@@ -279,9 +281,9 @@
             // Impuesto
             // 
             Impuesto.DataPropertyName = "Itbis";
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = null;
-            Impuesto.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle24.Format = "C2";
+            dataGridViewCellStyle24.NullValue = null;
+            Impuesto.DefaultCellStyle = dataGridViewCellStyle24;
             Impuesto.HeaderText = "Impuesto";
             Impuesto.Name = "Impuesto";
             Impuesto.ReadOnly = true;
@@ -290,9 +292,9 @@
             // Total
             // 
             Total.DataPropertyName = "Total";
-            dataGridViewCellStyle15.Format = "C2";
-            dataGridViewCellStyle15.NullValue = null;
-            Total.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle25.Format = "C2";
+            dataGridViewCellStyle25.NullValue = null;
+            Total.DefaultCellStyle = dataGridViewCellStyle25;
             Total.HeaderText = "Total";
             Total.Name = "Total";
             Total.ReadOnly = true;
@@ -314,7 +316,7 @@
             groupBox3.Controls.Add(txtDescuento);
             groupBox3.Location = new Point(9, 179);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(380, 165);
+            groupBox3.Size = new Size(380, 202);
             groupBox3.TabIndex = 13;
             groupBox3.TabStop = false;
             groupBox3.Text = "Detalles Producto";
@@ -325,11 +327,14 @@
             btnAgregar.FlatAppearance.BorderColor = Color.Black;
             btnAgregar.FlatAppearance.BorderSize = 2;
             btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.Image = Properties.Resources._btnAgregarProductooo;
-            btnAgregar.Location = new Point(314, 93);
+            btnAgregar.Image = Properties.Resources.icon_btn_Add_Product__x32_;
+            btnAgregar.ImageAlign = ContentAlignment.MiddleRight;
+            btnAgregar.Location = new Point(224, 147);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(57, 49);
+            btnAgregar.Size = new Size(144, 49);
             btnAgregar.TabIndex = 11;
+            btnAgregar.Text = "Agregar Producto";
+            btnAgregar.TextAlign = ContentAlignment.BottomLeft;
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
@@ -375,20 +380,23 @@
             btnBuscarProducto.FlatAppearance.BorderColor = Color.Black;
             btnBuscarProducto.FlatAppearance.BorderSize = 2;
             btnBuscarProducto.FlatStyle = FlatStyle.Flat;
-            btnBuscarProducto.Image = Properties.Resources._BotonBuscarProducto;
-            btnBuscarProducto.Location = new Point(248, 93);
+            btnBuscarProducto.Image = Properties.Resources.icon_btn_search_producto__x32_;
+            btnBuscarProducto.ImageAlign = ContentAlignment.MiddleRight;
+            btnBuscarProducto.Location = new Point(224, 93);
             btnBuscarProducto.Name = "btnBuscarProducto";
-            btnBuscarProducto.Size = new Size(57, 49);
+            btnBuscarProducto.Size = new Size(144, 49);
             btnBuscarProducto.TabIndex = 10;
+            btnBuscarProducto.Text = "Buscar Producto";
+            btnBuscarProducto.TextAlign = ContentAlignment.BottomLeft;
             btnBuscarProducto.UseVisualStyleBackColor = true;
             btnBuscarProducto.Click += btnBuscarProducto_Click;
             // 
             // label13
             // 
             label13.BackColor = Color.Transparent;
-            label13.Location = new Point(119, 93);
+            label13.Location = new Point(91, 93);
             label13.Name = "label13";
-            label13.Size = new Size(104, 21);
+            label13.Size = new Size(76, 21);
             label13.TabIndex = 9;
             label13.Text = "Descuento";
             // 
@@ -415,7 +423,7 @@
             txtCantidad.Location = new Point(9, 119);
             txtCantidad.Multiline = true;
             txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(104, 23);
+            txtCantidad.Size = new Size(76, 23);
             txtCantidad.TabIndex = 7;
             txtCantidad.KeyPress += txtCantidad_KeyPress;
             // 
@@ -424,16 +432,16 @@
             label12.BackColor = Color.Transparent;
             label12.Location = new Point(9, 93);
             label12.Name = "label12";
-            label12.Size = new Size(104, 23);
+            label12.Size = new Size(76, 23);
             label12.TabIndex = 3;
             label12.Text = "Cantidad";
             // 
             // txtDescuento
             // 
-            txtDescuento.Location = new Point(119, 119);
+            txtDescuento.Location = new Point(91, 119);
             txtDescuento.Multiline = true;
             txtDescuento.Name = "txtDescuento";
-            txtDescuento.Size = new Size(104, 23);
+            txtDescuento.Size = new Size(76, 23);
             txtDescuento.TabIndex = 8;
             txtDescuento.KeyPress += txtDescuento_KeyPress;
             // 
@@ -481,7 +489,7 @@
             // 
             label14.BackColor = Color.Transparent;
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(5, 556);
+            label14.Location = new Point(591, 556);
             label14.Name = "label14";
             label14.Size = new Size(89, 21);
             label14.TabIndex = 17;
@@ -491,7 +499,7 @@
             // 
             label15.BackColor = Color.Transparent;
             label15.ForeColor = Color.Black;
-            label15.Location = new Point(201, 556);
+            label15.Location = new Point(787, 556);
             label15.Name = "label15";
             label15.Size = new Size(89, 21);
             label15.TabIndex = 18;
@@ -501,7 +509,7 @@
             // 
             label16.BackColor = Color.Transparent;
             label16.ForeColor = Color.Black;
-            label16.Location = new Point(100, 556);
+            label16.Location = new Point(686, 556);
             label16.Name = "label16";
             label16.Size = new Size(89, 21);
             label16.TabIndex = 19;
@@ -511,7 +519,7 @@
             // 
             label17.BackColor = Color.Transparent;
             label17.ForeColor = Color.Black;
-            label17.Location = new Point(296, 556);
+            label17.Location = new Point(882, 556);
             label17.Name = "label17";
             label17.Size = new Size(89, 21);
             label17.TabIndex = 20;
@@ -519,7 +527,7 @@
             // 
             // txtSubTotal
             // 
-            txtSubTotal.Location = new Point(5, 581);
+            txtSubTotal.Location = new Point(591, 581);
             txtSubTotal.Multiline = true;
             txtSubTotal.Name = "txtSubTotal";
             txtSubTotal.ReadOnly = true;
@@ -528,7 +536,7 @@
             // 
             // txtImpuesto
             // 
-            txtImpuesto.Location = new Point(100, 581);
+            txtImpuesto.Location = new Point(686, 581);
             txtImpuesto.Multiline = true;
             txtImpuesto.Name = "txtImpuesto";
             txtImpuesto.ReadOnly = true;
@@ -537,7 +545,7 @@
             // 
             // txtTotalDescuento
             // 
-            txtTotalDescuento.Location = new Point(201, 581);
+            txtTotalDescuento.Location = new Point(787, 581);
             txtTotalDescuento.Multiline = true;
             txtTotalDescuento.Name = "txtTotalDescuento";
             txtTotalDescuento.ReadOnly = true;
@@ -546,7 +554,7 @@
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(296, 581);
+            txtTotal.Location = new Point(882, 581);
             txtTotal.Multiline = true;
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
@@ -676,8 +684,9 @@
             // 
             btnBuscarCliente.Cursor = Cursors.Hand;
             btnBuscarCliente.FlatAppearance.BorderColor = Color.Black;
+            btnBuscarCliente.FlatAppearance.BorderSize = 2;
             btnBuscarCliente.FlatStyle = FlatStyle.Flat;
-            btnBuscarCliente.Image = Properties.Resources._btnbuscarclienteee;
+            btnBuscarCliente.Image = Properties.Resources.icon_btn_search_for_Cliente__x32_;
             btnBuscarCliente.Location = new Point(91, 36);
             btnBuscarCliente.Name = "btnBuscarCliente";
             btnBuscarCliente.Size = new Size(50, 46);
@@ -749,13 +758,13 @@
             // 
             panel3.BackColor = Color.WhiteSmoke;
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(dgvProductos);
             panel3.Controls.Add(groupBox2);
             panel3.Controls.Add(txtTotal);
             panel3.Controls.Add(groupBox3);
             panel3.Controls.Add(label17);
             panel3.Controls.Add(groupBox1);
             panel3.Controls.Add(groupBox4);
-            panel3.Controls.Add(dgvProductos);
             panel3.Controls.Add(label15);
             panel3.Controls.Add(txtSubTotal);
             panel3.Controls.Add(txtTotalDescuento);
@@ -779,12 +788,29 @@
             groupBox2.Controls.Add(label19);
             groupBox2.Controls.Add(txtDevuelta);
             groupBox2.Controls.Add(label23);
-            groupBox2.Location = new Point(5, 350);
+            groupBox2.Location = new Point(9, 387);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(380, 203);
+            groupBox2.Size = new Size(380, 152);
             groupBox2.TabIndex = 25;
             groupBox2.TabStop = false;
             groupBox2.Text = "Pagos";
+            // 
+            // btnDevolver
+            // 
+            btnDevolver.Cursor = Cursors.Hand;
+            btnDevolver.FlatAppearance.BorderColor = Color.Black;
+            btnDevolver.FlatAppearance.BorderSize = 2;
+            btnDevolver.FlatStyle = FlatStyle.Flat;
+            btnDevolver.Image = Properties.Resources.icon_btn_Devolver__x32_;
+            btnDevolver.ImageAlign = ContentAlignment.MiddleRight;
+            btnDevolver.Location = new Point(268, 94);
+            btnDevolver.Name = "btnDevolver";
+            btnDevolver.Size = new Size(106, 47);
+            btnDevolver.TabIndex = 24;
+            btnDevolver.Text = "Devolver";
+            btnDevolver.TextAlign = ContentAlignment.BottomLeft;
+            btnDevolver.UseVisualStyleBackColor = true;
+            btnDevolver.Click += btnDevolver_Click;
             // 
             // cbMetodoPago
             // 
@@ -859,23 +885,6 @@
             label23.Size = new Size(122, 21);
             label23.TabIndex = 2;
             label23.Text = "Devuelta";
-            // 
-            // btnDevolver
-            // 
-            btnDevolver.Cursor = Cursors.Hand;
-            btnDevolver.FlatAppearance.BorderColor = Color.Black;
-            btnDevolver.FlatAppearance.BorderSize = 2;
-            btnDevolver.FlatStyle = FlatStyle.Flat;
-            btnDevolver.Image = Properties.Resources._btnAgregarProductooo;
-            btnDevolver.ImageAlign = ContentAlignment.MiddleRight;
-            btnDevolver.Location = new Point(268, 94);
-            btnDevolver.Name = "btnDevolver";
-            btnDevolver.Size = new Size(106, 47);
-            btnDevolver.TabIndex = 24;
-            btnDevolver.Text = "Devolver";
-            btnDevolver.TextAlign = ContentAlignment.BottomLeft;
-            btnDevolver.UseVisualStyleBackColor = true;
-            btnDevolver.Click += btnDevolver_Click;
             // 
             // frmFacturaProductos
             // 

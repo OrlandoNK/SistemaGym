@@ -336,7 +336,7 @@ namespace SistemaGym.UI.Windows
             }
             else if (MontoRecibido == MontoTotal)
             {
-               txtDevuelta.Text = "0";
+                txtDevuelta.Text = "0";
             }
             if (txtMontoRecibido.Text == "0")
             {

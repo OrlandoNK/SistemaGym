@@ -1003,6 +1003,46 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_btn_Add_Product__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-btn-Add-Product-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_btn_Devolver__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-btn-Devolver-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_btn_search_for_Cliente__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-btn-search-for-Cliente-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_btn_search_producto__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-btn-search-producto-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_empleados_x32 {
             get {
                 object obj = ResourceManager.GetObject("icon-empleados-x32", resourceCulture);
