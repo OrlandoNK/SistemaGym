@@ -150,10 +150,10 @@ namespace SistemaGym.UI.Windows
                 ProductoEntity producto = new ProductoEntity
                 {
                     IDProducto = Convert.ToInt32(fila["IDProducto"]),
-                    IDCategoria = Convert.ToInt32(fila["IDCategoria"]),
+                    IDCategoria = Convert.ToInt32(fila["Categoria"]),
                     IDProveedor = Convert.ToInt32(fila["IDProveedor"]),
                     Nombre = Convert.ToString(fila["Nombre"]),
-                    PrecioUnitario = Convert.ToDecimal(fila["PrecionUnitario"]),
+                    PrecioUnitario = Convert.ToDecimal(fila["PrecioUnitario"]),
                     Stock = Convert.ToInt32(fila["Stock"])
                 };
 

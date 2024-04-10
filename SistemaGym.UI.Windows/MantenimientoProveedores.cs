@@ -134,6 +134,8 @@ namespace SistemaGym.UI.Windows
                     IDProveedor = Convert.ToInt32(fila["IDProveedor"]),
                     Nombre = Convert.ToString(fila["Nombre"]),
                     Telefono = Convert.ToString(fila["Telefono"]),
+                    Correo = Convert.ToString(fila["Correo"]),
+                    RNC = Convert.ToString(fila["RNC"]),
                     Direccion = Convert.ToString(fila["Direccion"]),
                     FechaRegistro = Convert.ToDateTime(fila["FechaRegistro"]),
                     Estatus = Convert.ToString(fila["Estatus"])

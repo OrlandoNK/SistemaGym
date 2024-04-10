@@ -12,6 +12,7 @@ namespace SistemaGym.Entities
     public class FacturaProductoEntity
     {
 
+        public List<PagoEntity> Pagos { get; set; }
         public List<DetalleFacturaProductoEntity> Detalles { get; set; }
         public int IDFactura { get; set; }
         public int IDCliente { get; set; }
@@ -27,6 +28,7 @@ namespace SistemaGym.Entities
 
         public FacturaProductoEntity()
         {
+            Pagos = new List<PagoEntity>();
             Detalles = new List<DetalleFacturaProductoEntity>(); 
         }
     }

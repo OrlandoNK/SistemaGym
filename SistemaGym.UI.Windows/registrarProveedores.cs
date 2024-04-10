@@ -47,6 +47,16 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(mskbxTellProveedor, CampoObligatorio);
                 resultado = false;
             }
+            if (string.IsNullOrEmpty(txbCorreo.Text))
+            {
+                errorProvider.SetError(txbCorreo, CampoObligatorio);
+                resultado = false;
+            }
+            if (string.IsNullOrEmpty(txbRNC.Text))
+            {
+                errorProvider.SetError(txbRNC, CampoObligatorio);
+                resultado = false;
+            }
 
             return resultado;
         }
@@ -62,23 +72,16 @@ namespace SistemaGym.UI.Windows
             ProveedoresEntity oProveedor = new ProveedoresEntity();
             oProveedor.Nombre = TxbNombreProveedor.Text;
             oProveedor.Telefono = mskbxTellProveedor.Text;
+            oProveedor.Correo = txbCorreo.Text;
+            oProveedor.RNC = txbRNC.Text;
             oProveedor.FechaRegistro = DateTime.Now;
             oProveedor.Direccion = TxbDireccionProveedor.Text;
-
-            if (chkEstatusProveedor.Checked)
-            {
-                oProveedor.Estatus = "Activo";
-            }
-            else
-            {
-                oProveedor.Estatus = "Inactivo";
-            }
+            oProveedor.Estatus = "Activo";
 
             try
             {
                 ProveedoresBLL.Guardar(oProveedor);
                 MessageBox.Show("Proveedor Guardado Satisfactoriamente", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvProveedores.DataSource = proveedoresBLL.ShowProviders();
                 LimpiarCampos();
             }
             catch (SqlException ex)
@@ -96,7 +99,8 @@ namespace SistemaGym.UI.Windows
             TxbNombreProveedor.Clear();
             TxbDireccionProveedor.Clear();
             mskbxTellProveedor.Clear();
-            chkEstatusProveedor.Checked = false;
+            txbCorreo.Clear();
+            txbRNC.Clear();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

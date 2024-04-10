@@ -18,12 +18,14 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string insertar = "Insert into Proveedores(Nombre, Telefono, Direccion," +
+            string insertar = "Insert into Proveedores(Nombre, Telefono, Correo, RNC, Direccion," +
                 " FechaRegistro, Estatus)" +
-                " values(@Nombre, @Telefono, @Direccion, @FechaRegistro, @Estatus)";
+                " values(@Nombre, @Telefono, @correo, @rnc, @Direccion, @FechaRegistro, @Estatus)";
             SqlCommand cmd = new SqlCommand(insertar, Conexion);
             cmd.Parameters.AddWithValue("@Nombre", proveedores.Nombre);
             cmd.Parameters.AddWithValue("@Telefono", proveedores.Telefono);
+            cmd.Parameters.AddWithValue("@correo", proveedores.Correo);
+            cmd.Parameters.AddWithValue("@rnc", proveedores.RNC);
             cmd.Parameters.AddWithValue("@Direccion", proveedores.Direccion);
             cmd.Parameters.AddWithValue("@FechaRegistro", proveedores.FechaRegistro);
             cmd.Parameters.AddWithValue("@Estatus", proveedores.Estatus);
@@ -39,11 +41,13 @@ namespace SistemaGym.DAL
             Conexion.Open();
            /* string actualizar = "Update Proveedores set Nombre=@Nombre, Telefono=@Telefono " +
                 "Direccion =@Direccion, FechaRegistro=@FechaRegistro, Estatus =@Estatus where IDProveedor= @idProveedor"; */
-            string actualizar = "UPDATE Proveedores SET Nombre= @Nombre, Telefono= @Telefono, Direccion = @Direccion, FechaRegistro = @FechaRegistro, Estatus = @Estatus WHERE IDProveedor = @IdProveedor";
+            string actualizar = "UPDATE Proveedores SET Nombre= @Nombre, Telefono= @Telefono, Correo = @correo, RNC = @rnc, Direccion = @Direccion, FechaRegistro = @FechaRegistro, Estatus = @Estatus WHERE IDProveedor = @IdProveedor";
             SqlCommand cmd = new SqlCommand(actualizar, Conexion);
             cmd.Parameters.AddWithValue("@idProveedor", proveedores.IDProveedor);
             cmd.Parameters.AddWithValue("@Nombre", proveedores.Nombre);
             cmd.Parameters.AddWithValue("@Telefono", proveedores.Telefono);
+            cmd.Parameters.AddWithValue("@correo", proveedores.Correo);
+            cmd.Parameters.AddWithValue("@rnc", proveedores.RNC);
             cmd.Parameters.AddWithValue("@Direccion", proveedores.Direccion);
             cmd.Parameters.AddWithValue("@FechaRegistro", proveedores.FechaRegistro);
             cmd.Parameters.AddWithValue("@Estatus", proveedores.Estatus);
@@ -129,7 +133,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
 
             DataTable dataTBL = new DataTable();
-            string GetByValor = "SELECT * FROM Proveedores WHERE Nombre LIKE @Busqueda OR Telefono LIKE @Busqueda OR Direccion LIKE @Busqueda OR FechaRegistro LIKE @Busqueda";
+            string GetByValor = "SELECT * FROM Proveedores WHERE Nombre LIKE @Busqueda OR Telefono LIKE @Busqueda OR RNC LIKE @Busqueda OR Direccion LIKE @Busqueda OR FechaRegistro LIKE @Busqueda";
             using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
             {
                 cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");

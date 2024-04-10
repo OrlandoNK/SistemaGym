@@ -37,27 +37,23 @@
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
-            dgvProveedores = new DataGridView();
-            Nombre = new DataGridViewTextBoxColumn();
-            Telefono = new DataGridViewTextBoxColumn();
-            Direccion = new DataGridViewTextBoxColumn();
-            FechaRegistro = new DataGridViewTextBoxColumn();
-            Estatus = new DataGridViewTextBoxColumn();
+            txbRNC = new TextBox();
+            txbCorreo = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
             panel4 = new Panel();
-            chkEstatusProveedor = new CheckBox();
             btnGuardarProveedor = new Guna.UI2.WinForms.Guna2Button();
             TxbNombreProveedor = new TextBox();
             label3 = new Label();
+            label1 = new Label();
+            mskbxTellProveedor = new MaskedTextBox();
             TxbDireccionProveedor = new TextBox();
             label2 = new Label();
-            mskbxTellProveedor = new MaskedTextBox();
-            label1 = new Label();
             errorProvider = new ErrorProvider(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
@@ -72,7 +68,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(642, 65);
+            panel1.Size = new Size(754, 65);
             panel1.TabIndex = 0;
             // 
             // label4
@@ -101,7 +97,7 @@
             btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources.btn_cerrar_ventana_x_x32;
-            btnClose.Location = new Point(597, 15);
+            btnClose.Location = new Point(709, 15);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -116,107 +112,73 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 65);
             panel2.Name = "panel2";
-            panel2.Size = new Size(642, 40);
+            panel2.Size = new Size(754, 40);
             panel2.TabIndex = 1;
             // 
             // panel3
             // 
             panel3.BackColor = Color.WhiteSmoke;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(dgvProveedores);
+            panel3.Controls.Add(txbRNC);
+            panel3.Controls.Add(txbCorreo);
+            panel3.Controls.Add(label6);
+            panel3.Controls.Add(label5);
             panel3.Controls.Add(panel4);
+            panel3.Controls.Add(TxbNombreProveedor);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(mskbxTellProveedor);
+            panel3.Controls.Add(TxbDireccionProveedor);
+            panel3.Controls.Add(label2);
             panel3.Dock = DockStyle.Fill;
             panel3.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             panel3.Location = new Point(0, 105);
             panel3.Name = "panel3";
-            panel3.Size = new Size(642, 366);
+            panel3.Size = new Size(754, 366);
             panel3.TabIndex = 2;
             // 
-            // dgvProveedores
+            // txbRNC
             // 
-            dgvProveedores.AllowUserToAddRows = false;
-            dgvProveedores.AllowUserToDeleteRows = false;
-            dgvProveedores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dgvProveedores.BackgroundColor = Color.WhiteSmoke;
-            dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProveedores.Columns.AddRange(new DataGridViewColumn[] { Nombre, Telefono, Direccion, FechaRegistro, Estatus });
-            dgvProveedores.Location = new Point(197, 0);
-            dgvProveedores.Name = "dgvProveedores";
-            dgvProveedores.ReadOnly = true;
-            dgvProveedores.RowHeadersVisible = false;
-            dgvProveedores.RowTemplate.Height = 25;
-            dgvProveedores.Size = new Size(444, 366);
-            dgvProveedores.TabIndex = 9;
+            txbRNC.Location = new Point(393, 216);
+            txbRNC.Name = "txbRNC";
+            txbRNC.Size = new Size(160, 23);
+            txbRNC.TabIndex = 14;
             // 
-            // Nombre
+            // txbCorreo
             // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            Nombre.Width = 82;
+            txbCorreo.Location = new Point(227, 216);
+            txbCorreo.Name = "txbCorreo";
+            txbCorreo.Size = new Size(160, 23);
+            txbCorreo.TabIndex = 13;
             // 
-            // Telefono
+            // label6
             // 
-            Telefono.DataPropertyName = "Telefono";
-            Telefono.HeaderText = "Telefono";
-            Telefono.Name = "Telefono";
-            Telefono.ReadOnly = true;
-            Telefono.Width = 84;
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(393, 194);
+            label6.Name = "label6";
+            label6.Size = new Size(160, 19);
+            label6.TabIndex = 12;
+            label6.Text = "RNC";
             // 
-            // Direccion
+            // label5
             // 
-            Direccion.DataPropertyName = "Direccion";
-            Direccion.HeaderText = "Direccion";
-            Direccion.Name = "Direccion";
-            Direccion.ReadOnly = true;
-            Direccion.Width = 87;
-            // 
-            // FechaRegistro
-            // 
-            FechaRegistro.DataPropertyName = "FechaRegistro";
-            FechaRegistro.HeaderText = "FechaRegistro";
-            FechaRegistro.Name = "FechaRegistro";
-            FechaRegistro.ReadOnly = true;
-            FechaRegistro.Width = 115;
-            // 
-            // Estatus
-            // 
-            Estatus.DataPropertyName = "Estatus";
-            Estatus.HeaderText = "Estatus";
-            Estatus.Name = "Estatus";
-            Estatus.ReadOnly = true;
-            Estatus.Width = 74;
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(227, 194);
+            label5.Name = "label5";
+            label5.Size = new Size(160, 19);
+            label5.TabIndex = 10;
+            label5.Text = "Correo del Proveedor";
             // 
             // panel4
             // 
             panel4.BackColor = Color.Black;
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(chkEstatusProveedor);
             panel4.Controls.Add(btnGuardarProveedor);
-            panel4.Controls.Add(TxbNombreProveedor);
-            panel4.Controls.Add(label3);
-            panel4.Controls.Add(TxbDireccionProveedor);
-            panel4.Controls.Add(label2);
-            panel4.Controls.Add(mskbxTellProveedor);
-            panel4.Controls.Add(label1);
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 364);
             panel4.TabIndex = 8;
-            // 
-            // chkEstatusProveedor
-            // 
-            chkEstatusProveedor.CheckAlign = ContentAlignment.MiddleRight;
-            chkEstatusProveedor.Cursor = Cursors.Hand;
-            chkEstatusProveedor.ForeColor = Color.White;
-            chkEstatusProveedor.Location = new Point(20, 211);
-            chkEstatusProveedor.Name = "chkEstatusProveedor";
-            chkEstatusProveedor.Size = new Size(160, 24);
-            chkEstatusProveedor.TabIndex = 0;
-            chkEstatusProveedor.Text = "Estatus";
-            chkEstatusProveedor.UseVisualStyleBackColor = true;
             // 
             // btnGuardarProveedor
             // 
@@ -236,61 +198,61 @@
             btnGuardarProveedor.Image = Properties.Resources.icon_save_button__x32_;
             btnGuardarProveedor.ImageAlign = HorizontalAlignment.Left;
             btnGuardarProveedor.ImageSize = new Size(32, 32);
-            btnGuardarProveedor.Location = new Point(-1, 277);
+            btnGuardarProveedor.Location = new Point(-1, 86);
             btnGuardarProveedor.Name = "btnGuardarProveedor";
             btnGuardarProveedor.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnGuardarProveedor.Size = new Size(198, 45);
+            btnGuardarProveedor.Size = new Size(200, 45);
             btnGuardarProveedor.TabIndex = 8;
             btnGuardarProveedor.Text = "Guardar";
             btnGuardarProveedor.Click += btnGuardarProveedor_Click;
             // 
             // TxbNombreProveedor
             // 
-            TxbNombreProveedor.Location = new Point(20, 56);
+            TxbNombreProveedor.Location = new Point(227, 150);
             TxbNombreProveedor.Name = "TxbNombreProveedor";
             TxbNombreProveedor.Size = new Size(160, 23);
             TxbNombreProveedor.TabIndex = 0;
             // 
             // label3
             // 
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(20, 138);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(559, 128);
             label3.Name = "label3";
             label3.Size = new Size(160, 19);
             label3.TabIndex = 6;
             label3.Text = "Telefono del Proveedor";
             // 
+            // label1
+            // 
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(227, 126);
+            label1.Name = "label1";
+            label1.Size = new Size(160, 19);
+            label1.TabIndex = 4;
+            label1.Text = "Nombre del Proveedor";
+            // 
+            // mskbxTellProveedor
+            // 
+            mskbxTellProveedor.Location = new Point(559, 150);
+            mskbxTellProveedor.Name = "mskbxTellProveedor";
+            mskbxTellProveedor.Size = new Size(160, 23);
+            mskbxTellProveedor.TabIndex = 2;
+            // 
             // TxbDireccionProveedor
             // 
-            TxbDireccionProveedor.Location = new Point(20, 108);
+            TxbDireccionProveedor.Location = new Point(393, 150);
             TxbDireccionProveedor.Name = "TxbDireccionProveedor";
             TxbDireccionProveedor.Size = new Size(160, 23);
             TxbDireccionProveedor.TabIndex = 1;
             // 
             // label2
             // 
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(20, 86);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(393, 128);
             label2.Name = "label2";
             label2.Size = new Size(160, 19);
             label2.TabIndex = 5;
             label2.Text = "Dirección del Proveedor";
-            // 
-            // mskbxTellProveedor
-            // 
-            mskbxTellProveedor.Location = new Point(20, 160);
-            mskbxTellProveedor.Name = "mskbxTellProveedor";
-            mskbxTellProveedor.Size = new Size(160, 23);
-            mskbxTellProveedor.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(20, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(160, 19);
-            label1.TabIndex = 4;
-            label1.Text = "Nombre del Proveedor";
             // 
             // errorProvider
             // 
@@ -300,7 +262,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(642, 471);
+            ClientSize = new Size(754, 471);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -312,9 +274,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvProveedores).EndInit();
+            panel3.PerformLayout();
             panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
         }
@@ -332,16 +293,13 @@
         private Label label1;
         private Panel panel4;
         private Guna.UI2.WinForms.Guna2Button btnGuardarProveedor;
-        private CheckBox chkEstatusProveedor;
         private ErrorProvider errorProvider;
         private PictureBox btnClose;
-        private DataGridView dgvProveedores;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Telefono;
-        private DataGridViewTextBoxColumn Direccion;
-        private DataGridViewTextBoxColumn FechaRegistro;
-        private DataGridViewTextBoxColumn Estatus;
         private Label label4;
         private PictureBox pictureBox1;
+        private Label label6;
+        private Label label5;
+        private TextBox txbRNC;
+        private TextBox txbCorreo;
     }
 }

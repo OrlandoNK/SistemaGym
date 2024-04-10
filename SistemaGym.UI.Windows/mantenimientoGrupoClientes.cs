@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGym.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,32 @@ namespace SistemaGym.UI.Windows
         {
             registrarGrupoClientes nuevoGrupoCliente = new registrarGrupoClientes();
             nuevoGrupoCliente.Show();
+        }
+
+        private void mantenimientoGrupoClientes_Load(object sender, EventArgs e)
+        {
+            dgvGrupoClientes.DataSource = GrupoClienteBLL.Mostrar();
+            dgvGrupoClientes.AutoGenerateColumns = false;
+            CargarCliente();
+            CargarGrupoMembresia();
+        }
+
+        private void CargarCliente()
+        {
+            var colIDCliente = (DataGridViewComboBoxColumn)dgvGrupoClientes.Columns["IDCliente"];
+            colIDCliente.DataSource = ClientesBLL.MostrarCliente();
+            colIDCliente.ValueMember = "IDCliente";
+            colIDCliente.DisplayMember = "Nombre";
+            colIDCliente.DataPropertyName = "IDCliente";
+        }
+
+        private void CargarGrupoMembresia()
+        {
+            var colGrupoMembresia = (DataGridViewComboBoxColumn)dgvGrupoClientes.Columns["IDGrupoMembresia"];
+            colGrupoMembresia.DataSource = GrupoMembresiaBLL.MostrarGrupoMembresia();
+            colGrupoMembresia.ValueMember = "IDGrupoMembresia";
+            colGrupoMembresia.DisplayMember = "Nombre";
+            colGrupoMembresia.DataPropertyName = "IDGrupoMembresia";
         }
     }
 }

@@ -223,7 +223,7 @@ namespace SistemaGym.UI.Windows
             {
                 GrupoClienteBLL.Insertar(nuevoGrupoCliente);
                 MessageBox.Show("¡El Grupo de Cliente ha sido Guardado de Manera Satisfactoria!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                LimpiarCampos();
             }
             catch (SqlException ex)
             {
@@ -236,5 +236,27 @@ namespace SistemaGym.UI.Windows
 
 
         }
+
+        private void LimpiarCampos()
+        {
+            txbIdGrupoMembresia.Clear();
+            txbNombreGrupoMembresia.Clear();
+            txbMontoTotalGrupoMembresia.Clear();
+            
+            TxbIDCliente.Clear();
+            TxbNombreCliente.Clear();
+            TxbApellidoCliente.Clear();
+            TxbTipoDocumento.Clear();
+            TxbDocumentoCliente.Clear();
+
+            TxbIDMembresia.Clear();
+            TxbNombreMembresia.Clear();
+            TxbValorMembresia.Clear();
+            TxbDescrMembresia.Clear();
+
+            txbMontoGrupoCliente.Clear();
+        }
+
     }
 }
+
