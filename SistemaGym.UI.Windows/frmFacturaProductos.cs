@@ -153,7 +153,7 @@ namespace SistemaGym.UI.Windows
             txtMontoTotal.Text = oFactura.Total.ToString();
             InicializarDetalles();
             CargarProducto();
-            stockControl();
+           
         }
         private void InicializarDetalles()
         {
@@ -324,25 +324,7 @@ namespace SistemaGym.UI.Windows
                 e.Handled = true;
             }
         }
-        private void stockControl()
-        {
-            ProductoEntity producto = new ProductoEntity();
-            DetalleFacturaProductoEntity detalleFactura = new DetalleFacturaProductoEntity();
-
-            int cantidad = detalleFactura.Cantidad;
-            int stock = producto.Stock;
-            if (cantidad <= stock)
-            {
-                stock -= cantidad;
-
-            }
-            else
-            {
-                MessageBox.Show("La cantidad de producto no puede exceder el stock");
-            }
-
-        }
-
+        
         private void btnDevolver_Click(object sender, EventArgs e)
         {
             errorProvider.Clear();
