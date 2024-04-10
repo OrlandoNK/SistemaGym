@@ -104,6 +104,7 @@ namespace SistemaGym.UI.Windows
                 {
                     ProductoBLL.Guardar(nuevoproducto);
                     MessageBox.Show("¡El Producto ha sido Guardado de Manera Satisfactoria!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    InicializarCampos();
                 }
             }
             catch (SqlException ex)
