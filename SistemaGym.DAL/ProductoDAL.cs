@@ -97,7 +97,7 @@ namespace SistemaGym.DAL
             {
             
                 transaccion.Rollback();
-                throw new Exception("Error al actualizar el stock del producto.", ex);
+                throw new Exception("Stock Insuficiente.", ex);
             }
             finally
             {
