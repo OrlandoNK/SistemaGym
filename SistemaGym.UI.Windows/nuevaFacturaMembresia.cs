@@ -278,39 +278,150 @@ namespace SistemaGym.UI.Windows
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!ValidarCampos())
+            /* Guarda si Tiene Cargo Credito y Cargo Debito */
+            if (rbtnSiTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
             {
+                if (!ValidarCampos())
+                {
 
-                return;
+                    return;
+                }
+
+                FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
+                FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
+
+                nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
+                nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
+                nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
+                nuevaFacturaMembresia.CargoCredito = Convert.ToInt32(TxbIDCargoCredito.Text);
+                nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbIDCargoDebito.Text);
+                nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
+                nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
+                nuevaFacturaMembresia.FechaEmision = DateTime.Now;
+                nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
+                nuevaFacturaMembresia.Estatus = "Pagado";
+
+                try
+                {
+                    facturaMembresiaBLL.Insertar(nuevaFacturaMembresia);
+                    MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarTodosLosCampos();
+                }
+                catch (SqlException ex2)
+                {
+                    MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex2.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex1)
+                {
+                    MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex1.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
-            FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
-            FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
-
-            nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
-            nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
-            nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
-            nuevaFacturaMembresia.CargoCredito = Convert.ToInt32(TxbIDCargoCredito.Text);
-            nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbIDCargoDebito.Text);
-            nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
-            nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
-            nuevaFacturaMembresia.FechaEmision = DateTime.Now;
-            nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
-            nuevaFacturaMembresia.Estatus = "Pagado";
-
-            try
+            if (rbtnSiTieneCargoCredito.Checked && rbtnNoTieneCargoDebito.Checked)
             {
-                facturaMembresiaBLL.Insertar(nuevaFacturaMembresia);
-                MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarTodosLosCampos();
+                if (!ValidarCampos())
+                {
+
+                    return;
+                }
+
+                FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
+                FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
+
+                nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
+                nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
+                nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
+                nuevaFacturaMembresia.CargoCredito = Convert.ToInt32(TxbIDCargoCredito.Text);
+                nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
+                nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
+                nuevaFacturaMembresia.FechaEmision = DateTime.Now;
+                nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
+                nuevaFacturaMembresia.Estatus = "Pagado";
+
+                try
+                {
+                    facturaMembresiaBLL.InsertarSoloCargoCredito(nuevaFacturaMembresia);
+                    MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarTodosLosCampos();
+                }
+                catch (SqlException ex2)
+                {
+                    MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex2.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex1)
+                {
+                    MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex1.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (SqlException ex2)
+            if (rbtnNoTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
             {
-                MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex2.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!ValidarCampos())
+                {
+
+                    return;
+                }
+
+                FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
+                FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
+
+                nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
+                nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
+                nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
+                nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbIDCargoDebito.Text);
+                nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
+                nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
+                nuevaFacturaMembresia.FechaEmision = DateTime.Now;
+                nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
+                nuevaFacturaMembresia.Estatus = "Pagado";
+
+                try
+                {
+                    facturaMembresiaBLL.InsertarSoloCargoDebito(nuevaFacturaMembresia);
+                    MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarTodosLosCampos();
+                }
+                catch (SqlException ex2)
+                {
+                    MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex2.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex1)
+                {
+                    MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex1.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex1)
+            if (rbtnNoTieneCargoCredito.Checked && rbtnNoTieneCargoDebito.Checked)
             {
-                MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex1.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!ValidarCampos())
+                {
+
+                    return;
+                }
+
+                FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
+                FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
+
+                nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
+                nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
+                nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
+                nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
+                nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
+                nuevaFacturaMembresia.FechaEmision = DateTime.Now;
+                nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
+                nuevaFacturaMembresia.Estatus = "Pagado";
+
+                try
+                {
+                    facturaMembresiaBLL.InsertarSinCargos(nuevaFacturaMembresia);
+                    MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarTodosLosCampos();
+                }
+                catch (SqlException ex2)
+                {
+                    MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex2.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex1)
+                {
+                    MessageBox.Show("Se produjo un error al Intentar Guardar la Factura. \nDetalles a continuación: \n" + ex1.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         private void LimpiarTodosLosCampos()
