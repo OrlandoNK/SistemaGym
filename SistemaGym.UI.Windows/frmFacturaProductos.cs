@@ -240,21 +240,45 @@ namespace SistemaGym.UI.Windows
                 resultado = false;
             }
             */
-            decimal montorecibido = decimal.Parse(txtMontoRecibido.Text);
-            if (montorecibido <= 0)
+            decimal montorecibido;
+            if (decimal.TryParse(txtMontoRecibido.Text, out montorecibido))
             {
-                errorProvider.SetError(txtMontoRecibido, "Introduzca un monto valido");
+                if (montorecibido <= 0)
+                {
+                    errorProvider.SetError(txtMontoRecibido, "Introduzca un monto mayor que cero");
+                    resultado = false;
+                }
+      
+            }
+            else
+            {
+                errorProvider.SetError(txtMontoRecibido, "Introduzca un monto válido");
                 resultado = false;
             }
-            decimal devuelta = decimal.Parse(txtMontoRecibido.Text);
+            decimal montore;
+            decimal montottal;
+
+            if (decimal.TryParse(txtMontoRecibido.Text, out montore) && decimal.TryParse(txtMontoTotal.Text, out montottal))
+            {
+                if (montore < montottal)
+                {
+                    errorProvider.SetError(txtMontoRecibido, "El monto debe ser mayor o igual al monto a pagar");
+                    return false;
+                }
+                
+            }
+          
+
+            decimal devuelta = decimal.Parse(txtDevuelta.Text);
             if (devuelta < 0)
             {
                 errorProvider.SetError(txtDevuelta, "Introduzca una devuelta valida");
                 resultado = false;
             }
+           
             if (string.IsNullOrEmpty(txtUsuario.Text))
             {
-                errorProvider.SetError(txtNCF, "El Usuario Es Obligatorio");
+                errorProvider.SetError(txtNCF, "El NCF Es Obligatorio");
                 resultado = false;
             }
             return resultado;
