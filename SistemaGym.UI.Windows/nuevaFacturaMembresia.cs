@@ -77,50 +77,6 @@ namespace SistemaGym.UI.Windows
             TxbFacturaNCF.Text = "B0100000005";
         }
 
-        private void btnBuscarFacturaCargoCredito_Click(object sender, EventArgs e)
-        {
-            listaCargoCredito listaCargoCredito = new listaCargoCredito();
-
-            if (listaCargoCredito.ShowDialog() == DialogResult.OK)
-            {
-                CargoCreditoEntity oCargoCredito = CargoCreditoBLL.GetById((int)listaCargoCredito.IdCargoCredito);
-
-                if (oCargoCredito != null)
-                {
-                    this.TxbFacturaIDCargoCredito.Text = oCargoCredito.IDCargoCredito.ToString();
-                    this.TxbFacturacionCargoCredito.Text = oCargoCredito.Cargo.ToString();
-                    this.TxbFacturaMontoCargoCredito.Text = Convert.ToInt32(oCargoCredito.Monto).ToString();
-                    this.dtpFechaFacturaCargoCredito.Text = oCargoCredito.FechaCargo.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Cargo Credito No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void btnBuscarFacturaCargoDebito_Click(object sender, EventArgs e)
-        {
-            listaCargoDebito listaCargoDebito = new listaCargoDebito();
-
-            if (listaCargoDebito.ShowDialog() == DialogResult.OK)
-            {
-                CargoDebitoEntity oCargoDebito = CargoDebitoBLL.GetById((int)listaCargoDebito.IdCargoDebito);
-
-                if (oCargoDebito != null)
-                {
-                    this.TxbFacturaIDCargoDebito.Text = oCargoDebito.IDCargoDebito.ToString();
-                    this.TxbFacturaCargoDebito.Text = oCargoDebito.Cargo.ToString();
-                    this.TxbFacturaMontoCargoDebito.Text = Convert.ToInt32(oCargoDebito.Monto).ToString();
-                    this.dtpFechaFacturaCargoDebito.Text = oCargoDebito.FechaCargo.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Cargo Debito No Encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void btnFacturarMembresia_Click(object sender, EventArgs e)
         {
             if (!ValidateToFacturate())
@@ -215,52 +171,6 @@ namespace SistemaGym.UI.Windows
                 validacion = false;
             }
 
-            /* Validar Datos de la Factura */
-            int IDFactCC;
-            if (string.IsNullOrEmpty(TxbFacturaIDCargoCredito.Text))
-            {
-                errorProvider.SetError(TxbFacturaIDCargoCredito, ValidaDatosFactura);
-                validacion = false;
-            }
-            else if (!int.TryParse(TxbFacturaIDCargoCredito.Text, out IDFactCC))
-            {
-                errorProvider.SetError(TxbFacturaIDCargoCredito, ValidaDatosFactura);
-            }
-            if (string.IsNullOrEmpty(TxbFacturacionCargoCredito.Text))
-            {
-                errorProvider.SetError(TxbFacturacionCargoCredito, ValidaDatosFactura);
-                validacion = false;
-            }
-            if (string.IsNullOrEmpty(TxbFacturaMontoCargoCredito.Text))
-            {
-                errorProvider.SetError(TxbFacturaMontoCargoCredito, ValidaDatosFactura);
-                validacion = false;
-            }
-            int IDFactCD;
-            if (string.IsNullOrEmpty(TxbFacturaIDCargoDebito.Text))
-            {
-                errorProvider.SetError(TxbFacturaIDCargoDebito, ValidaDatosFactura);
-                validacion = false;
-            }
-            else if (!int.TryParse(TxbFacturaIDCargoDebito.Text, out IDFactCD))
-            {
-                errorProvider.SetError(TxbFacturaIDCargoDebito, ValidaDatosFactura);
-            }
-            if (string.IsNullOrEmpty(TxbFacturaCargoDebito.Text))
-            {
-                errorProvider.SetError(TxbFacturaCargoDebito, ValidaDatosFactura);
-                validacion = false;
-            }
-            if (string.IsNullOrEmpty(TxbFacturaMontoCargoDebito.Text))
-            {
-                errorProvider.SetError(TxbFacturaMontoCargoDebito, ValidaDatosFactura);
-                validacion = false;
-            }
-            if (string.IsNullOrEmpty(TxbFacturaValor.Text))
-            {
-                errorProvider.SetError(TxbFacturaValor, ValidaDatosFactura);
-                validacion = false;
-            }
 
             return validacion;
         }
@@ -320,28 +230,7 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(TxbValorMembresia, ObligatorioParaFacturar);
                 facturarValidar = false;
             }
-            if (string.IsNullOrEmpty(TxbFacturaMontoCargoCredito.Text))
-            {
-                errorProvider.SetError(TxbFacturaMontoCargoCredito, ObligatorioParaFacturar);
-                facturarValidar = false;
-            }
-            int CargoCredito;
-            if (!int.TryParse(TxbFacturaMontoCargoCredito.Text, out CargoCredito))
-            {
-                errorProvider.SetError(TxbFacturaMontoCargoCredito, ObligatorioParaFacturar);
-                facturarValidar = false;
-            }
-            if (string.IsNullOrEmpty(TxbFacturaMontoCargoDebito.Text))
-            {
-                errorProvider.SetError(TxbFacturaMontoCargoDebito, ObligatorioParaFacturar);
-                facturarValidar = false;
-            }
-            int CargoDebito;
-            if (!int.TryParse(TxbFacturaMontoCargoDebito.Text, out CargoDebito))
-            {
-                errorProvider.SetError(TxbFacturaMontoCargoDebito, ObligatorioParaFacturar);
-                facturarValidar = false;
-            }
+            
 
             return facturarValidar;
         }
@@ -358,30 +247,9 @@ namespace SistemaGym.UI.Windows
             TxbTipoDocumento.Clear();
             TxbDocumentoCliente.Clear();
 
-            TxbFacturacionCargoCredito.Clear();
-            TxbFacturaIDCargoCredito.Clear();
-            TxbFacturaMontoCargoCredito.Clear();
-            dtpFechaFacturaCargoCredito.Value = DateTime.Now;
-
-            TxbFacturaIDCargoDebito.Clear();
-            TxbFacturaCargoDebito.Clear();
-            TxbFacturaMontoCargoDebito.Clear();
-            dtpFechaFacturaCargoDebito.Value = DateTime.Now;
-
             TxbFacturaNCF.Clear();
             TxbFacturaValor.Clear();
         }
 
-        private void btnNuevoCargoCredito_Click(object sender, EventArgs e)
-        {
-            nuevoCargoCredito nuevoCargoCredito = new nuevoCargoCredito();
-            nuevoCargoCredito.Show();
-        }
-
-        private void btnNuevoCargoDebito_Click(object sender, EventArgs e)
-        {
-            nuevoCargoDebito nuevoCargoDebito = new nuevoCargoDebito();
-            nuevoCargoDebito.Show();
-        }
     }
 }

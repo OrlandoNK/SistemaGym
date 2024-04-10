@@ -256,5 +256,43 @@ namespace SistemaGym.DAL
             return DT;
         }
 
+        public DataTable GetClientWithCargos(int idCliente)
+        {
+            DataTable DT = new DataTable();
+
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            string GetMemberClient = @"SELECT C.*, 
+       M.Nombre as NombreMembresia, 
+       M.Descripcion, 
+       M.Valor,
+       CC.IDCargoCredito,
+       CC.Cargo as CargoCredito,
+       CC.Monto as MontoCredito,
+       CC.FechaCargo as FechaCargoCredito,
+       CC.Estatus as EstatusCredito,
+       CD.IDCargoDebito,
+       CD.Cargo as CargoDebito,
+       CD.Monto as MontoDebito,
+       CD.FechaCargo as FechaCargoDebito,
+       CD.Estatus as EstatusDebito
+FROM Clientes C 
+LEFT JOIN Membresia M ON C.IDMembresia = M.IDMembresia 
+LEFT JOIN CargoCredito CC ON C.IDCliente = CC.IDCliente
+LEFT JOIN CargoDebito CD ON C.IDCliente = CD.IDCliente
+WHERE C.IDCliente = @IDCliente";
+            using (SqlCommand cmd = new SqlCommand(GetMemberClient, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@IDCliente", idCliente);
+
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DA.Fill(DT);
+            }
+
+            return DT;
+        }
+
     }
 }
