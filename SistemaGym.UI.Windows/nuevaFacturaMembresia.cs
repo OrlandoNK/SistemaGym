@@ -41,6 +41,8 @@ namespace SistemaGym.UI.Windows
 
                     if (rbtnSiTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
                     {
+                        LimpiarCargos();
+
                         if (DT.Rows.Count > 0)
                         {
                             /* Llenar Campos de Cliente */
@@ -79,6 +81,8 @@ namespace SistemaGym.UI.Windows
 
                     if (rbtnNoTieneCargoCredito.Checked && rbtnNoTieneCargoDebito.Checked)
                     {
+                        LimpiarCargos();
+
                         if (DT.Rows.Count > 0)
                         {
                             /* Llenar Campos de Cliente */
@@ -103,6 +107,8 @@ namespace SistemaGym.UI.Windows
 
                     if (rbtnSiTieneCargoCredito.Checked && rbtnNoTieneCargoDebito.Checked)
                     {
+                        LimpiarCargos();
+
                         if (DT.Rows.Count > 0)
                         {
                             /* Llenar Campos de Cliente */
@@ -132,8 +138,10 @@ namespace SistemaGym.UI.Windows
                         }
                     }
 
-                    if (rbtnNoTieneCargoDebito.Checked && rbtnSiTieneCargoDebito.Checked)
+                    if (rbtnNoTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
                     {
+                        LimpiarCargos();
+
                         if (DT.Rows.Count > 0)
                         {
                             /* Llenar Campos de Cliente */
@@ -157,6 +165,7 @@ namespace SistemaGym.UI.Windows
                             TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
 
                         }
+
                         else
                         {
                             MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -175,6 +184,20 @@ namespace SistemaGym.UI.Windows
             }
         }
 
+        private void LimpiarCargos()
+        {
+            TxbIDCargoCredito.Clear();
+            TxbCargoCredito.Clear();
+            TxbMontoCredito.Clear();
+            TxbFechaCargoCredito.Clear();
+            TxbEstatusCredito.Clear();
+
+            TxbIDCargoDebito.Clear();
+            TxbCargoDebito.Clear();
+            TxbMontoDebito.Clear();
+            TxbFechaCargoDebito.Clear();
+            TxbEstatusDebito.Clear();
+        }
         private void nuevaFacturaMembresia_Load(object sender, EventArgs e)
         {
             TxbIDUsuario.Text = gestioUsuarioEntities.IDUserLogged;
