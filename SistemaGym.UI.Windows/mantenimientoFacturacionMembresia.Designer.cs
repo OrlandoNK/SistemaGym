@@ -39,6 +39,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             lblTitleMantenimientoFacturaMembresia = new Label();
             pictureBox1 = new PictureBox();
@@ -350,6 +352,9 @@
             // CargoCredito
             // 
             CargoCredito.DataPropertyName = "CargoCredito";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            CargoCredito.DefaultCellStyle = dataGridViewCellStyle1;
             CargoCredito.HeaderText = "CargoCredito";
             CargoCredito.Name = "CargoCredito";
             CargoCredito.ReadOnly = true;
@@ -359,6 +364,9 @@
             // CargoDebito
             // 
             CargoDebito.DataPropertyName = "CargoDebito";
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            CargoDebito.DefaultCellStyle = dataGridViewCellStyle2;
             CargoDebito.HeaderText = "CargoDebito";
             CargoDebito.Name = "CargoDebito";
             CargoDebito.ReadOnly = true;
@@ -374,9 +382,9 @@
             // ValorFactura
             // 
             ValorFactura.DataPropertyName = "ValorFactura";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            ValorFactura.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            ValorFactura.DefaultCellStyle = dataGridViewCellStyle3;
             ValorFactura.HeaderText = "ValorFactura";
             ValorFactura.Name = "ValorFactura";
             // 

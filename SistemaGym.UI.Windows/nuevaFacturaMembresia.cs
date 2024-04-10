@@ -27,10 +27,33 @@ namespace SistemaGym.UI.Windows
             Close();
         }
 
+
+        private bool ValidarDecisionCargos()
+        {
+            bool validacion = true;
+
+            if(!rbtnSiTieneCargoCredito.Checked && 
+                !rbtnNoTieneCargoCredito.Checked  && 
+                !rbtnSiTieneCargoDebito.Checked  && 
+                !rbtnNoTieneCargoDebito.Checked)
+            {
+                MessageBox.Show("¡Es Necesario decir si Tiene o No Cargos! \nPor Favor, Escoja una Opcion", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validacion = false;
+            }
+
+
+            return validacion;
+        }
+
         private void btnBuscarIDCliente_Click(object sender, EventArgs e)
         {
             ClientesBLL clientesBLL = new ClientesBLL();
             listaClientes listaClientes = new listaClientes();
+
+            if (!ValidarDecisionCargos())
+            {
+                return;
+            }
 
             if (listaClientes.ShowDialog() == DialogResult.OK)
             {
@@ -324,6 +347,7 @@ namespace SistemaGym.UI.Windows
                     facturaMembresiaBLL.Insertar(nuevaFacturaMembresia);
                     MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarTodosLosCampos();
+                    LimpiarCargos();
                 }
                 catch (SqlException ex2)
                 {
@@ -360,6 +384,7 @@ namespace SistemaGym.UI.Windows
                     facturaMembresiaBLL.InsertarSoloCargoCredito(nuevaFacturaMembresia);
                     MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarTodosLosCampos();
+                    LimpiarCargos();
                 }
                 catch (SqlException ex2)
                 {
@@ -396,6 +421,7 @@ namespace SistemaGym.UI.Windows
                     facturaMembresiaBLL.InsertarSoloCargoDebito(nuevaFacturaMembresia);
                     MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarTodosLosCampos();
+                    LimpiarCargos();
                 }
                 catch (SqlException ex2)
                 {
@@ -455,7 +481,6 @@ namespace SistemaGym.UI.Windows
             TxbTipoDocumento.Clear();
             TxbDocumentoCliente.Clear();
 
-            TxbFacturaNCF.Clear();
             TxbFacturaValor.Clear();
         }
 
