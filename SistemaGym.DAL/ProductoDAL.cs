@@ -54,7 +54,57 @@ namespace SistemaGym.DAL
             cmd.ExecuteNonQuery();
 
         }
+        public static void ActualizarStock(int idProducto, int cantidad)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection conexion = instancia.Conexion();
 
+        
+            conexion.Open();
+
+            SqlTransaction transaccion = conexion.BeginTransaction();
+
+            try
+            {
+             
+                string consultaStock = "SELECT Stock FROM Productos WHERE IDProducto = @IDProducto";
+                SqlCommand cmd= new SqlCommand(consultaStock, conexion, transaccion);
+                cmd.Parameters.AddWithValue("@IDProducto", idProducto);
+                int stockActual = Convert.ToInt32(cmd.ExecuteScalar());
+
+          
+                if (cantidad <= stockActual)
+                {
+                  
+                    string actualizarStock = "UPDATE Productos SET Stock = @NuevoStock WHERE IDProducto = @IDProducto";
+                    SqlCommand cmdActualizarStock = new SqlCommand(actualizarStock, conexion, transaccion);
+                    int nuevoStock = stockActual - cantidad;
+                    cmdActualizarStock.Parameters.AddWithValue("@NuevoStock", nuevoStock);
+                    cmdActualizarStock.Parameters.AddWithValue("@IDProducto", idProducto);
+                    cmdActualizarStock.ExecuteNonQuery();
+                }
+                else
+                {
+                  
+                    throw new InvalidOperationException("No hay suficiente stock disponible.");
+                }
+                
+
+              
+                transaccion.Commit();
+            }
+            catch (Exception ex)
+            {
+            
+                transaccion.Rollback();
+                throw new Exception("Error al actualizar el stock del producto.", ex);
+            }
+            finally
+            {
+                
+                conexion.Close();
+            }
+        }
         /* Metodo para Eliminar un Producto por ID */
         public bool DeleteProduct(int producto)
         {

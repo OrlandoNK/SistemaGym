@@ -832,9 +832,9 @@
             label19.BackColor = Color.Transparent;
             label19.Location = new Point(12, 28);
             label19.Name = "label19";
-            label19.Size = new Size(72, 21);
+            label19.Size = new Size(105, 21);
             label19.TabIndex = 0;
-            label19.Text = "Monto Total";
+            label19.Text = "Monto a Pagar";
             // 
             // txtDevuelta
             // 

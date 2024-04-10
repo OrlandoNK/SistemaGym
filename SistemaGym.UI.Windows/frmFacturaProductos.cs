@@ -60,17 +60,6 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(txtCantidad, CampoNegativoError);
                 resultado = false;
             }
-            decimal montorecibido = decimal.Parse(txtMontoRecibido.Text);
-            if (montorecibido <= 0 ) {
-                errorProvider.SetError(txtMontoRecibido, CampoNegativoError);
-                resultado = false;
-            }
-            decimal devuelta = decimal.Parse(txtMontoRecibido.Text);
-            if (devuelta < 0) 
-            {
-                errorProvider.SetError(txtDevuelta, "Introduzca una devuelta valida");
-                resultado = false;
-            }
             Decimal Descuento = Convert.ToDecimal(txtDescuento.Text);
             if (Descuento < 0)
             {
@@ -161,8 +150,10 @@ namespace SistemaGym.UI.Windows
             txtTotalDescuento.Text = oFactura.TotalDescuento.ToString();
             txtImpuesto.Text = oFactura.TotalItbis.ToString();
             txtTotal.Text = oFactura.Total.ToString();
+            txtMontoTotal.Text = oFactura.Total.ToString();
             InicializarDetalles();
             CargarProducto();
+            stockControl();
         }
         private void InicializarDetalles()
         {
@@ -249,6 +240,18 @@ namespace SistemaGym.UI.Windows
                 resultado = false;
             }
             */
+            decimal montorecibido = decimal.Parse(txtMontoRecibido.Text);
+            if (montorecibido <= 0)
+            {
+                errorProvider.SetError(txtMontoRecibido, "Introduzca un monto valido");
+                resultado = false;
+            }
+            decimal devuelta = decimal.Parse(txtMontoRecibido.Text);
+            if (devuelta < 0)
+            {
+                errorProvider.SetError(txtDevuelta, "Introduzca una devuelta valida");
+                resultado = false;
+            }
             if (string.IsNullOrEmpty(txtUsuario.Text))
             {
                 errorProvider.SetError(txtNCF, "El Usuario Es Obligatorio");
@@ -296,6 +299,24 @@ namespace SistemaGym.UI.Windows
                
                 e.Handled = true;
             }
+        }
+        private void stockControl()
+        {
+            ProductoEntity producto = new ProductoEntity();
+            DetalleFacturaProductoEntity detalleFactura = new DetalleFacturaProductoEntity();
+
+            int cantidad = detalleFactura.Cantidad;
+            int stock = producto.Stock; 
+            if (cantidad <= stock)
+            {
+                stock -= cantidad;
+                
+            }
+            else
+            {
+                MessageBox.Show("La cantidad de producto no puede exceder el stock");
+            }
+
         }
     }
 }

@@ -61,8 +61,8 @@ namespace SistemaGym.DAL
                     cmddetalle.Parameters.AddWithValue("@total", detalle.Total);
                     detalle.IDDetalleFacturaProducto = Convert.ToInt32(cmddetalle.ExecuteScalar());
 
+                    ProductoDAL.ActualizarStock(detalle.IDProducto, detalle.Cantidad);
 
-                
                 }
 
                 string insertarPagoQuery = "INSERT INTO Pago(IDFacturaProducto, MetodoPago, Monto, Pagado, Devuelta, FechaPago, Estatus) " +
