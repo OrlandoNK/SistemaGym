@@ -321,6 +321,8 @@ namespace SistemaGym.UI.Windows
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
+            bool validation = true;
             decimal MontoRecibido = decimal.Parse(txtMontoRecibido.Text);
             decimal MontoTotal = decimal.Parse(txtMontoTotal.Text);
 
@@ -336,21 +338,25 @@ namespace SistemaGym.UI.Windows
             {
                txtDevuelta.Text = "0";
             }
-            else if (string.IsNullOrEmpty(txtMontoRecibido.Text))
+            if (txtMontoRecibido.Text == "0")
             {
                 errorProvider.SetError(txtMontoRecibido, "¡El Monto Recibido es Obligatorio!");
+                validation = false;
             }
-            else if (!decimal.TryParse(txtMontoRecibido.Text, out MontoRecibido))
+            if (!decimal.TryParse(txtMontoRecibido.Text, out MontoRecibido))
             {
                 errorProvider.SetError(txtMontoRecibido, "¡El Monto Recibido es Obligatorio!");
+                validation = false;
             }
-            else if (string.IsNullOrEmpty(txtMontoTotal.Text))
+            if (txtMontoTotal.Text == "0")
             {
                 errorProvider.SetError(txtMontoTotal, "¡El Monto Total es Obligatorio!");
+                validation = false;
             }
-            else if (!decimal.TryParse(txtMontoTotal.Text, out MontoRecibido))
+            if (!decimal.TryParse(txtMontoTotal.Text, out MontoRecibido))
             {
                 errorProvider.SetError(txtMontoTotal, "¡El Monto Total es Obligatorio!");
+                validation = false;
             }
         }
     }
