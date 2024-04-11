@@ -301,7 +301,7 @@
             // 
             groupBox5.Controls.Add(rbtnNoTieneCargoDebito);
             groupBox5.Controls.Add(rbtnSiTieneCargoDebito);
-            groupBox5.Location = new Point(866, 173);
+            groupBox5.Location = new Point(866, 379);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(200, 164);
             groupBox5.TabIndex = 35;
@@ -338,7 +338,7 @@
             // 
             groupBox4.Controls.Add(rbtnNoTieneCargoCredito);
             groupBox4.Controls.Add(rbtnSiTieneCargoCredito);
-            groupBox4.Location = new Point(866, 3);
+            groupBox4.Location = new Point(866, 204);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(200, 164);
             groupBox4.TabIndex = 34;
@@ -427,7 +427,7 @@
             groupBox3.Controls.Add(label10);
             groupBox3.Controls.Add(TxbIDUsuario);
             groupBox3.Controls.Add(TxbNombreApellidoUsuario);
-            groupBox3.Location = new Point(3, 338);
+            groupBox3.Location = new Point(3, 379);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(381, 107);
             groupBox3.TabIndex = 11;
@@ -484,7 +484,7 @@
             groupBox9.Controls.Add(label30);
             groupBox9.Controls.Add(label31);
             groupBox9.Controls.Add(TxbIDCargoDebito);
-            groupBox9.Location = new Point(390, 173);
+            groupBox9.Location = new Point(390, 379);
             groupBox9.Name = "groupBox9";
             groupBox9.Size = new Size(470, 164);
             groupBox9.TabIndex = 28;
@@ -597,7 +597,7 @@
             groupBox2.Controls.Add(TxbNombreCliente);
             groupBox2.Location = new Point(3, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(381, 154);
+            groupBox2.Size = new Size(381, 195);
             groupBox2.TabIndex = 10;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del Cliente";
@@ -605,7 +605,7 @@
             // label7
             // 
             label7.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(255, 25);
+            label7.Location = new Point(255, 38);
             label7.Name = "label7";
             label7.Size = new Size(117, 24);
             label7.TabIndex = 15;
@@ -627,7 +627,7 @@
             btnBuscarIDCliente.ForeColor = Color.White;
             btnBuscarIDCliente.Image = Properties.Resources.icon_btn_search_for_Cliente__x32_;
             btnBuscarIDCliente.ImageSize = new Size(32, 32);
-            btnBuscarIDCliente.Location = new Point(255, 91);
+            btnBuscarIDCliente.Location = new Point(255, 104);
             btnBuscarIDCliente.Name = "btnBuscarIDCliente";
             btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnBuscarIDCliente.Size = new Size(117, 55);
@@ -637,7 +637,7 @@
             // 
             // TxbIDCliente
             // 
-            TxbIDCliente.Location = new Point(9, 56);
+            TxbIDCliente.Location = new Point(9, 69);
             TxbIDCliente.Name = "TxbIDCliente";
             TxbIDCliente.ReadOnly = true;
             TxbIDCliente.Size = new Size(117, 23);
@@ -646,7 +646,7 @@
             // label4
             // 
             label4.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(9, 25);
+            label4.Location = new Point(9, 38);
             label4.Name = "label4";
             label4.Size = new Size(117, 24);
             label4.TabIndex = 11;
@@ -656,7 +656,7 @@
             // label6
             // 
             label6.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(132, 25);
+            label6.Location = new Point(132, 38);
             label6.Name = "label6";
             label6.Size = new Size(117, 24);
             label6.TabIndex = 13;
@@ -665,7 +665,7 @@
             // 
             // TxbApellidoCliente
             // 
-            TxbApellidoCliente.Location = new Point(255, 56);
+            TxbApellidoCliente.Location = new Point(255, 69);
             TxbApellidoCliente.Name = "TxbApellidoCliente";
             TxbApellidoCliente.ReadOnly = true;
             TxbApellidoCliente.Size = new Size(117, 23);
@@ -673,7 +673,7 @@
             // 
             // TxbDocumentoCliente
             // 
-            TxbDocumentoCliente.Location = new Point(132, 123);
+            TxbDocumentoCliente.Location = new Point(132, 136);
             TxbDocumentoCliente.Name = "TxbDocumentoCliente";
             TxbDocumentoCliente.ReadOnly = true;
             TxbDocumentoCliente.Size = new Size(117, 23);
@@ -681,7 +681,7 @@
             // 
             // TxbTipoDocumento
             // 
-            TxbTipoDocumento.Location = new Point(9, 123);
+            TxbTipoDocumento.Location = new Point(9, 136);
             TxbTipoDocumento.Name = "TxbTipoDocumento";
             TxbTipoDocumento.ReadOnly = true;
             TxbTipoDocumento.Size = new Size(117, 23);
@@ -690,7 +690,7 @@
             // label38
             // 
             label38.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label38.Location = new Point(9, 92);
+            label38.Location = new Point(9, 105);
             label38.Name = "label38";
             label38.Size = new Size(117, 24);
             label38.TabIndex = 20;
@@ -700,7 +700,7 @@
             // label5
             // 
             label5.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(132, 92);
+            label5.Location = new Point(132, 105);
             label5.Name = "label5";
             label5.Size = new Size(117, 24);
             label5.TabIndex = 17;
@@ -709,7 +709,7 @@
             // 
             // TxbNombreCliente
             // 
-            TxbNombreCliente.Location = new Point(132, 56);
+            TxbNombreCliente.Location = new Point(132, 69);
             TxbNombreCliente.Name = "TxbNombreCliente";
             TxbNombreCliente.ReadOnly = true;
             TxbNombreCliente.Size = new Size(117, 23);
@@ -727,7 +727,7 @@
             groupBox8.Controls.Add(label28);
             groupBox8.Controls.Add(label11);
             groupBox8.Controls.Add(TxbIDCargoCredito);
-            groupBox8.Location = new Point(390, 3);
+            groupBox8.Location = new Point(390, 204);
             groupBox8.Name = "groupBox8";
             groupBox8.Size = new Size(470, 164);
             groupBox8.TabIndex = 27;
@@ -839,7 +839,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(TxbDescrMembresia);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(3, 163);
+            groupBox1.Location = new Point(3, 204);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(381, 169);
             groupBox1.TabIndex = 9;
