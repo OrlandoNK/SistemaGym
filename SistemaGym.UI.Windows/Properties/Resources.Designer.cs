@@ -1003,9 +1003,29 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_area_empresa_gym_logo__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-area-empresa-gym-logo-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_area_gym_registra__x32_ {
             get {
                 object obj = ResourceManager.GetObject("icon-area-gym-registra-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_asistencia_clientes_gym__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-asistencia-clientes-gym-[x32]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

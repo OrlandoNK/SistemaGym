@@ -1,6 +1,6 @@
 ﻿namespace SistemaGym.UI.Windows
 {
-    partial class mantenimientoAreaEmpresa
+    partial class mantenimientoAsistenciaClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             topPanel = new Panel();
             pictureBox1 = new PictureBox();
-            btnCerrar = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             subtopPanel = new Panel();
             sidePanel = new Panel();
@@ -50,58 +49,37 @@
             btnNew = new Guna.UI2.WinForms.Guna2Button();
             searchbarPanel = new Panel();
             TxbSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
-            fillPanel = new Panel();
-            dgvAreaEmpresa = new DataGridView();
-            IDArea = new DataGridViewTextBoxColumn();
-            Encargado = new DataGridViewComboBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            FechaRegistro = new DataGridViewTextBoxColumn();
+            btnCerrar = new PictureBox();
             topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             sidePanel.SuspendLayout();
             searchbarPanel.SuspendLayout();
-            fillPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvAreaEmpresa).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             SuspendLayout();
             // 
             // topPanel
             // 
             topPanel.BackColor = Color.Black;
             topPanel.BorderStyle = BorderStyle.FixedSingle;
-            topPanel.Controls.Add(pictureBox1);
             topPanel.Controls.Add(btnCerrar);
+            topPanel.Controls.Add(pictureBox1);
             topPanel.Controls.Add(guna2HtmlLabel1);
             topPanel.Dock = DockStyle.Top;
             topPanel.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             topPanel.Location = new Point(0, 0);
             topPanel.Name = "topPanel";
             topPanel.Size = new Size(1085, 64);
-            topPanel.TabIndex = 0;
+            topPanel.TabIndex = 1;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icon_area_empresa_gym_logo__x32_;
+            pictureBox1.Image = Properties.Resources.icon_asistencia_clientes_gym__x32_;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(63, 56);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
-            // 
-            // btnCerrar
-            // 
-            btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCerrar.Cursor = Cursors.Hand;
-            btnCerrar.Image = Properties.Resources._BotonXcerrarVentana;
-            btnCerrar.Location = new Point(1040, 15);
-            btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(32, 32);
-            btnCerrar.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnCerrar.TabIndex = 2;
-            btnCerrar.TabStop = false;
-            btnCerrar.Click += btnCerrar_Click;
             // 
             // guna2HtmlLabel1
             // 
@@ -110,9 +88,9 @@
             guna2HtmlLabel1.ForeColor = Color.DarkGoldenrod;
             guna2HtmlLabel1.Location = new Point(72, 18);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(104, 27);
+            guna2HtmlLabel1.Size = new Size(174, 27);
             guna2HtmlLabel1.TabIndex = 1;
-            guna2HtmlLabel1.Text = "Áreas GYM";
+            guna2HtmlLabel1.Text = "Asistencia Clientes";
             // 
             // subtopPanel
             // 
@@ -123,7 +101,7 @@
             subtopPanel.Location = new Point(0, 64);
             subtopPanel.Name = "subtopPanel";
             subtopPanel.Size = new Size(1085, 35);
-            subtopPanel.TabIndex = 1;
+            subtopPanel.TabIndex = 2;
             // 
             // sidePanel
             // 
@@ -138,7 +116,7 @@
             sidePanel.Location = new Point(0, 99);
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(198, 586);
-            sidePanel.TabIndex = 2;
+            sidePanel.TabIndex = 3;
             // 
             // btnDelete
             // 
@@ -165,7 +143,6 @@
             btnDelete.Size = new Size(198, 45);
             btnDelete.TabIndex = 7;
             btnDelete.Text = "Eliminar";
-            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -192,7 +169,6 @@
             btnEdit.Size = new Size(198, 45);
             btnEdit.TabIndex = 6;
             btnEdit.Text = "Editar";
-            btnEdit.Click += btnEdit_Click;
             // 
             // btnRefresh
             // 
@@ -243,7 +219,6 @@
             btnNew.Size = new Size(198, 45);
             btnNew.TabIndex = 4;
             btnNew.Text = "Nuevo";
-            btnNew.Click += btnNew_Click;
             // 
             // searchbarPanel
             // 
@@ -255,7 +230,7 @@
             searchbarPanel.Location = new Point(198, 99);
             searchbarPanel.Name = "searchbarPanel";
             searchbarPanel.Size = new Size(887, 63);
-            searchbarPanel.TabIndex = 3;
+            searchbarPanel.TabIndex = 4;
             // 
             // TxbSearchBar
             // 
@@ -271,121 +246,62 @@
             TxbSearchBar.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbSearchBar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbSearchBar.IconLeft = Properties.Resources._BusquedaBar__;
-            TxbSearchBar.Location = new Point(9, 10);
+            TxbSearchBar.Location = new Point(7, 10);
             TxbSearchBar.Name = "TxbSearchBar";
             TxbSearchBar.PasswordChar = '\0';
             TxbSearchBar.PlaceholderForeColor = Color.Silver;
             TxbSearchBar.PlaceholderText = "Buscar";
             TxbSearchBar.SelectedText = "";
             TxbSearchBar.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            TxbSearchBar.Size = new Size(867, 40);
+            TxbSearchBar.Size = new Size(871, 40);
             TxbSearchBar.TabIndex = 0;
             // 
-            // fillPanel
+            // btnCerrar
             // 
-            fillPanel.BackColor = Color.WhiteSmoke;
-            fillPanel.BorderStyle = BorderStyle.FixedSingle;
-            fillPanel.Controls.Add(dgvAreaEmpresa);
-            fillPanel.Dock = DockStyle.Fill;
-            fillPanel.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            fillPanel.Location = new Point(198, 162);
-            fillPanel.Name = "fillPanel";
-            fillPanel.Size = new Size(887, 523);
-            fillPanel.TabIndex = 4;
+            btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCerrar.Cursor = Cursors.Hand;
+            btnCerrar.Image = Properties.Resources._BotonXcerrarVentana;
+            btnCerrar.Location = new Point(1040, 15);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(32, 32);
+            btnCerrar.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnCerrar.TabIndex = 4;
+            btnCerrar.TabStop = false;
             // 
-            // dgvAreaEmpresa
-            // 
-            dgvAreaEmpresa.AllowUserToAddRows = false;
-            dgvAreaEmpresa.AllowUserToDeleteRows = false;
-            dgvAreaEmpresa.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvAreaEmpresa.BackgroundColor = Color.WhiteSmoke;
-            dgvAreaEmpresa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAreaEmpresa.Columns.AddRange(new DataGridViewColumn[] { IDArea, Encargado, Nombre, Descripcion, FechaRegistro });
-            dgvAreaEmpresa.Dock = DockStyle.Fill;
-            dgvAreaEmpresa.Location = new Point(0, 0);
-            dgvAreaEmpresa.Name = "dgvAreaEmpresa";
-            dgvAreaEmpresa.RowHeadersVisible = false;
-            dgvAreaEmpresa.RowTemplate.Height = 25;
-            dgvAreaEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAreaEmpresa.Size = new Size(885, 521);
-            dgvAreaEmpresa.TabIndex = 0;
-            // 
-            // IDArea
-            // 
-            IDArea.DataPropertyName = "IDArea";
-            IDArea.HeaderText = "IDArea";
-            IDArea.Name = "IDArea";
-            // 
-            // Encargado
-            // 
-            Encargado.DataPropertyName = "Encargado";
-            Encargado.HeaderText = "Encargado";
-            Encargado.Name = "Encargado";
-            Encargado.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Descripcion
-            // 
-            Descripcion.DataPropertyName = "Descripcion";
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.Name = "Descripcion";
-            // 
-            // FechaRegistro
-            // 
-            FechaRegistro.DataPropertyName = "FechaRegistro";
-            FechaRegistro.HeaderText = "FechaRegistro";
-            FechaRegistro.Name = "FechaRegistro";
-            // 
-            // mantenimientoAreaEmpresa
+            // mantenimientoAsistenciaClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 685);
-            Controls.Add(fillPanel);
             Controls.Add(searchbarPanel);
             Controls.Add(sidePanel);
             Controls.Add(subtopPanel);
             Controls.Add(topPanel);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "mantenimientoAreaEmpresa";
+            Name = "mantenimientoAsistenciaClientes";
             StartPosition = FormStartPosition.CenterScreen;
-            Load += mantenimientoAreaEmpresa_Load;
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
             sidePanel.ResumeLayout(false);
             searchbarPanel.ResumeLayout(false);
-            fillPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvAreaEmpresa).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel topPanel;
+        private PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Panel subtopPanel;
         private Panel sidePanel;
-        private Panel searchbarPanel;
-        private Panel fillPanel;
-        private Guna.UI2.WinForms.Guna2TextBox TxbSearchBar;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private Guna.UI2.WinForms.Guna2Button btnNew;
+        private Panel searchbarPanel;
+        private Guna.UI2.WinForms.Guna2TextBox TxbSearchBar;
         private PictureBox btnCerrar;
-        private PictureBox pictureBox1;
-        private DataGridView dgvAreaEmpresa;
-        private DataGridViewTextBoxColumn IDArea;
-        private DataGridViewComboBoxColumn Encargado;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Descripcion;
-        private DataGridViewTextBoxColumn FechaRegistro;
     }
 }
