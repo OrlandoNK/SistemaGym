@@ -66,45 +66,90 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //validar los datos
-            if (!ValidarDatos())
+            if (rbtnPaseDiario.Checked)
             {
-                return;
+                //validar los datos
+                if (!ValidarDatos())
+                {
+                    return;
 
-            }
-            //datos de control al objeto
-            ClientesEntity oCliente = new ClientesEntity();
-            oCliente.IDUsuario = (int)cbUsuario.SelectedValue;
-            oCliente.IDMembresia = (int)cbMembresia.SelectedValue;
-            oCliente.TipoListaCliente = (int)cbTipoListaCliente.SelectedValue;
-            
-            oCliente.TipoCliente = (int)cbTipoCliente.SelectedValue;
-           
-            oCliente.Nombre = txtNombre.Text;
-            oCliente.Apellido = txtApellido.Text;
-            oCliente.TipoDocumento = cbTipoDocumento.Text;
-            oCliente.Documento = txtDocumento.Text;
-            oCliente.Direccion = txtDireccion.Text;
-            oCliente.TelCell = txtTelCell.Text;
-            oCliente.TelRes = txtTelRes.Text;
-            oCliente.FechaRegistro = DateTime.Now;
-            oCliente.Estatus = "Activo";
+                }
+                //datos de control al objeto
+                ClientesEntity oCliente = new ClientesEntity();
+                oCliente.IDUsuario = (int)cbUsuario.SelectedValue;
+                oCliente.TipoListaCliente = (int)cbTipoListaCliente.SelectedValue;
+
+                oCliente.TipoCliente = (int)cbTipoCliente.SelectedValue;
+
+                oCliente.Nombre = txtNombre.Text;
+                oCliente.Apellido = txtApellido.Text;
+                oCliente.TipoDocumento = cbTipoDocumento.Text;
+                oCliente.Documento = txtDocumento.Text;
+                oCliente.Direccion = txtDireccion.Text;
+                oCliente.TelCell = txtTelCell.Text;
+                oCliente.TelRes = txtTelRes.Text;
+                oCliente.FechaRegistro = DateTime.Now;
+                oCliente.Estatus = "Activo";
 
 
-            // guardar base datos
-            try
-            {
-                ClientesBLL.guardar(oCliente);
-                MessageBox.Show("Cliente Guardado de Manera Satisfactoria", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarCampos();
+                // guardar base datos
+                try
+                {
+                    ClientesBLL.guardarClientePaseDiario(oCliente);
+                    MessageBox.Show("Cliente Guardado de Manera Satisfactoria", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCampos();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cliente. \nDetalles a Continuacion\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cliente. \nDetalles a Continuacion\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (SqlException ex)
+            if (rbtnPaseMembresia.Checked)
             {
-                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cliente. \nDetalles a Continuacion\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cliente. \nDetalles a Continuacion\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //validar los datos
+                if (!ValidarDatos())
+                {
+                    return;
+
+                }
+                //datos de control al objeto
+                ClientesEntity oCliente = new ClientesEntity();
+                oCliente.IDUsuario = (int)cbUsuario.SelectedValue;
+                oCliente.IDMembresia = (int)cbMembresia.SelectedValue;
+                oCliente.TipoListaCliente = (int)cbTipoListaCliente.SelectedValue;
+
+                oCliente.TipoCliente = (int)cbTipoCliente.SelectedValue;
+
+                oCliente.Nombre = txtNombre.Text;
+                oCliente.Apellido = txtApellido.Text;
+                oCliente.TipoDocumento = cbTipoDocumento.Text;
+                oCliente.Documento = txtDocumento.Text;
+                oCliente.Direccion = txtDireccion.Text;
+                oCliente.TelCell = txtTelCell.Text;
+                oCliente.TelRes = txtTelRes.Text;
+                oCliente.FechaRegistro = DateTime.Now;
+                oCliente.Estatus = "Activo";
+
+
+                // guardar base datos
+                try
+                {
+                    ClientesBLL.guardar(oCliente);
+                    MessageBox.Show("Cliente Guardado de Manera Satisfactoria", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCampos();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cliente. \nDetalles a Continuacion\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se Ha Producido un Error al Intentar Guardar el Cliente. \nDetalles a Continuacion\n" + ex.Message, sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -115,11 +160,11 @@ namespace SistemaGym.UI.Windows
             errorProvider.Clear();
             //verificar que en los campos obligatorios hayan datos
 
-           /* if (string.IsNullOrEmpty(cbMembresia.Text))
-            {
-                errorProvider.SetError(cbMembresia, "La Membresia es obligatoria");
-                resultado = false;
-            }*/
+            /* if (string.IsNullOrEmpty(cbMembresia.Text))
+             {
+                 errorProvider.SetError(cbMembresia, "La Membresia es obligatoria");
+                 resultado = false;
+             }*/
 
             if (string.IsNullOrEmpty(cbTipoListaCliente.Text))
             {
@@ -159,5 +204,28 @@ namespace SistemaGym.UI.Windows
             txtTelRes.Clear();
         }
 
+        private void rbtnPaseDiario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnPaseDiario.Checked)
+            {
+                cbMembresia.Enabled = false;
+            }
+            else
+            {
+                cbMembresia.Enabled = true;
+            }
+        }
+
+        private void rbtnPaseMembresia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnPaseMembresia.Checked)
+            {
+                cbMembresia.Enabled = true;
+            }
+            else
+            {
+                cbMembresia.Enabled = false;
+            }
+        }
     }
 }

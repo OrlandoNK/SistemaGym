@@ -36,6 +36,28 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
             cmd.ExecuteNonQuery();    
         }
+        public static void InsertarClientePaseDiario(ClientesEntity clientes)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            string insertar = "INSERT INTO Clientes(IDUsuario, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TelCell, TelRes, FechaRegistro, Estatus) VALUES(@idusuario, @idtipolistacliente, @idtipocliente, @nombre, @apellido, @tipodocumento, @documento, @direccion, @telcell, @telres, @fecharegistro, @estatus)";
+            SqlCommand cmd = new SqlCommand(insertar, Conexion);
+            cmd.Parameters.AddWithValue("@idusuario", clientes.IDUsuario);
+            cmd.Parameters.AddWithValue("@idtipolistacliente", clientes.TipoListaCliente);
+            cmd.Parameters.AddWithValue("@idtipocliente", clientes.TipoCliente);
+            cmd.Parameters.AddWithValue("@nombre", clientes.Nombre);
+            cmd.Parameters.AddWithValue("@apellido", clientes.Apellido);
+            cmd.Parameters.AddWithValue("@tipodocumento", clientes.TipoDocumento);
+            cmd.Parameters.AddWithValue("@documento", clientes.Documento);
+            cmd.Parameters.AddWithValue("@direccion", clientes.Direccion);
+            cmd.Parameters.AddWithValue("@telcell", clientes.TelCell);
+            cmd.Parameters.AddWithValue("@telres", clientes.TelRes);
+            cmd.Parameters.AddWithValue("@fecharegistro", clientes.FechaRegistro);
+            cmd.Parameters.AddWithValue("@estatus", clientes.Estatus);
+            cmd.ExecuteNonQuery();
+        }
 
         //metodo actualizar cliente
         public static void ActualizarCliente(ClientesEntity clientes)
