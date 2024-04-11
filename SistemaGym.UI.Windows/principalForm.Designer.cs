@@ -489,7 +489,7 @@
             btnReportsDetalleProducto.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnReportsDetalleProducto.Size = new Size(220, 37);
             btnReportsDetalleProducto.TabIndex = 10;
-            btnReportsDetalleProducto.Text = "Detalle Producto";
+            btnReportsDetalleProducto.Text = "Detalle Factura Producto";
             btnReportsDetalleProducto.TextAlign = HorizontalAlignment.Right;
             btnReportsDetalleProducto.Click += btnReportsDetalleProducto_Click;
             // 
