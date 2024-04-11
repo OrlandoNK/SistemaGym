@@ -236,5 +236,30 @@ namespace SistemaGym.UI.Windows
         {
             showSubMenu(subPanelReports);
         }
+
+        private void btnReportsEmpelados_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnReportsClientes_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnReportsFacturaProducto_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnReportsDetalleProducto_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnReportsPagos_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
     }
 }
