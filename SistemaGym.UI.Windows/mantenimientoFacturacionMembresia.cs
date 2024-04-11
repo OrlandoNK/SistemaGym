@@ -69,7 +69,7 @@ namespace SistemaGym.UI.Windows
             var colCargoCredito = (DataGridViewComboBoxColumn)dgvFacturacionMembresia.Columns["CargoCredito"];
             colCargoCredito.DataSource = CargoCreditoBLL.MostrarCargoCredito();
             colCargoCredito.ValueMember = "IDCargoCredito";
-            colCargoCredito.DisplayMember = "Cargo";
+            colCargoCredito.DisplayMember = "Monto";
             colCargoCredito.DataPropertyName = "CargoCredito";
         }
 
@@ -78,7 +78,7 @@ namespace SistemaGym.UI.Windows
             var colCargoDebito = (DataGridViewComboBoxColumn)dgvFacturacionMembresia.Columns["CargoDebito"];
             colCargoDebito.DataSource = CargoDebitoBLL.MostrarCargoDebito();
             colCargoDebito.ValueMember = "IDCargoDebito";
-            colCargoDebito.DisplayMember = "Cargo";
+            colCargoDebito.DisplayMember = "Monto";
             colCargoDebito.DataPropertyName = "CargoDebito";
         }
 
