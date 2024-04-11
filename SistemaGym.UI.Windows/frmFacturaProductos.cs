@@ -22,6 +22,7 @@ namespace SistemaGym.UI.Windows
         public frmFacturaProductos()
         {
             InitializeComponent();
+            
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -122,6 +123,7 @@ namespace SistemaGym.UI.Windows
             dgvProductos.AutoGenerateColumns = false;
             txtIDUsuario.Text = gestioUsuarioEntities.IDUserLogged;
             txtUsuario.Text = gestioUsuarioEntities.usernameLogged;
+           
 
         }
 
