@@ -209,10 +209,13 @@ namespace SistemaGym.UI.Windows
             if (rbtnPaseDiario.Checked)
             {
                 cbMembresia.Enabled = false;
+                cbTipoCliente.Enabled = false;
+                cbTipoCliente.DisplayMember = "pase diario";
             }
             else
             {
                 cbMembresia.Enabled = true;
+                cbTipoCliente.Enabled = true;
             }
         }
 
@@ -221,10 +224,13 @@ namespace SistemaGym.UI.Windows
             if (rbtnPaseMembresia.Checked)
             {
                 cbMembresia.Enabled = true;
+                cbTipoCliente.Enabled = true;
+                cbTipoCliente.DisplayMember = "membresia";
             }
             else
             {
                 cbMembresia.Enabled = false;
+                cbTipoCliente.Enabled = false;
             }
         }
     }

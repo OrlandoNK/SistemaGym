@@ -28,10 +28,6 @@ namespace SistemaGym.BLL
         {
             return clientesDAL.GetClientWithCargos(idCliente);
         }
-        public DataTable GetClientAndMembershipGroup(int idCliente)
-        {
-            return clientesDAL.GetClientAndMembershipGroup(idCliente);
-        }
         public static void update(ClientesEntity clientes)
         {
             ClientesDAL.ActualizarCliente(clientes);
