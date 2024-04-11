@@ -94,8 +94,9 @@ namespace SistemaGym.UI.Windows
             txtCantidad.Text = "0";
             txtTotalDescuento.Text = 0.ToString("N2");
             txtNCF.Text = "B0100000005";
-            dgvProductos.AutoGenerateColumns = false;
+            oFactura.Detalles.Clear();
             dgvProductos.DataSource = null;
+            dgvProductos.DataSource = oFactura;
             txtMontoTotal.Text = 0.ToString("N2");
             txtMontoRecibido.Text = "0";
             txtDevuelta.Text = "0";
@@ -112,14 +113,13 @@ namespace SistemaGym.UI.Windows
                 txtIDProducto.Text = producto.IDProducto.ToString();
                 txtProducto.Text = producto.Nombre;
                 txtPrecio.Text = Convert.ToDecimal(producto.PrecioUnitario).ToString();
-
-
             }
         }
 
         private void frmFacturaProductos_Load(object sender, EventArgs e)
         {
             InicializarControles();
+            dgvProductos.AutoGenerateColumns = false;
             txtIDUsuario.Text = gestioUsuarioEntities.IDUserLogged;
             txtUsuario.Text = gestioUsuarioEntities.usernameLogged;
 
