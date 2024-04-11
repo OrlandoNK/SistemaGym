@@ -1033,6 +1033,26 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_btn_reports_detalle_factura_producto__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-btn-reports-detalle-factura-producto-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_btn_reports_GYM__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-btn-reports-GYM-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_btn_search_for_Cliente__x32_ {
             get {
                 object obj = ResourceManager.GetObject("icon-btn-search-for-Cliente-[x32]", resourceCulture);
@@ -1046,6 +1066,36 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap icon_btn_search_producto__x32_ {
             get {
                 object obj = ResourceManager.GetObject("icon-btn-search-producto-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_button_reports_clientes__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-button-reports-clientes-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_button_reports_empleados__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-button-reports-empleados-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_button_reports_Pagos__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-button-reports-Pagos-[x32]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1146,6 +1196,26 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap icon_proveedor_mantenimiento__x32__waos {
             get {
                 object obj = ResourceManager.GetObject("icon-proveedor-mantenimiento-[x32]-waos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_reports_button_factura_producto__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-reports-button-factura-producto-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_reports_button_gym_comfort__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-reports-button-gym-comfort-[x32]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

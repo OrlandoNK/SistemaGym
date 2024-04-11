@@ -24,6 +24,7 @@ namespace SistemaGym.UI.Windows
             subPanelAdministracion.Visible = false;
             subPanelMantenimientos.Visible = false;
             subPanelFacturacion.Visible = false;
+            subPanelReports.Visible = false;
         }
 
         private void HideSubMenu()
@@ -34,6 +35,8 @@ namespace SistemaGym.UI.Windows
                 subPanelMantenimientos.Visible = false;
             if (subPanelFacturacion.Visible == true)
                 subPanelFacturacion.Visible = false;
+            if (subPanelReports.Visible == true)
+                subPanelReports.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -227,6 +230,11 @@ namespace SistemaGym.UI.Windows
             areasGYM.Show();
 
             HideSubMenu();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            showSubMenu(subPanelReports);
         }
     }
 }
