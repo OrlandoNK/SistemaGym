@@ -1093,6 +1093,16 @@ namespace SistemaGym.UI.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_buscar_cliente_asistencia__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-buscar-cliente-asistencia-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_button_reports_clientes__x32_ {
             get {
                 object obj = ResourceManager.GetObject("icon-button-reports-clientes-[x32]", resourceCulture);
@@ -1116,6 +1126,16 @@ namespace SistemaGym.UI.Windows.Properties {
         internal static System.Drawing.Bitmap icon_button_reports_Pagos__x32_ {
             get {
                 object obj = ResourceManager.GetObject("icon-button-reports-Pagos-[x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_check_asistencia_true__x32_ {
+            get {
+                object obj = ResourceManager.GetObject("icon-check-asistencia-true-[x32]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

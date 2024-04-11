@@ -35,6 +35,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             topPanel = new Panel();
+            lblTitleMantenimientoFacturaMembresia = new Label();
+            pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel2 = new Panel();
             TxbIDClienteCargoDebito = new TextBox();
@@ -52,12 +54,10 @@
             label25 = new Label();
             btnGuardarCargoDebito = new Guna.UI2.WinForms.Guna2Button();
             panel3 = new Panel();
-            lblTitleMantenimientoFacturaMembresia = new Label();
-            pictureBox1 = new PictureBox();
             topPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -82,6 +82,27 @@
             topPanel.Name = "topPanel";
             topPanel.Size = new Size(826, 66);
             topPanel.TabIndex = 2;
+            // 
+            // lblTitleMantenimientoFacturaMembresia
+            // 
+            lblTitleMantenimientoFacturaMembresia.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitleMantenimientoFacturaMembresia.ForeColor = Color.Gold;
+            lblTitleMantenimientoFacturaMembresia.Location = new Point(71, 6);
+            lblTitleMantenimientoFacturaMembresia.Name = "lblTitleMantenimientoFacturaMembresia";
+            lblTitleMantenimientoFacturaMembresia.Size = new Size(200, 53);
+            lblTitleMantenimientoFacturaMembresia.TabIndex = 6;
+            lblTitleMantenimientoFacturaMembresia.Text = "Cargo Débito";
+            lblTitleMantenimientoFacturaMembresia.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._PaymentMembresiaFactura;
+            pictureBox1.Location = new Point(3, 6);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(62, 53);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // btnClose
             // 
@@ -148,7 +169,7 @@
             btnBuscarClienteCargoDebito.FillColor = Color.Transparent;
             btnBuscarClienteCargoDebito.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnBuscarClienteCargoDebito.ForeColor = Color.White;
-            btnBuscarClienteCargoDebito.Image = Properties.Resources._BuscarClienteCCyCD_x32_;
+            btnBuscarClienteCargoDebito.Image = Properties.Resources.icon_btn_search_for_Cliente__x32_;
             btnBuscarClienteCargoDebito.ImageSize = new Size(32, 32);
             btnBuscarClienteCargoDebito.Location = new Point(118, 104);
             btnBuscarClienteCargoDebito.Name = "btnBuscarClienteCargoDebito";
@@ -289,27 +310,6 @@
             panel3.Size = new Size(636, 388);
             panel3.TabIndex = 50;
             // 
-            // lblTitleMantenimientoFacturaMembresia
-            // 
-            lblTitleMantenimientoFacturaMembresia.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitleMantenimientoFacturaMembresia.ForeColor = Color.Gold;
-            lblTitleMantenimientoFacturaMembresia.Location = new Point(71, 6);
-            lblTitleMantenimientoFacturaMembresia.Name = "lblTitleMantenimientoFacturaMembresia";
-            lblTitleMantenimientoFacturaMembresia.Size = new Size(200, 53);
-            lblTitleMantenimientoFacturaMembresia.TabIndex = 6;
-            lblTitleMantenimientoFacturaMembresia.Text = "Cargo Débito";
-            lblTitleMantenimientoFacturaMembresia.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources._PaymentMembresiaFactura;
-            pictureBox1.Location = new Point(3, 6);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(62, 53);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
             // nuevoCargoDebito
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -324,10 +324,10 @@
             StartPosition = FormStartPosition.CenterScreen;
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

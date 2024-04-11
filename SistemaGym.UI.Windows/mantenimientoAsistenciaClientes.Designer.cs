@@ -39,6 +39,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             topPanel = new Panel();
+            btnCerrar = new PictureBox();
             pictureBox1 = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             subtopPanel = new Panel();
@@ -49,12 +50,19 @@
             btnNew = new Guna.UI2.WinForms.Guna2Button();
             searchbarPanel = new Panel();
             TxbSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
-            btnCerrar = new PictureBox();
+            panel1 = new Panel();
+            dgvAsistenciaClientes = new DataGridView();
+            IDAsistenciaCliente = new DataGridViewTextBoxColumn();
+            IDCliente = new DataGridViewComboBoxColumn();
+            Asistencia = new DataGridViewTextBoxColumn();
+            FechaAsistencia = new DataGridViewTextBoxColumn();
             topPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             sidePanel.SuspendLayout();
             searchbarPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvAsistenciaClientes).BeginInit();
             SuspendLayout();
             // 
             // topPanel
@@ -70,6 +78,19 @@
             topPanel.Name = "topPanel";
             topPanel.Size = new Size(1085, 64);
             topPanel.TabIndex = 1;
+            // 
+            // btnCerrar
+            // 
+            btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCerrar.Cursor = Cursors.Hand;
+            btnCerrar.Image = Properties.Resources._BotonXcerrarVentana;
+            btnCerrar.Location = new Point(1040, 15);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(32, 32);
+            btnCerrar.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnCerrar.TabIndex = 4;
+            btnCerrar.TabStop = false;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // pictureBox1
             // 
@@ -256,23 +277,62 @@
             TxbSearchBar.Size = new Size(871, 40);
             TxbSearchBar.TabIndex = 0;
             // 
-            // btnCerrar
+            // panel1
             // 
-            btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCerrar.Cursor = Cursors.Hand;
-            btnCerrar.Image = Properties.Resources._BotonXcerrarVentana;
-            btnCerrar.Location = new Point(1040, 15);
-            btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(32, 32);
-            btnCerrar.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnCerrar.TabIndex = 4;
-            btnCerrar.TabStop = false;
+            panel1.Controls.Add(dgvAsistenciaClientes);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(198, 162);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(887, 523);
+            panel1.TabIndex = 5;
+            // 
+            // dgvAsistenciaClientes
+            // 
+            dgvAsistenciaClientes.AllowUserToAddRows = false;
+            dgvAsistenciaClientes.AllowUserToDeleteRows = false;
+            dgvAsistenciaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvAsistenciaClientes.BackgroundColor = Color.White;
+            dgvAsistenciaClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAsistenciaClientes.Columns.AddRange(new DataGridViewColumn[] { IDAsistenciaCliente, IDCliente, Asistencia, FechaAsistencia });
+            dgvAsistenciaClientes.Dock = DockStyle.Fill;
+            dgvAsistenciaClientes.Location = new Point(0, 0);
+            dgvAsistenciaClientes.Name = "dgvAsistenciaClientes";
+            dgvAsistenciaClientes.RowHeadersVisible = false;
+            dgvAsistenciaClientes.RowTemplate.Height = 25;
+            dgvAsistenciaClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAsistenciaClientes.Size = new Size(887, 523);
+            dgvAsistenciaClientes.TabIndex = 0;
+            // 
+            // IDAsistenciaCliente
+            // 
+            IDAsistenciaCliente.DataPropertyName = "IDAsistenciaCliente";
+            IDAsistenciaCliente.HeaderText = "IDAsistenciaCliente";
+            IDAsistenciaCliente.Name = "IDAsistenciaCliente";
+            // 
+            // IDCliente
+            // 
+            IDCliente.DataPropertyName = "IDCliente";
+            IDCliente.HeaderText = "IDCliente";
+            IDCliente.Name = "IDCliente";
+            // 
+            // Asistencia
+            // 
+            Asistencia.DataPropertyName = "Asistencia";
+            Asistencia.HeaderText = "Asistencia";
+            Asistencia.Name = "Asistencia";
+            // 
+            // FechaAsistencia
+            // 
+            FechaAsistencia.DataPropertyName = "FechaAsistencia";
+            FechaAsistencia.HeaderText = "FechaAsistencia";
+            FechaAsistencia.Name = "FechaAsistencia";
             // 
             // mantenimientoAsistenciaClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 685);
+            Controls.Add(panel1);
             Controls.Add(searchbarPanel);
             Controls.Add(sidePanel);
             Controls.Add(subtopPanel);
@@ -282,10 +342,12 @@
             StartPosition = FormStartPosition.CenterScreen;
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             sidePanel.ResumeLayout(false);
             searchbarPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvAsistenciaClientes).EndInit();
             ResumeLayout(false);
         }
 
@@ -303,5 +365,11 @@
         private Panel searchbarPanel;
         private Guna.UI2.WinForms.Guna2TextBox TxbSearchBar;
         private PictureBox btnCerrar;
+        private Panel panel1;
+        private DataGridView dgvAsistenciaClientes;
+        private DataGridViewTextBoxColumn IDAsistenciaCliente;
+        private DataGridViewComboBoxColumn IDCliente;
+        private DataGridViewTextBoxColumn Asistencia;
+        private DataGridViewTextBoxColumn FechaAsistencia;
     }
 }
