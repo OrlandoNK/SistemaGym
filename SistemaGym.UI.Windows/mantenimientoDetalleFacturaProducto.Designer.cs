@@ -249,6 +249,7 @@
             dgvDetalleFacturaProducto.Dock = DockStyle.Fill;
             dgvDetalleFacturaProducto.Location = new Point(0, 0);
             dgvDetalleFacturaProducto.Name = "dgvDetalleFacturaProducto";
+            dgvDetalleFacturaProducto.ReadOnly = true;
             dgvDetalleFacturaProducto.RowHeadersVisible = false;
             dgvDetalleFacturaProducto.RowTemplate.Height = 25;
             dgvDetalleFacturaProducto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -260,12 +261,14 @@
             IDDetalleFacturaProductos.DataPropertyName = "IDDetalleFacturaProductos";
             IDDetalleFacturaProductos.HeaderText = "IDDetalleFacturaProductos";
             IDDetalleFacturaProductos.Name = "IDDetalleFacturaProductos";
+            IDDetalleFacturaProductos.ReadOnly = true;
             // 
             // IDFacturaProducto
             // 
             IDFacturaProducto.DataPropertyName = "IDFacturaProducto";
             IDFacturaProducto.HeaderText = "IDFacturaProducto";
             IDFacturaProducto.Name = "IDFacturaProducto";
+            IDFacturaProducto.ReadOnly = true;
             IDFacturaProducto.Resizable = DataGridViewTriState.True;
             IDFacturaProducto.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
@@ -274,6 +277,7 @@
             IDProducto.DataPropertyName = "IDProducto";
             IDProducto.HeaderText = "IDProducto";
             IDProducto.Name = "IDProducto";
+            IDProducto.ReadOnly = true;
             // 
             // precio
             // 
@@ -283,12 +287,14 @@
             precio.DefaultCellStyle = dataGridViewCellStyle1;
             precio.HeaderText = "precio";
             precio.Name = "precio";
+            precio.ReadOnly = true;
             // 
             // cantidad
             // 
             cantidad.DataPropertyName = "cantidad";
             cantidad.HeaderText = "cantidad";
             cantidad.Name = "cantidad";
+            cantidad.ReadOnly = true;
             // 
             // Subtotal
             // 
@@ -298,6 +304,7 @@
             Subtotal.DefaultCellStyle = dataGridViewCellStyle2;
             Subtotal.HeaderText = "Subtotal";
             Subtotal.Name = "Subtotal";
+            Subtotal.ReadOnly = true;
             // 
             // Descuento
             // 
@@ -307,6 +314,7 @@
             Descuento.DefaultCellStyle = dataGridViewCellStyle3;
             Descuento.HeaderText = "Descuento";
             Descuento.Name = "Descuento";
+            Descuento.ReadOnly = true;
             // 
             // Itbis
             // 
@@ -316,6 +324,7 @@
             Itbis.DefaultCellStyle = dataGridViewCellStyle4;
             Itbis.HeaderText = "Itbis";
             Itbis.Name = "Itbis";
+            Itbis.ReadOnly = true;
             // 
             // Total
             // 
@@ -325,6 +334,7 @@
             Total.DefaultCellStyle = dataGridViewCellStyle5;
             Total.HeaderText = "Total";
             Total.Name = "Total";
+            Total.ReadOnly = true;
             // 
             // mantenimientoDetalleFacturaProducto
             // 
