@@ -84,6 +84,7 @@ namespace SistemaGym.UI.Windows
                 btnProveedores.Visible = false;
                 btnCategorias.Visible = false;
                 btnProductos.Visible = false;
+                btnAreasGYM.Visible = false;
             }
             else if (gestioUsuarioEntities.rolUsuarioLogged == "Gerente de Ventas")
             {
