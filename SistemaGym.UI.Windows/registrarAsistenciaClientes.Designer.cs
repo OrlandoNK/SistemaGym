@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnCerrar = new PictureBox();
             pictureBox1 = new PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel2 = new Panel();
             panel3 = new Panel();
+            btnAssistanceSave = new Guna.UI2.WinForms.Guna2Button();
+            groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
             label7 = new Label();
             btnBuscarIDCliente = new Guna.UI2.WinForms.Guna2Button();
@@ -50,15 +52,13 @@
             label38 = new Label();
             label5 = new Label();
             TxbNombreCliente = new TextBox();
-            btnAsistio = new RadioButton();
-            groupBox1 = new GroupBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            rbtnAsistio = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
-            groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -121,7 +121,7 @@
             // 
             panel3.BackColor = Color.FromArgb(35, 32, 39);
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(guna2Button1);
+            panel3.Controls.Add(btnAssistanceSave);
             panel3.Controls.Add(groupBox1);
             panel3.Controls.Add(groupBox2);
             panel3.Dock = DockStyle.Fill;
@@ -129,6 +129,43 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(644, 386);
             panel3.TabIndex = 2;
+            // 
+            // btnAssistanceSave
+            // 
+            btnAssistanceSave.BorderColor = Color.White;
+            btnAssistanceSave.BorderRadius = 3;
+            btnAssistanceSave.BorderThickness = 2;
+            btnAssistanceSave.Cursor = Cursors.Hand;
+            btnAssistanceSave.CustomizableEdges = customizableEdges5;
+            btnAssistanceSave.DisabledState.BorderColor = Color.DarkGray;
+            btnAssistanceSave.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAssistanceSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAssistanceSave.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAssistanceSave.FillColor = Color.Transparent;
+            btnAssistanceSave.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAssistanceSave.ForeColor = Color.White;
+            btnAssistanceSave.Image = Properties.Resources.icon_save_button__x32_;
+            btnAssistanceSave.ImageSize = new Size(32, 32);
+            btnAssistanceSave.Location = new Point(191, 324);
+            btnAssistanceSave.Name = "btnAssistanceSave";
+            btnAssistanceSave.PressedColor = Color.Transparent;
+            btnAssistanceSave.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnAssistanceSave.Size = new Size(448, 55);
+            btnAssistanceSave.TabIndex = 19;
+            btnAssistanceSave.Text = "Guardar Asistencia";
+            btnAssistanceSave.Click += btnAssistanceSave_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(rbtnAsistio);
+            groupBox1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.ForeColor = Color.White;
+            groupBox1.Location = new Point(3, 164);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(182, 217);
+            groupBox1.TabIndex = 14;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Asistencia";
             // 
             // groupBox2
             // 
@@ -168,7 +205,7 @@
             btnBuscarIDCliente.BorderRadius = 5;
             btnBuscarIDCliente.BorderThickness = 2;
             btnBuscarIDCliente.Cursor = Cursors.Hand;
-            btnBuscarIDCliente.CustomizableEdges = customizableEdges3;
+            btnBuscarIDCliente.CustomizableEdges = customizableEdges7;
             btnBuscarIDCliente.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -181,7 +218,7 @@
             btnBuscarIDCliente.Location = new Point(506, 88);
             btnBuscarIDCliente.Name = "btnBuscarIDCliente";
             btnBuscarIDCliente.PressedColor = Color.Transparent;
-            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnBuscarIDCliente.Size = new Size(117, 55);
             btnBuscarIDCliente.TabIndex = 18;
             btnBuscarIDCliente.TextAlign = HorizontalAlignment.Left;
@@ -277,58 +314,23 @@
             TxbNombreCliente.Size = new Size(117, 23);
             TxbNombreCliente.TabIndex = 12;
             // 
-            // btnAsistio
+            // rbtnAsistio
             // 
-            btnAsistio.CheckAlign = ContentAlignment.MiddleRight;
-            btnAsistio.Cursor = Cursors.Hand;
-            btnAsistio.FlatAppearance.BorderSize = 0;
-            btnAsistio.FlatStyle = FlatStyle.Flat;
-            btnAsistio.Image = Properties.Resources.icon_check_asistencia_true__x32_;
-            btnAsistio.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAsistio.Location = new Point(11, 48);
-            btnAsistio.Name = "btnAsistio";
-            btnAsistio.Size = new Size(161, 30);
-            btnAsistio.TabIndex = 12;
-            btnAsistio.TabStop = true;
-            btnAsistio.Text = "Asistió";
-            btnAsistio.TextAlign = ContentAlignment.MiddleCenter;
-            btnAsistio.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(btnAsistio);
-            groupBox1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(3, 164);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(182, 217);
-            groupBox1.TabIndex = 14;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Asistencia";
-            // 
-            // guna2Button1
-            // 
-            guna2Button1.BorderColor = Color.White;
-            guna2Button1.BorderRadius = 5;
-            guna2Button1.BorderThickness = 2;
-            guna2Button1.Cursor = Cursors.Hand;
-            guna2Button1.CustomizableEdges = customizableEdges1;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.Transparent;
-            guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Image = Properties.Resources.icon_save_button__x32_;
-            guna2Button1.ImageSize = new Size(32, 32);
-            guna2Button1.Location = new Point(191, 326);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.PressedColor = Color.Transparent;
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button1.Size = new Size(448, 55);
-            guna2Button1.TabIndex = 19;
-            guna2Button1.Text = "Guardar Asistencia";
+            rbtnAsistio.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnAsistio.Cursor = Cursors.Hand;
+            rbtnAsistio.FlatAppearance.BorderSize = 0;
+            rbtnAsistio.FlatAppearance.CheckedBackColor = Color.Transparent;
+            rbtnAsistio.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            rbtnAsistio.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            rbtnAsistio.Image = Properties.Resources.icon_check_asistencia_true__x32_;
+            rbtnAsistio.ImageAlign = ContentAlignment.MiddleLeft;
+            rbtnAsistio.Location = new Point(7, 54);
+            rbtnAsistio.Name = "rbtnAsistio";
+            rbtnAsistio.Size = new Size(169, 44);
+            rbtnAsistio.TabIndex = 0;
+            rbtnAsistio.Text = "Asistió";
+            rbtnAsistio.TextAlign = ContentAlignment.MiddleCenter;
+            rbtnAsistio.UseVisualStyleBackColor = true;
             // 
             // registrarAsistenciaClientes
             // 
@@ -345,9 +347,9 @@
             ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -372,7 +374,7 @@
         private Label label5;
         private TextBox TxbNombreCliente;
         private GroupBox groupBox1;
-        private RadioButton btnAsistio;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnAssistanceSave;
+        private CheckBox rbtnAsistio;
     }
 }

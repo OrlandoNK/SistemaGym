@@ -41,5 +41,22 @@ namespace SistemaGym.UI.Windows
                 }
             }
         }
+
+        private void btnAssistanceSave_Click(object sender, EventArgs e)
+        {
+            AsistenciaClientesEntity nuevaAsistenciaCliente = new AsistenciaClientesEntity();
+            AsistenciaClientesBLL asistenciaClientesBLL = new AsistenciaClientesBLL();
+
+            nuevaAsistenciaCliente.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
+            if (rbtnAsistio.Checked)
+            {
+                nuevaAsistenciaCliente.Asistencia = true;
+            }
+            else
+            {
+                nuevaAsistenciaCliente.Asistencia = false;
+            }
+
+        }
     }
 }
