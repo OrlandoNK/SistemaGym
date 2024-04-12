@@ -28,14 +28,16 @@ namespace SistemaGym.UI.Windows
         }
 
 
-        private bool ValidarDecisionCargos()
+        private bool ValidarDecision()
         {
             bool validacion = true;
 
             if (!rbtnSiTieneCargoCredito.Checked &&
                 !rbtnNoTieneCargoCredito.Checked &&
                 !rbtnSiTieneCargoDebito.Checked &&
-                !rbtnNoTieneCargoDebito.Checked)
+                !rbtnNoTieneCargoDebito.Checked &&
+                !rbtnSiPerteneceGrupoCliente.Checked &&
+                !rbtnNoPerteneceGrupoCliente.Checked)
             {
                 MessageBox.Show("¡Es Necesario decir si Tiene o No Cargos! \nPor Favor, Escoja una Opcion", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 validacion = false;
@@ -50,7 +52,7 @@ namespace SistemaGym.UI.Windows
             ClientesBLL clientesBLL = new ClientesBLL();
             listaClientes listaClientes = new listaClientes();
 
-            if (!ValidarDecisionCargos())
+            if (!ValidarDecision())
             {
                 return;
             }
