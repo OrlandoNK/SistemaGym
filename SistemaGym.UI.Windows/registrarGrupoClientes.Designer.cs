@@ -574,6 +574,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarGrupoClientes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "registrarGrupoClientes";
             Load += registrarGrupoClientes_Load;
             panel1.ResumeLayout(false);

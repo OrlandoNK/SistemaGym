@@ -317,6 +317,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmBuscarCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmBuscarCliente";
             Load += frmBuscarCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dgvBuscarClientes).EndInit();
