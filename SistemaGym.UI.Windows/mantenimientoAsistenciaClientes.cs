@@ -132,5 +132,13 @@ namespace SistemaGym.UI.Windows
 
             }
         }
+
+        private void TxbSearchBar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = TxbSearchBar.Text;
+
+            DataTable resultBusqueda = AsistenciaClientesBLL.Buscar(buscar);
+            dgvAsistenciaClientes.DataSource = resultBusqueda;
+        }
     }
 }

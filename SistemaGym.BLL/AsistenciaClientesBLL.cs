@@ -47,7 +47,10 @@ namespace SistemaGym.BLL
         {
             return AsistenciaClientesDAL.ObtenerPorValor(asistencia);
         }
-
+        public static DataTable Buscar(string buscar)
+        {
+            return AsistenciaClientesDAL.Buscar(buscar);
+        }
 
     }
 }

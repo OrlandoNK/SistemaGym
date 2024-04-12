@@ -280,6 +280,7 @@
             TxbSearchBar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             TxbSearchBar.Size = new Size(871, 40);
             TxbSearchBar.TabIndex = 0;
+            TxbSearchBar.TextChanged += TxbSearchBar_TextChanged;
             // 
             // panel1
             // 

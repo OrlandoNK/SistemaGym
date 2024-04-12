@@ -97,6 +97,25 @@ namespace SistemaGym.DAL
 
         }
 
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM AsistenciaClientes WHERE IDCliente LIKE @Busqueda OR Asistencia LIKE @Busqueda OR FechaAsistencia LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
+        }
+
         public static DataTable BuscarID(AsistenciaClientesEntity asistencia)
         {
 
