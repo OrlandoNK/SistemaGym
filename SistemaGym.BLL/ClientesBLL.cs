@@ -24,6 +24,10 @@ namespace SistemaGym.BLL
         {
             return clientesDAL.GetClientWithCargosAndGroups(idCliente);
         }
+        public DataTable ObtenerClienteCargosMembresiaAndGruposMejorado(int idCliente)
+        {
+            return clientesDAL.GetClientWithCargosAndGroupsMejorado(idCliente);
+        }
         public DataTable GetClientMembreship(int idCliente)
         {
             return clientesDAL.GetClientWithMembership(idCliente);
