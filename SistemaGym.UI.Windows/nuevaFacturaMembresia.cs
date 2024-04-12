@@ -267,7 +267,7 @@ namespace SistemaGym.UI.Windows
                             }
                         }
                     }
-                
+
                     int idClienteSinGrupo = listaClientes.IdCliente;
                     DataTable DT2 = clientesBLL.GetClientCargos(idClienteSinGrupo);
                     if (rbtnNoPerteneceGrupoCliente.Checked)
@@ -726,6 +726,33 @@ namespace SistemaGym.UI.Windows
         {
             nuevoCargoDebito newCargoDebito = new nuevoCargoDebito();
             newCargoDebito.Show();
+        }
+
+        private void TxbMontoRecibido_TextChanged(object sender, EventArgs e)
+        {
+            CalcularDevuelta();
+        }
+        private void CalcularDevuelta()
+        {
+            if (decimal.TryParse(TxbFacturaValor.Text, out decimal MontoTotal) &&
+                decimal.TryParse(TxbMontoRecibido.Text, out decimal MontoRecibido))
+            {
+                decimal devuelta = MontoRecibido - MontoTotal;
+
+                if (devuelta >= 0)
+                {
+                    TxbDevuelta.Text = devuelta.ToString("N2");
+                }
+                else
+                {
+                    TxbDevuelta.Text = "0.00";
+                }
+
+            }
+            else
+            {
+                TxbDevuelta.Text = "0.00";
+            }
         }
     }
 }
