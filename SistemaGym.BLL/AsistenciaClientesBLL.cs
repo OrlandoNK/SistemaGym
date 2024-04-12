@@ -27,7 +27,7 @@ namespace SistemaGym.BLL
             return AsistenciaClientesDAL.MostrarAsistenciaHOY();
         }
 
-        public static bool Eliminar(AsistenciaClientesEntity asistencia)
+        public static bool Eliminar(int asistencia)
         {
             return AsistenciaClientesDAL.EliminarAsistencia(asistencia);
         }

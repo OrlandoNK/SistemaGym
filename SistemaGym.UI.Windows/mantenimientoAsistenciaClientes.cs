@@ -100,5 +100,37 @@ namespace SistemaGym.UI.Windows
             }
             return AsistenciaClientesList;
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = new DialogResult();
+            dialogResult = MessageBox.Show("¿Seguro que Desea Eliminar esta Asistencia de Cliente?", sistema, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (dgvAsistenciaClientes.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow selectRow = dgvAsistenciaClientes.SelectedRows[0];
+                    int deleteCliente = Convert.ToInt32(selectRow.Cells["IDAsistenciaCliente"].Value);
+                    bool deleteProcess = AsistenciaClientesBLL.Eliminar(deleteCliente);
+
+                    if (deleteProcess)
+                    {
+                        MessageBox.Show("¡La Asistencia del Cliente ha sido Eliminada con Exito!", sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvAsistenciaClientes.DataSource = AsistenciaClientesBLL.MostrarAsistencia();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al Tratar de Eliminar la Asistencia del Cliente", sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+
+            if (dialogResult == DialogResult.No)
+            {
+
+            }
+        }
     }
 }

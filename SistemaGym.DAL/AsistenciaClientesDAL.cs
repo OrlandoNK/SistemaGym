@@ -47,7 +47,7 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar asistencia
 
-        public static bool EliminarAsistencia(AsistenciaClientesEntity asistencia)
+        public static bool EliminarAsistencia(int asistencia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -58,7 +58,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string Eliminar = "Delete from AsistenciaClientes where IDAsistenciaCliente= @idasistenciacliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idasistenciacliente", asistencia.IDAsistenciaCliente);
+            cmd.Parameters.AddWithValue("@idasistenciacliente", asistencia);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
