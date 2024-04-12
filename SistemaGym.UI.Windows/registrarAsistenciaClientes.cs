@@ -134,5 +134,10 @@ namespace SistemaGym.UI.Windows
             TxbDocumentoCliente.Clear();
             rbtnAsistio.Checked = false;
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
