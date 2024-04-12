@@ -190,6 +190,7 @@
             btnEdit.Size = new Size(198, 45);
             btnEdit.TabIndex = 6;
             btnEdit.Text = "Editar";
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnRefresh
             // 

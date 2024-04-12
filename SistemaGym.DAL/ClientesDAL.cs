@@ -122,7 +122,21 @@ namespace SistemaGym.DAL
             return dt;
 
         }
+        public static DataTable MostrarClientesDashboard()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            DataTable dt = new DataTable();
+            Conexion.Open();
+            string mostrar = "SELECT IDMembresia, TipoCliente, Nombre, Apellido FROM Clientes";
+            SqlCommand cmd = new SqlCommand(mostrar, Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
 
+
+            return dt;
+
+        }
         public static DataTable GetClients()
         {
             ConexionDAL instancia = Instancia();

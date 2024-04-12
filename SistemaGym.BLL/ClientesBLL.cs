@@ -16,6 +16,10 @@ namespace SistemaGym.BLL
         {
             ClientesDAL.InsertarCliente(clientes);
         }
+        public DataTable MostrarClientesDashboard()
+        {
+            return ClientesDAL.MostrarClientesDashboard();
+        }
         public static void guardarClientePaseDiario(ClientesEntity clientes)
         {
             ClientesDAL.InsertarClientePaseDiario(clientes);
