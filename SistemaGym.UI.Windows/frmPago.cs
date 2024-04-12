@@ -41,5 +41,10 @@ namespace SistemaGym.UI.Windows
             colFacturaProducto.DisplayMember = "IDFactura";
             colFacturaProducto.DataPropertyName = "IDFacturaProducto";
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
