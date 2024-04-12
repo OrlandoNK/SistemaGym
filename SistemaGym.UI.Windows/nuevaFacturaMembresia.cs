@@ -62,187 +62,348 @@ namespace SistemaGym.UI.Windows
                     int idCliente = listaClientes.IdCliente;
                     DataTable DT = clientesBLL.ObtenerClienteCargosMembresiaAndGrupos(idCliente);
 
-                    if (rbtnSiTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
+                    if (rbtnSiPerteneceGrupoCliente.Checked)
                     {
-                        LimpiarCargos();
-
-                        if (DT.Rows.Count > 0)
+                        if (rbtnSiTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
                         {
-                            /* Llenar Campos de Cliente */
-                            TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
-                            TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
-                            TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
-                            TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
-                            TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+                            LimpiarCargos();
 
-                            /* Llenar Campos de Membresia */
-                            TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
-                            TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
-                            TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
-                            TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+                            if (DT.Rows.Count > 0)
+                            {
+                                /* Llenar Campos de Cliente */
+                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
 
-                            /* Llenar Campos de CargoCredito */
-                            TxbIDCargoCredito.Text = DT.Rows[0]["IDCargoCredito"].ToString();
-                            TxbCargoCredito.Text = DT.Rows[0]["CargoCredito"].ToString();
-                            TxbMontoCredito.Text = Convert.ToDecimal(DT.Rows[0]["MontoCredito"]).ToString("0.00");
-                            TxbFechaCargoCredito.Text = DT.Rows[0]["FechaCargoCredito"].ToString();
-                            TxbEstatusCredito.Text = DT.Rows[0]["EstatusCredito"].ToString();
+                                /* Llenar Campos de Membresia */
+                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
 
-                            /* Llenar Campos de CargoDebito */
-                            TxbIDCargoDebito.Text = DT.Rows[0]["IDCargoDebito"].ToString();
-                            TxbCargoDebito.Text = DT.Rows[0]["CargoDebito"].ToString();
-                            TxbMontoDebito.Text = Convert.ToDecimal(DT.Rows[0]["MontoDebito"]).ToString("0.00");
-                            TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
-                            TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
+                                /* Llenar Campos de CargoCredito */
+                                TxbIDCargoCredito.Text = DT.Rows[0]["IDCargoCredito"].ToString();
+                                TxbCargoCredito.Text = DT.Rows[0]["CargoCredito"].ToString();
+                                TxbMontoCredito.Text = Convert.ToDecimal(DT.Rows[0]["MontoCredito"]).ToString("0.00");
+                                TxbFechaCargoCredito.Text = DT.Rows[0]["FechaCargoCredito"].ToString();
+                                TxbEstatusCredito.Text = DT.Rows[0]["EstatusCredito"].ToString();
 
-                            TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
-                            TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
-                            TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotalGrupo"]).ToString("0.00");
-                            TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["MontoGrupoCliente"]).ToString("0.00");
-                            TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistroGrupo"].ToString();
-                            TxbEstatus.Text = DT.Rows[0]["EstatusGrupo"].ToString();
-                            TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
+                                /* Llenar Campos de CargoDebito */
+                                TxbIDCargoDebito.Text = DT.Rows[0]["IDCargoDebito"].ToString();
+                                TxbCargoDebito.Text = DT.Rows[0]["CargoDebito"].ToString();
+                                TxbMontoDebito.Text = Convert.ToDecimal(DT.Rows[0]["MontoDebito"]).ToString("0.00");
+                                TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
+                                TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
 
-                            decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
-                            decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
-                            decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+                                TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
+                                TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
+                                TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotalGrupo"]).ToString("0.00");
+                                TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["MontoGrupoCliente"]).ToString("0.00");
+                                TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistroGrupo"].ToString();
+                                TxbEstatus.Text = DT.Rows[0]["EstatusGrupo"].ToString();
+                                TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
 
-                            TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia + (MontoCredito + MontoDebito)).ToString("0.00");
+                                decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
+                                decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
+                                decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
 
+                                TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia + (MontoCredito + MontoDebito)).ToString("0.00");
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
-                        else
+
+                        if (rbtnNoTieneCargoCredito.Checked && rbtnNoTieneCargoDebito.Checked)
                         {
-                            MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            LimpiarCargos();
+
+                            if (DT.Rows.Count > 0)
+                            {
+                                /* Llenar Campos de Cliente */
+                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+
+                                /* Llenar Campos de Membresia */
+                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+
+                                TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
+                                TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
+                                TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotalGrupo"]).ToString("0.00");
+                                TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["MontoGrupoCliente"]).ToString("0.00");
+                                TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistroGrupo"].ToString();
+                                TxbEstatus.Text = DT.Rows[0]["EstatusGrupo"].ToString();
+                                TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
+
+                                decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+                                TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia).ToString("0.00");
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+                        if (rbtnSiTieneCargoCredito.Checked && rbtnNoTieneCargoDebito.Checked)
+                        {
+                            LimpiarCargos();
+
+                            if (DT.Rows.Count > 0)
+                            {
+                                /* Llenar Campos de Cliente */
+                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+
+                                /* Llenar Campos de Membresia */
+                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+
+                                /* Llenar Campos de CargoCredito */
+                                TxbIDCargoCredito.Text = DT.Rows[0]["IDCargoCredito"].ToString();
+                                TxbCargoCredito.Text = DT.Rows[0]["CargoCredito"].ToString();
+                                TxbMontoCredito.Text = Convert.ToDecimal(DT.Rows[0]["MontoCredito"]).ToString("0.00");
+                                TxbFechaCargoCredito.Text = DT.Rows[0]["FechaCargoCredito"].ToString();
+                                TxbEstatusCredito.Text = DT.Rows[0]["EstatusCredito"].ToString();
+
+                                TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
+                                TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
+                                TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotalGrupo"]).ToString("0.00");
+                                TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["MontoGrupoCliente"]).ToString("0.00");
+                                TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistroGrupo"].ToString();
+                                TxbEstatus.Text = DT.Rows[0]["EstatusGrupo"].ToString();
+                                TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
+
+                                decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
+                                decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+
+                                TxbFacturaValor.Text = Convert.ToDecimal((ValorMembresia + MontoCredito)).ToString("0.00");
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+                        if (rbtnNoTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
+                        {
+                            LimpiarCargos();
+
+                            if (DT.Rows.Count > 0)
+                            {
+                                /* Llenar Campos de Cliente */
+                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+
+                                /* Llenar Campos de Membresia */
+                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+
+                                /* Llenar Campos de CargoDebito */
+                                TxbIDCargoDebito.Text = DT.Rows[0]["IDCargoDebito"].ToString();
+                                TxbCargoDebito.Text = DT.Rows[0]["CargoDebito"].ToString();
+                                TxbMontoDebito.Text = Convert.ToDecimal(DT.Rows[0]["MontoDebito"]).ToString("0.00");
+                                TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
+                                TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
+
+                                TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
+                                TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
+                                TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotalGrupo"]).ToString("0.00");
+                                TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["MontoGrupoCliente"]).ToString("0.00");
+                                TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistroGrupo"].ToString();
+                                TxbEstatus.Text = DT.Rows[0]["EstatusGrupo"].ToString();
+                                TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
+
+                                decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
+                                decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+
+                                TxbFacturaValor.Text = Convert.ToDecimal((ValorMembresia + MontoDebito)).ToString("0.00");
+
+                            }
+
+                            else
+                            {
+                                MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
-
-                    if (rbtnNoTieneCargoCredito.Checked && rbtnNoTieneCargoDebito.Checked)
+                    if (rbtnNoPerteneceGrupoCliente.Checked)
                     {
-                        LimpiarCargos();
-
-                        if (DT.Rows.Count > 0)
+                        if (rbtnSiTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
                         {
-                            /* Llenar Campos de Cliente */
-                            TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
-                            TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
-                            TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
-                            TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
-                            TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+                            LimpiarCargos();
 
-                            /* Llenar Campos de Membresia */
-                            TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
-                            TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
-                            TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
-                            TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+                            if (DT.Rows.Count > 0)
+                            {
+                                /* Llenar Campos de Cliente */
+                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
 
-                            TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
-                            TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
-                            TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotal"]).ToString("0.00");
-                            TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["Monto"]).ToString("0.00");
-                            TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistro"].ToString();
-                            TxbEstatus.Text = DT.Rows[0]["Estatus"].ToString();
-                            TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
+                                /* Llenar Campos de Membresia */
+                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
 
-                            decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
-                            TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia).ToString("0.00");
+                                /* Llenar Campos de CargoCredito */
+                                TxbIDCargoCredito.Text = DT.Rows[0]["IDCargoCredito"].ToString();
+                                TxbCargoCredito.Text = DT.Rows[0]["CargoCredito"].ToString();
+                                TxbMontoCredito.Text = Convert.ToDecimal(DT.Rows[0]["MontoCredito"]).ToString("0.00");
+                                TxbFechaCargoCredito.Text = DT.Rows[0]["FechaCargoCredito"].ToString();
+                                TxbEstatusCredito.Text = DT.Rows[0]["EstatusCredito"].ToString();
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
+                                /* Llenar Campos de CargoDebito */
+                                TxbIDCargoDebito.Text = DT.Rows[0]["IDCargoDebito"].ToString();
+                                TxbCargoDebito.Text = DT.Rows[0]["CargoDebito"].ToString();
+                                TxbMontoDebito.Text = Convert.ToDecimal(DT.Rows[0]["MontoDebito"]).ToString("0.00");
+                                TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
+                                TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
 
-                    if (rbtnSiTieneCargoCredito.Checked && rbtnNoTieneCargoDebito.Checked)
-                    {
-                        LimpiarCargos();
+                                
+                                decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
+                                decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
+                                decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
 
-                        if (DT.Rows.Count > 0)
-                        {
-                            /* Llenar Campos de Cliente */
-                            TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
-                            TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
-                            TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
-                            TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
-                            TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+                                TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia + (MontoCredito + MontoDebito)).ToString("0.00");
 
-                            /* Llenar Campos de Membresia */
-                            TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
-                            TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
-                            TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
-                            TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
-
-                            /* Llenar Campos de CargoCredito */
-                            TxbIDCargoCredito.Text = DT.Rows[0]["IDCargoCredito"].ToString();
-                            TxbCargoCredito.Text = DT.Rows[0]["CargoCredito"].ToString();
-                            TxbMontoCredito.Text = Convert.ToDecimal(DT.Rows[0]["MontoCredito"]).ToString("0.00");
-                            TxbFechaCargoCredito.Text = DT.Rows[0]["FechaCargoCredito"].ToString();
-                            TxbEstatusCredito.Text = DT.Rows[0]["EstatusCredito"].ToString();
-
-                            TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
-                            TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
-                            TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotal"]).ToString("0.00");
-                            TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["Monto"]).ToString("0.00");
-                            TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistro"].ToString();
-                            TxbEstatus.Text = DT.Rows[0]["Estatus"].ToString();
-                            TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
-
-                            decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
-                            decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
-
-                            TxbFacturaValor.Text = Convert.ToDecimal((ValorMembresia + MontoCredito)).ToString("0.00");
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-
-                    if (rbtnNoTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
-                    {
-                        LimpiarCargos();
-
-                        if (DT.Rows.Count > 0)
-                        {
-                            /* Llenar Campos de Cliente */
-                            TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
-                            TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
-                            TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
-                            TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
-                            TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
-
-                            /* Llenar Campos de Membresia */
-                            TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
-                            TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
-                            TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
-                            TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
-
-                            /* Llenar Campos de CargoDebito */
-                            TxbIDCargoDebito.Text = DT.Rows[0]["IDCargoDebito"].ToString();
-                            TxbCargoDebito.Text = DT.Rows[0]["CargoDebito"].ToString();
-                            TxbMontoDebito.Text = Convert.ToDecimal(DT.Rows[0]["MontoDebito"]).ToString("0.00");
-                            TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
-                            TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
-
-                            TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
-                            TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
-                            TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotal"]).ToString("0.00");
-                            TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["Monto"]).ToString("0.00");
-                            TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistro"].ToString();
-                            TxbEstatus.Text = DT.Rows[0]["Estatus"].ToString();
-                            TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
-
-                            decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
-                            decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
-
-                            TxbFacturaValor.Text = Convert.ToDecimal((ValorMembresia + MontoDebito)).ToString("0.00");
-
+                            }
+                            else
+                            {
+                                MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
 
-                        else
+                        if (rbtnNoTieneCargoCredito.Checked && rbtnNoTieneCargoDebito.Checked)
                         {
-                            MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            LimpiarCargos();
+
+                            if (DT.Rows.Count > 0)
+                            {
+                                /* Llenar Campos de Cliente */
+                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+
+                                /* Llenar Campos de Membresia */
+                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+
+
+                                decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+                                TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia).ToString("0.00");
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+                        if (rbtnSiTieneCargoCredito.Checked && rbtnNoTieneCargoDebito.Checked)
+                        {
+                            LimpiarCargos();
+
+                            if (DT.Rows.Count > 0)
+                            {
+                                /* Llenar Campos de Cliente */
+                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+
+                                /* Llenar Campos de Membresia */
+                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+
+                                /* Llenar Campos de CargoCredito */
+                                TxbIDCargoCredito.Text = DT.Rows[0]["IDCargoCredito"].ToString();
+                                TxbCargoCredito.Text = DT.Rows[0]["CargoCredito"].ToString();
+                                TxbMontoCredito.Text = Convert.ToDecimal(DT.Rows[0]["MontoCredito"]).ToString("0.00");
+                                TxbFechaCargoCredito.Text = DT.Rows[0]["FechaCargoCredito"].ToString();
+                                TxbEstatusCredito.Text = DT.Rows[0]["EstatusCredito"].ToString();
+
+
+                                decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
+                                decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+
+                                TxbFacturaValor.Text = Convert.ToDecimal((ValorMembresia + MontoCredito)).ToString("0.00");
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+                        if (rbtnNoTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
+                        {
+                            LimpiarCargos();
+
+                            if (DT.Rows.Count > 0)
+                            {
+                                /* Llenar Campos de Cliente */
+                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+
+                                /* Llenar Campos de Membresia */
+                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+
+                                /* Llenar Campos de CargoDebito */
+                                TxbIDCargoDebito.Text = DT.Rows[0]["IDCargoDebito"].ToString();
+                                TxbCargoDebito.Text = DT.Rows[0]["CargoDebito"].ToString();
+                                TxbMontoDebito.Text = Convert.ToDecimal(DT.Rows[0]["MontoDebito"]).ToString("0.00");
+                                TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
+                                TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
+
+
+                                decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
+                                decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+
+                                TxbFacturaValor.Text = Convert.ToDecimal((ValorMembresia + MontoDebito)).ToString("0.00");
+
+                            }
+
+                            else
+                            {
+                                MessageBox.Show("Cliente no Encontrado", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
 

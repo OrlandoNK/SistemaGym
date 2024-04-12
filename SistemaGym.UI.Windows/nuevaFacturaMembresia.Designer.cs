@@ -60,8 +60,6 @@
             label16 = new Label();
             TxbNombreGrupoMembresia = new TextBox();
             label15 = new Label();
-            TxbIDGrupoMembresia = new TextBox();
-            label14 = new Label();
             TxbIDGrupoCliente = new TextBox();
             label13 = new Label();
             groupBox5 = new GroupBox();
@@ -124,6 +122,9 @@
             TxbDescrMembresia = new TextBox();
             label2 = new Label();
             errorProvider = new ErrorProvider(components);
+            groupBox7 = new GroupBox();
+            rbtnNoPerteneceGrupoCliente = new RadioButton();
+            rbtnSiPerteneceGrupoCliente = new RadioButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
@@ -139,6 +140,7 @@
             groupBox8.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            groupBox7.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -151,7 +153,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1285, 64);
+            panel1.Size = new Size(1313, 64);
             panel1.TabIndex = 0;
             // 
             // lblTitleMantenimientoFacturaMembresia
@@ -180,7 +182,7 @@
             btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnClose.Cursor = Cursors.Hand;
             btnClose.Image = Properties.Resources._CloseWindowX;
-            btnClose.Location = new Point(1240, 15);
+            btnClose.Location = new Point(1268, 15);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(32, 32);
             btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -195,7 +197,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 64);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1285, 33);
+            panel2.Size = new Size(1313, 33);
             panel2.TabIndex = 1;
             // 
             // panel3
@@ -301,6 +303,7 @@
             // 
             panel4.BackColor = Color.WhiteSmoke;
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(groupBox7);
             panel4.Controls.Add(groupBox6);
             panel4.Controls.Add(groupBox5);
             panel4.Controls.Add(groupBox4);
@@ -313,7 +316,7 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(213, 97);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1072, 652);
+            panel4.Size = new Size(1100, 652);
             panel4.TabIndex = 3;
             // 
             // groupBox6
@@ -330,20 +333,18 @@
             groupBox6.Controls.Add(label16);
             groupBox6.Controls.Add(TxbNombreGrupoMembresia);
             groupBox6.Controls.Add(label15);
-            groupBox6.Controls.Add(TxbIDGrupoMembresia);
-            groupBox6.Controls.Add(label14);
             groupBox6.Controls.Add(TxbIDGrupoCliente);
             groupBox6.Controls.Add(label13);
             groupBox6.Location = new Point(390, 343);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(676, 208);
+            groupBox6.Size = new Size(528, 208);
             groupBox6.TabIndex = 36;
             groupBox6.TabStop = false;
             groupBox6.Text = "Grupo de Cliente";
             // 
             // TxbClientesActivos
             // 
-            TxbClientesActivos.Location = new Point(275, 150);
+            TxbClientesActivos.Location = new Point(390, 150);
             TxbClientesActivos.Name = "TxbClientesActivos";
             TxbClientesActivos.ReadOnly = true;
             TxbClientesActivos.Size = new Size(117, 23);
@@ -352,7 +353,7 @@
             // label20
             // 
             label20.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.Location = new Point(275, 119);
+            label20.Location = new Point(390, 119);
             label20.Name = "label20";
             label20.Size = new Size(117, 24);
             label20.TabIndex = 18;
@@ -361,7 +362,7 @@
             // 
             // TxbEstatus
             // 
-            TxbEstatus.Location = new Point(152, 150);
+            TxbEstatus.Location = new Point(144, 150);
             TxbEstatus.Name = "TxbEstatus";
             TxbEstatus.ReadOnly = true;
             TxbEstatus.Size = new Size(117, 23);
@@ -370,7 +371,7 @@
             // label19
             // 
             label19.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.Location = new Point(152, 119);
+            label19.Location = new Point(144, 119);
             label19.Name = "label19";
             label19.Size = new Size(117, 24);
             label19.TabIndex = 16;
@@ -379,7 +380,7 @@
             // 
             // TxbFechaRegistroGrupo
             // 
-            TxbFechaRegistroGrupo.Location = new Point(29, 150);
+            TxbFechaRegistroGrupo.Location = new Point(21, 150);
             TxbFechaRegistroGrupo.Name = "TxbFechaRegistroGrupo";
             TxbFechaRegistroGrupo.ReadOnly = true;
             TxbFechaRegistroGrupo.Size = new Size(117, 23);
@@ -388,7 +389,7 @@
             // label18
             // 
             label18.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(29, 119);
+            label18.Location = new Point(21, 119);
             label18.Name = "label18";
             label18.Size = new Size(117, 24);
             label18.TabIndex = 14;
@@ -397,7 +398,7 @@
             // 
             // TxbMontoGrupoCliente
             // 
-            TxbMontoGrupoCliente.Location = new Point(530, 75);
+            TxbMontoGrupoCliente.Location = new Point(267, 75);
             TxbMontoGrupoCliente.Name = "TxbMontoGrupoCliente";
             TxbMontoGrupoCliente.ReadOnly = true;
             TxbMontoGrupoCliente.Size = new Size(117, 23);
@@ -406,7 +407,7 @@
             // label17
             // 
             label17.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(530, 44);
+            label17.Location = new Point(267, 44);
             label17.Name = "label17";
             label17.Size = new Size(117, 24);
             label17.TabIndex = 12;
@@ -415,7 +416,7 @@
             // 
             // TxbMontoTotalGrupo
             // 
-            TxbMontoTotalGrupo.Location = new Point(407, 75);
+            TxbMontoTotalGrupo.Location = new Point(390, 75);
             TxbMontoTotalGrupo.Name = "TxbMontoTotalGrupo";
             TxbMontoTotalGrupo.ReadOnly = true;
             TxbMontoTotalGrupo.Size = new Size(117, 23);
@@ -424,7 +425,7 @@
             // label16
             // 
             label16.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(407, 44);
+            label16.Location = new Point(390, 44);
             label16.Name = "label16";
             label16.Size = new Size(117, 24);
             label16.TabIndex = 10;
@@ -433,7 +434,7 @@
             // 
             // TxbNombreGrupoMembresia
             // 
-            TxbNombreGrupoMembresia.Location = new Point(284, 75);
+            TxbNombreGrupoMembresia.Location = new Point(144, 75);
             TxbNombreGrupoMembresia.Name = "TxbNombreGrupoMembresia";
             TxbNombreGrupoMembresia.ReadOnly = true;
             TxbNombreGrupoMembresia.Size = new Size(117, 23);
@@ -442,34 +443,16 @@
             // label15
             // 
             label15.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(284, 44);
+            label15.Location = new Point(144, 44);
             label15.Name = "label15";
             label15.Size = new Size(117, 24);
             label15.TabIndex = 8;
             label15.Text = "Grupo Membresia";
             label15.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // TxbIDGrupoMembresia
-            // 
-            TxbIDGrupoMembresia.Location = new Point(152, 75);
-            TxbIDGrupoMembresia.Name = "TxbIDGrupoMembresia";
-            TxbIDGrupoMembresia.ReadOnly = true;
-            TxbIDGrupoMembresia.Size = new Size(126, 23);
-            TxbIDGrupoMembresia.TabIndex = 5;
-            // 
-            // label14
-            // 
-            label14.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(152, 44);
-            label14.Name = "label14";
-            label14.Size = new Size(126, 24);
-            label14.TabIndex = 6;
-            label14.Text = "IDGrupoMembresia";
-            label14.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // TxbIDGrupoCliente
             // 
-            TxbIDGrupoCliente.Location = new Point(29, 75);
+            TxbIDGrupoCliente.Location = new Point(21, 75);
             TxbIDGrupoCliente.Name = "TxbIDGrupoCliente";
             TxbIDGrupoCliente.ReadOnly = true;
             TxbIDGrupoCliente.Size = new Size(117, 23);
@@ -478,7 +461,7 @@
             // label13
             // 
             label13.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(29, 44);
+            label13.Location = new Point(21, 44);
             label13.Name = "label13";
             label13.Size = new Size(117, 24);
             label13.TabIndex = 4;
@@ -491,7 +474,7 @@
             groupBox5.Controls.Add(rbtnSiTieneCargoDebito);
             groupBox5.Location = new Point(866, 173);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(200, 164);
+            groupBox5.Size = new Size(221, 164);
             groupBox5.TabIndex = 35;
             groupBox5.TabStop = false;
             groupBox5.Text = "¿Tiene Cargo Débito?";
@@ -502,7 +485,7 @@
             rbtnNoTieneCargoDebito.Cursor = Cursors.Hand;
             rbtnNoTieneCargoDebito.Image = Properties.Resources.checkbox_NO__x32_;
             rbtnNoTieneCargoDebito.ImageAlign = ContentAlignment.MiddleLeft;
-            rbtnNoTieneCargoDebito.Location = new Point(103, 61);
+            rbtnNoTieneCargoDebito.Location = new Point(113, 61);
             rbtnNoTieneCargoDebito.Name = "rbtnNoTieneCargoDebito";
             rbtnNoTieneCargoDebito.Size = new Size(66, 43);
             rbtnNoTieneCargoDebito.TabIndex = 33;
@@ -515,7 +498,7 @@
             rbtnSiTieneCargoDebito.Cursor = Cursors.Hand;
             rbtnSiTieneCargoDebito.Image = Properties.Resources.checkbox_YES__x32_;
             rbtnSiTieneCargoDebito.ImageAlign = ContentAlignment.MiddleLeft;
-            rbtnSiTieneCargoDebito.Location = new Point(31, 61);
+            rbtnSiTieneCargoDebito.Location = new Point(41, 61);
             rbtnSiTieneCargoDebito.Name = "rbtnSiTieneCargoDebito";
             rbtnSiTieneCargoDebito.Size = new Size(66, 43);
             rbtnSiTieneCargoDebito.TabIndex = 32;
@@ -528,7 +511,7 @@
             groupBox4.Controls.Add(rbtnSiTieneCargoCredito);
             groupBox4.Location = new Point(866, 3);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(200, 164);
+            groupBox4.Size = new Size(221, 164);
             groupBox4.TabIndex = 34;
             groupBox4.TabStop = false;
             groupBox4.Text = "¿Tiene Cargo Crédito?";
@@ -538,7 +521,7 @@
             rbtnNoTieneCargoCredito.CheckAlign = ContentAlignment.MiddleRight;
             rbtnNoTieneCargoCredito.Cursor = Cursors.Hand;
             rbtnNoTieneCargoCredito.Image = Properties.Resources.checkbox_NO__x32_;
-            rbtnNoTieneCargoCredito.Location = new Point(103, 61);
+            rbtnNoTieneCargoCredito.Location = new Point(113, 61);
             rbtnNoTieneCargoCredito.Name = "rbtnNoTieneCargoCredito";
             rbtnNoTieneCargoCredito.Size = new Size(66, 43);
             rbtnNoTieneCargoCredito.TabIndex = 31;
@@ -550,7 +533,7 @@
             rbtnSiTieneCargoCredito.CheckAlign = ContentAlignment.MiddleRight;
             rbtnSiTieneCargoCredito.Cursor = Cursors.Hand;
             rbtnSiTieneCargoCredito.Image = Properties.Resources.checkbox_YES__x32_;
-            rbtnSiTieneCargoCredito.Location = new Point(31, 61);
+            rbtnSiTieneCargoCredito.Location = new Point(41, 61);
             rbtnSiTieneCargoCredito.Name = "rbtnSiTieneCargoCredito";
             rbtnSiTieneCargoCredito.Size = new Size(66, 43);
             rbtnSiTieneCargoCredito.TabIndex = 30;
@@ -1110,11 +1093,48 @@
             // 
             errorProvider.ContainerControl = this;
             // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(rbtnNoPerteneceGrupoCliente);
+            groupBox7.Controls.Add(rbtnSiPerteneceGrupoCliente);
+            groupBox7.Location = new Point(924, 343);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(163, 208);
+            groupBox7.TabIndex = 19;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "¿Pertenece a un Grupo Cliente?";
+            // 
+            // rbtnNoPerteneceGrupoCliente
+            // 
+            rbtnNoPerteneceGrupoCliente.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnNoPerteneceGrupoCliente.Cursor = Cursors.Hand;
+            rbtnNoPerteneceGrupoCliente.Image = Properties.Resources.checkbox_NO__x32_;
+            rbtnNoPerteneceGrupoCliente.ImageAlign = ContentAlignment.MiddleLeft;
+            rbtnNoPerteneceGrupoCliente.Location = new Point(48, 122);
+            rbtnNoPerteneceGrupoCliente.Name = "rbtnNoPerteneceGrupoCliente";
+            rbtnNoPerteneceGrupoCliente.Size = new Size(66, 43);
+            rbtnNoPerteneceGrupoCliente.TabIndex = 35;
+            rbtnNoPerteneceGrupoCliente.TabStop = true;
+            rbtnNoPerteneceGrupoCliente.UseVisualStyleBackColor = true;
+            // 
+            // rbtnSiPerteneceGrupoCliente
+            // 
+            rbtnSiPerteneceGrupoCliente.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnSiPerteneceGrupoCliente.Cursor = Cursors.Hand;
+            rbtnSiPerteneceGrupoCliente.Image = Properties.Resources.checkbox_YES__x32_;
+            rbtnSiPerteneceGrupoCliente.ImageAlign = ContentAlignment.MiddleLeft;
+            rbtnSiPerteneceGrupoCliente.Location = new Point(48, 55);
+            rbtnSiPerteneceGrupoCliente.Name = "rbtnSiPerteneceGrupoCliente";
+            rbtnSiPerteneceGrupoCliente.Size = new Size(66, 43);
+            rbtnSiPerteneceGrupoCliente.TabIndex = 34;
+            rbtnSiPerteneceGrupoCliente.TabStop = true;
+            rbtnSiPerteneceGrupoCliente.UseVisualStyleBackColor = true;
+            // 
             // nuevaFacturaMembresia
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1285, 749);
+            ClientSize = new Size(1313, 749);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -1147,6 +1167,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            groupBox7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1227,8 +1248,6 @@
         private GroupBox groupBox4;
         private GroupBox groupBox5;
         private GroupBox groupBox6;
-        private TextBox TxbIDGrupoMembresia;
-        private Label label14;
         private TextBox TxbIDGrupoCliente;
         private Label label13;
         private TextBox TxbClientesActivos;
@@ -1243,5 +1262,8 @@
         private Label label16;
         private TextBox TxbNombreGrupoMembresia;
         private Label label15;
+        private GroupBox groupBox7;
+        private RadioButton rbtnNoPerteneceGrupoCliente;
+        private RadioButton rbtnSiPerteneceGrupoCliente;
     }
 }
