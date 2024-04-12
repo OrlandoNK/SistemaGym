@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             lblTitleMantenimientoFacturaMembresia = new Label();
             pictureBox1 = new PictureBox();
@@ -195,16 +195,16 @@
             // 
             // btnCargosDebito
             // 
-            btnCargosDebito.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnCargosDebito.BackColor = Color.Transparent;
             btnCargosDebito.BorderColor = Color.Goldenrod;
             btnCargosDebito.BorderThickness = 1;
             btnCargosDebito.Cursor = Cursors.Hand;
-            btnCargosDebito.CustomizableEdges = customizableEdges9;
+            btnCargosDebito.CustomizableEdges = customizableEdges1;
             btnCargosDebito.DisabledState.BorderColor = Color.DarkGray;
             btnCargosDebito.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCargosDebito.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnCargosDebito.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCargosDebito.Dock = DockStyle.Bottom;
             btnCargosDebito.FillColor = Color.Transparent;
             btnCargosDebito.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnCargosDebito.ForeColor = Color.White;
@@ -213,10 +213,10 @@
             btnCargosDebito.Image = Properties.Resources.icon_logo_button_cargo_credito_debito__x32_;
             btnCargosDebito.ImageAlign = HorizontalAlignment.Left;
             btnCargosDebito.ImageSize = new Size(32, 32);
-            btnCargosDebito.Location = new Point(-1, 566);
+            btnCargosDebito.Location = new Point(0, 538);
             btnCargosDebito.Name = "btnCargosDebito";
-            btnCargosDebito.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnCargosDebito.Size = new Size(214, 56);
+            btnCargosDebito.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCargosDebito.Size = new Size(211, 56);
             btnCargosDebito.TabIndex = 4;
             btnCargosDebito.Text = "Cargos Débito";
             btnCargosDebito.TextAlign = HorizontalAlignment.Right;
@@ -224,16 +224,16 @@
             // 
             // btnCargoCredito
             // 
-            btnCargoCredito.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnCargoCredito.BackColor = Color.Transparent;
             btnCargoCredito.BorderColor = Color.Goldenrod;
             btnCargoCredito.BorderThickness = 1;
             btnCargoCredito.Cursor = Cursors.Hand;
-            btnCargoCredito.CustomizableEdges = customizableEdges11;
+            btnCargoCredito.CustomizableEdges = customizableEdges3;
             btnCargoCredito.DisabledState.BorderColor = Color.DarkGray;
             btnCargoCredito.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCargoCredito.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnCargoCredito.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCargoCredito.Dock = DockStyle.Bottom;
             btnCargoCredito.FillColor = Color.Transparent;
             btnCargoCredito.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             btnCargoCredito.ForeColor = Color.White;
@@ -242,10 +242,10 @@
             btnCargoCredito.Image = Properties.Resources.icon_logo_button_cargo_credito_debito__x32_;
             btnCargoCredito.ImageAlign = HorizontalAlignment.Left;
             btnCargoCredito.ImageSize = new Size(32, 32);
-            btnCargoCredito.Location = new Point(-1, 504);
+            btnCargoCredito.Location = new Point(0, 594);
             btnCargoCredito.Name = "btnCargoCredito";
-            btnCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnCargoCredito.Size = new Size(214, 56);
+            btnCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnCargoCredito.Size = new Size(211, 56);
             btnCargoCredito.TabIndex = 3;
             btnCargoCredito.Text = "Cargos Crédito";
             btnCargoCredito.TextAlign = HorizontalAlignment.Right;
@@ -257,7 +257,7 @@
             btnSave.BorderColor = Color.Goldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges13;
+            btnSave.CustomizableEdges = customizableEdges5;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -272,7 +272,7 @@
             btnSave.ImageSize = new Size(32, 32);
             btnSave.Location = new Point(-1, 23);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSave.Size = new Size(214, 59);
             btnSave.TabIndex = 2;
             btnSave.Text = "Guardar Factura";
@@ -617,7 +617,7 @@
             btnBuscarIDCliente.BorderRadius = 10;
             btnBuscarIDCliente.BorderThickness = 2;
             btnBuscarIDCliente.Cursor = Cursors.Hand;
-            btnBuscarIDCliente.CustomizableEdges = customizableEdges15;
+            btnBuscarIDCliente.CustomizableEdges = customizableEdges7;
             btnBuscarIDCliente.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -627,9 +627,9 @@
             btnBuscarIDCliente.ForeColor = Color.White;
             btnBuscarIDCliente.Image = Properties.Resources.icon_btn_search_for_Cliente__x32_;
             btnBuscarIDCliente.ImageSize = new Size(32, 32);
-            btnBuscarIDCliente.Location = new Point(255, 104);
+            btnBuscarIDCliente.Location = new Point(255, 105);
             btnBuscarIDCliente.Name = "btnBuscarIDCliente";
-            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnBuscarIDCliente.Size = new Size(117, 55);
             btnBuscarIDCliente.TabIndex = 18;
             btnBuscarIDCliente.TextAlign = HorizontalAlignment.Left;
