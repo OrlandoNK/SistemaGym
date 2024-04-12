@@ -50,7 +50,7 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar GrupoClienteDal
 
-        public static bool EliminarCliente(GrupoClienteEntity grupoCliente)
+        public static bool EliminarCliente(int grupoCliente)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -59,7 +59,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string Eliminar = "Delete from GrupoClientes where IDGrupoCliente= @idGrupoCliente ";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idGrupoCliente", grupoCliente.IDGrupoCliente);
+            cmd.Parameters.AddWithValue("@idGrupoCliente", grupoCliente);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 

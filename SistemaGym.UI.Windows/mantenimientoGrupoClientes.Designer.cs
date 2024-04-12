@@ -163,6 +163,7 @@
             btnDelete.Size = new Size(221, 45);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 

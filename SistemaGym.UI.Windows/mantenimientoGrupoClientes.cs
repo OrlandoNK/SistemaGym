@@ -19,7 +19,7 @@ namespace SistemaGym.UI.Windows
         {
             InitializeComponent();
         }
-
+        private string SYSTEM_TITLE = "Sistema Gestión Gimnasio (COMFORT GYM) dice";
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -73,25 +73,25 @@ namespace SistemaGym.UI.Windows
 
                 if (changeData != null)
                 {
-                    List<GrupoClientesEntity> grupoMembresiaActualizar = ConvertirDatatableALista(changeData);
+                    List<GrupoClienteEntity> grupoClienteActualizar = ConvertirDatatableALista(changeData);
 
-                    foreach (GrupoMembresiaEntity grupoMembresia in grupoMembresiaActualizar)
+                    foreach (GrupoClienteEntity grupoCliente in grupoClienteActualizar)
                     {
-                        GrupoMembresiaBLL.actualizar(grupoMembresia);
+                        GrupoClienteBLL.Actualizar(grupoCliente);
                     }
 
-                    MessageBox.Show("Dato(s) del Grupo de Membresia ha(n) sido Editado(s) de manera Satisfactoria", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvGrupoMembresia.DataSource = GrupoMembresiaBLL.MostrarGrupoMembresia();
+                    MessageBox.Show("Dato(s) del Grupo de Clientes ha(n) sido Editado(s) de manera Satisfactoria", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvGrupoClientes.DataSource = GrupoClienteBLL.Mostrar();
                 }
 
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Se Produjo un Error al Intentar Actualizar el Grupo de Membresia. \nDetalles a Continuacion\n: {ex.Message}", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Se Produjo un Error al Intentar Actualizar el Grupo de Clientes. \nDetalles a Continuacion\n: {ex.Message}", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Se Produjo un Error al Intentar Actualizar el Grupo de Membresia. \nDetalles a Continuacion\n: {ex.Message}", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Se Produjo un Error al Intentar Actualizar el Grupo de Clientes. \nDetalles a Continuacion\n: {ex.Message}", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private List<GrupoClienteEntity> ConvertirDatatableALista(DataTable dataTbl)
@@ -114,6 +114,49 @@ namespace SistemaGym.UI.Windows
             }
 
             return grupoClienteList;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = new DialogResult();
+            dialogResult = MessageBox.Show("¿Seguro que Desea Eliminar este Grupo de Membresia?", SYSTEM_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    if (dgvGrupoClientes.SelectedRows.Count > 0)
+                    {
+                        DataGridViewRow selectRow = dgvGrupoClientes.SelectedRows[0];
+                        int deleteEmpleado = Convert.ToInt32(selectRow.Cells["IDGrupoCliente"].Value);
+                        bool resultado = GrupoClienteBLL.Eliminar(deleteEmpleado);
+
+                        if (resultado)
+                        {
+                            MessageBox.Show("¡Grupo de Cliente Eliminado con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dgvGrupoClientes.DataSource = GrupoClienteBLL.Mostrar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al Tratar de Eliminar el Grupo de Cliente", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show($"Se ha producido un Error al Intentar Eliminar el Grupo de Cliente, \nDetalles A Continuacion.\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Se ha producido un Error al Intentar Eliminar el Grupo de Membresia, \nDetalles A Continuacion.\n" + ex.Message, SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                if (dialogResult == DialogResult.No)
+                {
+
+                }
+            }
         }
     }
 }
