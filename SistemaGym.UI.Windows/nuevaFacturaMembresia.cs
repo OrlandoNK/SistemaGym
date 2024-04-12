@@ -99,7 +99,6 @@ namespace SistemaGym.UI.Windows
 
                                 TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
                                 TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
-                                TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotalGrupo"]).ToString("0.00");
                                 TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["MontoGrupoCliente"]).ToString("0.00");
                                 TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistroGrupo"].ToString();
                                 TxbEstatus.Text = DT.Rows[0]["EstatusGrupo"].ToString();
@@ -113,7 +112,8 @@ namespace SistemaGym.UI.Windows
                                 decimal MontoTotalGrupo = decimal.Parse(TxbMontoTotalGrupo.Text);
                                 decimal MontoGrupoCliente = decimal.Parse(TxbMontoGrupoCliente.Text);
 
-                                TxbFacturaValor.Text = Convert.ToDecimal(MontoGrupoCliente + (MontoCredito + MontoDebito) * CantidadActivos).ToString("0.00");
+                                TxbMontoTotalGrupo.Text = Convert.ToDecimal(MontoGrupoCliente * CantidadActivos).ToString("0.00");
+                                TxbFacturaValor.Text = Convert.ToDecimal(MontoGrupoCliente + (MontoCredito + MontoDebito)).ToString("0.00");
 
                             }
                             else
@@ -151,9 +151,12 @@ namespace SistemaGym.UI.Windows
 
                                 decimal CantidadActivos = decimal.Parse(TxbClientesActivos.Text);
                                 decimal MontoGrupoCliente = decimal.Parse(TxbMontoGrupoCliente.Text);
+                                decimal MontoTotalGrupo = decimal.Parse(TxbMontoTotalGrupo.Text);
 
                                 decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
-                                TxbFacturaValor.Text = Convert.ToDecimal(MontoGrupoCliente * CantidadActivos).ToString("0.00");
+
+                                TxbMontoTotalGrupo.Text = Convert.ToDecimal(MontoGrupoCliente * CantidadActivos).ToString("0.00");
+                                TxbFacturaValor.Text = Convert.ToDecimal(MontoGrupoCliente).ToString("0.00");
 
                             }
                             else
@@ -200,8 +203,10 @@ namespace SistemaGym.UI.Windows
                                 decimal MontoGrupoCliente = decimal.Parse(TxbMontoGrupoCliente.Text);
                                 decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
                                 decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+                                decimal MontoTotalGrupo = decimal.Parse(TxbMontoTotalGrupo.Text);
 
-                                TxbFacturaValor.Text = Convert.ToDecimal((MontoGrupoCliente + MontoCredito) * CantidadActivos).ToString("0.00");
+                                TxbMontoTotalGrupo.Text = Convert.ToDecimal(MontoGrupoCliente * CantidadActivos).ToString("0.00");
+                                TxbFacturaValor.Text = Convert.ToDecimal((MontoGrupoCliente + MontoCredito)).ToString("0.00");
 
                             }
                             else
@@ -246,11 +251,13 @@ namespace SistemaGym.UI.Windows
 
                                 decimal CantidadActivos = decimal.Parse(TxbClientesActivos.Text);
                                 decimal MontoGrupoCliente = decimal.Parse(TxbMontoGrupoCliente.Text);
+                                decimal MontoTotalGrupo = decimal.Parse(TxbMontoTotalGrupo.Text);
 
                                 decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
                                 decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
 
-                                TxbFacturaValor.Text = Convert.ToDecimal((MontoGrupoCliente + MontoDebito) * CantidadActivos).ToString("0.00");
+                                TxbMontoTotalGrupo.Text = Convert.ToDecimal(MontoGrupoCliente * CantidadActivos).ToString("0.00");
+                                TxbFacturaValor.Text = Convert.ToDecimal((MontoGrupoCliente + MontoDebito)).ToString("0.00");
 
                             }
 
