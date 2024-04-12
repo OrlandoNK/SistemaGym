@@ -35,9 +35,7 @@ namespace SistemaGym.UI.Windows
             if (!rbtnSiTieneCargoCredito.Checked &&
                 !rbtnNoTieneCargoCredito.Checked &&
                 !rbtnSiTieneCargoDebito.Checked &&
-                !rbtnNoTieneCargoDebito.Checked &&
-                !rbtnSiPerteneceGrupoCliente.Checked &&
-                !rbtnNoPerteneceGrupoCliente.Checked)
+                !rbtnNoTieneCargoDebito.Checked)
             {
                 MessageBox.Show("¡Es Necesario decir si Tiene o No Cargos! \nPor Favor, Escoja una Opcion", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 validacion = false;
