@@ -30,8 +30,7 @@ namespace SistemaGym.Entities
         public FacturaMembresiaEntity()
         {
             Pagos = new List<PagoEntity>();
-          
-        }
 
+        }
     }
 }

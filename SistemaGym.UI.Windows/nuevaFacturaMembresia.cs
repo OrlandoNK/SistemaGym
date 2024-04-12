@@ -21,6 +21,7 @@ namespace SistemaGym.UI.Windows
        
         private string SYSTEM_TITLE = "Sistema Gestion Gimnasio (COMFORT GYM) dice";
         FacturaMembresiaEntity oFacturaMembresia = new FacturaMembresiaEntity();
+        PagoEntity Pago = new PagoEntity();
         public nuevaFacturaMembresia()
         {
             InitializeComponent();
@@ -547,7 +548,7 @@ namespace SistemaGym.UI.Windows
                     return;
                 }
 
-                PagoEntity Pago = new PagoEntity();
+             
                 PagoBLL pagoBLL = new PagoBLL();
                 FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
                 FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
@@ -558,7 +559,7 @@ namespace SistemaGym.UI.Windows
                 oFacturaMembresia.CargoCredito = Convert.ToInt32(TxbIDCargoCredito.Text);
                 oFacturaMembresia.CargoDebito = Convert.ToInt32(TxbIDCargoDebito.Text);
                 oFacturaMembresia.NCF = TxbFacturaNCF.Text;
-                nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
+                oFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
                 oFacturaMembresia.FechaEmision = DateTime.Now;
                 oFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
                 oFacturaMembresia.Estatus = "Pagado";
@@ -597,7 +598,7 @@ namespace SistemaGym.UI.Windows
 
               
                 FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
-                PagoEntity Pago = new PagoEntity();
+               
                 oFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
                 oFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
                 oFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
@@ -641,7 +642,7 @@ namespace SistemaGym.UI.Windows
 
                 FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
                 FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
-                PagoEntity Pago = new PagoEntity();
+                
                 oFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
                 oFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
                 oFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
@@ -685,7 +686,7 @@ namespace SistemaGym.UI.Windows
                 FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
                 FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
 
-                PagoEntity Pago = new PagoEntity();
+              
                 oFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
                 oFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
                 oFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);

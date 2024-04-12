@@ -28,7 +28,7 @@ namespace SistemaGym.DAL
 
             string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, CargoCredito, CargoDebito, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
                               " VALUES(@IDMembresia, @IDCliente, @IDUsuario, @CargoCredito, @CargoDebito, @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
-            SqlCommand cmd = new SqlCommand(Insertar, Conexion);
+            SqlCommand cmd = new SqlCommand(Insertar, Conexion, transaccion);
             cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
             cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
             cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
@@ -50,7 +50,7 @@ namespace SistemaGym.DAL
                 foreach (var pago in facturaMembresia.Pagos)
                 {
                     cmdPago.Parameters.Clear();
-                    cmdPago.Parameters.AddWithValue("@idfacturaproducto", pago.IDFacturaProductos);
+                 
                     cmdPago.Parameters.AddWithValue("@idfacturamembresia", facturaMembresia.IDFactura);
                     cmdPago.Parameters.AddWithValue("@metodopago", pago.MetodoPago);
                     cmdPago.Parameters.AddWithValue("@monto", pago.Monto);
@@ -110,7 +110,7 @@ namespace SistemaGym.DAL
                 foreach (var pago in facturaMembresia.Pagos)
                 {
                     cmdPago.Parameters.Clear();
-                    cmdPago.Parameters.AddWithValue("@idfacturaproducto", pago.IDFacturaProductos);
+                    
                     cmdPago.Parameters.AddWithValue("@idfacturamembresia", facturaMembresia.IDFactura);
                     cmdPago.Parameters.AddWithValue("@metodopago", pago.MetodoPago);
                     cmdPago.Parameters.AddWithValue("@monto", pago.Monto);
@@ -170,7 +170,7 @@ namespace SistemaGym.DAL
             foreach (var pago in facturaMembresia.Pagos)
             {
                 cmdPago.Parameters.Clear();
-                cmdPago.Parameters.AddWithValue("@idfacturaproducto", pago.IDFacturaProductos);
+                
                 cmdPago.Parameters.AddWithValue("@idfacturamembresia", facturaMembresia.IDFactura);
                 cmdPago.Parameters.AddWithValue("@metodopago", pago.MetodoPago);
                 cmdPago.Parameters.AddWithValue("@monto", pago.Monto);
@@ -231,7 +231,7 @@ namespace SistemaGym.DAL
                 foreach (var pago in facturaMembresia.Pagos)
                 {
                     cmdPago.Parameters.Clear();
-                    cmdPago.Parameters.AddWithValue("@idfacturaproducto", pago.IDFacturaProductos);
+                   
                     cmdPago.Parameters.AddWithValue("@idfacturamembresia", facturaMembresia.IDFactura);
                     cmdPago.Parameters.AddWithValue("@metodopago", pago.MetodoPago);
                     cmdPago.Parameters.AddWithValue("@monto", pago.Monto);
