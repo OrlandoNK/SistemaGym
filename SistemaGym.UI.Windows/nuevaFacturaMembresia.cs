@@ -268,40 +268,43 @@ namespace SistemaGym.UI.Windows
                             }
                         }
                     }
+                
+                    int idClienteSinGrupo = listaClientes.IdCliente;
+                    DataTable DT2 = clientesBLL.GetClientCargos(idClienteSinGrupo);
                     if (rbtnNoPerteneceGrupoCliente.Checked)
                     {
                         if (rbtnSiTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
                         {
                             LimpiarCargos();
 
-                            if (DT.Rows.Count > 0)
+                            if (DT2.Rows.Count > 0)
                             {
                                 /* Llenar Campos de Cliente */
-                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
-                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
-                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
-                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
-                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+                                TxbIDCliente.Text = DT2.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT2.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT2.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT2.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT2.Rows[0]["Documento"].ToString();
 
                                 /* Llenar Campos de Membresia */
-                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
-                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
-                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
-                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+                                TxbIDMembresia.Text = DT2.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT2.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT2.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT2.Rows[0]["Valor"]).ToString("0.00");
 
                                 /* Llenar Campos de CargoCredito */
-                                TxbIDCargoCredito.Text = DT.Rows[0]["IDCargoCredito"].ToString();
-                                TxbCargoCredito.Text = DT.Rows[0]["CargoCredito"].ToString();
-                                TxbMontoCredito.Text = Convert.ToDecimal(DT.Rows[0]["MontoCredito"]).ToString("0.00");
-                                TxbFechaCargoCredito.Text = DT.Rows[0]["FechaCargoCredito"].ToString();
-                                TxbEstatusCredito.Text = DT.Rows[0]["EstatusCredito"].ToString();
+                                TxbIDCargoCredito.Text = DT2.Rows[0]["IDCargoCredito"].ToString();
+                                TxbCargoCredito.Text = DT2.Rows[0]["CargoCredito"].ToString();
+                                TxbMontoCredito.Text = Convert.ToDecimal(DT2.Rows[0]["MontoCredito"]).ToString("0.00");
+                                TxbFechaCargoCredito.Text = DT2.Rows[0]["FechaCargoCredito"].ToString();
+                                TxbEstatusCredito.Text = DT2.Rows[0]["EstatusCredito"].ToString();
 
                                 /* Llenar Campos de CargoDebito */
-                                TxbIDCargoDebito.Text = DT.Rows[0]["IDCargoDebito"].ToString();
-                                TxbCargoDebito.Text = DT.Rows[0]["CargoDebito"].ToString();
+                                TxbIDCargoDebito.Text = DT2.Rows[0]["IDCargoDebito"].ToString();
+                                TxbCargoDebito.Text = DT2.Rows[0]["CargoDebito"].ToString();
                                 TxbMontoDebito.Text = Convert.ToDecimal(DT.Rows[0]["MontoDebito"]).ToString("0.00");
-                                TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
-                                TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
+                                TxbFechaCargoDebito.Text = DT2.Rows[0]["FechaCargoDebito"].ToString();
+                                TxbEstatusDebito.Text = DT2.Rows[0]["EstatusDebito"].ToString();
 
                                 decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
                                 decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
@@ -320,20 +323,20 @@ namespace SistemaGym.UI.Windows
                         {
                             LimpiarCargos();
 
-                            if (DT.Rows.Count > 0)
+                            if (DT2.Rows.Count > 0)
                             {
                                 /* Llenar Campos de Cliente */
-                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
-                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
-                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
-                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
-                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+                                TxbIDCliente.Text = DT2.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT2.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT2.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT2.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT2.Rows[0]["Documento"].ToString();
 
                                 /* Llenar Campos de Membresia */
-                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
-                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
-                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
-                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+                                TxbIDMembresia.Text = DT2.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT2.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT2.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT2.Rows[0]["Valor"]).ToString("0.00");
 
 
                                 decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
@@ -350,27 +353,27 @@ namespace SistemaGym.UI.Windows
                         {
                             LimpiarCargos();
 
-                            if (DT.Rows.Count > 0)
+                            if (DT2.Rows.Count > 0)
                             {
                                 /* Llenar Campos de Cliente */
-                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
-                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
-                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
-                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
-                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+                                TxbIDCliente.Text = DT2.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT2.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT2.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT2.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT2.Rows[0]["Documento"].ToString();
 
                                 /* Llenar Campos de Membresia */
-                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
-                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
-                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
-                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+                                TxbIDMembresia.Text = DT2.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT2.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT2.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT2.Rows[0]["Valor"]).ToString("0.00");
 
                                 /* Llenar Campos de CargoCredito */
-                                TxbIDCargoCredito.Text = DT.Rows[0]["IDCargoCredito"].ToString();
-                                TxbCargoCredito.Text = DT.Rows[0]["CargoCredito"].ToString();
-                                TxbMontoCredito.Text = Convert.ToDecimal(DT.Rows[0]["MontoCredito"]).ToString("0.00");
-                                TxbFechaCargoCredito.Text = DT.Rows[0]["FechaCargoCredito"].ToString();
-                                TxbEstatusCredito.Text = DT.Rows[0]["EstatusCredito"].ToString();
+                                TxbIDCargoCredito.Text = DT2.Rows[0]["IDCargoCredito"].ToString();
+                                TxbCargoCredito.Text = DT2.Rows[0]["CargoCredito"].ToString();
+                                TxbMontoCredito.Text = Convert.ToDecimal(DT2.Rows[0]["MontoCredito"]).ToString("0.00");
+                                TxbFechaCargoCredito.Text = DT2.Rows[0]["FechaCargoCredito"].ToString();
+                                TxbEstatusCredito.Text = DT2.Rows[0]["EstatusCredito"].ToString();
 
 
                                 decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
@@ -389,27 +392,27 @@ namespace SistemaGym.UI.Windows
                         {
                             LimpiarCargos();
 
-                            if (DT.Rows.Count > 0)
+                            if (DT2.Rows.Count > 0)
                             {
                                 /* Llenar Campos de Cliente */
-                                TxbIDCliente.Text = DT.Rows[0]["IDCliente"].ToString();
-                                TxbNombreCliente.Text = DT.Rows[0]["Nombre"].ToString();
-                                TxbApellidoCliente.Text = DT.Rows[0]["Apellido"].ToString();
-                                TxbTipoDocumento.Text = DT.Rows[0]["TipoDocumento"].ToString();
-                                TxbDocumentoCliente.Text = DT.Rows[0]["Documento"].ToString();
+                                TxbIDCliente.Text = DT2.Rows[0]["IDCliente"].ToString();
+                                TxbNombreCliente.Text = DT2.Rows[0]["Nombre"].ToString();
+                                TxbApellidoCliente.Text = DT2.Rows[0]["Apellido"].ToString();
+                                TxbTipoDocumento.Text = DT2.Rows[0]["TipoDocumento"].ToString();
+                                TxbDocumentoCliente.Text = DT2.Rows[0]["Documento"].ToString();
 
                                 /* Llenar Campos de Membresia */
-                                TxbIDMembresia.Text = DT.Rows[0]["IDMembresia"].ToString();
-                                TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
-                                TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
-                                TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+                                TxbIDMembresia.Text = DT2.Rows[0]["IDMembresia"].ToString();
+                                TxbNombreMembresia.Text = DT2.Rows[0]["NombreMembresia"].ToString();
+                                TxbDescrMembresia.Text = DT2.Rows[0]["Descripcion"].ToString();
+                                TxbValorMembresia.Text = Convert.ToDecimal(DT2.Rows[0]["Valor"]).ToString("0.00");
 
                                 /* Llenar Campos de CargoDebito */
-                                TxbIDCargoDebito.Text = DT.Rows[0]["IDCargoDebito"].ToString();
-                                TxbCargoDebito.Text = DT.Rows[0]["CargoDebito"].ToString();
-                                TxbMontoDebito.Text = Convert.ToDecimal(DT.Rows[0]["MontoDebito"]).ToString("0.00");
-                                TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
-                                TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
+                                TxbIDCargoDebito.Text = DT2.Rows[0]["IDCargoDebito"].ToString();
+                                TxbCargoDebito.Text = DT2.Rows[0]["CargoDebito"].ToString();
+                                TxbMontoDebito.Text = Convert.ToDecimal(DT2.Rows[0]["MontoDebito"]).ToString("0.00");
+                                TxbFechaCargoDebito.Text = DT2.Rows[0]["FechaCargoDebito"].ToString();
+                                TxbEstatusDebito.Text = DT2.Rows[0]["EstatusDebito"].ToString();
 
 
                                 decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
