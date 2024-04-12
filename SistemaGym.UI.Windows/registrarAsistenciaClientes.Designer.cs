@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnCerrar = new PictureBox();
             pictureBox1 = new PictureBox();
@@ -40,6 +41,7 @@
             panel3 = new Panel();
             btnAssistanceSave = new Guna.UI2.WinForms.Guna2Button();
             groupBox1 = new GroupBox();
+            rbtnAsistio = new CheckBox();
             groupBox2 = new GroupBox();
             label7 = new Label();
             btnBuscarIDCliente = new Guna.UI2.WinForms.Guna2Button();
@@ -52,13 +54,14 @@
             label38 = new Label();
             label5 = new Label();
             TxbNombreCliente = new TextBox();
-            rbtnAsistio = new CheckBox();
+            errorProvider = new ErrorProvider(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -136,7 +139,7 @@
             btnAssistanceSave.BorderRadius = 3;
             btnAssistanceSave.BorderThickness = 2;
             btnAssistanceSave.Cursor = Cursors.Hand;
-            btnAssistanceSave.CustomizableEdges = customizableEdges5;
+            btnAssistanceSave.CustomizableEdges = customizableEdges1;
             btnAssistanceSave.DisabledState.BorderColor = Color.DarkGray;
             btnAssistanceSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAssistanceSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -149,7 +152,7 @@
             btnAssistanceSave.Location = new Point(191, 324);
             btnAssistanceSave.Name = "btnAssistanceSave";
             btnAssistanceSave.PressedColor = Color.Transparent;
-            btnAssistanceSave.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnAssistanceSave.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnAssistanceSave.Size = new Size(448, 55);
             btnAssistanceSave.TabIndex = 19;
             btnAssistanceSave.Text = "Guardar Asistencia";
@@ -166,6 +169,24 @@
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             groupBox1.Text = "Asistencia";
+            // 
+            // rbtnAsistio
+            // 
+            rbtnAsistio.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnAsistio.Cursor = Cursors.Hand;
+            rbtnAsistio.FlatAppearance.BorderSize = 0;
+            rbtnAsistio.FlatAppearance.CheckedBackColor = Color.Transparent;
+            rbtnAsistio.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            rbtnAsistio.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            rbtnAsistio.Image = Properties.Resources.icon_check_asistencia_true__x32_;
+            rbtnAsistio.ImageAlign = ContentAlignment.MiddleLeft;
+            rbtnAsistio.Location = new Point(7, 54);
+            rbtnAsistio.Name = "rbtnAsistio";
+            rbtnAsistio.Size = new Size(169, 44);
+            rbtnAsistio.TabIndex = 0;
+            rbtnAsistio.Text = "Asistió";
+            rbtnAsistio.TextAlign = ContentAlignment.MiddleCenter;
+            rbtnAsistio.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -205,7 +226,7 @@
             btnBuscarIDCliente.BorderRadius = 5;
             btnBuscarIDCliente.BorderThickness = 2;
             btnBuscarIDCliente.Cursor = Cursors.Hand;
-            btnBuscarIDCliente.CustomizableEdges = customizableEdges7;
+            btnBuscarIDCliente.CustomizableEdges = customizableEdges3;
             btnBuscarIDCliente.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -218,7 +239,7 @@
             btnBuscarIDCliente.Location = new Point(506, 88);
             btnBuscarIDCliente.Name = "btnBuscarIDCliente";
             btnBuscarIDCliente.PressedColor = Color.Transparent;
-            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnBuscarIDCliente.Size = new Size(117, 55);
             btnBuscarIDCliente.TabIndex = 18;
             btnBuscarIDCliente.TextAlign = HorizontalAlignment.Left;
@@ -314,23 +335,9 @@
             TxbNombreCliente.Size = new Size(117, 23);
             TxbNombreCliente.TabIndex = 12;
             // 
-            // rbtnAsistio
+            // errorProvider
             // 
-            rbtnAsistio.CheckAlign = ContentAlignment.MiddleRight;
-            rbtnAsistio.Cursor = Cursors.Hand;
-            rbtnAsistio.FlatAppearance.BorderSize = 0;
-            rbtnAsistio.FlatAppearance.CheckedBackColor = Color.Transparent;
-            rbtnAsistio.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            rbtnAsistio.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            rbtnAsistio.Image = Properties.Resources.icon_check_asistencia_true__x32_;
-            rbtnAsistio.ImageAlign = ContentAlignment.MiddleLeft;
-            rbtnAsistio.Location = new Point(7, 54);
-            rbtnAsistio.Name = "rbtnAsistio";
-            rbtnAsistio.Size = new Size(169, 44);
-            rbtnAsistio.TabIndex = 0;
-            rbtnAsistio.Text = "Asistió";
-            rbtnAsistio.TextAlign = ContentAlignment.MiddleCenter;
-            rbtnAsistio.UseVisualStyleBackColor = true;
+            errorProvider.ContainerControl = this;
             // 
             // registrarAsistenciaClientes
             // 
@@ -350,6 +357,7 @@
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -376,5 +384,6 @@
         private GroupBox groupBox1;
         private Guna.UI2.WinForms.Guna2Button btnAssistanceSave;
         private CheckBox rbtnAsistio;
+        private ErrorProvider errorProvider;
     }
 }
