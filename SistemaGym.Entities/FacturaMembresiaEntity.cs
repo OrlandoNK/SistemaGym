@@ -8,6 +8,7 @@ namespace SistemaGym.Entities
 {
     public class FacturaMembresiaEntity
     {
+        public List<PagoEntity> Pagos { get; set; }
         public int IDFactura { get; set; }
         public int IDMembresia { get; set; }
         public int IDCliente { get; set; }
@@ -25,6 +26,12 @@ namespace SistemaGym.Entities
         public DateTime FechaVencimiento { get; set; }
 
         public string Estatus { get; set; }
+
+        public FacturaMembresiaEntity()
+        {
+            Pagos = new List<PagoEntity>();
+          
+        }
 
     }
 }

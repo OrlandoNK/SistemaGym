@@ -18,8 +18,12 @@ namespace SistemaGym.DAL
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
-
             Conexion.Open();
+            SqlTransaction transaccion = Conexion.BeginTransaction();
+
+            try
+            {
+                
 
             string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, CargoCredito, CargoDebito, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
                               " VALUES(@IDMembresia, @IDCliente, @IDUsuario, @CargoCredito, @CargoDebito, @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
@@ -36,8 +40,40 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
 
             cmd.ExecuteNonQuery();
+                string insertarPagoQuery = "INSERT INTO Pago(IDFacturaMembresia, MetodoPago, Monto, Pagado, Devuelta, FechaPago, Estatus) " +
+       "VALUES(@idfacturamembresia, @metodopago, @monto, @pagado, @devuelta, @fechapago, @estatus); " +
+       "SELECT SCOPE_IDENTITY();";
 
+                SqlCommand cmdPago = new SqlCommand(insertarPagoQuery, Conexion, transaccion);
+
+                foreach (var pago in facturaMembresia.Pagos)
+                {
+                    cmdPago.Parameters.Clear();
+                    cmdPago.Parameters.AddWithValue("@idfacturaproducto", pago.IDFacturaProductos);
+                    cmdPago.Parameters.AddWithValue("@idfacturamembresia", facturaMembresia.IDFactura);
+                    cmdPago.Parameters.AddWithValue("@metodopago", pago.MetodoPago);
+                    cmdPago.Parameters.AddWithValue("@monto", pago.Monto);
+                    cmdPago.Parameters.AddWithValue("@pagado", pago.Pagado);
+                    cmdPago.Parameters.AddWithValue("@devuelta", pago.Devuelta);
+                    cmdPago.Parameters.AddWithValue("@fechapago", pago.FechaPago);
+                    cmdPago.Parameters.AddWithValue("@estatus", pago.Estatus);
+                    pago.IDPago = Convert.ToInt32(cmdPago.ExecuteScalar());
+                }
+
+
+                transaccion.Commit();
+            }
+            catch (Exception ex)
+            {
+                transaccion.Rollback();
+                throw;
+            }
+            finally
+            {
+                Conexion.Close();
+            }
         }
+            
         public static void InsertarSinCargos(FacturaMembresiaEntity facturaMembresia)
         {
             ConexionDAL instancia = Instancia();
