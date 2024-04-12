@@ -125,13 +125,13 @@
             btnMembresiasMantenimiento = new Guna.UI2.WinForms.Guna2Button();
             btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
             dgvAsistenciasHOY = new Guna.UI2.WinForms.Guna2DataGridView();
-            panelAsistenciasHOY = new Panel();
-            panel1 = new Panel();
-            btnAsistencias = new Guna.UI2.WinForms.Guna2TileButton();
             Cliente = new DataGridViewTextBoxColumn();
             Asistencia = new DataGridViewTextBoxColumn();
             Fecha = new DataGridViewTextBoxColumn();
-            panel3 = new Panel();
+            panelAsistenciasHOY = new Panel();
+            panel1 = new Panel();
+            btnAsistencias = new Guna.UI2.WinForms.Guna2TileButton();
+            panelVerClientes = new Panel();
             dgvClientes = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
@@ -145,7 +145,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvAsistenciasHOY).BeginInit();
             panelAsistenciasHOY.SuspendLayout();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
+            panelVerClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
@@ -1014,6 +1014,27 @@
             dgvAsistenciasHOY.ThemeStyle.RowsStyle.SelectionBackColor = Color.Black;
             dgvAsistenciasHOY.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
             // 
+            // Cliente
+            // 
+            Cliente.DataPropertyName = "IDCliente";
+            Cliente.HeaderText = "Cliente";
+            Cliente.Name = "Cliente";
+            Cliente.ReadOnly = true;
+            // 
+            // Asistencia
+            // 
+            Asistencia.DataPropertyName = "Asistencia";
+            Asistencia.HeaderText = "Asistencia";
+            Asistencia.Name = "Asistencia";
+            Asistencia.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            Fecha.DataPropertyName = "FechaAsistencia";
+            Fecha.HeaderText = "Fecha";
+            Fecha.Name = "Fecha";
+            Fecha.ReadOnly = true;
+            // 
             // panelAsistenciasHOY
             // 
             panelAsistenciasHOY.BorderStyle = BorderStyle.FixedSingle;
@@ -1056,35 +1077,14 @@
             btnAsistencias.Text = "Ir a Asistencias >>";
             btnAsistencias.Click += btnAsistencias_Click;
             // 
-            // Cliente
+            // panelVerClientes
             // 
-            Cliente.DataPropertyName = "IDCliente";
-            Cliente.HeaderText = "Cliente";
-            Cliente.Name = "Cliente";
-            Cliente.ReadOnly = true;
-            // 
-            // Asistencia
-            // 
-            Asistencia.DataPropertyName = "Asistencia";
-            Asistencia.HeaderText = "Asistencia";
-            Asistencia.Name = "Asistencia";
-            Asistencia.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            Fecha.DataPropertyName = "FechaAsistencia";
-            Fecha.HeaderText = "Fecha";
-            Fecha.Name = "Fecha";
-            Fecha.ReadOnly = true;
-            // 
-            // panel3
-            // 
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(dgvClientes);
-            panel3.Location = new Point(721, 218);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(334, 216);
-            panel3.TabIndex = 7;
+            panelVerClientes.BorderStyle = BorderStyle.FixedSingle;
+            panelVerClientes.Controls.Add(dgvClientes);
+            panelVerClientes.Location = new Point(721, 218);
+            panelVerClientes.Name = "panelVerClientes";
+            panelVerClientes.Size = new Size(334, 216);
+            panelVerClientes.TabIndex = 7;
             // 
             // dgvClientes
             // 
@@ -1150,7 +1150,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 32, 39);
             ClientSize = new Size(1063, 788);
-            Controls.Add(panel3);
+            Controls.Add(panelVerClientes);
             Controls.Add(panel1);
             Controls.Add(panelAsistenciasHOY);
             Controls.Add(panelDesplegable);
@@ -1175,7 +1175,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvAsistenciasHOY).EndInit();
             panelAsistenciasHOY.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            panel3.ResumeLayout(false);
+            panelVerClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
         }
@@ -1224,7 +1224,7 @@
         private DataGridViewTextBoxColumn Cliente;
         private DataGridViewTextBoxColumn Asistencia;
         private DataGridViewTextBoxColumn Fecha;
-        private Panel panel3;
+        private Panel panelVerClientes;
         private Guna.UI2.WinForms.Guna2DataGridView dgvClientes;
     }
 }
