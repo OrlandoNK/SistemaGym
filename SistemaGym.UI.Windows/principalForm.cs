@@ -1,4 +1,5 @@
-﻿using SistemaGym.Entities;
+﻿using SistemaGym.BLL;
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -74,10 +75,29 @@ namespace SistemaGym.UI.Windows
 
         private void principalForm_Load(object sender, EventArgs e)
         {
+            CargarAsistenciasHoy();
+
             lblusuario.Text = gestioUsuarioEntities.usernameLogged;
             lblRolUsuario.Text = "[" + gestioUsuarioEntities.rolUsuarioLogged + "]";
             FuncionRolUsuario();
         }
+
+        private void CargarAsistenciasHoy()
+        {
+            AsistenciaClientesBLL asistenciaClientesBLL = new AsistenciaClientesBLL();
+            dgvAsistenciasHOY.DataSource = asistenciaClientesBLL.MostrarAsistenciasHOY();
+            dgvAsistenciasHOY.AutoGenerateColumns = false;
+            CargarCliente();
+        }
+        private void CargarCliente()
+        {
+            var colIDCliente = (DataGridViewComboBoxColumn)dgvAsistenciasHOY.Columns["IDCliente"];
+            colIDCliente.DataSource = ClientesBLL.MostrarCliente();
+            colIDCliente.ValueMember = "IDCliente";
+            colIDCliente.DisplayMember = "Nombre";
+            colIDCliente.DataPropertyName = "IDCliente";
+        }
+
         private void FuncionRolUsuario()
         {
             if (gestioUsuarioEntities.rolUsuarioLogged == "Recepcionista")
@@ -260,6 +280,12 @@ namespace SistemaGym.UI.Windows
         private void btnReportsPagos_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+        }
+
+        private void btnAsistencias_Click(object sender, EventArgs e)
+        {
+            mantenimientoAsistenciaClientes asistenciaClientes = new mantenimientoAsistenciaClientes();
+            asistenciaClientes.Show();
         }
     }
 }

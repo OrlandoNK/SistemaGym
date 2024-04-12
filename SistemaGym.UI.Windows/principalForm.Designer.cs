@@ -80,6 +80,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges53 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges54 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             btnAdministracion = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             lblRolUsuario = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -116,6 +124,15 @@
             btnProveedores = new Guna.UI2.WinForms.Guna2Button();
             btnMembresiasMantenimiento = new Guna.UI2.WinForms.Guna2Button();
             btnMantenimientos = new Guna.UI2.WinForms.Guna2Button();
+            dgvAsistenciasHOY = new Guna.UI2.WinForms.Guna2DataGridView();
+            panelAsistenciasHOY = new Panel();
+            panel1 = new Panel();
+            btnAsistencias = new Guna.UI2.WinForms.Guna2TileButton();
+            Cliente = new DataGridViewTextBoxColumn();
+            Asistencia = new DataGridViewTextBoxColumn();
+            Fecha = new DataGridViewTextBoxColumn();
+            panel3 = new Panel();
+            dgvClientes = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panelDesplegable.SuspendLayout();
@@ -125,6 +142,11 @@
             subPanelReports.SuspendLayout();
             subPanelFacturacion.SuspendLayout();
             subPanelMantenimientos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvAsistenciasHOY).BeginInit();
+            panelAsistenciasHOY.SuspendLayout();
+            panel1.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
             // btnAdministracion
@@ -933,12 +955,204 @@
             btnMantenimientos.TextAlign = HorizontalAlignment.Right;
             btnMantenimientos.Click += btnMantenimientos_Click;
             // 
+            // dgvAsistenciasHOY
+            // 
+            dgvAsistenciasHOY.AllowUserToAddRows = false;
+            dgvAsistenciasHOY.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(194, 200, 207);
+            dgvAsistenciasHOY.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvAsistenciasHOY.BackgroundColor = Color.FromArgb(35, 32, 39);
+            dgvAsistenciasHOY.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(52, 73, 94);
+            dataGridViewCellStyle2.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvAsistenciasHOY.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvAsistenciasHOY.ColumnHeadersHeight = 28;
+            dgvAsistenciasHOY.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvAsistenciasHOY.Columns.AddRange(new DataGridViewColumn[] { Cliente, Asistencia, Fecha });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(214, 218, 223);
+            dataGridViewCellStyle3.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvAsistenciasHOY.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvAsistenciasHOY.Dock = DockStyle.Fill;
+            dgvAsistenciasHOY.GridColor = Color.FromArgb(193, 199, 206);
+            dgvAsistenciasHOY.Location = new Point(0, 0);
+            dgvAsistenciasHOY.Name = "dgvAsistenciasHOY";
+            dgvAsistenciasHOY.ReadOnly = true;
+            dgvAsistenciasHOY.RowHeadersVisible = false;
+            dgvAsistenciasHOY.RowTemplate.Height = 25;
+            dgvAsistenciasHOY.Size = new Size(471, 321);
+            dgvAsistenciasHOY.TabIndex = 0;
+            dgvAsistenciasHOY.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
+            dgvAsistenciasHOY.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(194, 200, 207);
+            dgvAsistenciasHOY.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvAsistenciasHOY.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvAsistenciasHOY.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvAsistenciasHOY.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvAsistenciasHOY.ThemeStyle.BackColor = Color.FromArgb(35, 32, 39);
+            dgvAsistenciasHOY.ThemeStyle.GridColor = Color.FromArgb(193, 199, 206);
+            dgvAsistenciasHOY.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(52, 73, 94);
+            dgvAsistenciasHOY.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvAsistenciasHOY.ThemeStyle.HeaderStyle.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            dgvAsistenciasHOY.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvAsistenciasHOY.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvAsistenciasHOY.ThemeStyle.HeaderStyle.Height = 28;
+            dgvAsistenciasHOY.ThemeStyle.ReadOnly = true;
+            dgvAsistenciasHOY.ThemeStyle.RowsStyle.BackColor = Color.FromArgb(214, 218, 223);
+            dgvAsistenciasHOY.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.None;
+            dgvAsistenciasHOY.ThemeStyle.RowsStyle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dgvAsistenciasHOY.ThemeStyle.RowsStyle.ForeColor = Color.White;
+            dgvAsistenciasHOY.ThemeStyle.RowsStyle.Height = 25;
+            dgvAsistenciasHOY.ThemeStyle.RowsStyle.SelectionBackColor = Color.Black;
+            dgvAsistenciasHOY.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            // 
+            // panelAsistenciasHOY
+            // 
+            panelAsistenciasHOY.BorderStyle = BorderStyle.FixedSingle;
+            panelAsistenciasHOY.Controls.Add(dgvAsistenciasHOY);
+            panelAsistenciasHOY.Location = new Point(243, 111);
+            panelAsistenciasHOY.Name = "panelAsistenciasHOY";
+            panelAsistenciasHOY.Size = new Size(473, 323);
+            panelAsistenciasHOY.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnAsistencias);
+            panel1.Location = new Point(721, 111);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(146, 98);
+            panel1.TabIndex = 6;
+            // 
+            // btnAsistencias
+            // 
+            btnAsistencias.BorderColor = Color.DarkGoldenrod;
+            btnAsistencias.BorderThickness = 2;
+            btnAsistencias.Cursor = Cursors.Hand;
+            btnAsistencias.CustomizableEdges = customizableEdges53;
+            btnAsistencias.DisabledState.BorderColor = Color.DarkGray;
+            btnAsistencias.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAsistencias.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAsistencias.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAsistencias.Dock = DockStyle.Fill;
+            btnAsistencias.FillColor = Color.Transparent;
+            btnAsistencias.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAsistencias.ForeColor = Color.White;
+            btnAsistencias.Image = Properties.Resources.icon_asistencia_clientes_gym__x32_;
+            btnAsistencias.ImageSize = new Size(32, 32);
+            btnAsistencias.Location = new Point(0, 0);
+            btnAsistencias.Name = "btnAsistencias";
+            btnAsistencias.PressedColor = Color.Transparent;
+            btnAsistencias.ShadowDecoration.CustomizableEdges = customizableEdges54;
+            btnAsistencias.Size = new Size(146, 98);
+            btnAsistencias.TabIndex = 0;
+            btnAsistencias.Text = "Ir a Asistencias >>";
+            btnAsistencias.Click += btnAsistencias_Click;
+            // 
+            // Cliente
+            // 
+            Cliente.DataPropertyName = "IDCliente";
+            Cliente.HeaderText = "Cliente";
+            Cliente.Name = "Cliente";
+            Cliente.ReadOnly = true;
+            // 
+            // Asistencia
+            // 
+            Asistencia.DataPropertyName = "Asistencia";
+            Asistencia.HeaderText = "Asistencia";
+            Asistencia.Name = "Asistencia";
+            Asistencia.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            Fecha.DataPropertyName = "FechaAsistencia";
+            Fecha.HeaderText = "Fecha";
+            Fecha.Name = "Fecha";
+            Fecha.ReadOnly = true;
+            // 
+            // panel3
+            // 
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(dgvClientes);
+            panel3.Location = new Point(721, 218);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(334, 216);
+            panel3.TabIndex = 7;
+            // 
+            // dgvClientes
+            // 
+            dgvClientes.AllowUserToAddRows = false;
+            dgvClientes.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(194, 200, 207);
+            dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvClientes.BackgroundColor = Color.FromArgb(35, 32, 39);
+            dgvClientes.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(52, 73, 94);
+            dataGridViewCellStyle5.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgvClientes.ColumnHeadersHeight = 28;
+            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(214, 218, 223);
+            dataGridViewCellStyle6.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.Black;
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvClientes.DefaultCellStyle = dataGridViewCellStyle6;
+            dgvClientes.Dock = DockStyle.Fill;
+            dgvClientes.GridColor = Color.FromArgb(193, 199, 206);
+            dgvClientes.Location = new Point(0, 0);
+            dgvClientes.Name = "dgvClientes";
+            dgvClientes.ReadOnly = true;
+            dgvClientes.RowHeadersVisible = false;
+            dgvClientes.RowTemplate.Height = 25;
+            dgvClientes.Size = new Size(332, 214);
+            dgvClientes.TabIndex = 0;
+            dgvClientes.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
+            dgvClientes.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(194, 200, 207);
+            dgvClientes.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvClientes.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvClientes.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvClientes.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvClientes.ThemeStyle.BackColor = Color.FromArgb(35, 32, 39);
+            dgvClientes.ThemeStyle.GridColor = Color.FromArgb(193, 199, 206);
+            dgvClientes.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(52, 73, 94);
+            dgvClientes.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvClientes.ThemeStyle.HeaderStyle.Font = new Font("Microsoft YaHei UI", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            dgvClientes.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvClientes.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvClientes.ThemeStyle.HeaderStyle.Height = 28;
+            dgvClientes.ThemeStyle.ReadOnly = true;
+            dgvClientes.ThemeStyle.RowsStyle.BackColor = Color.FromArgb(214, 218, 223);
+            dgvClientes.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.None;
+            dgvClientes.ThemeStyle.RowsStyle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dgvClientes.ThemeStyle.RowsStyle.ForeColor = Color.White;
+            dgvClientes.ThemeStyle.RowsStyle.Height = 25;
+            dgvClientes.ThemeStyle.RowsStyle.SelectionBackColor = Color.Black;
+            dgvClientes.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
+            // 
             // principalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 32, 39);
             ClientSize = new Size(1063, 788);
+            Controls.Add(panel3);
+            Controls.Add(panel1);
+            Controls.Add(panelAsistenciasHOY);
             Controls.Add(panelDesplegable);
             Controls.Add(panel2);
             Controls.Add(guna2Panel2);
@@ -958,6 +1172,11 @@
             subPanelReports.ResumeLayout(false);
             subPanelFacturacion.ResumeLayout(false);
             subPanelMantenimientos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvAsistenciasHOY).EndInit();
+            panelAsistenciasHOY.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
         }
 
@@ -998,5 +1217,14 @@
         private Guna.UI2.WinForms.Guna2Button btnReportsPagos;
         private Guna.UI2.WinForms.Guna2Button btnReportsDetalleProducto;
         private Guna.UI2.WinForms.Guna2Button btnReportsFacturaProducto;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvAsistenciasHOY;
+        private Panel panelAsistenciasHOY;
+        private Panel panel1;
+        private Guna.UI2.WinForms.Guna2TileButton btnAsistencias;
+        private DataGridViewTextBoxColumn Cliente;
+        private DataGridViewTextBoxColumn Asistencia;
+        private DataGridViewTextBoxColumn Fecha;
+        private Panel panel3;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvClientes;
     }
 }

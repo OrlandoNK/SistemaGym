@@ -81,6 +81,21 @@ namespace SistemaGym.DAL
             return dt;
 
         }
+        public static DataTable MostrarAsistenciaHOY()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            DataTable dt = new DataTable();
+            Conexion.Open();
+            string mostrar = "SELECT * FROM AsistenciaClientes WHERE CAST(FechaAsistencia AS DATE) = CAST(GETDATE() AS DATE);";
+            SqlCommand cmd = new SqlCommand(mostrar, Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+
+            return dt;
+
+        }
 
         public static DataTable BuscarID(AsistenciaClientesEntity asistencia)
         {

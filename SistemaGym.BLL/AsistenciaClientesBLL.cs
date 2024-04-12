@@ -22,6 +22,10 @@ namespace SistemaGym.BLL
             //Actualizar
             AsistenciaClientesDAL.ActualizarAsistencia(asistencia);
         }
+        public DataTable MostrarAsistenciasHOY()
+        {
+            return AsistenciaClientesDAL.MostrarAsistenciaHOY();
+        }
 
         public static bool Eliminar(AsistenciaClientesEntity asistencia)
         {
