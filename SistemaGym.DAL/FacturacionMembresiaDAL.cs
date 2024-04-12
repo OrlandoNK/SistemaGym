@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace SistemaGym.DAL
 {
@@ -39,7 +40,7 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
             cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
 
-            cmd.ExecuteNonQuery();
+                facturaMembresia.IDFactura = Convert.ToInt32(cmd.ExecuteScalar());
                 string insertarPagoQuery = "INSERT INTO Pago(IDFacturaMembresia, MetodoPago, Monto, Pagado, Devuelta, FechaPago, Estatus) " +
        "VALUES(@idfacturamembresia, @metodopago, @monto, @pagado, @devuelta, @fechapago, @estatus); " +
        "SELECT SCOPE_IDENTITY();";
@@ -80,9 +81,15 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
+           
+            SqlTransaction transaccion = Conexion.BeginTransaction();
+
+            try
+            {
+
+                string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
                               " VALUES(@IDMembresia, @IDCliente, @IDUsuario, @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
-            SqlCommand cmd = new SqlCommand(Insertar, Conexion);
+            SqlCommand cmd = new SqlCommand(Insertar, Conexion, transaccion);
             cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
             cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
             cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
@@ -92,7 +99,41 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
             cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
 
-            cmd.ExecuteNonQuery();
+                facturaMembresia.IDFactura = Convert.ToInt32(cmd.ExecuteScalar());
+
+                string insertarPagoQuery = "INSERT INTO Pago(IDFacturaMembresia, MetodoPago, Monto, Pagado, Devuelta, FechaPago, Estatus) " +
+       "VALUES(@idfacturamembresia, @metodopago, @monto, @pagado, @devuelta, @fechapago, @estatus); " +
+       "SELECT SCOPE_IDENTITY();";
+
+                SqlCommand cmdPago = new SqlCommand(insertarPagoQuery, Conexion, transaccion);
+
+                foreach (var pago in facturaMembresia.Pagos)
+                {
+                    cmdPago.Parameters.Clear();
+                    cmdPago.Parameters.AddWithValue("@idfacturaproducto", pago.IDFacturaProductos);
+                    cmdPago.Parameters.AddWithValue("@idfacturamembresia", facturaMembresia.IDFactura);
+                    cmdPago.Parameters.AddWithValue("@metodopago", pago.MetodoPago);
+                    cmdPago.Parameters.AddWithValue("@monto", pago.Monto);
+                    cmdPago.Parameters.AddWithValue("@pagado", pago.Pagado);
+                    cmdPago.Parameters.AddWithValue("@devuelta", pago.Devuelta);
+                    cmdPago.Parameters.AddWithValue("@fechapago", pago.FechaPago);
+                    cmdPago.Parameters.AddWithValue("@estatus", pago.Estatus);
+                    pago.IDPago = Convert.ToInt32(cmdPago.ExecuteScalar());
+                }
+
+
+                transaccion.Commit();
+            }
+            catch (Exception ex)
+            {
+                transaccion.Rollback();
+                throw;
+            }
+            finally
+            {
+                Conexion.Close();
+            }
+
 
         }
         public static void InsertarSoloCargoCredito(FacturaMembresiaEntity facturaMembresia)
@@ -101,9 +142,14 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
-            string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, CargoCredito, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
+
+            SqlTransaction transaccion = Conexion.BeginTransaction();
+
+            try
+            {
+                string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, CargoCredito, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
                               " VALUES(@IDMembresia, @IDCliente, @IDUsuario, @CargoCredito, @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
-            SqlCommand cmd = new SqlCommand(Insertar, Conexion);
+            SqlCommand cmd = new SqlCommand(Insertar, Conexion, transaccion);
             cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
             cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
             cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
@@ -114,7 +160,39 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
             cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
 
-            cmd.ExecuteNonQuery();
+            facturaMembresia.IDFactura = Convert.ToInt32(cmd.ExecuteScalar());
+            string insertarPagoQuery = "INSERT INTO Pago(IDFacturaMembresia, MetodoPago, Monto, Pagado, Devuelta, FechaPago, Estatus) " +
+   "VALUES(@idfacturamembresia, @metodopago, @monto, @pagado, @devuelta, @fechapago, @estatus); " +
+   "SELECT SCOPE_IDENTITY();";
+
+            SqlCommand cmdPago = new SqlCommand(insertarPagoQuery, Conexion, transaccion);
+
+            foreach (var pago in facturaMembresia.Pagos)
+            {
+                cmdPago.Parameters.Clear();
+                cmdPago.Parameters.AddWithValue("@idfacturaproducto", pago.IDFacturaProductos);
+                cmdPago.Parameters.AddWithValue("@idfacturamembresia", facturaMembresia.IDFactura);
+                cmdPago.Parameters.AddWithValue("@metodopago", pago.MetodoPago);
+                cmdPago.Parameters.AddWithValue("@monto", pago.Monto);
+                cmdPago.Parameters.AddWithValue("@pagado", pago.Pagado);
+                cmdPago.Parameters.AddWithValue("@devuelta", pago.Devuelta);
+                cmdPago.Parameters.AddWithValue("@fechapago", pago.FechaPago);
+                cmdPago.Parameters.AddWithValue("@estatus", pago.Estatus);
+                pago.IDPago = Convert.ToInt32(cmdPago.ExecuteScalar());
+            }
+
+
+            transaccion.Commit();
+        }
+            catch (Exception ex)
+            {
+                transaccion.Rollback();
+                throw;
+            }
+            finally
+            {
+                Conexion.Close();
+            }
 
         }
         public static void InsertarSoloCargoDebito(FacturaMembresiaEntity facturaMembresia)
@@ -122,10 +200,17 @@ namespace SistemaGym.DAL
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
 
+           
+
             Conexion.Open();
-            string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, CargoDebito, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
+
+            SqlTransaction transaccion = Conexion.BeginTransaction();
+
+            try
+            {
+                string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, CargoDebito, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
                               " VALUES(@IDMembresia, @IDCliente, @IDUsuario, @CargoDebito, @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
-            SqlCommand cmd = new SqlCommand(Insertar, Conexion);
+            SqlCommand cmd = new SqlCommand(Insertar, Conexion, transaccion);
             cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
             cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
             cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
@@ -136,7 +221,39 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
             cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
 
-            cmd.ExecuteNonQuery();
+                facturaMembresia.IDFactura = Convert.ToInt32(cmd.ExecuteScalar());
+                string insertarPagoQuery = "INSERT INTO Pago(IDFacturaMembresia, MetodoPago, Monto, Pagado, Devuelta, FechaPago, Estatus) " +
+       "VALUES(@idfacturamembresia, @metodopago, @monto, @pagado, @devuelta, @fechapago, @estatus); " +
+       "SELECT SCOPE_IDENTITY();";
+
+                SqlCommand cmdPago = new SqlCommand(insertarPagoQuery, Conexion, transaccion);
+
+                foreach (var pago in facturaMembresia.Pagos)
+                {
+                    cmdPago.Parameters.Clear();
+                    cmdPago.Parameters.AddWithValue("@idfacturaproducto", pago.IDFacturaProductos);
+                    cmdPago.Parameters.AddWithValue("@idfacturamembresia", facturaMembresia.IDFactura);
+                    cmdPago.Parameters.AddWithValue("@metodopago", pago.MetodoPago);
+                    cmdPago.Parameters.AddWithValue("@monto", pago.Monto);
+                    cmdPago.Parameters.AddWithValue("@pagado", pago.Pagado);
+                    cmdPago.Parameters.AddWithValue("@devuelta", pago.Devuelta);
+                    cmdPago.Parameters.AddWithValue("@fechapago", pago.FechaPago);
+                    cmdPago.Parameters.AddWithValue("@estatus", pago.Estatus);
+                    pago.IDPago = Convert.ToInt32(cmdPago.ExecuteScalar());
+                }
+
+
+                transaccion.Commit();
+            }
+            catch (Exception ex)
+            {
+                transaccion.Rollback();
+                throw;
+            }
+            finally
+            {
+                Conexion.Close();
+            }
 
         }
 

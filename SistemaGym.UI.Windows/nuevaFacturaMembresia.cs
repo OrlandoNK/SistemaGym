@@ -17,7 +17,10 @@ namespace SistemaGym.UI.Windows
 {
     public partial class nuevaFacturaMembresia : Form
     {
+
+       
         private string SYSTEM_TITLE = "Sistema Gestion Gimnasio (COMFORT GYM) dice";
+        FacturaMembresiaEntity oFacturaMembresia = new FacturaMembresiaEntity();
         public nuevaFacturaMembresia()
         {
             InitializeComponent();
@@ -549,16 +552,16 @@ namespace SistemaGym.UI.Windows
                 FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
                 FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
 
-                nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
-                nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
-                nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
-                nuevaFacturaMembresia.CargoCredito = Convert.ToInt32(TxbIDCargoCredito.Text);
-                nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbIDCargoDebito.Text);
-                nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
+                oFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
+                oFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
+                oFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
+                oFacturaMembresia.CargoCredito = Convert.ToInt32(TxbIDCargoCredito.Text);
+                oFacturaMembresia.CargoDebito = Convert.ToInt32(TxbIDCargoDebito.Text);
+                oFacturaMembresia.NCF = TxbFacturaNCF.Text;
                 nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
-                nuevaFacturaMembresia.FechaEmision = DateTime.Now;
-                nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
-                nuevaFacturaMembresia.Estatus = "Pagado";
+                oFacturaMembresia.FechaEmision = DateTime.Now;
+                oFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
+                oFacturaMembresia.Estatus = "Pagado";
 
                 Pago.MetodoPago = cbMetodoPago.Text;
                 Pago.Monto = decimal.Parse(TxbFacturaValor.Text);
@@ -566,7 +569,7 @@ namespace SistemaGym.UI.Windows
                 Pago.Devuelta = decimal.Parse(TxtDevuelta.Text);
                 Pago.FechaPago = DateTime.Now;
                 Pago.Estatus = "Pagado";
-                nuevaFacturaMembresia.Pagos.Add(Pago);
+                oFacturaMembresia.Pagos.Add(Pago);
 
                 try
                 {
@@ -592,22 +595,29 @@ namespace SistemaGym.UI.Windows
                     return;
                 }
 
-                FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
+              
                 FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
-
-                nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
-                nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
-                nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
-                nuevaFacturaMembresia.CargoCredito = Convert.ToInt32(TxbIDCargoCredito.Text);
-                nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
-                nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
-                nuevaFacturaMembresia.FechaEmision = DateTime.Now;
-                nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
-                nuevaFacturaMembresia.Estatus = "Pagado";
+                PagoEntity Pago = new PagoEntity();
+                oFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
+                oFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
+                oFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
+                oFacturaMembresia.CargoCredito = Convert.ToInt32(TxbIDCargoCredito.Text);
+                oFacturaMembresia.NCF = TxbFacturaNCF.Text;
+                oFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
+                oFacturaMembresia.FechaEmision = DateTime.Now;
+                oFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
+                oFacturaMembresia.Estatus = "Pagado";
+                Pago.MetodoPago = cbMetodoPago.Text;
+                Pago.Monto = decimal.Parse(TxbFacturaValor.Text);
+                Pago.Pagado = decimal.Parse(TxtMontoRecibido.Text);
+                Pago.Devuelta = decimal.Parse(TxtDevuelta.Text);
+                Pago.FechaPago = DateTime.Now;
+                Pago.Estatus = "Pagado";
+                oFacturaMembresia.Pagos.Add(Pago);
 
                 try
                 {
-                    facturaMembresiaBLL.InsertarSoloCargoCredito(nuevaFacturaMembresia);
+                    facturaMembresiaBLL.InsertarSoloCargoCredito(oFacturaMembresia);
                     MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarTodosLosCampos();
                     LimpiarCargos();
@@ -631,20 +641,26 @@ namespace SistemaGym.UI.Windows
 
                 FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
                 FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
-
-                nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
-                nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
-                nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
-                nuevaFacturaMembresia.CargoDebito = Convert.ToInt32(TxbIDCargoDebito.Text);
-                nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
-                nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
-                nuevaFacturaMembresia.FechaEmision = DateTime.Now;
-                nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
-                nuevaFacturaMembresia.Estatus = "Pagado";
-
+                PagoEntity Pago = new PagoEntity();
+                oFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
+                oFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
+                oFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
+                oFacturaMembresia.CargoDebito = Convert.ToInt32(TxbIDCargoDebito.Text);
+                oFacturaMembresia.NCF = TxbFacturaNCF.Text;
+                oFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
+                oFacturaMembresia.FechaEmision = DateTime.Now;
+                oFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
+                oFacturaMembresia.Estatus = "Pagado";
+                Pago.MetodoPago = cbMetodoPago.Text;
+                Pago.Monto = decimal.Parse(TxbFacturaValor.Text);
+                Pago.Pagado = decimal.Parse(TxtMontoRecibido.Text);
+                Pago.Devuelta = decimal.Parse(TxtDevuelta.Text);
+                Pago.FechaPago = DateTime.Now;
+                Pago.Estatus = "Pagado";
+                oFacturaMembresia.Pagos.Add(Pago);
                 try
                 {
-                    facturaMembresiaBLL.InsertarSoloCargoDebito(nuevaFacturaMembresia);
+                    facturaMembresiaBLL.InsertarSoloCargoDebito(oFacturaMembresia);
                     MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarTodosLosCampos();
                     LimpiarCargos();
@@ -669,18 +685,25 @@ namespace SistemaGym.UI.Windows
                 FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
                 FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
 
-                nuevaFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
-                nuevaFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
-                nuevaFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
-                nuevaFacturaMembresia.NCF = TxbFacturaNCF.Text;
-                nuevaFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
-                nuevaFacturaMembresia.FechaEmision = DateTime.Now;
-                nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
-                nuevaFacturaMembresia.Estatus = "Pagado";
-
+                PagoEntity Pago = new PagoEntity();
+                oFacturaMembresia.IDMembresia = Convert.ToInt32(TxbIDMembresia.Text);
+                oFacturaMembresia.IDCliente = Convert.ToInt32(TxbIDCliente.Text);
+                oFacturaMembresia.IDUsuario = Convert.ToInt32(TxbIDUsuario.Text);
+                oFacturaMembresia.NCF = TxbFacturaNCF.Text;
+                oFacturaMembresia.ValorFactura = Convert.ToDecimal(TxbFacturaValor.Text);
+                oFacturaMembresia.FechaEmision = DateTime.Now;
+                oFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
+                oFacturaMembresia.Estatus = "Pagado";
+                Pago.MetodoPago = cbMetodoPago.Text;
+                Pago.Monto = decimal.Parse(TxbFacturaValor.Text);
+                Pago.Pagado = decimal.Parse(TxtMontoRecibido.Text);
+                Pago.Devuelta = decimal.Parse(TxtDevuelta.Text);
+                Pago.FechaPago = DateTime.Now;
+                Pago.Estatus = "Pagado";
+                oFacturaMembresia.Pagos.Add(Pago);
                 try
                 {
-                    facturaMembresiaBLL.InsertarSinCargos(nuevaFacturaMembresia);
+                    facturaMembresiaBLL.InsertarSinCargos(oFacturaMembresia);
                     MessageBox.Show("¡Factura de Membresia Guardada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarTodosLosCampos();
                 }
