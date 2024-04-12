@@ -125,6 +125,12 @@
             TxbDescrMembresia = new TextBox();
             label2 = new Label();
             errorProvider = new ErrorProvider(components);
+            TxbMontoRecibido = new TextBox();
+            label14 = new Label();
+            TxbDevuelta = new TextBox();
+            label21 = new Label();
+            cbMetodoPago = new ComboBox();
+            label22 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
@@ -579,6 +585,12 @@
             // 
             // groupBox10
             // 
+            groupBox10.Controls.Add(label22);
+            groupBox10.Controls.Add(cbMetodoPago);
+            groupBox10.Controls.Add(TxbDevuelta);
+            groupBox10.Controls.Add(label21);
+            groupBox10.Controls.Add(TxbMontoRecibido);
+            groupBox10.Controls.Add(label14);
             groupBox10.Controls.Add(TxbFacturaValor);
             groupBox10.Controls.Add(label35);
             groupBox10.Controls.Add(label34);
@@ -593,7 +605,6 @@
             // 
             // TxbFacturaValor
             // 
-            TxbFacturaValor.Enabled = false;
             TxbFacturaValor.Location = new Point(889, 51);
             TxbFacturaValor.Name = "TxbFacturaValor";
             TxbFacturaValor.ReadOnly = true;
@@ -622,7 +633,6 @@
             // 
             // TxbFacturaNCF
             // 
-            TxbFacturaNCF.Enabled = false;
             TxbFacturaNCF.Location = new Point(6, 51);
             TxbFacturaNCF.Name = "TxbFacturaNCF";
             TxbFacturaNCF.ReadOnly = true;
@@ -664,7 +674,6 @@
             // 
             // TxbIDUsuario
             // 
-            TxbIDUsuario.Enabled = false;
             TxbIDUsuario.Location = new Point(13, 67);
             TxbIDUsuario.Name = "TxbIDUsuario";
             TxbIDUsuario.ReadOnly = true;
@@ -673,7 +682,6 @@
             // 
             // TxbNombreApellidoUsuario
             // 
-            TxbNombreApellidoUsuario.Enabled = false;
             TxbNombreApellidoUsuario.Location = new Point(136, 67);
             TxbNombreApellidoUsuario.Name = "TxbNombreApellidoUsuario";
             TxbNombreApellidoUsuario.ReadOnly = true;
@@ -1130,6 +1138,59 @@
             // 
             errorProvider.ContainerControl = this;
             // 
+            // TxbMontoRecibido
+            // 
+            TxbMontoRecibido.Location = new Point(547, 51);
+            TxbMontoRecibido.Name = "TxbMontoRecibido";
+            TxbMontoRecibido.Size = new Size(165, 23);
+            TxbMontoRecibido.TabIndex = 48;
+            // 
+            // label14
+            // 
+            label14.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Location = new Point(547, 26);
+            label14.Name = "label14";
+            label14.Size = new Size(165, 20);
+            label14.TabIndex = 47;
+            label14.Text = "Monto Recibido";
+            label14.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // TxbDevuelta
+            // 
+            TxbDevuelta.Location = new Point(718, 51);
+            TxbDevuelta.Name = "TxbDevuelta";
+            TxbDevuelta.Size = new Size(165, 23);
+            TxbDevuelta.TabIndex = 50;
+            // 
+            // label21
+            // 
+            label21.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.Location = new Point(718, 26);
+            label21.Name = "label21";
+            label21.Size = new Size(165, 20);
+            label21.TabIndex = 49;
+            label21.Text = "Devuelta";
+            label21.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // cbMetodoPago
+            // 
+            cbMetodoPago.FormattingEnabled = true;
+            cbMetodoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" });
+            cbMetodoPago.Location = new Point(376, 51);
+            cbMetodoPago.Name = "cbMetodoPago";
+            cbMetodoPago.Size = new Size(165, 25);
+            cbMetodoPago.TabIndex = 51;
+            // 
+            // label22
+            // 
+            label22.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label22.Location = new Point(376, 28);
+            label22.Name = "label22";
+            label22.Size = new Size(165, 20);
+            label22.TabIndex = 52;
+            label22.Text = "Metodo de Pago";
+            label22.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // nuevaFacturaMembresia
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -1265,5 +1326,11 @@
         private GroupBox groupBox7;
         private RadioButton rbtnNoPerteneceGrupoCliente;
         private RadioButton rbtnSiPerteneceGrupoCliente;
+        private TextBox TxbDevuelta;
+        private Label label21;
+        private TextBox TxbMontoRecibido;
+        private Label label14;
+        private Label label22;
+        private ComboBox cbMetodoPago;
     }
 }

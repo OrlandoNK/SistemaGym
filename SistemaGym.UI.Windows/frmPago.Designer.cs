@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnClose = new PictureBox();
             lblTitleMantenimientoFacturaMembresia = new Label();
@@ -60,18 +60,21 @@
             Devuelta = new DataGridViewTextBoxColumn();
             Itbis = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
+            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPago).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(btnClose);
             panel1.Controls.Add(lblTitleMantenimientoFacturaMembresia);
             panel1.Controls.Add(pictureBox1);
@@ -141,7 +144,7 @@
             btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
             btnDelete.Cursor = Cursors.Hand;
-            btnDelete.CustomizableEdges = customizableEdges1;
+            btnDelete.CustomizableEdges = customizableEdges13;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -157,7 +160,7 @@
             btnDelete.Location = new Point(-1, 168);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedColor = Color.Goldenrod;
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnDelete.Size = new Size(200, 51);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
@@ -167,7 +170,7 @@
             btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.CustomizableEdges = customizableEdges3;
+            btnEdit.CustomizableEdges = customizableEdges15;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -183,7 +186,7 @@
             btnEdit.Location = new Point(-1, 111);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedColor = Color.Goldenrod;
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnEdit.Size = new Size(200, 51);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Editar";
@@ -202,7 +205,7 @@
             // 
             TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxbBuscar.BorderRadius = 20;
-            TxbBuscar.CustomizableEdges = customizableEdges5;
+            TxbBuscar.CustomizableEdges = customizableEdges17;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -212,14 +215,14 @@
             TxbBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TxbBuscar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TxbBuscar.IconLeft = Properties.Resources._BusquedaBar__;
-            TxbBuscar.Location = new Point(11, 3);
+            TxbBuscar.Location = new Point(7, 21);
             TxbBuscar.Name = "TxbBuscar";
             TxbBuscar.PasswordChar = '\0';
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            TxbBuscar.Size = new Size(1390, 44);
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            TxbBuscar.Size = new Size(712, 44);
             TxbBuscar.TabIndex = 0;
             // 
             // dgvPago
@@ -265,8 +268,8 @@
             // MetodoPago
             // 
             MetodoPago.DataPropertyName = "MetodoPago";
-            dataGridViewCellStyle1.NullValue = null;
-            MetodoPago.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.NullValue = null;
+            MetodoPago.DefaultCellStyle = dataGridViewCellStyle13;
             MetodoPago.HeaderText = "MetodoPago";
             MetodoPago.Name = "MetodoPago";
             MetodoPago.ReadOnly = true;
@@ -274,9 +277,9 @@
             // Monto
             // 
             Monto.DataPropertyName = "Monto";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            Monto.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Format = "N2";
+            dataGridViewCellStyle14.NullValue = null;
+            Monto.DefaultCellStyle = dataGridViewCellStyle14;
             Monto.HeaderText = "Monto";
             Monto.Name = "Monto";
             Monto.ReadOnly = true;
@@ -284,9 +287,9 @@
             // Pagado
             // 
             Pagado.DataPropertyName = "Pagado";
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            Pagado.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Format = "N2";
+            dataGridViewCellStyle15.NullValue = null;
+            Pagado.DefaultCellStyle = dataGridViewCellStyle15;
             Pagado.HeaderText = "Pagado";
             Pagado.Name = "Pagado";
             Pagado.ReadOnly = true;
@@ -294,9 +297,9 @@
             // Devuelta
             // 
             Devuelta.DataPropertyName = "Devuelta";
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            Devuelta.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Format = "N2";
+            dataGridViewCellStyle16.NullValue = null;
+            Devuelta.DefaultCellStyle = dataGridViewCellStyle16;
             Devuelta.HeaderText = "Devuelta";
             Devuelta.Name = "Devuelta";
             Devuelta.ReadOnly = true;
@@ -304,9 +307,9 @@
             // Itbis
             // 
             Itbis.DataPropertyName = "FechaPago";
-            dataGridViewCellStyle5.Format = "G";
-            dataGridViewCellStyle5.NullValue = null;
-            Itbis.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Format = "G";
+            dataGridViewCellStyle17.NullValue = null;
+            Itbis.DefaultCellStyle = dataGridViewCellStyle17;
             Itbis.HeaderText = "FechaPago";
             Itbis.Name = "Itbis";
             Itbis.ReadOnly = true;
@@ -314,11 +317,23 @@
             // Estatus
             // 
             Estatus.DataPropertyName = "Estatus";
-            dataGridViewCellStyle6.NullValue = null;
-            Estatus.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.NullValue = null;
+            Estatus.DefaultCellStyle = dataGridViewCellStyle18;
             Estatus.HeaderText = "Estatus";
             Estatus.Name = "Estatus";
             Estatus.ReadOnly = true;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox2.Cursor = Cursors.Hand;
+            pictureBox2.Image = Properties.Resources._CloseWindowX;
+            pictureBox2.Location = new Point(882, 15);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(32, 32);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
             // 
             // frmPago
             // 
@@ -330,7 +345,9 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmPago";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Pagos";
             Load += frmPago_Load;
             panel1.ResumeLayout(false);
@@ -340,6 +357,7 @@
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvPago).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -365,5 +383,6 @@
         private DataGridViewTextBoxColumn Devuelta;
         private DataGridViewTextBoxColumn Itbis;
         private DataGridViewTextBoxColumn Estatus;
+        private PictureBox pictureBox2;
     }
 }

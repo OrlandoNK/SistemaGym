@@ -540,6 +540,8 @@ namespace SistemaGym.UI.Windows
                     return;
                 }
 
+                PagoEntity nuevoPago = new PagoEntity();
+                PagoBLL pagoBLL = new PagoBLL();
                 FacturaMembresiaEntity nuevaFacturaMembresia = new FacturaMembresiaEntity();
                 FacturaMembresiaBLL facturaMembresiaBLL = new FacturaMembresiaBLL();
 
@@ -553,6 +555,14 @@ namespace SistemaGym.UI.Windows
                 nuevaFacturaMembresia.FechaEmision = DateTime.Now;
                 nuevaFacturaMembresia.FechaVencimiento = DateTime.Now.AddDays(30);
                 nuevaFacturaMembresia.Estatus = "Pagado";
+
+                nuevoPago.MetodoPago = cbMetodoPago.SelectedItem.ToString();
+                nuevoPago.Monto = decimal.Parse(TxbFacturaValor.Text);
+                nuevoPago.Pagado = decimal.Parse(TxbMontoRecibido.Text);
+                nuevoPago.Devuelta = decimal.Parse(TxbDevuelta.Text);
+                nuevoPago.FechaPago = DateTime.Now;
+                nuevoPago.Estatus = "Pagado";
+
 
                 try
                 {
