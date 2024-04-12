@@ -88,6 +88,7 @@
             btnCerrar.SizeMode = PictureBoxSizeMode.AutoSize;
             btnCerrar.TabIndex = 5;
             btnCerrar.TabStop = false;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // pictureBox1
             // 

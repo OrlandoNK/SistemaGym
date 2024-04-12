@@ -61,7 +61,7 @@ namespace SistemaGym.DAL
                 bool productDeleted;
 
                 ConexionDAL instancia = Instancia();
-                SqlConnection Conexion = new SqlConnection();
+                SqlConnection Conexion = instancia.Conexion();
 
                 Conexion.Open();
                 string Delete = "DELETE FROM Pago WHERE IDProducto = @IDPago";
@@ -77,7 +77,7 @@ namespace SistemaGym.DAL
             public static DataTable mostrarPago()
             {
                 ConexionDAL instancia = Instancia();
-                SqlConnection Conexion = new SqlConnection();
+                SqlConnection Conexion = instancia.Conexion();
 
                 DataTable dataTBL = new DataTable();
 

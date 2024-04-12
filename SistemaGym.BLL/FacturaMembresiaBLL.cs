@@ -40,7 +40,7 @@ namespace SistemaGym.BLL
             return FacturacionMembresiaDAL.EliminarByID(Id);
         }
 
-        public DataTable Mostrar()
+        public static DataTable Mostrar()
         {
             DataTable dataTable = FacturacionMembresiaDAL.Mostrar();
             return dataTable;

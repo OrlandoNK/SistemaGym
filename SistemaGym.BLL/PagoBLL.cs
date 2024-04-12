@@ -30,7 +30,7 @@ namespace SistemaGym.BLL
         {
             return PagoDAL.DeletePago(pago);
         }
-        public static DataTable Mostrarpago(PagoEntity pago)
+        public static DataTable Mostrarpago()
         {
             return PagoDAL.mostrarPago();
         }
