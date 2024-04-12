@@ -36,6 +36,10 @@
             panel3 = new Panel();
             dgvListaClientes = new DataGridView();
             IDCliente = new DataGridViewTextBoxColumn();
+            IDUsuario = new DataGridViewComboBoxColumn();
+            IDMembresia = new DataGridViewComboBoxColumn();
+            TipoListaCliente = new DataGridViewComboBoxColumn();
+            TipoCliente = new DataGridViewComboBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
             TipoDocumento = new DataGridViewTextBoxColumn();
@@ -125,7 +129,7 @@
             dgvListaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dgvListaClientes.BackgroundColor = Color.WhiteSmoke;
             dgvListaClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListaClientes.Columns.AddRange(new DataGridViewColumn[] { IDCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TelRes, FechaRegistro, Estatus });
+            dgvListaClientes.Columns.AddRange(new DataGridViewColumn[] { IDCliente, IDUsuario, IDMembresia, TipoListaCliente, TipoCliente, Nombre, Apellido, TipoDocumento, Documento, Direccion, TellCell, TelRes, FechaRegistro, Estatus });
             dgvListaClientes.Location = new Point(0, 0);
             dgvListaClientes.Name = "dgvListaClientes";
             dgvListaClientes.ReadOnly = true;
@@ -143,6 +147,38 @@
             IDCliente.Name = "IDCliente";
             IDCliente.ReadOnly = true;
             IDCliente.Width = 80;
+            // 
+            // IDUsuario
+            // 
+            IDUsuario.DataPropertyName = "IDUsuario";
+            IDUsuario.HeaderText = "IDUsuario";
+            IDUsuario.Name = "IDUsuario";
+            IDUsuario.ReadOnly = true;
+            IDUsuario.Width = 64;
+            // 
+            // IDMembresia
+            // 
+            IDMembresia.DataPropertyName = "IDMembresia";
+            IDMembresia.HeaderText = "IDMembresia";
+            IDMembresia.Name = "IDMembresia";
+            IDMembresia.ReadOnly = true;
+            IDMembresia.Width = 83;
+            // 
+            // TipoListaCliente
+            // 
+            TipoListaCliente.DataPropertyName = "TipoListaCliente";
+            TipoListaCliente.HeaderText = "TipoListaCliente";
+            TipoListaCliente.Name = "TipoListaCliente";
+            TipoListaCliente.ReadOnly = true;
+            TipoListaCliente.Width = 97;
+            // 
+            // TipoCliente
+            // 
+            TipoCliente.DataPropertyName = "TipoCliente";
+            TipoCliente.HeaderText = "TipoCliente";
+            TipoCliente.Name = "TipoCliente";
+            TipoCliente.ReadOnly = true;
+            TipoCliente.Width = 73;
             // 
             // Nombre
             // 
@@ -247,6 +283,10 @@
         private Panel panel3;
         private DataGridView dgvListaClientes;
         private DataGridViewTextBoxColumn IDCliente;
+        private DataGridViewComboBoxColumn IDUsuario;
+        private DataGridViewComboBoxColumn IDMembresia;
+        private DataGridViewComboBoxColumn TipoListaCliente;
+        private DataGridViewComboBoxColumn TipoCliente;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Apellido;
         private DataGridViewTextBoxColumn TipoDocumento;

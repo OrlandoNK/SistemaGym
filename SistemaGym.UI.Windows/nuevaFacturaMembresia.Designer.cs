@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             lblTitleMantenimientoFacturaMembresia = new Label();
             pictureBox1 = new PictureBox();
@@ -72,6 +72,12 @@
             rbtnNoTieneCargoCredito = new RadioButton();
             rbtnSiTieneCargoCredito = new RadioButton();
             groupBox10 = new GroupBox();
+            label22 = new Label();
+            cbMetodoPago = new ComboBox();
+            TxbDevuelta = new TextBox();
+            label21 = new Label();
+            TxbMontoRecibido = new TextBox();
+            label14 = new Label();
             TxbFacturaValor = new TextBox();
             label35 = new Label();
             label34 = new Label();
@@ -125,12 +131,6 @@
             TxbDescrMembresia = new TextBox();
             label2 = new Label();
             errorProvider = new ErrorProvider(components);
-            TxbMontoRecibido = new TextBox();
-            label14 = new Label();
-            TxbDevuelta = new TextBox();
-            label21 = new Label();
-            cbMetodoPago = new ComboBox();
-            label22 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
@@ -225,7 +225,7 @@
             btnCargosDebito.BorderColor = Color.Goldenrod;
             btnCargosDebito.BorderThickness = 1;
             btnCargosDebito.Cursor = Cursors.Hand;
-            btnCargosDebito.CustomizableEdges = customizableEdges1;
+            btnCargosDebito.CustomizableEdges = customizableEdges17;
             btnCargosDebito.DisabledState.BorderColor = Color.DarkGray;
             btnCargosDebito.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCargosDebito.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -241,7 +241,7 @@
             btnCargosDebito.ImageSize = new Size(32, 32);
             btnCargosDebito.Location = new Point(0, 538);
             btnCargosDebito.Name = "btnCargosDebito";
-            btnCargosDebito.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCargosDebito.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnCargosDebito.Size = new Size(211, 56);
             btnCargosDebito.TabIndex = 4;
             btnCargosDebito.Text = "Cargos Débito";
@@ -254,7 +254,7 @@
             btnCargoCredito.BorderColor = Color.Goldenrod;
             btnCargoCredito.BorderThickness = 1;
             btnCargoCredito.Cursor = Cursors.Hand;
-            btnCargoCredito.CustomizableEdges = customizableEdges3;
+            btnCargoCredito.CustomizableEdges = customizableEdges19;
             btnCargoCredito.DisabledState.BorderColor = Color.DarkGray;
             btnCargoCredito.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCargoCredito.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -270,7 +270,7 @@
             btnCargoCredito.ImageSize = new Size(32, 32);
             btnCargoCredito.Location = new Point(0, 594);
             btnCargoCredito.Name = "btnCargoCredito";
-            btnCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnCargoCredito.Size = new Size(211, 56);
             btnCargoCredito.TabIndex = 3;
             btnCargoCredito.Text = "Cargos Crédito";
@@ -283,7 +283,7 @@
             btnSave.BorderColor = Color.Goldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges5;
+            btnSave.CustomizableEdges = customizableEdges21;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -298,7 +298,7 @@
             btnSave.ImageSize = new Size(32, 32);
             btnSave.Location = new Point(-1, 23);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges22;
             btnSave.Size = new Size(214, 59);
             btnSave.TabIndex = 2;
             btnSave.Text = "Guardar Factura";
@@ -603,6 +603,59 @@
             groupBox10.TabStop = false;
             groupBox10.Text = "Factura Membresia";
             // 
+            // label22
+            // 
+            label22.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label22.Location = new Point(376, 28);
+            label22.Name = "label22";
+            label22.Size = new Size(165, 20);
+            label22.TabIndex = 52;
+            label22.Text = "Metodo de Pago";
+            label22.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // cbMetodoPago
+            // 
+            cbMetodoPago.FormattingEnabled = true;
+            cbMetodoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" });
+            cbMetodoPago.Location = new Point(376, 51);
+            cbMetodoPago.Name = "cbMetodoPago";
+            cbMetodoPago.Size = new Size(165, 25);
+            cbMetodoPago.TabIndex = 51;
+            // 
+            // TxbDevuelta
+            // 
+            TxbDevuelta.Location = new Point(718, 51);
+            TxbDevuelta.Name = "TxbDevuelta";
+            TxbDevuelta.Size = new Size(165, 23);
+            TxbDevuelta.TabIndex = 50;
+            // 
+            // label21
+            // 
+            label21.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label21.Location = new Point(718, 26);
+            label21.Name = "label21";
+            label21.Size = new Size(165, 20);
+            label21.TabIndex = 49;
+            label21.Text = "Devuelta";
+            label21.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // TxbMontoRecibido
+            // 
+            TxbMontoRecibido.Location = new Point(547, 51);
+            TxbMontoRecibido.Name = "TxbMontoRecibido";
+            TxbMontoRecibido.Size = new Size(165, 23);
+            TxbMontoRecibido.TabIndex = 48;
+            // 
+            // label14
+            // 
+            label14.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Location = new Point(547, 26);
+            label14.Name = "label14";
+            label14.Size = new Size(165, 20);
+            label14.TabIndex = 47;
+            label14.Text = "Monto Recibido";
+            label14.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // TxbFacturaValor
             // 
             TxbFacturaValor.Location = new Point(889, 51);
@@ -833,7 +886,7 @@
             btnBuscarIDCliente.BorderRadius = 10;
             btnBuscarIDCliente.BorderThickness = 2;
             btnBuscarIDCliente.Cursor = Cursors.Hand;
-            btnBuscarIDCliente.CustomizableEdges = customizableEdges7;
+            btnBuscarIDCliente.CustomizableEdges = customizableEdges23;
             btnBuscarIDCliente.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -843,9 +896,9 @@
             btnBuscarIDCliente.ForeColor = Color.White;
             btnBuscarIDCliente.Image = Properties.Resources.icon_btn_search_for_Cliente__x32_;
             btnBuscarIDCliente.ImageSize = new Size(32, 32);
-            btnBuscarIDCliente.Location = new Point(255, 105);
+            btnBuscarIDCliente.Location = new Point(255, 95);
             btnBuscarIDCliente.Name = "btnBuscarIDCliente";
-            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnBuscarIDCliente.Size = new Size(117, 55);
             btnBuscarIDCliente.TabIndex = 18;
             btnBuscarIDCliente.TextAlign = HorizontalAlignment.Left;
@@ -889,7 +942,7 @@
             // 
             // TxbDocumentoCliente
             // 
-            TxbDocumentoCliente.Location = new Point(132, 136);
+            TxbDocumentoCliente.Location = new Point(132, 126);
             TxbDocumentoCliente.Name = "TxbDocumentoCliente";
             TxbDocumentoCliente.ReadOnly = true;
             TxbDocumentoCliente.Size = new Size(117, 23);
@@ -897,7 +950,7 @@
             // 
             // TxbTipoDocumento
             // 
-            TxbTipoDocumento.Location = new Point(9, 136);
+            TxbTipoDocumento.Location = new Point(9, 126);
             TxbTipoDocumento.Name = "TxbTipoDocumento";
             TxbTipoDocumento.ReadOnly = true;
             TxbTipoDocumento.Size = new Size(117, 23);
@@ -906,7 +959,7 @@
             // label38
             // 
             label38.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label38.Location = new Point(9, 105);
+            label38.Location = new Point(9, 95);
             label38.Name = "label38";
             label38.Size = new Size(117, 24);
             label38.TabIndex = 20;
@@ -916,7 +969,7 @@
             // label5
             // 
             label5.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(132, 105);
+            label5.Location = new Point(132, 95);
             label5.Name = "label5";
             label5.Size = new Size(117, 24);
             label5.TabIndex = 17;
@@ -1137,59 +1190,6 @@
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
-            // 
-            // TxbMontoRecibido
-            // 
-            TxbMontoRecibido.Location = new Point(547, 51);
-            TxbMontoRecibido.Name = "TxbMontoRecibido";
-            TxbMontoRecibido.Size = new Size(165, 23);
-            TxbMontoRecibido.TabIndex = 48;
-            // 
-            // label14
-            // 
-            label14.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(547, 26);
-            label14.Name = "label14";
-            label14.Size = new Size(165, 20);
-            label14.TabIndex = 47;
-            label14.Text = "Monto Recibido";
-            label14.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // TxbDevuelta
-            // 
-            TxbDevuelta.Location = new Point(718, 51);
-            TxbDevuelta.Name = "TxbDevuelta";
-            TxbDevuelta.Size = new Size(165, 23);
-            TxbDevuelta.TabIndex = 50;
-            // 
-            // label21
-            // 
-            label21.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label21.Location = new Point(718, 26);
-            label21.Name = "label21";
-            label21.Size = new Size(165, 20);
-            label21.TabIndex = 49;
-            label21.Text = "Devuelta";
-            label21.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // cbMetodoPago
-            // 
-            cbMetodoPago.FormattingEnabled = true;
-            cbMetodoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" });
-            cbMetodoPago.Location = new Point(376, 51);
-            cbMetodoPago.Name = "cbMetodoPago";
-            cbMetodoPago.Size = new Size(165, 25);
-            cbMetodoPago.TabIndex = 51;
-            // 
-            // label22
-            // 
-            label22.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label22.Location = new Point(376, 28);
-            label22.Name = "label22";
-            label22.Size = new Size(165, 20);
-            label22.TabIndex = 52;
-            label22.Text = "Metodo de Pago";
-            label22.TextAlign = ContentAlignment.MiddleRight;
             // 
             // nuevaFacturaMembresia
             // 

@@ -38,6 +38,53 @@ namespace SistemaGym.UI.Windows
         {
             dgvListaClientes.DataSource = ClientesBLL.GetClients();
             dgvListaClientes.AutoGenerateColumns = false;
+            CargarUsuarios();
+            CargarMembresia();
+            CargarTipoListaCliente();
+            CargarTipoCliente();
+        }
+
+        private void CargarUsuarios()
+        {
+            var colUsuario = (DataGridViewComboBoxColumn)dgvListaClientes.Columns["IDUsuario"];
+
+            colUsuario.DataSource = UsuarioBLL.Mostrar();
+            colUsuario.ValueMember = "IDUsuario";
+            colUsuario.DisplayMember = "NombreUsuario";
+            colUsuario.DataPropertyName = "IDUsuario";
+
+
+        }
+        private void CargarMembresia()
+        {
+            var colMembresia = (DataGridViewComboBoxColumn)dgvListaClientes.Columns["IDMembresia"];
+
+            colMembresia.DataSource = MembresiaBLL.Mostrar();
+            colMembresia.ValueMember = "IDMembresia";
+            colMembresia.DisplayMember = "Nombre";
+            colMembresia.DataPropertyName = "IDMembresia";
+
+        }
+        private void CargarTipoListaCliente()
+        {
+            var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvListaClientes.Columns["TipoListaCliente"];
+
+            colTipoListaCliente.DataSource = TipoListaClienteBLL.MostrarTipoListaCliente();
+            colTipoListaCliente.ValueMember = "IDTipoListaCliente";
+            colTipoListaCliente.DisplayMember = "Nombre";
+            colTipoListaCliente.DataPropertyName = "TipoListaCliente";
+
+        }
+        private void CargarTipoCliente()
+        {
+
+            var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvListaClientes.Columns["TipoCliente"];
+
+            colTipoListaCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
+            colTipoListaCliente.ValueMember = "IDTipoCliente";
+            colTipoListaCliente.DisplayMember = "Nombre";
+            colTipoListaCliente.DataPropertyName = "TipoCliente";
+
         }
 
         private void dgvListaClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
