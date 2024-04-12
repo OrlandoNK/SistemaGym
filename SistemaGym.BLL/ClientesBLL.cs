@@ -16,6 +16,22 @@ namespace SistemaGym.BLL
         {
             ClientesDAL.InsertarCliente(clientes);
         }
+        public static void guardarClientePaseDiario(ClientesEntity clientes)
+        {
+            ClientesDAL.InsertarClientePaseDiario(clientes);
+        }
+        public static DataTable Buscar(string buscar)
+        {
+            return ClientesDAL.Buscar(buscar);
+        }
+        public DataTable ObtenerClienteCargosMembresiaAndGrupos(int idCliente)
+        {
+            return clientesDAL.GetClientWithCargosAndGroups(idCliente);
+        }
+        public DataTable ObtenerClienteCargosMembresiaAndGruposMejorado(int idCliente)
+        {
+            return clientesDAL.GetClientWithCargosAndGroupsMejorado(idCliente);
+        }
         public DataTable GetClientMembreship(int idCliente)
         {
             return clientesDAL.GetClientWithMembership(idCliente);

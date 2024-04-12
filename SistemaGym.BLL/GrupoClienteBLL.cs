@@ -20,8 +20,11 @@ namespace SistemaGym.BLL
         {
             GrupoClienteDAL.ActualizarGrupoCliente(grupoCliente);
         }
-
-        public static bool Eliminar (GrupoClienteEntity grupoCliente)
+        public static DataTable Buscar (string buscar)
+        {
+            return GrupoClienteBLL.Buscar(buscar);
+        }
+        public static bool Eliminar (int grupoCliente)
         {
             return GrupoClienteDAL.EliminarCliente(grupoCliente);
         }

@@ -1,4 +1,5 @@
-﻿using SistemaGym.Entities;
+﻿using SistemaGym.BLL;
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,7 @@ namespace SistemaGym.UI.Windows
             subPanelAdministracion.Visible = false;
             subPanelMantenimientos.Visible = false;
             subPanelFacturacion.Visible = false;
+            subPanelReports.Visible = false;
         }
 
         private void HideSubMenu()
@@ -34,6 +36,8 @@ namespace SistemaGym.UI.Windows
                 subPanelMantenimientos.Visible = false;
             if (subPanelFacturacion.Visible == true)
                 subPanelFacturacion.Visible = false;
+            if (subPanelReports.Visible == true)
+                subPanelReports.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -75,6 +79,8 @@ namespace SistemaGym.UI.Windows
             lblRolUsuario.Text = "[" + gestioUsuarioEntities.rolUsuarioLogged + "]";
             FuncionRolUsuario();
         }
+
+
         private void FuncionRolUsuario()
         {
             if (gestioUsuarioEntities.rolUsuarioLogged == "Recepcionista")
@@ -84,6 +90,7 @@ namespace SistemaGym.UI.Windows
                 btnProveedores.Visible = false;
                 btnCategorias.Visible = false;
                 btnProductos.Visible = false;
+                btnAreasGYM.Visible = false;
             }
             else if (gestioUsuarioEntities.rolUsuarioLogged == "Gerente de Ventas")
             {
@@ -226,6 +233,42 @@ namespace SistemaGym.UI.Windows
             areasGYM.Show();
 
             HideSubMenu();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            showSubMenu(subPanelReports);
+        }
+
+        private void btnReportsEmpelados_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnReportsClientes_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnReportsFacturaProducto_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnReportsDetalleProducto_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnReportsPagos_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+        }
+
+        private void btnAsistencias_Click(object sender, EventArgs e)
+        {
+            mantenimientoAsistenciaClientes asistenciaClientes = new mantenimientoAsistenciaClientes();
+            asistenciaClientes.Show();
         }
     }
 }

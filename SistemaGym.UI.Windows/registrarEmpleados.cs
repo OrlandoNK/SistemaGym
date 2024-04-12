@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TheArtOfDevHtmlRenderer.Core;
 
 namespace SistemaGym.UI.Windows
 {
@@ -76,7 +77,11 @@ namespace SistemaGym.UI.Windows
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            bool CamposValidados = ValidarCampos();
+            if (!ValidarCampos())
+            {
+
+                return;
+            }
 
             EmpleadoEntity nuevoEmpleado = new EmpleadoEntity();
 
@@ -92,12 +97,9 @@ namespace SistemaGym.UI.Windows
 
             try
             {
-                if (CamposValidados)
-                {
-                    EmpleadoBLL.Create(nuevoEmpleado);
-                    MessageBox.Show("¡Empleado Registrado de Manera Satisfactoria!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
-                }
+                EmpleadoBLL.Create(nuevoEmpleado);
+                MessageBox.Show("¡Empleado Registrado de Manera Satisfactoria!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarCampos();
             }
             catch (SqlException ex)
             {

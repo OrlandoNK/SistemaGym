@@ -82,11 +82,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.area_GYM_empresa;
+            pictureBox1.Image = Properties.Resources.icon_area_empresa_gym_logo__x32_;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(63, 56);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
@@ -280,6 +280,7 @@
             TxbSearchBar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             TxbSearchBar.Size = new Size(867, 40);
             TxbSearchBar.TabIndex = 0;
+            TxbSearchBar.TextChanged += TxbSearchBar_TextChanged;
             // 
             // fillPanel
             // 

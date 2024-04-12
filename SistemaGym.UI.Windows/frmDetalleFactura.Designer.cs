@@ -146,6 +146,7 @@
             ClientSize = new Size(968, 593);
             Controls.Add(dgvDetalle);
             Name = "frmDetalleFactura";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmDetalleFactura";
             Load += frmDetalleFactura_Load;
             ((System.ComponentModel.ISupportInitialize)dgvDetalle).EndInit();

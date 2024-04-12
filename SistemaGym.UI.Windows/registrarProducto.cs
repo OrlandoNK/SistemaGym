@@ -81,15 +81,13 @@ namespace SistemaGym.UI.Windows
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            bool CamposValidados = ValidarDatos();
 
-            /*
+            
             if (!ValidarDatos())
             {
                 return;
-
             }
-            */
+            
 
             ProductoEntity nuevoproducto = new ProductoEntity();
             nuevoproducto.Nombre = txtNombre.Text;
@@ -100,12 +98,10 @@ namespace SistemaGym.UI.Windows
 
             try
             {
-                if (CamposValidados)
-                {
-                    ProductoBLL.Guardar(nuevoproducto);
-                    MessageBox.Show("¡El Producto ha sido Guardado de Manera Satisfactoria!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    InicializarCampos();
-                }
+                ProductoBLL.Guardar(nuevoproducto);
+                MessageBox.Show("¡El Producto ha sido Guardado de Manera Satisfactoria!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InicializarCampos();
+                
             }
             catch (SqlException ex)
             {

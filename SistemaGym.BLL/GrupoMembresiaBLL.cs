@@ -18,6 +18,10 @@ namespace SistemaGym.BLL
             //agregar
             GrupoMembresiaDAL.InsertarGrupoMembresia(grupoMembresia);
         }
+        public static DataTable Buscar(string buscar)
+        {
+            return GrupoMembresiaDAL.Buscar(buscar);
+        }
         public static void actualizar(GrupoMembresiaEntity grupoMembresia)
         {
             //Actualizar

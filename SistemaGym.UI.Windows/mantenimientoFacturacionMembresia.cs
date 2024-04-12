@@ -30,7 +30,7 @@ namespace SistemaGym.UI.Windows
 
         private void mantenimientoFacturacionMembresia_Load(object sender, EventArgs e)
         {
-            dgvFacturacionMembresia.DataSource = facturaMembresiaBLL.Mostrar();
+            dgvFacturacionMembresia.DataSource = FacturaMembresiaBLL.Mostrar();
             CargarCliente();
             CargarMembresia();
             CargarUsuario();
@@ -90,7 +90,7 @@ namespace SistemaGym.UI.Windows
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            dgvFacturacionMembresia.DataSource = facturaMembresiaBLL.Mostrar();
+            dgvFacturacionMembresia.DataSource = FacturaMembresiaBLL.Mostrar();
             CargarMembresia();
             CargarCliente();
             CargarUsuario();
@@ -116,7 +116,7 @@ namespace SistemaGym.UI.Windows
                     if (deleteProcess)
                     {
                         MessageBox.Show("¡Factura de Membresia Eliminada con Exito!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dgvFacturacionMembresia.DataSource = facturaMembresiaBLL.Mostrar();
+                        dgvFacturacionMembresia.DataSource = FacturaMembresiaBLL.Mostrar();
                     }
                     else
                     {
@@ -176,7 +176,7 @@ namespace SistemaGym.UI.Windows
                     }
 
                     MessageBox.Show("¡Se Ha Modificado la Factura de Membresia Correctamente!", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvFacturacionMembresia.DataSource = facturaMembresiaBLL.Mostrar();
+                    dgvFacturacionMembresia.DataSource = FacturaMembresiaBLL.Mostrar();
                 }
 
             }
