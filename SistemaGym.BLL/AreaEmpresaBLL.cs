@@ -20,7 +20,10 @@ namespace SistemaGym.BLL
         {
             AreaEmpresaDAL.ActualizarArea(areaEmpresa);
         }
-
+        public static DataTable Buscar(string buscar)
+        {
+            return AreaEmpresaDAL.Buscar(buscar);
+        }
         public bool Eliminar (int areaEmpresa)
         {
             return AreaEmpresaDAL.EliminarArea(areaEmpresa);

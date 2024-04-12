@@ -20,6 +20,10 @@ namespace SistemaGym.BLL
         {
             ClientesDAL.InsertarClientePaseDiario(clientes);
         }
+        public static DataTable Buscar(string buscar)
+        {
+            return ClientesDAL.Buscar(buscar);
+        }
         public DataTable ObtenerClienteCargosMembresiaAndGrupos(int idCliente)
         {
             return clientesDAL.GetClientWithCargosAndGroups(idCliente);

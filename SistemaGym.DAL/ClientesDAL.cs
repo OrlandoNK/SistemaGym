@@ -122,6 +122,25 @@ namespace SistemaGym.DAL
             return dt;
 
         }
+
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM Clientes WHERE Nombre LIKE @Busqueda OR Documento LIKE @Busqueda OR Telefono LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
+        }
         public static DataTable GetClients()
         {
             ConexionDAL instancia = Instancia();

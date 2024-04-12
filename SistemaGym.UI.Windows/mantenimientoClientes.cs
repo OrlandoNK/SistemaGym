@@ -205,6 +205,14 @@ namespace SistemaGym.UI.Windows
             mantenimientoAsistenciaClientes asistenciaClientes = new mantenimientoAsistenciaClientes();
             asistenciaClientes.Show();
         }
+
+        private void TxbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = TxbBuscar.Text;
+
+            DataTable resultBusqueda = ClientesBLL.Buscar(buscar);
+            dgvClientes.DataSource = resultBusqueda;
+        }
     }
 
 }
