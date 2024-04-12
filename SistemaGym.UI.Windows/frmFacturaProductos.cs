@@ -22,6 +22,7 @@ namespace SistemaGym.UI.Windows
         public frmFacturaProductos()
         {
             InitializeComponent();
+            
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -94,8 +95,9 @@ namespace SistemaGym.UI.Windows
             txtCantidad.Text = "0";
             txtTotalDescuento.Text = 0.ToString("N2");
             txtNCF.Text = "B0100000005";
-            dgvProductos.AutoGenerateColumns = false;
+            oFactura.Detalles.Clear();
             dgvProductos.DataSource = null;
+            dgvProductos.DataSource = oFactura;
             txtMontoTotal.Text = 0.ToString("N2");
             txtMontoRecibido.Text = "0";
             txtDevuelta.Text = "0";
@@ -112,17 +114,40 @@ namespace SistemaGym.UI.Windows
                 txtIDProducto.Text = producto.IDProducto.ToString();
                 txtProducto.Text = producto.Nombre;
                 txtPrecio.Text = Convert.ToDecimal(producto.PrecioUnitario).ToString();
-
-
             }
         }
 
         private void frmFacturaProductos_Load(object sender, EventArgs e)
         {
             InicializarControles();
+            dgvProductos.AutoGenerateColumns = false;
             txtIDUsuario.Text = gestioUsuarioEntities.IDUserLogged;
             txtUsuario.Text = gestioUsuarioEntities.usernameLogged;
+           
 
+        }
+
+        private void CalcularDevuelta()
+        {
+            if (decimal.TryParse(txtMontoTotal.Text, out decimal MontoTotal) &&
+                decimal.TryParse(txtMontoRecibido.Text, out decimal MontoRecibido))
+            {
+                decimal devuelta = MontoRecibido - MontoTotal;
+
+                if (devuelta >= 0)
+                {
+                    txtDevuelta.Text = devuelta.ToString("N2");
+                }
+                else
+                {
+                    txtDevuelta.Text = "0.00";
+                }
+
+            }
+            else
+            {
+                txtDevuelta.Text = "0.00";
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -153,7 +178,7 @@ namespace SistemaGym.UI.Windows
             txtMontoTotal.Text = oFactura.Total.ToString();
             InicializarDetalles();
             CargarProducto();
-            stockControl();
+           
         }
         private void InicializarDetalles()
         {
@@ -240,21 +265,45 @@ namespace SistemaGym.UI.Windows
                 resultado = false;
             }
             */
-            decimal montorecibido = decimal.Parse(txtMontoRecibido.Text);
-            if (montorecibido <= 0)
+            decimal montorecibido;
+            if (decimal.TryParse(txtMontoRecibido.Text, out montorecibido))
             {
-                errorProvider.SetError(txtMontoRecibido, "Introduzca un monto valido");
+                if (montorecibido <= 0)
+                {
+                    errorProvider.SetError(txtMontoRecibido, "Introduzca un monto mayor que cero");
+                    resultado = false;
+                }
+      
+            }
+            else
+            {
+                errorProvider.SetError(txtMontoRecibido, "Introduzca un monto válido");
                 resultado = false;
             }
-            decimal devuelta = decimal.Parse(txtMontoRecibido.Text);
+            decimal montore;
+            decimal montottal;
+
+            if (decimal.TryParse(txtMontoRecibido.Text, out montore) && decimal.TryParse(txtMontoTotal.Text, out montottal))
+            {
+                if (montore < montottal)
+                {
+                    errorProvider.SetError(txtMontoRecibido, "El monto debe ser mayor o igual al monto a pagar");
+                    return false;
+                }
+                
+            }
+          
+
+            decimal devuelta = decimal.Parse(txtDevuelta.Text);
             if (devuelta < 0)
             {
                 errorProvider.SetError(txtDevuelta, "Introduzca una devuelta valida");
                 resultado = false;
             }
+           
             if (string.IsNullOrEmpty(txtUsuario.Text))
             {
-                errorProvider.SetError(txtNCF, "El Usuario Es Obligatorio");
+                errorProvider.SetError(txtNCF, "El NCF Es Obligatorio");
                 resultado = false;
             }
             return resultado;
@@ -278,7 +327,7 @@ namespace SistemaGym.UI.Windows
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-             
+
                 e.Handled = true;
             }
         }
@@ -287,7 +336,7 @@ namespace SistemaGym.UI.Windows
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-          
+
                 e.Handled = true;
             }
         }
@@ -296,27 +345,15 @@ namespace SistemaGym.UI.Windows
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-               
+
                 e.Handled = true;
             }
         }
-        private void stockControl()
+        
+        
+        private void txtMontoRecibido_TextChanged(object sender, EventArgs e)
         {
-            ProductoEntity producto = new ProductoEntity();
-            DetalleFacturaProductoEntity detalleFactura = new DetalleFacturaProductoEntity();
-
-            int cantidad = detalleFactura.Cantidad;
-            int stock = producto.Stock; 
-            if (cantidad <= stock)
-            {
-                stock -= cantidad;
-                
-            }
-            else
-            {
-                MessageBox.Show("La cantidad de producto no puede exceder el stock");
-            }
-
+            CalcularDevuelta();
         }
     }
 }

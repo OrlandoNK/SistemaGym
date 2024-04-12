@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -40,8 +41,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvMembresia = new DataGridView();
+            IDMembresia = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Descripcion = new DataGridViewTextBoxColumn();
+            DuracionMeses = new DataGridViewTextBoxColumn();
+            Valor = new DataGridViewTextBoxColumn();
+            CantidadPersonas = new DataGridViewTextBoxColumn();
+            FechaCreacion = new DataGridViewTextBoxColumn();
+            Estatus = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             btnClose = new PictureBox();
             label1 = new Label();
@@ -56,14 +64,6 @@
             panel5 = new Panel();
             TxbBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             panel4 = new Panel();
-            IDMembresia = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Descripcion = new DataGridViewTextBoxColumn();
-            DuracionMeses = new DataGridViewTextBoxColumn();
-            Valor = new DataGridViewTextBoxColumn();
-            CantidadPersonas = new DataGridViewTextBoxColumn();
-            FechaCreacion = new DataGridViewTextBoxColumn();
-            Estatus = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvMembresia).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
@@ -89,6 +89,57 @@
             dgvMembresia.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMembresia.Size = new Size(862, 524);
             dgvMembresia.TabIndex = 14;
+            // 
+            // IDMembresia
+            // 
+            IDMembresia.DataPropertyName = "IDMembresia";
+            IDMembresia.HeaderText = "IDMembresia";
+            IDMembresia.Name = "IDMembresia";
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // Descripcion
+            // 
+            Descripcion.DataPropertyName = "Descripcion";
+            Descripcion.HeaderText = "Descripcion";
+            Descripcion.Name = "Descripcion";
+            // 
+            // DuracionMeses
+            // 
+            DuracionMeses.DataPropertyName = "DuracionMeses";
+            DuracionMeses.HeaderText = "DuracionMeses";
+            DuracionMeses.Name = "DuracionMeses";
+            // 
+            // Valor
+            // 
+            Valor.DataPropertyName = "Valor";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            Valor.DefaultCellStyle = dataGridViewCellStyle1;
+            Valor.HeaderText = "Valor";
+            Valor.Name = "Valor";
+            // 
+            // CantidadPersonas
+            // 
+            CantidadPersonas.DataPropertyName = "CantidadPersonas";
+            CantidadPersonas.HeaderText = "CantidadPersonas";
+            CantidadPersonas.Name = "CantidadPersonas";
+            // 
+            // FechaCreacion
+            // 
+            FechaCreacion.DataPropertyName = "FechaCreacion";
+            FechaCreacion.HeaderText = "FechaCreacion";
+            FechaCreacion.Name = "FechaCreacion";
+            // 
+            // Estatus
+            // 
+            Estatus.DataPropertyName = "Estatus";
+            Estatus.HeaderText = "Estatus";
+            Estatus.Name = "Estatus";
             // 
             // panel1
             // 
@@ -165,6 +216,7 @@
             // 
             // btnGrupoMembresia
             // 
+            btnGrupoMembresia.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnGrupoMembresia.BorderColor = Color.DarkGoldenrod;
             btnGrupoMembresia.BorderThickness = 1;
             btnGrupoMembresia.Cursor = Cursors.Hand;
@@ -181,7 +233,7 @@
             btnGrupoMembresia.Image = Properties.Resources.icon_Membership_Group__x32_;
             btnGrupoMembresia.ImageAlign = HorizontalAlignment.Left;
             btnGrupoMembresia.ImageSize = new Size(32, 32);
-            btnGrupoMembresia.Location = new Point(-1, 47);
+            btnGrupoMembresia.Location = new Point(-1, 523);
             btnGrupoMembresia.Name = "btnGrupoMembresia";
             btnGrupoMembresia.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnGrupoMembresia.Size = new Size(221, 49);
@@ -208,10 +260,10 @@
             btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
-            btnDelete.Location = new Point(-1, 338);
+            btnDelete.Location = new Point(-1, 211);
             btnDelete.Name = "btnDelete";
             btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnDelete.Size = new Size(221, 45);
+            btnDelete.Size = new Size(225, 45);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
             btnDelete.Click += btnDelete_Click;
@@ -234,10 +286,10 @@
             btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
-            btnEdit.Location = new Point(-1, 281);
+            btnEdit.Location = new Point(-1, 160);
             btnEdit.Name = "btnEdit";
             btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnEdit.Size = new Size(221, 45);
+            btnEdit.Size = new Size(225, 45);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Modificar";
             btnEdit.Click += btnEdit_Click;
@@ -259,10 +311,10 @@
             btnrefresh.HoverState.ForeColor = Color.Black;
             btnrefresh.Image = Properties.Resources.refresh_8677771;
             btnrefresh.ImageSize = new Size(32, 32);
-            btnrefresh.Location = new Point(-1, 224);
+            btnrefresh.Location = new Point(-1, 109);
             btnrefresh.Name = "btnrefresh";
             btnrefresh.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnrefresh.Size = new Size(221, 45);
+            btnrefresh.Size = new Size(225, 45);
             btnrefresh.TabIndex = 1;
             btnrefresh.TextAlign = HorizontalAlignment.Right;
             btnrefresh.Click += btnrefresh_Click;
@@ -285,10 +337,10 @@
             btnNew.Image = Properties.Resources._NewFacturaProduct;
             btnNew.ImageAlign = HorizontalAlignment.Left;
             btnNew.ImageSize = new Size(25, 25);
-            btnNew.Location = new Point(-1, 167);
+            btnNew.Location = new Point(-1, 58);
             btnNew.Name = "btnNew";
             btnNew.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnNew.Size = new Size(221, 45);
+            btnNew.Size = new Size(225, 45);
             btnNew.TabIndex = 0;
             btnNew.Text = "Nuevo";
             btnNew.Click += btnNew_Click;
@@ -339,57 +391,6 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(864, 526);
             panel4.TabIndex = 20;
-            // 
-            // IDMembresia
-            // 
-            IDMembresia.DataPropertyName = "IDMembresia";
-            IDMembresia.HeaderText = "IDMembresia";
-            IDMembresia.Name = "IDMembresia";
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Descripcion
-            // 
-            Descripcion.DataPropertyName = "Descripcion";
-            Descripcion.HeaderText = "Descripcion";
-            Descripcion.Name = "Descripcion";
-            // 
-            // DuracionMeses
-            // 
-            DuracionMeses.DataPropertyName = "DuracionMeses";
-            DuracionMeses.HeaderText = "DuracionMeses";
-            DuracionMeses.Name = "DuracionMeses";
-            // 
-            // Valor
-            // 
-            Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            Valor.DefaultCellStyle = dataGridViewCellStyle1;
-            Valor.HeaderText = "Valor";
-            Valor.Name = "Valor";
-            // 
-            // CantidadPersonas
-            // 
-            CantidadPersonas.DataPropertyName = "CantidadPersonas";
-            CantidadPersonas.HeaderText = "CantidadPersonas";
-            CantidadPersonas.Name = "CantidadPersonas";
-            // 
-            // FechaCreacion
-            // 
-            FechaCreacion.DataPropertyName = "FechaCreacion";
-            FechaCreacion.HeaderText = "FechaCreacion";
-            FechaCreacion.Name = "FechaCreacion";
-            // 
-            // Estatus
-            // 
-            Estatus.DataPropertyName = "Estatus";
-            Estatus.HeaderText = "Estatus";
-            Estatus.Name = "Estatus";
             // 
             // frmMembresia
             // 

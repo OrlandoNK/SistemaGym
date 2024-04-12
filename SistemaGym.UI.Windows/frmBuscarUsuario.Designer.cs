@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvBuscarUsuarios = new DataGridView();
             IDUsuario = new DataGridViewTextBoxColumn();
             IDRol = new DataGridViewComboBoxColumn();
@@ -43,19 +43,19 @@
             Contrasena = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
+            btnclose = new PictureBox();
+            label8 = new Label();
+            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
             TxbBusqueda = new Guna.UI2.WinForms.Guna2TextBox();
             panel4 = new Panel();
-            label8 = new Label();
-            pictureBox1 = new PictureBox();
-            btnclose = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvBuscarUsuarios).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnclose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnclose).BeginInit();
             SuspendLayout();
             // 
             // dgvBuscarUsuarios
@@ -167,6 +167,40 @@
             panel1.Size = new Size(855, 64);
             panel1.TabIndex = 5;
             // 
+            // btnclose
+            // 
+            btnclose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnclose.Cursor = Cursors.Hand;
+            btnclose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnclose.Location = new Point(810, 15);
+            btnclose.Name = "btnclose";
+            btnclose.Size = new Size(32, 32);
+            btnclose.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnclose.TabIndex = 7;
+            btnclose.TabStop = false;
+            btnclose.Click += btnclose_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.DarkGoldenrod;
+            label8.Location = new Point(76, 20);
+            label8.Name = "label8";
+            label8.Size = new Size(83, 24);
+            label8.TabIndex = 6;
+            label8.Text = "Usuarios";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.usuarios__mainScreen;
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(67, 56);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             panel2.BackColor = Color.DarkGoldenrod;
@@ -191,7 +225,7 @@
             // TxbBusqueda
             // 
             TxbBusqueda.BorderRadius = 20;
-            TxbBusqueda.CustomizableEdges = customizableEdges3;
+            TxbBusqueda.CustomizableEdges = customizableEdges1;
             TxbBusqueda.DefaultText = "";
             TxbBusqueda.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBusqueda.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -207,7 +241,7 @@
             TxbBusqueda.PlaceholderForeColor = Color.Silver;
             TxbBusqueda.PlaceholderText = "Buscar";
             TxbBusqueda.SelectedText = "";
-            TxbBusqueda.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            TxbBusqueda.ShadowDecoration.CustomizableEdges = customizableEdges2;
             TxbBusqueda.Size = new Size(831, 45);
             TxbBusqueda.TabIndex = 0;
             TxbBusqueda.TextChanged += TxbBusqueda_TextChanged;
@@ -223,40 +257,6 @@
             panel4.Size = new Size(855, 391);
             panel4.TabIndex = 8;
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.DarkGoldenrod;
-            label8.Location = new Point(76, 20);
-            label8.Name = "label8";
-            label8.Size = new Size(83, 24);
-            label8.TabIndex = 6;
-            label8.Text = "Usuarios";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.usuarios__mainScreen;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(67, 56);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
-            // btnclose
-            // 
-            btnclose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnclose.Cursor = Cursors.Hand;
-            btnclose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnclose.Location = new Point(810, 15);
-            btnclose.Name = "btnclose";
-            btnclose.Size = new Size(32, 32);
-            btnclose.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnclose.TabIndex = 7;
-            btnclose.TabStop = false;
-            btnclose.Click += btnclose_Click;
-            // 
             // frmBuscarUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -268,15 +268,16 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmBuscarUsuario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmBuscarUsuario";
             Load += frmBuscarUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)dgvBuscarUsuarios).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnclose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnclose).EndInit();
             ResumeLayout(false);
         }
 

@@ -47,7 +47,7 @@ namespace SistemaGym.DAL
         }
         //funcion eliminar asistencia
 
-        public static bool EliminarAsistencia(AsistenciaClientesEntity asistencia)
+        public static bool EliminarAsistencia(int asistencia)
         {
             ConexionDAL instancia = Instancia();
             SqlConnection Conexion = instancia.Conexion();
@@ -58,7 +58,7 @@ namespace SistemaGym.DAL
             Conexion.Open();
             string Eliminar = "Delete from AsistenciaClientes where IDAsistenciaCliente= @idasistenciacliente";
             SqlCommand cmd = new SqlCommand(Eliminar, Conexion);
-            cmd.Parameters.AddWithValue("@idasistenciacliente", asistencia.IDAsistenciaCliente);
+            cmd.Parameters.AddWithValue("@idasistenciacliente", asistencia);
             seElimino = cmd.ExecuteNonQuery() > 0;
             return seElimino;
 
@@ -79,6 +79,40 @@ namespace SistemaGym.DAL
 
 
             return dt;
+
+        }
+        public static DataTable MostrarAsistenciaHOY()
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+            DataTable dt = new DataTable();
+            Conexion.Open();
+            string mostrar = "SELECT * FROM AsistenciaClientes WHERE CAST(FechaAsistencia AS DATE) = CAST(GETDATE() AS DATE);";
+            SqlCommand cmd = new SqlCommand(mostrar, Conexion);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+
+            return dt;
+
+        }
+
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM AsistenciaClientes WHERE IDCliente LIKE @Busqueda OR Asistencia LIKE @Busqueda OR FechaAsistencia LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
 
         }
 

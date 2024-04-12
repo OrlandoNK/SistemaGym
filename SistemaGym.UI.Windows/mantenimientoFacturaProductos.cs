@@ -177,5 +177,11 @@ namespace SistemaGym.UI.Windows
             DataTable resultBusqueda = FacturacionProductoBLL.BuscarFacturaProducto(buscar);
             dgvFacturaProducto.DataSource = resultBusqueda;
         }
+
+        private void btnPago_Click(object sender, EventArgs e)
+        {
+            frmPago frmPago = new frmPago();
+            frmPago.ShowDialog();
+        }
     }
 }

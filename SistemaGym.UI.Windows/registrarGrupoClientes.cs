@@ -242,7 +242,7 @@ namespace SistemaGym.UI.Windows
             txbIdGrupoMembresia.Clear();
             txbNombreGrupoMembresia.Clear();
             txbMontoTotalGrupoMembresia.Clear();
-            
+
             TxbIDCliente.Clear();
             TxbNombreCliente.Clear();
             TxbApellidoCliente.Clear();

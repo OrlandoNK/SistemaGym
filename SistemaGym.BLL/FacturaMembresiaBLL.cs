@@ -16,6 +16,18 @@ namespace SistemaGym.BLL
         {
             FacturacionMembresiaDAL.Insertar(facturacionMembresia);
         }
+        public void InsertarSinCargos(FacturaMembresiaEntity facturacionMembresia)
+        {
+            FacturacionMembresiaDAL.InsertarSinCargos(facturacionMembresia);
+        }
+        public void InsertarSoloCargoCredito(FacturaMembresiaEntity facturacionMembresia)
+        {
+            FacturacionMembresiaDAL.InsertarSoloCargoCredito(facturacionMembresia);
+        }
+        public void InsertarSoloCargoDebito(FacturaMembresiaEntity facturacionMembresia)
+        {
+            FacturacionMembresiaDAL.InsertarSoloCargoDebito(facturacionMembresia);
+        }
 
         public void Actualizar (FacturaMembresiaEntity facturaMembresia)
         {
@@ -28,7 +40,7 @@ namespace SistemaGym.BLL
             return FacturacionMembresiaDAL.EliminarByID(Id);
         }
 
-        public DataTable Mostrar()
+        public static DataTable Mostrar()
         {
             DataTable dataTable = FacturacionMembresiaDAL.Mostrar();
             return dataTable;

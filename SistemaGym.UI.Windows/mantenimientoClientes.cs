@@ -199,6 +199,20 @@ namespace SistemaGym.UI.Windows
             mantenimientoGrupoClientes grupoClientes = new mantenimientoGrupoClientes();
             grupoClientes.Show();
         }
+
+        private void btnAsistencia_Click(object sender, EventArgs e)
+        {
+            mantenimientoAsistenciaClientes asistenciaClientes = new mantenimientoAsistenciaClientes();
+            asistenciaClientes.Show();
+        }
+
+        private void TxbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string buscar = TxbBuscar.Text;
+
+            DataTable resultBusqueda = ClientesBLL.Buscar(buscar);
+            dgvClientes.DataSource = resultBusqueda;
+        }
     }
 
 }

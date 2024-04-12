@@ -20,6 +20,7 @@ namespace SistemaGym.DAL
             SqlConnection Conexion = instancia.Conexion();
 
             Conexion.Open();
+
             string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, CargoCredito, CargoDebito, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
                               " VALUES(@IDMembresia, @IDCliente, @IDUsuario, @CargoCredito, @CargoDebito, @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
             SqlCommand cmd = new SqlCommand(Insertar, Conexion);
@@ -27,6 +28,71 @@ namespace SistemaGym.DAL
             cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
             cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
             cmd.Parameters.AddWithValue("@CargoCredito", facturaMembresia.CargoCredito);
+            cmd.Parameters.AddWithValue("@CargoDebito", facturaMembresia.CargoDebito);
+            cmd.Parameters.AddWithValue("@NCF", facturaMembresia.NCF);
+            cmd.Parameters.AddWithValue("@ValorFactura", facturaMembresia.ValorFactura);
+            cmd.Parameters.AddWithValue("@FechaEmision", facturaMembresia.FechaEmision);
+            cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
+            cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
+
+            cmd.ExecuteNonQuery();
+
+        }
+        public static void InsertarSinCargos(FacturaMembresiaEntity facturaMembresia)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
+                              " VALUES(@IDMembresia, @IDCliente, @IDUsuario, @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
+            SqlCommand cmd = new SqlCommand(Insertar, Conexion);
+            cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
+            cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
+            cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
+            cmd.Parameters.AddWithValue("@NCF", facturaMembresia.NCF);
+            cmd.Parameters.AddWithValue("@ValorFactura", facturaMembresia.ValorFactura);
+            cmd.Parameters.AddWithValue("@FechaEmision", facturaMembresia.FechaEmision);
+            cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
+            cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
+
+            cmd.ExecuteNonQuery();
+
+        }
+        public static void InsertarSoloCargoCredito(FacturaMembresiaEntity facturaMembresia)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, CargoCredito, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
+                              " VALUES(@IDMembresia, @IDCliente, @IDUsuario, @CargoCredito, @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
+            SqlCommand cmd = new SqlCommand(Insertar, Conexion);
+            cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
+            cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
+            cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
+            cmd.Parameters.AddWithValue("@CargoCredito", facturaMembresia.CargoCredito);
+            cmd.Parameters.AddWithValue("@NCF", facturaMembresia.NCF);
+            cmd.Parameters.AddWithValue("@ValorFactura", facturaMembresia.ValorFactura);
+            cmd.Parameters.AddWithValue("@FechaEmision", facturaMembresia.FechaEmision);
+            cmd.Parameters.AddWithValue("@FechaVencimiento", facturaMembresia.FechaVencimiento);
+            cmd.Parameters.AddWithValue("@Estatus", facturaMembresia.Estatus);
+
+            cmd.ExecuteNonQuery();
+
+        }
+        public static void InsertarSoloCargoDebito(FacturaMembresiaEntity facturaMembresia)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+            string Insertar = "INSERT INTO FacturaMembresia(IDMembresia, IDCliente, IDUsuario, CargoDebito, NCF, Valorfactura, FechaEmision, FechaVencimiento, Estatus) " +
+                              " VALUES(@IDMembresia, @IDCliente, @IDUsuario, @CargoDebito, @NCF, @ValorFactura, @FechaEmision, @FechaVencimiento, @Estatus)";
+            SqlCommand cmd = new SqlCommand(Insertar, Conexion);
+            cmd.Parameters.AddWithValue("@IDMembresia", facturaMembresia.IDMembresia);
+            cmd.Parameters.AddWithValue("@IDCliente", facturaMembresia.IDCliente);
+            cmd.Parameters.AddWithValue("@IDUsuario", facturaMembresia.IDUsuario);
             cmd.Parameters.AddWithValue("@CargoDebito", facturaMembresia.CargoDebito);
             cmd.Parameters.AddWithValue("@NCF", facturaMembresia.NCF);
             cmd.Parameters.AddWithValue("@ValorFactura", facturaMembresia.ValorFactura);
