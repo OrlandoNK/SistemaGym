@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             lblTitleMantenimientoFacturaMembresia = new Label();
             pictureBox1 = new PictureBox();
@@ -47,6 +47,9 @@
             btnCargoCredito = new Guna.UI2.WinForms.Guna2Button();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
+            groupBox7 = new GroupBox();
+            rbtnNoPerteneceGrupoCliente = new RadioButton();
+            rbtnSiPerteneceGrupoCliente = new RadioButton();
             groupBox6 = new GroupBox();
             TxbClientesActivos = new TextBox();
             label20 = new Label();
@@ -122,14 +125,12 @@
             TxbDescrMembresia = new TextBox();
             label2 = new Label();
             errorProvider = new ErrorProvider(components);
-            groupBox7 = new GroupBox();
-            rbtnNoPerteneceGrupoCliente = new RadioButton();
-            rbtnSiPerteneceGrupoCliente = new RadioButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
+            groupBox7.SuspendLayout();
             groupBox6.SuspendLayout();
             groupBox5.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -140,7 +141,6 @@
             groupBox8.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
-            groupBox7.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -219,7 +219,7 @@
             btnCargosDebito.BorderColor = Color.Goldenrod;
             btnCargosDebito.BorderThickness = 1;
             btnCargosDebito.Cursor = Cursors.Hand;
-            btnCargosDebito.CustomizableEdges = customizableEdges9;
+            btnCargosDebito.CustomizableEdges = customizableEdges1;
             btnCargosDebito.DisabledState.BorderColor = Color.DarkGray;
             btnCargosDebito.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCargosDebito.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -235,7 +235,7 @@
             btnCargosDebito.ImageSize = new Size(32, 32);
             btnCargosDebito.Location = new Point(0, 538);
             btnCargosDebito.Name = "btnCargosDebito";
-            btnCargosDebito.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnCargosDebito.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnCargosDebito.Size = new Size(211, 56);
             btnCargosDebito.TabIndex = 4;
             btnCargosDebito.Text = "Cargos Débito";
@@ -248,7 +248,7 @@
             btnCargoCredito.BorderColor = Color.Goldenrod;
             btnCargoCredito.BorderThickness = 1;
             btnCargoCredito.Cursor = Cursors.Hand;
-            btnCargoCredito.CustomizableEdges = customizableEdges11;
+            btnCargoCredito.CustomizableEdges = customizableEdges3;
             btnCargoCredito.DisabledState.BorderColor = Color.DarkGray;
             btnCargoCredito.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCargoCredito.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -264,7 +264,7 @@
             btnCargoCredito.ImageSize = new Size(32, 32);
             btnCargoCredito.Location = new Point(0, 594);
             btnCargoCredito.Name = "btnCargoCredito";
-            btnCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCargoCredito.Size = new Size(211, 56);
             btnCargoCredito.TabIndex = 3;
             btnCargoCredito.Text = "Cargos Crédito";
@@ -277,7 +277,7 @@
             btnSave.BorderColor = Color.Goldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges13;
+            btnSave.CustomizableEdges = customizableEdges5;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -292,7 +292,7 @@
             btnSave.ImageSize = new Size(32, 32);
             btnSave.Location = new Point(-1, 23);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSave.Size = new Size(214, 59);
             btnSave.TabIndex = 2;
             btnSave.Text = "Guardar Factura";
@@ -318,6 +318,43 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1100, 652);
             panel4.TabIndex = 3;
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(rbtnNoPerteneceGrupoCliente);
+            groupBox7.Controls.Add(rbtnSiPerteneceGrupoCliente);
+            groupBox7.Location = new Point(924, 343);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(163, 208);
+            groupBox7.TabIndex = 19;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "¿Pertenece a un Grupo Cliente?";
+            // 
+            // rbtnNoPerteneceGrupoCliente
+            // 
+            rbtnNoPerteneceGrupoCliente.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnNoPerteneceGrupoCliente.Cursor = Cursors.Hand;
+            rbtnNoPerteneceGrupoCliente.Image = Properties.Resources.checkbox_NO__x32_;
+            rbtnNoPerteneceGrupoCliente.ImageAlign = ContentAlignment.MiddleLeft;
+            rbtnNoPerteneceGrupoCliente.Location = new Point(48, 122);
+            rbtnNoPerteneceGrupoCliente.Name = "rbtnNoPerteneceGrupoCliente";
+            rbtnNoPerteneceGrupoCliente.Size = new Size(66, 43);
+            rbtnNoPerteneceGrupoCliente.TabIndex = 35;
+            rbtnNoPerteneceGrupoCliente.TabStop = true;
+            rbtnNoPerteneceGrupoCliente.UseVisualStyleBackColor = true;
+            // 
+            // rbtnSiPerteneceGrupoCliente
+            // 
+            rbtnSiPerteneceGrupoCliente.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnSiPerteneceGrupoCliente.Cursor = Cursors.Hand;
+            rbtnSiPerteneceGrupoCliente.Image = Properties.Resources.checkbox_YES__x32_;
+            rbtnSiPerteneceGrupoCliente.ImageAlign = ContentAlignment.MiddleLeft;
+            rbtnSiPerteneceGrupoCliente.Location = new Point(48, 55);
+            rbtnSiPerteneceGrupoCliente.Name = "rbtnSiPerteneceGrupoCliente";
+            rbtnSiPerteneceGrupoCliente.Size = new Size(66, 43);
+            rbtnSiPerteneceGrupoCliente.TabIndex = 34;
+            rbtnSiPerteneceGrupoCliente.TabStop = true;
+            rbtnSiPerteneceGrupoCliente.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -549,7 +586,7 @@
             groupBox10.Location = new Point(4, 549);
             groupBox10.Name = "groupBox10";
             groupBox10.RightToLeft = RightToLeft.No;
-            groupBox10.Size = new Size(1062, 90);
+            groupBox10.Size = new Size(1083, 90);
             groupBox10.TabIndex = 29;
             groupBox10.TabStop = false;
             groupBox10.Text = "Factura Membresia";
@@ -788,7 +825,7 @@
             btnBuscarIDCliente.BorderRadius = 10;
             btnBuscarIDCliente.BorderThickness = 2;
             btnBuscarIDCliente.Cursor = Cursors.Hand;
-            btnBuscarIDCliente.CustomizableEdges = customizableEdges15;
+            btnBuscarIDCliente.CustomizableEdges = customizableEdges7;
             btnBuscarIDCliente.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -800,7 +837,7 @@
             btnBuscarIDCliente.ImageSize = new Size(32, 32);
             btnBuscarIDCliente.Location = new Point(255, 105);
             btnBuscarIDCliente.Name = "btnBuscarIDCliente";
-            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnBuscarIDCliente.Size = new Size(117, 55);
             btnBuscarIDCliente.TabIndex = 18;
             btnBuscarIDCliente.TextAlign = HorizontalAlignment.Left;
@@ -1093,43 +1130,6 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // groupBox7
-            // 
-            groupBox7.Controls.Add(rbtnNoPerteneceGrupoCliente);
-            groupBox7.Controls.Add(rbtnSiPerteneceGrupoCliente);
-            groupBox7.Location = new Point(924, 343);
-            groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(163, 208);
-            groupBox7.TabIndex = 19;
-            groupBox7.TabStop = false;
-            groupBox7.Text = "¿Pertenece a un Grupo Cliente?";
-            // 
-            // rbtnNoPerteneceGrupoCliente
-            // 
-            rbtnNoPerteneceGrupoCliente.CheckAlign = ContentAlignment.MiddleRight;
-            rbtnNoPerteneceGrupoCliente.Cursor = Cursors.Hand;
-            rbtnNoPerteneceGrupoCliente.Image = Properties.Resources.checkbox_NO__x32_;
-            rbtnNoPerteneceGrupoCliente.ImageAlign = ContentAlignment.MiddleLeft;
-            rbtnNoPerteneceGrupoCliente.Location = new Point(48, 122);
-            rbtnNoPerteneceGrupoCliente.Name = "rbtnNoPerteneceGrupoCliente";
-            rbtnNoPerteneceGrupoCliente.Size = new Size(66, 43);
-            rbtnNoPerteneceGrupoCliente.TabIndex = 35;
-            rbtnNoPerteneceGrupoCliente.TabStop = true;
-            rbtnNoPerteneceGrupoCliente.UseVisualStyleBackColor = true;
-            // 
-            // rbtnSiPerteneceGrupoCliente
-            // 
-            rbtnSiPerteneceGrupoCliente.CheckAlign = ContentAlignment.MiddleRight;
-            rbtnSiPerteneceGrupoCliente.Cursor = Cursors.Hand;
-            rbtnSiPerteneceGrupoCliente.Image = Properties.Resources.checkbox_YES__x32_;
-            rbtnSiPerteneceGrupoCliente.ImageAlign = ContentAlignment.MiddleLeft;
-            rbtnSiPerteneceGrupoCliente.Location = new Point(48, 55);
-            rbtnSiPerteneceGrupoCliente.Name = "rbtnSiPerteneceGrupoCliente";
-            rbtnSiPerteneceGrupoCliente.Size = new Size(66, 43);
-            rbtnSiPerteneceGrupoCliente.TabIndex = 34;
-            rbtnSiPerteneceGrupoCliente.TabStop = true;
-            rbtnSiPerteneceGrupoCliente.UseVisualStyleBackColor = true;
-            // 
             // nuevaFacturaMembresia
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -1150,6 +1150,7 @@
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            groupBox7.ResumeLayout(false);
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
             groupBox5.ResumeLayout(false);
@@ -1167,7 +1168,6 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
-            groupBox7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
