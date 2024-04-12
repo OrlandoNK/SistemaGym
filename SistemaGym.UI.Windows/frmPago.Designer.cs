@@ -237,6 +237,7 @@
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             TxbBuscar.Size = new Size(712, 44);
             TxbBuscar.TabIndex = 0;
+            TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
             // dgvPago
             // 

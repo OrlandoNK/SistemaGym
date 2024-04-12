@@ -30,6 +30,10 @@ namespace SistemaGym.BLL
         {
             return PagoDAL.DeletePago(pago);
         }
+        public static DataTable BuscarPago (string buscar)
+        {
+            return PagoDAL.Buscar(buscar);
+        }
         public static DataTable Mostrarpago()
         {
             return PagoDAL.mostrarPago();
