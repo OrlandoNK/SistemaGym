@@ -707,6 +707,13 @@ namespace SistemaGym.UI.Windows
             TxbDocumentoCliente.Clear();
 
             TxbFacturaValor.Clear();
+
+            TxbIDGrupoCliente.Clear();
+            TxbNombreGrupoMembresia.Clear();
+            TxbMontoGrupoCliente.Clear();
+            TxbMontoTotalGrupo.Clear();
+            TxbFechaRegistroGrupo.Clear();
+            TxbEstatus.Clear();
         }
 
         private void btnCargoCredito_Click(object sender, EventArgs e)
