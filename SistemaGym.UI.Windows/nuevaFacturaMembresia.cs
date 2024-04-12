@@ -527,7 +527,36 @@ namespace SistemaGym.UI.Windows
                 errorProvider.SetError(TxbTipoDocumento, ClienteObligatorio);
                 validacion = false;
             }
+            string CampoObligatorio = "¡Debe Llenar este Campo!";
+            if (string.IsNullOrEmpty(TxbMontoRecibido.Text))
+            {
+                errorProvider.SetError(TxbMontoRecibido, CampoObligatorio);
+                validacion = false;
+            }
+            decimal MontoRecibido = decimal.Parse(TxbMontoRecibido.Text);
+            if (!decimal.TryParse(TxbMontoRecibido.Text, out MontoRecibido))
+            {
+                errorProvider.SetError(TxbMontoRecibido, CampoObligatorio);
+                validacion = false;
+            }
 
+            if (string.IsNullOrEmpty(TxbDevuelta.Text))
+            {
+                errorProvider.SetError(TxbDevuelta, CampoObligatorio);
+                validacion = false;
+            }
+            decimal Devuelta = decimal.Parse(TxbDevuelta.Text);
+            if (!decimal.TryParse(TxbDevuelta.Text, out Devuelta))
+            {
+                errorProvider.SetError(TxbDevuelta, CampoObligatorio);
+                validacion = false;
+            }
+
+            if (cbMetodoPago.SelectedIndex == -1)
+            {
+                errorProvider.SetError(cbMetodoPago, CampoObligatorio);
+                validacion = false;
+            }
 
             return validacion;
         }
