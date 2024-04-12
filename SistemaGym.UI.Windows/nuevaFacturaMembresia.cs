@@ -60,7 +60,7 @@ namespace SistemaGym.UI.Windows
                 try
                 {
                     int idCliente = listaClientes.IdCliente;
-                    DataTable DT = clientesBLL.ObtenerClienteCargosMembresiaAndGrupos(idCliente);
+                    DataTable DT = clientesBLL.ObtenerClienteCargosMembresiaAndGruposMejorado(idCliente);
 
                     if (rbtnSiPerteneceGrupoCliente.Checked)
                     {
