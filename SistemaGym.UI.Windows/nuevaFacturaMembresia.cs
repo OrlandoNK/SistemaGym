@@ -60,7 +60,7 @@ namespace SistemaGym.UI.Windows
                 try
                 {
                     int idCliente = listaClientes.IdCliente;
-                    DataTable DT = clientesBLL.GetClientCargos(idCliente);
+                    DataTable DT = clientesBLL.ObtenerClienteCargosMembresiaAndGrupos(idCliente);
 
                     if (rbtnSiTieneCargoCredito.Checked && rbtnSiTieneCargoDebito.Checked)
                     {
@@ -95,6 +95,14 @@ namespace SistemaGym.UI.Windows
                             TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
                             TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
 
+                            TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
+                            TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
+                            TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotalGrupo"]).ToString("0.00");
+                            TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["MontoGrupoCliente"]).ToString("0.00");
+                            TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistroGrupo"].ToString();
+                            TxbEstatus.Text = DT.Rows[0]["EstatusGrupo"].ToString();
+                            TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
+
                             decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
                             decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
                             decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
@@ -126,6 +134,14 @@ namespace SistemaGym.UI.Windows
                             TxbNombreMembresia.Text = DT.Rows[0]["NombreMembresia"].ToString();
                             TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
                             TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+
+                            TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
+                            TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
+                            TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotal"]).ToString("0.00");
+                            TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["Monto"]).ToString("0.00");
+                            TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistro"].ToString();
+                            TxbEstatus.Text = DT.Rows[0]["Estatus"].ToString();
+                            TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
 
                             decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
                             TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia).ToString("0.00");
@@ -162,6 +178,14 @@ namespace SistemaGym.UI.Windows
                             TxbMontoCredito.Text = Convert.ToDecimal(DT.Rows[0]["MontoCredito"]).ToString("0.00");
                             TxbFechaCargoCredito.Text = DT.Rows[0]["FechaCargoCredito"].ToString();
                             TxbEstatusCredito.Text = DT.Rows[0]["EstatusCredito"].ToString();
+
+                            TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
+                            TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
+                            TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotal"]).ToString("0.00");
+                            TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["Monto"]).ToString("0.00");
+                            TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistro"].ToString();
+                            TxbEstatus.Text = DT.Rows[0]["Estatus"].ToString();
+                            TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
 
                             decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
                             decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
@@ -200,6 +224,14 @@ namespace SistemaGym.UI.Windows
                             TxbMontoDebito.Text = Convert.ToDecimal(DT.Rows[0]["MontoDebito"]).ToString("0.00");
                             TxbFechaCargoDebito.Text = DT.Rows[0]["FechaCargoDebito"].ToString();
                             TxbEstatusDebito.Text = DT.Rows[0]["EstatusDebito"].ToString();
+
+                            TxbIDGrupoCliente.Text = DT.Rows[0]["IDGrupoCliente"].ToString();
+                            TxbNombreGrupoMembresia.Text = DT.Rows[0]["NombreGrupoMembresia"].ToString();
+                            TxbMontoTotalGrupo.Text = Convert.ToDecimal(DT.Rows[0]["MontoTotal"]).ToString("0.00");
+                            TxbMontoGrupoCliente.Text = Convert.ToDecimal(DT.Rows[0]["Monto"]).ToString("0.00");
+                            TxbFechaRegistroGrupo.Text = DT.Rows[0]["FechaRegistro"].ToString();
+                            TxbEstatus.Text = DT.Rows[0]["Estatus"].ToString();
+                            TxbClientesActivos.Text = Convert.ToDecimal(DT.Rows[0]["ClientesActivos"]).ToString("0.00");
 
                             decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
                             decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);

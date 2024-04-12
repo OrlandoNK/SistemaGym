@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             lblTitleMantenimientoFacturaMembresia = new Label();
             pictureBox1 = new PictureBox();
@@ -47,6 +47,23 @@
             btnCargoCredito = new Guna.UI2.WinForms.Guna2Button();
             btnSave = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
+            groupBox6 = new GroupBox();
+            TxbClientesActivos = new TextBox();
+            label20 = new Label();
+            TxbEstatus = new TextBox();
+            label19 = new Label();
+            TxbFechaRegistroGrupo = new TextBox();
+            label18 = new Label();
+            TxbMontoGrupoCliente = new TextBox();
+            label17 = new Label();
+            TxbMontoTotalGrupo = new TextBox();
+            label16 = new Label();
+            TxbNombreGrupoMembresia = new TextBox();
+            label15 = new Label();
+            TxbIDGrupoMembresia = new TextBox();
+            label14 = new Label();
+            TxbIDGrupoCliente = new TextBox();
+            label13 = new Label();
             groupBox5 = new GroupBox();
             rbtnNoTieneCargoDebito = new RadioButton();
             rbtnSiTieneCargoDebito = new RadioButton();
@@ -112,6 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
+            groupBox6.SuspendLayout();
             groupBox5.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox10.SuspendLayout();
@@ -199,7 +217,7 @@
             btnCargosDebito.BorderColor = Color.Goldenrod;
             btnCargosDebito.BorderThickness = 1;
             btnCargosDebito.Cursor = Cursors.Hand;
-            btnCargosDebito.CustomizableEdges = customizableEdges1;
+            btnCargosDebito.CustomizableEdges = customizableEdges9;
             btnCargosDebito.DisabledState.BorderColor = Color.DarkGray;
             btnCargosDebito.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCargosDebito.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -215,7 +233,7 @@
             btnCargosDebito.ImageSize = new Size(32, 32);
             btnCargosDebito.Location = new Point(0, 538);
             btnCargosDebito.Name = "btnCargosDebito";
-            btnCargosDebito.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCargosDebito.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnCargosDebito.Size = new Size(211, 56);
             btnCargosDebito.TabIndex = 4;
             btnCargosDebito.Text = "Cargos Débito";
@@ -228,7 +246,7 @@
             btnCargoCredito.BorderColor = Color.Goldenrod;
             btnCargoCredito.BorderThickness = 1;
             btnCargoCredito.Cursor = Cursors.Hand;
-            btnCargoCredito.CustomizableEdges = customizableEdges3;
+            btnCargoCredito.CustomizableEdges = customizableEdges11;
             btnCargoCredito.DisabledState.BorderColor = Color.DarkGray;
             btnCargoCredito.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCargoCredito.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -244,7 +262,7 @@
             btnCargoCredito.ImageSize = new Size(32, 32);
             btnCargoCredito.Location = new Point(0, 594);
             btnCargoCredito.Name = "btnCargoCredito";
-            btnCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnCargoCredito.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnCargoCredito.Size = new Size(211, 56);
             btnCargoCredito.TabIndex = 3;
             btnCargoCredito.Text = "Cargos Crédito";
@@ -257,7 +275,7 @@
             btnSave.BorderColor = Color.Goldenrod;
             btnSave.BorderThickness = 1;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.CustomizableEdges = customizableEdges5;
+            btnSave.CustomizableEdges = customizableEdges13;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -272,7 +290,7 @@
             btnSave.ImageSize = new Size(32, 32);
             btnSave.Location = new Point(-1, 23);
             btnSave.Name = "btnSave";
-            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnSave.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnSave.Size = new Size(214, 59);
             btnSave.TabIndex = 2;
             btnSave.Text = "Guardar Factura";
@@ -283,6 +301,7 @@
             // 
             panel4.BackColor = Color.WhiteSmoke;
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(groupBox6);
             panel4.Controls.Add(groupBox5);
             panel4.Controls.Add(groupBox4);
             panel4.Controls.Add(groupBox10);
@@ -296,6 +315,175 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1072, 652);
             panel4.TabIndex = 3;
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(TxbClientesActivos);
+            groupBox6.Controls.Add(label20);
+            groupBox6.Controls.Add(TxbEstatus);
+            groupBox6.Controls.Add(label19);
+            groupBox6.Controls.Add(TxbFechaRegistroGrupo);
+            groupBox6.Controls.Add(label18);
+            groupBox6.Controls.Add(TxbMontoGrupoCliente);
+            groupBox6.Controls.Add(label17);
+            groupBox6.Controls.Add(TxbMontoTotalGrupo);
+            groupBox6.Controls.Add(label16);
+            groupBox6.Controls.Add(TxbNombreGrupoMembresia);
+            groupBox6.Controls.Add(label15);
+            groupBox6.Controls.Add(TxbIDGrupoMembresia);
+            groupBox6.Controls.Add(label14);
+            groupBox6.Controls.Add(TxbIDGrupoCliente);
+            groupBox6.Controls.Add(label13);
+            groupBox6.Location = new Point(390, 343);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(676, 208);
+            groupBox6.TabIndex = 36;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "Grupo de Cliente";
+            // 
+            // TxbClientesActivos
+            // 
+            TxbClientesActivos.Location = new Point(275, 150);
+            TxbClientesActivos.Name = "TxbClientesActivos";
+            TxbClientesActivos.ReadOnly = true;
+            TxbClientesActivos.Size = new Size(117, 23);
+            TxbClientesActivos.TabIndex = 17;
+            // 
+            // label20
+            // 
+            label20.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label20.Location = new Point(275, 119);
+            label20.Name = "label20";
+            label20.Size = new Size(117, 24);
+            label20.TabIndex = 18;
+            label20.Text = "Clientes Activos";
+            label20.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxbEstatus
+            // 
+            TxbEstatus.Location = new Point(152, 150);
+            TxbEstatus.Name = "TxbEstatus";
+            TxbEstatus.ReadOnly = true;
+            TxbEstatus.Size = new Size(117, 23);
+            TxbEstatus.TabIndex = 15;
+            // 
+            // label19
+            // 
+            label19.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.Location = new Point(152, 119);
+            label19.Name = "label19";
+            label19.Size = new Size(117, 24);
+            label19.TabIndex = 16;
+            label19.Text = "Estatus";
+            label19.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxbFechaRegistroGrupo
+            // 
+            TxbFechaRegistroGrupo.Location = new Point(29, 150);
+            TxbFechaRegistroGrupo.Name = "TxbFechaRegistroGrupo";
+            TxbFechaRegistroGrupo.ReadOnly = true;
+            TxbFechaRegistroGrupo.Size = new Size(117, 23);
+            TxbFechaRegistroGrupo.TabIndex = 13;
+            // 
+            // label18
+            // 
+            label18.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Location = new Point(29, 119);
+            label18.Name = "label18";
+            label18.Size = new Size(117, 24);
+            label18.TabIndex = 14;
+            label18.Text = "Fecha";
+            label18.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxbMontoGrupoCliente
+            // 
+            TxbMontoGrupoCliente.Location = new Point(530, 75);
+            TxbMontoGrupoCliente.Name = "TxbMontoGrupoCliente";
+            TxbMontoGrupoCliente.ReadOnly = true;
+            TxbMontoGrupoCliente.Size = new Size(117, 23);
+            TxbMontoGrupoCliente.TabIndex = 11;
+            // 
+            // label17
+            // 
+            label17.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.Location = new Point(530, 44);
+            label17.Name = "label17";
+            label17.Size = new Size(117, 24);
+            label17.TabIndex = 12;
+            label17.Text = "Monto ";
+            label17.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxbMontoTotalGrupo
+            // 
+            TxbMontoTotalGrupo.Location = new Point(407, 75);
+            TxbMontoTotalGrupo.Name = "TxbMontoTotalGrupo";
+            TxbMontoTotalGrupo.ReadOnly = true;
+            TxbMontoTotalGrupo.Size = new Size(117, 23);
+            TxbMontoTotalGrupo.TabIndex = 9;
+            // 
+            // label16
+            // 
+            label16.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(407, 44);
+            label16.Name = "label16";
+            label16.Size = new Size(117, 24);
+            label16.TabIndex = 10;
+            label16.Text = "Monto Total";
+            label16.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxbNombreGrupoMembresia
+            // 
+            TxbNombreGrupoMembresia.Location = new Point(284, 75);
+            TxbNombreGrupoMembresia.Name = "TxbNombreGrupoMembresia";
+            TxbNombreGrupoMembresia.ReadOnly = true;
+            TxbNombreGrupoMembresia.Size = new Size(117, 23);
+            TxbNombreGrupoMembresia.TabIndex = 7;
+            // 
+            // label15
+            // 
+            label15.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Location = new Point(284, 44);
+            label15.Name = "label15";
+            label15.Size = new Size(117, 24);
+            label15.TabIndex = 8;
+            label15.Text = "Grupo Membresia";
+            label15.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxbIDGrupoMembresia
+            // 
+            TxbIDGrupoMembresia.Location = new Point(152, 75);
+            TxbIDGrupoMembresia.Name = "TxbIDGrupoMembresia";
+            TxbIDGrupoMembresia.ReadOnly = true;
+            TxbIDGrupoMembresia.Size = new Size(126, 23);
+            TxbIDGrupoMembresia.TabIndex = 5;
+            // 
+            // label14
+            // 
+            label14.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Location = new Point(152, 44);
+            label14.Name = "label14";
+            label14.Size = new Size(126, 24);
+            label14.TabIndex = 6;
+            label14.Text = "IDGrupoMembresia";
+            label14.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TxbIDGrupoCliente
+            // 
+            TxbIDGrupoCliente.Location = new Point(29, 75);
+            TxbIDGrupoCliente.Name = "TxbIDGrupoCliente";
+            TxbIDGrupoCliente.ReadOnly = true;
+            TxbIDGrupoCliente.Size = new Size(117, 23);
+            TxbIDGrupoCliente.TabIndex = 3;
+            // 
+            // label13
+            // 
+            label13.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(29, 44);
+            label13.Name = "label13";
+            label13.Size = new Size(117, 24);
+            label13.TabIndex = 4;
+            label13.Text = "IDGrupoCliente";
+            label13.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // groupBox5
             // 
@@ -617,7 +805,7 @@
             btnBuscarIDCliente.BorderRadius = 10;
             btnBuscarIDCliente.BorderThickness = 2;
             btnBuscarIDCliente.Cursor = Cursors.Hand;
-            btnBuscarIDCliente.CustomizableEdges = customizableEdges7;
+            btnBuscarIDCliente.CustomizableEdges = customizableEdges15;
             btnBuscarIDCliente.DisabledState.BorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscarIDCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -629,7 +817,7 @@
             btnBuscarIDCliente.ImageSize = new Size(32, 32);
             btnBuscarIDCliente.Location = new Point(255, 105);
             btnBuscarIDCliente.Name = "btnBuscarIDCliente";
-            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnBuscarIDCliente.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnBuscarIDCliente.Size = new Size(117, 55);
             btnBuscarIDCliente.TabIndex = 18;
             btnBuscarIDCliente.TextAlign = HorizontalAlignment.Left;
@@ -942,6 +1130,8 @@
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
             groupBox5.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox10.ResumeLayout(false);
@@ -1036,5 +1226,22 @@
         private RadioButton rbtnSiTieneCargoCredito;
         private GroupBox groupBox4;
         private GroupBox groupBox5;
+        private GroupBox groupBox6;
+        private TextBox TxbIDGrupoMembresia;
+        private Label label14;
+        private TextBox TxbIDGrupoCliente;
+        private Label label13;
+        private TextBox TxbClientesActivos;
+        private Label label20;
+        private TextBox TxbEstatus;
+        private Label label19;
+        private TextBox TxbFechaRegistroGrupo;
+        private Label label18;
+        private TextBox TxbMontoGrupoCliente;
+        private Label label17;
+        private TextBox TxbMontoTotalGrupo;
+        private Label label16;
+        private TextBox TxbNombreGrupoMembresia;
+        private Label label15;
     }
 }
