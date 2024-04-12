@@ -32,9 +32,9 @@ namespace SistemaGym.UI.Windows
         {
             bool validacion = true;
 
-            if(!rbtnSiTieneCargoCredito.Checked && 
-                !rbtnNoTieneCargoCredito.Checked  && 
-                !rbtnSiTieneCargoDebito.Checked  && 
+            if (!rbtnSiTieneCargoCredito.Checked &&
+                !rbtnNoTieneCargoCredito.Checked &&
+                !rbtnSiTieneCargoDebito.Checked &&
                 !rbtnNoTieneCargoDebito.Checked)
             {
                 MessageBox.Show("¡Es Necesario decir si Tiene o No Cargos! \nPor Favor, Escoja una Opcion", SYSTEM_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -127,7 +127,8 @@ namespace SistemaGym.UI.Windows
                             TxbDescrMembresia.Text = DT.Rows[0]["Descripcion"].ToString();
                             TxbValorMembresia.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
 
-                            TxbFacturaValor.Text = Convert.ToDecimal(DT.Rows[0]["Valor"]).ToString("0.00");
+                            decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
+                            TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia).ToString("0.00");
 
                         }
                         else
@@ -165,7 +166,7 @@ namespace SistemaGym.UI.Windows
                             decimal MontoCredito = decimal.Parse(TxbMontoCredito.Text);
                             decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
 
-                            TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia + MontoCredito).ToString("0.00");
+                            TxbFacturaValor.Text = Convert.ToDecimal((ValorMembresia + MontoCredito)).ToString("0.00");
 
                         }
                         else
@@ -203,7 +204,7 @@ namespace SistemaGym.UI.Windows
                             decimal MontoDebito = decimal.Parse(TxbMontoDebito.Text);
                             decimal ValorMembresia = decimal.Parse(TxbValorMembresia.Text);
 
-                            TxbFacturaValor.Text = Convert.ToDecimal(ValorMembresia + MontoDebito).ToString("0.00");
+                            TxbFacturaValor.Text = Convert.ToDecimal((ValorMembresia + MontoDebito)).ToString("0.00");
 
                         }
 

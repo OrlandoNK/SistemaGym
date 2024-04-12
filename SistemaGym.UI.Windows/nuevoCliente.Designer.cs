@@ -40,6 +40,8 @@
             btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             panel4 = new Panel();
             groupBox2 = new GroupBox();
+            rbtnPaseMembresia = new RadioButton();
+            rbtnPaseDiario = new RadioButton();
             label1 = new Label();
             cbUsuario = new ComboBox();
             cbTipoListaCliente = new ComboBox();
@@ -182,6 +184,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(rbtnPaseMembresia);
+            groupBox2.Controls.Add(rbtnPaseDiario);
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(cbUsuario);
             groupBox2.Controls.Add(cbTipoListaCliente);
@@ -198,11 +202,41 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Relacionados al Cliente";
             // 
+            // rbtnPaseMembresia
+            // 
+            rbtnPaseMembresia.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnPaseMembresia.Image = Properties.Resources.gym_membreship__x32_;
+            rbtnPaseMembresia.ImageAlign = ContentAlignment.MiddleLeft;
+            rbtnPaseMembresia.Location = new Point(410, 125);
+            rbtnPaseMembresia.Name = "rbtnPaseMembresia";
+            rbtnPaseMembresia.Size = new Size(158, 31);
+            rbtnPaseMembresia.TabIndex = 126;
+            rbtnPaseMembresia.TabStop = true;
+            rbtnPaseMembresia.Text = "Membresia";
+            rbtnPaseMembresia.TextAlign = ContentAlignment.MiddleRight;
+            rbtnPaseMembresia.UseVisualStyleBackColor = true;
+            rbtnPaseMembresia.CheckedChanged += rbtnPaseMembresia_CheckedChanged;
+            // 
+            // rbtnPaseDiario
+            // 
+            rbtnPaseDiario.CheckAlign = ContentAlignment.MiddleRight;
+            rbtnPaseDiario.Image = Properties.Resources.asistencia_pase_diario_gym__x32_;
+            rbtnPaseDiario.ImageAlign = ContentAlignment.MiddleLeft;
+            rbtnPaseDiario.Location = new Point(410, 88);
+            rbtnPaseDiario.Name = "rbtnPaseDiario";
+            rbtnPaseDiario.Size = new Size(158, 31);
+            rbtnPaseDiario.TabIndex = 125;
+            rbtnPaseDiario.TabStop = true;
+            rbtnPaseDiario.Text = "Pase Diario";
+            rbtnPaseDiario.TextAlign = ContentAlignment.MiddleRight;
+            rbtnPaseDiario.UseVisualStyleBackColor = true;
+            rbtnPaseDiario.CheckedChanged += rbtnPaseDiario_CheckedChanged;
+            // 
             // label1
             // 
-            label1.Location = new Point(119, 107);
+            label1.Location = new Point(92, 109);
             label1.Name = "label1";
-            label1.Size = new Size(100, 19);
+            label1.Size = new Size(204, 19);
             label1.TabIndex = 124;
             label1.Text = "Usuario";
             // 
@@ -210,22 +244,22 @@
             // 
             cbUsuario.Enabled = false;
             cbUsuario.FormattingEnabled = true;
-            cbUsuario.Location = new Point(119, 129);
+            cbUsuario.Location = new Point(92, 131);
             cbUsuario.Name = "cbUsuario";
-            cbUsuario.Size = new Size(424, 25);
+            cbUsuario.Size = new Size(206, 25);
             cbUsuario.TabIndex = 123;
             // 
             // cbTipoListaCliente
             // 
             cbTipoListaCliente.FormattingEnabled = true;
-            cbTipoListaCliente.Location = new Point(281, 61);
+            cbTipoListaCliente.Location = new Point(198, 59);
             cbTipoListaCliente.Name = "cbTipoListaCliente";
             cbTipoListaCliente.Size = new Size(100, 25);
             cbTipoListaCliente.TabIndex = 122;
             // 
             // label3
             // 
-            label3.Location = new Point(119, 38);
+            label3.Location = new Point(92, 36);
             label3.Name = "label3";
             label3.Size = new Size(100, 19);
             label3.TabIndex = 99;
@@ -233,7 +267,7 @@
             // 
             // label4
             // 
-            label4.Location = new Point(281, 39);
+            label4.Location = new Point(198, 37);
             label4.Name = "label4";
             label4.Size = new Size(100, 19);
             label4.TabIndex = 100;
@@ -242,23 +276,23 @@
             // cbTipoCliente
             // 
             cbTipoCliente.FormattingEnabled = true;
-            cbTipoCliente.Location = new Point(443, 61);
+            cbTipoCliente.Location = new Point(410, 57);
             cbTipoCliente.Name = "cbTipoCliente";
-            cbTipoCliente.Size = new Size(100, 25);
+            cbTipoCliente.Size = new Size(160, 25);
             cbTipoCliente.TabIndex = 119;
             // 
             // label5
             // 
-            label5.Location = new Point(443, 39);
+            label5.Location = new Point(410, 35);
             label5.Name = "label5";
-            label5.Size = new Size(100, 18);
+            label5.Size = new Size(160, 18);
             label5.TabIndex = 101;
             label5.Text = "Tipo Cliente";
             // 
             // cbMembresia
             // 
             cbMembresia.FormattingEnabled = true;
-            cbMembresia.Location = new Point(119, 61);
+            cbMembresia.Location = new Point(92, 59);
             cbMembresia.Name = "cbMembresia";
             cbMembresia.Size = new Size(100, 25);
             cbMembresia.TabIndex = 118;
@@ -465,5 +499,7 @@
         private PictureBox pictureBox2;
         private Label label1;
         private ComboBox cbUsuario;
+        private RadioButton rbtnPaseMembresia;
+        private RadioButton rbtnPaseDiario;
     }
 }

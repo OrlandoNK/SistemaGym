@@ -151,6 +151,9 @@
   <data name="cerrar-sesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrar-sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-area-empresa-gym-logo-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-area-empresa-gym-logo-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="&amp;mantenimientoProductos(x32-MainsScreen)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\&amp;mantenimientoProductos(x32-MainsScreen).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,6 +187,9 @@
   <data name="#CloseWindowX1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#CloseWindowX1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-reports-button-factura-producto-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-reports-button-factura-producto-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon-btn-Add-Product-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-btn-Add-Product-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -195,6 +201,9 @@
   </data>
   <data name="#NewFacturaProduct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#NewFacturaProduct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="businessman-mante-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\businessman-mante-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete proveedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete proveedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,6 +232,9 @@
   <data name="icon-btn-search-producto-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-btn-search-producto-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-asistencia-clientes-gym-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-asistencia-clientes-gym-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Comfort GYM - Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Comfort GYM - Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -240,6 +252,9 @@
   </data>
   <data name="#MEMBRESIA(x64)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#MEMBRESIA(x64).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-reports-button-gym-comfort-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-reports-button-gym-comfort-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="#MEMBRESIA(x32)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#MEMBRESIA(x32)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,8 +295,8 @@
   <data name="icono-area-empresa-GYM-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono-area-empresa-GYM-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="businessman-mante-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\businessman-mante-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mantenimientoMembresias[x32] mainscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mantenimientoMembresias[x32] mainscreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon-proveedor-mantenimiento-[x32]-waos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-proveedor-mantenimiento-[x32]-waos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,8 +322,8 @@
   <data name="checkbox-NO-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkbox-NO-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button for deleting providers x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button for deleting providers x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="&amp;BuscarEnFacturacionMembresiaDatos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\&amp;BuscarEnFacturacionMembresiaDatos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="users-mante-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users-mante-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -324,6 +339,9 @@
   </data>
   <data name="#ContraseñaLogin(x32)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#ContraseñaLogin(x32).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-check-asistencia-true-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-check-asistencia-true-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="desplegar a la derecha [x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\desplegar a la derecha [x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -385,6 +403,9 @@
   <data name="button for modifying providers x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button for modifying providers x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-button-reports-Pagos-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-button-reports-Pagos-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="direccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\direccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -412,6 +433,9 @@
   <data name="best-product_6533121" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\best-product_6533121.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-btn-reports-GYM-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-btn-reports-GYM-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="#BotonBuscarProducto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#BotonBuscarProducto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -430,6 +454,12 @@
   <data name="#ForCloseWindowX---" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#ForCloseWindowX---.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="asistencia-pase-diario-gym-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\asistencia-pase-diario-gym-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-button-reports-clientes-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-button-reports-clientes-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon-facturacion-producto-mantenimiento-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-facturacion-producto-mantenimiento-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -442,11 +472,14 @@
   <data name="VerDetalleFacturaProductos [x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VerDetalleFacturaProductos [x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mantenimientoMembresias[x32] mainscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mantenimientoMembresias[x32] mainscreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="mantenimiento[Clientes(x32)]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mantenimiento[Clientes(x32)].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button for deleting providers x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button for deleting providers x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="factura producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\factura producto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="#AccederLogin(x32)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#AccederLogin(x32).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -475,14 +508,14 @@
   <data name="icons8-editar-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-editar-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&amp;BuscarEnFacturacionMembresiaDatos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\&amp;BuscarEnFacturacionMembresiaDatos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="#ForSearchBar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#ForSearchBar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save_5764942" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save_5764942.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-button-reports-empleados-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-button-reports-empleados-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="#ListaClientes(x64)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#ListaClientes(x64).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -501,9 +534,6 @@
   </data>
   <data name="GYM COMFORT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GYM COMFORT.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon for editing button x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon for editing button x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn-icon-searching-for-membership-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn-icon-searching-for-membership-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -529,11 +559,14 @@
   <data name="#Administracion(MainScreen)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#Administracion(MainScreen).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="factura producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\factura producto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon for editing button x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon for editing button x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon-empleados-x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-empleados-x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-btn-reports-detalle-factura-producto-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-btn-reports-detalle-factura-producto-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="boton-agregar-nuevo-empleado-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boton-agregar-nuevo-empleado-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -559,10 +592,13 @@
   <data name="#Roles(mainScreen)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\#Roles(mainScreen).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-logo-button-cargo-credito-debito-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-logo-button-cargo-credito-debito-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="plus_10693925" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus_10693925.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-logo-button-cargo-credito-debito-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-logo-button-cargo-credito-debito-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-buscar-cliente-asistencia-[x32]" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-buscar-cliente-asistencia-[x32].png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
