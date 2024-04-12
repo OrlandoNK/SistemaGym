@@ -16,7 +16,7 @@ namespace SistemaGym.BLL
         {
             ClientesDAL.InsertarCliente(clientes);
         }
-        public DataTable MostrarClientesDashboard()
+        public static DataTable MostrarClientesDashboard()
         {
             return ClientesDAL.MostrarClientesDashboard();
         }

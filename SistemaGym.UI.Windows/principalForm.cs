@@ -75,57 +75,11 @@ namespace SistemaGym.UI.Windows
 
         private void principalForm_Load(object sender, EventArgs e)
         {
-            CargarAsistenciasHoy();
-            CargarDataGridClientes();
-
             lblusuario.Text = gestioUsuarioEntities.usernameLogged;
             lblRolUsuario.Text = "[" + gestioUsuarioEntities.rolUsuarioLogged + "]";
             FuncionRolUsuario();
         }
-        private void CargarDataGridClientes()
-        {
-            ClientesBLL clienteBLL = new ClientesBLL();
-            dgvClientes.DataSource = clienteBLL.MostrarClientesDashboard();
-            dgvClientes.AutoGenerateColumns = false;
-            CargarTipoCliente();
-            CargarMembresia();
-        }
-        private void CargarMembresia()
-        {
-            var colMembresia = (DataGridViewComboBoxColumn)dgvClientes.Columns["IDMembresia"];
-
-            colMembresia.DataSource = MembresiaBLL.Mostrar();
-            colMembresia.ValueMember = "IDMembresia";
-            colMembresia.DisplayMember = "Nombre";
-            colMembresia.DataPropertyName = "IDMembresia";
-
-        }
-        private void CargarTipoCliente()
-        {
-
-            var colTipoListaCliente = (DataGridViewComboBoxColumn)dgvClientes.Columns["TipoCliente"];
-
-            colTipoListaCliente.DataSource = TipoClienteBLL.MostrarTipoCliente();
-            colTipoListaCliente.ValueMember = "IDTipoCliente";
-            colTipoListaCliente.DisplayMember = "Nombre";
-            colTipoListaCliente.DataPropertyName = "TipoCliente";
-
-        }
-        private void CargarAsistenciasHoy()
-        {
-            AsistenciaClientesBLL asistenciaClientesBLL = new AsistenciaClientesBLL();
-            dgvAsistenciasHOY.DataSource = asistenciaClientesBLL.MostrarAsistenciasHOY();
-            dgvAsistenciasHOY.AutoGenerateColumns = false;
-            CargarCliente();
-        }
-        private void CargarCliente()
-        {
-            var colIDCliente = (DataGridViewComboBoxColumn)dgvAsistenciasHOY.Columns["IDCliente"];
-            colIDCliente.DataSource = ClientesBLL.MostrarCliente();
-            colIDCliente.ValueMember = "IDCliente";
-            colIDCliente.DisplayMember = "Nombre";
-            colIDCliente.DataPropertyName = "IDCliente";
-        }
+       
 
         private void FuncionRolUsuario()
         {
