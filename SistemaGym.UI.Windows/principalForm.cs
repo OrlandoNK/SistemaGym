@@ -79,7 +79,7 @@ namespace SistemaGym.UI.Windows
             lblRolUsuario.Text = "[" + gestioUsuarioEntities.rolUsuarioLogged + "]";
             FuncionRolUsuario();
         }
-       
+
 
         private void FuncionRolUsuario()
         {
