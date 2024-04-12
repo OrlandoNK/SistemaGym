@@ -163,6 +163,7 @@
             btnDelete.Size = new Size(221, 45);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Eliminar";
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -188,6 +189,7 @@
             btnEdit.Size = new Size(221, 45);
             btnEdit.TabIndex = 2;
             btnEdit.Text = "Modificar";
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnrefresh
             // 
@@ -212,6 +214,7 @@
             btnrefresh.Size = new Size(221, 45);
             btnrefresh.TabIndex = 1;
             btnrefresh.TextAlign = HorizontalAlignment.Right;
+            btnrefresh.Click += btnrefresh_Click;
             // 
             // btnNew
             // 
@@ -273,6 +276,7 @@
             TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             TxbBuscar.Size = new Size(846, 44);
             TxbBuscar.TabIndex = 0;
+            TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
             // panel4
             // 

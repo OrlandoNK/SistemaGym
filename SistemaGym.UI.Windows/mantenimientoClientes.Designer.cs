@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -42,16 +44,19 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             btnClose = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
-            btnListaCliente = new Guna.UI2.WinForms.Guna2Button();
+            panel6 = new Panel();
+            btnAsistencia = new Guna.UI2.WinForms.Guna2Button();
             btnTipoCliente = new Guna.UI2.WinForms.Guna2Button();
+            btnGrupoClientes = new Guna.UI2.WinForms.Guna2Button();
+            btnListaCliente = new Guna.UI2.WinForms.Guna2Button();
             btnDelete = new Guna.UI2.WinForms.Guna2Button();
             btnEdit = new Guna.UI2.WinForms.Guna2Button();
             btnUpdateDGV = new Guna.UI2.WinForms.Guna2Button();
@@ -74,11 +79,11 @@
             TelRes = new DataGridViewTextBoxColumn();
             FechaRegistro = new DataGridViewTextBoxColumn();
             Estatus = new DataGridViewTextBoxColumn();
-            btnGrupoClientes = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel3.SuspendLayout();
+            panel6.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
@@ -146,9 +151,7 @@
             // 
             panel3.BackColor = Color.Black;
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(btnGrupoClientes);
-            panel3.Controls.Add(btnListaCliente);
-            panel3.Controls.Add(btnTipoCliente);
+            panel3.Controls.Add(panel6);
             panel3.Controls.Add(btnDelete);
             panel3.Controls.Add(btnEdit);
             panel3.Controls.Add(btnUpdateDGV);
@@ -159,44 +162,59 @@
             panel3.Size = new Size(200, 590);
             panel3.TabIndex = 75;
             // 
-            // btnListaCliente
+            // panel6
             // 
-            btnListaCliente.BorderColor = Color.DarkGoldenrod;
-            btnListaCliente.BorderThickness = 1;
-            btnListaCliente.Cursor = Cursors.Hand;
-            btnListaCliente.CustomizableEdges = customizableEdges3;
-            btnListaCliente.DisabledState.BorderColor = Color.DarkGray;
-            btnListaCliente.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnListaCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnListaCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnListaCliente.FillColor = Color.Transparent;
-            btnListaCliente.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnListaCliente.ForeColor = Color.White;
-            btnListaCliente.HoverState.FillColor = Color.DarkGoldenrod;
-            btnListaCliente.HoverState.ForeColor = Color.Black;
-            btnListaCliente.Image = Properties.Resources.customer_experience_12948497;
-            btnListaCliente.ImageAlign = HorizontalAlignment.Left;
-            btnListaCliente.ImageSize = new Size(25, 25);
-            btnListaCliente.Location = new Point(-1, 97);
-            btnListaCliente.Name = "btnListaCliente";
-            btnListaCliente.PressedColor = Color.Transparent;
-            btnListaCliente.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnListaCliente.Size = new Size(200, 47);
-            btnListaCliente.TabIndex = 6;
-            btnListaCliente.Text = "Ir a Lista Clientes";
-            btnListaCliente.TextAlign = HorizontalAlignment.Right;
-            btnListaCliente.Click += btnListaCliente_Click;
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(btnAsistencia);
+            panel6.Controls.Add(btnTipoCliente);
+            panel6.Controls.Add(btnGrupoClientes);
+            panel6.Controls.Add(btnListaCliente);
+            panel6.Dock = DockStyle.Bottom;
+            panel6.Location = new Point(0, 396);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(198, 192);
+            panel6.TabIndex = 8;
+            // 
+            // btnAsistencia
+            // 
+            btnAsistencia.BorderColor = Color.DarkGoldenrod;
+            btnAsistencia.BorderThickness = 1;
+            btnAsistencia.Cursor = Cursors.Hand;
+            btnAsistencia.CustomizableEdges = customizableEdges1;
+            btnAsistencia.DisabledState.BorderColor = Color.DarkGray;
+            btnAsistencia.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAsistencia.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAsistencia.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAsistencia.Dock = DockStyle.Top;
+            btnAsistencia.FillColor = Color.Transparent;
+            btnAsistencia.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAsistencia.ForeColor = Color.White;
+            btnAsistencia.HoverState.FillColor = Color.DarkGoldenrod;
+            btnAsistencia.HoverState.ForeColor = Color.Black;
+            btnAsistencia.Image = Properties.Resources.icon_asistencia_clientes_gym__x32_;
+            btnAsistencia.ImageAlign = HorizontalAlignment.Left;
+            btnAsistencia.ImageSize = new Size(25, 25);
+            btnAsistencia.Location = new Point(0, 141);
+            btnAsistencia.Name = "btnAsistencia";
+            btnAsistencia.PressedColor = Color.Transparent;
+            btnAsistencia.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnAsistencia.Size = new Size(196, 47);
+            btnAsistencia.TabIndex = 8;
+            btnAsistencia.Text = "Ir a Asistencia Clientes";
+            btnAsistencia.TextAlign = HorizontalAlignment.Right;
+            btnAsistencia.Click += btnAsistencia_Click;
             // 
             // btnTipoCliente
             // 
             btnTipoCliente.BorderColor = Color.DarkGoldenrod;
             btnTipoCliente.BorderThickness = 1;
             btnTipoCliente.Cursor = Cursors.Hand;
-            btnTipoCliente.CustomizableEdges = customizableEdges5;
+            btnTipoCliente.CustomizableEdges = customizableEdges3;
             btnTipoCliente.DisabledState.BorderColor = Color.DarkGray;
             btnTipoCliente.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTipoCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnTipoCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnTipoCliente.Dock = DockStyle.Top;
             btnTipoCliente.FillColor = Color.Transparent;
             btnTipoCliente.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnTipoCliente.ForeColor = Color.White;
@@ -205,22 +223,80 @@
             btnTipoCliente.Image = Properties.Resources.customer_experience_12948497;
             btnTipoCliente.ImageAlign = HorizontalAlignment.Left;
             btnTipoCliente.ImageSize = new Size(25, 25);
-            btnTipoCliente.Location = new Point(-1, 44);
+            btnTipoCliente.Location = new Point(0, 94);
             btnTipoCliente.Name = "btnTipoCliente";
             btnTipoCliente.PressedColor = Color.Transparent;
-            btnTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnTipoCliente.Size = new Size(200, 47);
+            btnTipoCliente.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnTipoCliente.Size = new Size(196, 47);
             btnTipoCliente.TabIndex = 5;
             btnTipoCliente.Text = "Ir a Tipo Clientes";
             btnTipoCliente.TextAlign = HorizontalAlignment.Right;
             btnTipoCliente.Click += btnTipoCliente_Click;
+            // 
+            // btnGrupoClientes
+            // 
+            btnGrupoClientes.BorderColor = Color.DarkGoldenrod;
+            btnGrupoClientes.BorderThickness = 1;
+            btnGrupoClientes.Cursor = Cursors.Hand;
+            btnGrupoClientes.CustomizableEdges = customizableEdges5;
+            btnGrupoClientes.DisabledState.BorderColor = Color.DarkGray;
+            btnGrupoClientes.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGrupoClientes.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGrupoClientes.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGrupoClientes.Dock = DockStyle.Top;
+            btnGrupoClientes.FillColor = Color.Transparent;
+            btnGrupoClientes.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGrupoClientes.ForeColor = Color.White;
+            btnGrupoClientes.HoverState.FillColor = Color.DarkGoldenrod;
+            btnGrupoClientes.HoverState.ForeColor = Color.Black;
+            btnGrupoClientes.Image = Properties.Resources.icon_Membership_Group__x32_;
+            btnGrupoClientes.ImageAlign = HorizontalAlignment.Left;
+            btnGrupoClientes.ImageSize = new Size(25, 25);
+            btnGrupoClientes.Location = new Point(0, 47);
+            btnGrupoClientes.Name = "btnGrupoClientes";
+            btnGrupoClientes.PressedColor = Color.Transparent;
+            btnGrupoClientes.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnGrupoClientes.Size = new Size(196, 47);
+            btnGrupoClientes.TabIndex = 7;
+            btnGrupoClientes.Text = "Ir a Grupo Clientes";
+            btnGrupoClientes.TextAlign = HorizontalAlignment.Right;
+            btnGrupoClientes.Click += btnGrupoClientes_Click;
+            // 
+            // btnListaCliente
+            // 
+            btnListaCliente.BorderColor = Color.DarkGoldenrod;
+            btnListaCliente.BorderThickness = 1;
+            btnListaCliente.Cursor = Cursors.Hand;
+            btnListaCliente.CustomizableEdges = customizableEdges7;
+            btnListaCliente.DisabledState.BorderColor = Color.DarkGray;
+            btnListaCliente.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnListaCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnListaCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnListaCliente.Dock = DockStyle.Top;
+            btnListaCliente.FillColor = Color.Transparent;
+            btnListaCliente.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnListaCliente.ForeColor = Color.White;
+            btnListaCliente.HoverState.FillColor = Color.DarkGoldenrod;
+            btnListaCliente.HoverState.ForeColor = Color.Black;
+            btnListaCliente.Image = Properties.Resources.customer_experience_12948497;
+            btnListaCliente.ImageAlign = HorizontalAlignment.Left;
+            btnListaCliente.ImageSize = new Size(25, 25);
+            btnListaCliente.Location = new Point(0, 0);
+            btnListaCliente.Name = "btnListaCliente";
+            btnListaCliente.PressedColor = Color.Transparent;
+            btnListaCliente.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnListaCliente.Size = new Size(196, 47);
+            btnListaCliente.TabIndex = 6;
+            btnListaCliente.Text = "Ir a Lista Clientes";
+            btnListaCliente.TextAlign = HorizontalAlignment.Right;
+            btnListaCliente.Click += btnListaCliente_Click;
             // 
             // btnDelete
             // 
             btnDelete.BorderColor = Color.DarkGoldenrod;
             btnDelete.BorderThickness = 1;
             btnDelete.Cursor = Cursors.Hand;
-            btnDelete.CustomizableEdges = customizableEdges7;
+            btnDelete.CustomizableEdges = customizableEdges9;
             btnDelete.DisabledState.BorderColor = Color.DarkGray;
             btnDelete.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDelete.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -233,11 +309,11 @@
             btnDelete.Image = Properties.Resources._EliminarFacturaMembresia;
             btnDelete.ImageAlign = HorizontalAlignment.Left;
             btnDelete.ImageSize = new Size(25, 25);
-            btnDelete.Location = new Point(-1, 440);
+            btnDelete.Location = new Point(-2, 229);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedColor = Color.Transparent;
-            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnDelete.Size = new Size(200, 47);
+            btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnDelete.Size = new Size(201, 47);
             btnDelete.TabIndex = 4;
             btnDelete.Text = "&Eliminar";
             btnDelete.Click += btnDelete_Click;
@@ -247,7 +323,7 @@
             btnEdit.BorderColor = Color.DarkGoldenrod;
             btnEdit.BorderThickness = 1;
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.CustomizableEdges = customizableEdges9;
+            btnEdit.CustomizableEdges = customizableEdges11;
             btnEdit.DisabledState.BorderColor = Color.DarkGray;
             btnEdit.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEdit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -260,10 +336,10 @@
             btnEdit.Image = Properties.Resources._EditarFacturaMembresia;
             btnEdit.ImageAlign = HorizontalAlignment.Left;
             btnEdit.ImageSize = new Size(25, 25);
-            btnEdit.Location = new Point(-1, 380);
+            btnEdit.Location = new Point(-1, 176);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedColor = Color.Transparent;
-            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnEdit.Size = new Size(200, 47);
             btnEdit.TabIndex = 3;
             btnEdit.Text = "&Editar";
@@ -274,7 +350,7 @@
             btnUpdateDGV.BorderColor = Color.DarkGoldenrod;
             btnUpdateDGV.BorderThickness = 1;
             btnUpdateDGV.Cursor = Cursors.Hand;
-            btnUpdateDGV.CustomizableEdges = customizableEdges11;
+            btnUpdateDGV.CustomizableEdges = customizableEdges13;
             btnUpdateDGV.DisabledState.BorderColor = Color.DarkGray;
             btnUpdateDGV.DisabledState.CustomBorderColor = Color.DarkGray;
             btnUpdateDGV.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -286,10 +362,10 @@
             btnUpdateDGV.HoverState.ForeColor = Color.Black;
             btnUpdateDGV.Image = Properties.Resources.refresh_8677771;
             btnUpdateDGV.ImageSize = new Size(25, 25);
-            btnUpdateDGV.Location = new Point(-1, 320);
+            btnUpdateDGV.Location = new Point(-1, 123);
             btnUpdateDGV.Name = "btnUpdateDGV";
             btnUpdateDGV.PressedColor = Color.Transparent;
-            btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnUpdateDGV.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnUpdateDGV.Size = new Size(200, 47);
             btnUpdateDGV.TabIndex = 2;
             btnUpdateDGV.Click += btnUpdateDGV_Click;
@@ -299,7 +375,7 @@
             btnGuardar.BorderColor = Color.DarkGoldenrod;
             btnGuardar.BorderThickness = 1;
             btnGuardar.Cursor = Cursors.Hand;
-            btnGuardar.CustomizableEdges = customizableEdges13;
+            btnGuardar.CustomizableEdges = customizableEdges15;
             btnGuardar.DisabledState.BorderColor = Color.DarkGray;
             btnGuardar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGuardar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -312,10 +388,10 @@
             btnGuardar.Image = Properties.Resources._NewFacturaProduct;
             btnGuardar.ImageAlign = HorizontalAlignment.Left;
             btnGuardar.ImageSize = new Size(25, 25);
-            btnGuardar.Location = new Point(-1, 260);
+            btnGuardar.Location = new Point(-1, 70);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.PressedColor = Color.Transparent;
-            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnGuardar.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnGuardar.Size = new Size(200, 47);
             btnGuardar.TabIndex = 1;
             btnGuardar.Text = "&Nuevo";
@@ -336,7 +412,7 @@
             // 
             TxbBuscar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             TxbBuscar.BorderRadius = 20;
-            TxbBuscar.CustomizableEdges = customizableEdges15;
+            TxbBuscar.CustomizableEdges = customizableEdges17;
             TxbBuscar.DefaultText = "";
             TxbBuscar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBuscar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -352,9 +428,10 @@
             TxbBuscar.PlaceholderForeColor = Color.Silver;
             TxbBuscar.PlaceholderText = "Buscar";
             TxbBuscar.SelectedText = "";
-            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            TxbBuscar.ShadowDecoration.CustomizableEdges = customizableEdges18;
             TxbBuscar.Size = new Size(869, 42);
             TxbBuscar.TabIndex = 0;
+            TxbBuscar.TextChanged += TxbBuscar_TextChanged;
             // 
             // panel5
             // 
@@ -468,34 +545,6 @@
             Estatus.HeaderText = "Estatus";
             Estatus.Name = "Estatus";
             // 
-            // btnGrupoClientes
-            // 
-            btnGrupoClientes.BorderColor = Color.DarkGoldenrod;
-            btnGrupoClientes.BorderThickness = 1;
-            btnGrupoClientes.Cursor = Cursors.Hand;
-            btnGrupoClientes.CustomizableEdges = customizableEdges1;
-            btnGrupoClientes.DisabledState.BorderColor = Color.DarkGray;
-            btnGrupoClientes.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnGrupoClientes.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnGrupoClientes.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnGrupoClientes.FillColor = Color.Transparent;
-            btnGrupoClientes.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGrupoClientes.ForeColor = Color.White;
-            btnGrupoClientes.HoverState.FillColor = Color.DarkGoldenrod;
-            btnGrupoClientes.HoverState.ForeColor = Color.Black;
-            btnGrupoClientes.Image = Properties.Resources.icon_Membership_Group__x32_;
-            btnGrupoClientes.ImageAlign = HorizontalAlignment.Left;
-            btnGrupoClientes.ImageSize = new Size(25, 25);
-            btnGrupoClientes.Location = new Point(-1, 150);
-            btnGrupoClientes.Name = "btnGrupoClientes";
-            btnGrupoClientes.PressedColor = Color.Transparent;
-            btnGrupoClientes.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnGrupoClientes.Size = new Size(200, 47);
-            btnGrupoClientes.TabIndex = 7;
-            btnGrupoClientes.Text = "Ir a Grupo Clientes";
-            btnGrupoClientes.TextAlign = HorizontalAlignment.Right;
-            btnGrupoClientes.Click += btnGrupoClientes_Click;
-            // 
             // frmClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -516,6 +565,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel3.ResumeLayout(false);
+            panel6.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
@@ -554,5 +604,7 @@
         private Guna.UI2.WinForms.Guna2Button btnListaCliente;
         private Guna.UI2.WinForms.Guna2Button btnTipoCliente;
         private Guna.UI2.WinForms.Guna2Button btnGrupoClientes;
+        private Panel panel6;
+        private Guna.UI2.WinForms.Guna2Button btnAsistencia;
     }
 }

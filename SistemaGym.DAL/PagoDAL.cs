@@ -61,7 +61,7 @@ namespace SistemaGym.DAL
                 bool productDeleted;
 
                 ConexionDAL instancia = Instancia();
-                SqlConnection Conexion = new SqlConnection();
+                SqlConnection Conexion = instancia.Conexion();
 
                 Conexion.Open();
                 string Delete = "DELETE FROM Pago WHERE IDProducto = @IDPago";
@@ -73,11 +73,30 @@ namespace SistemaGym.DAL
 
             }
 
-            /* Metodo para Mostrar Pago */
-            public static DataTable mostrarPago()
+        public static DataTable Buscar(string busqueda)
+        {
+            ConexionDAL instancia = Instancia();
+            SqlConnection Conexion = instancia.Conexion();
+
+            Conexion.Open();
+
+            DataTable dataTBL = new DataTable();
+            string GetByValor = "SELECT * FROM Pago WHERE MetodoPago LIKE @Busqueda OR IDFacturaProducto LIKE @Busqueda OR IDFacturaMembresia LIKE @Busqueda OR FechaPago LIKE @Busqueda";
+            using (SqlCommand cmd = new SqlCommand(GetByValor, Conexion))
+            {
+                cmd.Parameters.AddWithValue("@Busqueda", "%" + busqueda + "%");
+                SqlDataAdapter adapterDT = new SqlDataAdapter(cmd);
+                adapterDT.Fill(dataTBL);
+            }
+            return dataTBL;
+
+        }
+
+        /* Metodo para Mostrar Pago */
+        public static DataTable mostrarPago()
             {
                 ConexionDAL instancia = Instancia();
-                SqlConnection Conexion = new SqlConnection();
+                SqlConnection Conexion = instancia.Conexion();
 
                 DataTable dataTBL = new DataTable();
 

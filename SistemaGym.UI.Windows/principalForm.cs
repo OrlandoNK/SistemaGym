@@ -1,4 +1,5 @@
-﻿using SistemaGym.Entities;
+﻿using SistemaGym.BLL;
+using SistemaGym.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,6 +79,8 @@ namespace SistemaGym.UI.Windows
             lblRolUsuario.Text = "[" + gestioUsuarioEntities.rolUsuarioLogged + "]";
             FuncionRolUsuario();
         }
+
+
         private void FuncionRolUsuario()
         {
             if (gestioUsuarioEntities.rolUsuarioLogged == "Recepcionista")
@@ -260,6 +263,12 @@ namespace SistemaGym.UI.Windows
         private void btnReportsPagos_Click(object sender, EventArgs e)
         {
             HideSubMenu();
+        }
+
+        private void btnAsistencias_Click(object sender, EventArgs e)
+        {
+            mantenimientoAsistenciaClientes asistenciaClientes = new mantenimientoAsistenciaClientes();
+            asistenciaClientes.Show();
         }
     }
 }

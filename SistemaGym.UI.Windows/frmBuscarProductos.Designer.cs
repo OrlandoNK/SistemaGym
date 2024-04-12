@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvBuscarProductos = new DataGridView();
             IDProducto = new DataGridViewTextBoxColumn();
             IDCategoria = new DataGridViewComboBoxColumn();
@@ -39,19 +39,19 @@
             PrecioUnitario = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
+            btnClose = new PictureBox();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
             TxbBusqueda = new Guna.UI2.WinForms.Guna2TextBox();
             panel4 = new Panel();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
-            btnClose = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvBuscarProductos).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             SuspendLayout();
             // 
             // dgvBuscarProductos
@@ -104,9 +104,9 @@
             // PrecioUnitario
             // 
             PrecioUnitario.DataPropertyName = "PrecioUnitario";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            PrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
             PrecioUnitario.HeaderText = "PrecioUnitario";
             PrecioUnitario.Name = "PrecioUnitario";
             PrecioUnitario.ReadOnly = true;
@@ -130,6 +130,39 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(771, 64);
             panel1.TabIndex = 8;
+            // 
+            // btnClose
+            // 
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
+            btnClose.Location = new Point(726, 15);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(32, 32);
+            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnClose.TabIndex = 5;
+            btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Goldenrod;
+            label1.Location = new Point(69, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(97, 24);
+            label1.TabIndex = 4;
+            label1.Text = "Productos";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.box_1942650;
+            pictureBox1.Location = new Point(3, 6);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(60, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -155,7 +188,7 @@
             // TxbBusqueda
             // 
             TxbBusqueda.BorderRadius = 20;
-            TxbBusqueda.CustomizableEdges = customizableEdges5;
+            TxbBusqueda.CustomizableEdges = customizableEdges1;
             TxbBusqueda.DefaultText = "";
             TxbBusqueda.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxbBusqueda.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -171,7 +204,7 @@
             TxbBusqueda.PlaceholderForeColor = Color.Silver;
             TxbBusqueda.PlaceholderText = "Buscar";
             TxbBusqueda.SelectedText = "";
-            TxbBusqueda.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            TxbBusqueda.ShadowDecoration.CustomizableEdges = customizableEdges2;
             TxbBusqueda.Size = new Size(747, 43);
             TxbBusqueda.TabIndex = 0;
             TxbBusqueda.TextChanged += TxbBusqueda_TextChanged;
@@ -187,39 +220,6 @@
             panel4.Size = new Size(771, 393);
             panel4.TabIndex = 11;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft YaHei UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Goldenrod;
-            label1.Location = new Point(69, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(97, 24);
-            label1.TabIndex = 4;
-            label1.Text = "Productos";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.box_1942650;
-            pictureBox1.Location = new Point(3, 6);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(60, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            // 
-            // btnClose
-            // 
-            btnClose.Cursor = Cursors.Hand;
-            btnClose.Image = Properties.Resources._BotonXcerrarVentana;
-            btnClose.Location = new Point(726, 15);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(32, 32);
-            btnClose.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnClose.TabIndex = 5;
-            btnClose.TabStop = false;
-            btnClose.Click += btnClose_Click;
-            // 
             // frmBuscarProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -231,15 +231,16 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmBuscarProductos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmBuscarProductos";
             Load += frmBuscarProductos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvBuscarProductos).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             ResumeLayout(false);
         }
 

@@ -296,6 +296,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmFactura";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmFactura";
             Load += frmFactura_Load;
             ((System.ComponentModel.ISupportInitialize)dgvBuscarFactura).EndInit();

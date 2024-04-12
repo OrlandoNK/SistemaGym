@@ -88,6 +88,7 @@
             btnCerrar.SizeMode = PictureBoxSizeMode.AutoSize;
             btnCerrar.TabIndex = 5;
             btnCerrar.TabStop = false;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // pictureBox1
             // 
@@ -349,6 +350,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarAsistenciaClientes";
+            StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
